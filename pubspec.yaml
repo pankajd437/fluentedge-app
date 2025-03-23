@@ -26,7 +26,7 @@ dependencies:
   flutter_svg: ^2.0.9  # Support for SVG assets (modern UI graphics)
 
   # ✅ Networking & API Handling
-  http: ^1.3.0  # HTTP requests (Used for API communication)
+  http: ^1.3.0  # HTTP requests for API communication
 
   # ✅ State Management (For efficient app-wide state handling)
   provider: ^6.1.2  # Recommended for app-wide state management
@@ -57,11 +57,8 @@ flutter:
 
   # 🔹 Asset Configuration (Ensures proper image/animation loading)
   assets:
-    - assets/images/fluentedge_logo.png  # FluentEdge Logo (Custom Logo)
-    - assets/animations/mentor_welcome.json  # AI Mentor Animation
-    - assets/images/mentor_icon.png  # AI Mentor Profile Icon (For Chat)
-    - assets/images/background_wave.svg  # Stylish Background UI Wave
-    - assets/sounds/button_click.mp3  # UI Interaction Sound (Button Click)
+    - assets/images/FluentEdge Logo.png  # FluentEdge Logo (Custom Logo)
+    - assets/animations/ai_mentor_welcome.json  # AI Mentor Animation
 
   # 🔹 Font Configuration (Premium, modern UI look with multiple weights)
   fonts:
