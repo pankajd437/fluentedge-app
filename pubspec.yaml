@@ -1,0 +1,84 @@
+name: fluentedge_frontend
+description: "FluentEdge - AI-Powered English Learning App 🚀"
+
+# ❌ Prevent accidental publishing to pub.dev.
+publish_to: 'none' # Remove this line if publishing is needed.
+
+# 📌 Define app version and build number.
+version: 1.0.0+1
+
+# ✅ Set Dart SDK version for compatibility.
+environment:
+  sdk: '>=3.7.2 <4.0.0' # Ensures compatibility with Dart 3.7.2 and above.
+
+# ─────────────────────────────────────────────────
+# 📌 Dependencies - Essential Packages for FluentEdge
+# ─────────────────────────────────────────────────
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ✅ UI Components
+  cupertino_icons: ^1.0.8  # iOS-style icons for user interface elements
+
+  # ✅ Animations & Graphics
+  lottie: ^3.3.1  # AI Mentor animations
+  flutter_svg: ^2.0.9  # Support for SVG assets (modern UI graphics)
+
+  # ✅ Networking & API Handling
+  http: ^1.3.0  # HTTP requests for API communication
+
+  # ✅ State Management (For efficient app-wide state handling)
+  provider: ^6.1.2  # Recommended for app-wide state management
+
+  # ✅ Secure Storage (For authentication and sensitive data)
+  flutter_secure_storage: ^9.2.4  # Securely store tokens and user data
+
+  # ✅ Shared Preferences (For storing user preferences)
+  shared_preferences: ^2.5.2  # Caches language settings and UI preferences
+
+# ─────────────────────────────────────────────────
+# 📌 Dev Dependencies (For Debugging, Testing, Linting)
+# ─────────────────────────────────────────────────
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # ✅ Recommended linting rules to ensure best coding practices
+  flutter_lints: ^5.0.0
+
+# ─────────────────────────────────────────────────
+# 📌 Flutter Configurations
+# ─────────────────────────────────────────────────
+flutter:
+
+  # ✅ Enable Material Icons for consistency across platforms
+  uses-material-design: true
+
+  # 🔹 Asset Configuration (Ensures proper image/animation loading)
+  assets:
+    - assets/images/FluentEdge Logo.png  # FluentEdge Logo (Custom Logo)
+    - assets/animations/ai_mentor_welcome.json  # AI Mentor Animation
+
+  # 🔹 Font Configuration (Premium, modern UI look with multiple weights)
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Poppins-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins-Black.ttf
+          weight: 900
