@@ -1,6 +1,5 @@
-# fluentedge_frontend
-
-A new Flutter project.
+# fluentedge-app
+AI-powered English learning app
 
 ## Getting Started
 
