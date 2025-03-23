@@ -1,0 +1,12 @@
+Flask
+Flask-CORS
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Login
+Flask-Bcrypt
+python-dotenv
+SpeechRecognition
+PyAudio
+transformers
+torch
+openai
