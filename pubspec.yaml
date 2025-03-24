@@ -1,66 +1,71 @@
-name: fluentedge_frontend
+name: fluentedge_app
 description: "FluentEdge - AI-Powered English Learning App 🚀"
 
-# ❌ Prevent accidental publishing to pub.dev.
-publish_to: 'none' # Remove this line if publishing is needed.
-
-# 📌 Define app version and build number.
+publish_to: 'none'
 version: 1.0.0+1
 
-# ✅ Set Dart SDK version for compatibility.
 environment:
-  sdk: '>=3.7.2 <4.0.0' # Ensures compatibility with Dart 3.7.2 and above.
+  sdk: '>=3.7.2 <4.0.0'
+  flutter: '>=3.16.0'
 
-# ─────────────────────────────────────────────────
-# 📌 Dependencies - Essential Packages for FluentEdge
-# ─────────────────────────────────────────────────
 dependencies:
   flutter:
     sdk: flutter
 
-  # ✅ UI Components
-  cupertino_icons: ^1.0.8  # iOS-style icons for user interface elements
+  # Core UI
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.9
+  gap: ^3.0.0
 
-  # ✅ Animations & Graphics
-  lottie: ^3.3.1  # AI Mentor animations
-  flutter_svg: ^2.0.9  # Support for SVG assets (modern UI graphics)
+  # Animations
+  lottie: ^3.3.1
+  animations: ^2.0.7
 
-  # ✅ Networking & API Handling
-  http: ^1.3.0  # HTTP requests for API communication
+  # Networking
+  http: ^1.3.0
+  dio: ^5.3.3
+  cached_network_image: ^3.3.0
 
-  # ✅ State Management (For efficient app-wide state handling)
-  provider: ^6.1.2  # Recommended for app-wide state management
+  # State Management
+  provider: ^6.1.2
+  riverpod: ^2.4.9
 
-  # ✅ Secure Storage (For authentication and sensitive data)
-  flutter_secure_storage: ^9.2.4  # Securely store tokens and user data
+  # Security & Storage
+  flutter_secure_storage: ^9.2.4
+  shared_preferences: ^2.5.2
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
-  # ✅ Shared Preferences (For storing user preferences)
-  shared_preferences: ^2.5.2  # Caches language settings and UI preferences
+  # Internationalization
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
 
-# ─────────────────────────────────────────────────
-# 📌 Dev Dependencies (For Debugging, Testing, Linting)
-# ─────────────────────────────────────────────────
+  # Audio/Video
+  record: ^6.0.0
+  just_audio: ^0.9.35
+
+  # Form Validation
+  formz: ^0.8.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  # ✅ Recommended linting rules to ensure best coding practices
   flutter_lints: ^5.0.0
+  build_runner: ^2.4.6
+  hive_generator: ^2.0.1
+  mockito: ^5.4.2
+  flutter_native_splash: ^2.3.1
 
-# ─────────────────────────────────────────────────
-# 📌 Flutter Configurations
-# ─────────────────────────────────────────────────
 flutter:
-
-  # ✅ Enable Material Icons for consistency across platforms
   uses-material-design: true
+  generate: true
 
-  # 🔹 Asset Configuration (Ensures proper image/animation loading)
+  # Assets (only include existing directories)
   assets:
-    - assets/images/FluentEdge Logo.png  # FluentEdge Logo (Custom Logo)
-    - assets/animations/ai_mentor_welcome.json  # AI Mentor Animation
+    - assets/images/
+    - assets/animations/
 
-  # 🔹 Font Configuration (Premium, modern UI look with multiple weights)
   fonts:
     - family: Poppins
       fonts:
@@ -82,3 +87,10 @@ flutter:
           weight: 800
         - asset: assets/fonts/Poppins-Black.ttf
           weight: 900
+
+flutter_native_splash:
+  color: "#42a5f5"
+  image: assets/images/splash_logo.png
+  android: true
+  ios: true
+  web: true  # Added web support

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'screens/welcome_page.dart'; // Corrected Import Path
+import 'screens/welcome_page.dart';
+import 'screens/chat_page.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized(); // Ensures Flutter is fully initialized
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const FluentEdgeApp());
 }
 
@@ -13,14 +14,21 @@ class FluentEdgeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'FluentEdge - Your AI English Mentor',
-      debugShowCheckedModeBanner: false, // Removes debug banner for a clean UI
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        fontFamily: 'Poppins', // Default app font
-        scaffoldBackgroundColor: Colors.white, // Ensures a clean background
-        visualDensity: VisualDensity.adaptivePlatformDensity, // Optimizes layout for devices
+        fontFamily: 'Poppins',
+        scaffoldBackgroundColor: Colors.white,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(fontFamily: 'Poppins', fontSize: 16),
+          bodyMedium: TextStyle(fontFamily: 'Poppins', fontSize: 14),
+        ),
       ),
-      home: const WelcomePage(), // First screen the user sees
+      home: const WelcomePage(),
+      routes: {
+        '/chat': (context) => const ChatPage(),
+      },
     );
   }
 }
