@@ -28,6 +28,7 @@ INJECTED from C:\Users\Pankaj Dubey\fluentedge_frontend\android\app\src\debug\An
 INJECTED from C:\Users\Pankaj Dubey\fluentedge_frontend\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 MERGED from [:record_android] C:\Users\Pankaj Dubey\fluentedge_frontend\build\record_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-9:12
 MERGED from [:shared_preferences_android] C:\Users\Pankaj Dubey\fluentedge_frontend\build\shared_preferences_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:speech_to_text] C:\Users\Pankaj Dubey\fluentedge_frontend\build\speech_to_text\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-7:12
 MERGED from [:just_audio] C:\Users\Pankaj Dubey\fluentedge_frontend\build\just_audio\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-7:12
 MERGED from [:audio_session] C:\Users\Pankaj Dubey\fluentedge_frontend\build\audio_session\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_native_splash] C:\Users\Pankaj Dubey\fluentedge_frontend\build\flutter_native_splash\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-7:12
@@ -131,6 +132,8 @@ MERGED from [:record_android] C:\Users\Pankaj Dubey\fluentedge_frontend\build\re
 MERGED from [:record_android] C:\Users\Pankaj Dubey\fluentedge_frontend\build\record_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] C:\Users\Pankaj Dubey\fluentedge_frontend\build\shared_preferences_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] C:\Users\Pankaj Dubey\fluentedge_frontend\build\shared_preferences_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
+MERGED from [:speech_to_text] C:\Users\Pankaj Dubey\fluentedge_frontend\build\speech_to_text\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
+MERGED from [:speech_to_text] C:\Users\Pankaj Dubey\fluentedge_frontend\build\speech_to_text\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
 MERGED from [:just_audio] C:\Users\Pankaj Dubey\fluentedge_frontend\build\just_audio\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
 MERGED from [:just_audio] C:\Users\Pankaj Dubey\fluentedge_frontend\build\just_audio\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
 MERGED from [:audio_session] C:\Users\Pankaj Dubey\fluentedge_frontend\build\audio_session\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44

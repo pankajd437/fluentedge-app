@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'ice_breaking_chat.dart';
+import 'package:fluentedge_app/localization/app_localizations.dart';
+import '../main.dart';
 
 class WelcomePage extends StatefulWidget {
-  const WelcomePage({super.key});
+  final Function(String, String) onUserInfoSubmitted;
+  
+  const WelcomePage({
+    super.key,
+    required this.onUserInfoSubmitted,
+  });
 
   @override
   State<WelcomePage> createState() => _WelcomePageState();
@@ -14,34 +20,6 @@ class _WelcomePageState extends State<WelcomePage> {
   final TextEditingController _nameController = TextEditingController();
   final FocusNode _nameFocusNode = FocusNode();
 
-  // Localized strings
-  final Map<String, Map<String, String>> _localizedStrings = {
-    'English': {
-      'title': "Your AI English Coach is Here! 🎙️",
-      'subtitle': "Master English speaking with real-time AI guidance. Let's begin your journey today!",
-      'nameHint': "What can I call you?",
-      'languageLabel': "Choose Language:",
-      'continueButton': "Continue",
-      'nameError': "Please enter your name!",
-    },
-    'हिंदी': {
-      'title': "आपका AI अंग्रेज़ी कोच आ गया है! 🎙️",
-      'subtitle': "रीयल-टाइम AI मार्गदर्शन के साथ अंग्रेज़ी बोलना सीखें। आज से ही शुरू करें!",
-      'nameHint': "मैं आपको क्या कहूँ?",
-      'languageLabel': "भाषा चुनें:",
-      'continueButton': "जारी रखें",
-      'nameError': "कृपया अपना नाम दर्ज करें!",
-    },
-    'Hinglish': {
-      'title': "Apka AI English Coach aa gaya hai! 🎙️",
-      'subtitle': "Real-time AI guidance ke saath English bolna seekhein. Aaj se shuru karein!",
-      'nameHint': "Main aapko kya bolun?",
-      'languageLabel': "Bhasha chunein:",
-      'continueButton': "Continue",
-      'nameError': "Kripya apna naam daalein!",
-    },
-  };
-
   @override
   void dispose() {
     _nameController.dispose();
@@ -49,12 +27,10 @@ class _WelcomePageState extends State<WelcomePage> {
     super.dispose();
   }
 
-  String _getLocalizedString(String key) {
-    return _localizedStrings[selectedLanguage]?[key] ?? _localizedStrings['English']![key]!;
-  }
-
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    
     return Scaffold(
       backgroundColor: Colors.white,
       body: LayoutBuilder(
@@ -66,8 +42,8 @@ class _WelcomePageState extends State<WelcomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _buildHeaderSection(),
-                    _buildInputSection(),
+                    _buildHeaderSection(localizations),
+                    _buildInputSection(localizations),
                   ],
                 ),
               ),
@@ -78,7 +54,7 @@ class _WelcomePageState extends State<WelcomePage> {
     );
   }
 
-  Widget _buildHeaderSection() {
+  Widget _buildHeaderSection(AppLocalizations localizations) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
@@ -98,7 +74,7 @@ class _WelcomePageState extends State<WelcomePage> {
           ),
           const SizedBox(height: 20),
           Text(
-            _getLocalizedString('title'),
+            localizations.getLocalizedWelcomeMessage(),
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 24,
@@ -108,7 +84,7 @@ class _WelcomePageState extends State<WelcomePage> {
           ),
           const SizedBox(height: 10),
           Text(
-            _getLocalizedString('subtitle'),
+            localizations.getLocalizedSubtitle(),
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 16,
@@ -121,7 +97,7 @@ class _WelcomePageState extends State<WelcomePage> {
     );
   }
 
-  Widget _buildInputSection() {
+  Widget _buildInputSection(AppLocalizations localizations) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       decoration: const BoxDecoration(
@@ -141,10 +117,13 @@ class _WelcomePageState extends State<WelcomePage> {
             controller: _nameController,
             focusNode: _nameFocusNode,
             decoration: InputDecoration(
-              labelText: _getLocalizedString('nameHint'),
+              labelText: localizations.nameFieldLabel,
               border: const OutlineInputBorder(),
               prefixIcon: const Icon(Icons.person),
-              contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+              contentPadding: const EdgeInsets.symmetric(
+                vertical: 15, 
+                horizontal: 15,
+              ),
             ),
             textInputAction: TextInputAction.done,
           ),
@@ -153,8 +132,11 @@ class _WelcomePageState extends State<WelcomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                _getLocalizedString('languageLabel'),
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                localizations.languageSelectionLabel,
+                style: const TextStyle(
+                  fontSize: 16, 
+                  fontWeight: FontWeight.w500,
+                ),
               ),
               const SizedBox(width: 10),
               DropdownButton<String>(
@@ -162,16 +144,27 @@ class _WelcomePageState extends State<WelcomePage> {
                 onChanged: (String? newValue) {
                   setState(() {
                     selectedLanguage = newValue!;
+                    if (newValue == "हिंदी" || newValue == "Hinglish") {
+                      FluentEdgeApp.setLocale(context, const Locale('hi'));
+                    } else {
+                      FluentEdgeApp.setLocale(context, const Locale('en'));
+                    }
                   });
                 },
-                items: _localizedStrings.keys
-                    .map<DropdownMenuItem<String>>(
-                      (String value) => DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      ),
-                    )
-                    .toList(),
+                items: [
+                  DropdownMenuItem(
+                    value: "English",
+                    child: Text(localizations.englishLanguageName),
+                  ),
+                  DropdownMenuItem(
+                    value: "हिंदी",
+                    child: Text(localizations.hindiLanguageName),
+                  ),
+                  DropdownMenuItem(
+                    value: "Hinglish",
+                    child: Text(localizations.hinglishLanguageName),
+                  ),
+                ],
               ),
             ],
           ),
@@ -179,7 +172,7 @@ class _WelcomePageState extends State<WelcomePage> {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: _handleContinue,
+              onPressed: () => _handleContinue(context),
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 14),
                 backgroundColor: Colors.blueAccent,
@@ -188,7 +181,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
               child: Text(
-                _getLocalizedString('continueButton'),
+                localizations.continueButton,
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
@@ -202,21 +195,18 @@ class _WelcomePageState extends State<WelcomePage> {
     );
   }
 
-  void _handleContinue() {
+  void _handleContinue(BuildContext context) {
     if (_nameController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(_getLocalizedString('nameError'))),
-      );
-    } else {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => IceBreakingChat(
-            userName: _nameController.text,
-            selectedLanguage: selectedLanguage,
+        SnackBar(
+          content: Text(
+            AppLocalizations.of(context)!.nameRequiredError,
           ),
         ),
       );
+    } else {
+      widget.onUserInfoSubmitted(_nameController.text, selectedLanguage);
+      Navigator.pushNamed(context, '/chat');
     }
   }
 }

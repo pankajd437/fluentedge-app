@@ -50,4 +50,5 @@ com.example.fluentedge_frontend.app-debug-48 C:\Users\Pankaj Dubey\fluentedge_fr
 com.example.fluentedge_frontend.app-debug-49 C:\Users\Pankaj Dubey\fluentedge_frontend\build\path_provider_android\intermediates\packaged_res\debug\packageDebugResources
 com.example.fluentedge_frontend.app-debug-50 C:\Users\Pankaj Dubey\fluentedge_frontend\build\record_android\intermediates\packaged_res\debug\packageDebugResources
 com.example.fluentedge_frontend.app-debug-51 C:\Users\Pankaj Dubey\fluentedge_frontend\build\shared_preferences_android\intermediates\packaged_res\debug\packageDebugResources
-com.example.fluentedge_frontend.app-debug-52 C:\Users\Pankaj Dubey\fluentedge_frontend\build\sqflite_android\intermediates\packaged_res\debug\packageDebugResources
+com.example.fluentedge_frontend.app-debug-52 C:\Users\Pankaj Dubey\fluentedge_frontend\build\speech_to_text\intermediates\packaged_res\debug\packageDebugResources
+com.example.fluentedge_frontend.app-debug-53 C:\Users\Pankaj Dubey\fluentedge_frontend\build\sqflite_android\intermediates\packaged_res\debug\packageDebugResources
