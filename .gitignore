@@ -1,45 +1,52 @@
-# Miscellaneous
-*.class                 # Java class files
-*.log                   # Log files
-*.pyc                   # Python bytecode files
-*.swp                   # Swap files from editors like Vim
-.DS_Store               # macOS Finder specific files
-.atom/                  # Atom editor files
-.build/                 # Build output directories
-.buildlog/              # Build log files
-.history                # History files from various editors
-.svn/                   # SVN version control directory
-.swiftpm/               # Swift package manager
-migrate_working_dir/    # Migration temporary working directory
+### Flutter/Dart ###
+# Build and cache files
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+*.dill
+*.iml
 
-# IntelliJ related
-*.iml                   # IntelliJ project files
-*.ipr                   # IntelliJ project files
-*.iws                   # IntelliJ workspace files
-.idea/                  # IntelliJ IDE-specific directory
+# Flutter plugin files
+.flutter-plugins
+.flutter-plugins-dependencies
 
-# VS Code (optional)
-# The .vscode folder contains launch configurations and tasks configured in VS Code, which you may wish to include.
-# Uncomment the following line if you want to exclude the .vscode folder from version control.
-# .vscode/
+# Android/iOS builds
+/android/
+/ios/
+*.apk
+*.aab
+*.ipa
+*.xcarchive
 
-# Flutter/Dart/Pub related
-**/doc/api/             # API documentation folder
-**/ios/Flutter/.last_build_id  # Last build identifier in iOS Flutter project
-.dart_tool/             # Dart-specific tool files
-.flutter-plugins        # Flutter plugin cache
-.flutter-plugins-dependencies # Flutter plugin dependencies
-.pub-cache/             # Pub package cache
-.pub/                   # Pub package metadata
-/build/                 # Build output directory (Flutter and Android)
+### Android Studio ###
+.idea/
+*.iml
+*.ipr
+*.iws
+/local.properties
 
-# Symbolication related
-app.*.symbols           # Symbol files related to app crashes
+### VS Code ###
+.vscode/
+*.code-workspace
 
-# Obfuscation related
-app.*.map.json          # JavaScript source map files for obfuscated code
+### macOS ###
+.DS_Store
 
-# Android Studio places build artifacts here
-/android/app/debug      # Android Studio debug build folder
-/android/app/profile    # Android Studio profile build folder
-/android/app/release    # Android Studio release build folder
+### Windows ###
+Thumbs.db
+
+### Editor temp files ###
+*.swp
+*.swo
+*~
+~$*
+
+### Logs ###
+*.log
+flutter_console.log
+
+### Debug files ###
+app.*.symbols
+app.*.map.json

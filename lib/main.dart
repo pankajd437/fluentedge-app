@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'screens/welcome_page.dart';
-import 'screens/chat_page.dart';
+import 'screens/ice_breaking_chat.dart'; // ✅ correct import
 import 'localization/app_localizations.dart';
 
 void main() {
@@ -95,7 +95,8 @@ class _FluentEdgeAppState extends State<FluentEdgeApp> {
         onUserInfoSubmitted: _setUserInfo,
       ),
       routes: {
-        ChatPage.routeName: (context) => ChatPage(
+        '/chat': (context) => IceBreakingChatPage(
+              key: const ValueKey('chat_page'),
               userName: _userName,
               languagePreference: _languagePreference,
             ),

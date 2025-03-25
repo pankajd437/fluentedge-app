@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:fluentedge_frontend/localization/app_localizations.dart';
+import 'package:fluentedge_app/localization/app_localizations.dart';
+import 'package:fluentedge_app/utils/text_direction_utils.dart';
 
 class IceBreakingChatPage extends StatefulWidget {
   final String userName;
   final String languagePreference;
-  
+
   const IceBreakingChatPage({
     super.key,
     required this.userName,
@@ -20,21 +21,25 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
   final TextEditingController _messageController = TextEditingController();
   final ScrollController _scrollController = ScrollController();
   bool _isAIThinking = false;
+  bool _hasAddedWelcome = false;
 
   @override
   void initState() {
     super.initState();
-    _addWelcomeMessage();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_hasAddedWelcome) {
+      _addWelcomeMessage();
+      _hasAddedWelcome = true;
+    }
   }
 
   void _addWelcomeMessage() {
-    final localizations = AppLocalizations.of(context)!;
-    final welcomeText = widget.languagePreference == "English"
-      ? 'Hi ${widget.userName}! Ready to practice English?'
-      : widget.languagePreference == "हिंदी"
-        ? 'नमस्ते ${widget.userName}! अंग्रेज़ी का अभ्यास करने के लिए तैयार हैं?'
-        : 'Hi ${widget.userName}! English practice ke liye taiyaar ho?';
-
+    final welcomeText = AppLocalizations.of(context)!
+        .getWelcomeResponse(widget.userName, widget.languagePreference);
     _addMessage(welcomeText, isAI: true);
   }
 
@@ -47,30 +52,19 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
 
   Future<void> _sendMessage() async {
     if (_messageController.text.isEmpty) return;
-    
+
     final userMessage = _messageController.text;
     _messageController.clear();
     _addMessage(userMessage, isAI: false);
-    
+
     setState(() => _isAIThinking = true);
     await Future.delayed(const Duration(seconds: 1));
     if (!mounted) return;
 
-    final response = _generateAIResponse(userMessage);
+    final response = AppLocalizations.of(context)!
+        .getAIResponse(widget.userName, widget.languagePreference);
     _addMessage(response, isAI: true);
     setState(() => _isAIThinking = false);
-  }
-
-  String _generateAIResponse(String userMessage) {
-    final localizations = AppLocalizations.of(context)!;
-    
-    if (widget.languagePreference == "English") {
-      return "That's a great start, ${widget.userName}! Let's practice some more.";
-    } else if (widget.languagePreference == "हिंदी") {
-      return "बहुत अच्छा प्रारंभ, ${widget.userName}! आइए कुछ और अभ्यास करें।";
-    } else {
-      return "Bahut accha shuruat, ${widget.userName}! Chalo kuch aur practice karein.";
-    }
   }
 
   void _scrollToBottom() {
@@ -88,14 +82,14 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
-    
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(localizations.chatTitle.replaceFirst('{name}', widget.userName)),
+        title: Text(localizations.chatTitle(widget.userName)),
         actions: [
           IconButton(
             icon: const Icon(Icons.language),
-            onPressed: () => _showLanguageInfo(),
+            onPressed: _showLanguageInfo,
           ),
         ],
       ),
@@ -116,7 +110,7 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
                     ),
                   );
                 }
-                
+
                 final message = _messages[index];
                 return ChatBubble(
                   message: message.text,
@@ -169,11 +163,8 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
       builder: (context) => AlertDialog(
         title: Text(AppLocalizations.of(context)!.languageInfoTitle),
         content: Text(
-          widget.languagePreference == "English"
-            ? "We're practicing in English mode"
-            : widget.languagePreference == "हिंदी"
-              ? "हम हिंदी मोड में अभ्यास कर रहे हैं"
-              : "Hum Hinglish mode mein practice kar rahe hain",
+          AppLocalizations.of(context)!
+              .getPracticeLanguageMessage(widget.languagePreference),
         ),
         actions: [
           TextButton(
@@ -214,8 +205,8 @@ class ChatBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textDirection = language == "हिंदी" ? TextDirection.rtl : TextDirection.ltr;
-    
+    final isRTL = language == 'हिंदी' || language == 'Hinglish';
+
     return Align(
       alignment: isAI ? Alignment.centerLeft : Alignment.centerRight,
       child: Container(
@@ -231,7 +222,7 @@ class ChatBubble extends StatelessWidget {
           ),
         ),
         child: Directionality(
-          textDirection: textDirection,
+          textDirection: getTextDirection(isRTL),
           child: Text(
             message,
             style: TextStyle(
