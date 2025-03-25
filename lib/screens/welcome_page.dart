@@ -5,7 +5,7 @@ import '../main.dart';
 
 class WelcomePage extends StatefulWidget {
   final Function(String, String) onUserInfoSubmitted;
-  
+
   const WelcomePage({
     super.key,
     required this.onUserInfoSubmitted,
@@ -30,7 +30,7 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
-    
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: LayoutBuilder(
@@ -74,7 +74,7 @@ class _WelcomePageState extends State<WelcomePage> {
           ),
           const SizedBox(height: 20),
           Text(
-            localizations.getLocalizedWelcomeMessage(),
+            localizations.getLocalizedWelcomeMessage(selectedLanguage),
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 24,
@@ -84,7 +84,7 @@ class _WelcomePageState extends State<WelcomePage> {
           ),
           const SizedBox(height: 10),
           Text(
-            localizations.getLocalizedSubtitle(),
+            localizations.getLocalizedSubtitle(selectedLanguage),
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 16,
@@ -121,7 +121,7 @@ class _WelcomePageState extends State<WelcomePage> {
               border: const OutlineInputBorder(),
               prefixIcon: const Icon(Icons.person),
               contentPadding: const EdgeInsets.symmetric(
-                vertical: 15, 
+                vertical: 15,
                 horizontal: 15,
               ),
             ),
@@ -134,7 +134,7 @@ class _WelcomePageState extends State<WelcomePage> {
               Text(
                 localizations.languageSelectionLabel,
                 style: const TextStyle(
-                  fontSize: 16, 
+                  fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -196,17 +196,15 @@ class _WelcomePageState extends State<WelcomePage> {
   }
 
   void _handleContinue(BuildContext context) {
-    if (_nameController.text.isEmpty) {
+    final trimmedName = _nameController.text.trim();
+    if (trimmedName.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(
-            AppLocalizations.of(context)!.nameRequiredError,
-          ),
+          content: Text(AppLocalizations.of(context)!.nameRequiredError),
         ),
       );
     } else {
-      widget.onUserInfoSubmitted(_nameController.text, selectedLanguage);
-      Navigator.pushNamed(context, '/chat');
+      widget.onUserInfoSubmitted(trimmedName, selectedLanguage);
     }
   }
 }

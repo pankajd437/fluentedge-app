@@ -1,52 +1,76 @@
-### Flutter/Dart ###
-# Build and cache files
+### Flutter & Dart ###
 .dart_tool/
-.packages
-.pub-cache/
 .pub/
+.pub-cache/
+.packages
 build/
+flutter_*.png
 *.dill
+*.lock
 *.iml
-
-# Flutter plugin files
+generated_plugin_registrant.dart
 .flutter-plugins
 .flutter-plugins-dependencies
 
-# Android/iOS builds
-/android/
-/ios/
+### Android ###
+android/local.properties
+android/**/GeneratedPluginRegistrant.java
+android/**/*.iml
+android/.gradle/
+android/app/build/
 *.apk
 *.aab
-*.ipa
+
+### iOS ###
+ios/.generated/
+ios/Flutter/Generated.xcconfig
+ios/Runner/GeneratedPluginRegistrant.*
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Pods/
+*.xcworkspace
 *.xcarchive
+*.ipa
+
+### Web ###
+web/build/
+
+### macOS ###
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/Pods/
+macos/Flutter/ephemeral/
+
+### Linux ###
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugins.cmake
+
+### Windows ###
+windows/flutter/generated_plugin_registrant.cc
+windows/flutter/generated_plugins.cmake
+windows/flutter/ephemeral/
 
 ### Android Studio ###
 .idea/
 *.iml
 *.ipr
 *.iws
-/local.properties
 
 ### VS Code ###
 .vscode/
 *.code-workspace
 
-### macOS ###
-.DS_Store
+### Logs & Debug files ###
+*.log
+flutter_console.log
+*.symbols
+*.map.json
 
-### Windows ###
-Thumbs.db
-
-### Editor temp files ###
+### Temporary Editor Files ###
 *.swp
 *.swo
 *~
 ~$*
 
-### Logs ###
-*.log
-flutter_console.log
-
-### Debug files ###
-app.*.symbols
-app.*.map.json
+### OS Files ###
+.DS_Store
+Thumbs.db

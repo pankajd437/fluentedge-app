@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Screens
 import 'screens/welcome_page.dart';
-import 'screens/ice_breaking_chat.dart'; // ✅ correct import
+import 'screens/ice_breaking_chat.dart';
+import 'screens/questionnaire_page.dart';
+
+// Localization
 import 'localization/app_localizations.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(
-    const ProviderScope(
-      child: FluentEdgeApp(),
-    ),
-  );
+  runApp(const ProviderScope(child: FluentEdgeApp()));
 }
 
 class FluentEdgeApp extends StatefulWidget {
   const FluentEdgeApp({super.key});
 
   static void setLocale(BuildContext context, Locale newLocale) {
-    _FluentEdgeAppState? state = context.findAncestorStateOfType<_FluentEdgeAppState>();
+    final state = context.findAncestorStateOfType<_FluentEdgeAppState>();
     state?.setLocale(newLocale);
   }
 
@@ -37,10 +38,10 @@ class _FluentEdgeAppState extends State<FluentEdgeApp> {
     });
   }
 
-  void _setUserInfo(String userName, String languagePreference) {
+  void _setUserInfo(String name, String langPref) {
     setState(() {
-      _userName = userName;
-      _languagePreference = languagePreference;
+      _userName = name;
+      _languagePreference = langPref;
     });
   }
 
@@ -57,8 +58,8 @@ class _FluentEdgeAppState extends State<FluentEdgeApp> {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
-        Locale('en'), // English
-        Locale('hi'), // Hindi
+        Locale('en'),
+        Locale('hi'),
       ],
       theme: ThemeData(
         colorScheme: ColorScheme.light(
@@ -91,10 +92,21 @@ class _FluentEdgeAppState extends State<FluentEdgeApp> {
         ),
         scaffoldBackgroundColor: Colors.grey[900],
       ),
-      home: WelcomePage(
-        onUserInfoSubmitted: _setUserInfo,
-      ),
+      initialRoute: '/welcome',
       routes: {
+        '/welcome': (context) => Builder(
+              builder: (context) => WelcomePage(
+                onUserInfoSubmitted: (name, langPref) {
+                  _setUserInfo(name, langPref);
+                  Navigator.pushNamed(context, '/questionnaire');
+                },
+              ),
+            ),
+        '/questionnaire': (context) => QuestionnairePage(
+              key: const ValueKey('questionnaire_page'),
+              userName: _userName,
+              languagePreference: _languagePreference,
+            ),
         '/chat': (context) => IceBreakingChatPage(
               key: const ValueKey('chat_page'),
               userName: _userName,
