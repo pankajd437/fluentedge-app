@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:fluentedge_app/services/api_service.dart';
 import 'package:fluentedge_app/localization/app_localizations.dart';
+import 'package:fluentedge_app/screens/smart_course_recommendation.dart';
 
 class QuestionnairePage extends StatefulWidget {
   final String userName;
@@ -28,13 +30,18 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
 
   late AppLocalizations localizations;
 
-  // 🔁 Use dynamic getters to pull localized content
-  List<String> get localizedMotivations => localizations.getMotivationOptions(widget.languagePreference);
-  List<String> get localizedLevels => localizations.getEnglishLevelOptions(widget.languagePreference);
-  List<String> get localizedStyles => localizations.getLearningStyleOptions(widget.languagePreference);
-  List<String> get localizedDifficulties => localizations.getDifficultyOptions(widget.languagePreference);
-  List<String> get localizedTimeOptions => localizations.getTimeOptions(widget.languagePreference);
-  List<String> get localizedTimelineOptions => localizations.getTimelineOptions(widget.languagePreference);
+  List<String> get localizedMotivations =>
+      localizations.getMotivationOptions(widget.languagePreference);
+  List<String> get localizedLevels =>
+      localizations.getEnglishLevelOptions(widget.languagePreference);
+  List<String> get localizedStyles =>
+      localizations.getLearningStyleOptions(widget.languagePreference);
+  List<String> get localizedDifficulties =>
+      localizations.getDifficultyOptions(widget.languagePreference);
+  List<String> get localizedTimeOptions =>
+      localizations.getTimeOptions(widget.languagePreference);
+  List<String> get localizedTimelineOptions =>
+      localizations.getTimelineOptions(widget.languagePreference);
 
   void _handleNext(String selectedValue) {
     setState(() {
@@ -79,22 +86,72 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
         learningTimeline: learningTimeline ?? '',
       );
 
-      final course = result['recommended_course'] ?? 'FluentEdge Starter Course';
+      String course = result['recommended_course'] ?? 'FluentEdge Starter Course';
+      course = course.replaceAll(RegExp(r'[^\x00-\x7F]+'), '').trim(); // 🛡 Remove broken characters
 
-      showDialog(
+      await showDialog(
         context: context,
         builder: (_) => AlertDialog(
-          title: Text("🎯 ${localizations.languageInfoTitle}"),
-          content: Text(
-            "${localizations.getLocalizedWelcomeMessage(widget.languagePreference)}\n\n📘 $course",
-            style: const TextStyle(fontSize: 16),
+          title: Row(
+            children: const [
+              Icon(Icons.flag_outlined, color: Colors.blueAccent),
+              SizedBox(width: 8),
+              Text("Practice Language"),
+            ],
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: Lottie.asset(
+                  'assets/animations/ai_mentor_welcome.json',
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.contain,
+                ),
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                "Hi! I'm your AI English Mentor – let's make learning English simple and fun!",
+                style: TextStyle(fontSize: 16),
+              ),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  const Icon(Icons.menu_book, color: Colors.teal),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      course,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        color: Colors.black87,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
               child: Text(localizations.continueButton),
-            )
+            ),
           ],
+        ),
+      );
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => SmartCourseRecommendationPage(
+            userName: widget.userName,
+            languagePreference: widget.languagePreference,
+            recommendedCourse: course,
+          ),
         ),
       );
     } catch (e) {
@@ -167,7 +224,7 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
 
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 40.0), // Extra spacing for safety
+        padding: const EdgeInsets.only(bottom: 40.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

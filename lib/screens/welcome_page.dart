@@ -32,10 +32,14 @@ class _WelcomePageState extends State<WelcomePage> {
     final localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: Colors.white,
       body: LayoutBuilder(
         builder: (context, constraints) {
           return SingleChildScrollView(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).viewInsets.bottom,
+            ),
             child: ConstrainedBox(
               constraints: BoxConstraints(minHeight: constraints.maxHeight),
               child: SafeArea(
@@ -59,20 +63,23 @@ class _WelcomePageState extends State<WelcomePage> {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
-          const SizedBox(height: 40),
+          const SizedBox(height: 20),
           Image.asset(
             'assets/images/FluentEdge Logo.png',
             width: 200,
             height: 200,
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 5), // ✅ Reduced gap between logo & animation
           Lottie.asset(
             'assets/animations/ai_mentor_welcome.json',
             width: 250,
             height: 250,
             fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) {
+              return const Icon(Icons.animation, size: 100, color: Colors.grey);
+            },
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 15),
           Text(
             localizations.getLocalizedWelcomeMessage(selectedLanguage),
             textAlign: TextAlign.center,
@@ -91,7 +98,7 @@ class _WelcomePageState extends State<WelcomePage> {
               color: Colors.black54,
             ),
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 30),
         ],
       ),
     );
@@ -116,8 +123,9 @@ class _WelcomePageState extends State<WelcomePage> {
           TextField(
             controller: _nameController,
             focusNode: _nameFocusNode,
+            autofocus: true,
             decoration: InputDecoration(
-              labelText: localizations.nameFieldLabel,
+              labelText: localizations.getLocalizedNameFieldLabel(selectedLanguage), // ✅ Dynamic name label
               border: const OutlineInputBorder(),
               prefixIcon: const Icon(Icons.person),
               contentPadding: const EdgeInsets.symmetric(
@@ -139,32 +147,34 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
               const SizedBox(width: 10),
-              DropdownButton<String>(
-                value: selectedLanguage,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedLanguage = newValue!;
-                    if (newValue == "हिंदी" || newValue == "Hinglish") {
-                      FluentEdgeApp.setLocale(context, const Locale('hi'));
-                    } else {
-                      FluentEdgeApp.setLocale(context, const Locale('en'));
-                    }
-                  });
-                },
-                items: [
-                  DropdownMenuItem(
-                    value: "English",
-                    child: Text(localizations.englishLanguageName),
-                  ),
-                  DropdownMenuItem(
-                    value: "हिंदी",
-                    child: Text(localizations.hindiLanguageName),
-                  ),
-                  DropdownMenuItem(
-                    value: "Hinglish",
-                    child: Text(localizations.hinglishLanguageName),
-                  ),
-                ],
+              DropdownButtonHideUnderline(
+                child: DropdownButton<String>(
+                  value: selectedLanguage,
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      selectedLanguage = newValue!;
+                      if (newValue == "हिंदी") {
+                        FluentEdgeApp.setLocale(context, const Locale('hi'));
+                      } else {
+                        FluentEdgeApp.setLocale(context, const Locale('en'));
+                      }
+                    });
+                  },
+                  items: [
+                    DropdownMenuItem(
+                      value: "English",
+                      child: Text(localizations.englishLanguageName),
+                    ),
+                    DropdownMenuItem(
+                      value: "हिंदी",
+                      child: Text(localizations.hindiLanguageName),
+                    ),
+                    DropdownMenuItem(
+                      value: "Hinglish",
+                      child: Text(localizations.hinglishLanguageName),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
