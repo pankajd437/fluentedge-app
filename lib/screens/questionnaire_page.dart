@@ -30,18 +30,12 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
 
   late AppLocalizations localizations;
 
-  List<String> get localizedMotivations =>
-      localizations.getMotivationOptions(widget.languagePreference);
-  List<String> get localizedLevels =>
-      localizations.getEnglishLevelOptions(widget.languagePreference);
-  List<String> get localizedStyles =>
-      localizations.getLearningStyleOptions(widget.languagePreference);
-  List<String> get localizedDifficulties =>
-      localizations.getDifficultyOptions(widget.languagePreference);
-  List<String> get localizedTimeOptions =>
-      localizations.getTimeOptions(widget.languagePreference);
-  List<String> get localizedTimelineOptions =>
-      localizations.getTimelineOptions(widget.languagePreference);
+  List<String> get localizedMotivations => localizations.getMotivationOptions(widget.languagePreference);
+  List<String> get localizedLevels => localizations.getEnglishLevelOptions(widget.languagePreference);
+  List<String> get localizedStyles => localizations.getLearningStyleOptions(widget.languagePreference);
+  List<String> get localizedDifficulties => localizations.getDifficultyOptions(widget.languagePreference);
+  List<String> get localizedTimeOptions => localizations.getTimeOptions(widget.languagePreference);
+  List<String> get localizedTimelineOptions => localizations.getTimelineOptions(widget.languagePreference);
 
   void _handleNext(String selectedValue) {
     setState(() {
@@ -69,7 +63,7 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
       if (_step < 5) {
         _step++;
       } else {
-        _submitUserData();
+        Future.delayed(const Duration(milliseconds: 300), _submitUserData);
       }
     });
   }
@@ -87,16 +81,16 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
       );
 
       String course = result['recommended_course'] ?? 'FluentEdge Starter Course';
-      course = course.replaceAll(RegExp(r'[^\x00-\x7F]+'), '').trim(); // 🛡 Remove broken characters
+      course = course.replaceAll(RegExp(r'[^\x00-\x7F]+'), '').trim();
 
       await showDialog(
         context: context,
         builder: (_) => AlertDialog(
           title: Row(
-            children: const [
-              Icon(Icons.flag_outlined, color: Colors.blueAccent),
-              SizedBox(width: 8),
-              Text("Practice Language"),
+            children: [
+              const Icon(Icons.flag_outlined, color: Colors.blueAccent),
+              const SizedBox(width: 8),
+              Text(localizations.languageInfoTitle),
             ],
           ),
           content: Column(
@@ -112,14 +106,14 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
                 ),
               ),
               const SizedBox(height: 10),
-              const Text(
-                "Hi! I'm your AI English Mentor – let's make learning English simple and fun!",
-                style: TextStyle(fontSize: 16),
+              Text(
+                localizations.getLocalizedWelcomeMessage(widget.languagePreference),
+                style: const TextStyle(fontSize: 16),
               ),
               const SizedBox(height: 16),
               Row(
                 children: [
-                  const Icon(Icons.menu_book, color: Colors.teal),
+                  const Icon(Icons.menu_book, color: Colors.blue),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
@@ -170,7 +164,7 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
         return ElevatedButton(
           onPressed: () => _handleNext(option),
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blueAccent,
+            backgroundColor: Colors.blue,
             foregroundColor: Colors.white,
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           ),
@@ -222,20 +216,70 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
       }
     }
 
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 40.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Hi ${widget.userName}! 👋", style: theme.headlineSmall),
-            const SizedBox(height: 10),
-            Text(getQuestion(), style: theme.titleLarge),
-            const SizedBox(height: 20),
-            _buildOptions(getOptions()),
-          ],
+    String getProgressMessage() {
+      switch (_step) {
+        case 0:
+          return localizations.getProgressStart();
+        case 5:
+          return localizations.getProgressAlmostDone();
+        default:
+          return localizations.getProgressKeepGoing();
+      }
+    }
+
+    return Stack(
+      children: [
+        Positioned(
+          left: 0,
+          right: 0,
+          bottom: 0,
+          child: Opacity(
+            opacity: 0.15,
+            child: Center(
+              child: Lottie.asset(
+                'assets/animations/ai_mentor_thinking.json',
+                width: 250,
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
         ),
-      ),
+        SingleChildScrollView(
+          padding: const EdgeInsets.only(bottom: 40, left: 16, right: 16, top: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              LinearProgressIndicator(
+                value: (_step + 1) / 6,
+                color: Colors.blue,
+                backgroundColor: Colors.blue.shade100,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                getProgressMessage(),
+                style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
+              ),
+              const SizedBox(height: 20),
+              Text("Hi ${widget.userName}! 👋", style: theme.headlineSmall),
+              const SizedBox(height: 10),
+              Text(getQuestion(), style: theme.titleLarge),
+              const SizedBox(height: 20),
+              _buildOptions(getOptions()),
+              const SizedBox(height: 30),
+              Center(
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/coursesDashboard');
+                  },
+                  child: Text(widget.languagePreference == 'हिंदी'
+                      ? "प्रश्न छोड़ें और कोर्स देखें"
+                      : "Skip Questions & Explore Courses"),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 
@@ -243,12 +287,11 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("📝 Your English Journey"),
+        title: Text(widget.languagePreference == 'हिंदी'
+            ? "📝 आपकी इंग्लिश यात्रा"
+            : "📝 Your English Journey"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: _buildStepUI(),
-      ),
+      body: _buildStepUI(),
     );
   }
 }

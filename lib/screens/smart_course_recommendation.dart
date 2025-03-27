@@ -18,20 +18,16 @@ class SmartCourseRecommendationPage extends StatelessWidget {
     final localizations = AppLocalizations.of(context)!;
     final safeUserName = userName.trim().isEmpty ? "there" : userName;
 
-    // 🔍 Clean up broken characters
+    // Cleaned course name
     final cleanedCourse = recommendedCourse.replaceAll(RegExp(r'[^\x00-\x7F]+'), '').trim();
-
-    // ✅ Localized Course Title + Icon
-    final localizedTitle = "📘 ${cleanedCourse}";
 
     return Scaffold(
       appBar: AppBar(
-        // ✅ Fully responsive title: wraps, scales, and shows complete course name
         title: FittedBox(
           fit: BoxFit.scaleDown,
           alignment: Alignment.centerLeft,
           child: Text(
-            localizedTitle,
+            "📘 $cleanedCourse",
             style: const TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 18,
@@ -61,13 +57,13 @@ class SmartCourseRecommendationPage extends StatelessWidget {
               const SizedBox(height: 20),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Icon(Icons.star, color: Colors.orangeAccent),
-                  SizedBox(width: 8),
+                children: [
+                  const Icon(Icons.star, color: Colors.orangeAccent),
+                  const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      "Based on your goals and experience, we've selected a course just for you.",
-                      style: TextStyle(fontSize: 16, color: Colors.black87),
+                      _getLocalizedCourseIntro(localizations, languagePreference),
+                      style: const TextStyle(fontSize: 16, color: Colors.black87),
                     ),
                   ),
                 ],
@@ -79,7 +75,7 @@ class SmartCourseRecommendationPage extends StatelessWidget {
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      "Course: $cleanedCourse",
+                      _getLocalizedCourseTitle(cleanedCourse, languagePreference),
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -99,16 +95,16 @@ class SmartCourseRecommendationPage extends StatelessWidget {
                     child: ElevatedButton.icon(
                       onPressed: () {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text("🚀 Course access coming soon..."),
+                          SnackBar(
+                            content: Text(_getComingSoonText(languagePreference)),
                             behavior: SnackBarBehavior.floating,
                           ),
                         );
                       },
                       icon: const Icon(Icons.rocket_launch, color: Colors.white),
-                      label: const Text(
-                        "Start Course",
-                        style: TextStyle(
+                      label: Text(
+                        _getStartCourseLabel(languagePreference),
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
                           color: Colors.white,
@@ -130,9 +126,9 @@ class SmartCourseRecommendationPage extends StatelessWidget {
                       Navigator.popUntil(context, (route) => route.isFirst);
                     },
                     icon: const Icon(Icons.home_outlined),
-                    label: const Text(
-                      "Go to Home",
-                      style: TextStyle(fontWeight: FontWeight.w500),
+                    label: Text(
+                      _getGoHomeLabel(languagePreference),
+                      style: const TextStyle(fontWeight: FontWeight.w500),
                     ),
                   ),
                 ],
@@ -142,5 +138,50 @@ class SmartCourseRecommendationPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _getLocalizedCourseIntro(AppLocalizations loc, String lang) {
+    switch (lang) {
+      case 'हिंदी':
+        return "आपके उद्देश्यों और अनुभव के आधार पर, हमने आपके लिए एक विशेष कोर्स चुना है।";
+      default:
+        return "Based on your goals and experience, we've selected a course just for you.";
+    }
+  }
+
+  String _getLocalizedCourseTitle(String course, String lang) {
+    switch (lang) {
+      case 'हिंदी':
+        return "कोर्स: $course";
+      default:
+        return "Course: $course";
+    }
+  }
+
+  String _getStartCourseLabel(String lang) {
+    switch (lang) {
+      case 'हिंदी':
+        return "कोर्स शुरू करें";
+      default:
+        return "Start Course";
+    }
+  }
+
+  String _getGoHomeLabel(String lang) {
+    switch (lang) {
+      case 'हिंदी':
+        return "होम पर जाएं";
+      default:
+        return "Go to Home";
+    }
+  }
+
+  String _getComingSoonText(String lang) {
+    switch (lang) {
+      case 'हिंदी':
+        return "🚀 कोर्स जल्द आ रहा है...";
+      default:
+        return "🚀 Course access coming soon...";
+    }
   }
 }

@@ -69,7 +69,7 @@ class _WelcomePageState extends State<WelcomePage> {
             width: 200,
             height: 200,
           ),
-          const SizedBox(height: 5), // ✅ Reduced gap between logo & animation
+          const SizedBox(height: 5),
           Lottie.asset(
             'assets/animations/ai_mentor_welcome.json',
             width: 250,
@@ -125,7 +125,7 @@ class _WelcomePageState extends State<WelcomePage> {
             focusNode: _nameFocusNode,
             autofocus: true,
             decoration: InputDecoration(
-              labelText: localizations.getLocalizedNameFieldLabel(selectedLanguage), // ✅ Dynamic name label
+              labelText: localizations.getLocalizedNameFieldLabel(selectedLanguage),
               border: const OutlineInputBorder(),
               prefixIcon: const Icon(Icons.person),
               contentPadding: const EdgeInsets.symmetric(
@@ -169,10 +169,6 @@ class _WelcomePageState extends State<WelcomePage> {
                       value: "हिंदी",
                       child: Text(localizations.hindiLanguageName),
                     ),
-                    DropdownMenuItem(
-                      value: "Hinglish",
-                      child: Text(localizations.hinglishLanguageName),
-                    ),
                   ],
                 ),
               ),
@@ -185,7 +181,7 @@ class _WelcomePageState extends State<WelcomePage> {
               onPressed: () => _handleContinue(context),
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 14),
-                backgroundColor: Colors.blueAccent,
+                backgroundColor: Colors.blue,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
