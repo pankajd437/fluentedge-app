@@ -6,6 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'screens/welcome_page.dart';
 import 'screens/ice_breaking_chat.dart';
 import 'screens/questionnaire_page.dart';
+import 'screens/courses_dashboard.dart'; // ✅ Existing
+import 'screens/courses_list.dart'; // ✅ NEW Import
 
 // Localization
 import 'localization/app_localizations.dart';
@@ -112,6 +114,8 @@ class _FluentEdgeAppState extends State<FluentEdgeApp> {
               userName: _userName,
               languagePreference: _languagePreference,
             ),
+        '/coursesDashboard': (context) => const CoursesDashboardPage(), // ✅ Existing
+        '/coursesList': (context) => CoursesListPage(), // ✅ New Route
       },
     );
   }
