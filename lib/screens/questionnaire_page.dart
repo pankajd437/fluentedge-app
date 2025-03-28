@@ -207,7 +207,7 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
           right: 0,
           bottom: 0,
           child: Opacity(
-            opacity: 0.15,
+            opacity: 0.45,
             child: Center(
               child: Lottie.asset(
                 'assets/animations/ai_mentor_thinking.json',

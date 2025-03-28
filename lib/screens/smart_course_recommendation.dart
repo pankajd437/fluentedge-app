@@ -4,40 +4,57 @@ import 'package:fluentedge_app/localization/app_localizations.dart';
 class SmartCourseRecommendationPage extends StatelessWidget {
   final String userName;
   final String languagePreference;
-  final String recommendedCourse;
+  final String recommendedCourse; // The recommended course passed from the questionnaire or service
+  final String gender; // Added gender field
+  final int age; // Added age field
 
   const SmartCourseRecommendationPage({
     super.key,
     required this.userName,
-    required this.languagePreference,
-    required this.recommendedCourse,
+    required this.languagePreference, // Include this parameter
+    required this.recommendedCourse,  // Recommended course based on user responses
+    required this.gender,  // Include gender as a parameter
+    required this.age, // Include age as a parameter
   });
 
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
     final safeUserName = userName.trim().isEmpty ? "there" : userName;
-
-    // Cleaned course name
     final cleanedCourse = recommendedCourse.replaceAll(RegExp(r'[^\x00-\x7F]+'), '').trim();
 
+    // Additional logic for filtering course recommendations based on age and gender
+    String finalCourse = _applyAgeGenderFilter(recommendedCourse);
+
     return Scaffold(
+      backgroundColor: const Color(0xFFF2F6FB), // Background color
       appBar: AppBar(
         title: FittedBox(
           fit: BoxFit.scaleDown,
           alignment: Alignment.centerLeft,
           child: Text(
-            "📘 $cleanedCourse",
+            "📘 $finalCourse", // Display the filtered final course
             style: const TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 18,
+              fontWeight: FontWeight.w500,
+              fontSize: 16,
             ),
             maxLines: 2,
             overflow: TextOverflow.visible,
           ),
         ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFF1976D2), Color(0xFF42A5F5)], // Gradient AppBar
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
       ),
@@ -49,10 +66,11 @@ class SmartCourseRecommendationPage extends StatelessWidget {
             children: [
               Text(
                 localizations.getWelcomeResponse(safeUserName, languagePreference),
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                    ),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  color: Color(0xFF0D47A1), // Dark Navy Blue for headings
+                ),
               ),
               const SizedBox(height: 20),
               Row(
@@ -63,7 +81,11 @@ class SmartCourseRecommendationPage extends StatelessWidget {
                   Expanded(
                     child: Text(
                       _getLocalizedCourseIntro(localizations, languagePreference),
-                      style: const TextStyle(fontSize: 16, color: Colors.black87),
+                      style: const TextStyle(
+                        fontSize: 13, // Banner Text font
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black87,
+                      ),
                     ),
                   ),
                 ],
@@ -71,14 +93,14 @@ class SmartCourseRecommendationPage extends StatelessWidget {
               const SizedBox(height: 24),
               Row(
                 children: [
-                  const Icon(Icons.check_circle, color: Colors.green, size: 24),
+                  const Icon(Icons.check_circle, color: Color(0xFF0D47A1), size: 24), // Icon Color
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      _getLocalizedCourseTitle(cleanedCourse, languagePreference),
+                      _getLocalizedCourseTitle(finalCourse, languagePreference), // Use the filtered course here
                       style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
                         color: Colors.black87,
                       ),
                     ),
@@ -94,6 +116,7 @@ class SmartCourseRecommendationPage extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton.icon(
                       onPressed: () {
+                        // Simulate course starting, show a snackbar or navigate to a course screen
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(_getComingSoonText(languagePreference)),
@@ -105,18 +128,18 @@ class SmartCourseRecommendationPage extends StatelessWidget {
                       label: Text(
                         _getStartCourseLabel(languagePreference),
                         style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 12, // Button Text
+                          fontWeight: FontWeight.w500,
                           color: Colors.white,
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blueAccent,
-                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        backgroundColor: const Color(0xFF1565C0), // Primary CTA Color
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(8), // Button Shape
                         ),
-                        elevation: 3,
+                        elevation: 2,
                       ),
                     ),
                   ),
@@ -125,10 +148,14 @@ class SmartCourseRecommendationPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.popUntil(context, (route) => route.isFirst);
                     },
-                    icon: const Icon(Icons.home_outlined),
+                    icon: const Icon(Icons.home_outlined, color: Color(0xFF0D47A1)), // Icon Color
                     label: Text(
                       _getGoHomeLabel(languagePreference),
-                      style: const TextStyle(fontWeight: FontWeight.w500),
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF0D47A1), // Text Link Color
+                      ),
                     ),
                   ),
                 ],
@@ -183,5 +210,22 @@ class SmartCourseRecommendationPage extends StatelessWidget {
       default:
         return "🚀 Course access coming soon...";
     }
+  }
+
+  // New method to filter courses based on age and gender
+  String _applyAgeGenderFilter(String course) {
+    if (age < 18) {
+      // Exclude adult courses for minors
+      if (course.contains("Adult")) {
+        return "Smart Daily Conversations"; // Default course for minors
+      }
+    }
+    if (gender == 'Male') {
+      // Example: specific course recommendations for males
+      if (course == "Business English for Managers") {
+        return "English for Interviews & Job Success"; // Male-friendly course recommendation
+      }
+    }
+    return course; // Default course if no filter applies
   }
 }

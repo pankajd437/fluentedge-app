@@ -24,11 +24,6 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
   bool _hasAddedWelcome = false;
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     if (!_hasAddedWelcome) {
@@ -84,14 +79,32 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
     final localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(localizations.chatTitle(widget.userName)),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.language),
-            onPressed: _showLanguageInfo,
+      backgroundColor: const Color(0xFFF2F6FB), // ✅ Soft background
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(56),
+        child: AppBar(
+          elevation: 0,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xFF1976D2), Color(0xFF42A5F5)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
           ),
-        ],
+          title: Text(
+            localizations.chatTitle(widget.userName),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          ),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.language, color: Colors.white),
+              onPressed: _showLanguageInfo,
+            ),
+          ],
+          backgroundColor: Colors.transparent,
+        ),
       ),
       body: Column(
         children: [
@@ -150,7 +163,7 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
           IconButton(
             icon: const Icon(Icons.send),
             onPressed: _sendMessage,
-            color: Colors.blueAccent,
+            color: const Color(0xFF1565C0), // ✅ Primary button blue
           ),
         ],
       ),
@@ -161,14 +174,23 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(AppLocalizations.of(context)!.languageInfoTitle),
+        title: Text(
+          AppLocalizations.of(context)!.languageInfoTitle,
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+        ),
         content: Text(
           AppLocalizations.of(context)!
               .getPracticeLanguageMessage(widget.languagePreference),
         ),
         actions: [
           TextButton(
-            child: Text(AppLocalizations.of(context)!.okButton),
+            child: const Text(
+              "OK",
+              style: TextStyle(
+                color: Color(0xFF1565C0),
+                fontWeight: FontWeight.w500,
+              ),
+            ),
             onPressed: () => Navigator.pop(context),
           ),
         ],
@@ -213,7 +235,7 @@ class ChatBubble extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: isAI ? Colors.blue.shade50 : Colors.blueAccent,
+          color: isAI ? const Color(0xFFE3F2FD) : const Color(0xFF1565C0),
           borderRadius: BorderRadius.only(
             topLeft: const Radius.circular(12),
             topRight: const Radius.circular(12),
@@ -226,8 +248,10 @@ class ChatBubble extends StatelessWidget {
           child: Text(
             message,
             style: TextStyle(
-              color: isAI ? Colors.black : Colors.white,
-              fontSize: 16,
+              color: isAI ? const Color(0xFF0D47A1) : Colors.white,
+              fontSize: 14.5,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'Poppins',
             ),
           ),
         ),

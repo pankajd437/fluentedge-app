@@ -6,6 +6,8 @@ class UserResponseModel {
   final String difficultyArea;
   final String dailyTime;
   final String learningTimeline;
+  final int age;  // Added age field
+  final String gender;  // Added gender field
 
   UserResponseModel({
     required this.name,
@@ -15,6 +17,8 @@ class UserResponseModel {
     required this.difficultyArea,
     required this.dailyTime,
     required this.learningTimeline,
+    required this.age,  // Add age to the constructor
+    required this.gender,  // Add gender to the constructor
   });
 
   Map<String, dynamic> toJson() {
@@ -26,6 +30,8 @@ class UserResponseModel {
       'difficulty_area': difficultyArea,
       'daily_time': dailyTime,
       'learning_timeline': learningTimeline,
+      'age': age,  // Include age in the JSON map
+      'gender': gender,  // Include gender in the JSON map
     };
   }
 }

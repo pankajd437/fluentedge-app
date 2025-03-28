@@ -33,7 +33,7 @@ class _WelcomePageState extends State<WelcomePage> {
 
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFF2F6FB),
       body: LayoutBuilder(
         builder: (context, constraints) {
           return SingleChildScrollView(
@@ -84,9 +84,10 @@ class _WelcomePageState extends State<WelcomePage> {
             localizations.getLocalizedWelcomeMessage(selectedLanguage),
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.black87,
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'Poppins',
+              color: Color(0xFF0D47A1),
             ),
           ),
           const SizedBox(height: 10),
@@ -94,7 +95,9 @@ class _WelcomePageState extends State<WelcomePage> {
             localizations.getLocalizedSubtitle(selectedLanguage),
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 16,
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'Poppins',
               color: Colors.black54,
             ),
           ),
@@ -111,9 +114,10 @@ class _WelcomePageState extends State<WelcomePage> {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black12,
-            blurRadius: 5,
-            spreadRadius: 2,
+            color: Colors.blueAccent,
+            blurRadius: 6,
+            spreadRadius: 1,
+            offset: Offset(0, -1),
           ),
         ],
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
@@ -126,8 +130,12 @@ class _WelcomePageState extends State<WelcomePage> {
             autofocus: true,
             decoration: InputDecoration(
               labelText: localizations.getLocalizedNameFieldLabel(selectedLanguage),
+              labelStyle: const TextStyle(
+                fontWeight: FontWeight.w500,
+                fontFamily: 'Poppins',
+              ),
               border: const OutlineInputBorder(),
-              prefixIcon: const Icon(Icons.person),
+              prefixIcon: const Icon(Icons.person, color: Color(0xFF0D47A1)),
               contentPadding: const EdgeInsets.symmetric(
                 vertical: 15,
                 horizontal: 15,
@@ -142,8 +150,9 @@ class _WelcomePageState extends State<WelcomePage> {
               Text(
                 localizations.languageSelectionLabel,
                 style: const TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                   fontWeight: FontWeight.w500,
+                  fontFamily: 'Poppins',
                 ),
               ),
               const SizedBox(width: 10),
@@ -160,6 +169,12 @@ class _WelcomePageState extends State<WelcomePage> {
                       }
                     });
                   },
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Poppins',
+                    color: Colors.black,
+                  ),
                   items: [
                     DropdownMenuItem(
                       value: "English",
@@ -181,16 +196,17 @@ class _WelcomePageState extends State<WelcomePage> {
               onPressed: () => _handleContinue(context),
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 14),
-                backgroundColor: Colors.blue,
+                backgroundColor: const Color(0xFF1565C0),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(12),
                 ),
               ),
               child: Text(
                 localizations.continueButton,
                 style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Poppins',
                   color: Colors.white,
                 ),
               ),

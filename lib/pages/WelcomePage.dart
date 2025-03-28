@@ -36,7 +36,6 @@ class _WelcomePageState extends State<WelcomePage> {
 
   Future<void> _saveUserBasicInfo() async {
     setState(() => _isLoading = true);
-
     try {
       final response = await http.post(
         Uri.parse('https://your-api.com/saveUserBasicInfo'),
@@ -91,56 +90,51 @@ class _WelcomePageState extends State<WelcomePage> {
     final isNameValid = _nameController.text.trim().isNotEmpty;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFF2F6FB),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Header Section
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
                   children: [
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 6), // ✅ Reduced gap
                     const FluentEdgeLogo(),
-                    const SizedBox(height: 20),
-                    
-                    // Name Input Field
+                    const SizedBox(height: 8), // ✅ Reduced gap
+
                     TextField(
                       controller: _nameController,
                       decoration: InputDecoration(
                         labelText: localizations.nameFieldLabel,
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(12),
                         ),
-                        prefixIcon: const Icon(Icons.person, color: Colors.blueAccent),
+                        prefixIcon: const Icon(Icons.person, color: Color(0xFF0D47A1)),
                       ),
                     ),
-                    const SizedBox(height: 20),
-                    
-                    // Animation
+
+                    const SizedBox(height: 10), // ✅ Reduced gap
+
                     Lottie.asset(
                       'assets/animations/mentor_welcome.json',
                       width: 250,
                       height: 250,
                       fit: BoxFit.cover,
                     ),
-                    const SizedBox(height: 20),
-                    
-                    // Greeting
+                    const SizedBox(height: 16),
+
                     Text(
                       localizations.getLocalizedWelcomeMessage(),
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         fontSize: 24,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                         color: Colors.black87,
                       ),
                     ),
                     const SizedBox(height: 10),
-                    
-                    // Subtitle
+
                     Text(
                       localizations.getLocalizedSubtitle(),
                       textAlign: TextAlign.center,
@@ -152,24 +146,24 @@ class _WelcomePageState extends State<WelcomePage> {
                   ],
                 ),
               ),
-              
-              // Footer Section
+
               Container(
+                width: double.infinity,
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+                  border: Border.all(color: Colors.blue.shade100),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 5,
-                      spreadRadius: 2,
+                      color: Colors.blue.shade100.withOpacity(0.4),
+                      blurRadius: 6,
+                      offset: const Offset(0, 3),
                     ),
                   ],
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
                 ),
                 child: Column(
                   children: [
-                    // Language Selection
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -183,6 +177,7 @@ class _WelcomePageState extends State<WelcomePage> {
                         const SizedBox(width: 10),
                         DropdownButton<String>(
                           value: _selectedLanguage,
+                          underline: const SizedBox(),
                           onChanged: _handleLanguageChange,
                           items: [
                             DropdownMenuItem(
@@ -202,20 +197,23 @@ class _WelcomePageState extends State<WelcomePage> {
                       ],
                     ),
                     const SizedBox(height: 15),
-                    
-                    // Continue Button
+
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: isNameValid ? _navigateToChat : null,
                         style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(vertical: 14),
-                          backgroundColor: isNameValid 
-                              ? Colors.blueAccent 
-                              : Colors.grey,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                          backgroundColor: isNameValid ? const Color(0xFF1565C0) : Colors.grey,
+                          foregroundColor: Colors.white,
+                          textStyle: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
                           ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          minimumSize: const Size(0, 40),
                         ),
                         child: _isLoading
                             ? const CircularProgressIndicator(color: Colors.white)

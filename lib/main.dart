@@ -6,11 +6,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'screens/welcome_page.dart';
 import 'screens/ice_breaking_chat.dart';
 import 'screens/questionnaire_page.dart';
-import 'screens/courses_dashboard.dart'; // ✅ Existing
-import 'screens/courses_list.dart'; // ✅ NEW Import
+import 'screens/courses_dashboard.dart';
+import 'screens/courses_list.dart';
 
 // Localization
 import 'localization/app_localizations.dart';
+
+// Theme Constants
+import 'constants.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -64,45 +67,45 @@ class _FluentEdgeAppState extends State<FluentEdgeApp> {
         Locale('hi'),
       ],
       theme: ThemeData(
-        colorScheme: ColorScheme.light(
-          primary: Colors.blue.shade800,
-          secondary: Colors.amber,
-          surface: Colors.grey[50]!,
-          background: Colors.white,
-        ),
         fontFamily: 'Poppins',
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: kBackgroundSoftBlue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        colorScheme: const ColorScheme.light(
+          primary: kPrimaryBlue,
+          secondary: kAccentBlue,
+          background: Colors.white,
+          surface: Colors.white,
+        ),
         textTheme: const TextTheme(
           displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-          titleLarge: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600),
-          bodyLarge: TextStyle(fontSize: 16.0),
-          bodyMedium: TextStyle(fontSize: 14.0),
+          titleLarge: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
+          bodyLarge: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500),
+          bodyMedium: TextStyle(fontSize: 13.0, fontWeight: FontWeight.w500),
         ),
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.blue.shade800,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: kPrimaryBlue,
           foregroundColor: Colors.white,
           elevation: 0,
+          titleTextStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
         ),
       ),
       darkTheme: ThemeData(
+        fontFamily: 'Poppins',
         colorScheme: ColorScheme.dark(
-          primary: Colors.blue.shade600,
-          secondary: Colors.amber,
-          surface: Colors.grey[900]!,
-          background: Colors.grey[850]!,
+          primary: Colors.blue,
+          secondary: kAccentBlue,
+          surface: Colors.grey,
+          background: Colors.grey,
         ),
         scaffoldBackgroundColor: Colors.grey[900],
       ),
       initialRoute: '/welcome',
       routes: {
-        '/welcome': (context) => Builder(
-              builder: (context) => WelcomePage(
-                onUserInfoSubmitted: (name, langPref) {
-                  _setUserInfo(name, langPref);
-                  Navigator.pushNamed(context, '/questionnaire');
-                },
-              ),
+        '/welcome': (context) => WelcomePage(
+              onUserInfoSubmitted: (name, langPref) {
+                _setUserInfo(name, langPref);
+                Navigator.pushNamed(context, '/questionnaire');
+              },
             ),
         '/questionnaire': (context) => QuestionnairePage(
               key: const ValueKey('questionnaire_page'),
@@ -114,8 +117,9 @@ class _FluentEdgeAppState extends State<FluentEdgeApp> {
               userName: _userName,
               languagePreference: _languagePreference,
             ),
-        '/coursesDashboard': (context) => const CoursesDashboardPage(), // ✅ Existing
-        '/coursesList': (context) => CoursesListPage(), // ✅ New Route
+        '/coursesDashboard': (context) => const CoursesDashboardPage(),
+        '/coursesList': (context) => CoursesListPage(),
+        // Add additional routes if needed here
       },
     );
   }

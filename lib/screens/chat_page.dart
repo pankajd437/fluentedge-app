@@ -37,46 +37,55 @@ class ChatBubble extends StatelessWidget {
           constraints: BoxConstraints(
             maxWidth: MediaQuery.of(context).size.width * 0.8,
           ),
-          child: Card(
-            color: message.isAI
-                ? Theme.of(context).colorScheme.surfaceVariant
-                : Theme.of(context).colorScheme.primary,
-            elevation: 1,
-            shape: RoundedRectangleBorder(
+          child: Container(
+            decoration: BoxDecoration(
+              color: message.isAI
+                  ? const Color(0xFFE3F2FD) // Soft AI bubble background
+                  : const Color(0xFF1565C0), // User message background
               borderRadius: BorderRadius.only(
-                topLeft: const Radius.circular(16),
-                topRight: const Radius.circular(16),
-                bottomLeft: Radius.circular(message.isAI ? 0 : 16),
-                bottomRight: Radius.circular(message.isAI ? 16 : 0),
+                topLeft: const Radius.circular(12),
+                topRight: const Radius.circular(12),
+                bottomLeft: Radius.circular(message.isAI ? 0 : 12),
+                bottomRight: Radius.circular(message.isAI ? 12 : 0),
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.blue.shade100.withOpacity(0.3),
+                  blurRadius: 6,
+                  offset: const Offset(0, 3),
+                ),
+              ],
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Directionality(
+                  textDirection: getTextDirection(isRTL),
+                  child: Text(
                     message.text,
                     style: TextStyle(
-                      color: message.isAI
-                          ? Theme.of(context).colorScheme.onSurfaceVariant
-                          : Theme.of(context).colorScheme.onPrimary,
+                      color: message.isAI ? Colors.black87 : Colors.white,
                       fontSize: 16,
+                      fontWeight: FontWeight.w500,
                     ),
-                    textDirection: getTextDirection(isRTL),
                   ),
-                  const SizedBox(height: 4),
-                  Text(
+                ),
+                const SizedBox(height: 6),
+                Align(
+                  alignment:
+                      message.isAI ? Alignment.centerLeft : Alignment.centerRight,
+                  child: Text(
                     timeString,
                     style: TextStyle(
-                      color: message.isAI
-                          ? Theme.of(context).colorScheme.outline
-                          : Theme.of(context).colorScheme.onPrimary.withOpacity(0.7),
                       fontSize: 10,
+                      color: message.isAI
+                          ? Colors.grey.shade700
+                          : Colors.white.withOpacity(0.8),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

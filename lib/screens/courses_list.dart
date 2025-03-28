@@ -3,116 +3,169 @@ import 'package:flutter/material.dart';
 class CoursesListPage extends StatelessWidget {
   CoursesListPage({Key? key}) : super(key: key);
 
-  final List<String> courses = [
-    "Speak English Fluently",
-    "Master English Grammar",
-    "Confident Pronunciation Mastery",
-    "Build Strong Vocabulary",
-    "Public Speaking & Stage Talk",
-    "Everyday English for Homemakers",
-    "English for School Projects",
-    "Office English for Professionals",
-    "Business English for Managers",
-    "Travel English for Global Explorers",
-    "AI Mock Practice for Fluency Boosters",
-    "English for Interviews & Job Success",
-    "Festival & Celebration English",
-    "Polite English for Social Media",
-    "English for Phone & Video Calls",
-    "English for Govt Job Aspirants",
-    "Shaadi English",
-    "Temple & Tirth Yatra English",
-    "Medical English for Healthcare Workers",
-    "Tutor’s English Kit",
-    "Smart Daily Conversations",
-    "Advanced Fluency Challenge",
-    "AI-Powered Spoken English Coach",
-    "Grammar Doctor: Fix My Mistakes!"
+  final List<Map<String, dynamic>> courses = [
+    {"title": "Speak English Fluently", "icon": Icons.record_voice_over},
+    {"title": "Master English Grammar", "icon": Icons.rule},
+    {"title": "Confident Pronunciation Mastery", "icon": Icons.hearing},
+    {"title": "Build Strong Vocabulary", "icon": Icons.book},
+    {"title": "Public Speaking & Stage Talk", "icon": Icons.mic_external_on},
+    {"title": "Everyday English for Homemakers", "icon": Icons.house},
+    {"title": "English for School Projects", "icon": Icons.school},
+    {"title": "Office English for Professionals", "icon": Icons.work},
+    {"title": "Business English for Managers", "icon": Icons.business_center},
+    {"title": "Travel English for Global Explorers", "icon": Icons.travel_explore},
+    {"title": "AI Mock Practice for Fluency Boosters", "icon": Icons.chat},
+    {"title": "English for Interviews & Job Success", "icon": Icons.how_to_reg},
+    {"title": "Festival & Celebration English", "icon": Icons.celebration},
+    {"title": "Polite English for Social Media", "icon": Icons.alternate_email},
+    {"title": "English for Phone & Video Calls", "icon": Icons.phone_in_talk},
+    {"title": "English for Govt Job Aspirants", "icon": Icons.gavel},
+    {"title": "Shaadi English", "icon": Icons.favorite},
+    {"title": "Temple & Tirth Yatra English", "icon": Icons.temple_buddhist},
+    {"title": "Medical English for Healthcare Workers", "icon": Icons.health_and_safety},
+    {"title": "Tutor’s English Kit", "icon": Icons.cast_for_education},
+    {"title": "Smart Daily Conversations", "icon": Icons.chat_bubble_outline},
+    {"title": "Advanced Fluency Challenge", "icon": Icons.flash_on},
+    {"title": "AI-Powered Spoken English Coach", "icon": Icons.auto_fix_high},
+    {"title": "Grammar Doctor: Fix My Mistakes!", "icon": Icons.medical_services},
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Choose Your English Journey"),
-        backgroundColor: Colors.blue.shade800,
-      ),
-      body: Column(
-        children: [
-          Container(
-            width: double.infinity,
-            color: Colors.blue.shade50,
-            padding: const EdgeInsets.all(12),
-            child: Text(
-              "Not sure where to start? Resume questionnaire →",
-              style: TextStyle(fontSize: 16, color: Colors.blue.shade900),
-            ),
-          ),
-          const SizedBox(height: 10),
-          Expanded(
-            child: GridView.builder(
-              padding: const EdgeInsets.all(12),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 16,
-                crossAxisSpacing: 16,
-                childAspectRatio: 3 / 2.2,
+      backgroundColor: const Color(0xFFF2F6FB),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(56),
+        child: AppBar(
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xFF1976D2), Color(0xFF42A5F5)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
               ),
-              itemCount: courses.length,
-              itemBuilder: (context, index) {
-                final courseTitle = courses[index];
-                return Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(
-                      color: Colors.blue.shade700,
-                      width: 1,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 4,
-                        offset: const Offset(0, 2),
-                      )
-                    ],
-                  ),
-                  padding: const EdgeInsets.all(12),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Icon(
-                        Icons.school_rounded,
-                        color: Colors.blue,
-                        size: 32,
-                      ),
-                      Text(
-                        courseTitle,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14,
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          // TODO: Navigate to course screen
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue.shade700,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                        child: const Text("Start Now"),
-                      ),
-                    ],
-                  ),
-                );
-              },
             ),
           ),
-        ],
+          title: const Text(
+            "Your Fluent Future Starts Here",
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              color: Colors.white, // ✅ Updated to white
+            ),
+          ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/questionnaire');
+              },
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Color(0xFFE3F2FD), Color(0xFFB3E5FC)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                ),
+                child: Text(
+                  "Not sure where to start? Resume questionnaire →",
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Colors.blue.shade900,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: GridView.builder(
+                  itemCount: courses.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 3 / 2.1,
+                    crossAxisSpacing: 12,
+                    mainAxisSpacing: 12,
+                  ),
+                  itemBuilder: (context, index) {
+                    final course = courses[index];
+                    return GestureDetector(
+                      onTap: () {
+                        // TODO: Navigate to course screen
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: Colors.blue.shade100),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.blue.shade100.withOpacity(0.4),
+                              blurRadius: 6,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 12),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Icon(course['icon'],
+                                color: Color(0xFF0D47A1), size: 24),
+                            Text(
+                              course['title'],
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                fontSize: 12.5,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(
+                              width: double.infinity,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  // TODO: Navigate to course
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Color(0xFF1565C0),
+                                  minimumSize: const Size(0, 34),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 12, vertical: 4),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                ),
+                                child: const Text(
+                                  "Start Now",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
