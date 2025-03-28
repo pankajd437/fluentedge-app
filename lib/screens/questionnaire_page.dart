@@ -27,6 +27,8 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
   String? difficultyArea;
   String? dailyTime;
   String? learningTimeline;
+  String? age; // Added Age
+  String? gender; // Added Gender
 
   late AppLocalizations localizations;
 
@@ -38,34 +40,38 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
   List<String> get localizedTimelineOptions => localizations.getTimelineOptions(widget.languagePreference);
 
   void _handleNext(String selectedValue) {
-    setState(() {
-      switch (_step) {
-        case 0:
-          motivation = selectedValue;
-          break;
-        case 1:
-          englishLevel = selectedValue;
-          break;
-        case 2:
-          learningStyle = selectedValue;
-          break;
-        case 3:
-          difficultyArea = selectedValue;
-          break;
-        case 4:
-          dailyTime = selectedValue;
-          break;
-        case 5:
-          learningTimeline = selectedValue;
-          break;
-      }
+    switch (_step) {
+      case 0:
+        motivation = selectedValue;
+        break;
+      case 1:
+        englishLevel = selectedValue;
+        break;
+      case 2:
+        learningStyle = selectedValue;
+        break;
+      case 3:
+        difficultyArea = selectedValue;
+        break;
+      case 4:
+        dailyTime = selectedValue;
+        break;
+      case 5:
+        learningTimeline = selectedValue;
+        break;
+      case 6: // New step for age
+        age = selectedValue;
+        break;
+      case 7: // New step for gender
+        gender = selectedValue;
+        break;
+    }
 
-      if (_step < 5) {
-        _step++;
-      } else {
-        Future.delayed(const Duration(milliseconds: 300), _submitUserData);
-      }
-    });
+    if (_step < 7) {
+      setState(() => _step++);
+    } else {
+      Future.microtask(() => _submitUserData());
+    }
   }
 
   Future<void> _submitUserData() async {
@@ -78,76 +84,27 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
         difficultyArea: difficultyArea ?? '',
         dailyTime: dailyTime ?? '',
         learningTimeline: learningTimeline ?? '',
+        age: int.tryParse(age ?? '0') ?? 0,  // Parse age to integer, default to 0 if invalid
+        gender: gender ?? '',  // Include gender in the request
       );
 
       String course = result['recommended_course'] ?? 'FluentEdge Starter Course';
       course = course.replaceAll(RegExp(r'[^\x00-\x7F]+'), '').trim();
 
-      await showDialog(
-        context: context,
-        builder: (_) => AlertDialog(
-          title: Row(
-            children: [
-              const Icon(Icons.flag_outlined, color: Colors.blueAccent),
-              const SizedBox(width: 8),
-              Text(localizations.languageInfoTitle),
-            ],
-          ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Lottie.asset(
-                  'assets/animations/ai_mentor_welcome.json',
-                  width: 100,
-                  height: 100,
-                  fit: BoxFit.contain,
-                ),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                localizations.getLocalizedWelcomeMessage(widget.languagePreference),
-                style: const TextStyle(fontSize: 16),
-              ),
-              const SizedBox(height: 16),
-              Row(
-                children: [
-                  const Icon(Icons.menu_book, color: Colors.blue),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      course,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text(localizations.continueButton),
-            ),
-          ],
-        ),
-      );
-
-      Navigator.push(
+      // Directly navigate to the SmartCourseRecommendationPage
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (_) => SmartCourseRecommendationPage(
             userName: widget.userName,
             languagePreference: widget.languagePreference,
             recommendedCourse: course,
+            gender: gender ?? '', // Pass gender here
+            age: int.tryParse(age ?? '') ?? 0, // Pass age as integer
           ),
         ),
       );
+
     } catch (e) {
       debugPrint("❌ Submission error: $e");
       ScaffoldMessenger.of(context).showSnackBar(
@@ -164,11 +121,19 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
         return ElevatedButton(
           onPressed: () => _handleNext(option),
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: const Color(0xFF1565C0),
             foregroundColor: Colors.white,
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            textStyle: const TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'Poppins',
+            ),
           ),
-          child: Text(option, style: const TextStyle(color: Colors.white)),
+          child: Text(option, textAlign: TextAlign.center),
         );
       }).toList(),
     );
@@ -192,6 +157,10 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
           return localizations.getStep5Question(widget.languagePreference);
         case 5:
           return localizations.getStep6Question(widget.languagePreference);
+        case 6: // Question for Age
+          return localizations.getStep7Question(widget.languagePreference);
+        case 7: // Question for Gender
+          return localizations.getStep8Question(widget.languagePreference);
         default:
           return '';
       }
@@ -211,6 +180,10 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
           return localizedTimeOptions;
         case 5:
           return localizedTimelineOptions;
+        case 6: // Options for Age
+          return ['Under 18', '18-25', '26-35', '36-45', '46 and above'];
+        case 7: // Options for Gender
+          return ['Male', 'Female', 'Other'];
         default:
           return [];
       }
@@ -220,7 +193,7 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
       switch (_step) {
         case 0:
           return localizations.getProgressStart();
-        case 5:
+        case 7:
           return localizations.getProgressAlmostDone();
         default:
           return localizations.getProgressKeepGoing();
@@ -250,19 +223,25 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               LinearProgressIndicator(
-                value: (_step + 1) / 6,
-                color: Colors.blue,
+                value: (_step + 1) / 8,
+                color: const Color(0xFF1565C0),
                 backgroundColor: Colors.blue.shade100,
               ),
               const SizedBox(height: 8),
               Text(
                 getProgressMessage(),
-                style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
+                style: const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Poppins',
+                  color: Color(0xFF0D47A1),
+                ),
               ),
               const SizedBox(height: 20),
-              Text("Hi ${widget.userName}! 👋", style: theme.headlineSmall),
+              Text("Hi ${widget.userName}! 👋",
+                  style: theme.titleLarge?.copyWith(fontWeight: FontWeight.w600, fontSize: 16)),
               const SizedBox(height: 10),
-              Text(getQuestion(), style: theme.titleLarge),
+              Text(getQuestion(), style: theme.titleMedium?.copyWith(fontSize: 14, fontWeight: FontWeight.w500)),
               const SizedBox(height: 20),
               _buildOptions(getOptions()),
               const SizedBox(height: 30),
@@ -271,9 +250,16 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
                   onPressed: () {
                     Navigator.pushNamed(context, '/coursesDashboard');
                   },
-                  child: Text(widget.languagePreference == 'हिंदी'
-                      ? "प्रश्न छोड़ें और कोर्स देखें"
-                      : "Skip Questions & Explore Courses"),
+                  child: Text(
+                    widget.languagePreference == 'हिंदी'
+                        ? "प्रश्न छोड़ें और कोर्स देखें"
+                        : "Skip Questions & Explore Courses",
+                    style: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFF1565C0),
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -286,10 +272,32 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.languagePreference == 'हिंदी'
-            ? "📝 आपकी इंग्लिश यात्रा"
-            : "📝 Your English Journey"),
+      backgroundColor: const Color(0xFFF2F6FB),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(56),
+        child: AppBar(
+          elevation: 0,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xFF1976D2), Color(0xFF42A5F5)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+          ),
+          title: Text(
+            widget.languagePreference == 'हिंदी'
+                ? "📝 आपकी इंग्लिश यात्रा"
+                : "📝 Your English Journey",
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              color: Colors.white,
+            ),
+          ),
+          backgroundColor: Colors.transparent,
+        ),
       ),
       body: _buildStepUI(),
     );

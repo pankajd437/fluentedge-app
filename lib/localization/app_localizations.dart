@@ -61,6 +61,8 @@ class AppLocalizations {
   String get step4Question => "What's your biggest challenge in English?";
   String get step5Question => "How much time can you give daily?";
   String get step6Question => "When do you want to become fluent?";
+  String get step7Question => "What's your age group?";
+  String get step8Question => "What's your gender?";
 
   // ========== Progress Messages ==========
   String getProgressStart() {
@@ -99,91 +101,74 @@ class AppLocalizations {
     }
   }
 
-  // ========== Questions ==========
-  String getStep1Question(String langPref) {
+  // ========== Public Question Accessors (Fix for QuestionnairePage) ==========
+  String getStep1Question(String langPref) => getStep1QuestionLocalized(langPref);
+  String getStep2Question(String langPref) => getStep2QuestionLocalized(langPref);
+  String getStep3Question(String langPref) => getStep3QuestionLocalized(langPref);
+  String getStep4Question(String langPref) => getStep4QuestionLocalized(langPref);
+  String getStep5Question(String langPref) => getStep5QuestionLocalized(langPref);
+  String getStep6Question(String langPref) => getStep6QuestionLocalized(langPref);
+  String getStep7Question(String langPref) => getStep7QuestionLocalized(langPref);
+  String getStep8Question(String langPref) => getStep8QuestionLocalized(langPref);
+
+  // ========== Localized Question Handlers ==========
+  String getStep1QuestionLocalized(String langPref) {
     switch (_getLangPref(langPref)) {
       case 'hi': return 'आप अंग्रेज़ी क्यों सीखना चाहते हैं?';
       default: return step1Question;
     }
   }
 
-  String getStep2Question(String langPref) {
+  String getStep2QuestionLocalized(String langPref) {
     switch (_getLangPref(langPref)) {
       case 'hi': return 'आपकी वर्तमान अंग्रेज़ी स्तर क्या है?';
       default: return step2Question;
     }
   }
 
-  String getStep3Question(String langPref) {
+  String getStep3QuestionLocalized(String langPref) {
     switch (_getLangPref(langPref)) {
       case 'hi': return 'आप किस तरीके से सीखना पसंद करते हैं?';
       default: return step3Question;
     }
   }
 
-  String getStep4Question(String langPref) {
+  String getStep4QuestionLocalized(String langPref) {
     switch (_getLangPref(langPref)) {
       case 'hi': return 'अंग्रेज़ी में आपकी सबसे बड़ी चुनौती क्या है?';
       default: return step4Question;
     }
   }
 
-  String getStep5Question(String langPref) {
+  String getStep5QuestionLocalized(String langPref) {
     switch (_getLangPref(langPref)) {
       case 'hi': return 'आप प्रतिदिन कितना समय दे सकते हैं?';
       default: return step5Question;
     }
   }
 
-  String getStep6Question(String langPref) {
+  String getStep6QuestionLocalized(String langPref) {
     switch (_getLangPref(langPref)) {
       case 'hi': return 'आप कब तक fluent बनना चाहते हैं?';
       default: return step6Question;
     }
   }
 
-  // ========== Dynamic Messages ==========
-  String getPracticeLanguageMessage(String langPref) {
+  String getStep7QuestionLocalized(String langPref) {
     switch (_getLangPref(langPref)) {
-      case 'hi': return hindiPracticeMessage;
-      default: return englishPracticeMessage;
+      case 'hi': return 'आपकी उम्र क्या है?';
+      default: return step7Question;
     }
   }
 
-  String getWelcomeResponse(String userName, String langPref) {
+  String getStep8QuestionLocalized(String langPref) {
     switch (_getLangPref(langPref)) {
-      case 'hi': return 'नमस्ते $userName! अंग्रेज़ी का अभ्यास करने के लिए तैयार हैं?';
-      default: return aiWelcomeResponse(userName);
+      case 'hi': return 'आपका लिंग क्या है?';
+      default: return step8Question;
     }
   }
 
-  String getAIResponse(String userName, String langPref) {
-    final random = Random();
-    final englishReplies = [
-      "That's a great start! Let's practice some more.",
-      "Well done! Can you try saying that differently?",
-      "Nice! Now let’s add more vocabulary.",
-    ];
-    final hindiReplies = [
-      'बहुत बढ़िया $userName! अब कुछ और अभ्यास करें।',
-      'शानदार! अब एक और कोशिश करें।',
-      'अच्छा किया! अब एक नया वाक्य बोलें।',
-    ];
-
-    switch (_getLangPref(langPref)) {
-      case 'hi': return hindiReplies[random.nextInt(hindiReplies.length)];
-      default: return englishReplies[random.nextInt(englishReplies.length)];
-    }
-  }
-
-  String getLanguageDisplayName(String langPref) {
-    switch (_getLangPref(langPref)) {
-      case 'hi': return hindiLanguageName;
-      default: return englishLanguageName;
-    }
-  }
-
-  // ========== Options ==========
+  // ========== Option Accessors ==========
   List<String> getMotivationOptions(String lang) {
     switch (_getLangPref(lang)) {
       case 'hi': return ['नौकरी इंटरव्यू', 'कैरियर ग्रोथ', 'विदेश में पढ़ाई', 'यात्रा', 'आत्मविश्वास बढ़ाना', 'पब्लिक स्पीकिंग', 'प्रतियोगी परीक्षा', 'दैनिक बातचीत', 'अन्य'];
@@ -223,6 +208,47 @@ class AppLocalizations {
     switch (_getLangPref(lang)) {
       case 'hi': return ['1 महीने में', '1–3 महीने', '3–6 महीने', '6 महीने से अधिक'];
       default: return ['Within 1 month', '1–3 months', '3–6 months', 'More than 6 months'];
+    }
+  }
+
+  // ========== Dynamic & AI Messages ==========
+  String getPracticeLanguageMessage(String langPref) {
+    switch (_getLangPref(langPref)) {
+      case 'hi': return hindiPracticeMessage;
+      default: return englishPracticeMessage;
+    }
+  }
+
+  String getWelcomeResponse(String userName, String langPref) {
+    switch (_getLangPref(langPref)) {
+      case 'hi': return 'नमस्ते $userName! अंग्रेज़ी का अभ्यास करने के लिए तैयार हैं?';
+      default: return aiWelcomeResponse(userName);
+    }
+  }
+
+  String getAIResponse(String userName, String langPref) {
+    final random = Random();
+    final englishReplies = [
+      "That's a great start! Let's practice some more.",
+      "Well done! Can you try saying that differently?",
+      "Nice! Now let’s add more vocabulary.",
+    ];
+    final hindiReplies = [
+      'बहुत बढ़िया $userName! अब कुछ और अभ्यास करें।',
+      'शानदार! अब एक और कोशिश करें।',
+      'अच्छा किया! अब एक नया वाक्य बोलें।',
+    ];
+
+    switch (_getLangPref(langPref)) {
+      case 'hi': return hindiReplies[random.nextInt(hindiReplies.length)];
+      default: return englishReplies[random.nextInt(englishReplies.length)];
+    }
+  }
+
+  String getLanguageDisplayName(String langPref) {
+    switch (_getLangPref(langPref)) {
+      case 'hi': return hindiLanguageName;
+      default: return englishLanguageName;
     }
   }
 
