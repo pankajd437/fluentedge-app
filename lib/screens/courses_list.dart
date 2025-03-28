@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluentedge_app/localization/app_localizations.dart';
 
 class CoursesListPage extends StatelessWidget {
   CoursesListPage({Key? key}) : super(key: key);
@@ -32,6 +33,8 @@ class CoursesListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
     return Scaffold(
       backgroundColor: const Color(0xFFF2F6FB),
       appBar: PreferredSize(
@@ -46,12 +49,12 @@ class CoursesListPage extends StatelessWidget {
               ),
             ),
           ),
-          title: const Text(
-            "Your Fluent Future Starts Here",
-            style: TextStyle(
+          title: Text(
+            localizations.coursesListTitle,
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,
-              color: Colors.white, // ✅ Updated to white
+              color: Colors.white,
             ),
           ),
           backgroundColor: Colors.transparent,
@@ -76,7 +79,7 @@ class CoursesListPage extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  "Not sure where to start? Resume questionnaire →",
+                  localizations.resumeQuestionnaire,
                   style: TextStyle(
                     fontSize: 13,
                     color: Colors.blue.shade900,
@@ -91,8 +94,8 @@ class CoursesListPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: GridView.builder(
                   itemCount: courses.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: MediaQuery.of(context).size.width > 600 ? 3 : 2,
                     childAspectRatio: 3 / 2.1,
                     crossAxisSpacing: 12,
                     mainAxisSpacing: 12,
@@ -101,7 +104,8 @@ class CoursesListPage extends StatelessWidget {
                     final course = courses[index];
                     return GestureDetector(
                       onTap: () {
-                        // TODO: Navigate to course screen
+                        // TODO: Pass course details to course screen if needed
+                        Navigator.pushNamed(context, '/courseDetail', arguments: course['title']);
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -116,13 +120,11 @@ class CoursesListPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 12),
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Icon(course['icon'],
-                                color: Color(0xFF0D47A1), size: 24),
+                            Icon(course['icon'], color: const Color(0xFF0D47A1), size: 24),
                             Text(
                               course['title'],
                               textAlign: TextAlign.center,
@@ -135,20 +137,19 @@ class CoursesListPage extends StatelessWidget {
                               width: double.infinity,
                               child: ElevatedButton(
                                 onPressed: () {
-                                  // TODO: Navigate to course
+                                  Navigator.pushNamed(context, '/courseDetail', arguments: course['title']);
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xFF1565C0),
+                                  backgroundColor: const Color(0xFF1565C0),
                                   minimumSize: const Size(0, 34),
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 12, vertical: 4),
+                                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                 ),
-                                child: const Text(
-                                  "Start Now",
-                                  style: TextStyle(
+                                child: Text(
+                                  localizations.startNow,
+                                  style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 12,
                                     fontWeight: FontWeight.w500,

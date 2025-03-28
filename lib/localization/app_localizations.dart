@@ -22,6 +22,19 @@ class AppLocalizations {
   String get continueButton => Intl.message('Continue', name: 'continueButton');
   String get okButton => Intl.message('OK', name: 'okButton');
 
+  // ========== Added for CourseListPage Fix ==========
+  String get coursesListTitle => locale.languageCode == 'hi'
+      ? 'आपके पर्सनलाइज़्ड कोर्स'
+      : 'Your Personalized Courses';
+
+  String get resumeQuestionnaire => locale.languageCode == 'hi'
+      ? 'शुरुआती प्रश्नावली फिर से शुरू करें →'
+      : 'Resume Questionnaire →';
+
+  String get startNow => locale.languageCode == 'hi'
+      ? 'अभी शुरू करें'
+      : 'Start Now';
+
   // ========== Welcome Page ==========
   String get welcomeMessage => "Hi! I'm your AI English Mentor – let’s make learning English simple and fun!";
   String get welcomeMessageHindi => 'नमस्ते! मैं हूँ आपका AI इंग्लिश मेंटर – चलिए आसान और मज़ेदार तरीक़े से इंग्लिश सीखते हैं!';
@@ -101,7 +114,7 @@ class AppLocalizations {
     }
   }
 
-  // ========== Public Question Accessors (Fix for QuestionnairePage) ==========
+  // ========== Public Question Accessors ==========
   String getStep1Question(String langPref) => getStep1QuestionLocalized(langPref);
   String getStep2Question(String langPref) => getStep2QuestionLocalized(langPref);
   String getStep3Question(String langPref) => getStep3QuestionLocalized(langPref);
@@ -171,8 +184,10 @@ class AppLocalizations {
   // ========== Option Accessors ==========
   List<String> getMotivationOptions(String lang) {
     switch (_getLangPref(lang)) {
-      case 'hi': return ['नौकरी इंटरव्यू', 'कैरियर ग्रोथ', 'विदेश में पढ़ाई', 'यात्रा', 'आत्मविश्वास बढ़ाना', 'पब्लिक स्पीकिंग', 'प्रतियोगी परीक्षा', 'दैनिक बातचीत', 'अन्य'];
-      default: return ['Job Interviews', 'Career Growth', 'Study Abroad', 'Travel', 'Confidence Building', 'Public Speaking', 'Competitive Exams', 'Daily Conversations', 'Others'];
+      case 'hi':
+        return ['नौकरी इंटरव्यू', 'कैरियर ग्रोथ', 'विदेश में पढ़ाई', 'यात्रा', 'आत्मविश्वास बढ़ाना', 'पब्लिक स्पीकिंग', 'प्रतियोगी परीक्षा', 'दैनिक बातचीत', 'अन्य'];
+      default:
+        return ['Job Interviews', 'Career Growth', 'Study Abroad', 'Travel', 'Confidence Building', 'Public Speaking', 'Competitive Exams', 'Daily Conversations', 'Others'];
     }
   }
 

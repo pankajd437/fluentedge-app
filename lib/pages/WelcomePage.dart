@@ -3,8 +3,9 @@ import 'package:lottie/lottie.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'ice_breaking_chat.dart';
-import 'package:fluentedge_frontend/widgets/fluentedge_logo.dart';
-import 'package:fluentedge_frontend/localization/app_localizations.dart';
+import 'package:fluentedge_app/widgets/fluentedge_logo.dart';
+import 'package:fluentedge_app/localization/app_localizations.dart';
+import 'package:fluentedge_app/main.dart'; // For FluentEdgeApp.setLocale
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -61,10 +62,11 @@ class _WelcomePageState extends State<WelcomePage> {
   void _handleLanguageChange(String? newValue) {
     if (newValue != null) {
       setState(() => _selectedLanguage = newValue);
+
       if (newValue == "हिंदी" || newValue == "Hinglish") {
-        AppLocalizations.of(context)!.locale = const Locale('hi');
+        FluentEdgeApp.setLocale(context, const Locale('hi'));
       } else {
-        AppLocalizations.of(context)!.locale = const Locale('en');
+        FluentEdgeApp.setLocale(context, const Locale('en'));
       }
     }
   }
@@ -73,6 +75,7 @@ class _WelcomePageState extends State<WelcomePage> {
     if (_nameController.text.trim().isEmpty) return;
 
     await _saveUserBasicInfo();
+
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -99,12 +102,12 @@ class _WelcomePageState extends State<WelcomePage> {
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
                   children: [
-                    const SizedBox(height: 6), // ✅ Reduced gap
+                    const SizedBox(height: 6),
                     const FluentEdgeLogo(),
-                    const SizedBox(height: 8), // ✅ Reduced gap
-
+                    const SizedBox(height: 8),
                     TextField(
                       controller: _nameController,
+                      autofocus: true,
                       decoration: InputDecoration(
                         labelText: localizations.nameFieldLabel,
                         border: OutlineInputBorder(
@@ -113,9 +116,7 @@ class _WelcomePageState extends State<WelcomePage> {
                         prefixIcon: const Icon(Icons.person, color: Color(0xFF0D47A1)),
                       ),
                     ),
-
-                    const SizedBox(height: 10), // ✅ Reduced gap
-
+                    const SizedBox(height: 10),
                     Lottie.asset(
                       'assets/animations/mentor_welcome.json',
                       width: 250,
@@ -123,7 +124,6 @@ class _WelcomePageState extends State<WelcomePage> {
                       fit: BoxFit.cover,
                     ),
                     const SizedBox(height: 16),
-
                     Text(
                       localizations.getLocalizedWelcomeMessage(),
                       textAlign: TextAlign.center,
@@ -134,7 +134,6 @@ class _WelcomePageState extends State<WelcomePage> {
                       ),
                     ),
                     const SizedBox(height: 10),
-
                     Text(
                       localizations.getLocalizedSubtitle(),
                       textAlign: TextAlign.center,
@@ -146,7 +145,6 @@ class _WelcomePageState extends State<WelcomePage> {
                   ],
                 ),
               ),
-
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -197,7 +195,6 @@ class _WelcomePageState extends State<WelcomePage> {
                       ],
                     ),
                     const SizedBox(height: 15),
-
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(

@@ -7,11 +7,13 @@ import 'package:fluentedge_app/screens/smart_course_recommendation.dart';
 class QuestionnairePage extends StatefulWidget {
   final String userName;
   final String languagePreference;
+  final void Function(String gender, int age)? onGenderAndAgeSubmitted;
 
   const QuestionnairePage({
     super.key,
     required this.userName,
     required this.languagePreference,
+    this.onGenderAndAgeSubmitted,
   });
 
   @override
@@ -27,17 +29,23 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
   String? difficultyArea;
   String? dailyTime;
   String? learningTimeline;
-  String? age; // Added Age
-  String? gender; // Added Gender
+  String? age;
+  String? gender;
 
   late AppLocalizations localizations;
 
-  List<String> get localizedMotivations => localizations.getMotivationOptions(widget.languagePreference);
-  List<String> get localizedLevels => localizations.getEnglishLevelOptions(widget.languagePreference);
-  List<String> get localizedStyles => localizations.getLearningStyleOptions(widget.languagePreference);
-  List<String> get localizedDifficulties => localizations.getDifficultyOptions(widget.languagePreference);
-  List<String> get localizedTimeOptions => localizations.getTimeOptions(widget.languagePreference);
-  List<String> get localizedTimelineOptions => localizations.getTimelineOptions(widget.languagePreference);
+  List<String> get localizedMotivations =>
+      localizations.getMotivationOptions(widget.languagePreference);
+  List<String> get localizedLevels =>
+      localizations.getEnglishLevelOptions(widget.languagePreference);
+  List<String> get localizedStyles =>
+      localizations.getLearningStyleOptions(widget.languagePreference);
+  List<String> get localizedDifficulties =>
+      localizations.getDifficultyOptions(widget.languagePreference);
+  List<String> get localizedTimeOptions =>
+      localizations.getTimeOptions(widget.languagePreference);
+  List<String> get localizedTimelineOptions =>
+      localizations.getTimelineOptions(widget.languagePreference);
 
   void _handleNext(String selectedValue) {
     switch (_step) {
@@ -59,10 +67,10 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
       case 5:
         learningTimeline = selectedValue;
         break;
-      case 6: // New step for age
+      case 6:
         age = selectedValue;
         break;
-      case 7: // New step for gender
+      case 7:
         gender = selectedValue;
         break;
     }
@@ -76,7 +84,10 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
 
   Future<void> _submitUserData() async {
     try {
-      final result = await ApiService.saveUserResponses(
+      final parsedAge = int.tryParse(age ?? '0') ?? 0;
+
+      // 🔄 Send API request
+      final response = await ApiService.saveUserResponses(
         name: widget.userName,
         motivation: motivation ?? '',
         englishLevel: englishLevel ?? '',
@@ -84,27 +95,31 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
         difficultyArea: difficultyArea ?? '',
         dailyTime: dailyTime ?? '',
         learningTimeline: learningTimeline ?? '',
-        age: int.tryParse(age ?? '0') ?? 0,  // Parse age to integer, default to 0 if invalid
-        gender: gender ?? '',  // Include gender in the request
+        age: parsedAge,
+        gender: gender ?? '',
       );
 
-      String course = result['recommended_course'] ?? 'FluentEdge Starter Course';
-      course = course.replaceAll(RegExp(r'[^\x00-\x7F]+'), '').trim();
+      // ✅ Extract dynamic recommendedCourses from API
+      final List<String> recommendedCourses =
+          (response['recommended_courses'] as List?)?.cast<String>() ??
+              ['Smart Daily Conversations'];
 
-      // Directly navigate to the SmartCourseRecommendationPage
-      Navigator.pushReplacement(
+      // ✅ Notify parent about gender & age
+      widget.onGenderAndAgeSubmitted?.call(gender ?? '', parsedAge);
+
+      // ✅ Navigate to SmartCourseRecommendationPage with dynamic list
+      Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) => SmartCourseRecommendationPage(
+          builder: (context) => SmartCourseRecommendationPage(
             userName: widget.userName,
             languagePreference: widget.languagePreference,
-            recommendedCourse: course,
-            gender: gender ?? '', // Pass gender here
-            age: int.tryParse(age ?? '') ?? 0, // Pass age as integer
+            gender: gender ?? '',
+            age: parsedAge,
+            recommendedCourses: recommendedCourses,
           ),
         ),
       );
-
     } catch (e) {
       debugPrint("❌ Submission error: $e");
       ScaffoldMessenger.of(context).showSnackBar(
@@ -140,7 +155,8 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
   }
 
   Widget _buildStepUI() {
-    localizations = AppLocalizations.of(context) ?? AppLocalizations(const Locale('en'));
+    localizations =
+        AppLocalizations.of(context) ?? AppLocalizations(const Locale('en'));
     final theme = Theme.of(context).textTheme;
 
     String getQuestion() {
@@ -157,9 +173,9 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
           return localizations.getStep5Question(widget.languagePreference);
         case 5:
           return localizations.getStep6Question(widget.languagePreference);
-        case 6: // Question for Age
+        case 6:
           return localizations.getStep7Question(widget.languagePreference);
-        case 7: // Question for Gender
+        case 7:
           return localizations.getStep8Question(widget.languagePreference);
         default:
           return '';
@@ -180,9 +196,9 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
           return localizedTimeOptions;
         case 5:
           return localizedTimelineOptions;
-        case 6: // Options for Age
+        case 6:
           return ['Under 18', '18-25', '26-35', '36-45', '46 and above'];
-        case 7: // Options for Gender
+        case 7:
           return ['Male', 'Female', 'Other'];
         default:
           return [];
@@ -218,7 +234,8 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
           ),
         ),
         SingleChildScrollView(
-          padding: const EdgeInsets.only(bottom: 40, left: 16, right: 16, top: 16),
+          padding:
+              const EdgeInsets.only(bottom: 40, left: 16, right: 16, top: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -239,9 +256,12 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
               ),
               const SizedBox(height: 20),
               Text("Hi ${widget.userName}! 👋",
-                  style: theme.titleLarge?.copyWith(fontWeight: FontWeight.w600, fontSize: 16)),
+                  style: theme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.w600, fontSize: 16)),
               const SizedBox(height: 10),
-              Text(getQuestion(), style: theme.titleMedium?.copyWith(fontSize: 14, fontWeight: FontWeight.w500)),
+              Text(getQuestion(),
+                  style: theme.titleMedium?.copyWith(
+                      fontSize: 14, fontWeight: FontWeight.w500)),
               const SizedBox(height: 20),
               _buildOptions(getOptions()),
               const SizedBox(height: 30),

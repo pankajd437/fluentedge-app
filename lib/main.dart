@@ -36,6 +36,8 @@ class _FluentEdgeAppState extends State<FluentEdgeApp> {
   Locale _locale = const Locale('en');
   String _userName = '';
   String _languagePreference = 'English';
+  String _gender = '';
+  int _age = 0;
 
   void setLocale(Locale locale) {
     setState(() {
@@ -47,6 +49,13 @@ class _FluentEdgeAppState extends State<FluentEdgeApp> {
     setState(() {
       _userName = name;
       _languagePreference = langPref;
+    });
+  }
+
+  void _updateGenderAndAge(String gender, int age) {
+    setState(() {
+      _gender = gender;
+      _age = age;
     });
   }
 
@@ -111,6 +120,9 @@ class _FluentEdgeAppState extends State<FluentEdgeApp> {
               key: const ValueKey('questionnaire_page'),
               userName: _userName,
               languagePreference: _languagePreference,
+              onGenderAndAgeSubmitted: (gender, age) {
+                _updateGenderAndAge(gender, age);
+              },
             ),
         '/chat': (context) => IceBreakingChatPage(
               key: const ValueKey('chat_page'),
@@ -119,7 +131,6 @@ class _FluentEdgeAppState extends State<FluentEdgeApp> {
             ),
         '/coursesDashboard': (context) => const CoursesDashboardPage(),
         '/coursesList': (context) => CoursesListPage(),
-        // Add additional routes if needed here
       },
     );
   }

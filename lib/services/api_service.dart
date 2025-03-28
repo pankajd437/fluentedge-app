@@ -1,12 +1,15 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-// Define the API base URL
+/// API service for FluentEdge backend integration
 class ApiService {
-  // Ideally, baseUrl should be configurable for different environments
-  static const String baseUrl = 'http://10.0.2.2:8000';
+  // ======================== CONFIG ========================
+  // Base URL for the backend API (use localhost for development)
+  static const String baseUrl = 'http://localhost:8000';
 
-  // Define a method to save user responses to the server
+  // ====================== API METHODS ======================
+
+  /// Sends user responses to the backend and returns recommended courses
   static Future<Map<String, dynamic>> saveUserResponses({
     required String name,
     required String motivation,
@@ -15,12 +18,12 @@ class ApiService {
     required String difficultyArea,
     required String dailyTime,
     required String learningTimeline,
-    required int age,         // Added age
-    required String gender,   // Added gender
+    required int age,
+    required String gender,
   }) async {
     final url = Uri.parse('$baseUrl/save-responses');
 
-    // Constructing the body for the POST request
+    // Prepare JSON body
     final body = jsonEncode({
       'name': name,
       'motivation': motivation,
@@ -29,11 +32,10 @@ class ApiService {
       'difficulty_area': difficultyArea,
       'daily_time': dailyTime,
       'learning_timeline': learningTimeline,
-      'age': age,             // Include age in the request body
-      'gender': gender,       // Include gender in the request body
+      'age': age,
+      'gender': gender,
     });
 
-    // Sending the POST request
     try {
       final response = await http.post(
         url,
@@ -43,16 +45,18 @@ class ApiService {
         body: body,
       );
 
-      // Checking if the response status is OK (200)
       if (response.statusCode == 200) {
-        return jsonDecode(response.body); // Return the decoded response body
+        // ✅ Successfully received response
+        return jsonDecode(response.body);
       } else {
-        // Handling errors
+        // ❌ Backend returned an error
+        final error = jsonDecode(response.body);
         throw Exception(
-            'Failed to save user responses. Status code: ${response.statusCode}');
+          'Failed to save user responses.\nStatus: ${response.statusCode}\nMessage: ${error['detail'] ?? response.body}',
+        );
       }
     } catch (e) {
-      // Handling connection or other errors
+      // ❌ Network or serialization issue
       throw Exception('Error occurred while saving responses: $e');
     }
   }

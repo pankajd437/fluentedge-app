@@ -222,6 +222,10 @@ flutter_svg
 3.4
 file:///C:/Users/Pankaj%20Dubey/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_svg-2.0.17/
 file:///C:/Users/Pankaj%20Dubey/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_svg-2.0.17/lib/
+flutter_tts
+2.12
+file:///C:/Users/Pankaj%20Dubey/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_tts-3.8.5/
+file:///C:/Users/Pankaj%20Dubey/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_tts-3.8.5/lib/
 formz
 3.5
 file:///C:/Users/Pankaj%20Dubey/AppData/Local/Pub/Cache/hosted/pub.dev/formz-0.8.0/
@@ -476,8 +480,8 @@ file:///C:/Users/Pankaj%20Dubey/AppData/Local/Pub/Cache/hosted/pub.dev/rxdart-0.
 file:///C:/Users/Pankaj%20Dubey/AppData/Local/Pub/Cache/hosted/pub.dev/rxdart-0.28.0/lib/
 shared_preferences
 3.5
-file:///C:/Users/Pankaj%20Dubey/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.5.2/
-file:///C:/Users/Pankaj%20Dubey/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.5.2/lib/
+file:///C:/Users/Pankaj%20Dubey/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.5.3/
+file:///C:/Users/Pankaj%20Dubey/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.5.3/lib/
 shared_preferences_android
 3.6
 file:///C:/Users/Pankaj%20Dubey/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_android-2.4.8/

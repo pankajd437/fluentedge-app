@@ -1,3 +1,5 @@
+import 'persona_identifier.dart';
+
 class CourseRecommendationService {
   // List of all available courses with their properties
   final List<Map<String, dynamic>> allCourses = [
@@ -27,51 +29,80 @@ class CourseRecommendationService {
     {"title": "Grammar Doctor: Fix My Mistakes!", "icon": "medical_services", "tags": ["grammar", "advanced"]},
   ];
 
-  // Function to recommend course based on the user persona
-  String recommendCourse(String motivation, String englishLevel, String learningStyle, String difficultyArea, int age, String gender) {
-    // Create a list of courses based on user age
-    List<Map<String, dynamic>> availableCourses = [];
-    
-    // If the user is an adult, include all courses
-    if (age >= 18) {
-      availableCourses = allCourses;
-    } else {
-      // For minors, exclude adult-only courses
-      availableCourses = allCourses.where((course) => course["adultOnly"] == null).toList();
-    }
+  // Mapping: Persona → Course titles
+  final Map<String, List<String>> personaCourseMap = {
+    "Young Beginner Explorer": [
+      "Speak English Fluently",
+      "Smart Daily Conversations",
+      "English for School Projects",
+      "Build Strong Vocabulary"
+    ],
+    "Adult Fluency Seeker": [
+      "Speak English Fluently",
+      "Confident Pronunciation Mastery",
+      "Smart Daily Conversations",
+      "Advanced Fluency Challenge"
+    ],
+    "Career-Oriented Professional": [
+      "Office English for Professionals",
+      "English for Interviews & Job Success",
+      "Business English for Managers",
+      "AI Mock Practice for Fluency Boosters"
+    ],
+    "Home Learner (Homemaker)": [
+      "Everyday English for Homemakers",
+      "Speak English Fluently",
+      "Polite English for Social Media"
+    ],
+    "Grammar-Focused Learner": [
+      "Master English Grammar",
+      "Grammar Doctor: Fix My Mistakes!",
+      "Build Strong Vocabulary"
+    ],
+    "Spiritual Explorer": [
+      "Temple & Tirth Yatra English",
+      "Festival & Celebration English"
+    ],
+    "Medical or Teaching Professional": [
+      "Medical English for Healthcare Workers",
+      "Tutor’s English Kit",
+      "Public Speaking & Stage Talk"
+    ],
+    "Advanced Fluency Achiever": [
+      "Advanced Fluency Challenge",
+      "AI-Powered Spoken English Coach"
+    ],
+  };
 
-    // Match courses based on motivation, learning style, and difficulty
-    List<Map<String, dynamic>> matchedCourses = [];
+  /// Returns list of recommended course titles based on user's questionnaire responses
+  List<String> recommendCourses({
+    required String motivation,
+    required String englishLevel,
+    required String learningStyle,
+    required String difficultyArea,
+    required int age,
+    required String gender,
+  }) {
+    final persona = PersonaIdentifier.getPersona(
+      motivation: motivation,
+      englishLevel: englishLevel,
+      learningStyle: learningStyle,
+      difficultyArea: difficultyArea,
+      age: age,
+      gender: gender,
+    );
 
-    // Loop through all courses and find courses matching user inputs
-    for (var course in availableCourses) {
-      bool matches = false;
+    final recommendedTitles = personaCourseMap[persona] ?? ["Smart Daily Conversations"];
 
-      // Match motivation (career-related, personal growth, etc.)
-      if (motivation == "Career growth" && course["tags"].contains("business") && englishLevel == "Intermediate") {
-        matches = true;
-      } else if (motivation == "Personal growth" && course["tags"].contains("fluency") && englishLevel == "Beginner") {
-        matches = true;
-      }
+    // Filter courses based on age
+    final allowedCourses = allCourses.where((course) {
+      final isAdultOnly = course["adultOnly"] == true;
+      return !isAdultOnly || age >= 18;
+    }).toList();
 
-      // Match learning style and difficulty area
-      if (learningStyle == "Visual" && course["tags"].contains("grammar")) {
-        matches = true;
-      } else if (difficultyArea == "Pronunciation" && course["tags"].contains("pronunciation")) {
-        matches = true;
-      }
-
-      // Add matched courses to the list
-      if (matches) {
-        matchedCourses.add(course);
-      }
-    }
-
-    // If we found matched courses, return the best one, else return a default course
-    if (matchedCourses.isNotEmpty) {
-      return matchedCourses[0]['title'];
-    } else {
-      return "Smart Daily Conversations"; // Default course
-    }
+    // Return only allowed course titles from recommendations
+    return recommendedTitles.where((title) =>
+      allowedCourses.any((course) => course["title"] == title)
+    ).toList();
   }
 }

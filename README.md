@@ -1,15 +1,34 @@
-# fluentedge-app
-AI-powered English learning app
+# FluentEdge - AI-Powered English Learning App
 
-## Getting Started
+FluentEdge is a world-class AI-powered mobile and web app built using **Flutter** and **FastAPI**, designed to help users master English speaking, grammar, vocabulary, pronunciation, and fluency through interactive, real-life role-play scenarios and personalized learning paths.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 🔊 **AI Mentor Chat** – Real-time voice-based AI mentor to guide your English learning journey.
+- 🎯 **Personalized Onboarding** – Tailored course suggestions based on user goals, age, gender, and fluency level.
+- 📚 **Smart Course Dashboard** – Recommended and full course list, intelligently organized for practical learning.
+- 🔡 **Grammar, Pronunciation, & Vocabulary Modules**
+- 🧠 **AI-Powered Feedback** – Real-time fluency, grammar, and pronunciation feedback.
+- 🌐 **Multilingual Support** – Hindi, English, and Hinglish for beginners.
+- 🧩 **Gamified Learning** – Streaks, badges, leaderboards, motivational popups.
+- 🗣️ **Real-Life Role-Plays** – Scenarios like job interviews, travel, office, etc.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 📁 Project Structure
+
+```bash
+fluentedge_frontend/
+├── lib/
+│   ├── screens/             # All screen pages (Welcome, Questionnaire, Dashboard, etc.)
+│   ├── widgets/             # Shared components like FluentEdge logo
+│   ├── localization/        # Custom AppLocalizations for multilingual content
+│   ├── services/            # API Service to connect to FastAPI backend
+│   └── main.dart            # Entry point of the Flutter app
+├── assets/
+│   ├── animations/          # Lottie animations (AI mentor, confetti, etc.)
+│   └── icons/               # App icons
+├── pubspec.yaml             # Flutter dependencies
+└── README.md                # Project overview and setup instructions
