@@ -3,17 +3,18 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Screens
-import 'screens/welcome_page.dart';
-import 'screens/ice_breaking_chat.dart';
-import 'screens/questionnaire_page.dart';
-import 'screens/courses_dashboard.dart';
-import 'screens/courses_list.dart';
+import 'package:fluentedge_app/screens/welcome_page.dart';
+import 'package:fluentedge_app/screens/ice_breaking_chat.dart';
+import 'package:fluentedge_app/screens/questionnaire_page.dart';
+import 'package:fluentedge_app/screens/courses_dashboard.dart';
+import 'package:fluentedge_app/screens/course_detail_page.dart';
+import 'package:fluentedge_app/screens/lesson_page.dart'; // ✅ Added
 
 // Localization
-import 'localization/app_localizations.dart';
+import 'package:fluentedge_app/localization/app_localizations.dart';
 
 // Theme Constants
-import 'constants.dart';
+import 'package:fluentedge_app/constants.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -81,32 +82,30 @@ class _FluentEdgeAppState extends State<FluentEdgeApp> {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         colorScheme: const ColorScheme.light(
           primary: kPrimaryBlue,
-          secondary: kAccentBlue,
+          secondary: kAccentGreen,
           background: Colors.white,
           surface: Colors.white,
-        ),
-        textTheme: const TextTheme(
-          displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-          titleLarge: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
-          bodyLarge: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500),
-          bodyMedium: TextStyle(fontSize: 13.0, fontWeight: FontWeight.w500),
         ),
         appBarTheme: const AppBarTheme(
           backgroundColor: kPrimaryBlue,
           foregroundColor: Colors.white,
           elevation: 0,
-          titleTextStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          titleTextStyle: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+          ),
         ),
       ),
       darkTheme: ThemeData(
         fontFamily: 'Poppins',
-        colorScheme: ColorScheme.dark(
+        scaffoldBackgroundColor: Colors.grey[900],
+        colorScheme: const ColorScheme.dark(
           primary: Colors.blue,
-          secondary: kAccentBlue,
+          secondary: kAccentGreen,
           surface: Colors.grey,
           background: Colors.grey,
         ),
-        scaffoldBackgroundColor: Colors.grey[900],
       ),
       initialRoute: '/welcome',
       routes: {
@@ -130,7 +129,30 @@ class _FluentEdgeAppState extends State<FluentEdgeApp> {
               languagePreference: _languagePreference,
             ),
         '/coursesDashboard': (context) => const CoursesDashboardPage(),
-        '/coursesList': (context) => CoursesListPage(),
+
+        // ✅ Course Detail Page
+        '/courseDetail': (context) {
+          final args = ModalRoute.of(context)?.settings.arguments;
+          if (args is Map<String, dynamic>) {
+            return CourseDetailPage(course: args);
+          } else {
+            return const Scaffold(
+              body: Center(child: Text("❌ Invalid course data.")),
+            );
+          }
+        },
+
+        // ✅ Lesson Page
+        '/lessonPage': (context) {
+          final args = ModalRoute.of(context)?.settings.arguments;
+          if (args is Map<String, dynamic>) {
+            return LessonPage(course: args);
+          } else {
+            return const Scaffold(
+              body: Center(child: Text("❌ Invalid lesson data.")),
+            );
+          }
+        },
       },
     );
   }

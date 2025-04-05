@@ -1,0 +1,1244 @@
+{
+  "courses": [
+    {
+      "courseId": 1,
+      "title": "Speak English Fluently",
+      "level": "Beginner",
+      "languageInstruction": "Hindi",
+      "lessons": [
+        {
+          "lessonId": 101,
+          "lessonNumber": 1,
+          "lessonTitle": "परिचय और बुनियादी शब्दावलियाँ",
+          "summary": "Meet Aisha—a friendly neighbor who wants to improve her daily English. This lesson begins with the simplest greetings and introduces 10 must-know words to kickstart your speaking journey.",
+          "activities": [
+            "Listen to Aisha greet you in English: 'Hello, my name is Aisha!' and repeat after her.",
+            "Learn 10 everyday words (morning, evening, friend, family, etc.) in both English & Hindi.",
+            "Record a 15-second self-introduction in mixed Hindi-English, imagining you’re introducing yourself to Aisha."
+          ],
+          "objectives": [
+            "Gain confidence in basic greetings",
+            "Familiarize with simple vocabulary"
+          ]
+        },
+        {
+          "lessonId": 102,
+          "lessonNumber": 2,
+          "lessonTitle": "वर्णमाला और ध्वनियाँ",
+          "summary": "Continue Aisha’s story: she’s practicing how letters sound in English. Together, you’ll map each English letter to a Hindi-friendly phonetic reference, sharpening your pronunciation.",
+          "activities": [
+            "Read a short word list (cup, car, bag, big) while Aisha demonstrates the correct English sounds.",
+            "Record yourself pronouncing 5 chosen words—focus on clear, confident speech.",
+            "Attempt a 20-second reading passage about a simple daily scene, ensuring each English word is pronounced distinctly."
+          ],
+          "objectives": [
+            "Understand English alphabet-sound mapping",
+            "Improve early-stage pronunciation"
+          ]
+        },
+        {
+          "lessonId": 103,
+          "lessonNumber": 3,
+          "lessonTitle": "रोज़मर्रा के संवाद, भाग 1",
+          "summary": "Aisha visits her neighbors and uses short Q&A to practice English greetings. This lesson helps you handle day-to-day dialogues, like ‘How are you?’ with Hindi support where needed.",
+          "activities": [
+            "Listen to a sample conversation: 'How are you?' 'I am fine, thank you.' and notice the polite tone.",
+            "Role-play greeting two imaginary neighbors—pretend you’re in Aisha’s building corridor!",
+            "Take a short quiz: pick the best reply for small talk scenarios."
+          ],
+          "objectives": [
+            "Handle simple daily greetings",
+            "Initiate small talk confidently"
+          ]
+        },
+        {
+          "lessonId": 104,
+          "lessonNumber": 4,
+          "lessonTitle": "वाक्य निर्माण और छोटा व्याकरण",
+          "summary": "Aisha needs to shop for groceries, so she practices short sentences like 'I have...' and 'I want...' to communicate clearly. Learn how present-tense basics fit into everyday needs.",
+          "activities": [
+            "Create 5 sentences using either 'I want ...' or 'I have ...'—imagine you’re writing your shopping list!",
+            "Grocery store role-play: 'I want 2 kilos of apples, please.'",
+            "Mini grammar quiz: fill in the blanks with the correct form of 'want' or 'have'."
+          ],
+          "objectives": [
+            "Learn basic sentence order (Subject + Verb + Object)",
+            "Apply present tense forms in daily scenarios"
+          ]
+        },
+        {
+          "lessonId": 105,
+          "lessonNumber": 5,
+          "lessonTitle": "सुनना और प्रतिक्रिया देना",
+          "summary": "Aisha overhears someone asking for help in English. Practice listening to short audios and giving clear responses so you’re ready to help or reply politely in everyday life.",
+          "activities": [
+            "Listen to a 1-minute audio: 'Hello, can you help me?' 'Sure, what do you need?'",
+            "Answer 5 comprehension questions in Hindi or short English to test your listening skills.",
+            "Repeat key lines from the audio, focusing on correct intonation and clarity."
+          ],
+          "objectives": [
+            "Build basic listening comprehension",
+            "Give short, clear replies in English"
+          ]
+        },
+        {
+          "lessonId": 106,
+          "lessonNumber": 6,
+          "lessonTitle": "शब्दावली विस्तार",
+          "summary": "Aisha is invited to a small family ceremony. Learn new words about family, events, and daily items. Practice weaving these words into short sentences without fear.",
+          "activities": [
+            "Discover 10 new words (father, mother, invitation, ceremony, gift, etc.) with Hindi parallels.",
+            "Describe a recent or imaginary family event in 3 lines of English.",
+            "Match English words to their Hindi meanings in a mini game."
+          ],
+          "objectives": [
+            "Expand daily vocab with Hindi references",
+            "Form short sentences describing events/family"
+          ]
+        },
+        {
+          "lessonId": 107,
+          "lessonNumber": 7,
+          "lessonTitle": "सामान्य त्रुटियाँ और आत्मविश्वास",
+          "summary": "Aisha notices she’s mixing up tenses or translating Hindi directly. Learn to spot and correct these common pitfalls, building new confidence each time you speak.",
+          "activities": [
+            "Fix 5 incorrect sentences like 'I am agree.'",
+            "Record a 1-minute self-introduction, focusing on fewer mistakes this time.",
+            "Reflect (in your own words) on areas you still find tricky."
+          ],
+          "objectives": [
+            "Overcome common mistakes",
+            "Gain confidence by self-checking"
+          ]
+        },
+        {
+          "lessonId": 108,
+          "lessonNumber": 8,
+          "lessonTitle": "छोटी कहानी अभ्यास (Short Story Practice)",
+          "summary": "Dive into Aisha’s mini travel story: 'Aisha’s First Day Traveling Alone' (~200 words). Then, try summarizing in short English lines to sharpen your reading & speaking skills.",
+          "activities": [
+            "Read the 200-word short story about Aisha’s trip.",
+            "Answer 5 comprehension questions (in Hindi/English) about the story.",
+            "Summarize the story in 5 lines of English, focusing on the main events."
+          ],
+          "objectives": [
+            "Develop reading + listening comprehension",
+            "Practice story narration in English"
+          ]
+        },
+        {
+          "lessonId": 109,
+          "lessonNumber": 9,
+          "lessonTitle": "सुनना और बोलना एक साथ",
+          "summary": "Watch a short video clip featuring everyday English conversation. Join Aisha in retelling what happened—improve both your listening and your speaking flow.",
+          "activities": [
+            "Watch a 1-minute video of two friends chatting about weekend plans.",
+            "Re-narrate the scenario in 4–5 lines (mix Hindi/English if needed).",
+            "Get feedback on how naturally you re-tell the events."
+          ],
+          "objectives": [
+            "Combine listening + speaking practice",
+            "Develop confidence in retelling scenarios"
+          ]
+        },
+        {
+          "lessonId": 110,
+          "lessonNumber": 10,
+          "lessonTitle": "प्रारंभिक अंग्रेज़ी में बातचीत (50% English Instructions)",
+          "summary": "Level up! Now 50% of instructions are in English. Aisha faces real-life dialogues—like visiting a doctor or asking for bus info. Learn polite question forms for help.",
+          "activities": [
+            "Role-play a doctor visit: 'I need to see a doctor, please.'",
+            "Practice polite questions: 'Could you tell me where the bus station is?'",
+            "Record a 1-minute city travel plan in mostly English."
+          ],
+          "objectives": [
+            "Handle real-life queries politely",
+            "Adapt to 50% English instructions"
+          ]
+        },
+        {
+          "lessonId": 111,
+          "lessonNumber": 11,
+          "lessonTitle": "मित्रता और सामाजिक वार्तालाप (Friendship & Social Talks)",
+          "summary": "Aisha meets new friends at a cafe. Learn how to chat about hobbies, share compliments, and handle casual English with confidence (60–70% English instructions).",
+          "activities": [
+            "Learn go-to phrases: 'How’s your day going?', 'That’s awesome news!'",
+            "Simulate meeting a friend for coffee, greet them in English.",
+            "Have a 2-minute conversation about your favorite hobbies."
+          ],
+          "objectives": [
+            "Strengthen casual conversation phrases",
+            "Build comfort in spontaneous chat"
+          ]
+        },
+        {
+          "lessonId": 112,
+          "lessonNumber": 12,
+          "lessonTitle": "प्रगति मूल्यांकन (Progress Evaluation)",
+          "summary": "Time for a quick check-in! Aisha records a 2-minute talk on her daily routine—let’s see how far you’ve come and what needs refining.",
+          "activities": [
+            "Record your own 'My daily routine' speech (2 mins).",
+            "Answer 5 follow-up Qs from teacher/AI about it.",
+            "Analyze how you’ve improved since Lesson 1."
+          ],
+          "objectives": [
+            "Gauge progress in fluency",
+            "Identify personal improvement areas"
+          ]
+        },
+        {
+          "lessonId": 113,
+          "lessonNumber": 13,
+          "lessonTitle": "उन्नत दैनिक वार्तालाप (More Advanced Daily Conversations)",
+          "summary": "80% English instructions. Scenarios are trickier: returning an item, politely saying no. Master these everyday challenges with minimal Hindi fallback.",
+          "activities": [
+            "Role-play: returning a defective item, e.g. 'I want to return this shirt; it has a tear.'",
+            "Practice polite refusals: 'I’m sorry, but I can’t...' with a reason.",
+            "Short dialogue with teacher/AI about a minor conflict—resolve it calmly."
+          ],
+          "objectives": [
+            "Use polite forms in tricky scenarios",
+            "Speak mostly in English with minimal Hindi fallback"
+          ]
+        },
+        {
+          "lessonId": 114,
+          "lessonNumber": 14,
+          "lessonTitle": "मनोवैज्ञानिक बाधाएं और सुधार (Psychological Barriers & Corrections)",
+          "summary": "Aisha occasionally feels nervous about sounding silly. Learn to pinpoint your repeated mistakes, systematically fix them, and adopt a fearless approach.",
+          "activities": [
+            "Identify your top 3 stumbling points and create a personal plan to fix them.",
+            "Mini quiz: 'Which sentence is more polite or accurate?'",
+            "Optional peer talk: share a quick worry about speaking English, get supportive feedback."
+          ],
+          "objectives": [
+            "Acknowledge fear of errors",
+            "Adopt a positive error-correction mindset"
+          ]
+        },
+        {
+          "lessonId": 115,
+          "lessonNumber": 15,
+          "lessonTitle": "कहानियाँ, वार्ता, निष्कर्ष (Stories, Chats, Conclusion)",
+          "summary": "90% English instructions. Read a short 2-page story about Aisha’s new adventure, then chat about your personal goals. Celebrate how far you’ve come!",
+          "activities": [
+            "Read a 2-page story in easy English, answer 5 Qs to check understanding.",
+            "Speak for 2–3 minutes in English about your personal goals (travel, career, etc.).",
+            "Review your big wins from this entire course."
+          ],
+          "objectives": [
+            "Reinforce reading + speaking synergy",
+            "Celebrate final progress at near-beginner fluency"
+          ]
+        },
+        {
+          "lessonId": 116,
+          "lessonNumber": 16,
+          "lessonTitle": "अंतिम प्रोजेक्ट (Final Project)",
+          "summary": "Showcase your transformation! Deliver a 5–7 minute English speech on any topic (family, a trip, a life event), using Hindi only if absolutely stuck. Earn your 'Beginner to Confident Conversationalist' badge.",
+          "activities": [
+            "Pick a personal topic (e.g. a memorable trip) and speak for 5–7 minutes.",
+            "Teacher/AI offers grammar, clarity, and fluency feedback.",
+            "Celebrate your progress with a proud badge ceremony."
+          ],
+          "objectives": [
+            "Demonstrate full conversation skills",
+            "Achieve a sense of mastery in basic English"
+          ]
+        }
+      ]
+    },
+    {
+      "courseId": 2,
+      "title": "Build Strong Vocabulary",
+      "level": "Beginner",
+      "languageInstruction": "Hindi",
+      "lessons": [
+        {
+          "lessonId": 201,
+          "lessonNumber": 1,
+          "lessonTitle": "शब्दावली का महत्व (Why Vocabulary Matters)",
+          "summary": "Meet Rohan—a curious learner who discovers that more words mean more ways to express himself. See how a few new words a day can broaden your entire English world.",
+          "activities": [
+            "Short discussion (Hindi) on why words hold power—Rohan shares a funny anecdote of misunderstanding due to limited vocab.",
+            "Learn 10 simple everyday nouns (door, window, food, water, etc.) in English.",
+            "Record a 30-second audio using at least 5 of the new words in short sentences."
+          ],
+          "objectives": [
+            "Realize the role of vocabulary in communication",
+            "Gain a small set of essential words"
+          ]
+        },
+        {
+          "lessonId": 202,
+          "lessonNumber": 2,
+          "lessonTitle": "रोज़मर्रा के विषय (Everyday Themes)",
+          "summary": "Rohan explores his home environment—kitchen, bedroom, garden—and finds new words in each category. Grouping vocabulary by theme makes learning simpler and more fun.",
+          "activities": [
+            "Organize 20 new words (kitchen, bedroom, garden, cleaning, etc.) and note them down with Hindi meanings.",
+            "Form 2 short English sentences per category, imagining you’re telling a friend about your house.",
+            "Do a mini role-play: describe your home in 4 English lines."
+          ],
+          "objectives": [
+            "Organize new words by everyday themes",
+            "Build basic descriptive abilities"
+          ]
+        },
+        {
+          "lessonId": 203,
+          "lessonNumber": 3,
+          "lessonTitle": "समानार्थक शब्द और विपरीतार्थक (Synonyms & Antonyms)",
+          "summary": "Rohan has trouble repeating the same word constantly. He learns synonyms (big/large) and antonyms (hot/cold) to spice up his speech. Hindi bridging keeps it simple.",
+          "activities": [
+            "Learn 5 pairs of synonyms and 5 pairs of antonyms in English.",
+            "Create short example sentences for each pair, e.g., 'This room is large!' / 'This room is not small!'",
+            "Mini quiz: match synonyms or antonyms in multiple-choice."
+          ],
+          "objectives": [
+            "Recognize how synonyms expand expression",
+            "Distinguish antonyms to show contrast"
+          ]
+        },
+        {
+          "lessonId": 204,
+          "lessonNumber": 4,
+          "lessonTitle": "रूट, प्रीफिक्स और सफ़िक्स (Roots, Prefixes & Suffixes)",
+          "summary": "Rohan discovers word-building ‘magic tricks’—like adding ‘un-’ or ‘-ful.’ Master these to expand your vocab faster than ever.",
+          "activities": [
+            "See examples: 'unhappy' (un+happy), 'hopeful' (hope+ful).",
+            "Identify 5 new words from given roots, make 1 sentence each.",
+            "Sorting game: match root words with possible prefixes/suffixes (e.g., comfort→comfortable)."
+          ],
+          "objectives": [
+            "Understand the building blocks of words",
+            "Use prefixes & suffixes for quick vocabulary expansion"
+          ]
+        },
+        {
+          "lessonId": 205,
+          "lessonNumber": 5,
+          "lessonTitle": "याद रखने की तकनीकें (Memory & Retention Techniques)",
+          "summary": "Rohan struggles to remember new words. Learn spaced repetition, flashcards, and fun mnemonic devices to make words stick in your mind.",
+          "activities": [
+            "Demo: how to create mini flashcards with English/Hindi on each side.",
+            "Try a memory palace with 5 words—visualizing each word in a specific ‘room.’",
+            "Mini challenge: recall 10 words from previous lessons using any technique you prefer."
+          ],
+          "objectives": [
+            "Equip learners with ways to retain new words",
+            "Improve recall speed for everyday usage"
+          ]
+        },
+        {
+          "lessonId": 206,
+          "lessonNumber": 6,
+          "lessonTitle": "प्रैक्टिकल वार्तालाप (Practical Dialogues with New Words)",
+          "summary": "Rohan wants to test his new vocabulary in real conversations. Practice bridging from Hindi to English phrases smoothly.",
+          "activities": [
+            "Pick 10 recently learned words and form a mini dialogue (2 speakers).",
+            "Record a 1-minute role-play, ensuring you drop each of the 10 words at least once.",
+            "Teacher/AI feedback on usage correctness and flow."
+          ],
+          "objectives": [
+            "Apply vocabulary in context",
+            "Build confidence using new words in dialogues"
+          ]
+        },
+        {
+          "lessonId": 207,
+          "lessonNumber": 7,
+          "lessonTitle": "महसूस करने वाले शब्द (Descriptive & Emotive Words)",
+          "summary": "Learn how to say you’re thrilled or worried in English without fumbling. Rohan experiments with adjectives that color his daily talk.",
+          "activities": [
+            "Discover 10 emotive adjectives (happy, sad, excited, worried…) with Hindi meaning.",
+            "Write 3 lines: 'How do you feel today?' using at least 2 emotive adjectives.",
+            "Pair-sharing: describe a favorite item using 3 adjectives (e.g., 'It’s bright, shiny, and precious')."
+          ],
+          "objectives": [
+            "Expand emotional expression vocabulary",
+            "Incorporate descriptive words in daily talk"
+          ]
+        },
+        {
+          "lessonId": 208,
+          "lessonNumber": 8,
+          "lessonTitle": "पठन अभ्यास (Reading to Grow Vocabulary)",
+          "summary": "Rohan reads a short English text about a park visit. Spot new words, decode them in Hindi, then interpret. Reading is a fun secret to big vocab leaps!",
+          "activities": [
+            "Read a 100-word text: 'A Morning in the Park.'",
+            "Highlight 8 new words; discuss them in Hindi with a quick meaning check.",
+            "Short Q&A to confirm you understood the text properly."
+          ],
+          "objectives": [
+            "Promote reading-based vocabulary acquisition",
+            "Enhance comprehension while focusing on new words"
+          ]
+        },
+        {
+          "lessonId": 209,
+          "lessonNumber": 9,
+          "lessonTitle": "शब्दावली खेल (Vocabulary Games)",
+          "summary": "Turn learning into a playful challenge! Rohan tries charades, timed recall, and crosswords to make vocab revision a breeze.",
+          "activities": [
+            "Timed recall: teacher says a Hindi word, user must instantly say the English equivalent.",
+            "Charades: one person acts out a word, the other guesses in English.",
+            "Short crossword puzzle with hints in English."
+          ],
+          "objectives": [
+            "Make vocabulary practice fun & interactive",
+            "Improve quick recall under light pressure"
+          ]
+        },
+        {
+          "lessonId": 210,
+          "lessonNumber": 10,
+          "lessonTitle": "हिंदी से अंग्रेज़ी: अनुवाद अभ्यास (Translation Exercises)",
+          "summary": "Rohan sees how translating short Hindi sentences can help lock in new words. Emphasis on meaning, not word-for-word translation.",
+          "activities": [
+            "Translate 5 Hindi sentences covering everyday life (e.g., 'मुझे पानी चाहिए।').",
+            "Teacher checks correctness, user re-records any lines that were incorrect.",
+            "Focus on context over literal translation."
+          ],
+          "objectives": [
+            "Bridge Hindi thinking to English expression",
+            "Encourage usage of newly learned terms"
+          ]
+        },
+        {
+          "lessonId": 211,
+          "lessonNumber": 11,
+          "lessonTitle": "सामान्य गलतियाँ और सुधार (Common Mistakes & Fixes)",
+          "summary": "Identify tricky spots: mixing synonyms incorrectly, reusing the same words. Rohan polishes his usage by self-correcting with teacher/AI guidance.",
+          "activities": [
+            "Review old recordings and note repeated word-level errors.",
+            "Teacher shows 5 'incorrect usage' examples—user corrects them.",
+            "Reflect on picking the best synonyms for variety."
+          ],
+          "objectives": [
+            "Polish usage of synonyms, avoid overusing certain words",
+            "Build awareness of subtle distinctions"
+          ]
+        },
+        {
+          "lessonId": 212,
+          "lessonNumber": 12,
+          "lessonTitle": "विस्तारित वार्तालाप (Extended Conversations)",
+          "summary": "Time to hold a 2–3 minute dialogue. Rohan tries to talk about weekend plans without repeating 'good' or 'nice' too often.",
+          "activities": [
+            "Role-play about 'weekend plans' for 2 minutes, emphasizing newly learned words.",
+            "Teacher/AI throws unexpected questions—stay calm and adapt your vocab.",
+            "Count how many synonyms you used instead of ‘good’ or ‘nice.’"
+          ],
+          "objectives": [
+            "Encourage variety in word choice",
+            "Handle multi-turn conversation fluidly"
+          ]
+        },
+        {
+          "lessonId": 213,
+          "lessonNumber": 13,
+          "lessonTitle": "उन्नत शब्दावलियाँ (Moving to Higher-Level Words)",
+          "summary": "Expand beyond basics with words like 'opportunity,' 'discuss,' 'prepare,' or 'unfortunately.' Rohan steps up to more nuanced expressions.",
+          "activities": [
+            "Learn 15 intermediate-level words bridging everyday talk to formal usage.",
+            "Craft short paragraphs using at least 5 advanced terms.",
+            "Teacher/AI rates clarity, ensuring you’re comfortable with each new word."
+          ],
+          "objectives": [
+            "Elevate vocabulary beyond basic daily usage",
+            "Gain comfort with more abstract or formal words"
+          ]
+        },
+        {
+          "lessonId": 214,
+          "lessonNumber": 14,
+          "lessonTitle": "पठन और अभिव्यक्ति (Reading & Expression)",
+          "summary": "Read a slightly longer piece (200–300 words) filled with advanced vocabulary. Practice summarizing out loud, just like Rohan does for deeper learning.",
+          "activities": [
+            "Identify 10 new words in the reading, define them in Hindi or short English synonyms.",
+            "Share a brief spoken summary focusing on correct usage of the new words.",
+            "Peer or AI feedback for any missed nuances."
+          ],
+          "objectives": [
+            "Reinforce reading-driven vocab expansion",
+            "Improve summarization and usage in speech"
+          ]
+        },
+        {
+          "lessonId": 215,
+          "lessonNumber": 15,
+          "lessonTitle": "शब्दावली समीक्षा और आत्मनिर्भरता (Vocabulary Review & Independence)",
+          "summary": "Gather every word you’ve learned so far. Rohan sees how they shape daily conversation. Learn to keep discovering new words on your own.",
+          "activities": [
+            "Teacher/AI calls out 50 words from earlier lessons; user quickly defines or uses them in a sentence.",
+            "Reflect on strong vs. weak areas in your personal vocab list.",
+            "Plan a ‘Post-Course Growth’ strategy—maybe reading an English blog daily or watching short English videos."
+          ],
+          "objectives": [
+            "Consolidate all learned vocab",
+            "Motivate user to continue building vocab beyond the course"
+          ]
+        },
+        {
+          "lessonId": 216,
+          "lessonNumber": 16,
+          "lessonTitle": "अंतिम प्रोजेक्ट (Final Vocabulary Showcase)",
+          "summary": "Show off your expanded word bank! Deliver a 5-minute talk or short essay using at least 20 newly learned words—Rohan’s final challenge to you.",
+          "activities": [
+            "Pick a topic (favorite festival, daily routine, personal dream), speak/write for 5 minutes.",
+            "Ensure usage of 20 course-taught words—highlight them if needed.",
+            "Teacher/AI feedback on correctness, variety, and clarity. Earn the 'Vocabulary Champion (Beginner)' badge."
+          ],
+          "objectives": [
+            "Demonstrate strong, varied vocabulary in a continuous format",
+            "Earn the 'Vocabulary Champion (Beginner)' badge"
+          ]
+        }
+      ]
+    },
+    {
+      "courseId": 3,
+      "title": "Everyday English for Homemakers",
+      "level": "Beginner",
+      "languageInstruction": "Hindi",
+      "lessons": [
+        {
+          "lessonId": 301,
+          "lessonNumber": 1,
+          "lessonTitle": "घरेलू जीवन में अंग्रेज़ी की भूमिका (Role of English in Daily Home Life)",
+          "summary": "Meet Meera—a homemaker managing a bustling household. See how learning simple English can help with chores, errands, and quick family interactions.",
+          "activities": [
+            "Discuss your typical day (in Hindi) and spot 5 tasks where English could be useful (e.g., making grocery lists).",
+            "Learn 10 essential household words (laundry, dishes, groceries, etc.) with Hindi parallels.",
+            "Record a 30-second audio about your morning routine using at least 3 new words."
+          ],
+          "objectives": [
+            "Understand why homemakers benefit from English basics",
+            "Acquire a small set of everyday home-related words"
+          ]
+        },
+        {
+          "lessonId": 302,
+          "lessonNumber": 2,
+          "lessonTitle": "रसोई और खान-पान शब्दावली (Kitchen & Food Vocabulary)",
+          "summary": "Meera needs to cook daily meals. Dive into kitchen appliance names, cooking terms, and essential grocery vocab in a simple, bilingual manner.",
+          "activities": [
+            "Learn 15 new words: stove, fridge, recipe, boil, fry, etc., with Hindi explanation.",
+            "Form short English lines: 'I need to boil water,' 'Please pass the salt.'",
+            "Mini quiz: match English words (stove/fridge) to Hindi meanings."
+          ],
+          "objectives": [
+            "Expand cooking-related words for daily usage",
+            "Form basic sentences about kitchen tasks"
+          ]
+        },
+        {
+          "lessonId": 303,
+          "lessonNumber": 3,
+          "lessonTitle": "बच्चों और परिवार से संवाद (Talking with Kids & Family)",
+          "summary": "Learn short English phrases for guiding children’s homework, discussing meal times, and planning family routines. Meera tests these lines with her kids.",
+          "activities": [
+            "Role-play telling a child to finish homework or get ready for school: 'You should finish your homework now.'",
+            "Create 5 lines describing daily family routines in English (with Hindi fallback if stuck).",
+            "Teacher/AI checks usage of 'We have to..., Let’s...' etc."
+          ],
+          "objectives": [
+            "Handle simple child-care instructions in English",
+            "Grow confidence using short family phrases"
+          ]
+        },
+        {
+          "lessonId": 304,
+          "lessonNumber": 4,
+          "lessonTitle": "खरीदारी और सौदा (Shopping & Bargaining)",
+          "summary": "Meera goes to the local market. Learn how to ask prices, request discounts, and handle grocery shopping in basic English with Hindi bridging.",
+          "activities": [
+            "Dialogue practice: 'How much is this?', 'Can I get a discount?'",
+            "Pick 3 household items—try asking about them in English (e.g., 'How much for this plate?').",
+            "Short reflection: difference between formal shop talk vs. local street vendor chat."
+          ],
+          "objectives": [
+            "Learn shopping-related questions and courtesy words",
+            "Build confidence in bargaining politely"
+          ]
+        },
+        {
+          "lessonId": 305,
+          "lessonNumber": 5,
+          "lessonTitle": "पड़ोसियों से संचार (Neighborhood & Community Interactions)",
+          "summary": "Meera invites neighbors for tea, discusses local events, and practices friendly greetings in English. Perfect for daily socializing.",
+          "activities": [
+            "Plan an imaginary tea gathering: invite a neighbor using 3 lines of English.",
+            "Teacher/AI checks polite openers: 'Would you like to join us?'",
+            "Optional small talk phrases for local news or festive greetings."
+          ],
+          "objectives": [
+            "Develop neighborly conversation scripts",
+            "Use polite invitation language in English"
+          ]
+        },
+        {
+          "lessonId": 306,
+          "lessonNumber": 6,
+          "lessonTitle": "फ़ोन कॉल्स और संदेश (Phone Calls & Messages)",
+          "summary": "Meera must call an electrician for a fuse problem. Practice short telephone conversations: 'Hello, can I speak to…?' and confirm appointment times.",
+          "activities": [
+            "Listen to a sample phone dialogue: 'Hello, this is..., may I speak to...?'",
+            "Simulate calling an electrician or plumber in simple English: 'Could you come tomorrow?'",
+            "Teacher/AI refines any awkward phrasing or direct Hindi translations."
+          ],
+          "objectives": [
+            "Build comfort in phone call basics",
+            "Incorporate polite requests, short introductions"
+          ]
+        },
+        {
+          "lessonId": 307,
+          "lessonNumber": 7,
+          "lessonTitle": "स्कूल और अध्यापकों से संपर्क (School & Teacher Interactions)",
+          "summary": "Meera has a parent-teacher meeting. Learn phrases like 'How is my child doing?' or 'Any homework issues?' to converse with teachers in short, confident English.",
+          "activities": [
+            "Role-play calling a teacher to discuss a child’s progress.",
+            "Practice Q&A forms: 'Does my child need extra help in math?'",
+            "Teacher checks correct usage of polite question forms."
+          ],
+          "objectives": [
+            "Equip parents with English lines for academic discussions",
+            "Reduce hesitation in parent-teacher dialogues"
+          ]
+        },
+        {
+          "lessonId": 308,
+          "lessonNumber": 8,
+          "lessonTitle": "आसान व्यवस्थाएँ और प्लानिंग (Basic Home Planning & Errands)",
+          "summary": "From grocery lists to family outings, Meera organizes weekly chores in English. Learn to politely assign tasks like 'Could you buy eggs?'",
+          "activities": [
+            "Write 5 lines about this week’s home tasks (cleaning, shopping, etc.) in English.",
+            "Speak It Out: share an upcoming weekend plan in mostly English (Hindi allowed if stuck).",
+            "Reflection on politely assigning tasks among family members."
+          ],
+          "objectives": [
+            "Encourage user to handle everyday scheduling in English",
+            "Promote simple but clear requests among family"
+          ]
+        },
+        {
+          "lessonId": 309,
+          "lessonNumber": 9,
+          "lessonTitle": "त्योहार और पारिवारिक आयोजन (Festivals & Family Events)",
+          "summary": "Meera is planning a small festival gathering. Discuss festival traditions, invitation phrases, and basic English small talk during celebrations.",
+          "activities": [
+            "Learn words like decorate, invite, celebrate, prayer, sweets.",
+            "Plan a festival get-together using 5 English lines: date, time, reason, etc.",
+            "Teacher/AI role-plays a short conversation about festival customs."
+          ],
+          "objectives": [
+            "Use event-specific words in everyday talk",
+            "Enhance cultural expression in basic English"
+          ]
+        },
+        {
+          "lessonId": 310,
+          "lessonNumber": 10,
+          "lessonTitle": "सामान्य त्रुटियाँ और सुधार (Common Mistakes & Fixes)",
+          "summary": "Spot direct Hindi translations or incorrect tense usage in daily chores. Gently correct them to speak more naturally.",
+          "activities": [
+            "Teacher gives 5 flawed statements (e.g., 'I am go market now'); user corrects them in English.",
+            "Record a 1-minute home routine, teacher/AI pinpoints repeated mistakes.",
+            "Write corrections in short text for memory."
+          ],
+          "objectives": [
+            "Identify repeated errors in everyday usage",
+            "Boost confidence by systematically fixing them"
+          ]
+        },
+        {
+          "lessonId": 311,
+          "lessonNumber": 11,
+          "lessonTitle": "छोटी कहानियाँ और लघु वार्तालाप (Short Stories & Mini Conversations)",
+          "summary": "Meera shares a day-in-the-life story. Practice retelling or summarizing in English—strengthen your daily life expression.",
+          "activities": [
+            "Read a 200-word story on 'Rina’s Busy Day.'",
+            "Answer 5 comprehension Qs in Hindi/English mix.",
+            "Summarize in 5 English lines: focus on main events."
+          ],
+          "objectives": [
+            "Combine reading comprehension with spoken output",
+            "Strengthen confidence in retelling daily life events"
+          ]
+        },
+        {
+          "lessonId": 312,
+          "lessonNumber": 12,
+          "lessonTitle": "सुनने और बोलने का मिश्रण (Integrated Listening & Speaking)",
+          "summary": "60% instructions in English. Listen to short audio clips of family scenarios (kids fighting, grocery confusion), then respond spontaneously.",
+          "activities": [
+            "Audio snippet: child requests snacks, caretaker instructs. User must answer or continue the dialogue.",
+            "Record a 2-minute role-play about a mild family conflict: handle it calmly in English.",
+            "Teacher/AI corrects phrasing or tone if needed."
+          ],
+          "objectives": [
+            "Develop skill for spontaneous responses in family contexts",
+            "Adapt to partial English instructions"
+          ]
+        },
+        {
+          "lessonId": 313,
+          "lessonNumber": 13,
+          "lessonTitle": "घर से बाहर की बातचीत (Interactions Outside Home)",
+          "summary": "70% instructions in English. Meera steps out to chat with neighbors about community events, local concerns. Learn to use suggestions like 'Could we organize a clean-up?'",
+          "activities": [
+            "Simulate a quick chat about local park cleanliness or potluck plans.",
+            "Teacher checks usage of 'Could we...?' and 'Should we...?' forms.",
+            "Reflect on differences between chatting with family vs. acquaintances."
+          ],
+          "objectives": [
+            "Handle semi-formal neighborly talk in mostly English",
+            "Distinguish language tone for different relationship contexts"
+          ]
+        },
+        {
+          "lessonId": 314,
+          "lessonNumber": 14,
+          "lessonTitle": "मनोवैज्ञानिक बाधाएँ और आम झिझक (Overcoming Hesitations)",
+          "summary": "Meera feels shy speaking English in front of extended family. Learn to normalize errors and keep practicing daily with positivity.",
+          "activities": [
+            "List your top 3 personal fears about speaking English at home or with neighbors.",
+            "Teacher/AI offers daily confidence-building tips.",
+            "Mini challenge: try a short English phone call to a friend or neighbor."
+          ],
+          "objectives": [
+            "Acknowledge emotional barriers",
+            "Adopt a positive approach to daily practice"
+          ]
+        },
+        {
+          "lessonId": 315,
+          "lessonNumber": 15,
+          "lessonTitle": "सारांश और मिलान (Review & Integration)",
+          "summary": "80% instructions in English. Recap household/family vocab and dialogues from earlier lessons. Prepare for the final talk on your typical day.",
+          "activities": [
+            "Speed recall: teacher says a Hindi phrase, user responds in English (e.g., 'किराने का सामान खरीदना है').",
+            "Read a short text about advanced home errands, find 5 new words.",
+            "Plan a weekly schedule fully in English, referencing chores and family events."
+          ],
+          "objectives": [
+            "Consolidate daily life expressions",
+            "Boost readiness for final speaking challenge"
+          ]
+        },
+        {
+          "lessonId": 316,
+          "lessonNumber": 16,
+          "lessonTitle": "अंतिम प्रोजेक्ट (Final Home Life Showcase)",
+          "summary": "Deliver a 5-minute talk describing your full day, from morning chores to nighttime routines. This is your official moment to shine and earn 'Homemaker English Pro.'",
+          "activities": [
+            "Share a structured talk: mention kids’ tasks, cooking, neighbor interactions, etc.",
+            "Teacher/AI offers clarity, correctness, and confidence tips.",
+            "Celebrate with the 'Homemaker English Pro' badge upon completion."
+          ],
+          "objectives": [
+            "Demonstrate full mastery of home/family English dialogues",
+            "Achieve near-beginner fluency for daily homemaker tasks"
+          ]
+        }
+      ]
+    },
+    {
+      "courseId": 4,
+      "title": "English for School Projects",
+      "level": "Beginner",
+      "languageInstruction": "Hindi",
+      "lessons": [
+        {
+          "lessonId": 401,
+          "lessonNumber": 1,
+          "lessonTitle": "स्कूल प्रोजेक्ट की भूमिका (Why School Projects Matter)",
+          "summary": "Meet Anya, who’s nervous about an upcoming Environment project. Learn how basic English can boost her confidence in front of teachers and classmates.",
+          "activities": [
+            "Short discussion: typical school projects in your experience. Why does English matter?",
+            "Meet Anya’s scenario: She’s presenting on ‘The Environment’ next month.",
+            "Learn 10 project-related words (topic, summary, draft, model, environment, etc.)"
+          ],
+          "objectives": [
+            "Understand how English enhances academic presentations",
+            "Acquire basic project-related terms to begin"
+          ]
+        },
+        {
+          "lessonId": 402,
+          "lessonNumber": 2,
+          "lessonTitle": "विषय चयन और योजना (Choosing a Topic & Planning)",
+          "summary": "Anya finalizes ‘Environmental Awareness.’ Watch how she brainstorms subtopics (pollution, recycling). Practice planning phrases in short English lines.",
+          "activities": [
+            "Role-play: brainstorming with Anya: 'Should I focus on plastic pollution or forest preservation?'",
+            "Learn planning phrases: 'I want to research…', 'My subtopic is…'.",
+            "Write a 5-line plan with your main goal, materials, timeline for Anya’s environment project."
+          ],
+          "objectives": [
+            "Guide learners to define a project scope in English",
+            "Lay out basic short outlines for planning"
+          ]
+        },
+        {
+          "lessonId": 403,
+          "lessonNumber": 3,
+          "lessonTitle": "जानकारी इकट्ठा करना (Gathering Information)",
+          "summary": "Anya visits the library and browses online. Learn how to mention sources, note key facts, and move from Hindi to short English statements without fear.",
+          "activities": [
+            "Vocabulary: 'reference, website, library, note, pollution, habitat'.",
+            "Scenario: Anya finds an article about forest loss—write 3 English lines referencing it, e.g., 'This article says we lost many trees.'",
+            "Teacher/AI checks usage of 'I found this on…', 'It explains…'"
+          ],
+          "objectives": [
+            "Learn to mention sources in English",
+            "Boost confidence in short research statements"
+          ]
+        },
+        {
+          "lessonId": 404,
+          "lessonNumber": 4,
+          "lessonTitle": "मूल ड्राफ्ट और रूपरेखा (Initial Draft & Outline)",
+          "summary": "Anya structures her project into Intro, Body, Conclusion. Understand linking words—‘First… Next… Finally…’—so your draft flows nicely.",
+          "activities": [
+            "Draft a short outline with English headings (Intro, Body, Conclusion) for Anya’s environment project.",
+            "Teacher/AI explains linking words: 'First… next… finally…'.",
+            "Fill-in-the-blanks quiz: pick the correct transition in sample sentences."
+          ],
+          "objectives": [
+            "Help create a simple project outline in English",
+            "Use basic linking words for structure"
+          ]
+        },
+        {
+          "lessonId": 405,
+          "lessonNumber": 5,
+          "lessonTitle": "आवश्यक सामग्री (Materials & Tools)",
+          "summary": "Anya needs charts, glue, markers, etc. Introduce typical project supplies and practice using them in short English sentences.",
+          "activities": [
+            "Learn 10 common items: ‘poster sheet, tape, scissors, printouts, etc.’",
+            "Simulate a shopping list for these supplies in English.",
+            "Teacher/AI checks articles usage ('a poster,' 'an idea')."
+          ],
+          "objectives": [
+            "Expand vocab for typical school project materials",
+            "Form short requests: 'I need a marker, an old newspaper…'"
+          ]
+        },
+        {
+          "lessonId": 406,
+          "lessonNumber": 6,
+          "lessonTitle": "प्रस्तुति कौशल (Basic Presentation Skills)",
+          "summary": "Anya rehearses a mini-speech on pollution. Practice polite openings: 'Good morning, everyone…' and closings: 'Thank you for listening.'",
+          "activities": [
+            "Role-play a short intro: 'My project is about pollution…' in English.",
+            "Write a 5-line opening on any topic—teacher/AI corrects grammar and tone.",
+            "Reflect on how a polite opening sets a positive tone."
+          ],
+          "objectives": [
+            "Build readiness for a short class talk",
+            "Familiarize with polite intros and closings"
+          ]
+        },
+        {
+          "lessonId": 407,
+          "lessonNumber": 7,
+          "lessonTitle": "चित्र, चार्ट और विज़ुअल एड्स (Using Visual Aids)",
+          "summary": "Anya adds a pollution chart. Label diagrams in English and describe visuals briefly. A perfect chance to practice academic explanation.",
+          "activities": [
+            "Sample chart with 5 labels: 'Title, axis, data, conclusion, image'.",
+            "Describe the chart: 'This shows pollution levels…'.",
+            "Reflect on neat labeling for clarity—why does it matter?"
+          ],
+          "objectives": [
+            "Encourage chart labeling in English",
+            "Boost user’s skill describing visuals briefly"
+          ]
+        },
+        {
+          "lessonId": 408,
+          "lessonNumber": 8,
+          "lessonTitle": "सहयोग और टीमवर्क (Collaborating with Peers)",
+          "summary": "Anya teams up with classmates. Learn short lines to divide tasks: 'I’ll make the poster, you collect data.' Practice scheduling group meets in partial English.",
+          "activities": [
+            "Use phrases: 'Could you handle the pictures?', 'We should meet on Saturday.'",
+            "Role-play planning who does what for the environment project.",
+            "Teacher/AI checks clarity and politeness of assigned tasks."
+          ],
+          "objectives": [
+            "Develop teamwork communication in English",
+            "Use polite assignment phrases: ‘Could you…? Can we…?’"
+          ]
+        },
+        {
+          "lessonId": 409,
+          "lessonNumber": 9,
+          "lessonTitle": "संक्षिप्त लेखन और रिपोर्ट (Short Writing & Reports)",
+          "summary": "Anya drafts a 5–7 line summary about her findings. Focus on correct grammar transitions: 'Firstly, I found that…' ‘Secondly…’",
+          "activities": [
+            "Write a mini-report on 'Effects of Pollution' (5 lines in English).",
+            "Teacher/AI checks grammar usage, especially subject-verb agreement.",
+            "Optional quiz: fix 5 common mistakes in a sample paragraph."
+          ],
+          "objectives": [
+            "Create a short academic text in English",
+            "Ensure consistent grammar for describing findings"
+          ]
+        },
+        {
+          "lessonId": 410,
+          "lessonNumber": 10,
+          "lessonTitle": "सामान्य त्रुटियाँ और सुधार (Common Mistakes & Fixes)",
+          "summary": "Catch direct Hindi translations or run-on sentences. Anya polishes her draft so it’s clearer and more concise.",
+          "activities": [
+            "Teacher shows 5 flawed lines from Anya’s draft. Correct them in English.",
+            "Record a 1-minute summary, teacher/AI flags repeated errors.",
+            "Write corrected versions in short text for clarity."
+          ],
+          "objectives": [
+            "Identify frequent grammar/vocab issues in academic contexts",
+            "Boost clarity by actively self-correcting"
+          ]
+        },
+        {
+          "lessonId": 411,
+          "lessonNumber": 11,
+          "lessonTitle": "छोटी प्रैक्टिस प्रेजेंटेशन (Mini Presentation Practice)",
+          "summary": "60% instructions in English. Anya tries a quick 1–2 minute talk on saving trees. Practice combining an outline + a small visual.",
+          "activities": [
+            "Prepare 5 lines on any subtopic (e.g., 'Reduce Plastic').",
+            "Teacher/AI acts as the audience, asks 2 easy Qs.",
+            "User answers with minimal Hindi fallback."
+          ],
+          "objectives": [
+            "Combine outline + visual demonstration in short format",
+            "Practice quick Q&A responses"
+          ]
+        },
+        {
+          "lessonId": 412,
+          "lessonNumber": 12,
+          "lessonTitle": "पठन और संदर्भ (Reading & Reference Skills)",
+          "summary": "Anya reads an English article on rainforest conservation. Practice skimming, noting 5 new words, then summarizing in partial English.",
+          "activities": [
+            "Read a 200-word text: 'Saving Rainforests'. Identify 5 new words.",
+            "Write a 4-line summary referencing main ideas.",
+            "Teacher/AI checks clarity of transitions."
+          ],
+          "objectives": [
+            "Improve reading comprehension for project research",
+            "Apply summary writing with minimal grammar mistakes"
+          ]
+        },
+        {
+          "lessonId": 413,
+          "lessonNumber": 13,
+          "lessonTitle": "पेयर रिव्यू और अभ्यास (Peer Review & Practice)",
+          "summary": "70% instructions in English. Anya asks a classmate for feedback. Learn how to receive and give polite suggestions in short English lines.",
+          "activities": [
+            "Simulate a peer’s feedback: 'Add more pictures, slow down…'. Reply politely: 'That’s helpful, thank you!'",
+            "Write 2 lines of constructive feedback for a friend’s project.",
+            "Teacher/AI checks politeness and clarity."
+          ],
+          "objectives": [
+            "Use polite peer-review language",
+            "Adapt project aspects based on suggestions"
+          ]
+        },
+        {
+          "lessonId": 414,
+          "lessonNumber": 14,
+          "lessonTitle": "मनोवैज्ञानिक बाधाएँ (Psychological Barriers for Presenting)",
+          "summary": "80% English instructions. Anya fears public speaking. Normalize small mistakes, adopt daily confidence exercises to push beyond fear.",
+          "activities": [
+            "List 3 personal fears about class presentations or teacher meets.",
+            "Teacher/AI suggests daily confidence tips (like deep breaths).",
+            "Mini challenge: speak for 1 min without pausing."
+          ],
+          "objectives": [
+            "Acknowledge public speaking anxiety",
+            "Adopt a growth mindset to push past mistakes"
+          ]
+        },
+        {
+          "lessonId": 415,
+          "lessonNumber": 15,
+          "lessonTitle": "सारांश और अंतिम तैयारी (Review & Final Prep)",
+          "summary": "90% English instructions. Recap all project phases, from choosing a topic to writing a mini report. Anya finalizes her environment project. You do the same for your chosen topic!",
+          "activities": [
+            "Speed recall: teacher says 'topic, chart, draft…' user defines them quickly in English.",
+            "Plan a final 6-line script referencing main points for Anya’s project.",
+            "Reflect on your biggest improvements from Lesson 1 till now."
+          ],
+          "objectives": [
+            "Consolidate academic English for project-making",
+            "Validate readiness for final demonstration"
+          ]
+        },
+        {
+          "lessonId": 416,
+          "lessonNumber": 16,
+          "lessonTitle": "अंतिम प्रोजेक्ट (School Project Showcase)",
+          "summary": "Deliver a 5–7 minute mock project. Anya’s environment topic or your own choice. Show visuals, respond to English Q&A, and earn 'School Project English Star.'",
+          "activities": [
+            "Present your final project, using short slides or charts.",
+            "Teacher/AI asks 3 Qs in English about your content or findings.",
+            "Celebrate with a progress bar or badge awarding, proving you’re ready for real presentations!"
+          ],
+          "objectives": [
+            "Demonstrate full scope of project planning + presentation in English",
+            "Build confidence for real school or academic tasks"
+          ]
+        }
+      ]
+    },
+    {
+      "courseId": 5,
+      "title": "Festival & Celebration English",
+      "level": "Beginner",
+      "languageInstruction": "Hindi",
+      "lessons": [
+        {
+          "lessonId": 501,
+          "lessonNumber": 1,
+          "lessonTitle": "त्योहारों का परिचय (Introduction to Festivals)",
+          "summary": "Meet Neha, excited to host her first Diwali party with friends from different backgrounds. Learn how English greetings and phrases can unite everyone.",
+          "activities": [
+            "Short chat on major Indian festivals (Diwali, Holi, Eid, Christmas), plus common English greetings like 'Happy Diwali!'",
+            "Learn 10 words (festival, celebration, lights, sweets, worship, invite, etc.).",
+            "Role-play: Neha says ‘Happy Diwali!’ to a friend in English—try it yourself!"
+          ],
+          "objectives": [
+            "Recognize how English is used during festivals",
+            "Learn basic festive greetings in English"
+          ]
+        },
+        {
+          "lessonId": 502,
+          "lessonNumber": 2,
+          "lessonTitle": "बुनियादी शब्दावली (Basic Festive Vocabulary)",
+          "summary": "Neha prepares decorations, invites guests, and sets up a traditional ceremony. Practice short English lines about festival items and traditions with Hindi bridging.",
+          "activities": [
+            "Vocabulary focus: decorate, fireworks, ceremony, gathering, tradition.",
+            "Create 3 short sentences describing your favorite festival item. E.g., 'We use colorful lights for Diwali.'",
+            "Mini matching game: English word ↔ Hindi meaning."
+          ],
+          "objectives": [
+            "Expand festival-related words for common usage",
+            "Form simple descriptive sentences about celebrations"
+          ]
+        },
+        {
+          "lessonId": 503,
+          "lessonNumber": 3,
+          "lessonTitle": "निमंत्रण देना (Invitations)",
+          "summary": "Neha politely invites neighbors and friends to her Diwali party. Learn polite invitation forms, bridging from Hindi to English.",
+          "activities": [
+            "Phrases: 'Would you like to join us?', 'We’re having a small get-together…'.",
+            "Role-play: inviting someone in 3 lines of English, specifying date/time.",
+            "Teacher/AI checks courtesy: 'Please come by 7 PM…'."
+          ],
+          "objectives": [
+            "Gain confidence inviting people in polite English",
+            "Use short lines to mention date/time"
+          ]
+        },
+        {
+          "lessonId": 504,
+          "lessonNumber": 4,
+          "lessonTitle": "त्योहारों की विविधता समझाना (Explaining Cultural Differences)",
+          "summary": "Neha’s friend from abroad asks about Diwali’s significance. Practice short English explanations that highlight traditions, avoiding direct Hindi translations.",
+          "activities": [
+            "Learn phrases: 'We light lamps…', 'It symbolizes…', 'We pray for…'.",
+            "Write 5 lines describing a festival’s origin or custom in simple English.",
+            "Teacher/AI corrects usage or clarity as needed."
+          ],
+          "objectives": [
+            "Teach basic festival explanations for cross-cultural sharing",
+            "Strengthen short descriptive ability about traditions"
+          ]
+        },
+        {
+          "lessonId": 505,
+          "lessonNumber": 5,
+          "lessonTitle": "खरीदारी और तैयारी (Shopping & Preparations)",
+          "summary": "Neha shops for sweets, clothes, and gifts. Learn short English lines to ask prices, bargain politely, and discuss festival deals.",
+          "activities": [
+            "Vocabulary: sweets, outfit, gift, discount, stall, etc.",
+            "Role-play: 'Excuse me, how much is this box of sweets?' + 'Could you give a discount?'",
+            "Reflection: difference in tone between formal shops vs. local stalls."
+          ],
+          "objectives": [
+            "Learn shopping-related festival phrases",
+            "Practice polite inquiries for bargains or selections"
+          ]
+        },
+        {
+          "lessonId": 506,
+          "lessonNumber": 6,
+          "lessonTitle": "आयोजन और सत्कार (Hosting & Hospitality)",
+          "summary": "Neha welcomes guests at home, offers refreshments, and shows them around. Practice short English phrases for greeting visitors warmly.",
+          "activities": [
+            "Vocabulary: welcome, refreshment, please have a seat, make yourself comfortable.",
+            "Role-play greeting a guest at the door in English.",
+            "Teacher/AI corrects courtesy lines for a friendly tone."
+          ],
+          "objectives": [
+            "Build confidence in welcoming guests in English",
+            "Use short phrases for offering food or drinks"
+          ]
+        },
+        {
+          "lessonId": 507,
+          "lessonNumber": 7,
+          "lessonTitle": "परिवार और दोस्तों के साथ त्यौहार (Family & Friends Gatherings)",
+          "summary": "Neha’s cousins arrive—everyone helps with group prayers and a shared meal. Learn simple lines to guide the family event in English.",
+          "activities": [
+            "Vocabulary: cousin, ritual, prayer, blessing, feast.",
+            "Simulate a short talk: 'We will start prayers at 8 PM, then have dinner together.'",
+            "Teacher/AI checks correct usage of these instructions."
+          ],
+          "objectives": [
+            "Handle extended family gatherings in English",
+            "Practice short instructions about festival schedule"
+          ]
+        },
+        {
+          "lessonId": 508,
+          "lessonNumber": 8,
+          "lessonTitle": "बाहरी मित्र और सांस्कृतिक साझेदारी (External Friends & Cultural Exchange)",
+          "summary": "Neha’s friend from a different culture attends the celebration. Learn to explain Indian traditions in simpler English. 60% instructions in English now.",
+          "activities": [
+            "Phrases: 'In our festival, we believe…', 'We usually greet elders by…', 'We exchange sweets…'.",
+            "Teacher/AI simulates friend’s questions about traditions. Respond in short English lines.",
+            "Reflection on bridging cultural gaps politely."
+          ],
+          "objectives": [
+            "Learn how to explain traditions to non-Indian friends",
+            "Increase comfort speaking mostly in English"
+          ]
+        },
+        {
+          "lessonId": 509,
+          "lessonNumber": 9,
+          "lessonTitle": "मनोवैज्ञानिक बाधाएँ और गलतियाँ (Common Mistakes & Overcoming Hesitations)",
+          "summary": "Address typical festival-English errors (like 'morningly time' for ‘in the morning’) or direct Hindi translations. Gently fix them while building confidence.",
+          "activities": [
+            "Teacher shows 5 flawed statements: user corrects them in short English lines.",
+            "Record a 1-minute invitation or schedule, teacher identifies repeated mistakes.",
+            "Write corrected lines in a short note for future reference."
+          ],
+          "objectives": [
+            "Identify repeated festival-related English errors",
+            "Adopt a friendly approach to self-correction"
+          ]
+        },
+        {
+          "lessonId": 510,
+          "lessonNumber": 10,
+          "lessonTitle": "उत्सव कहानियाँ और सांस्कृतिक किस्से (Festival Stories & Cultural Tales)",
+          "summary": "Neha recalls a funny Holi or Eid memory. Learn to read, summarize, and share cultural tales. 75% instructions in English.",
+          "activities": [
+            "Read a 200-word story, e.g., 'Neha’s Colorful Holi.'",
+            "Answer 5 comprehension questions (Hindi/English mix).",
+            "Summarize in 5 English lines, focusing on the highlight of the story."
+          ],
+          "objectives": [
+            "Combine reading + speaking for cultural stories",
+            "Grow confidence in telling personal festival experiences"
+          ]
+        },
+        {
+          "lessonId": 511,
+          "lessonNumber": 11,
+          "lessonTitle": "अंतर्दृष्टि और छोटा वार्तालाप (Deeper Insights & Small Conversations)",
+          "summary": "80% instructions in English. Discuss what a festival truly means to you. Teacher/AI simulates friend/family Qs, so you can expand on personal feelings.",
+          "activities": [
+            "Vocabulary: meaningful, prayerful, donation, family reunion.",
+            "Role-play: friend asks ‘Why is this festival special to you?’—respond in short English lines.",
+            "Teacher/AI checks clarity and grammar usage."
+          ],
+          "objectives": [
+            "Encourage deeper reflection on personal festival significance",
+            "Handle mid-length conversation mostly in English"
+          ]
+        },
+        {
+          "lessonId": 512,
+          "lessonNumber": 12,
+          "lessonTitle": "सामाजिक मीडिया और त्यौहार (Social Media & Festive Wishes)",
+          "summary": "85% instructions in English. Neha posts a Holi greeting on social media. Learn short lines to greet folks online or send quick messages.",
+          "activities": [
+            "Compose a 3-line festival wish for Facebook/WhatsApp in English.",
+            "Teacher/AI checks for polite/friendly tone.",
+            "Reflection: difference between formal invites vs. casual social posts."
+          ],
+          "objectives": [
+            "Build quick writing skill for digital greetings",
+            "Polish short, casual English messages"
+          ]
+        },
+        {
+          "lessonId": 513,
+          "lessonNumber": 13,
+          "lessonTitle": "उन्नत रोज़मर्रा के वार्तालाप (Advanced Conversational Scenarios)",
+          "summary": "90% instructions in English. Learn to politely refuse invites or apologize if you miss an event, offering short reasons in English.",
+          "activities": [
+            "Role-play: 'I’m so sorry, I can’t come because…' scenario. Provide a polite refusal.",
+            "Try 5 lines explaining your schedule conflict calmly.",
+            "Teacher/AI corrects grammar or tone as needed."
+          ],
+          "objectives": [
+            "Handle complex festival dialogues with minimal Hindi",
+            "Develop courtesy in tricky scheduling or refusals"
+          ]
+        },
+        {
+          "lessonId": 514,
+          "lessonNumber": 14,
+          "lessonTitle": "परिवार और मित्रों के अनुभव साझा करना (Sharing Memories & Experiences)",
+          "summary": "90% English instructions. Reflect on your favorite past festival. Speak for 2–3 minutes about that memory, with minimal Hindi fallback.",
+          "activities": [
+            "Pick a past festival, share 1–2 minutes about what made it special.",
+            "Teacher/AI asks 2 follow-up Qs. Respond spontaneously.",
+            "Write short corrections if any major errors appear."
+          ],
+          "objectives": [
+            "Enhance personal storytelling in English",
+            "Gain near-beginner fluency discussing past events"
+          ]
+        },
+        {
+          "lessonId": 515,
+          "lessonNumber": 15,
+          "lessonTitle": "सारांश और अंतिम अभ्यास (Review & Final Drill)",
+          "summary": "~95% instructions in English. Quickly revisit festival vocab, courtesy lines, and typical dialogues. Prepare for the final interactive challenge.",
+          "activities": [
+            "Speed recall: teacher calls out 10 festive words, user forms quick English sentences.",
+            "Self-check: reflect on how you overcame hesitations since Lesson 1.",
+            "Plan a short schedule for an imaginary festival entirely in English."
+          ],
+          "objectives": [
+            "Consolidate daily festival expressions and best practices",
+            "Boost readiness for final interactive challenge"
+          ]
+        },
+        {
+          "lessonId": 516,
+          "lessonNumber": 16,
+          "lessonTitle": "अंतिम प्रोजेक्ट (Festival Celebration Showcase)",
+          "summary": "Host a mock festival event (5–7 minutes). Invite friends, explain traditions, handle Q&A in mostly English. Minimal Hindi only if truly stuck. Earn your 'Festival English Star' badge!",
+          "activities": [
+            "Present a short festival scenario: mention name, date/time, reason for celebration.",
+            "Teacher/AI simulates 2–3 audience Qs in English—answer politely.",
+            "Celebrate final success with a proud badge awarding."
+          ],
+          "objectives": [
+            "Show full mastery of inviting, explaining, conversing about festivals in English",
+            "Achieve near-beginner fluency for real festive interactions"
+          ]
+        }
+      ]
+    }
+  ]
+}

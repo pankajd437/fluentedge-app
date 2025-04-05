@@ -1,0 +1,1081 @@
+{
+  "courses": [
+
+    /* =========================
+       COURSE #21 REFINED
+       ========================= */
+    {
+      "courseId": 21,
+      "title": "Advanced Fluency Challenge (Refined)",
+      "level": "Advanced",
+      "languageInstruction": "Fully English",
+      "lessons": [
+
+        {
+          "lessonId": 2101,
+          "lessonNumber": 1,
+          "lessonTitle": "Stepping Beyond Plateau",
+          "summary": "Meet Kira, who’s plateaued at a high-intermediate level. [REFINEMENT] Offers “Instant Correction” or “Summarized Correction.” Micro-Level Grammar Drills appear if repeated advanced forms slip. Focus on daily streak XP to maintain motivation.",
+          "activities": [
+            "Mini Quiz (5 XP): Identify advanced vs. intermediate idioms for daily life.",
+            "Self-Reflection: Share 2 plateau issues, earn +5 XP for daily streak.",
+            "AI Micro-lesson triggers if user repeatedly chooses simpler synonyms."
+          ],
+          "objectives": [
+            "Recognize advanced-level plateau challenges",
+            "Set personal, high-level fluency goals"
+          ],
+          "badgeUponCompletion": "Fluency Starter"
+        },
+        {
+          "lessonId": 2102,
+          "lessonNumber": 2,
+          "lessonTitle": "High-Speed Listening & Rapid Response",
+          "summary": "[REFINEMENT] Incorporate cultural references: audio clips from global news/pop culture. If user struggles with ephemeral context, short “Context Cards” appear. Feedback can be “Instant” or “Summarized.”",
+          "activities": [
+            "Speed Drill (10 XP): Listen to 1-min advanced clip, verbally summarize in 20 seconds.",
+            "Mini Quiz (5 XP): Choose best summary lines among 5 samples.",
+            "Team Chat: Share biggest challenge with fast audio, earn +5 XP after peer advice."
+          ],
+          "objectives": [
+            "Sharpen real-time listening and instant summarizing",
+            "Reduce filler or hesitant speech under time pressure"
+          ],
+          "badgeUponCompletion": "Quick Listener"
+        },
+        {
+          "lessonId": 2103,
+          "lessonNumber": 3,
+          "lessonTitle": "Idiomatic Mastery & Proverbial Expressions",
+          "summary": "Explore advanced idioms and proverbs, possibly region-specific. [REFINEMENT] A short Focus Drill appears if user misuses or forces an idiom. Feedback frequency adjustable.",
+          "activities": [
+            "Vocabulary Drill (10 XP): Craft 5 lines with advanced idioms, AI checks usage.",
+            "Mini Quiz (5 XP): Pick correct contexts for 5 tricky proverbs.",
+            "Team Chat: Share a favorite lesser-known expression; +5 XP after group acceptance."
+          ],
+          "objectives": [
+            "Use upper-level idioms naturally",
+            "Avoid stilted or forced usage in conversation"
+          ],
+          "badgeUponCompletion": "Idiom Pro"
+        },
+        {
+          "lessonId": 2104,
+          "lessonNumber": 4,
+          "lessonTitle": "Speed Debating & Spontaneous Opinion",
+          "summary": "Engage in mini-debates with minimal prep time. AI logs repeated filler. [REFINEMENT] Cultural context debate topics (e.g., global policy, environmental issues). Optional grammar drills if repeated inversion errors occur.",
+          "activities": [
+            "Debate Sprint (15 XP): 30s to form stance, 1 min to articulate. AI logs filler usage.",
+            "Mini Quiz (5 XP): Identify best advanced transitions (“On the other hand…”) among 5 lines.",
+            "Team Chat: Post your debate snippet, +5 XP on peer commentary."
+          ],
+          "objectives": [
+            "Master quick thinking in advanced debates",
+            "Minimize filler while maintaining logical structure"
+          ],
+          "badgeUponCompletion": "Debate Sprinter"
+        },
+        {
+          "lessonId": 2105,
+          "lessonNumber": 5,
+          "lessonTitle": "Advanced Storytelling & Improvisation",
+          "summary": "Spin short, improvised tales on the spot. AI checks narrative flow. [REFINEMENT] If story arcs are disjointed, user sees a Focus Drill on narrative structure or transitions.",
+          "activities": [
+            "Improv Story Drill (15 XP): 90-second tale from random prompt. AI checks pacing and advanced vocab.",
+            "Mini Quiz (5 XP): Best linking lines among 5 story transitions.",
+            "Peer Reflection: Post quick story excerpt; +5 XP once improved."
+          ],
+          "objectives": [
+            "Enhance advanced spontaneity in extended speech",
+            "Use descriptive language and clear arcs"
+          ],
+          "badgeUponCompletion": "Improv Ace"
+        },
+        {
+          "lessonId": 2106,
+          "lessonNumber": 6,
+          "lessonTitle": "Native-Like Pronunciation Nuances",
+          "summary": "[REFINEMENT] Timely Focus Drills if user repeatedly mispronounces certain phoneme clusters. Optionally set feedback to “Instant Correction” for immediate waveforms or “Summarized Correction” for a post-task recap.",
+          "activities": [
+            "Phonetic Waveform (15 XP): Record a 1-min reading with connected speech. AI highlights linking or missed stress.",
+            "Mini Quiz (5 XP): Identify correct usage of informal reductions (gonna/wanna).",
+            "Team Chat: Post a short tricky phrase, awarding +5 XP after group tips."
+          ],
+          "objectives": [
+            "Refine near-native linking and reduced forms",
+            "Control advanced intonation patterns in different contexts"
+          ],
+          "badgeUponCompletion": "Pronunciation Nuance"
+        },
+        {
+          "lessonId": 2107,
+          "lessonNumber": 7,
+          "lessonTitle": "Public Forum Participation",
+          "summary": "Simulate open mic or town hall Q&A. Earn XP for advanced brevity and clarity. AI logs repeated filler or abrupt transitions. Cultural references might be local community issues or global concerns.",
+          "activities": [
+            "Role-play (15 XP): 2-min statement + 1–2 Qs from audience. AI flags repeated structural flaws.",
+            "Mini Quiz (5 XP): Best advanced bridging lines among 5 forum responses.",
+            "Team Chat: Share approach to handling disagreements; +5 XP upon peer acceptance."
+          ],
+          "objectives": [
+            "Demonstrate advanced brevity in public forum settings",
+            "Handle quick questions with logical bridging"
+          ],
+          "badgeUponCompletion": "Forum Speaker"
+        },
+        {
+          "lessonId": 2108,
+          "lessonNumber": 8,
+          "lessonTitle": "Advanced Reading Challenges",
+          "summary": "Push reading speed and comprehension with dense texts (technical or literary). [REFINEMENT] Optional micro-drill if user’s lexical knowledge is lacking. Summarized Correction if user wants fewer interruptions.",
+          "activities": [
+            "Timed Reading (10 XP): 400-word text in 2 min, 20s verbal summary. AI logs clarity.",
+            "Mini Quiz (5 XP): synonyms or definitions for 5 advanced words.",
+            "Daily Streak Bonus: +5 XP for consistent usage in reading tasks."
+          ],
+          "objectives": [
+            "Handle advanced-level reading under time pressure",
+            "Extract main points from dense or abstract passages quickly"
+          ],
+          "badgeUponCompletion": "Reading Champ"
+        },
+        {
+          "lessonId": 2109,
+          "lessonNumber": 9,
+          "lessonTitle": "Writing Without Restraints (Freewriting & Speed Essays)",
+          "summary": "Break mental blocks with advanced freewriting. AI logs repeated safe expressions or cliches, offering line-by-line commentary if user opts for Extended Feedback. Focus Drills if grammar stumbles reoccur.",
+          "activities": [
+            "Freewrite Sprint (15 XP): ~150 words in 5 min on advanced prompt. AI checks lexical variety.",
+            "Mini Quiz (5 XP): identify rhetorical devices among 5 short lines.",
+            "Team Chat: share freewriting excerpt; +5 XP upon group critique."
+          ],
+          "objectives": [
+            "Boost advanced writing spontaneity",
+            "Expand varied vocabulary beyond comfort zone"
+          ],
+          "badgeUponCompletion": "Freewriting Pro"
+        },
+        {
+          "lessonId": 2110,
+          "lessonNumber": 10,
+          "lessonTitle": "Complex Grammar & Subtle Constructions",
+          "summary": "Master subjunctives, inversions, emphatic do. Earn XP if usage remains correct in short dialogues or writing. AI micro-lesson if repeated confusion surfaces. Summarized or instant feedback user choice.",
+          "activities": [
+            "Grammar Puzzle (15 XP): fill 5 sentences with advanced structures (e.g., ‘Had I known…’).",
+            "Mini Quiz (5 XP): choose correct inversions among 5 tricky lines.",
+            "Team Chat: share an advanced grammar puzzle, +5 XP once peers solve."
+          ],
+          "objectives": [
+            "Employ lesser-used advanced grammar forms",
+            "Use them naturally in speech/writing"
+          ],
+          "badgeUponCompletion": "Grammar Connoisseur"
+        },
+        {
+          "lessonId": 2111,
+          "lessonNumber": 11,
+          "lessonTitle": "Accents & Global English Variations",
+          "summary": "[REFINEMENT] Cultural references: British, Aussie, African, or Indian English accents. AI logs user’s confusion or repeated clarifications. Summarized Correction or instant waveforms optional.",
+          "activities": [
+            "Accent Challenge (10 XP): Summarize a 1-min clip in a different accent. AI checks comprehension accuracy.",
+            "Mini Quiz (5 XP): identify variant words (lorry vs. truck, lift vs. elevator).",
+            "Team Chat: share your biggest accent surprise, awarding +5 XP once peers discuss solutions."
+          ],
+          "objectives": [
+            "Improve advanced-level accent understanding across regions",
+            "Handle diverse English variations with minimal confusion"
+          ],
+          "badgeUponCompletion": "Accent Explorer"
+        },
+        {
+          "lessonId": 2112,
+          "lessonNumber": 12,
+          "lessonTitle": "Extended Improvisations & Debate Finals",
+          "summary": "Combine speed debate + advanced storytelling. AI logs repeated rhetorical filler or logic leaps. Optional micro-drill if abrupt transitions show up. Collaboration fosters multi-topic debate showdowns.",
+          "activities": [
+            "Multi-Topic Debate (15 XP): user flips from philosophical to tech question mid-speech. AI logs fluency dips.",
+            "Mini Quiz (5 XP): best bridging lines among 5 for sudden topic shifts.",
+            "Daily Streak Bonus: +5 XP leading to final phases."
+          ],
+          "objectives": [
+            "Handle abrupt topic changes at advanced speed",
+            "Maintain coherence with minimal rhetorical filler"
+          ],
+          "badgeUponCompletion": "Pivot Master"
+        },
+        {
+          "lessonId": 2113,
+          "lessonNumber": 13,
+          "lessonTitle": "Self-Analysis & Peer Critique at Peak Fluency",
+          "summary": "Users watch or read earlier recordings, identify final stumbling blocks. AI micro-lessons for persistent repeated grammar/lexical errors. Collaboration fosters final group critique circles. Summarized Correction likely best here to keep focus on big-picture issues.",
+          "activities": [
+            "Self-Review (10 XP): user replays a 2-min speech from earlier lessons, notes 3 improvements. AI checks if old issues remain.",
+            "Mini Quiz (5 XP): best advanced self-critique lines among 5 examples.",
+            "Team Chat: share final improvement plan, +5 XP after peer validation."
+          ],
+          "objectives": [
+            "Reflect deeply on personal growth throughout the course",
+            "Pinpoint any lingering advanced-level slip-ups"
+          ],
+          "badgeUponCompletion": "Critique Specialist"
+        },
+        {
+          "lessonId": 2114,
+          "lessonNumber": 14,
+          "lessonTitle": "Grammar & Lexical Polish: Final Checks",
+          "summary": "AI logs top 3 grammar slip-ups + top 3 lexical misses. Focus Drills appear if they reoccur. [REFINEMENT] Summarized Correction recommended for thorough review. Collaboration fosters short group challenges to identify fresh synonyms.",
+          "activities": [
+            "Polish Speech (15 XP): user attempts a 2–3 min talk focusing on varied synonyms or advanced grammar forms.",
+            "Mini Quiz (5 XP): fix 5 user-specific grammar lines from your log.",
+            "Team Chat: share 3 new synonyms, awarding +5 XP after peer confirmation."
+          ],
+          "objectives": [
+            "Eliminate final persistent lexical/grammar flaws",
+            "Reach near-native variety in advanced speaking"
+          ],
+          "badgeUponCompletion": "Language Polisher"
+        },
+        {
+          "lessonId": 2115,
+          "lessonNumber": 15,
+          "lessonTitle": "Ultimate Fluency Marathon Simulation",
+          "summary": "A timed 10–12 minute challenge: speed reading summary, spontaneous debate, short storytelling. Earn XP for seamless pivots. AI logs final repeated errors, awarding or deducting XP. Collaboration fosters group feedback.",
+          "activities": [
+            "Marathon (30 XP): user does 3 mini tasks back-to-back, minimal repeated filler => XP bonus.",
+            "Peer Panel: group chat critiques each segment, +5 XP after improvements.",
+            "Daily Streak Bonus: +5 XP leading to final project."
+          ],
+          "objectives": [
+            "Demonstrate integrated advanced fluency across diverse tasks",
+            "Sustain minimal filler or slip-ups under pressure"
+          ],
+          "badgeUponCompletion": "Fluency Marathoner"
+        },
+        {
+          "lessonId": 2116,
+          "lessonNumber": 16,
+          "lessonTitle": "Final Showcase: Conquer the Plateau",
+          "summary": "[REFINEMENT] Option for “Instant Correction” or “Summarized Correction.” If advanced grammar forms remain shaky, a post-showcase Focus Drill is triggered. Cultural references can be embedded in each segment (debate, story, Q&A).",
+          "activities": [
+            "10–15 minute advanced display with 3–4 segments (speed debate, story improv, reading summary, Q&A). Up to +50 XP if repeated errors are minimal.",
+            "Teacher/AI scoreboard: big XP for no repeated mistakes from earlier logs.",
+            "Reflection: user celebrates advanced-level progress post plateau."
+          ],
+          "objectives": [
+            "Show mastery of advanced spontaneity, speed, and lexical variety",
+            "Surpass your plateau, proving near-native agility"
+          ],
+          "badgeUponCompletion": "Advanced Fluency Champion"
+        }
+      ]
+    },
+
+    /* =========================
+       COURSE #22 REFINED
+       ========================= */
+    {
+      "courseId": 22,
+      "title": "AI-Powered Spoken English Coach (Refined)",
+      "level": "Advanced",
+      "languageInstruction": "Fully English",
+      "lessons": [
+
+        {
+          "lessonId": 2201,
+          "lessonNumber": 1,
+          "lessonTitle": "Meet Your AI Coach",
+          "summary": "[REFINEMENT] Offers user adjustable Feedback Frequency ('Instant' vs. 'Summarized'). AI-based micro-lessons for repeated advanced grammar or lexical errors. Cultural context prompts or pop culture references to keep conversation fresh.",
+          "activities": [
+            "Mini Quiz (5 XP): pick advanced lines for explaining AI interactions vs. simpler instructions.",
+            "Reflection: share 2 hopes/concerns about AI-based drills, +5 XP daily streak.",
+            "AI micro-lesson if user reverts to short, safe expressions."
+          ],
+          "objectives": [
+            "Acclimate to AI-driven real-time feedback",
+            "Set advanced conversation goals with daily AI chats"
+          ],
+          "badgeUponCompletion": "AI Coach Intro"
+        },
+        {
+          "lessonId": 2202,
+          "lessonNumber": 2,
+          "lessonTitle": "Conversational Flow & Extended Dialogues",
+          "summary": "Aim for 5–7 min dialogues with advanced transitions. [REFINEMENT] If user chooses Summarized Correction, AI stores slip-ups until end. If Instant, AI may interrupt for a short correction. Cultural topics revolve around global events.",
+          "activities": [
+            "AI Dialogue (15 XP): user speaks for 5 min on a complex subject (environment, socio-politics, etc.), AI logs transitions used.",
+            "Mini Quiz (5 XP): pick best connectors from 5 conversation lines.",
+            "Team Chat: share a snippet of your conversation log, +5 XP once peers comment."
+          ],
+          "objectives": [
+            "Maintain advanced-level conversation flow",
+            "Use complex transitions for smooth topic shifts"
+          ],
+          "badgeUponCompletion": "Extended Dialogues"
+        },
+        {
+          "lessonId": 2203,
+          "lessonNumber": 3,
+          "lessonTitle": "Instant Error Correction & Micro-Learning",
+          "summary": "[REFINEMENT] The AI can interrupt mid-sentence with a micro-lesson if user chooses “Instant Correction.” For repeated forms, a short Focus Drill appears. Summarized mode lumps corrections at session’s end. ",
+          "activities": [
+            "Live Correction Session (10 XP): user triggers certain advanced mistakes, sees pop-up micro-lessons, re-records lines for +2 XP each fix.",
+            "Mini Quiz (5 XP): Spot correct usage in 5 lines the AI might highlight.",
+            "Team Chat: share 2 lines the AI corrected, awarding +5 XP for final improved version."
+          ],
+          "objectives": [
+            "Embrace immediate AI-led micro-learning approach",
+            "Quickly adjust speech upon error detection"
+          ],
+          "badgeUponCompletion": "Micro-Learning Hero"
+        },
+        {
+          "lessonId": 2204,
+          "lessonNumber": 4,
+          "lessonTitle": "Vocabulary Expansion via AI Prompts",
+          "summary": "[REFINEMENT] Learner can request advanced synonyms, domain-specific jargon. If user keeps reverting to basic words, a short Focus Drill appears. Summarized or Instant Correction user’s choice. Cultural references can appear if relevant to synonyms.",
+          "activities": [
+            "Vocab Prompt (10 XP): user requests advanced synonyms from AI for 5 everyday words, then uses them in lines.",
+            "Mini Quiz (5 XP): pick best context among 5 for new advanced phrases.",
+            "Team Chat: share your top 3 newly found expressions, awarding +5 XP once validated."
+          ],
+          "objectives": [
+            "Integrate AI-suggested advanced vocabulary into speech",
+            "Push beyond comfortable, repetitive word choices"
+          ],
+          "badgeUponCompletion": "Vocab Expander"
+        },
+        {
+          "lessonId": 2205,
+          "lessonNumber": 5,
+          "lessonTitle": "AI Role-plays: Real-World Scenarios",
+          "summary": "AI simulates boardroom, debate panel, or academic Q&A. [REFINEMENT] Offers a “Deep Dive” if repeated grammar or courtesy errors appear. Cultural references can adapt to user’s region or global issues.",
+          "activities": [
+            "Multi-Scenario Role-play (15 XP): AI sets 3 short contexts (interview, academic talk, negotiation). AI logs tone mismatch.",
+            "Mini Quiz (5 XP): pick best lines for each context among 5 Qs.",
+            "Team Chat: share your hardest scenario snippet, awarding +5 XP after revision."
+          ],
+          "objectives": [
+            "Adapt advanced language to different formal/casual settings",
+            "Maintain clarity and politeness across multiple role-play contexts"
+          ],
+          "badgeUponCompletion": "Scenario Master"
+        },
+        {
+          "lessonId": 2206,
+          "lessonNumber": 6,
+          "lessonTitle": "Speed Reaction & Timed AI Challenges",
+          "summary": "The AI sets 30-second max response windows. Earn XP for coherent advanced replies. [REFINEMENT] If user feels too pressured, Summarized Correction recommended. Focus Drills if repeated filler emerges.",
+          "activities": [
+            "Timed Challenge (15 XP): AI fires random Qs, user answers within 30s. Minimal filler => higher XP.",
+            "Mini Quiz (5 XP): best short transitions among 5 abrupt queries.",
+            "Team Chat: share biggest difficulty in time-limited responses, awarding +5 XP after peer tips."
+          ],
+          "objectives": [
+            "Enhance advanced-level spontaneity under strict time constraints",
+            "Minimize stumbles, keep clarity in short bursts"
+          ],
+          "badgeUponCompletion": "Timed Reactor"
+        },
+        {
+          "lessonId": 2207,
+          "lessonNumber": 7,
+          "lessonTitle": "AI-Driven Pronunciation Feedback",
+          "summary": "Record segments; AI pinpoints phoneme-level issues. Earn XP for immediate fixes or Summarized Correction. If user repeats certain errors, a short Focus Drill targets them. Collaboration fosters a ‘pronunciation circle.’",
+          "activities": [
+            "Pronunciation Drill (15 XP): read a challenging passage, AI highlights waveforms or mouth positioning.",
+            "Mini Quiz (5 XP): best approach for advanced phonemes among 5 options.",
+            "Team Chat: share short clip, +5 XP once peers confirm clarity improvement."
+          ],
+          "objectives": [
+            "Leverage AI’s phoneme-level correction for advanced accent polish",
+            "Adopt immediate fixes to persistent articulation issues"
+          ],
+          "badgeUponCompletion": "Phoneme Fixer"
+        },
+        {
+          "lessonId": 2208,
+          "lessonNumber": 8,
+          "lessonTitle": "AI Debate & Conflict Management",
+          "summary": "Argue controversial topics; AI stands in opposition. Earn XP for calm, reasoned counterpoints. [REFINEMENT] Cultural references to local or global issues. Focus Drills if repeated rhetorical aggression appears. ",
+          "activities": [
+            "AI Debate (15 XP): user picks a hot issue, debates AI’s stance for 3–5 min, minimal filler => XP bonus.",
+            "Mini Quiz (5 XP): best lines for disagreeing politely among 5 choices.",
+            "Daily Streak Bonus: +5 XP if user logs in consistently."
+          ],
+          "objectives": [
+            "Master advanced disagreement or conflict-laden dialogues calmly",
+            "Maintain politeness in heated AI debates"
+          ],
+          "badgeUponCompletion": "AI Debater"
+        },
+        {
+          "lessonId": 2209,
+          "lessonNumber": 9,
+          "lessonTitle": "Customized AI Projects & Challenges",
+          "summary": "User picks specialized tasks—poem recitals, domain practice. Earn XP for creative synergy with AI. AI logs repeated safe patterns. Collaboration fosters project sharing in group chat. Summarized or Instant Correction user’s choice.",
+          "activities": [
+            "User-Defined Task (15 XP): e.g., short dialogue about quantum computing, then present verbally. AI checks advanced usage.",
+            "Mini Quiz (5 XP): choose best approach among 5 creative tasks for domain expansions.",
+            "Team Chat: post your custom AI project, +5 XP upon peer acceptance."
+          ],
+          "objectives": [
+            "Employ AI in specialized/creative tasks at advanced level",
+            "Show comfort pushing beyond typical conversation forms"
+          ],
+          "badgeUponCompletion": "Creative Projector"
+        },
+        {
+          "lessonId": 2210,
+          "lessonNumber": 10,
+          "lessonTitle": "Grammar Deep-Dive with AI Explanations",
+          "summary": "Ask AI about advanced grammar points (subjunctive, inversions). Earn XP by restating in your words. AI micro-lessons for persistent confusion. Collaboration fosters grammar Q&A circle. Summarized or Instant Correction as user prefers.",
+          "activities": [
+            "Grammar Q&A (10 XP): user queries AI about 2 tricky structures, then shares advanced examples. AI checks clarity.",
+            "Mini Quiz (5 XP): fix 5 subtle lines with advanced forms.",
+            "Peer Chat: share 1 advanced structure clarified with AI, awarding +5 XP upon validation."
+          ],
+          "objectives": [
+            "Use AI as a grammar reference for tricky advanced forms",
+            "Reinforce knowledge by restating clarifications in your words"
+          ],
+          "badgeUponCompletion": "Grammar Clarifier"
+        },
+        {
+          "lessonId": 2211,
+          "lessonNumber": 11,
+          "lessonTitle": "Conversational Style & Persona Shifts",
+          "summary": "Ask AI to role-play different personas—formal speaker, casual friend, professor. Earn XP for shifting style seamlessly. Summarized or Instant Correction user choice. AI flags if your register is inconsistent.",
+          "activities": [
+            "Persona Switch (15 XP): user attempts 3 short dialogues with distinct style. AI logs repeated mismatch.",
+            "Mini Quiz (5 XP): pick best advanced lines for formal vs. casual vs. academic contexts.",
+            "Team Chat: share your style-shifting snippet, +5 XP once peers confirm smooth transitions."
+          ],
+          "objectives": [
+            "Shift advanced language registers as context demands",
+            "Maintain consistent persona alignment in ongoing dialogue"
+          ],
+          "badgeUponCompletion": "Stylistic Flexibility"
+        },
+        {
+          "lessonId": 2212,
+          "lessonNumber": 12,
+          "lessonTitle": "Story Mode & Collaborative Narratives",
+          "summary": "Co-create a story with AI, each turn adding complexity. Summarized or Instant Correction optional. Earn XP for advanced details, minimal repetition. AI micro-lessons if you rely on same expressions. Collaboration fosters group expansions.",
+          "activities": [
+            "Co-Narration (15 XP): user starts a story, AI continues, user must adapt. AI flags repeated phrases.",
+            "Mini Quiz (5 XP): pick best expansions among 5 transitional lines.",
+            "Daily Streak Bonus: +5 XP leading to final tasks."
+          ],
+          "objectives": [
+            "Develop creative synergy with AI while sustaining advanced language",
+            "Respond spontaneously to new plot twists or style prompts"
+          ],
+          "badgeUponCompletion": "Story Collaborator"
+        },
+        {
+          "lessonId": 2213,
+          "lessonNumber": 13,
+          "lessonTitle": "Self-Analysis: AI Logs & Pattern Recognition",
+          "summary": "Review conversation transcripts for repeated errors. Summarized Correction recommended here for big-picture insight. Focus Drills if user still stumbles on certain advanced forms. Collaboration fosters group reflection.",
+          "activities": [
+            "Log Review (10 XP): user identifies 3 recurring mistakes from AI logs, proposes fixes.",
+            "Mini Quiz (5 XP): fix 5 lines from your logs, awarding +1 XP each correct fix.",
+            "Team Chat: share final improvement plan, +5 XP after peer validation."
+          ],
+          "objectives": [
+            "Spot personal repeated slip-ups from AI transcripts",
+            "Adopt final strategies to correct them for advanced mastery"
+          ],
+          "badgeUponCompletion": "AI Analysis Pro"
+        },
+        {
+          "lessonId": 2214,
+          "lessonNumber": 14,
+          "lessonTitle": "Complex Prompt Creation for AI",
+          "summary": "Learn to feed multi-layered prompts to AI for expert-level outputs. If prompts remain vague, short Focus Drills show how to refine instructions. Summarized or Instant Correction user’s choice. Collaboration fosters prompt-sharing sessions.",
+          "activities": [
+            "Prompt Mastery (15 XP): user crafts a layered prompt with roles, context, constraints. AI checks clarity.",
+            "Mini Quiz (5 XP): pick best advanced prompting approach among 5 examples.",
+            "Team Chat: share your prompt, awarding +5 XP if peers find it sophisticated."
+          ],
+          "objectives": [
+            "Create advanced prompts that yield highly nuanced AI responses",
+            "Refine instructions to push AI beyond generic replies"
+          ],
+          "badgeUponCompletion": "Prompt Designer"
+        },
+        {
+          "lessonId": 2215,
+          "lessonNumber": 15,
+          "lessonTitle": "AI Conversation Marathon: Multi-Topic Versatility",
+          "summary": "A 15-minute conversation with AI across 3–4 drastically different topics. Summarized or Instant Correction user’s choice. Earn XP for minimal filler. AI logs final repeated errors. Collaboration fosters peer feedback on logs.",
+          "activities": [
+            "Marathon Chat (30 XP): user shifts topics every 3–4 min, AI logs repeated slip-ups or style mismatches.",
+            "Peer Panel: group chat critiques logs, awarding +5 XP after user addresses improvements.",
+            "Daily Streak Bonus: +5 XP for consistent usage leading to final project."
+          ],
+          "objectives": [
+            "Show advanced-level dexterity shifting topics swiftly",
+            "Maintain strong vocabulary and grammar throughout varied contexts"
+          ],
+          "badgeUponCompletion": "Conversation Marathoner"
+        },
+        {
+          "lessonId": 2216,
+          "lessonNumber": 16,
+          "lessonTitle": "Final AI-Coach Showcase: Ultimate Mastery",
+          "summary": "[REFINEMENT] If user requests robust feedback, the AI or teacher can provide line-by-line commentary. If repeated advanced grammar slip-ups appear, a post-showcase Focus Drill triggers before awarding the final badge.",
+          "activities": [
+            "Ultimate Session: 20 min with debate, storytelling, Q&A, grammar queries. Each done well = +10 XP, up to 50 total.",
+            "Teacher/AI scoreboard: large XP for no repeated major issues.",
+            "Reflection: user celebrates synergy with AI for unstoppable advanced skill."
+          ],
+          "objectives": [
+            "Demonstrate full advanced synergy with AI across multiple conversation forms",
+            "Prove mastery in real-time correction and fluid expression"
+          ],
+          "badgeUponCompletion": "AI-Powered Spoken English Coach (Advanced)"
+        }
+      ]
+    },
+
+    /* =========================
+       COURSE #23 REFINED
+       ========================= */
+    {
+      "courseId": 23,
+      "title": "Creative Writing & Literary Analysis (Refined)",
+      "level": "Advanced",
+      "languageInstruction": "Fully English",
+      "lessons": [
+
+        {
+          "lessonId": 2301,
+          "lessonNumber": 1,
+          "lessonTitle": "Embrace Your Creative Edge",
+          "summary": "[REFINEMENT] Extended Writing Feedback with optional line-by-line commentary. Micro-Level Drills for repeated grammar or style cliches. Summarized or Instant Correction if reading text aloud. Cultural references to global literature.",
+          "activities": [
+            "Mini Quiz (5 XP): advanced creative lines vs. simpler statements.",
+            "Reflection: share 2 writing goals, +5 XP daily streak.",
+            "AI micro-lesson if user uses cliches or repetitive phrases."
+          ],
+          "objectives": [
+            "Recognize advanced demands of creative writing & critique",
+            "Set personal creative writing goals"
+          ],
+          "badgeUponCompletion": "Creative Start"
+        },
+        {
+          "lessonId": 2302,
+          "lessonNumber": 2,
+          "lessonTitle": "Short Story Foundations & Character Building",
+          "summary": "Focus on dynamic characters, show vs. tell. [REFINEMENT] If user’s text remains too expository, a short Focus Drill suggests “showing” strategies. Summarized Correction recommended for deeper writing feedback.",
+          "activities": [
+            "Character Sketch (10 XP): 100-word snippet introducing a protagonist. AI checks show vs. tell.",
+            "Mini Quiz (5 XP): pick best character detail lines among 5.",
+            "Team Chat: share your opening paragraph, +5 XP after peer feedback."
+          ],
+          "objectives": [
+            "Develop advanced characters with minimal exposition",
+            "Use descriptive language to reveal traits"
+          ],
+          "badgeUponCompletion": "Story Characterizer"
+        },
+        {
+          "lessonId": 2303,
+          "lessonNumber": 3,
+          "lessonTitle": "Poetic Devices & Advanced Figurative Language",
+          "summary": "[REFINEMENT] If lines sound forced or cliche, user gets a micro Focus Drill on metaphor usage. Extended Writing Feedback allows line-by-line commentary from teacher/AI. Summarized or Instant Correction user’s choice.",
+          "activities": [
+            "Mini Poem (15 XP): 6 lines with 2 figurative devices, AI checks style.",
+            "Mini Quiz (5 XP): identify device usage among 5 sample lines.",
+            "Team Chat: share your poem, +5 XP after group critique."
+          ],
+          "objectives": [
+            "Use advanced poetic techniques organically",
+            "Refine figurative language for emotional impact"
+          ],
+          "badgeUponCompletion": "Poetry Adept"
+        },
+        {
+          "lessonId": 2304,
+          "lessonNumber": 4,
+          "lessonTitle": "Plot Structuring & Narrative Pacing",
+          "summary": "Learn tension arcs, flashbacks, non-linear sequences. [REFINEMENT] If timeline confusion arises, short Focus Drill clarifies chronological bridging. Summarized Correction recommended for big-picture issues.",
+          "activities": [
+            "Plot Outline (15 XP): user crafts a 150-word summary with rising tension, climax, resolution. AI checks coherence.",
+            "Mini Quiz (5 XP): pick best transitions from 5 pacing lines.",
+            "Peer Chat: share your outline, +5 XP once refined."
+          ],
+          "objectives": [
+            "Implement advanced pacing in narrative structure",
+            "Avoid timeline confusion or rushed climaxes"
+          ],
+          "badgeUponCompletion": "Plot Architect"
+        },
+        {
+          "lessonId": 2305,
+          "lessonNumber": 5,
+          "lessonTitle": "Advanced Literary Analysis: Classic Texts",
+          "summary": "[REFINEMENT] Extended commentary on user’s reading or analysis. If superficial remarks repeat, a micro Focus Drill offers deeper interpretive cues. Summarized Correction for thorough style feedback.",
+          "activities": [
+            "Close Reading (15 XP): read a ~200-300 word excerpt, deliver a 2-min analysis. AI checks depth.",
+            "Mini Quiz (5 XP): pick best advanced commentary lines among 5 statements.",
+            "Team Chat: share top takeaway from the excerpt, +5 XP once peers confirm insight."
+          ],
+          "objectives": [
+            "Develop advanced-level interpretive skills for literary passages",
+            "Express deeper thematic and stylistic observations"
+          ],
+          "badgeUponCompletion": "Literary Critic"
+        },
+        {
+          "lessonId": 2306,
+          "lessonNumber": 6,
+          "lessonTitle": "Dialogue Craft & Subtext",
+          "summary": "Write dialogues with hidden motives or tensions. [REFINEMENT] If user is too explicit, a Focus Drill suggests subtle ways to convey subtext. Extended line-by-line commentary optional.",
+          "activities": [
+            "Dialogue Draft (15 XP): ~10 lines with subtle conflict. AI logs subtext quality.",
+            "Mini Quiz (5 XP): best advanced subtext signals among 5 dialogues.",
+            "Team Chat: share snippet, +5 XP after peer confirmation of subtext clarity."
+          ],
+          "objectives": [
+            "Use dialogue to convey deeper themes indirectly",
+            "Refine advanced nuance in character interactions"
+          ],
+          "badgeUponCompletion": "Dialogue Subtext Pro"
+        },
+        {
+          "lessonId": 2307,
+          "lessonNumber": 7,
+          "lessonTitle": "Advanced Wordsmithing & Stylistic Precision",
+          "summary": "Rewrite bland lines into vibrant ones. AI micro-lessons if user recycles safe synonyms. Summarized Correction for deeper style notes. Collaboration fosters rewriting tasks.",
+          "activities": [
+            "Rewrite Challenge (15 XP): transform 5 bland lines with advanced diction. AI checks variety and conciseness.",
+            "Mini Quiz (5 XP): pick best style among 5 rewrites.",
+            "Team Chat: share 2 lines you improved, awarding +5 XP once refined."
+          ],
+          "objectives": [
+            "Enhance writing style with precise, vivid lexis",
+            "Avoid repetitive or lackluster vocabulary"
+          ],
+          "badgeUponCompletion": "Stylistic Enhancer"
+        },
+        {
+          "lessonId": 2308,
+          "lessonNumber": 8,
+          "lessonTitle": "Poetry Workshop: Meter & Form",
+          "summary": "[REFINEMENT] If scansion is off, user gets a micro Focus Drill on iambic or trochaic patterns. Extended commentary optional for line-by-line meter checks. Summarized or Instant Correction user’s choice if reading poem aloud.",
+          "activities": [
+            "Form Experiment (15 XP): short sonnet or blank verse snippet. AI checks scansion or forced rhymes.",
+            "Mini Quiz (5 XP): identify correct meter among 5 lines (iambic, trochaic, etc.).",
+            "Team Chat: share poem, +5 XP after peer feedback on meter consistency."
+          ],
+          "objectives": [
+            "Practice advanced poetic meters or forms",
+            "Use line breaks and rhythms effectively"
+          ],
+          "badgeUponCompletion": "Poetic Form Expert"
+        },
+        {
+          "lessonId": 2309,
+          "lessonNumber": 9,
+          "lessonTitle": "Literary Criticism & Comparative Analysis",
+          "summary": "Compare two literary pieces from different eras or styles. [REFINEMENT] If superficial commentary repeats, a short Focus Drill suggests deeper angles. Summarized Correction recommended for big-picture insights.",
+          "activities": [
+            "Comparative Essay (20 XP): ~200 words contrasting theme/style in 2 short excerpts. AI logs depth.",
+            "Mini Quiz (5 XP): pick best advanced commentary lines among 5 sample comparisons.",
+            "Team Chat: share compare-contrast excerpt, awarding +5 XP after peer critique."
+          ],
+          "objectives": [
+            "Conduct advanced comparative analysis of literary works",
+            "Articulate style or thematic contrasts clearly"
+          ],
+          "badgeUponCompletion": "Comparative Critic"
+        },
+        {
+          "lessonId": 2310,
+          "lessonNumber": 10,
+          "lessonTitle": "Long-Form Narrative Structures",
+          "summary": "Plan a novella or multi-chapter outline. Summarized Correction recommended for larger arcs. If big plot holes appear, a Focus Drill suggests bridging scenes. Collaboration fosters group story arcs.",
+          "activities": [
+            "Novella Outline (20 XP): structured multi-chapter plan with main conflicts. AI checks continuity.",
+            "Mini Quiz (5 XP): pick best advanced pacing lines among 5 examples.",
+            "Daily Streak Bonus: +5 XP for consistent usage."
+          ],
+          "objectives": [
+            "Organize extended narrative forms beyond short stories",
+            "Maintain advanced coherence across multiple chapters"
+          ],
+          "badgeUponCompletion": "Novella Planner"
+        },
+        {
+          "lessonId": 2311,
+          "lessonNumber": 11,
+          "lessonTitle": "Editing & Revising at an Advanced Level",
+          "summary": "Eliminate redundancies, unify style. Extended line-by-line commentary optional. If user glosses over major issues, a short Focus Drill highlights missed spots. Collaboration fosters peer paragraph swaps.",
+          "activities": [
+            "Revision Drill (15 XP): user takes a 150-word draft, removes fluff, polishes style. AI logs final changes.",
+            "Mini Quiz (5 XP): pick best advanced editing approach among 5 lines.",
+            "Team Chat: swap paragraphs with a peer, +5 XP after improvements."
+          ],
+          "objectives": [
+            "Refine advanced editing and rewriting skills",
+            "Maintain stylistic consistency while cutting unnecessary words"
+          ],
+          "badgeUponCompletion": "Revision Master"
+        },
+        {
+          "lessonId": 2312,
+          "lessonNumber": 12,
+          "lessonTitle": "Reading Your Work Aloud",
+          "summary": "Perform your writing with advanced cadence. If user chooses Instant Correction, the AI can point out monotony mid-reading. Summarized Correction lumps feedback after the reading. Collaboration fosters group performance.",
+          "activities": [
+            "Oral Reading (15 XP): user records 1–2 min excerpt. AI monitors pitch, pacing, dramatic pauses.",
+            "Mini Quiz (5 XP): identify best advanced vocal emphasis tips.",
+            "Team Chat: share audio snippet, +5 XP once peers confirm improvement."
+          ],
+          "objectives": [
+            "Apply advanced vocal techniques to bring writing to life",
+            "Combine creative text with engaging oral performance"
+          ],
+          "badgeUponCompletion": "Oral Performer"
+        },
+        {
+          "lessonId": 2313,
+          "lessonNumber": 13,
+          "lessonTitle": "Self-Publishing & Literary Community",
+          "summary": "[REFINEMENT] If user’s query is too vague, a short Focus Drill appears with editor-ready lines. Summarized Correction recommended to unify style. Collaboration fosters resource exchange on publishing or open mics.",
+          "activities": [
+            "Submission Query (15 XP): ~100-word pitch to an online mag or lit blog. AI checks formality.",
+            "Mini Quiz (5 XP): pick best lines among 5 queries to hook an editor.",
+            "Team Chat: share queries or experiences, +5 XP once refined."
+          ],
+          "objectives": [
+            "Learn advanced steps for sharing creative works",
+            "Draft professional-sounding pitches or queries"
+          ],
+          "badgeUponCompletion": "Publishing Starter"
+        },
+        {
+          "lessonId": 2314,
+          "lessonNumber": 14,
+          "lessonTitle": "Final Error Analysis & Personal Style Check",
+          "summary": "Review AI logs for repeated lexical or structural issues. [REFINEMENT] Summarized Correction recommended for big style improvements. If user still repeats top 3 errors, short Focus Drills appear.",
+          "activities": [
+            "Mini Quiz (5 XP): fix 5 repeated user-specific style/grammar lines.",
+            "Short Reflection (10 XP): user notes 3 improvements in voice or style. AI checks coherence.",
+            "Team Chat: share final voice-improvement plan, awarding +5 XP once peer-validated."
+          ],
+          "objectives": [
+            "Address repeated style or lexical repetition habits",
+            "Adopt a more diverse, unique creative voice"
+          ],
+          "badgeUponCompletion": "Style Polisher"
+        },
+        {
+          "lessonId": 2315,
+          "lessonNumber": 15,
+          "lessonTitle": "Comprehensive Writing & Analysis Marathon",
+          "summary": "A 10–12 minute advanced exam: short creative piece + quick literary critique. Summarized or Instant Correction user’s choice. AI logs final repeated slip-ups, awarding or deducting XP. Collaboration fosters peer synergy. ",
+          "activities": [
+            "Two-Part Challenge (30 XP): user writes a 150-word short piece, then critiques a 100-word excerpt. Minimal repeated errors => XP bonus.",
+            "Peer Panel: group chat reviews both tasks, +5 XP once issues fixed.",
+            "Daily Streak Bonus: +5 XP leading to final project."
+          ],
+          "objectives": [
+            "Demonstrate advanced creative writing + literary analysis quickly",
+            "Sustain clarity, style, interpretive depth under time constraints"
+          ],
+          "badgeUponCompletion": "Creative Marathoner"
+        },
+        {
+          "lessonId": 2316,
+          "lessonNumber": 16,
+          "lessonTitle": "Final Showcase: Literary Mastery",
+          "summary": "[REFINEMENT] If user opts for robust line-by-line commentary, AI or teacher can do so post-showcase. If repeated grammar slip-ups appear, a short Focus Drill triggers. Summarized Correction lumps style feedback afterward.",
+          "activities": [
+            "Present a 10–15 min creative reading (poem/story) + brief critique of a known literary piece. Up to +50 XP for minimal errors.",
+            "Teacher/AI scoreboard: awarding big XP if style or grammar flaws are minimal.",
+            "Reflection: user celebrates advanced creative depth."
+          ],
+          "objectives": [
+            "Showcase cohesive creative piece & insightful literary critique",
+            "Demonstrate refined style, vocabulary, interpretive flair"
+          ],
+          "badgeUponCompletion": "Creative Writing & Literary Analysis Star"
+        }
+      ]
+    },
+
+    /* =========================
+       COURSE #24 REFINED
+       ========================= */
+    {
+      "courseId": 24,
+      "title": "English for Diplomats & Government Officials (Refined)",
+      "level": "Advanced",
+      "languageInstruction": "Fully English",
+      "lessons": [
+
+        {
+          "lessonId": 2401,
+          "lessonNumber": 1,
+          "lessonTitle": "Entering Diplomatic English",
+          "summary": "[REFINEMENT] Diplomatic role interchange: user can be host official or visiting delegate. Micro-Level Grammar Drills if missing formal address forms. Summarized or Instant Correction user’s choice. ",
+          "activities": [
+            "Mini Quiz (5 XP): pick correct lines for formal statements vs. casual remarks.",
+            "Reflection: share 2 concerns about diplomatic English, +5 XP daily streak.",
+            "AI micro-lesson if user repeatedly uses personal pronouns or direct translations in official contexts."
+          ],
+          "objectives": [
+            "Recognize advanced formal language for diplomacy",
+            "Set high-level goals for official communication"
+          ],
+          "badgeUponCompletion": "Diplomatic Starter"
+        },
+        {
+          "lessonId": 2402,
+          "lessonNumber": 2,
+          "lessonTitle": "Protocol & Courteous Communication",
+          "summary": "Diplomacy demands advanced courtesy for addressing dignitaries or formal events. Summarized or Instant Correction user’s choice. Micro-level Drills for repeated courtesy slip-ups. Collaboration fosters foreign envoys scenario tasks.",
+          "activities": [
+            "Scenario (15 XP): meet a foreign delegate, greet, exchange pleasantries, set agenda. AI flags missing courtesy if needed.",
+            "Mini Quiz (5 XP): pick best advanced courtesy forms among 5 lines.",
+            "Team Chat: share approach to addressing rank/titles, awarding +5 XP once refined."
+          ],
+          "objectives": [
+            "Adopt advanced courtesy addressing officials",
+            "Maintain respectful formality in greetings"
+          ],
+          "badgeUponCompletion": "Protocol Expert"
+        },
+        {
+          "lessonId": 2403,
+          "lessonNumber": 3,
+          "lessonTitle": "Drafting Formal Notes & Letters",
+          "summary": "Compose precise yet courteous diplomatic letters. Summarized Correction recommended for thorough feedback. Micro Focus Drill if repeated closings or salutations are incorrect.",
+          "activities": [
+            "Letter Draft (15 XP): ~150–200 words. AI checks advanced salutations, sign-offs.",
+            "Mini Quiz (5 XP): pick correct phrasing among 5 formal closings.",
+            "Peer Chat: share letter snippet, awarding +5 XP after improvements."
+          ],
+          "objectives": [
+            "Write official-level diplomatic letters with correct format",
+            "Maintain advanced courtesy from opening to signature"
+          ],
+          "badgeUponCompletion": "Letter Pro"
+        },
+        {
+          "lessonId": 2404,
+          "lessonNumber": 4,
+          "lessonTitle": "Negotiating Bilateral or Multilateral Agreements",
+          "summary": "Advanced formal negotiations with polite but firm stance. Summarized or Instant Correction user’s choice. If repeated abrupt demands appear, user sees short Focus Drill. Collaboration fosters mock treaty tasks.",
+          "activities": [
+            "Role-play (15 XP): user leads short negotiation, ensuring clarity & courtesy. AI logs repeated directness.",
+            "Mini Quiz (5 XP): best advanced lines for stating terms among 5 Qs.",
+            "Team Chat: share a 2–3 line negotiation snippet, +5 XP once refined."
+          ],
+          "objectives": [
+            "Use advanced negotiation language in diplomatic contexts",
+            "Maintain politeness without sacrificing firm stance"
+          ],
+          "badgeUponCompletion": "Treaty Negotiator"
+        },
+        {
+          "lessonId": 2405,
+          "lessonNumber": 5,
+          "lessonTitle": "High-Level Press Statements & Official Speeches",
+          "summary": "[REFINEMENT] If user overuses filler or incomplete disclaimers, short Focus Drill triggers. Summarized Correction recommended for final polishing of statements. Collaboration fosters press statement rewriting.",
+          "activities": [
+            "Press Release Draft (15 XP): ~150 words. AI logs abrupt phrases or missing disclaimers.",
+            "Mini Quiz (5 XP): pick best transitions for official addresses among 5 lines.",
+            "Team Chat: share your statement snippet, +5 XP once improved."
+          ],
+          "objectives": [
+            "Compose succinct, formal statements for media/public",
+            "Maintain advanced courtesy, disclaimers, clarity"
+          ],
+          "badgeUponCompletion": "Press Spokesperson"
+        },
+        {
+          "lessonId": 2406,
+          "lessonNumber": 6,
+          "lessonTitle": "Hosting Delegations & Cultural Etiquette",
+          "summary": "Use advanced hosting language referencing cultural differences. Summarized or Instant Correction user’s choice. If repeated ignorance of protocol, short Focus Drill triggers. Collaboration fosters scenario-based welcomes.",
+          "activities": [
+            "Scenario (15 XP): user welcomes a visiting delegation, handles cultural small talk. AI logs direct or casual remarks.",
+            "Mini Quiz (5 XP): pick best advanced lines referencing cultural nuances among 5 Qs.",
+            "Daily Streak Bonus: +5 XP for consistent usage."
+          ],
+          "objectives": [
+            "Adopt advanced cultural sensitivity in formal hosting",
+            "Use precise language for seating, toasts, welcomes"
+          ],
+          "badgeUponCompletion": "Cultural Host"
+        },
+        {
+          "lessonId": 2407,
+          "lessonNumber": 7,
+          "lessonTitle": "Formal Dinner Conversations & Toasts",
+          "summary": "[REFINEMENT] If user’s dinner talk is too casual or personal, AI warns them with micro Focus Drills. Summarized Correction recommended for final toast structure. Collaboration fosters sample toasts.",
+          "activities": [
+            "Toast Practice (15 XP): ~1-min formal toast. AI logs courtesy or over-casual phrases.",
+            "Mini Quiz (5 XP): best advanced lines for dinner small talk among 5 Qs.",
+            "Team Chat: share toast snippet, +5 XP once refined."
+          ],
+          "objectives": [
+            "Use advanced courtesy and subtlety in formal dinners",
+            "Maintain polished humor or light talk without crossing formality lines"
+          ],
+          "badgeUponCompletion": "Formal Toast Master"
+        },
+        {
+          "lessonId": 2408,
+          "lessonNumber": 8,
+          "lessonTitle": "Public Diplomacy & Cultural Exchange Programs",
+          "summary": "Speaking at schools, NGO events, or cultural festivals. Summarized or Instant Correction user’s choice. If user lumps generalizations or stereotypes, a short Focus Drill prompts inclusive language. Collaboration fosters group event-speech planning.",
+          "activities": [
+            "Event Speech (15 XP): 2–3 min talk about cultural exchange. AI logs cliches or stereotypes.",
+            "Mini Quiz (5 XP): pick best lines bridging local & global perspectives among 5 Qs.",
+            "Team Chat: share speech snippet, awarding +5 XP once improved."
+          ],
+          "objectives": [
+            "Speak inclusively about cultural exchange at advanced formality",
+            "Avoid stereotypes while referencing local/global traditions"
+          ],
+          "badgeUponCompletion": "Public Diplomat"
+        },
+        {
+          "lessonId": 2409,
+          "lessonNumber": 9,
+          "lessonTitle": "Interpreting & Translating Sensitive Documents",
+          "summary": "Diplomats parse or produce official translations. Summarized Correction recommended for thorough checks. If user’s direct translations miss context, a Focus Drill triggers. Collaboration fosters translation puzzle tasks.",
+          "activities": [
+            "Translation Drill (20 XP): convert a short excerpt into official English. AI checks politeness & disclaimers.",
+            "Mini Quiz (5 XP): pick best advanced synonyms for certain political terms among 5 lines.",
+            "Peer Chat: share tricky line, awarding +5 XP after group suggestions."
+          ],
+          "objectives": [
+            "Handle advanced translations with correct diplomatic phrasing",
+            "Preserve politeness and context from source documents"
+          ],
+          "badgeUponCompletion": "Translation Expert"
+        },
+        {
+          "lessonId": 2410,
+          "lessonNumber": 10,
+          "lessonTitle": "Emergency Response & Crisis Diplomacy",
+          "summary": "If crisis hits, official statements matter. Summarized or Instant Correction user’s choice. If user’s language is panicked, micro Focus Drill suggests calm disclaimers. Collaboration fosters crisis scenario role-plays.",
+          "activities": [
+            "Crisis Simulation (20 XP): user addresses a hypothetical security incident, ensuring advanced courtesy & disclaimers.",
+            "Mini Quiz (5 XP): pick best advanced lines for composure among 5 statements.",
+            "Daily Streak Bonus: +5 XP if consistent usage leading to final phases."
+          ],
+          "objectives": [
+            "Maintain advanced calm in official crisis statements",
+            "Avoid inflammatory or uncertain language under stress"
+          ],
+          "badgeUponCompletion": "Crisis Diplomat"
+        },
+        {
+          "lessonId": 2411,
+          "lessonNumber": 11,
+          "lessonTitle": "Chairing International Committees & Summits",
+          "summary": "Advanced roles might involve multi-country summits. Summarized or Instant Correction. If user ignores minority voices, micro Focus Drill flags fairness issues. Collaboration fosters mock summit sessions.",
+          "activities": [
+            "Committee Chair Role-play (20 XP): 5–7 min multi-party discussion, AI logs if user ensures fair turns.",
+            "Mini Quiz (5 XP): best advanced lines for official motions among 5 Qs.",
+            "Peer Chat: approach to summarizing diverse viewpoints, +5 XP upon improvements."
+          ],
+          "objectives": [
+            "Facilitate advanced-level multi-delegate discussions fairly",
+            "Use formal procedural language in committees"
+          ],
+          "badgeUponCompletion": "Summit Chair"
+        },
+        {
+          "lessonId": 2412,
+          "lessonNumber": 12,
+          "lessonTitle": "Handling Media Interviews & Global Press Conferences",
+          "summary": "[REFINEMENT] If user’s answers are too short or defensive, short Focus Drill suggests bridging statements. Summarized Correction recommended for final style checks. Collaboration fosters multi-reporter simulation.",
+          "activities": [
+            "Press Q&A (20 XP): user fields 3–4 tough queries in 3–5 min. AI flags abrupt or defensive lines.",
+            "Mini Quiz (5 XP): pick best bridging statements among 5 Qs.",
+            "Team Chat: share a tough question scenario, awarding +5 XP once improved."
+          ],
+          "objectives": [
+            "Maintain advanced courtesy under challenging media scrutiny",
+            "Use bridging statements effectively in global press contexts"
+          ],
+          "badgeUponCompletion": "Media Diplomat"
+        },
+        {
+          "lessonId": 2413,
+          "lessonNumber": 13,
+          "lessonTitle": "Public Speaking for Diplomatic Ceremonies",
+          "summary": "Focus on signing ceremonies, official banquets. If user uses cliches or over-embellishes, micro Focus Drill triggers. Summarized Correction recommended for final speech polish. Collaboration fosters ceremony speech drafts.",
+          "activities": [
+            "Ceremony Speech (20 XP): 2–3 min talk for a bilateral treaty signing. AI logs rhetorical cliches.",
+            "Mini Quiz (5 XP): pick best advanced transitions among 5 celebratory lines.",
+            "Team Chat: share snippet, awarding +5 XP once improved."
+          ],
+          "objectives": [
+            "Draft advanced formal speeches for official ceremonies",
+            "Balance formality with slight celebratory tone"
+          ],
+          "badgeUponCompletion": "Ceremony Orator"
+        },
+        {
+          "lessonId": 2414,
+          "lessonNumber": 14,
+          "lessonTitle": "Final Error Analysis & Diplomatic Polish",
+          "summary": "Review user-specific AI logs: courtesy errors, grammar slips, direct translations. Summarized or Instant Correction user’s choice. If repeated issues persist, short Focus Drill. Collaboration fosters final reflection.",
+          "activities": [
+            "Mini Quiz (5 XP): fix 5 repeated user errors from logs in a diplomatic context.",
+            "Short Reflection (10 XP): user writes 3 lines on improvements since Lesson 1.",
+            "Team Chat: share final improvement plan, +5 XP once peers confirm readiness."
+          ],
+          "objectives": [
+            "Address persistent advanced-level diplomatic slip-ups",
+            "Consolidate courtesy, clarity, formal structure improvements"
+          ],
+          "badgeUponCompletion": "Diplomatic Polisher"
+        },
+        {
+          "lessonId": 2415,
+          "lessonNumber": 15,
+          "lessonTitle": "Comprehensive Diplomatic Simulation",
+          "summary": "A 10–12 minute scenario: greet delegates, short negotiation, press statement, ceremony toast. Summarized or Instant Correction user’s choice. AI logs final repeated errors. Collaboration fosters peer feedback.",
+          "activities": [
+            "Multi-Phase Role-play (30 XP): 4 consecutive tasks. Minimal repeated courtesy or grammar issues => XP bonus.",
+            "Peer Panel: group chat notes final improvements, +5 XP once fixed.",
+            "Daily Streak Bonus: +5 XP leading to final project."
+          ],
+          "objectives": [
+            "Show integrated advanced diplomatic communication across tasks",
+            "Demonstrate composure, courtesy, clarity in each segment"
+          ],
+          "badgeUponCompletion": "Diplomatic Simulation Hero"
+        },
+        {
+          "lessonId": 2416,
+          "lessonNumber": 16,
+          "lessonTitle": "Final Showcase: Master Diplomat",
+          "summary": "[REFINEMENT] Includes role interchange: user acts as both host official and visiting delegate in a short negotiation snippet. If repeated courtesy or grammar errors appear, a Focus Drill triggers post-showcase. Summarized or Instant Correction optional.",
+          "activities": [
+            "Up to 50 XP for minimal mistakes across 4 tasks (negotiation, letter reading, press Q&A, ceremony speech).",
+            "Teacher/AI scoreboard: awarding large XP for courtesy & formality mastery.",
+            "Reflection: user celebrates final transformation into a master-level diplomatic speaker."
+          ],
+          "objectives": [
+            "Show integrated advanced diplomatic English across varied tasks",
+            "Exhibit perfect courtesy, clarity, and formal precision"
+          ],
+          "badgeUponCompletion": "English for Diplomats (Advanced) Star"
+        }
+      ]
+    }
+
+  ]
+}

@@ -79,7 +79,7 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
     final localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF2F6FB), // ✅ Soft background
+      backgroundColor: const Color(0xFFF2F6FB),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(56),
         child: AppBar(
@@ -163,7 +163,7 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
           IconButton(
             icon: const Icon(Icons.send),
             onPressed: _sendMessage,
-            color: const Color(0xFF1565C0), // ✅ Primary button blue
+            color: const Color(0xFF1565C0),
           ),
         ],
       ),

@@ -4,8 +4,7 @@ import 'package:http/http.dart' as http;
 /// API service for FluentEdge backend integration
 class ApiService {
   // ======================== CONFIG ========================
-  // Base URL for the backend API (use localhost for development)
-  static const String baseUrl = 'http://localhost:8000';
+  static const String baseUrl = 'http://localhost:8000/api/v1';
 
   // ====================== API METHODS ======================
 
@@ -23,7 +22,6 @@ class ApiService {
   }) async {
     final url = Uri.parse('$baseUrl/save-responses');
 
-    // Prepare JSON body
     final body = jsonEncode({
       'name': name,
       'motivation': motivation,
@@ -39,25 +37,74 @@ class ApiService {
     try {
       final response = await http.post(
         url,
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: {'Content-Type': 'application/json'},
         body: body,
       );
 
       if (response.statusCode == 200) {
-        // ✅ Successfully received response
-        return jsonDecode(response.body);
+        final data = jsonDecode(response.body);
+        return {
+          "status": data['status'],
+          "user_id": data['user_id'],
+          "recommended_courses": data['recommended_courses'] ?? [],
+        };
       } else {
-        // ❌ Backend returned an error
         final error = jsonDecode(response.body);
         throw Exception(
           'Failed to save user responses.\nStatus: ${response.statusCode}\nMessage: ${error['detail'] ?? response.body}',
         );
       }
     } catch (e) {
-      // ❌ Network or serialization issue
       throw Exception('Error occurred while saving responses: $e');
     }
   }
+
+  /// Fetch all course details (used in course list pages)
+  static Future<List<dynamic>> fetchAllCourseDetails() async {
+    final url = Uri.parse('$baseUrl/courses/all-details');
+
+    try {
+      final response = await http.get(
+        url,
+        headers: {'Accept': 'application/json'},
+      );
+
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body)['courses'];
+      } else {
+        final error = jsonDecode(response.body);
+        throw Exception(
+          'Failed to fetch course details.\nStatus: ${response.statusCode}\nMessage: ${error['detail'] ?? response.body}',
+        );
+      }
+    } catch (e) {
+      throw Exception('Error occurred while fetching all course details: $e');
+    }
+  }
+
+  // ====================== UNUSED METHODS ======================
+  /*
+  /// Fetch lessons of a specific course [Deprecated: Using local data instead]
+  static Future<List<dynamic>> fetchCourseLessons(String courseTitle) async {
+    final url = Uri.parse('$baseUrl/courses/lessons?title=${Uri.encodeComponent(courseTitle)}');
+
+    try {
+      final response = await http.get(
+        url,
+        headers: {'Accept': 'application/json'},
+      );
+
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body)['lessons'];
+      } else {
+        final error = jsonDecode(response.body);
+        throw Exception(
+          'Failed to fetch lessons.\nStatus: ${response.statusCode}\nMessage: ${error['detail'] ?? response.body}',
+        );
+      }
+    } catch (e) {
+      throw Exception('Error occurred while fetching lessons: $e');
+    }
+  }
+  */
 }

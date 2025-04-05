@@ -1,0 +1,1324 @@
+{
+  "courses": [
+    {
+      "courseId": 11,
+      "title": "Travel English for Global Explorers",
+      "level": "Intermediate",
+      "languageInstruction": "Primarily English with Occasional Hindi Clarifications",
+      "lessons": [
+        {
+          "lessonId": 1101,
+          "lessonNumber": 1,
+          "lessonTitle": "Why Travel English Matters",
+          "summary": "Meet Kunal, who’s planning his first trip abroad and wants to accumulate XP (experience points) by mastering travel phrases. This lesson offers an overview of how English helps you navigate airports, hotels, and local transport. Maintain a daily streak for bonus XP!",
+          "activities": [
+            "Mini Quiz (Award 10 XP): 5 MCQs on essential travel phrases like 'Where is check-in?' / 'How much is the fare?'",
+            "AI-Driven Error Feedback: If you choose a wrong option, the system highlights patterns (e.g., 'You often misread directions vocabulary').",
+            "Collaboration Challenge: Chat with a fellow learner (in-app group) to discuss your dream travel destinations. Gain 5 XP upon completion."
+          ],
+          "objectives": [
+            "Recognize the importance of travel-focused English",
+            "Acquire 10 must-know travel phrases and earn initial XP"
+          ],
+          "badgeUponCompletion": "Travel Basics Explorer"
+        },
+        {
+          "lessonId": 1102,
+          "lessonNumber": 2,
+          "lessonTitle": "Airport Check-in and Security",
+          "summary": "Kunal heads to the airport. Practice dialogues for baggage, security, and boarding passes. Earn daily streak XP and see personalized AI tips for grammar slip-ups.",
+          "activities": [
+            "Role-play Simulation (15 XP): Practice 'May I see your passport?' and 'I have one suitcase to check.'",
+            "Mini Quiz: Identify correct expressions in an airport scenario. 1 XP per correct answer.",
+            "AI-Driven Correction: The app tracks if you often miss 'boarding pass' vs. 'ticket' usage, prompting extra micro-lessons."
+          ],
+          "objectives": [
+            "Navigate airport procedures confidently",
+            "Use appropriate check-in and security phrases"
+          ],
+          "badgeUponCompletion": "Airport Pro"
+        },
+        {
+          "lessonId": 1103,
+          "lessonNumber": 3,
+          "lessonTitle": "In-flight English",
+          "summary": "Kunal boards the plane. Interact with flight attendants politely, request meals, or handle seat issues. Maintain your daily streak for extra XP!",
+          "activities": [
+            "Dialogue Practice (10 XP): 'Could I have a vegetarian meal?', 'Would you mind bringing me some water?'",
+            "Mini Quiz: 5 scenario questions about in-flight announcements. (Earn up to 5 XP)",
+            "AI Error Pattern Check: If user repeatedly struggles with modals ('Could / Would'), the system suggests a quick corrective micro-lesson."
+          ],
+          "objectives": [
+            "Communicate politely with flight crew",
+            "Understand typical in-flight announcements"
+          ],
+          "badgeUponCompletion": "Sky Explorer"
+        },
+        {
+          "lessonId": 1104,
+          "lessonNumber": 4,
+          "lessonTitle": "Immigration and Customs",
+          "summary": "Practice concise, confident answers at immigration. Gain XP through daily quizzes, and unlock a mini collaborative project with fellow learners on typical customs questions.",
+          "activities": [
+            "Role-play (10 XP): Immigration Q&A about purpose of visit, length of stay.",
+            "Mini Quiz: Match the correct short responses to officer’s prompts. Earn 1 XP per correct answer.",
+            "Collaborative Task (Team Chat): Form a quick group of 2–3 learners, each writing a sample immigration scenario. Earn 5 XP upon submission."
+          ],
+          "objectives": [
+            "Answer immigration questions confidently",
+            "Use precise language for official checkpoints"
+          ],
+          "badgeUponCompletion": "Customs Clearance Hero"
+        },
+        {
+          "lessonId": 1105,
+          "lessonNumber": 5,
+          "lessonTitle": "Hotel Check-in & Accommodation",
+          "summary": "Kunal checks into a hotel. Earn XP for polite requests—like 'Could I get a late checkout?' AI highlights your repeated errors to help you refine your approach.",
+          "activities": [
+            "Role-play: 'I have a reservation under my name...' Gains 15 XP if completed flawlessly.",
+            "Mini Quiz (5 XP): Spot the best phrases in a tricky hotel scenario (overbooking, extra pillows).",
+            "AI-Feedback: If user struggles with indefinite articles, the system flags it and assigns a quick correction drill."
+          ],
+          "objectives": [
+            "Check into hotels smoothly using polite phrasing",
+            "Handle common hotel-related issues or requests"
+          ],
+          "badgeUponCompletion": "Hotel Pro"
+        },
+        {
+          "lessonId": 1106,
+          "lessonNumber": 6,
+          "lessonTitle": "Local Transportation & Directions",
+          "summary": "Discuss buses, taxis, subways. Each correct direction or fare phrase yields XP. Collaborate with peers to create a 'City Map' scenario for more points.",
+          "activities": [
+            "Vocabulary Drill (10 XP): station, route, fare, etc. AI highlights mispronounced words.",
+            "Team Challenge: In groups, design a short city route plan. Present it in the in-app group chat for 5 XP each.",
+            "Mini Quiz: 5 Qs on polite ways to ask a driver for location or pricing."
+          ],
+          "objectives": [
+            "Discuss travel routes/fares with correct terms",
+            "Ask for directions politely"
+          ],
+          "badgeUponCompletion": "City Navigator"
+        },
+        {
+          "lessonId": 1107,
+          "lessonNumber": 7,
+          "lessonTitle": "Exploring Tourist Attractions",
+          "summary": "Kunal visits museums and cultural sites. Earn XP for correct ticket-buying or guided tour phrases. AI tracks your repeated errors in polite question forms.",
+          "activities": [
+            "Role-play: 'Is there an English audio guide available?' Gains 15 XP on successful use of polite questions.",
+            "Mini Quiz (5 XP): Choose correct lines for museum etiquette.",
+            "AI Error Feedback: If user struggles with question syntax, system suggests 1–2 micro-lessons."
+          ],
+          "objectives": [
+            "Use intermediate expressions for sightseeing scenarios",
+            "Build confidence in ticket purchasing and small talk"
+          ],
+          "badgeUponCompletion": "Cultural Explorer"
+        },
+        {
+          "lessonId": 1108,
+          "lessonNumber": 8,
+          "lessonTitle": "Restaurant & Food Vocabulary",
+          "summary": "Order local cuisines politely. Earn daily streak XP for each meal scenario you handle. Collaborative “Recipe Share” project unlocks a badge.",
+          "activities": [
+            "Dialogue: 'Does this dish contain nuts?' + 'I’d like it less spicy, please.' Gains 10 XP.",
+            "Mini Quiz: 5 scenario-based Qs (restaurant confusion, dietary constraints).",
+            "Collaborative Project: Post a short 'recipe share' in English with your group (5 XP each)."
+          ],
+          "objectives": [
+            "Order meals with intermediate-level English",
+            "Handle dietary queries or special requests confidently"
+          ],
+          "badgeUponCompletion": "Foodie Adventurer"
+        },
+        {
+          "lessonId": 1109,
+          "lessonNumber": 9,
+          "lessonTitle": "Shopping & Bargaining Abroad",
+          "summary": "Practice polite bargaining lines, confirm currency details. Earn XP for each successful negotiation. AI identifies if you often confuse question forms.",
+          "activities": [
+            "Role-play: 'Could you give a discount?' Gains 10 XP if you maintain courtesy.",
+            "Mini Quiz: 5 Qs about currency conversions, polite negotiations. 1 XP each.",
+            "AI Feedback: repeated errors highlight if you keep forgetting certain polite forms like 'Could you…' or using direct translations."
+          ],
+          "objectives": [
+            "Negotiate prices in a polite, culturally aware manner",
+            "Confirm currency or payment methods in English"
+          ],
+          "badgeUponCompletion": "Global Shopper"
+        },
+        {
+          "lessonId": 1110,
+          "lessonNumber": 10,
+          "lessonTitle": "Handling Travel Emergencies",
+          "summary": "Lost wallet, stolen phone—earn XP for calm, precise problem-solving dialogues with local authorities. AI shows user-specific grammar struggles in crisis talk.",
+          "activities": [
+            "Mini Quiz: 5 scenario Qs about urgent calls or reporting theft. (1 XP each)",
+            "Role-play: user calls local police; AI tracks error patterns in past tense usage.",
+            "Collaborative Challenge: 2–3 learners brainstorm a 'travel emergency kit' list in English, awarding 5 XP each."
+          ],
+          "objectives": [
+            "Seek help from authorities in intermediate English",
+            "Stay calm and use precise language under stress"
+          ],
+          "badgeUponCompletion": "Crisis Handler"
+        },
+        {
+          "lessonId": 1111,
+          "lessonNumber": 11,
+          "lessonTitle": "Socializing & Meeting Fellow Travelers",
+          "summary": "Gain XP for friendly, intermediate small talk with hostel mates or new friends. AI-driven analysis highlights if you repeat any grammar slip (like forgetting articles).",
+          "activities": [
+            "Role-play (15 XP): introducing yourself in a hostel lounge, discussing future travel plans.",
+            "Mini Quiz: 5 Qs on responding to casual travel buddy chat. 1 XP each.",
+            "Daily Streak Bonus: continued daily practice unlocks extra 5 XP."
+          ],
+          "objectives": [
+            "Engage in casual group chats with fellow tourists",
+            "Discuss travel plans fluently"
+          ],
+          "badgeUponCompletion": "Friendly Traveler"
+        },
+        {
+          "lessonId": 1112,
+          "lessonNumber": 12,
+          "lessonTitle": "Cultural Etiquette & Local Customs",
+          "summary": "Intermediate phrases for politely asking about local traditions. Earn XP for each correct or culturally aware line. AI micro-lessons appear if you keep making respectful form errors.",
+          "activities": [
+            "Mini Quiz (5 XP): Phrases to clarify customs—'Is it okay to…?', 'Should I remove my shoes?'",
+            "Role-play: user politely asks about photography rules in a temple/museum. Gains 10 XP if done politely.",
+            "Group Chat Collaboration: post one custom from your region and see how others phrase it in English (5 XP bonus)."
+          ],
+          "objectives": [
+            "Learn polite intermediate English to ask about customs",
+            "Avoid cultural faux pas by clarifying traditions"
+          ],
+          "badgeUponCompletion": "Cultural Ambassador"
+        },
+        {
+          "lessonId": 1113,
+          "lessonNumber": 13,
+          "lessonTitle": "Travel Tech & Online Resources",
+          "summary": "Use apps for reservations or directions in English. Earn XP for short writing tasks like leaving an online review. AI suggests corrections if your review style is off.",
+          "activities": [
+            "Vocabulary Drill (10 XP): 'booking reference,' 'online reservation,' 'QR code.'",
+            "Mini Quiz: Identify the best phrases for an English review. 1 XP each correct answer.",
+            "AI Correction: repeated misuse of 'booking' vs. 'reservation' triggers a quick micro-lesson."
+          ],
+          "objectives": [
+            "Handle digital reservations confidently",
+            "Write short English reviews or travel updates"
+          ],
+          "badgeUponCompletion": "Tech-Savvy Explorer"
+        },
+        {
+          "lessonId": 1114,
+          "lessonNumber": 14,
+          "lessonTitle": "Intermediate Grammar Refresh in Travel Context",
+          "summary": "Revisit key grammar (modals, conditionals, articles) often used while traveling. Earn XP for mini quizzes, and let the AI highlight repeated error patterns.",
+          "activities": [
+            "Grammar Fix Drill (10 XP): 5 fill-in-the-blanks for typical travel lines.",
+            "Mini Quiz: correct usage of 'would/could' in polite requests (5 XP).",
+            "AI Feedback: personalized micro-lessons if you repeatedly struggle with tenses or modals."
+          ],
+          "objectives": [
+            "Apply intermediate grammar to travel scenarios",
+            "Rectify repeated user errors for clarity"
+          ],
+          "badgeUponCompletion": "Grammar Refiner"
+        },
+        {
+          "lessonId": 1115,
+          "lessonNumber": 15,
+          "lessonTitle": "Review & Progress Check",
+          "summary": "Combine phrases, grammar, and cultural tips in a timed mini simulation. Earn XP for quick, accurate replies. AI personalizes final error hints before the big project.",
+          "activities": [
+            "Rapid-Fire Qs (10 XP): teacher poses random travel scenarios, user responds promptly.",
+            "Peer/AI Feedback: user shares top 5 travel tips, earning 5 XP bonus.",
+            "Daily Streak Bonus: if user logs in daily, additional 5 XP to push toward final badge."
+          ],
+          "objectives": [
+            "Assess readiness for real travel interactions",
+            "Identify final improvement areas"
+          ],
+          "badgeUponCompletion": "Travel Readiness"
+        },
+        {
+          "lessonId": 1116,
+          "lessonNumber": 16,
+          "lessonTitle": "Final Showcase: The Grand Adventure",
+          "summary": "Kunal’s ultimate demonstration—a 5–7 minute 'mock journey' covering airport, hotel, sightseeing, an unexpected crisis, etc. Earn your 'Global Explorer English (Intermediate)' badge and a big XP boost!",
+          "activities": [
+            "User narrates the full scenario while the AI flags repeated errors in real-time, awarding or deducting XP accordingly.",
+            "Teacher/AI evaluates clarity, grammar, politeness. If user meets all criteria, +50 XP and a final badge.",
+            "Mini Reflection: user summarizes their overall journey and top grammar improvements."
+          ],
+          "objectives": [
+            "Demonstrate integrated travel English skills",
+            "Show calm, clear communication across multiple real-life contexts"
+          ],
+          "badgeUponCompletion": "Global Explorer English (Intermediate)"
+        }
+      ]
+    },
+    {
+      "courseId": 12,
+      "title": "Polite English for Social Media",
+      "level": "Intermediate",
+      "languageInstruction": "Primarily English, Mild Hindi Clarifications if Needed",
+      "lessons": [
+        {
+          "lessonId": 1201,
+          "lessonNumber": 1,
+          "lessonTitle": "Why Politeness Matters Online",
+          "summary": "Meet Zara, active on social media but wanting to earn XP for refining netiquette in English. She’ll track a daily streak to stay motivated and get AI-driven tips for polite phrasing.",
+          "activities": [
+            "Mini Quiz (5 XP): identify polite vs. rude statements in online posts.",
+            "AI Error Pattern Check: if user struggles with direct translations or abrupt endings, a micro-lesson triggers.",
+            "Collaboration: share a short anecdote about a social media misunderstanding. Earn 5 XP."
+          ],
+          "objectives": [
+            "Recognize the importance of digital politeness",
+            "Acquire 10 netiquette-friendly phrases"
+          ],
+          "badgeUponCompletion": "Netiquette Beginner"
+        },
+        {
+          "lessonId": 1202,
+          "lessonNumber": 2,
+          "lessonTitle": "Crafting Respectful Posts & Comments",
+          "summary": "Zara practices polite disagreements or compliments. Earn daily streak XP for consistent logins and mini quizzes. AI highlights repeated tone errors (e.g., being too direct).",
+          "activities": [
+            "Mini Quiz (5 XP): 'Which comment is more polite?' scenario-based Qs.",
+            "Collaborative Project: pair up to rewrite a harsh comment politely. Earn 5 XP each upon submission.",
+            "AI checks if user repeatedly uses 'You are wrong!' type phrases, prompting correction drills."
+          ],
+          "objectives": [
+            "Compose respectful feedback online",
+            "Use intermediate transitions to express disagreement politely"
+          ],
+          "badgeUponCompletion": "Respectful Commenter"
+        },
+        {
+          "lessonId": 1203,
+          "lessonNumber": 3,
+          "lessonTitle": "Handling Group Chats & DMs",
+          "summary": "Zara navigates multiple group chats without spamming or sounding abrupt. Earn XP by applying polite question forms in posts. AI details user-specific grammar weaknesses in real-time.",
+          "activities": [
+            "Role-play (10 XP): user posts a question in a large group politely. E.g., 'Could anyone help me with...?'",
+            "Mini Quiz: short scenario Qs about avoiding abrupt 'plz tell' type requests. 1 XP each correct answer.",
+            "Daily Streak Bonus: show up daily for an extra 5 XP to keep your netiquette practice on track."
+          ],
+          "objectives": [
+            "Use polite group chat etiquette",
+            "Avoid confusing short forms or abrupt lines"
+          ],
+          "badgeUponCompletion": "Group Chat Pro"
+        },
+        {
+          "lessonId": 1204,
+          "lessonNumber": 4,
+          "lessonTitle": "Emoji & Tone: Striking the Right Balance",
+          "summary": "Learn how emojis shift tone. Earn XP for analyzing sample messages. AI notices if you rely too heavily on exclamation points or repeated emojis.",
+          "activities": [
+            "Mini Quiz (5 XP): interpret sample texts with/without emojis, guess the tone differences.",
+            "Collaboration: each user posts 2 short messages with appropriate emojis, gets 5 XP each. Others comment politely.",
+            "AI micro-lesson if the user keeps adding unnecessary punctuation ('!!!??')."
+          ],
+          "objectives": [
+            "Use emojis judiciously for tone clarity",
+            "Avoid misunderstandings from overusing punctuation/emojis"
+          ],
+          "badgeUponCompletion": "Tone Balancer"
+        },
+        {
+          "lessonId": 1205,
+          "lessonNumber": 5,
+          "lessonTitle": "Connecting with Strangers or Professionals",
+          "summary": "Zara wants to approach new contacts politely on LinkedIn or Twitter. Earn XP for respectful intros, minimal Hindi bridging if needed. AI flags repetitive abruptness in DMs.",
+          "activities": [
+            "Role-play (10 XP): 'Thank you for connecting! May I ask about…?'",
+            "Mini Quiz: 5 Qs about opening lines on LinkedIn or professional DMs. Each correct, +1 XP.",
+            "AI tracks user’s intros, suggests a micro-lesson if too casual or pushy language is detected."
+          ],
+          "objectives": [
+            "Practice polite professional intros online",
+            "Maintain a friendly but not invasive tone"
+          ],
+          "badgeUponCompletion": "Professional Connector"
+        },
+        {
+          "lessonId": 1206,
+          "lessonNumber": 6,
+          "lessonTitle": "Sharing Opinions Without Offending",
+          "summary": "Zara learns intermediate lines for politely disagreeing or proposing alternatives. Gain XP for each constructive comment. AI highlights if you overuse certain negative words.",
+          "activities": [
+            "Mini Quiz (5 XP): choose 'I see your point, but…' vs. rude retorts in various posts.",
+            "Role-play: user addresses a 'heated' comment calmly, gets 10 XP if done politely. AI error detection triggers if grammar falters.",
+            "Collaboration: a short group thread rewriting harsh arguments more diplomatically."
+          ],
+          "objectives": [
+            "Express disagreements gently",
+            "Use polite transitions to defuse potential arguments"
+          ],
+          "badgeUponCompletion": "Conflict Diffuser"
+        },
+        {
+          "lessonId": 1207,
+          "lessonNumber": 7,
+          "lessonTitle": "Polite Replies to Negative Comments",
+          "summary": "Zara encounters rude feedback. Earn daily streak XP by writing calm responses or deciding politely not to engage. AI highlights repeated direct translation issues.",
+          "activities": [
+            "Scenario: a harsh comment. User composes a 2–3 line polite reply for 10 XP. If they skip, they must politely mention boundaries instead.",
+            "Mini Quiz: best approach to repeated negativity—three correct answers yield 3 XP each.",
+            "AI micro-lesson triggers if the user frequently uses 'Why you say that?!' type abrupt forms."
+          ],
+          "objectives": [
+            "Handle rude comments with composure",
+            "Stay calm, polite, and maintain healthy boundaries"
+          ],
+          "badgeUponCompletion": "Positive Responder"
+        },
+        {
+          "lessonId": 1208,
+          "lessonNumber": 8,
+          "lessonTitle": "Privacy & Boundaries",
+          "summary": "Politely decline oversharing personal data or shift conversation topics. Collaboration with peers yields bonus XP for boundary-setting practice. AI notes if the user is too apologetic or abrupt.",
+          "activities": [
+            "Role-play (10 XP): 'I’d rather keep that private, if you don’t mind.'",
+            "Mini Quiz: 5 boundary scenarios awarding 1 XP each correct approach.",
+            "Collaborative Project: Write a short 'Privacy Statement' in your words and share in group chat. Each participant gets 5 XP."
+          ],
+          "objectives": [
+            "Set clear boundaries politely",
+            "Use intermediate expressions for privacy"
+          ],
+          "badgeUponCompletion": "Privacy Guard"
+        },
+        {
+          "lessonId": 1209,
+          "lessonNumber": 9,
+          "lessonTitle": "Positive Engagement & Compliments",
+          "summary": "Zara practices genuine compliments on social platforms. Earn XP for sincerity, while AI highlights repeated grammar issues in compliment structures.",
+          "activities": [
+            "Mini Quiz: 5 lines—pick the best compliment vs. a shallow one. +1 XP each correct.",
+            "Role-play: user writes 3 supportive comments on hypothetical posts. 10 XP if they’re all polite and meaningful.",
+            "AI micro-lesson triggers if user’s compliments become repetitive or grammatically off."
+          ],
+          "objectives": [
+            "Craft authentic compliments in English",
+            "Foster positive digital interactions"
+          ],
+          "badgeUponCompletion": "Kind Commenter"
+        },
+        {
+          "lessonId": 1210,
+          "lessonNumber": 10,
+          "lessonTitle": "Collaborations & Group Projects Online",
+          "summary": "Zara is invited to an online group project. Practice coordinating tasks, earning XP for inclusive phrases. AI monitors if user has trouble with modals or polite suggestions.",
+          "activities": [
+            "Vocabulary Drill (5 XP): 'collaboration,' 'brainstorm,' 'feedback loop.'",
+            "Group Chat Challenge: coordinate a small project plan. Each collaborator gets +5 XP upon completion.",
+            "AI suggestions if user misuses polite language like 'You do this now' instead of 'Could you…?'"
+          ],
+          "objectives": [
+            "Coordinate group tasks politely",
+            "Keep an inclusive tone in digital teamwork"
+          ],
+          "badgeUponCompletion": "Team Collaborator"
+        },
+        {
+          "lessonId": 1211,
+          "lessonNumber": 11,
+          "lessonTitle": "Avoiding Drama: Online Conflict Resolution",
+          "summary": "Zara learns calm apology lines or graceful exits from arguments. Earn XP for non-defensive language, while AI flags repeated direct or aggressive phrases.",
+          "activities": [
+            "Role-play: user sees a heated comment thread— respond with 'I apologize if my words seemed harsh…' Gains 10 XP for sincerity.",
+            "Mini Quiz: best approach to calm a conflict. 1 XP each correct scenario choice.",
+            "AI micro-lesson if user reverts to 'It’s your fault!' type lines."
+          ],
+          "objectives": [
+            "Apologize gracefully when needed",
+            "Exit or resolve online drama calmly"
+          ],
+          "badgeUponCompletion": "Calm Mediator"
+        },
+        {
+          "lessonId": 1212,
+          "lessonNumber": 12,
+          "lessonTitle": "DM Etiquette & Messaging Strangers",
+          "summary": "Zara wants to DM someone new. Practice polite opening lines. Earn XP if the tone is friendly yet respectful. AI tracks over-familiar or abrupt word choices.",
+          "activities": [
+            "Role-play (10 XP): user composes a 3-line DM introduction, e.g., 'Hello, I hope you’re well. I came across your profile…'",
+            "Mini Quiz: choose the best follow-up if no response in 24 hrs. 1 XP each correct pick.",
+            "AI feedback if user is too pushy or under-friendly in the DM text."
+          ],
+          "objectives": [
+            "Send respectful first messages to new contacts",
+            "Maintain a polite tone despite no immediate reply"
+          ],
+          "badgeUponCompletion": "Courteous DM User"
+        },
+        {
+          "lessonId": 1213,
+          "lessonNumber": 13,
+          "lessonTitle": "Posting with Purpose: Clarity & Context",
+          "summary": "Write structured, slightly longer posts or threads in intermediate English. Earn XP for clarity, and get AI-driven micro-lessons if grammar or transitions slip.",
+          "activities": [
+            "User outlines a short 'How-to' or 'Opinion' post in 3–4 bullet points. Gains 10 XP if cohesive.",
+            "Mini Quiz: transitional phrases—pick which best link ideas. 1 XP each correct answer.",
+            "Collaboration: peers comment on your post structure politely, awarding 5 XP each participant."
+          ],
+          "objectives": [
+            "Write structured posts at an intermediate level",
+            "Use transitions for clarity in multi-step or story posts"
+          ],
+          "badgeUponCompletion": "Clarity Champion"
+        },
+        {
+          "lessonId": 1214,
+          "lessonNumber": 14,
+          "lessonTitle": "Subtle Grammar Boost for Social Media",
+          "summary": "Review grammar slip-ups often seen in social posts (subject–verb agreement, missing articles, tense confusion). Earn XP for each fix. AI personalizes your error log.",
+          "activities": [
+            "Mini Quiz: 5 'spot-the-error' lines from typical social posts, each correct fix = 1 XP.",
+            "Short writing task: rewrite a flawed text. Gains 10 XP if you fix all errors.",
+            "AI micro-lesson triggers if user repeats the same grammar slip more than once."
+          ],
+          "objectives": [
+            "Apply intermediate grammar rules consistently online",
+            "Correct repeated mistakes for polished posts"
+          ],
+          "badgeUponCompletion": "Grammar Polisher"
+        },
+        {
+          "lessonId": 1215,
+          "lessonNumber": 15,
+          "lessonTitle": "Social Media Scenarios: Review & Practice",
+          "summary": "Zara faces random netiquette challenges—like group invites, negative feedback, or praising someone. Earn XP for each correct or polite reply. AI highlights final improvement pointers.",
+          "activities": [
+            "Rapid-Fire Qs (10 XP): teacher/AI throws 3–4 scenario prompts, user responds promptly in chat.",
+            "Peer Feedback: user shares top netiquette tips, awarding 5 XP if helpful and polite.",
+            "Daily Streak Bonus: 5 XP for consecutive practice leading up to final challenge."
+          ],
+          "objectives": [
+            "Review essential polite expressions for social media",
+            "Identify final improvement areas"
+          ],
+          "badgeUponCompletion": "Social Media Pro"
+        },
+        {
+          "lessonId": 1216,
+          "lessonNumber": 16,
+          "lessonTitle": "Final Showcase: Your Polite Social Presence",
+          "summary": "Zara compiles a short 'mock feed' with posts, comments, DMs, and conflict resolution. The AI highlights repeated grammar or tone issues in real time, awarding or deducting XP. Earn your final netiquette badge!",
+          "activities": [
+            "User creates a 5–7 'post thread' or conversation sim. Gains up to 40 XP based on clarity, politeness, grammar correctness.",
+            "Teacher/AI evaluates in real-time, suggesting final improvements.",
+            "Upon successful completion, user receives 'Polite Social Media Communicator' badge + daily streak bonus if maintained."
+          ],
+          "objectives": [
+            "Integrate netiquette, polite phrasing, and conflict resolution in realistic online settings",
+            "Show mastery of intermediate polite English for social media"
+          ],
+          "badgeUponCompletion": "Polite Social Media Communicator"
+        }
+      ]
+    },
+    {
+      "courseId": 13,
+      "title": "English for Phone & Video Calls",
+      "level": "Intermediate",
+      "languageInstruction": "Primarily English, Light Hindi Clarifications if Complex",
+      "lessons": [
+        {
+          "lessonId": 1301,
+          "lessonNumber": 1,
+          "lessonTitle": "Essentials of Spoken Communication",
+          "summary": "Meet Arjun—he’s anxious about phone calls but excited to earn XP for each polite conversation snippet. AI-driven suggestions highlight repeated filler words or abrupt endings.",
+          "activities": [
+            "Mini Quiz (5 XP): identify correct phone greetings vs. awkward openers.",
+            "Collaboration: post one phone scenario in group chat, get peer replies (5 XP).",
+            "AI micro-lesson if user often forgets courtesy phrases ('please/thank you')."
+          ],
+          "objectives": [
+            "Recognize fundamental phone/video call etiquette",
+            "Acquire 10 essential spoken expressions"
+          ],
+          "badgeUponCompletion": "Call Basics"
+        },
+        {
+          "lessonId": 1302,
+          "lessonNumber": 2,
+          "lessonTitle": "Introducing Yourself on Calls",
+          "summary": "Arjun must call a new client. Earn daily streak XP for consistent practice. AI notes if the user repeatedly confuses introductions like 'This is Arjun' vs. 'I’m Arjun.'",
+          "activities": [
+            "Role-play (10 XP): user calls someone, does a short self-intro, checks identity politely.",
+            "Mini Quiz: 5 Qs on polite intros. 1 XP each correct. If user fails one Q, AI suggests a 1-min micro-lesson.",
+            "Team Chat: share your intro lines for peer feedback (5 XP)."
+          ],
+          "objectives": [
+            "Start phone conversations smoothly",
+            "Confirm identities politely at an intermediate level"
+          ],
+          "badgeUponCompletion": "Intro Master"
+        },
+        {
+          "lessonId": 1303,
+          "lessonNumber": 3,
+          "lessonTitle": "Leaving Voicemails & Messages",
+          "summary": "Practice concise voicemails. Earn XP by avoiding filler or overlong monologues. AI targets user-specific grammar slip-ups (tense or missing articles).",
+          "activities": [
+            "Mini Quiz (5 XP): pick correct lines for a polite voicemail. E.g., 'Hi, this is… I’m calling about…'",
+            "Role-play: record a 30s voicemail. AI checks for repeated errors, awarding up to 10 XP if flawless.",
+            "Peer Feedback: share a short sample voicemail text for 5 XP each."
+          ],
+          "objectives": [
+            "Craft short, effective voicemails",
+            "Provide necessary info without rambling"
+          ],
+          "badgeUponCompletion": "Voicemail Pro"
+        },
+        {
+          "lessonId": 1304,
+          "lessonNumber": 4,
+          "lessonTitle": "Receiving & Transferring Calls",
+          "summary": "Arjun’s office calls require transferring. Gain XP for each correct transitional phrase. AI micro-lessons pop up if user is abrupt with 'Hold on' or 'Wait.'",
+          "activities": [
+            "Mini Quiz: 5 scenario-based Qs about transferring calls. 1 XP each correct answer.",
+            "Role-play (15 XP): 'Could you please hold while I transfer you to…?'",
+            "Daily Streak Bonus: 5 XP for consistent logins leading up to this lesson."
+          ],
+          "objectives": [
+            "Manage intermediate-level office calls",
+            "Use transitional phrases politely for holds/transfers"
+          ],
+          "badgeUponCompletion": "Office Call Handler"
+        },
+        {
+          "lessonId": 1305,
+          "lessonNumber": 5,
+          "lessonTitle": "Scheduling & Confirming Appointments",
+          "summary": "Learn intermediate date/time references for phone calls. Earn XP for each correct format. AI suggests extra help if user confuses 'at 2 PM' vs. 'on 2 PM.'",
+          "activities": [
+            "Mini Quiz: 5 sample dialogues scheduling appointments, awarding 1 XP each correct usage.",
+            "Role-play: user sets a business meeting or doctor’s appointment (10 XP).",
+            "Collaboration: submit a short ‘appointment script’ in the group chat (5 XP)."
+          ],
+          "objectives": [
+            "Confirm or schedule appointments clearly",
+            "Use date/time references properly"
+          ],
+          "badgeUponCompletion": "Appointment Scheduler"
+        },
+        {
+          "lessonId": 1306,
+          "lessonNumber": 6,
+          "lessonTitle": "Phone Call Small Talk & Friendly Chat",
+          "summary": "Arjun calls a friend to catch up. Earn XP by sounding warm, not stiff. AI notices repeated negative forms or abrupt transitions ('Ok, bye!').",
+          "activities": [
+            "Mini Quiz: identify 5 ways to greet a friend, awarding 1 XP each correct approach.",
+            "Role-play (10 XP): 2–3 lines of friendly chat on the phone. AI suggests corrections if user reverts to direct Hindi translations.",
+            "Peer Challenge: share a short snippet of your last phone call in English, 5 XP bonus."
+          ],
+          "objectives": [
+            "Develop comfortable small talk on calls",
+            "Blend warmth with clarity at intermediate level"
+          ],
+          "badgeUponCompletion": "Friendly Caller"
+        },
+        {
+          "lessonId": 1307,
+          "lessonNumber": 7,
+          "lessonTitle": "Effective Video Call Basics",
+          "summary": "Arjun attends Zoom/Teams calls. Earn daily streak XP while learning camera/mic terms. AI flags repeated filler usage like 'umm' or 'like…like…'.",
+          "activities": [
+            "Vocabulary Drill (10 XP): 'mute/unmute,' 'bandwidth,' 'screen sharing.'",
+            "Mini Quiz: 5 Qs about starting a video call politely. 1 XP each.",
+            "Team Chat Collaboration: share your video call intro lines. Earn 5 XP once peers give feedback."
+          ],
+          "objectives": [
+            "Begin video calls confidently",
+            "Use relevant tech terms politely"
+          ],
+          "badgeUponCompletion": "Video Call Starter"
+        },
+        {
+          "lessonId": 1308,
+          "lessonNumber": 8,
+          "lessonTitle": "Participating in Video Meetings",
+          "summary": "Share ideas in group calls. Earn XP for polite transitions: 'Could I add something…?' AI micro-lessons if user repeatedly interrupts or lacks transitional phrases.",
+          "activities": [
+            "Role-play: user offers an opinion, yields floor politely. Gains 10 XP if done seamlessly.",
+            "Mini Quiz: 5 scenario-based Qs on group meeting etiquette. 1 XP each correct answer.",
+            "Daily Streak Bonus: extra 5 XP for consistent login and practice."
+          ],
+          "objectives": [
+            "Contribute ideas politely in group calls",
+            "Use transitional phrases to maintain meeting flow"
+          ],
+          "badgeUponCompletion": "Meeting Contributor"
+        },
+        {
+          "lessonId": 1309,
+          "lessonNumber": 9,
+          "lessonTitle": "Handling Technical Glitches & Apologies",
+          "summary": "Bad connection? No problem. Earn XP for politely asking 'Could you repeat that?' AI flags any repeated tone errors or abrupt messages.",
+          "activities": [
+            "Mini Quiz: 5 short Qs on dealing with lag or disconnections. 1 XP each correct approach.",
+            "Role-play (10 XP): user experiences background noise, apologizes, clarifies with the group.",
+            "Collaboration: share a short glitch scenario in group chat, get 5 XP once peers respond."
+          ],
+          "objectives": [
+            "Politely handle tech disruptions on calls",
+            "Ask for repetition or clarifications with courtesy"
+          ],
+          "badgeUponCompletion": "Tech Glitch Solver"
+        },
+        {
+          "lessonId": 1310,
+          "lessonNumber": 10,
+          "lessonTitle": "Taking & Passing on Messages in Video Calls",
+          "summary": "Arjun records or passes messages for absent colleagues. Earn XP for clarity. AI highlights repeated grammar errors in summarizing details.",
+          "activities": [
+            "Mini Quiz (5 XP): 'Which detail should you mention first?' in a message scenario.",
+            "Role-play (10 XP): user notes caller’s name, contact, and reason, ensures no info is lost.",
+            "AI micro-lesson triggers if user repeatedly struggles with object pronouns in messages."
+          ],
+          "objectives": [
+            "Record or relay messages in intermediate English",
+            "Close calls gracefully with follow-ups"
+          ],
+          "badgeUponCompletion": "Message Master"
+        },
+        {
+          "lessonId": 1311,
+          "lessonNumber": 11,
+          "lessonTitle": "Conflict & Complaints on Calls",
+          "summary": "Arjun must file or respond to a complaint politely. Earn XP for balanced tone. AI flags if user is overly aggressive or too apologetic. Collaboration for practice gains extra XP.",
+          "activities": [
+            "Mini Quiz (5 XP): pick correct lines for a polite phone complaint scenario.",
+            "Role-play (10 XP): user complains about a faulty product calmly, or addresses a coworker’s complaint effectively.",
+            "Team Chat: share a short sample complaint script, gain 5 XP for peer feedback."
+          ],
+          "objectives": [
+            "File or respond to complaints politely",
+            "Manage tone: remain calm and assertive"
+          ],
+          "badgeUponCompletion": "Complaint Handler"
+        },
+        {
+          "lessonId": 1312,
+          "lessonNumber": 12,
+          "lessonTitle": "Arranging Group Calls & Virtual Events",
+          "summary": "Arjun coordinates a group video session. Earn XP for scheduling clarity, from date/time to sending links. AI micro-lessons if user misses key transitional language.",
+          "activities": [
+            "Vocabulary: 'time zone differences,' 'reminder email,' 'event link.' Gains 10 XP if used correctly in a short scenario.",
+            "Mini Quiz: 5 Qs about possible scheduling conflicts. 1 XP each correct answer.",
+            "Collaboration: post your event plan in group chat, gather feedback for 5 XP bonus."
+          ],
+          "objectives": [
+            "Host group calls with polite clarity",
+            "Manage scheduling across multiple participants"
+          ],
+          "badgeUponCompletion": "Event Coordinator"
+        },
+        {
+          "lessonId": 1313,
+          "lessonNumber": 13,
+          "lessonTitle": "Public Speaking Elements in Video Calls",
+          "summary": "Sometimes calls need mini-presentations. Earn XP for hooking your audience quickly. AI flags repeated filler words. Collaborate with peers on short presentation scripts.",
+          "activities": [
+            "Role-play (10 XP): user starts a mini slide presentation: 'Thank you for joining, I’d like to discuss…'",
+            "Mini Quiz: 5 Qs on transitions like 'Secondly…Furthermore…Finally…' awarding 1 XP each correct usage.",
+            "Collaboration: share a short presentation script with peers, +5 XP if everyone’s satisfied."
+          ],
+          "objectives": [
+            "Merge public speaking skills with phone/video call structure",
+            "Engage listeners using concise, clear statements"
+          ],
+          "badgeUponCompletion": "Video Presenter"
+        },
+        {
+          "lessonId": 1314,
+          "lessonNumber": 14,
+          "lessonTitle": "Intermediate Grammar Boost for Calls",
+          "summary": "Review modals, conditionals, articles often crucial in calls. Earn XP from mini quizzes. AI personalizes a micro-lesson if repeated errors appear. Collaboration fosters extra practice.",
+          "activities": [
+            "Grammar Drill (10 XP): fill-in-the-blanks with correct modals or articles in call scenarios.",
+            "Mini Quiz: pick best conditionals for polite phone requests. 1 XP each correct.",
+            "Peer Check: share a short call script focusing on grammar correctness, earn 5 XP upon feedback."
+          ],
+          "objectives": [
+            "Apply intermediate grammar structures in phone contexts",
+            "Fix repeated user errors for clarity"
+          ],
+          "badgeUponCompletion": "Grammar Booster"
+        },
+        {
+          "lessonId": 1315,
+          "lessonNumber": 15,
+          "lessonTitle": "Review & Mock Calls",
+          "summary": "Consolidate phone/video call scenarios. Arjun sees random prompts (a polite complaint, a friend catch-up, or scheduling). Earn XP fast for real-time correctness. AI highlights final improvement points.",
+          "activities": [
+            "Rapid-Fire Qs (10 XP): 3–4 scenario prompts, user replies in seconds. Each correct approach yields XP.",
+            "Peer/AI Feedback: user shares top 5 phone tips, awarding 5 XP if well-structured.",
+            "Daily Streak Bonus: final push of 5 XP for consistent practice up to this lesson."
+          ],
+          "objectives": [
+            "Demonstrate confidence in diverse call scenarios",
+            "Pinpoint final improvement areas"
+          ],
+          "badgeUponCompletion": "Call Master"
+        },
+        {
+          "lessonId": 1316,
+          "lessonNumber": 16,
+          "lessonTitle": "Final Showcase: Mastering the Call",
+          "summary": "Arjun’s 5–7 minute multi-part call (or video scenario) includes scheduling, minor conflict, short presentation. Earn the 'Phone & Video Call Pro (Intermediate)' badge and a big XP boost!",
+          "activities": [
+            "User designs a mock call with 2–3 elements: scheduling or transferring, conflict or Q&A. Gains up to 40 XP.",
+            "Teacher/AI tracks repeated errors in real time—if minimal, user wins a large XP bonus and final badge.",
+            "Reflection: how do you plan to use these skills daily?"
+          ],
+          "objectives": [
+            "Showcase integrated phone/video call skills",
+            "Handle advanced elements calmly"
+          ],
+          "badgeUponCompletion": "Phone & Video Call Pro (Intermediate)"
+        }
+      ]
+    },
+    {
+      "courseId": 14,
+      "title": "English for Govt Job Aspirants",
+      "level": "Intermediate",
+      "languageInstruction": "Primarily English with Some Hindi Support",
+      "lessons": [
+        {
+          "lessonId": 1401,
+          "lessonNumber": 1,
+          "lessonTitle": "Scope and Goals for Govt Exams",
+          "summary": "Meet Priyanka, aiming for government job exams. She’ll gain XP by tackling reading comprehension, grammar MCQs, and short writing tasks. AI-driven feedback pinpoints grammar weaknesses. Daily streaks help maintain momentum.",
+          "activities": [
+            "Mini Quiz (5 XP): 5 Qs on typical exam sections (reading, grammar, essay).",
+            "AI micro-lesson triggers if user confuses exam instructions or vocabulary (like 'notice,' 'format').",
+            "Collaboration: share exam goals in group chat—5 XP each once posted."
+          ],
+          "objectives": [
+            "Recognize role of English in govt job exams",
+            "Identify main exam components needing English proficiency"
+          ],
+          "badgeUponCompletion": "Govt Exam Starter"
+        },
+        {
+          "lessonId": 1402,
+          "lessonNumber": 2,
+          "lessonTitle": "Reading Comprehension Basics",
+          "summary": "Priyanka attempts an intermediate reading passage. Earn XP for correct inference Qs. AI logs repeated misunderstandings (like ignoring transitional words).",
+          "activities": [
+            "Timed Reading (10 XP): user reads a 200-word passage, answers 5 MCQs in limited time.",
+            "Mini Quiz: +1 XP per correct answer. AI highlights if user struggles with inference or synonyms.",
+            "Peer Sharing: discuss a quick approach for reading passages, +5 XP."
+          ],
+          "objectives": [
+            "Apply reading strategies to grasp main ideas fast",
+            "Answer comprehension questions with better accuracy"
+          ],
+          "badgeUponCompletion": "Reading Comprehension Pro"
+        },
+        {
+          "lessonId": 1403,
+          "lessonNumber": 3,
+          "lessonTitle": "Intermediate Grammar for Exams (Part 1)",
+          "summary": "Focus on subject–verb agreement, tenses, and articles in typical exam question formats. Earn XP for each corrected error. AI micro-lessons if you keep making the same slip.",
+          "activities": [
+            "Mini Quiz: 5 grammar MCQs awarding 1 XP each correct. E.g., fill-in-the-blanks, error-spotting.",
+            "Collab Discussion: share a tricky grammar concept, get 5 XP from peer feedback.",
+            "Daily Streak Bonus: if user logs in consistently, +5 XP."
+          ],
+          "objectives": [
+            "Recognize and correct common exam grammar errors",
+            "Strengthen fundamental agreement and tense usage"
+          ],
+          "badgeUponCompletion": "Grammar Part1 Champ"
+        },
+        {
+          "lessonId": 1404,
+          "lessonNumber": 4,
+          "lessonTitle": "Intermediate Grammar for Exams (Part 2)",
+          "summary": "Continue with modals, conditionals, and prepositions. Earn XP from short quizzes or error-spot exercises. AI personalization shows user’s recurring problem areas (like missing prepositions).",
+          "activities": [
+            "Mini Quiz: 5 Qs focusing on modals/conditionals. Earn 1 XP each.",
+            "Role-play: user explains grammar logic behind each question, awarding 10 XP if correct.",
+            "AI correction if user repeats a certain preposition error. Proposes a micro-lesson."
+          ],
+          "objectives": [
+            "Master intermediate modals, conditionals, prepositions",
+            "Apply them confidently in exam-style questions"
+          ],
+          "badgeUponCompletion": "Grammar Part2 Champ"
+        },
+        {
+          "lessonId": 1405,
+          "lessonNumber": 5,
+          "lessonTitle": "Vocabulary Building for Govt Exams",
+          "summary": "Priyanka focuses on synonyms, antonyms, and phrasal verbs. Earn XP for memory challenges. AI suggests quick mnemonic micro-lessons if you forget new words often.",
+          "activities": [
+            "Mini Quiz (5 XP): 5 synonyms/antonyms matching Qs.",
+            "Vocabulary Drill: user tries to form sentences with given advanced words. Gains up to 10 XP if used correctly.",
+            "Collaboration: share your top memory trick (5 XP)."
+          ],
+          "objectives": [
+            "Expand exam-relevant vocabulary systematically",
+            "Use synonyms/antonyms effectively"
+          ],
+          "badgeUponCompletion": "Vocab Builder"
+        },
+        {
+          "lessonId": 1406,
+          "lessonNumber": 6,
+          "lessonTitle": "Cloze Tests & Paragraph Completion",
+          "summary": "Tackle fill-in-the-blanks with logic and grammar. Each correct blank yields XP. AI flags repeated mistakes in tense or collocations. Collaborate on a group paragraph puzzle.",
+          "activities": [
+            "Cloze Test (10 XP): user picks the best word for 5 blanks, +2 XP each correct.",
+            "Group Paragraph Puzzle: in small teams, fill 5 blanks accurately. 5 XP each upon completion.",
+            "AI notes if user confuses certain word families or tense forms repeatedly."
+          ],
+          "objectives": [
+            "Excel in context-based cloze tests",
+            "Use grammar + logic synergy for correct word choices"
+          ],
+          "badgeUponCompletion": "Cloze Test Pro"
+        },
+        {
+          "lessonId": 1407,
+          "lessonNumber": 7,
+          "lessonTitle": "Error Spotting & Sentence Improvement",
+          "summary": "Govt exams often test quick error detection. Earn XP for each fix. AI logs which grammar points frequently trip you up, prompting micro-lessons. Collaboration fosters peer feedback.",
+          "activities": [
+            "Mini Quiz: 5 sentences with hidden errors, each correct fix = 2 XP.",
+            "Team Chat: post one tricky sentence, ask peers to spot the error. +5 XP on submission.",
+            "AI correction if user keeps messing up the same grammar pattern."
+          ],
+          "objectives": [
+            "Identify sentence errors systematically",
+            "Refine grammar knowledge for quick corrections"
+          ],
+          "badgeUponCompletion": "Error Spotting Ace"
+        },
+        {
+          "lessonId": 1408,
+          "lessonNumber": 8,
+          "lessonTitle": "Basic Essay & Letter Writing",
+          "summary": "Write short formal pieces. Earn XP for clarity, correct grammar, and structure. AI flags repeated sentence-level issues. Peer review for extra XP if you share your draft.",
+          "activities": [
+            "Essay Draft (15 XP): user writes ~100 words on a general topic, ensuring intro-body-conclusion format.",
+            "Mini Quiz: best transitional phrases for a letter or essay. +1 XP each correct pick.",
+            "Peer Feedback: share your draft, gather 5 XP once you implement suggestions."
+          ],
+          "objectives": [
+            "Write short structured essays/letters with formal tone",
+            "Use transitional phrases effectively"
+          ],
+          "badgeUponCompletion": "Essay Writer"
+        },
+        {
+          "lessonId": 1409,
+          "lessonNumber": 9,
+          "lessonTitle": "Reading Speed & Time Management",
+          "summary": "Timed passages measure user’s reading pace. Each correct MCQ yields XP. AI sees if you miss certain question types under pressure, prompting extra micro-practice.",
+          "activities": [
+            "Timed Reading (10 XP): a 300-word passage + 5 MCQs in 4 minutes.",
+            "Collab Tip Swap: each user shares a quick time-management hack. 5 XP each upon submission.",
+            "Daily Streak Bonus: 5 XP for consistent reading practice this week."
+          ],
+          "objectives": [
+            "Boost reading efficiency under exam conditions",
+            "Balance accuracy with speed"
+          ],
+          "badgeUponCompletion": "Speed Reader"
+        },
+        {
+          "lessonId": 1410,
+          "lessonNumber": 10,
+          "lessonTitle": "Formal vs. Informal Language Nuances",
+          "summary": "Priyanka must switch tones in letters or short exam notes. Earn XP for picking correct register. AI flags repeated confusion about formality levels. Collaboration fosters sample rewriting tasks.",
+          "activities": [
+            "Mini Quiz: 5 lines—decide if formal/informal. +1 XP each correct.",
+            "Role-play: user rewrites an informal phrase to formal. Gains 10 XP if accurate.",
+            "Team Chat: share 1–2 lines you rewrote from casual to formal, 5 XP bonus."
+          ],
+          "objectives": [
+            "Choose the right tone for official or personal contexts",
+            "Transition from casual to formal language smoothly"
+          ],
+          "badgeUponCompletion": "Tone Master"
+        },
+        {
+          "lessonId": 1411,
+          "lessonNumber": 11,
+          "lessonTitle": "Analyzing Newspaper Editorials",
+          "summary": "Editorial reading improves essay content. Earn XP for summarizing arguments. AI logs repeated comprehension or vocab issues. Group synergy yields extra XP if you discuss an editorial together.",
+          "activities": [
+            "Reading Excerpt (10 XP): user reads ~200 words from an editorial, answers 5 Qs.",
+            "Mini Quiz: each correct Q = 1 XP. AI highlights if user often misreads transitional phrases.",
+            "Collaboration: share a quick editorial snippet with group discussion, +5 XP each."
+          ],
+          "objectives": [
+            "Practice editorial reading to expand vocabulary",
+            "Summarize arguments clearly"
+          ],
+          "badgeUponCompletion": "Editorial Analyzer"
+        },
+        {
+          "lessonId": 1412,
+          "lessonNumber": 12,
+          "lessonTitle": "Mock Test: English Section",
+          "summary": "Priyanka does a mini mock test—reading comprehension, grammar MCQs, short writing. Timer enforces exam feel. Earn XP for correct answers, AI feedback for mistakes. Peer discussion for extra tips.",
+          "activities": [
+            "Timed Test (20 XP): ~10 MCQs + 1 short writing in 15 minutes. 2 XP each correct MCQ, 5 XP for coherent writing.",
+            "Daily Streak Bonus: +5 XP if user logs in consecutively for this test prep.",
+            "Peer Review: share your writing part, get 5 XP if you incorporate feedback."
+          ],
+          "objectives": [
+            "Apply exam strategies under timed conditions",
+            "Identify error patterns or stress points"
+          ],
+          "badgeUponCompletion": "Mock Exam Hero"
+        },
+        {
+          "lessonId": 1413,
+          "lessonNumber": 13,
+          "lessonTitle": "Interview & Spoken Basics for Govt Roles",
+          "summary": "Some govt jobs require personal interviews or group discussions. Earn XP for polite intros. AI notes if user reverts to direct translations. Collaboration fosters quick mock interviews.",
+          "activities": [
+            "Role-play (10 XP): user does a 1-min self-intro as a govt job candidate. AI flags repeated grammar errors.",
+            "Mini Quiz: 5 scenario-based Qs about typical interview answers. +1 XP each correct approach.",
+            "Team Chat: group mock interview, awarding 5 XP each participant."
+          ],
+          "objectives": [
+            "Practice short spoken intros for govt interviews",
+            "Maintain a polite, professional tone"
+          ],
+          "badgeUponCompletion": "Interview Starter"
+        },
+        {
+          "lessonId": 1414,
+          "lessonNumber": 14,
+          "lessonTitle": "Error Analysis & Final Grammar Polish",
+          "summary": "Revisit user’s repeated grammar/vocab slip-ups from prior lessons. Drills help fix them systematically. Earn XP each time you conquer a known error. AI personalizes last micro-lessons.",
+          "activities": [
+            "Mini Quiz (5 XP): spot 5 errors that typically plague the user, each correct fix = +1 XP.",
+            "Short writing snippet: user tries to avoid all repeated errors. Gains 10 XP if near-perfect.",
+            "Daily Streak Bonus: 5 XP for consecutive usage leading up to final lessons."
+          ],
+          "objectives": [
+            "Eliminate stubborn grammar/vocab mistakes",
+            "Build exam-ready confidence in English usage"
+          ],
+          "badgeUponCompletion": "Final Grammar Polish"
+        },
+        {
+          "lessonId": 1415,
+          "lessonNumber": 15,
+          "lessonTitle": "Full-Length Practice: Reading, Grammar, & Essay",
+          "summary": "Simulate a near-real test: reading comprehension, grammar MCQs, a 150-word essay in ~30 mins. Gain XP for each section. AI spots final repeated weaknesses to address before the last project.",
+          "activities": [
+            "Timed Session (30 XP total): ~15 MCQs + 1 short essay. 2 XP per MCQ, 5 XP for essay clarity.",
+            "Peer or AI Feedback: user shares essay, teacher/AI notes structure improvements. +5 XP if user corrects them.",
+            "Reflection: user sees final scoreboard + personalized error report from AI."
+          ],
+          "objectives": [
+            "Simulate real exam conditions comprehensively",
+            "Refine time management for all components"
+          ],
+          "badgeUponCompletion": "Full Mock Hero"
+        },
+        {
+          "lessonId": 1416,
+          "lessonNumber": 16,
+          "lessonTitle": "Final Showcase: Govt Exam Readiness",
+          "summary": "Priyanka’s big day: a 45-minute mock scenario covering reading comprehension, grammar, short writing, plus a 1-min spoken intro. Earn your 'Govt Job English Aspirant (Intermediate)' badge and final XP boost.",
+          "activities": [
+            "User attempts final consolidated test. AI-driven real-time error detection prompts micro-corrections for maximum XP.",
+            "Teacher/AI evaluates correctness, grammar, tone. Minimal mistakes => high XP + badge.",
+            "Reflection: user compares their progress from Lesson 1 to now, celebrating final readiness."
+          ],
+          "objectives": [
+            "Demonstrate integrated reading, grammar, writing, and speaking skills",
+            "Prove readiness for typical govt job exam English sections"
+          ],
+          "badgeUponCompletion": "Govt Job English Aspirant (Intermediate)"
+        }
+      ]
+    },
+    {
+      "courseId": 15,
+      "title": "Grammar Doctor: Fix My Mistakes!",
+      "level": "Intermediate",
+      "languageInstruction": "Primarily English, Rare Hindi Examples if Needed",
+      "lessons": [
+        {
+          "lessonId": 1501,
+          "lessonNumber": 1,
+          "lessonTitle": "Embrace Mistakes to Grow",
+          "summary": "Meet Dr. Grammar, your fictional mentor. Earn XP for each discovered error you fix in real time. AI logs your unique patterns. Keep a daily streak for bonus XP!",
+          "activities": [
+            "Mini Quiz (5 XP): identify 3 common grammar mistakes you make. The system suggests a short micro-lesson for each.",
+            "Collaboration: share 2 grammar issues with peers, 5 XP for open discussion.",
+            "Daily Streak Bonus: if you start the course consecutively, +5 XP."
+          ],
+          "objectives": [
+            "Adopt a positive approach to grammar errors",
+            "Prepare to track repeated mistakes systematically"
+          ],
+          "badgeUponCompletion": "Mistake Embracer"
+        },
+        {
+          "lessonId": 1502,
+          "lessonNumber": 2,
+          "lessonTitle": "Spot the Difference: L1 Interference",
+          "summary": "Many errors stem from direct Hindi translations. Dr. Grammar shows how to unlearn them, awarding XP for each corrected line. AI micro-lesson triggers if the same error repeats.",
+          "activities": [
+            "Mini Quiz (5 XP): fix 5 lines with typical L1 interference. +1 XP each correct fix.",
+            "Role-play: user rewrites 2 direct translations into correct English. Gains 10 XP if consistent.",
+            "Peer Challenge: share a personal L1 interference story, +5 XP once posted."
+          ],
+          "objectives": [
+            "Identify how mother tongue influences English",
+            "Systematically fix direct translation errors"
+          ],
+          "badgeUponCompletion": "L1 Awareness"
+        },
+        {
+          "lessonId": 1503,
+          "lessonNumber": 3,
+          "lessonTitle": "Verbs & Tenses: The Usual Suspects",
+          "summary": "Focus on subtle tense usage. Earn XP for each correct correction. AI logs repeated progressive form errors, prompting short micro-lessons. Collaboration fosters deeper tense drills.",
+          "activities": [
+            "Mini Quiz: 5 flawed tense sentences, each correct fix = +1 XP. AI suggests a micro-lesson if user fails 2+ Qs.",
+            "Team Chat: practice a short paragraph using present, past, future. +5 XP if peers confirm no errors.",
+            "Daily Streak Bonus: 5 XP for consecutive usage."
+          ],
+          "objectives": [
+            "Eliminate common tense mistakes",
+            "Use progressive or simple forms confidently"
+          ],
+          "badgeUponCompletion": "Tense Fixer"
+        },
+        {
+          "lessonId": 1504,
+          "lessonNumber": 4,
+          "lessonTitle": "Articles & Determiners: A, An, The, This, That",
+          "summary": "Stop skipping articles. Gain XP for each corrected determiners usage. AI micro-lesson triggers if user keeps repeating the same article error. Collaboration helps fix sample paragraphs.",
+          "activities": [
+            "Mini Quiz (5 XP): fix 5 lines missing correct articles/determiners.",
+            "Role-play: user describes objects around them with 'this/that/these/those.' Gains 10 XP if done accurately.",
+            "Peer Review: post a short 4-line paragraph, others spot article mistakes. +5 XP once fixed."
+          ],
+          "objectives": [
+            "Apply correct articles/determiners in everyday statements",
+            "Stop skipping them due to L1 interference"
+          ],
+          "badgeUponCompletion": "Article Master"
+        },
+        {
+          "lessonId": 1505,
+          "lessonNumber": 5,
+          "lessonTitle": "Subject–Verb Agreement Woes",
+          "summary": "Dr. Grammar focuses on singular vs. plural confusions. Earn XP by systematically solving agreement tasks. AI suggests a micro-lesson if you keep mixing up collective nouns or indefinite pronouns.",
+          "activities": [
+            "Mini Quiz (5 XP): fix 5 subject–verb errors in short sentences.",
+            "Role-play: user narrates 2–3 lines about a group/committee/family. Gains 10 XP if no errors.",
+            "Daily Streak Bonus: +5 XP for consistent practice."
+          ],
+          "objectives": [
+            "Master subject–verb agreement at intermediate level",
+            "Recognize tricky collective or indefinite pronoun cases"
+          ],
+          "badgeUponCompletion": "Agreement Fixer"
+        },
+        {
+          "lessonId": 1506,
+          "lessonNumber": 6,
+          "lessonTitle": "Pronouns & Referencing",
+          "summary": "Tackle mismatched or ambiguous pronouns. Earn XP each time you fix a reference. AI logs if you repeatedly fail to clarify who 'they' or 'it' refers to. Collaboration fosters short group exercises.",
+          "activities": [
+            "Mini Quiz (5 XP): spot 5 pronoun errors (e.g., 'The team finished their tasks' vs. 'its tasks').",
+            "Role-play: user rewrites ambiguous lines. Gains 10 XP if references become crystal clear.",
+            "Team Chat: share 2 lines with pronoun confusion, others fix them for 5 XP each."
+          ],
+          "objectives": [
+            "Use pronouns clearly/consistently",
+            "Avoid ambiguity or mismatch in referencing"
+          ],
+          "badgeUponCompletion": "Pronoun Healer"
+        },
+        {
+          "lessonId": 1507,
+          "lessonNumber": 7,
+          "lessonTitle": "Prepositions: Location, Time & More",
+          "summary": "Fix slip-ups in 'in/on/at' usage. Earn XP for correct prepositional phrases. AI micro-lessons appear if user repeatedly confuses location vs. time prepositions. Collaboration fosters scenario-based tasks.",
+          "activities": [
+            "Mini Quiz (5 XP): fill-in-the-blanks with correct prepositions for time/place. +1 XP each correct.",
+            "Role-play: user describes their weekly schedule with correct prepositions. Gains 10 XP if accurate.",
+            "Daily Streak Bonus: 5 XP for consecutive usage."
+          ],
+          "objectives": [
+            "Fix frequent preposition usage errors",
+            "Gain clarity on location/time references"
+          ],
+          "badgeUponCompletion": "Preposition Fixer"
+        },
+        {
+          "lessonId": 1508,
+          "lessonNumber": 8,
+          "lessonTitle": "Conjunctions & Sentence Flow",
+          "summary": "Avoid run-ons and awkward breaks by using 'and,' 'but,' 'so,' 'although,' etc. Earn XP for each corrected run-on. AI logs repeated misuses of conjunction combos. Collaboration fosters rewriting drills.",
+          "activities": [
+            "Mini Quiz (5 XP): spot 5 run-on sentences or comma splices, fix them properly.",
+            "Team Chat: share a short paragraph with missing conjunctions, let others fix for 5 XP each.",
+            "AI micro-lesson triggers if user consistently forgets to use commas or transitions."
+          ],
+          "objectives": [
+            "Avoid run-on sentences with correct conjunctions",
+            "Use varied linking words for smoother flow"
+          ],
+          "badgeUponCompletion": "Flow Fixer"
+        },
+        {
+          "lessonId": 1509,
+          "lessonNumber": 9,
+          "lessonTitle": "Adjectives & Adverbs Confusion",
+          "summary": "Stop 'She sings beautiful' type errors. Earn XP each time you correct an adjective/adverb mismatch. AI highlights repeated stumbles. Collaboration fosters quick mastery drills.",
+          "activities": [
+            "Mini Quiz (5 XP): fix 5 lines mixing adjectives/adverbs, e.g., 'He drives quick' → 'quickly.'",
+            "User writes 2 lines describing daily tasks using correct adjective–adverb pairs. Gains 10 XP if error-free.",
+            "Daily Streak Bonus: +5 XP for consistent practice."
+          ],
+          "objectives": [
+            "Differentiate adjectives vs. adverbs properly",
+            "Stop using adjectives in place of adverbs"
+          ],
+          "badgeUponCompletion": "Adjective-Adverb Fixer"
+        },
+        {
+          "lessonId": 1510,
+          "lessonNumber": 10,
+          "lessonTitle": "Polite Requests & Modal Pitfalls",
+          "summary": "Refine 'would/could/should/might' usage. Earn XP for each polite request corrected. AI micro-lessons appear if user’s direct translations keep re-emerging. Collaboration fosters role-play tasks.",
+          "activities": [
+            "Mini Quiz (5 XP): which modal is correct for each scenario? +1 XP each.",
+            "Role-play: user transforms direct lines into polite modal forms, e.g., 'Give me water' → 'Could you give me some water?' Gains 10 XP if done smoothly.",
+            "Team Chat: share 2 short polite requests, get 5 XP once peers confirm correctness."
+          ],
+          "objectives": [
+            "Use modals precisely for polite English",
+            "Transition from literal translations to standard polite forms"
+          ],
+          "badgeUponCompletion": "Modal Expert"
+        },
+        {
+          "lessonId": 1511,
+          "lessonNumber": 11,
+          "lessonTitle": "Complex Sentence Structures",
+          "summary": "Master embedded clauses, relative pronouns, advanced conditionals. Earn XP each time you form a correct complex sentence. AI notes repeated structure errors, prompting micro-lessons.",
+          "activities": [
+            "Mini Quiz (5 XP): fill 5 relative clauses in partial sentences. +1 XP each correct.",
+            "User writes a short story using at least 2 relative clauses, gains 10 XP if no errors remain.",
+            "Collaboration: post your story snippet, get 5 XP from peer feedback."
+          ],
+          "objectives": [
+            "Form intermediate-level complex sentences accurately",
+            "Place relative clauses or advanced conditionals with clarity"
+          ],
+          "badgeUponCompletion": "Complexity Builder"
+        },
+        {
+          "lessonId": 1512,
+          "lessonNumber": 12,
+          "lessonTitle": "Common Spelling & Homophone Errors",
+          "summary": "Focus on 'their/there,' 'your/you’re,' etc. Earn XP for picking the right word. AI micro-lessons if user frequently confuses them. Collaboration fosters quick spell-check tasks.",
+          "activities": [
+            "Mini Quiz (5 XP): pick correct homophones in 5 lines. +1 XP each right choice.",
+            "Short reflection: user writes 2 lines using 'your/you’re' correctly, gains 10 XP if perfect.",
+            "Daily Streak Bonus: +5 XP for consecutive usage."
+          ],
+          "objectives": [
+            "Recognize and fix homophone/spelling mistakes",
+            "Ensure clarity by choosing right words in context"
+          ],
+          "badgeUponCompletion": "Homophone Fixer"
+        },
+        {
+          "lessonId": 1513,
+          "lessonNumber": 13,
+          "lessonTitle": "Consistent Style & Parallelism",
+          "summary": "Avoid jarring shifts like 'She likes dancing, to swim, and running.' Earn XP each time you correct parallel structure. AI micro-lessons appear if user repeats inconsistent forms. Collaboration fosters rewriting tasks.",
+          "activities": [
+            "Mini Quiz (5 XP): 5 sentences with parallelism errors, each fix = +1 XP.",
+            "User writes 2 lines about personal hobbies, ensuring parallel structure for 10 XP if perfect.",
+            "Team Chat: share parallel-structure examples, earn 5 XP once peers confirm correctness."
+          ],
+          "objectives": [
+            "Maintain parallel structure in lists/comparisons",
+            "Adopt a smoother, more professional style"
+          ],
+          "badgeUponCompletion": "Parallelism Hero"
+        },
+        {
+          "lessonId": 1514,
+          "lessonNumber": 14,
+          "lessonTitle": "Identifying Personal Weaknesses",
+          "summary": "Review your AI-logged mistakes. Dr. Grammar helps you plan a final fix strategy. Earn XP for acknowledging and tackling top 3 recurring errors. Collaboration fosters group reflection.",
+          "activities": [
+            "User reviews personal 'error log' from the course. Gains 10 XP for publicly summarizing top 3 problem spots.",
+            "Mini Quiz: fix a short paragraph containing each user’s typical errors, +5 XP if all corrected.",
+            "Collab Reflection: share 1 micro-goal in group chat, +5 XP once posted."
+          ],
+          "objectives": [
+            "Finalize your top repeated mistake patterns",
+            "Adopt a daily correction strategy"
+          ],
+          "badgeUponCompletion": "Self-Awareness"
+        },
+        {
+          "lessonId": 1515,
+          "lessonNumber": 15,
+          "lessonTitle": "Practical Drills & Corrections",
+          "summary": "Demonstrate your fix-it skills: rewrite a 150-word flawed text. Earn XP for each error fixed. AI shows real-time corrections. Collaboration fosters synergy in final polishing.",
+          "activities": [
+            "Rewrite Challenge (20 XP): a paragraph with 10–12 errors, user must correct them all.",
+            "Peer/AI feedback: if user misses any, the system auto-flags them. Correcting on second attempt yields partial XP.",
+            "Daily Streak Bonus: +5 XP for consecutive usage up to final project."
+          ],
+          "objectives": [
+            "Demonstrate real-time correction of a flawed text",
+            "Articulate why each fix is needed"
+          ],
+          "badgeUponCompletion": "Drills Expert"
+        },
+        {
+          "lessonId": 1516,
+          "lessonNumber": 16,
+          "lessonTitle": "Final Project: You Are the Grammar Doctor!",
+          "summary": "User steps into Dr. Grammar’s role—review a 'friend’s text' with 10–12 errors. Provide polite, thorough corrections. Earn the 'Grammar Doctor (Intermediate)' badge plus a big XP boost!",
+          "activities": [
+            "User marks, corrects, and briefly explains each error in real time. +2 XP per correct fix, up to 20 XP total.",
+            "AI checks clarity of each correction. Minimal misses => final big XP + badge.",
+            "Reflection: user sees their entire 'error log' improvements from start to now."
+          ],
+          "objectives": [
+            "Prove mastery of intermediate error spotting/correcting",
+            "Confidently explain each fix, showing advanced awareness"
+          ],
+          "badgeUponCompletion": "Grammar Doctor (Intermediate)"
+        }
+      ]
+    }
+  ]
+}

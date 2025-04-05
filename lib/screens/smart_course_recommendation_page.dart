@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluentedge_app/localization/app_localizations.dart';
+import 'package:fluentedge_app/data/courses_list.dart'; // ✅ Centralized data
 
 class SmartCourseRecommendationPage extends StatelessWidget {
   final String userName;
@@ -9,26 +10,31 @@ class SmartCourseRecommendationPage extends StatelessWidget {
   final List<String> recommendedCourses;
 
   const SmartCourseRecommendationPage({
-    super.key,
+    Key? key,
     required this.userName,
     required this.languagePreference,
     required this.gender,
     required this.age,
     required this.recommendedCourses,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
     final safeUserName = userName.trim().isEmpty ? "there" : userName;
-    final List<String> finalCourses = recommendedCourses.isNotEmpty
-        ? recommendedCourses
-        : ["Smart Daily Conversations"];
+
+    // Find course data from global list based on titles
+    final List<Map<String, dynamic>> matchedCourses = courses.where((course) {
+      return recommendedCourses.contains(course["title"]);
+    }).toList();
 
     return Scaffold(
       backgroundColor: const Color(0xFFF2F6FB),
       appBar: AppBar(
-        title: const Text("🎯 Recommended Courses"),
+        title: const Text(
+          "🎯 Recommended Courses",
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white),
+        ),
         backgroundColor: const Color(0xFF1565C0),
       ),
       body: Padding(
@@ -52,21 +58,27 @@ class SmartCourseRecommendationPage extends StatelessWidget {
             const SizedBox(height: 24),
             Expanded(
               child: ListView.builder(
-                itemCount: finalCourses.length,
+                itemCount: matchedCourses.length,
                 itemBuilder: (context, index) {
-                  final course = _applyAgeGenderFilter(finalCourses[index]);
+                  final course = matchedCourses[index];
                   return Card(
                     elevation: 2,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                     margin: const EdgeInsets.symmetric(vertical: 8),
                     child: ListTile(
-                      leading: const Icon(Icons.school, color: Color(0xFF1565C0)),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/courseDetail', arguments: course);
+                      },
+                      leading: CircleAvatar(
+                        backgroundColor: course['color'].withOpacity(0.1),
+                        child: Icon(course['icon'], color: course['color']),
+                      ),
                       title: Text(
-                        course,
+                        course["title"],
                         style: const TextStyle(fontWeight: FontWeight.w600),
                       ),
                       subtitle: Text(
-                        _getLocalizedCourseTitle(course, languagePreference),
+                        course["description"],
                         style: const TextStyle(fontSize: 12),
                       ),
                     ),
@@ -77,7 +89,13 @@ class SmartCourseRecommendationPage extends StatelessWidget {
             const SizedBox(height: 10),
             ElevatedButton.icon(
               onPressed: () {
-                // TODO: Navigate to course
+                if (matchedCourses.isNotEmpty) {
+                  Navigator.pushNamed(
+                    context,
+                    '/courseDetail',
+                    arguments: matchedCourses.first,
+                  );
+                }
               },
               icon: const Icon(Icons.rocket_launch),
               label: Text(_getStartLabel(languagePreference)),
@@ -94,47 +112,17 @@ class SmartCourseRecommendationPage extends StatelessWidget {
               },
               icon: const Icon(Icons.home_outlined),
               label: Text(_getHomeLabel(languagePreference)),
-            )
+            ),
           ],
         ),
       ),
     );
   }
 
-  String _applyAgeGenderFilter(String course) {
-    if (age < 18 && _isAdultCourse(course)) {
-      return "Smart Daily Conversations";
-    }
-    return course;
-  }
-
-  bool _isAdultCourse(String course) {
-    const adultCourses = [
-      "Everyday English for Homemakers",
-      "Office English for Professionals",
-      "Business English for Managers",
-      "Travel English for Global Explorers",
-      "English for Interviews & Job Success",
-      "Festival & Celebration English",
-      "Polite English for Social Media",
-      "English for Phone & Video Calls",
-      "English for Govt Job Aspirants",
-      "Shaadi English",
-      "Temple & Tirth Yatra English",
-      "Medical English for Healthcare Workers",
-      "Tutor’s English Kit",
-    ];
-    return adultCourses.contains(course);
-  }
-
   String _getLocalizedIntro(String lang) {
     return lang == 'हिंदी'
         ? "आपके जवाबों के आधार पर, ये कोर्स आपके लिए सबसे उपयुक्त हैं।"
         : "Based on your answers, these courses are ideal for you.";
-  }
-
-  String _getLocalizedCourseTitle(String course, String lang) {
-    return lang == 'हिंदी' ? "कोर्स: $course" : "Course: $course";
   }
 
   String _getStartLabel(String lang) {

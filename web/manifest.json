@@ -1,6 +1,6 @@
 {
-    "name": "fluentedge_frontend",
-    "short_name": "fluentedge_frontend",
+    "name": "fluentedge_app",
+    "short_name": "fluentedge_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

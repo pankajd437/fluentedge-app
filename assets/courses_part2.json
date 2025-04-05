@@ -1,0 +1,1249 @@
+{
+  "courses": [
+    {
+      "courseId": 6,
+      "title": "Emergency English: Handling Urgent Situations",
+      "level": "Beginner",
+      "languageInstruction": "Hindi",
+      "lessons": [
+        {
+          "lessonId": 601,
+          "lessonNumber": 1,
+          "lessonTitle": "आपातकालीन स्थिति क्या है? (What is an Emergency?)",
+          "summary": "Meet Ravi—an everyday person who suddenly faces various urgent scenarios. This intro shows why basic English helps in emergencies (medical, fire, theft) when time is critical.",
+          "activities": [
+            "Short discussion: ‘What would you do if…?’ (fire, injury, theft). Imagine Ravi in those moments.",
+            "Learn 10 key emergency words (danger, help, injury, fire, ambulance, etc.) with Hindi parallels.",
+            "Match each word to its Hindi meaning in a mini-game."
+          ],
+          "objectives": [
+            "Understand emergency contexts",
+            "Acquire core emergency vocabulary"
+          ]
+        },
+        {
+          "lessonId": 602,
+          "lessonNumber": 2,
+          "lessonTitle": "आपातकाल में मदद माँगना (Asking for Help)",
+          "summary": "Ravi is stuck in a suddenly jammed elevator. Practice short, urgent help phrases in English. Emphasize the right tone and clarity.",
+          "activities": [
+            "Dialogue sample: 'Please help me!', 'Is anyone there?'—repeat with urgency.",
+            "Quiz: choose the best response if trapped or in danger ('Stay calm vs. Panicking').",
+            "Reflect on how tone (calm but clear) impacts how fast people respond."
+          ],
+          "objectives": [
+            "Use short phrases to call for help",
+            "Speak with correct tone in crisis"
+          ]
+        },
+        {
+          "lessonId": 603,
+          "lessonNumber": 3,
+          "lessonTitle": "फोन पर सहायता माँगना (Calling Emergency Services)",
+          "summary": "A friend calls Ravi, panicking about an accident. Learn how to calmly describe the problem on the phone using minimal, direct words.",
+          "activities": [
+            "Practice lines like: 'There’s an accident. Please send help!'",
+            "Role-play: user dials an ambulance, states location + issue briefly.",
+            "Identify 5 key details (who, where, what happened, etc.) crucial for emergency calls."
+          ],
+          "objectives": [
+            "Communicate clearly on phone during emergencies",
+            "List essential info: location, issue, contact"
+          ]
+        },
+        {
+          "lessonId": 604,
+          "lessonNumber": 4,
+          "lessonTitle": "बीमारी या चक्कर आना (Medical Emergencies)",
+          "summary": "Ravi’s friend collapses. Learn crucial words like ‘faint,’ ‘dizzy,’ and short English lines to explain symptoms quickly.",
+          "activities": [
+            "Vocabulary: faint, headache, chest pain, injection, dizzy. Compare with Hindi for clarity.",
+            "Speak: 'My friend has fainted, please help!' focusing on urgency.",
+            "Picture match: link each symptom to its correct English phrase."
+          ],
+          "objectives": [
+            "Describe basic medical issues in English",
+            "Seek help using correct symptoms"
+          ]
+        },
+        {
+          "lessonId": 605,
+          "lessonNumber": 5,
+          "lessonTitle": "पते और स्थान बताना (Describing Locations Clearly)",
+          "summary": "Ravi guides an ambulance driver. Master how to give street names or landmarks in English so rescuers don’t get lost.",
+          "activities": [
+            "Say addresses clearly: 'Near the school gate, Sector 3.'",
+            "Practice lines: 'I’m by the temple,' ‘Go straight, then turn right.’",
+            "Teacher/AI checks location clarity—no ambiguous directions."
+          ],
+          "objectives": [
+            "Guide someone to a location in English",
+            "Use local reference points confidently"
+          ]
+        },
+        {
+          "lessonId": 606,
+          "lessonNumber": 6,
+          "lessonTitle": "आग या जल आपदा (Fire & Water Disasters)",
+          "summary": "A small kitchen fire starts at Ravi’s home. Learn to alert others, evacuate quickly, or call the fire brigade with short, direct lines.",
+          "activities": [
+            "Phrases: 'Fire! Run!', 'Call the fire brigade, now!'",
+            "Simulate a quick evacuation call: 'There’s fire in the kitchen!'",
+            "Teacher/AI checks if your tone is urgent yet understandable."
+          ],
+          "objectives": [
+            "Respond with short action phrases during fire",
+            "Recognize signage for exit or alarm"
+          ]
+        },
+        {
+          "lessonId": 607,
+          "lessonNumber": 7,
+          "lessonTitle": "बिजली और गैस खतरे (Electric & Gas Emergencies)",
+          "summary": "Ravi smells a gas leak. Quickly shout warnings like 'Don’t turn on the light!' or 'Open the windows!' to prevent disasters.",
+          "activities": [
+            "Dialogue: 'Turn it off!', 'There’s a leak!' with partial Hindi bridging.",
+            "User calls an emergency line to report a gas leak: 'I smell gas… please help.'",
+            "Teacher/AI evaluates urgency and correctness."
+          ],
+          "objectives": [
+            "Give quick safety instructions",
+            "Describe gas or electric hazard in short lines"
+          ]
+        },
+        {
+          "lessonId": 608,
+          "lessonNumber": 8,
+          "lessonTitle": "सड़क दुर्घटना में संवाद (Road Accidents & Reporting)",
+          "summary": "Ravi witnesses a road accident. Practice short lines to inform police or bystanders, using essential English details (license plates, location).",
+          "activities": [
+            "Phrases: 'He was hit by a car,' 'Call the police quickly!'",
+            "Write a 3-line accident report (who, where, what).",
+            "Teacher/AI checks tense usage + clarity."
+          ],
+          "objectives": [
+            "Report road incidents clearly",
+            "Use short lines for quick details"
+          ]
+        },
+        {
+          "lessonId": 609,
+          "lessonNumber": 9,
+          "lessonTitle": "चोरी या सामान गुम होना (Lost or Stolen Items)",
+          "summary": "Ravi loses his wallet on a bus. Learn polite but urgent lines to ask for help from strangers or officials.",
+          "activities": [
+            "Dialogue: 'My wallet is missing. I think it was on the bus.'",
+            "Vocabulary: stolen, missing, wallet, ID, station. Match them with Hindi if needed.",
+            "Teacher/AI checks for politeness while requesting help."
+          ],
+          "objectives": [
+            "Explain lost item situations",
+            "Seek help from strangers politely"
+          ]
+        },
+        {
+          "lessonId": 610,
+          "lessonNumber": 10,
+          "lessonTitle": "बैंक और एटीएम में समस्या (Bank & ATM Issues)",
+          "summary": "Ravi’s ATM card gets stuck. Master respectful lines to request help from bank staff, bridging minimal Hindi for technical details.",
+          "activities": [
+            "Phrases: 'My card is stuck', 'Could you please check the machine?'",
+            "Role-play with bank staff for urgent assistance.",
+            "Teacher/AI corrects direct Hindi translations or abrupt lines."
+          ],
+          "objectives": [
+            "Handle technical or security issues at ATMs",
+            "Use respectful tone while requesting help"
+          ]
+        },
+        {
+          "lessonId": 611,
+          "lessonNumber": 11,
+          "lessonTitle": "बच्चा गुम या डर जाना (Child Missing or Afraid)",
+          "summary": "Ravi spots a crying child in a busy railway station. Practice gentle English lines to reassure and find the child’s family.",
+          "activities": [
+            "Phrases: 'What’s your name?', 'Where is your mother?'",
+            "Teacher/AI simulates staff Q&A about the missing child.",
+            "Reflect on staying calm to comfort a scared child."
+          ],
+          "objectives": [
+            "Speak gently with lost child",
+            "Use comforting language quickly"
+          ]
+        },
+        {
+          "lessonId": 612,
+          "lessonNumber": 12,
+          "lessonTitle": "भीड़ में घबराहट (Handling Panic in Crowds)",
+          "summary": "At a Mela (fair), panic spreads about a suspected stampede. Learn calming words, crowd instructions to keep people safe.",
+          "activities": [
+            "Practice: 'Stay calm, don’t push!' or 'Form a line, follow me!'",
+            "Ravi leads a small group to safety in a quick simulation.",
+            "Reflect on how tone can diffuse panic."
+          ],
+          "objectives": [
+            "Diffuse panic in basic English",
+            "Lead simple crowd instructions politely"
+          ]
+        },
+        {
+          "lessonId": 613,
+          "lessonNumber": 13,
+          "lessonTitle": "पुलिस या सुरक्षा से बात (Talking to Police or Security)",
+          "summary": "Ravi reports an incident to a policeman. Use short, respectful lines—70% instructions in English—to ensure clarity.",
+          "activities": [
+            "Role-play: 'I saw a man running away', 'It happened near Gate 2.'",
+            "Mock Q&A: policeman asks 3 quick questions, user replies promptly.",
+            "Teacher/AI checks clarity of each answer."
+          ],
+          "objectives": [
+            "Report incidents respectfully",
+            "Respond to official Qs in short answers"
+          ]
+        },
+        {
+          "lessonId": 614,
+          "lessonNumber": 14,
+          "lessonTitle": "सामान्य त्रुटियाँ और मानसिक बाधाएँ (Mistakes & Mental Blocks)",
+          "summary": "Ravi reflects on moments of panic where English felt challenging. Normalize small errors, build confidence to speak anyway—80% English instructions now.",
+          "activities": [
+            "Teacher/AI reviews 3 repeated user mistakes, demonstrates quick fixes.",
+            "List your top personal fears about crisis English, plan how to manage them.",
+            "Mini challenge: deliver a 1-min talk on an emergency scenario with minimal stumbles."
+          ],
+          "objectives": [
+            "Admit fear of English mistakes",
+            "Adopt a positive approach in crises"
+          ]
+        },
+        {
+          "lessonId": 615,
+          "lessonNumber": 15,
+          "lessonTitle": "सारांश और मिलान (Review & Response Priorities)",
+          "summary": "Ravi replays major crises—fire, medical, theft—to recap the correct English lines. 90% instructions in English, ensuring readiness for the final drill.",
+          "activities": [
+            "Speed recall: 10 emergency words (e.g., ambulance, leak, missing). Form short lines quickly.",
+            "Teacher poses 3 random emergencies, user responds in English within seconds.",
+            "Plan a personal ‘must-know lines’ checklist for real-life usage."
+          ],
+          "objectives": [
+            "Consolidate emergency vocabulary",
+            "Finalize readiness for final challenge"
+          ]
+        },
+        {
+          "lessonId": 616,
+          "lessonNumber": 16,
+          "lessonTitle": "अंतिम ड्रिल (Final Emergency Simulation)",
+          "summary": "A timed role-play of 3 different emergencies (medical, public panic, lost item). You have 2–3 minutes to handle all in English. Earn the ‘Emergency English Hero’ badge!",
+          "activities": [
+            "Face 3 quick crisis scenes: respond in real-time with short, correct lines.",
+            "Teacher/AI grades clarity, speed, and calmness under pressure.",
+            "Celebrate final success—wear your hero badge with pride."
+          ],
+          "objectives": [
+            "Demonstrate integrated crisis communication skills",
+            "Show readiness for real-life urgent scenarios"
+          ]
+        }
+      ]
+    },
+    {
+      "courseId": 7,
+      "title": "Grammar in Action: A Usage-Based Approach",
+      "level": "Beginner",
+      "languageInstruction": "Hindi",
+      "lessons": [
+        {
+          "lessonId": 701,
+          "lessonNumber": 1,
+          "lessonTitle": "ग्रामर से दोस्ती (Make Friends with Grammar)",
+          "summary": "Meet Dhruv—he finds grammar intimidating but discovers it’s just a set of tools for expressing everyday ideas. Start with daily ‘chunks’ to speak more effortlessly.",
+          "activities": [
+            "Reflection: Why do we fear grammar? Brainstorm 2 reasons.",
+            "Learn 5 daily chunks: 'I want to...', 'You should...', 'Do we need...', etc. Use them in short role-plays.",
+            "Teacher/AI explains how these chunks already contain grammar patterns."
+          ],
+          "objectives": [
+            "Shift mindset: grammar is about clear expression",
+            "Adopt chunk-based phrases for daily usage"
+          ]
+        },
+        {
+          "lessonId": 702,
+          "lessonNumber": 2,
+          "lessonTitle": "वाक्य संरचना की बुनियाद (Basic Sentence Patterns)",
+          "summary": "Dhruv notices English typically follows SVO (Subject–Verb–Object). Let’s keep it simple and focus on real-life examples, not heavy rule breakdowns.",
+          "activities": [
+            "Identify patterns in 5 sample sentences (e.g., 'I eat breakfast.').",
+            "Create 5 everyday lines using SVO, like ‘I watch TV.’",
+            "Teacher/AI shows expansions (adding adjectives, adverbs) to enhance those lines."
+          ],
+          "objectives": [
+            "Recognize core SVO pattern",
+            "Build sentences quickly using chunk expansions"
+          ]
+        },
+        {
+          "lessonId": 703,
+          "lessonNumber": 3,
+          "lessonTitle": "रोज़मर्रा के क्रियात्मक हिस्से (Everyday Action Verbs)",
+          "summary": "Focus on 20 action verbs you’ll use daily (eat, go, come...). Dhruv tries them in short scenes to absorb their usage naturally.",
+          "activities": [
+            "Verb walk: user sees pictures, says 'He is cooking', 'I eat dinner at 8 pm.'",
+            "Chunk-of-the-day: 'I feel like…', 'We plan to…'.",
+            "Teacher/AI corrects usage in quick dialogues (e.g., 'I plan to cook dinner' not 'I plan cook dinner')."
+          ],
+          "objectives": [
+            "Embed core verbs in real contexts",
+            "Reinforce chunk usage for quick recall"
+          ]
+        },
+        {
+          "lessonId": 704,
+          "lessonNumber": 4,
+          "lessonTitle": "अवधान के साथ काल (Tenses in Real Scenarios)",
+          "summary": "Show how we jump between present, past, and future in normal conversation. Avoid memorizing rules; copy real scenarios instead.",
+          "activities": [
+            "Plan an event: ‘I will buy snacks’ (future), ‘I went shopping’ (past), ‘I am cleaning now’ (present).",
+            "Teacher/AI checks how user shifts tense logically.",
+            "Reflect: how real chats switch tenses naturally (e.g., “Yesterday I went… tomorrow I will go…”)."
+          ],
+          "objectives": [
+            "Apply tenses in short conversations",
+            "Shift time references smoothly"
+          ]
+        },
+        {
+          "lessonId": 705,
+          "lessonNumber": 5,
+          "lessonTitle": "प्रश्न बनाना आसान (Forming Easy Questions)",
+          "summary": "Practice daily Q-chunks: ‘Where do you…?’, ‘Why did you…?’, 'Can you…?'. Dhruv learns it’s not about memorizing formulae but feeling the pattern.",
+          "activities": [
+            "Pick correct question form from 5 dialogues. Example: ‘Why did you buy that?’ vs. ‘Why you buy that?’",
+            "Practice friendly Q-chunks to invite or ask about daily routines (‘Where do you usually eat lunch?’).",
+            "Teacher/AI highlights minor grammar tweaks needed."
+          ],
+          "objectives": [
+            "Build confidence in question forms",
+            "Distinguish key question markers"
+          ]
+        },
+        {
+          "lessonId": 706,
+          "lessonNumber": 6,
+          "lessonTitle": "मोडल वाक्यांश (Essential Modal Phrases)",
+          "summary": "Cover can/could/may/should in a usage-based manner. Dhruv sees how modals make requests or advice more polite: ‘Could you help me…?’",
+          "activities": [
+            "Role-play: ‘Could you help me?’, ‘You should try this dish!’",
+            "Teacher/AI corrects direct Hindi translations (e.g., ‘You try dish, please’).",
+            "Mini conversation: user tries 3 modals spontaneously in everyday scenarios."
+          ],
+          "objectives": [
+            "Embed modals in daily polite requests/advice",
+            "See how grammar feels natural in typical dialogues"
+          ]
+        },
+        {
+          "lessonId": 707,
+          "lessonNumber": 7,
+          "lessonTitle": "व्यक्तिगत और पारिवारिक परिचय (Personal & Family Intros) for Grammar",
+          "summary": "Use grammar chunks to describe self/family easily: ‘I have two brothers,’ ‘We live in…’, focusing on 3rd-person singular, possessives, etc.",
+          "activities": [
+            "Short intros: user describes family (He is older than me, She studies at…).",
+            "Teacher checks 3rd-person singular (He/She has vs. They have) and possessives (my, his, her).",
+            "Reflect: how chunk-based grammar clarifies personal details."
+          ],
+          "objectives": [
+            "Practice 3rd-person and possessives easily",
+            "Adopt fluid self-intro grammar"
+          ]
+        },
+        {
+          "lessonId": 708,
+          "lessonNumber": 8,
+          "lessonTitle": "व्यक्ति, वस्तु, स्थान (Nouns & Prepositions in Context)",
+          "summary": "Dhruv organizes a mini treasure hunt at home, describing locations using prepositions. Real usage, minimal grammar talk.",
+          "activities": [
+            "Treasure hunt: user says 'The phone is on the bed,' 'The bag is under the chair.'",
+            "Teacher/AI checks correct usage of on, under, near, behind, etc.",
+            "Reflect on using location words confidently in daily life."
+          ],
+          "objectives": [
+            "Link location words with real items around user",
+            "Overcome fear of prepositions through usage"
+          ]
+        },
+        {
+          "lessonId": 709,
+          "lessonNumber": 9,
+          "lessonTitle": "अधिक वर्णनात्मक बनना (Be More Descriptive)",
+          "summary": "Add adjectives (color, size) and adverbs (slowly, quickly) to your statements. Make English richer without fussing over grammar rules.",
+          "activities": [
+            "Describe 3 objects around you with color/size/quality. E.g., 'That is a small, red bag.'",
+            "Chunk practice: 'He drives too fast', 'She sings so beautifully.'",
+            "Teacher corrects typical misuse (e.g., 'very much big')."
+          ],
+          "objectives": [
+            "Enhance lines with basic descriptive words",
+            "Adopt natural combos for everyday talk"
+          ]
+        },
+        {
+          "lessonId": 710,
+          "lessonNumber": 10,
+          "lessonTitle": "कहानी में ग्रामर (Storytelling & Grammar Flow)",
+          "summary": "Narrate a short 50–100 word mini-story focusing on consistent tense usage. Dhruv learns to keep the timeline clear without overthinking.",
+          "activities": [
+            "User narrates a short personal story in ~5–6 lines, ensuring tense continuity.",
+            "Teacher/AI gently corrects any major grammar slip.",
+            "Reflection: how chunk flow boosts natural speech (less pausing to recall rules)."
+          ],
+          "objectives": [
+            "Maintain tense consistency in short narrative",
+            "Focus on storytelling, not rule recitation"
+          ]
+        },
+        {
+          "lessonId": 711,
+          "lessonNumber": 11,
+          "lessonTitle": "सामान्य गलतियों पर जीत (Conquering Common Mistakes)",
+          "summary": "Spot repeated user mistakes: subject–verb agreement, missing articles, direct Hindi pattern. Offer friendly self-check tips to build good habits.",
+          "activities": [
+            "Teacher shows 5 user-specific errors from earlier lessons. Correct them in short lines.",
+            "Create a personal 'checklist' for grammar checks (e.g., Do I have an article here?).",
+            "Record a 1-min talk, teacher highlights improvements vs. older attempts."
+          ],
+          "objectives": [
+            "Build personal error-detection habits",
+            "Polish user’s chunk usage"
+          ]
+        },
+        {
+          "lessonId": 712,
+          "lessonNumber": 12,
+          "lessonTitle": "प्रश्नोत्तर अभ्यास (Extended Q&A Drills)",
+          "summary": "Simulate real Q&A: casual or mini job interviews, daily chat. 70% instructions in English, user forms Q/A spontaneously using learned chunks.",
+          "activities": [
+            "Teacher/AI fires 5 rapid questions about user’s routine, family, or hobbies.",
+            "User attempts quick answers with correct structure (SVO, correct tense).",
+            "Reflection: how repeated usage cements grammar in mind."
+          ],
+          "objectives": [
+            "Boost rapid-fire Q&A grammar usage",
+            "Promote intuitive chunk retrieval"
+          ]
+        },
+        {
+          "lessonId": 713,
+          "lessonNumber": 13,
+          "lessonTitle": "बोली सुधार खेल (Grammar-Enhanced Speaking Games)",
+          "summary": "Play short interactive tasks (charades, group story) to practice chunk expansions spontaneously. Dhruv sees how fun grammar can be.",
+          "activities": [
+            "Charades: user acts out a scenario; must describe it using correct tense/structure.",
+            "Story pass: each user adds a line with consistent tense, forming a mini story together.",
+            "Teacher/AI notes improvements in fluid usage."
+          ],
+          "objectives": [
+            "Apply grammar in fun, unpredictable contexts",
+            "Foster spontaneity in usage"
+          ]
+        },
+        {
+          "lessonId": 714,
+          "lessonNumber": 14,
+          "lessonTitle": "सबसे ज्यादा उपयोगी संरचनाएँ (Most Useful Grammar Structures)",
+          "summary": "Consolidate ~10 high-frequency structures: 'I have to...', 'It feels...', 'I used to...', etc. 80% instructions in English. Practice applying them in daily talk.",
+          "activities": [
+            "Teacher lists 10 must-know structures with example dialogues.",
+            "User weaves them into a 1-min monologue about daily life.",
+            "Reflect on 80–20 rule: a few key structures cover most scenarios."
+          ],
+          "objectives": [
+            "Focus on minimal essential structures",
+            "Strengthen recall for real conversation"
+          ]
+        },
+        {
+          "lessonId": 715,
+          "lessonNumber": 15,
+          "lessonTitle": "रेपिड रिव्यु और फीड़बैक (Rapid Review & Feedback)",
+          "summary": "Recap major chunks, tenses, modals, question forms. 90% English instructions. Dhruv tries a self-rating approach for each aspect of grammar confidence.",
+          "activities": [
+            "Teacher calls random chunk/tense; user forms a quick sentence on the spot.",
+            "Self-assessment quiz: choose the best structure for each scenario.",
+            "Teacher/AI offers final targeted corrections before the big project."
+          ],
+          "objectives": [
+            "Gauge mastery of usage-based grammar approach",
+            "Identify final improvement areas"
+          ]
+        },
+        {
+          "lessonId": 716,
+          "lessonNumber": 16,
+          "lessonTitle": "अंतिम प्रोजेक्ट (Grammar in Action Demo)",
+          "summary": "Deliver a 3–5 minute talk or short essay showcasing multiple grammar structures—minimal Hindi fallback allowed. Earn the 'Grammar in Action Champ' badge!",
+          "activities": [
+            "Choose a real-life topic (travel, hobby, future plan); incorporate various tenses, modals, descriptive chunks.",
+            "Teacher/AI checks overall grammar flow and clarity.",
+            "Celebrate with your well-deserved badge after success."
+          ],
+          "objectives": [
+            "Demonstrate integrated grammar usage",
+            "Speak/write with minimal errors"
+          ]
+        }
+      ]
+    },
+    {
+      "courseId": 8,
+      "title": "Confident Pronunciation Mastery",
+      "level": "Beginner",
+      "languageInstruction": "Hindi",
+      "lessons": [
+        {
+          "lessonId": 801,
+          "lessonNumber": 1,
+          "lessonTitle": "उच्चारण से दोस्ती (Make Friends with Pronunciation)",
+          "summary": "Meet Lata—she’s shy about her accent, but learns pronunciation is about clarity, not perfection. Let’s start with daily ‘sound chunks.’",
+          "activities": [
+            "Reflection: Why do many Indian learners fear English sounds? List 2 reasons.",
+            "Learn 5 frequently used chunks: “How are you?”, “What’s up?”, etc., focusing on natural intonation.",
+            "Teacher/AI gives minor corrections on vowels/consonants."
+          ],
+          "objectives": [
+            "Shift mindset: pronunciation is about clarity, not perfection",
+            "Adopt chunk-based mouth practice from day one"
+          ]
+        },
+        {
+          "lessonId": 802,
+          "lessonNumber": 2,
+          "lessonTitle": "आवाज़ों का परिचय (Essential English Sounds)",
+          "summary": "Begin with core vowels (short vs. long) and tricky consonants (/v/ vs. /w/, etc.). Minimal Hindi comparisons help clarify differences.",
+          "activities": [
+            "Listen & repeat pairs: 'bit' vs. 'beat', 'van' vs. 'win'.",
+            "Chunk phrases: 'very well', 'we visit,' focusing on correct mouth shape.",
+            "Teacher/AI corrects any major lip/tongue positioning issues."
+          ],
+          "objectives": [
+            "Identify & practice distinct English vowel/consonant sounds",
+            "Reduce confusion in common pairs (/v/ vs /w/, short vs. long vowels)"
+          ]
+        },
+        {
+          "lessonId": 803,
+          "lessonNumber": 3,
+          "lessonTitle": "श्वास और ताल (Breath & Rhythm)",
+          "summary": "Improve breath control + basic rhythm. Lata tries short lines in single breath bursts, noticing how intonation changes meaning.",
+          "activities": [
+            "User says 5 chunk sentences in single breath: 'How old are you?', 'I’m fine, thanks.'",
+            "Teacher/AI highlights where to pause or add stress.",
+            "Reflect on differences between flat vs. natural intonation."
+          ],
+          "objectives": [
+            "Coordinate breathing with short speech segments",
+            "Adopt simple rising/falling intonation patterns"
+          ]
+        },
+        {
+          "lessonId": 804,
+          "lessonNumber": 4,
+          "lessonTitle": "शब्द की ताकत (Word Stress Basics)",
+          "summary": "Stress can shift meaning (e.g., PREsent vs. preSENT). Learn to identify stress in everyday words. Some Hindi bridging for concept clarity.",
+          "activities": [
+            "Identify stressed syllables in 5 words: hotel, record, object, invite, export.",
+            "Recite chunk lines: 'Record this voice,' 'She gave me a present,' emphasizing correct stress.",
+            "Teacher/AI clarifies usage differences if stress changes meaning."
+          ],
+          "objectives": [
+            "Recognize basic word stress rules in common words",
+            "Speak everyday words more naturally"
+          ]
+        },
+        {
+          "lessonId": 805,
+          "lessonNumber": 5,
+          "lessonTitle": "शांत ध्वनियाँ और अंतिम ध्वनि (Ending & Silent Sounds)",
+          "summary": "Focus on dropping extra sounds. Words like ‘walk’ (not walk-uh), silent letters like k in ‘knife’, t in ‘often.’",
+          "activities": [
+            "Listen & repeat: walk, talk, calm, often, knight.",
+            "Chunk phrases: 'Let’s talk about it', 'He often visits us'—avoid pronouncing silent letters.",
+            "Teacher/AI feedback on over-pronunciation issues."
+          ],
+          "objectives": [
+            "Avoid adding extra vowels or missing silent letters",
+            "Build confidence in ending/quiet sounds"
+          ]
+        },
+        {
+          "lessonId": 806,
+          "lessonNumber": 6,
+          "lessonTitle": "भारतीय बोलचाल में अंतर (Common Indian Influences)",
+          "summary": "Lata deals with typical Indian pitfalls: extra schwa, z/j confusion, retroflex t/d. Gentle corrections in real sentences, not just drills.",
+          "activities": [
+            "Teacher shares 5 common mistakes: e.g., 'biss-kit' vs. 'biscuit', 'jebra' vs. 'zebra'.",
+            "User tries correct forms in 3–4 chunk lines: 'Please pass the biscuits.'",
+            "Mini reflection on how Hindi influences mouth movement differently."
+          ],
+          "objectives": [
+            "Identify top Indian accent influences",
+            "Adopt simpler mouth positions to reduce distortions"
+          ]
+        },
+        {
+          "lessonId": 807,
+          "lessonNumber": 7,
+          "lessonTitle": "सस्वरता और प्रवाह (Intonation & Flow)",
+          "summary": "Master rising/falling intonation for questions vs. statements. Lata attempts short dialogues about daily routines with lively expression.",
+          "activities": [
+            "Compare statements vs. yes/no questions: 'You are going.' vs. 'You are going?'",
+            "Teacher/AI corrects monotone vs. lively pitch.",
+            "Record a 1-minute self-intro focusing on melodic flow."
+          ],
+          "objectives": [
+            "Catch typical question intonation patterns",
+            "Gain a more ‘lively’ English flow"
+          ]
+        },
+        {
+          "lessonId": 808,
+          "lessonNumber": 8,
+          "lessonTitle": "सहायक व्यंजन (Consonant Clusters)",
+          "summary": "Tackle consonant clusters like /st/, /sp/, /pl/, often tricky for Indian speakers. Use short chunk lines with everyday words.",
+          "activities": [
+            "Read lines: 'Stop speaking now', 'Please place plates properly' focusing on those clusters.",
+            "Teacher/AI notes any extra vowels added (e.g., 'istop' for 'stop').",
+            "Mini quiz: user identifies correct cluster usage in multiple choice."
+          ],
+          "objectives": [
+            "Pronounce clusters smoothly without extra vowels",
+            "Improve clarity in everyday cluster words"
+          ]
+        },
+        {
+          "lessonId": 809,
+          "lessonNumber": 9,
+          "lessonTitle": "सुनकर बोलना (Listening & Shadowing)",
+          "summary": "Introduce the ‘shadowing technique’: listen to short audio and imitate timing, intonation, accent. Lata bypasses spelling hang-ups.",
+          "activities": [
+            "1-min audio of a simple dialogue. User shadows each line, mirroring pace and pitch.",
+            "Teacher/AI compares user’s version, offers small corrections.",
+            "Reflect on how shadowing reduces overthinking grammar/spelling."
+          ],
+          "objectives": [
+            "Develop ear–mouth coordination through imitation",
+            "Strengthen natural speech flow, accent"
+          ]
+        },
+        {
+          "lessonId": 810,
+          "lessonNumber": 10,
+          "lessonTitle": "हँसी और भाव (Emotion & Expressiveness)",
+          "summary": "Practice emotional lines (surprise, excitement, sympathy) to adjust pitch and rate. Monotony kills clarity—learn to inject feeling!",
+          "activities": [
+            "Dialogues: 'Wow, that’s amazing!', 'Oh no, I’m sorry to hear that.'",
+            "Record a 30s snippet reacting to different emotional prompts in English.",
+            "Teacher/AI feedback on how well you conveyed each feeling."
+          ],
+          "objectives": [
+            "Incorporate emotional expression in speech",
+            "Avoid monotone delivery, build expressive clarity"
+          ]
+        },
+        {
+          "lessonId": 811,
+          "lessonNumber": 11,
+          "lessonTitle": "लयबद्ध बोलचाल (Connected Speech Basics)",
+          "summary": "Learn how English speakers link words: “want to” → “wanna,” “What are you doing?” → “Whatcha doin?” Focus on common phrases, keep it beginner-friendly.",
+          "activities": [
+            "Practice linking forms: 'I want to eat' → 'I wanna eat.'",
+            "Teacher/AI clarifies difference between informal spoken usage and formal writing.",
+            "User recasts 3 lines in connected speech style."
+          ],
+          "objectives": [
+            "Recognize linking & reduced forms in everyday talk",
+            "Speak more fluidly, less robotic"
+          ]
+        },
+        {
+          "lessonId": 812,
+          "lessonNumber": 12,
+          "lessonTitle": "व्यवहारिक संवाद अभ्यास (Practical Dialogue Drills)",
+          "summary": "Apply prior lessons in short role-plays: ordering food, greeting a friend, telephonic requests. Emphasize clarity on key sounds.",
+          "activities": [
+            "User simulates: 'Hello, can I order a pizza?' focusing on final sound in ‘pizza’, correct intonation.",
+            "Teacher/AI poses a random scenario (booking a ticket, greeting new friend)—user responds spontaneously.",
+            "Reflection: how precise sounds aid overall clarity."
+          ],
+          "objectives": [
+            "Consolidate new sounds & intonation in real dialogues",
+            "Boost confidence speaking spontaneously"
+          ]
+        },
+        {
+          "lessonId": 813,
+          "lessonNumber": 13,
+          "lessonTitle": "सामान्य भूलों पर विजय (Conquering Common Mistakes)",
+          "summary": "Review repeated sound errors: /s/ vs /sh/, final consonants, silent ‘h’. Lata forms a personal correction plan to tackle them daily.",
+          "activities": [
+            "Teacher highlights 5 repeated errors from user’s prior recordings.",
+            "User retries them in short chunk lines with proper enunciation.",
+            "Write a personal 3-step improvement plan for daily practice."
+          ],
+          "objectives": [
+            "Build self-awareness of personal mispronunciations",
+            "Adopt a targeted daily correction routine"
+          ]
+        },
+        {
+          "lessonId": 814,
+          "lessonNumber": 14,
+          "lessonTitle": "लय, ध्वनि और वाक्य टुकड़े (Rhythm, Sounds & Sentence Chunks)",
+          "summary": "Focus on combining stress patterns, linking, and emotional tone in full sentences. 80% instructions in English.",
+          "activities": [
+            "Teacher provides 3 short paragraphs—user reads them aloud, ensuring correct intonation, stress, linking.",
+            "User tries advanced lines, e.g., 'Actually, I really wanted to see that movie…'",
+            "Teacher/AI notes improvements or slip-ups."
+          ],
+          "objectives": [
+            "Combine stress, linking, emotional tone fluidly",
+            "Speak short passages with minimal errors"
+          ]
+        },
+        {
+          "lessonId": 815,
+          "lessonNumber": 15,
+          "lessonTitle": "रेपिड रिव्यु और फीड़बैक (Rapid Review & Feedback)",
+          "summary": "Recap final problem areas: ending sounds, tricky clusters, intonation. 90% English instructions. Lata self-evaluates her comfort with each sound.",
+          "activities": [
+            "Rapid drill: teacher picks random lines from earlier lessons, user recites quickly.",
+            "Self-assessment: user rates each tricky sound (like /th/, /v/, silent letters) on a comfort scale.",
+            "Teacher/AI gives final targeted feedback before the last project."
+          ],
+          "objectives": [
+            "Gauge mastery of key pronunciation points",
+            "Identify final improvement areas before project"
+          ]
+        },
+        {
+          "lessonId": 816,
+          "lessonNumber": 16,
+          "lessonTitle": "अंतिम प्रदर्शन (Final Pronunciation Showcase)",
+          "summary": "Record a 3–5 minute talk or do a short interactive role-play. Show off improved clarity, stress, intonation with minimal Hindi fallback. Earn ‘Pronunciation Pro (Beginner)’ badge!",
+          "activities": [
+            "Choose a personal topic or conversation scenario. Ensure multiple chunk phrases, emotional intonation.",
+            "Teacher/AI rates clarity, confidence, overall flow.",
+            "Celebrate with a well-deserved ‘Pronunciation Pro (Beginner)’ badge!"
+          ],
+          "objectives": [
+            "Demonstrate integrated pronunciation skills",
+            "Speak fluidly with minimal major errors"
+          ]
+        }
+      ]
+    },
+    {
+      "courseId": 9,
+      "title": "Public Speaking & Stage Talk (Beginner)",
+      "level": "Beginner",
+      "languageInstruction": "Hindi",
+      "lessons": [
+        {
+          "lessonId": 901,
+          "lessonNumber": 1,
+          "lessonTitle": "मंच पर जाने से डर क्यों? (Overcoming Stage Fright)",
+          "summary": "Meet Riya—she dreams of speaking confidently but fears forgetting lines or shaking on stage. This lesson normalizes jitters, shows how English ‘chunks’ help you start strong.",
+          "activities": [
+            "Short reflection: user names top 3 fears (e.g., shaky voice).",
+            "Teach 5 confidence-building openers like “Thank you for being here…”.",
+            "30-second power-pose or deep breathing: user tries one short opener in English.",
+            "Teacher/AI corrects posture, tone, or phrasing."
+          ],
+          "objectives": [
+            "Acknowledge stage fright as normal",
+            "Adopt quick confidence rituals + positive starter lines"
+          ]
+        },
+        {
+          "lessonId": 902,
+          "lessonNumber": 2,
+          "lessonTitle": "आवाज़ और सांस प्रबंधन (Voice & Breathing Basics)",
+          "summary": "Riya practices volume control and steady breathing to keep her voice calm. Chunk phrases ensure she doesn’t rush words. Reinforce that daily ‘confidence ritual’ reduces anxiety.",
+          "activities": [
+            "Guided breathing: user delivers a short welcome line in one breath without speeding.",
+            "Teacher/AI checks volume, pacing in a 1-min self-intro speech.",
+            "Reflection on how breath soothes mind chatter.",
+            "Optional share: user sends a 15s voice note to a peer or AI buddy for feedback on breath control."
+          ],
+          "objectives": [
+            "Build basic breath + voice control",
+            "Deliver lines at a comfortable pace"
+          ]
+        },
+        {
+          "lessonId": 903,
+          "lessonNumber": 3,
+          "lessonTitle": "शब्द चयन और सरलीकरण (Choosing Words & Simplifying)",
+          "summary": "Riya sees that big words can confuse an audience. Teach how chunk-based phrases are simpler yet clear. Hindi bridging if needed.",
+          "activities": [
+            "Compare complex lines (e.g., 'commence' → 'start').",
+            "Rewrite 3 sample sentences in simpler English: 'I will commence…' → 'I will start…'.",
+            "Teacher/AI corrects leftover complexity."
+          ],
+          "objectives": [
+            "Favor clear, simple language in speeches",
+            "Reduce confusion for both speaker & audience"
+          ]
+        },
+        {
+          "lessonId": 904,
+          "lessonNumber": 4,
+          "lessonTitle": "लय और उतार-चढ़ाव (Rhythm & Intonation)",
+          "summary": "Apply rising/falling tones to hold audience interest. Use chunk lines for welcoming, praising, or shifting topics. Keep phonetics minimal—focus on usage.",
+          "activities": [
+            "Practice 5 typical lines with varied intonation: 'Good afternoon, everyone!', 'Let’s move on…'.",
+            "Teacher/AI shows monotone vs. lively voice differences.",
+            "Record a 1-min talk: ensure 1–2 second pauses for clarity.",
+            "Reflection on whether user did a quick ritual first to calm nerves."
+          ],
+          "objectives": [
+            "Develop rhythmic flow in stage speech",
+            "Use short transitional phrases for topic shifts"
+          ]
+        },
+        {
+          "lessonId": 905,
+          "lessonNumber": 5,
+          "lessonTitle": "प्रभावी शुरुआत (Powerful Speech Openings)",
+          "summary": "Demonstrate hooking the audience from the first 10 seconds—maybe a quick question or short story. Use an Indian wedding or festival opener example.",
+          "activities": [
+            "Role-play 3 opening styles: a question, a fun fact, a brief anecdote.",
+            "Teacher/AI checks energy level in the first 10 seconds.",
+            "Reflection: how a strong opener reduces speaker anxiety."
+          ],
+          "objectives": [
+            "Grab audience attention quickly",
+            "Practice short, memorable openers with local cultural references"
+          ]
+        },
+        {
+          "lessonId": 906,
+          "lessonNumber": 6,
+          "lessonTitle": "शारीरिक हाव-भाव (Body Language Basics)",
+          "summary": "Discuss posture, gestures, and eye contact. Riya learns short filler lines (“Let me think…”) to avoid awkward silence. Continue daily ritual + note-taking.",
+          "activities": [
+            "Teacher/AI prompts user to stand or sit while delivering 2 lines to an imaginary audience.",
+            "Introduce filler lines to keep flow: “Well, what I mean is…”",
+            "Teacher/AI corrects slouching, stiff gestures, or lack of eye contact.",
+            "User notes 2 new filler lines in a personal “Stage Talk Notebook.”"
+          ],
+          "objectives": [
+            "Incorporate relaxed posture, eye contact in speech",
+            "Use short filler phrases confidently"
+          ]
+        },
+        {
+          "lessonId": 907,
+          "lessonNumber": 7,
+          "lessonTitle": "मध्य भाग संरचना (Structuring the Main Body)",
+          "summary": "Learn a simple 3-point format: ‘First… second… finally…’. Encourage short subheads with minimal Hindi bridging. Reference local events for examples.",
+          "activities": [
+            "Write a 3-line speech outline using 'First… second… finally…' format.",
+            "Teacher/AI checks clarity + no excessive repetition.",
+            "Reflection: how signposting helps an audience follow easily, like in a local temple fundraiser speech."
+          ],
+          "objectives": [
+            "Create a simple 3-part speech flow",
+            "Use transitional chunks to guide audience"
+          ]
+        },
+        {
+          "lessonId": 908,
+          "lessonNumber": 8,
+          "lessonTitle": "दर्शकों को शामिल करना (Engaging the Audience)",
+          "summary": "Riya adds rhetorical questions, light humor, or mini-polls. Practice quick audience reaction scenarios to adapt in real time.",
+          "activities": [
+            "Chunk practice: 'How many of you have…?', 'Isn’t that interesting?'",
+            "Role-play: user asks 2 rhetorical questions and imagines a cheer or reaction from the audience.",
+            "Gamified Reaction: teacher says 'Audience looks bored'—user must add a surprising fact to re-engage them."
+          ],
+          "objectives": [
+            "Comfortably pose rhetorical or direct Qs on stage",
+            "Adapt to ‘audience reaction’ with short English lines"
+          ]
+        },
+        {
+          "lessonId": 909,
+          "lessonNumber": 9,
+          "lessonTitle": "मज़बूत निष्कर्ष (Strong Conclusions)",
+          "summary": "Show how to wrap up effectively. Introduce closing chunks: ‘In conclusion…’, ‘Let’s take action…’, etc. Reinforce a final confidence ritual.",
+          "activities": [
+            "User writes a short final paragraph for a chosen topic, ending with a call-to-action.",
+            "Teacher/AI checks clarity and tone.",
+            "User adds top 2 closing lines to their 'Stage Talk Notebook.'"
+          ],
+          "objectives": [
+            "Conclude with memorable final statements",
+            "Encourage calls-to-action in simple English"
+          ]
+        },
+        {
+          "lessonId": 910,
+          "lessonNumber": 10,
+          "lessonTitle": "हिंदी-अंग्रेज़ी मिक्स पर रोक (Managing Hinglish Overuse)",
+          "summary": "Reduce code-switching. Riya aims to keep lines mostly in English, using Hindi only if truly stuck. A micro peer interaction helps her stay consistent.",
+          "activities": [
+            "Teacher/AI shows 5 lines mixing too much Hindi, user rephrases them mostly in English.",
+            "Role-play: short topic on ‘benefits of reading’ with minimal Hinglish.",
+            "Peer Task: user shares a 15s voice clip in mostly English—gets 1 supportive tip in return.",
+            "Reflection: how pure English lines enhance credibility."
+          ],
+          "objectives": [
+            "Minimize code-switching in front of an audience",
+            "Maintain English continuity for professional tone"
+          ]
+        },
+        {
+          "lessonId": 911,
+          "lessonNumber": 11,
+          "lessonTitle": "सामान्य गलतियाँ (Common Stage Errors)",
+          "summary": "Identify pitfalls: talking too fast, dropping voice at sentence ends, forgetting transitions. Riya polishes each with gentle corrections.",
+          "activities": [
+            "Teacher/AI demos a flawed 30s speech (rushed, no transition). User spots the errors.",
+            "User re-delivers the same 30s speech calmly with transitional lines.",
+            "Write personal improvement notes in 'Stage Talk Notebook.'"
+          ],
+          "objectives": [
+            "Recognize + fix top beginner mistakes",
+            "Adopt a calmer, more structured approach"
+          ]
+        },
+        {
+          "lessonId": 912,
+          "lessonNumber": 12,
+          "lessonTitle": "सवाल-जवाब संभालना (Handling Q&A Sessions)",
+          "summary": "Learn short lines to handle audience queries politely: ‘That’s a great question’, ‘I’ll check on that…’. 70% instructions in English now, with mini scenario of surprise interruptions.",
+          "activities": [
+            "Simulate audience asking 2–3 Qs about your short speech, user responds politely.",
+            "Teacher/AI checks transitional phrases: 'Let me clarify…', 'That’s interesting…'.",
+            "New Reaction Game: teacher says “Someone interrupts rudely,” user must stay calm with a short, polite line."
+          ],
+          "objectives": [
+            "Manage basic Q&A politely",
+            "Maintain calm tone under unexpected questions"
+          ]
+        },
+        {
+          "lessonId": 913,
+          "lessonNumber": 13,
+          "lessonTitle": "मज़ेदार तत्व जोड़ना (Adding Humor & Anecdotes)",
+          "summary": "Sprinkle mild humor or short personal stories. Riya tries comedic timing with local references (wedding jokes or family gatherings) without losing clarity.",
+          "activities": [
+            "Role-play: user inserts a 10-second funny anecdote into a sample speech.",
+            "Teacher/AI notes if timing or punchline clarity is missing.",
+            "Reflection: how local references break the ice effectively."
+          ],
+          "objectives": [
+            "Add small jokes/anecdotes in English",
+            "Time comedic lines for better engagement"
+          ]
+        },
+        {
+          "lessonId": 914,
+          "lessonNumber": 14,
+          "lessonTitle": "प्रभावशाली शब्द (Persuasive Language Basics)",
+          "summary": "Teach phrases like ‘We can all make a difference…’, ‘Imagine if…’. 80% English instructions. Gamify an audience pushback scenario: 'But we have no time!'",
+          "activities": [
+            "Practice 3 lines each with ‘Imagine…’, ‘We can…’, ‘Let’s join…’.",
+            "Teacher/AI sets scenario: audience says 'We’re too busy!'—user responds with a short persuasive chunk: 'It only takes 5 minutes…'.",
+            "User attempts a 1-min persuasive pitch: ‘Let’s keep our city clean’ or similar topic."
+          ],
+          "objectives": [
+            "Use persuasive English lines effectively",
+            "Maintain a genuine tone while urging action"
+          ]
+        },
+        {
+          "lessonId": 915,
+          "lessonNumber": 15,
+          "lessonTitle": "रेपिड रिव्यु और अभ्यास (Rapid Review & Drills)",
+          "summary": "90% instructions in English. Review hooking the audience, voice control, transitions, Q&A, conclusions. User finalizes their personal ‘Stage Talk Notebook.’",
+          "activities": [
+            "Teacher picks a random speech stage (intro, body, conclusion), user improvises ~20-second lines.",
+            "Self-assessment: rate comfort on each stage element (1–5 scale).",
+            "User polishes a cheat-sheet: top 5 lines for each speech segment."
+          ],
+          "objectives": [
+            "Gauge mastery across entire speech flow",
+            "Assemble a personal phrase bank for final speech"
+          ]
+        },
+        {
+          "lessonId": 916,
+          "lessonNumber": 16,
+          "lessonTitle": "अंतिम प्रदर्शन (Final Stage Talk Showcase)",
+          "summary": "Deliver a 3–5 minute mini-speech mostly in English, bridging to Hindi only if stuck. Earn the ‘Stage Talk Star’ badge! Encourage a last ‘confidence ritual’ and the use of personal phrase notes.",
+          "activities": [
+            "Pick a familiar topic (family event, social cause) with a clear intro, 3 points, conclusion.",
+            "Teacher/AI checks voice, gestures, transitions, Q&A handling.",
+            "Celebrate your final success—get the 'Stage Talk Star' badge and finalize your “Stage Talk Notebook.”"
+          ],
+          "objectives": [
+            "Demonstrate integrated public speaking in English",
+            "Show calm, structured approach under mild audience Q&A"
+          ]
+        }
+      ]
+    },
+    {
+      "courseId": 10,
+      "title": "Office English for Professionals",
+      "level": "Beginner",
+      "languageInstruction": "English with Optional Hindi Support",
+      "lessons": [
+        {
+          "lessonId": 1001,
+          "lessonNumber": 1,
+          "lessonTitle": "Welcome to the Office World",
+          "summary": "Meet Priya—a new hire at an Indian firm. She’s shy about workplace English. Learn 5 short opener chunks (e.g., “Good morning!”) to greet colleagues and start building confidence. Begin each lesson with a calming 30-second mini-ritual.",
+          "activities": [
+            "Story snippet: Priya’s first day—she wants to greet her team but feels nervous.",
+            "Teach 5 essential opener chunks: “Good morning!”, “How’s everything?”, etc.",
+            "User tries each chunk aloud, then reflects on any anxiety felt."
+          ],
+          "objectives": [
+            "Shift mindset: English at work can be simple, chunk-based",
+            "Practice a mini-ritual to calm nerves before speaking"
+          ]
+        },
+        {
+          "lessonId": 1002,
+          "lessonNumber": 2,
+          "lessonTitle": "Everyday Greetings & Small Talk",
+          "summary": "Focus on building rapport with coworkers—short phrases for break-room chats or elevator encounters. Use Hindi bridging as needed. Maintain a friendly tone.",
+          "activities": [
+            "Micro peer interaction: user records a 15-second voice note like “Hi, how was your weekend?”—shares with AI/friend for supportive feedback.",
+            "Role-play: meeting a new colleague at the coffee machine: “Hi, I’m Priya. Nice to meet you!”",
+            "Teacher/AI corrects intonation or filler words (e.g., ‘umm…’)."
+          ],
+          "objectives": [
+            "Break the ice in a friendly manner with short English lines",
+            "Minimize overthinking by relying on pre-learned phrases"
+          ]
+        },
+        {
+          "lessonId": 1003,
+          "lessonNumber": 3,
+          "lessonTitle": "Phone Calls & Reception Chats",
+          "summary": "Priya must answer the office phone or call a vendor. Master short phone phrases: greeting, stating purpose, politely ending. Continue the 30-second confidence ritual if feeling anxious.",
+          "activities": [
+            "Vocabulary: 'extension,' 'vendor,' 'hold,' 'transfer,' etc.",
+            "Simulation: user receives a call: 'Hello, this is Priya from ABC Company. How can I help you?'",
+            "Teacher/AI pretends to be caller with a quick request, user responds politely."
+          ],
+          "objectives": [
+            "Handle basic phone calls calmly and clearly",
+            "Adopt polite short lines to start/end calls"
+          ]
+        },
+        {
+          "lessonId": 1004,
+          "lessonNumber": 4,
+          "lessonTitle": "Email Basics: Polite & Concise",
+          "summary": "Teach chunk-based lines for short, professional emails—greetings, body, sign-offs. Emphasize clarity over long sentences.",
+          "activities": [
+            "Study a sample 3-line email: 'Hi Team, please find attached… Let me know your feedback.'",
+            "User composes a short email scheduling a meeting (subject, body, sign-off).",
+            "Teacher/AI checks for clarity, no over-complication or Hinglish."
+          ],
+          "objectives": [
+            "Write concise, polite office emails",
+            "Use standard structure (Greeting, Body, Closing)"
+          ]
+        },
+        {
+          "lessonId": 1005,
+          "lessonNumber": 5,
+          "lessonTitle": "Making Polite Requests",
+          "summary": "Priya needs coworker help to finish a report. Focus on modals ('Could you…?', 'Would you mind…?') for polite office interactions.",
+          "activities": [
+            "Short chunk practice: 'Could you please check this data?', 'I’d appreciate your help…'",
+            "Role-play: user asks a coworker for input, teacher/AI simulates coworker’s response.",
+            "Mini reflection on using English politely, not abruptly."
+          ],
+          "objectives": [
+            "Adopt respectful request lines in the office",
+            "Gain comfort forming short, friendly modals"
+          ]
+        },
+        {
+          "lessonId": 1006,
+          "lessonNumber": 6,
+          "lessonTitle": "Confirmations & Deadlines",
+          "summary": "Teach short lines for confirming tasks or deadlines with boss/team. Emphasize direct but polite phrases. Optional Hindi bridging for words like 'deadline,' 'deliverables.'",
+          "activities": [
+            "Vocabulary: 'deadline,' 'extension,' 'deliverables,' 'on track.'",
+            "Simulation: user confirms timeline: “Just confirming—our deadline is Friday, right?”",
+            "Teacher/AI notes clarity and references to time."
+          ],
+          "objectives": [
+            "Confidently clarify or confirm timeline details",
+            "Avoid confusion or missed tasks with short, direct lines"
+          ]
+        },
+        {
+          "lessonId": 1007,
+          "lessonNumber": 7,
+          "lessonTitle": "Small Team Discussions",
+          "summary": "Practice short chunk lines for brainstorming or quick team huddles. Priya learns to share at least one idea: “I think we should…,” “Let’s consider….”",
+          "activities": [
+            "Role-play a 3-person stand-up meeting. User shares a 2-line update on tasks.",
+            "Teacher/AI simulates coworker question, user responds briefly in English.",
+            "Micro peer feedback: user sends a 15s summary of their update for supportive tips."
+          ],
+          "objectives": [
+            "Contribute small ideas in English during group chats",
+            "Use bridging only if truly stuck—rely on chunk lines for fluid speech"
+          ]
+        },
+        {
+          "lessonId": 1008,
+          "lessonNumber": 8,
+          "lessonTitle": "Office Emails: Follow-ups & Reminders",
+          "summary": "Learn short lines for gentle follow-up: “Just a reminder…,” “Any update on…?” Discuss Indian politeness nuances to stay warm yet professional.",
+          "activities": [
+            "User drafts a 3-line email following up on a pending invoice or task.",
+            "Teacher/AI checks tone: polite but not pushy (e.g., 'Any update? Please let me know if I can help.').",
+            "Reflect on how polite English fosters better team relationships."
+          ],
+          "objectives": [
+            "Send gentle but clear follow-up messages",
+            "Maintain a friendly yet professional tone in short reminders"
+          ]
+        },
+        {
+          "lessonId": 1009,
+          "lessonNumber": 9,
+          "lessonTitle": "Planning Meetings & Calls",
+          "summary": "Priya schedules a meeting, sets an agenda using short transitional phrases: “Let’s set a date…,” “We can discuss….”",
+          "activities": [
+            "Vocabulary: 'agenda,' 'participants,' 'dial-in,' 'minutes.'",
+            "Simulation: user calls or emails to fix a meeting time, teacher/AI responds as coworker.",
+            "User logs details in a short note: 'Meeting on Tuesday, 2 PM, about budget.'"
+          ],
+          "objectives": [
+            "Coordinate schedules in English succinctly",
+            "Use chunk lines to finalize meeting details or dial-in instructions"
+          ]
+        },
+        {
+          "lessonId": 1010,
+          "lessonNumber": 10,
+          "lessonTitle": "Office Etiquette: Politeness & Team Harmony",
+          "summary": "Phrases for apologizing or thanking—'I’m sorry for the delay…,' 'Thanks for your help.' Keep bridging minimal if user is comfortable. Show how small courtesies matter.",
+          "activities": [
+            "Role-play: user is late to a meeting, apologizes politely in English ('I’m so sorry for being late…').",
+            "Teacher/AI checks sincerity and tone, ensuring no direct Hindi translation.",
+            "Optional peer feedback: user shares a 10-second gratitude line for positivity."
+          ],
+          "objectives": [
+            "Navigate small social mistakes with polite English",
+            "Adopt gratitude lines to maintain a supportive environment"
+          ]
+        },
+        {
+          "lessonId": 1011,
+          "lessonNumber": 11,
+          "lessonTitle": "Handling Workplace Conflict (Politely)",
+          "summary": "Misunderstandings happen. Learn lines like 'I understand your point, but…' or 'Let’s find a solution together' to defuse tension kindly.",
+          "activities": [
+            "Simulation: coworker complains about your approach. User responds politely with 2 lines.",
+            "Teacher/AI adjusts any abrupt phrasing, suggests empathetic chunks.",
+            "Reflect on how calm tone fosters a cooperative attitude."
+          ],
+          "objectives": [
+            "Defuse small conflicts with respectful English lines",
+            "Maintain a cooperative attitude in challenging scenarios"
+          ]
+        },
+        {
+          "lessonId": 1012,
+          "lessonNumber": 12,
+          "lessonTitle": "Office Introductions & Presentations (Beginner Level)",
+          "summary": "Priya delivers a quick 2–3 minute intro about her project in a team meeting. Use chunk-based transitions: 'First… Then… Finally….'",
+          "activities": [
+            "User practices a short speech: “Hello everyone, I’d like to share my updates.”",
+            "Teacher/AI simulates an audience, asks 1–2 easy Qs. User responds with minimal bridging.",
+            "Reflection: how transitions clarify the speech flow."
+          ],
+          "objectives": [
+            "Deliver a short, structured presentation to coworkers",
+            "Respond briefly to follow-up questions without panic"
+          ]
+        },
+        {
+          "lessonId": 1013,
+          "lessonNumber": 13,
+          "lessonTitle": "Managing Boss & Client Interactions",
+          "summary": "Priya must update her boss or an external client. Learn short, respectful lines: “Thank you for your feedback, I’ll update this soon.” or “May I clarify any details?”",
+          "activities": [
+            "Role-play: user reports a small project delay, boss requests changes, user responds politely.",
+            "Teacher/AI checks respect: 'Yes, I’ll do that right away.'",
+            "Optional note-taking: add “boss/client phrases” to a personal cheat-sheet."
+          ],
+          "objectives": [
+            "Communicate respect to superiors/clients in short lines",
+            "Keep tone professional, solution-oriented"
+          ]
+        },
+        {
+          "lessonId": 1014,
+          "lessonNumber": 14,
+          "lessonTitle": "Common Mistakes & Confidence Boost",
+          "summary": "Review repeated user mistakes like direct Hindi translations, abrupt phrases, or phone call mix-ups. Revisit the confidence ritual. 80% instructions in English now.",
+          "activities": [
+            "Teacher/AI highlights 5 mistakes from user’s prior recordings—user corrects them with short chunk lines.",
+            "User shares a 30s reflection on personal progress, noting improvements.",
+            "Encourage a final deep breath + affirmation before continuing."
+          ],
+          "objectives": [
+            "Identify personal error patterns in office English",
+            "Adopt a quick self-correction mindset + confidence ritual"
+          ]
+        },
+        {
+          "lessonId": 1015,
+          "lessonNumber": 15,
+          "lessonTitle": "Rapid Office Drills & Peer Support",
+          "summary": "Practice quick scenarios (closing an email, scheduling a call, clarifying boss’s request). 90% instructions in English. Lean on chunk recall to handle tasks fast.",
+          "activities": [
+            "Teacher gives 3 rapid-fire scenarios: user must respond politely in under 10 seconds each.",
+            "Peer/AI feedback: user shares 1 scenario solution (written or voice).",
+            "Reflection: how chunk recall helps real office agility under time pressure."
+          ],
+          "objectives": [
+            "Strengthen speed + confidence in everyday tasks",
+            "Rely on chunk-based answers under mild time pressure"
+          ]
+        },
+        {
+          "lessonId": 1016,
+          "lessonNumber": 16,
+          "lessonTitle": "Final Project: Office Showcase",
+          "summary": "Demonstrate a 3–5 minute “Office Day Walkthrough.” Incorporate greetings, phone calls, email lines, polite requests, minor Q&A. Minimal Hindi if truly stuck—earn ‘Professional Office Communicator’ badge!",
+          "activities": [
+            "User simulates 2–3 daily office tasks (calling a client, emailing a boss, chatting with coworker).",
+            "Teacher/AI introduces small challenges (last-minute question, slight conflict). User handles politely using learned chunks.",
+            "Celebrate final completion—user logs favorite phrases in a personal 'Office English Notebook.'"
+          ],
+          "objectives": [
+            "Integrate all learned office chunks into a cohesive demonstration",
+            "Show calm, professional English usage under mild Q&A"
+          ]
+        }
+      ]
+    }
+  ]
+}

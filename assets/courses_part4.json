@@ -1,0 +1,1324 @@
+{
+  "courses": [
+    {
+      "courseId": 16,
+      "title": "Public Speaking & Stage Talk (Advanced)",
+      "level": "Advanced",
+      "languageInstruction": "Fully English",
+      "lessons": [
+        {
+          "lessonId": 1601,
+          "lessonNumber": 1,
+          "lessonTitle": "Facing the Stage with Confidence",
+          "summary": "Meet Celia, an aspiring keynote speaker. This advanced course begins with a daily streak challenge and a self-reflection on your greatest fear when speaking publicly. AI highlights your personal anxiety triggers (vocal variety, pacing, posture).",
+          "activities": [
+            "Quick Poll (5 XP): Identify your top 2 stage fright issues. Earn a daily streak bonus if you share them promptly.",
+            "AI Feedback: The system notes if you mention 'speaking too fast' or 'lack of gestures'—then assigns micro-tips.",
+            "Micro Quiz: 5 Qs on rhetorical strategies, +1 XP each correct."
+          ],
+          "objectives": [
+            "Acknowledge advanced-level stage fright factors",
+            "Adopt an AI-driven approach to personal speech improvement"
+          ],
+          "badgeUponCompletion": "Stage Basics (Advanced)"
+        },
+        {
+          "lessonId": 1602,
+          "lessonNumber": 2,
+          "lessonTitle": "Voice Projection & Advanced Breathing",
+          "summary": "Focus on using diaphragm support, modulating volume for large audiences, and avoiding vocal strain. Achieve a daily streak for extra XP. AI pinpoints if you repeatedly pause awkwardly or speak too softly.",
+          "activities": [
+            "Voice Drill (10 XP): record a 30s snippet with strong projection. AI highlights repeated filler usage.",
+            "Mini Quiz: 5 advanced Qs about diaphragmatic breathing, awarding 1 XP each correct.",
+            "Collaboration: post your top voice tip in a peer forum—5 XP bonus once shared."
+          ],
+          "objectives": [
+            "Strengthen vocal projection for large venues",
+            "Master advanced breath control to maintain energy"
+          ],
+          "badgeUponCompletion": "Voice Booster"
+        },
+        {
+          "lessonId": 1603,
+          "lessonNumber": 3,
+          "lessonTitle": "Connecting with the Audience",
+          "summary": "Use empathy-driven techniques, rhetorical questions, and direct eye contact. AI-driven error detection focuses on repeated phrasing tics (e.g., 'you know' or 'like…').",
+          "activities": [
+            "Role-play (15 XP): user simulates a 2-minute talk addressing a live audience, incorporating rhetorical Qs.",
+            "Micro Quiz: identify the best audience-engagement lines, +1 XP each correct.",
+            "AI Personalization: flags if you overuse a filler or rely on monotone intonation."
+          ],
+          "objectives": [
+            "Develop empathetic audience engagement",
+            "Minimize repetitive filler words or monotony"
+          ],
+          "badgeUponCompletion": "Audience Connector"
+        },
+        {
+          "lessonId": 1604,
+          "lessonNumber": 4,
+          "lessonTitle": "Advanced Speech Structures",
+          "summary": "Learn to craft a compelling introduction, body, and conclusion with advanced transitions, signposting, and memorable takeaways. Earn XP for each well-structured mini-speech you produce.",
+          "activities": [
+            "Structure Drill (10 XP): plan a 3-part speech quickly (hook, main points, closing). AI checks transitions.",
+            "Mini Quiz: 5 Qs on advanced transitional phrases like 'consequently,' 'moreover,' awarding 1 XP each.",
+            "Team Chat: share your outline for peer feedback, +5 XP upon revision."
+          ],
+          "objectives": [
+            "Craft an organized, impactful advanced speech format",
+            "Use signposting phrases effectively"
+          ],
+          "badgeUponCompletion": "Speech Architect"
+        },
+        {
+          "lessonId": 1605,
+          "lessonNumber": 5,
+          "lessonTitle": "Stage Presence & Body Language Mastery",
+          "summary": "Polish your nonverbal cues—gestures, posture, purposeful movement, advanced eye contact scanning. AI logs repeated posture or fidgeting critiques from your role-play videos.",
+          "activities": [
+            "Video Role-play (15 XP): upload a 1-min clip presenting a short anecdote. AI auto-detects slouching or repetitive hand movements.",
+            "Mini Quiz: 5 Qs about body language do’s/don’ts, awarding 1 XP each correct.",
+            "Collaboration: comment on each other’s posture in the group forum, +5 XP bonus."
+          ],
+          "objectives": [
+            "Refine advanced stage presence cues",
+            "Manage purposeful gestures and minimize nervous habits"
+          ],
+          "badgeUponCompletion": "Body Language Pro"
+        },
+        {
+          "lessonId": 1606,
+          "lessonNumber": 6,
+          "lessonTitle": "Professional Storytelling & Anecdotes",
+          "summary": "Enhance your speeches with captivating personal stories, metaphors, or analogies. Earn XP for weaving coherent narratives. AI suggests micro-lessons if transitions or storyline arcs are unclear.",
+          "activities": [
+            "Story Flow Drill (10 XP): user outlines a short anecdote, ensuring a clear beginning, conflict, and resolution.",
+            "Mini Quiz: identify best rhetorical devices among 5 examples, +1 XP each correct pick.",
+            "Team Collaboration: share a 2-min story snippet, gather 5 XP once peers confirm coherence."
+          ],
+          "objectives": [
+            "Incorporate advanced storytelling techniques in speeches",
+            "Use vivid examples or analogies to maintain audience interest"
+          ],
+          "badgeUponCompletion": "Storytelling Adept"
+        },
+        {
+          "lessonId": 1607,
+          "lessonNumber": 7,
+          "lessonTitle": "Engaging Q&A Sessions & Panel Discussions",
+          "summary": "Handle advanced Q&A, manage unexpected queries, keep composure. AI logs if you cut people off or ramble. Collaboration fosters group Q&A simulations for bonus XP.",
+          "activities": [
+            "Role-play (15 XP): user simulates a 3-min Q&A with tough audience queries. AI flags repeated filler words.",
+            "Mini Quiz: best ways to rephrase or confirm a question politely, +1 XP each correct approach.",
+            "Team Chat: gather for a panel simulation, awarding 5 XP if you actively contribute and show good listening."
+          ],
+          "objectives": [
+            "Handle advanced Q&A politely and concisely",
+            "Manage tricky or hostile questions with confidence"
+          ],
+          "badgeUponCompletion": "Q&A Specialist"
+        },
+        {
+          "lessonId": 1608,
+          "lessonNumber": 8,
+          "lessonTitle": "Humor & Emotional Resonance",
+          "summary": "Learn how to add tasteful humor or emotional stories without undercutting professionalism. XP is earned for balanced comedic timing. AI flags if jokes overshadow the main message.",
+          "activities": [
+            "Mini Quiz (5 XP): pick the best comedic opener among 5 advanced lines.",
+            "Role-play: user attempts a short 1-min comedic anecdote mid-speech, awarding 10 XP if tastefully done.",
+            "Collaboration: post a comedic or emotional line in group chat, gather peer feedback (5 XP)."
+          ],
+          "objectives": [
+            "Blend humor and emotion effectively in advanced speeches",
+            "Avoid overshadowing key points with excessive jokes"
+          ],
+          "badgeUponCompletion": "Humor & Emotion Pro"
+        },
+        {
+          "lessonId": 1609,
+          "lessonNumber": 9,
+          "lessonTitle": "Advanced Visual Aids & Slides",
+          "summary": "Incorporate slides or props gracefully, pacing transitions to keep the audience engaged. Earn XP for seamless references to visuals. AI highlights repeated filler if you rely on 'um, next slide…'.",
+          "activities": [
+            "Slide Integration Drill (15 XP): create a mini 2-slide presentation, narrate transitions clearly. AI monitors repeated 'uh' or 'okay…' usage.",
+            "Mini Quiz: 5 Qs about advanced visual design tips awarding 1 XP each correct answer.",
+            "Team Chat: share your slides for peer critique, +5 XP if improved upon suggestions."
+          ],
+          "objectives": [
+            "Use visual aids to enhance speeches, not distract",
+            "Pace slide references for maximum audience clarity"
+          ],
+          "badgeUponCompletion": "Visual Aids Master"
+        },
+        {
+          "lessonId": 1610,
+          "lessonNumber": 10,
+          "lessonTitle": "Handling Technical Glitches & Large Venues",
+          "summary": "Microphone feedback, power outages, large or unresponsive audiences—learn advanced crowd management. XP for creative on-the-spot solutions. AI logs repeated negative or apologetic language.",
+          "activities": [
+            "Scenario Simulation (15 XP): user faces a mic failure mid-speech, must handle calmly. AI flags repeated filler or panic words.",
+            "Mini Quiz: best approach among 5 unexpected glitch scenarios, +1 XP each correct pick.",
+            "Collaboration: group chat about largest venue experiences, awarding 5 XP each if you share how you overcame issues."
+          ],
+          "objectives": [
+            "Maintain composure under high-stress technical or venue problems",
+            "Offer creative real-time solutions to keep speech flowing"
+          ],
+          "badgeUponCompletion": "Technical Resilience"
+        },
+        {
+          "lessonId": 1611,
+          "lessonNumber": 11,
+          "lessonTitle": "Persuasive & Motivational Speech Techniques",
+          "summary": "Explore advanced rhetoric: triads, parallel structures, powerful calls-to-action. Earn XP for using these effectively in a short pitch. AI micro-lessons if user overuses cliches. Collaboration fosters feedback loops.",
+          "activities": [
+            "Mini Quiz (5 XP): identify rhetorical devices in 5 sample lines (e.g., anaphora, epistrophe).",
+            "Role-play (10 XP): present a 1-min motivational pitch, using at least 2 rhetorical devices. AI checks overreliance on cliches.",
+            "Team Chat: share your pitch outline, gather 5 XP from peer critique."
+          ],
+          "objectives": [
+            "Apply advanced persuasive strategies in speeches",
+            "Craft powerful calls-to-action that resonate"
+          ],
+          "badgeUponCompletion": "Persuasive Pro"
+        },
+        {
+          "lessonId": 1612,
+          "lessonNumber": 12,
+          "lessonTitle": "Cultural Sensitivity & Diverse Audiences",
+          "summary": "Address global or multicultural crowds with respect. XP for inclusive language, references. AI flags stereotypes or overly localized examples. Collaboration fosters scenario-based tasks.",
+          "activities": [
+            "Mini Quiz (5 XP): pick inclusive lines in 5 given cross-cultural contexts.",
+            "Role-play (10 XP): deliver a short greeting acknowledging diverse backgrounds. AI tracks if you use respectful references.",
+            "Peer Collaboration: post a scenario dealing with an international audience, awarding 5 XP once group solves it politely."
+          ],
+          "objectives": [
+            "Adapt advanced speeches to global or diverse audiences",
+            "Use inclusive language, avoiding stereotypes"
+          ],
+          "badgeUponCompletion": "Global Inclusivity"
+        },
+        {
+          "lessonId": 1613,
+          "lessonNumber": 13,
+          "lessonTitle": "Critique & Self-Evaluation Methods",
+          "summary": "Learn to watch your own recordings, identify flaws, and do advanced self-critique. XP is earned for accurately pinpointing weaknesses. AI personalizes final suggestions. Collaboration fosters peer critique circles.",
+          "activities": [
+            "Self-Review (10 XP): user uploads a 2-min speech recording, writes 3 lines about personal flaws. AI logs repeated gestures or filler usage.",
+            "Mini Quiz: 5 Qs on best self-critique strategies, +1 XP each correct.",
+            "Team Chat: each user critiques another’s speech snippet politely, awarding 5 XP if feedback is constructive."
+          ],
+          "objectives": [
+            "Adopt advanced self-evaluation techniques",
+            "Pinpoint personal flaws with constructive detail"
+          ],
+          "badgeUponCompletion": "Self-Critique Expert"
+        },
+        {
+          "lessonId": 1614,
+          "lessonNumber": 14,
+          "lessonTitle": "Handling Media & Press Q&A",
+          "summary": "Prepare for interviews or press conferences where advanced clarity, composure, and message discipline are critical. XP for each poised response. AI flags repeated 'no comment' or overly defensive lines.",
+          "activities": [
+            "Role-play (15 XP): user faces 3 tough press questions. Must answer concisely with official-sounding calm.",
+            "Mini Quiz: pick polite bridging statements among 5 options (+1 XP each).",
+            "Peer Reflection: share how you handle leading or negative questions—+5 XP once posted."
+          ],
+          "objectives": [
+            "Maintain composure under press or media questioning",
+            "Use bridging statements to steer Q&A effectively"
+          ],
+          "badgeUponCompletion": "Media Handler"
+        },
+        {
+          "lessonId": 1615,
+          "lessonNumber": 15,
+          "lessonTitle": "Final Rehearsals & Peer Panel Review",
+          "summary": "Consolidate advanced public speaking tactics. Earn XP for a final 3–5 minute practice talk in front of a peer panel. AI tracks repeated errors. Collaboration fosters a mini 'mock conference.'",
+          "activities": [
+            "Final Rehearsal (20 XP): user delivers a 3–5 min talk on a chosen topic. AI logs filler usage, posture notes, rhetorical device usage.",
+            "Team Chat Panel: each peer gives feedback, awarding 5 XP once you incorporate suggestions.",
+            "Daily Streak Bonus: +5 XP for consistent usage leading to the final project."
+          ],
+          "objectives": [
+            "Apply all advanced speech skills in a final rehearsal",
+            "Incorporate peer critique to refine performance"
+          ],
+          "badgeUponCompletion": "Rehearsal Champ"
+        },
+        {
+          "lessonId": 1616,
+          "lessonNumber": 16,
+          "lessonTitle": "Ultimate Showcase: Your Spotlight Speech",
+          "summary": "Present a polished 7–10 minute stage talk with advanced hooks, body language, Q&A handling. Earn the “Stage Talk Star (Advanced)” badge and a major XP boost. AI corrects repeated slip-ups in real time.",
+          "activities": [
+            "User records or live-streams the final speech. For each segment done skillfully (intro, body, conclusion, Q&A), +10 XP. Minimal repeated errors => extra 20 XP bonus.",
+            "Teacher/AI provides last round of corrections or applause. Achieve daily streak + final project completion for big XP.",
+            "Reflection: user compares progress from Lesson 1, celebrating advanced transformation."
+          ],
+          "objectives": [
+            "Demonstrate integrated advanced public speaking skills",
+            "Show mastery of posture, voice, rhetoric, Q&A in one final talk"
+          ],
+          "badgeUponCompletion": "Stage Talk Star (Advanced)"
+        }
+      ]
+    },
+    {
+      "courseId": 17,
+      "title": "Business English for Managers (Advanced)",
+      "level": "Advanced",
+      "languageInstruction": "Fully English",
+      "lessons": [
+        {
+          "lessonId": 1701,
+          "lessonNumber": 1,
+          "lessonTitle": "Leading with Language: Managerial Communication",
+          "summary": "Meet Darius, a new manager bridging global teams. This advanced course boosts your managerial English for negotiations, performance reviews, and corporate presentations. Track daily streaks for XP; AI logs your repeated phrasing issues.",
+          "activities": [
+            "Mini Quiz (5 XP): identify advanced managerial phrases vs. basic lines. E.g., “Shall we finalize the timeline?” vs. “You do it now.”",
+            "Self-Reflection: note your top 2 managerial communication challenges. +5 XP daily streak bonus if done promptly.",
+            "AI micro-lesson if user frequently reverts to direct or overly casual instructions."
+          ],
+          "objectives": [
+            "Recognize advanced managerial communication areas",
+            "Set personal goals for business-level English"
+          ],
+          "badgeUponCompletion": "Managerial Comm Basics"
+        },
+        {
+          "lessonId": 1702,
+          "lessonNumber": 2,
+          "lessonTitle": "Professional Email & Report Writing",
+          "summary": "Handle advanced email structures, managerial reports, and formal memos. Earn XP by drafting concise yet courteous messages. AI flags repeated grammar or tone issues (e.g., sounding too abrupt).",
+          "activities": [
+            "Report Draft (10 XP): user composes a 150-word summary of monthly performance. AI checks for clarity, formality.",
+            "Mini Quiz: 5 Qs on advanced email sign-offs, awarding +1 XP each correct answer.",
+            "Daily Streak Bonus: +5 XP if user logs in consistently and completes tasks."
+          ],
+          "objectives": [
+            "Write formal managerial emails and short reports",
+            "Adopt a polished, concise tone in business communication"
+          ],
+          "badgeUponCompletion": "Written Pro"
+        },
+        {
+          "lessonId": 1703,
+          "lessonNumber": 3,
+          "lessonTitle": "Team Meetings & Agenda Setting",
+          "summary": "Master advanced facilitation of team huddles. Earn XP for well-structured agendas, controlling side-discussions politely. AI detects if user repeats direct translations or forgets key transitional lines.",
+          "activities": [
+            "Meeting Simulation (15 XP): user leads a 2–3 min role-play, sets an agenda, invites input. AI highlights repeated filler or abrupt shifts.",
+            "Mini Quiz: best approaches to handle off-topic remarks (5 Qs, +1 XP each).",
+            "Collaboration: group chat about real meeting snafus, awarding +5 XP for shared experiences."
+          ],
+          "objectives": [
+            "Lead structured team meetings with clear agendas",
+            "Politely handle tangential or overlong discussions"
+          ],
+          "badgeUponCompletion": "Meeting Facilitator"
+        },
+        {
+          "lessonId": 1704,
+          "lessonNumber": 4,
+          "lessonTitle": "Advanced Negotiation & Conflict Resolution",
+          "summary": "In high-level business settings, you’ll negotiate deals or resolve inter-department conflicts. Earn XP for each diplomatic phrase. AI logs if you become overly aggressive or uncertain. Collaboration fosters mock negotiation drills.",
+          "activities": [
+            "Negotiation Role-play (15 XP): user tries to secure better pricing or terms. AI flags repeated blunt lines. Earn extra XP for calm, persuasive arguments.",
+            "Mini Quiz: identify best conflict-resolution phrases in 5 scenario Qs (+1 XP each).",
+            "Team Chat: pairs do a mock conflict scenario. +5 XP for successful resolution."
+          ],
+          "objectives": [
+            "Use advanced persuasion for business negotiations",
+            "Resolve conflicts with an assertive yet respectful approach"
+          ],
+          "badgeUponCompletion": "Negotiation Expert"
+        },
+        {
+          "lessonId": 1705,
+          "lessonNumber": 5,
+          "lessonTitle": "Presentation Skills for Managers",
+          "summary": "Deliver advanced corporate presentations with data slides, ROI charts, and Q&A. Earn XP for structured flow, and see AI micro-lessons if you repeatedly mispronounce business terms or skip transitional phrases.",
+          "activities": [
+            "Slide-based Presentation (15 XP): user shows a mini 2-slide concept pitch with advanced transitions.",
+            "Mini Quiz: 5 Qs about linking data to final recommendations. +1 XP each correct.",
+            "Collaboration: share slides for peer feedback, awarding 5 XP upon improvements."
+          ],
+          "objectives": [
+            "Combine corporate data with concise messaging",
+            "Answer Q&A about performance metrics or ROI"
+          ],
+          "badgeUponCompletion": "Corp Presentation Pro"
+        },
+        {
+          "lessonId": 1706,
+          "lessonNumber": 6,
+          "lessonTitle": "Intercultural Communication & Etiquette",
+          "summary": "Managers often work across cultures. Earn XP by demonstrating advanced sensitivity in language, addressing global teams. AI flags if user inserts cultural stereotypes or uses ambiguous references. Collaboration fosters scenario-based tasks.",
+          "activities": [
+            "Mini Quiz (5 XP): pick the best approach to address an international board or partners from different cultures.",
+            "Role-play: user greets a foreign delegation with formal advanced lines. Gains 10 XP if well-structured.",
+            "Peer Reflection: share a quick anecdote about cross-cultural miscommunication, +5 XP."
+          ],
+          "objectives": [
+            "Adapt managerial English for global audiences",
+            "Avoid cultural missteps and communicate inclusively"
+          ],
+          "badgeUponCompletion": "Global Manager"
+        },
+        {
+          "lessonId": 1707,
+          "lessonNumber": 7,
+          "lessonTitle": "Performance Reviews & Feedback Delivery",
+          "summary": "Give constructive yet clear employee feedback. Earn XP for tactful language. AI tracks user’s repeated abruptness or hesitancy. Collaboration fosters mock performance reviews for practice.",
+          "activities": [
+            "Performance Review Role-play (15 XP): user delivers a 2-min feedback session. AI flags if you’re too vague or harsh.",
+            "Mini Quiz (5 Qs): pick best advanced lines for praising or critiquing performance, +1 XP each correct.",
+            "Team Chat: share your approach for delivering tough news, awarding +5 XP once peers see it as respectful."
+          ],
+          "objectives": [
+            "Communicate strengths, weaknesses, and next steps politely",
+            "Maintain clarity and empathy in advanced feedback sessions"
+          ],
+          "badgeUponCompletion": "Feedback Master"
+        },
+        {
+          "lessonId": 1708,
+          "lessonNumber": 8,
+          "lessonTitle": "Email & Memo Polishing for Official Announcements",
+          "summary": "Formal announcements, policy changes, or strategic updates. Earn XP for succinct clarity. AI micro-lessons if user repeatedly forgets formal sign-offs or consistent tone. Collaboration fosters rewriting tasks.",
+          "activities": [
+            "Memo Draft (15 XP): user composes a 200-word official update about a new policy. AI checks for advanced structure and tone.",
+            "Mini Quiz (5 XP): best formal sign-offs among 5 options.",
+            "Peer Collaboration: rewrite an informal announcement, +5 XP each upon improvement."
+          ],
+          "objectives": [
+            "Write advanced-level official announcements",
+            "Maintain consistent formal tone throughout"
+          ],
+          "badgeUponCompletion": "Memo Pro"
+        },
+        {
+          "lessonId": 1709,
+          "lessonNumber": 9,
+          "lessonTitle": "Business Idioms & Collocations",
+          "summary": "Advanced business language is peppered with idioms and collocations (e.g., “touch base,” “boil down to,” “hedge bets”). Earn XP for correct usage. AI flags forced or misapplied idioms.",
+          "activities": [
+            "Mini Quiz (5 XP): pick correct idioms for given contexts (e.g., “Keep me in the loop,” “break even”).",
+            "Vocabulary Drill (10 XP): user writes short lines inserting 5 new collocations. AI checks if usage is natural.",
+            "Daily Streak Bonus: +5 XP for consistent logins."
+          ],
+          "objectives": [
+            "Use advanced business idioms naturally",
+            "Incorporate correct collocations for professional flair"
+          ],
+          "badgeUponCompletion": "Idiomatic Expert"
+        },
+        {
+          "lessonId": 1710,
+          "lessonNumber": 10,
+          "lessonTitle": "Strategy & Proposal Discussions",
+          "summary": "Managers often discuss strategic roadmaps, proposals, or resource allocation. Earn XP for presenting a structured argument. AI micro-lessons if user’s transitional logic is weak. Collaboration fosters group proposal synergy.",
+          "activities": [
+            "Strategy Presentation (15 XP): user outlines a 3-step plan for business growth. AI logs repeated grammar or transitional shortfalls.",
+            "Mini Quiz: 5 Qs about connecting strategy points, awarding +1 XP each correct approach.",
+            "Team Chat: share a 2–3 line strategic pitch, +5 XP once peers confirm clarity."
+          ],
+          "objectives": [
+            "Discuss advanced strategic planning with clarity",
+            "Use bridging statements to unify proposal arguments"
+          ],
+          "badgeUponCompletion": "Strategic Planner"
+        },
+        {
+          "lessonId": 1711,
+          "lessonNumber": 11,
+          "lessonTitle": "Advanced Video Conference Management",
+          "summary": "Managers lead global video sessions with stakeholders. Earn XP by setting a crisp agenda, controlling the flow. AI flags repeated disruptions or filler. Collaboration fosters a mock conference scenario.",
+          "activities": [
+            "Video Conference Role-play (15 XP): user leads a 5-minute multi-stakeholder call, managing time and input. AI tracks repeated phrases.",
+            "Mini Quiz: 5 Qs on polite ways to guide or redirect off-topic participants, +1 XP each correct.",
+            "Peer Feedback: each participant critiques your session, awarding 5 XP if changes are implemented."
+          ],
+          "objectives": [
+            "Lead advanced-level virtual meetings effectively",
+            "Handle diverse input politely without losing agenda"
+          ],
+          "badgeUponCompletion": "Virtual Meeting Champ"
+        },
+        {
+          "lessonId": 1712,
+          "lessonNumber": 12,
+          "lessonTitle": "Handling Executive & Board Presentations",
+          "summary": "Exec-level communication demands brevity and clarity. Earn XP for a concise top-level summary. AI flags repeated waffle or overly technical jargon. Collaboration fosters scenario-based board sessions.",
+          "activities": [
+            "Board Presentation (15 XP): user delivers a 2-min summary suitable for C-suite. AI checks if it’s too detailed or vague.",
+            "Mini Quiz: identify best lines among 5 advanced summary statements, +1 XP each correct.",
+            "Daily Streak Bonus: +5 XP for consistent usage leading to final lessons."
+          ],
+          "objectives": [
+            "Communicate succinctly to top executives",
+            "Avoid jargon or excessive detail in advanced updates"
+          ],
+          "badgeUponCompletion": "Exec Briefing Pro"
+        },
+        {
+          "lessonId": 1713,
+          "lessonNumber": 13,
+          "lessonTitle": "Crisis Communication & Risk Management",
+          "summary": "Whether a PR crisis, product recall, or sudden budget cut, managers must respond swiftly. Earn XP for calm, official-sounding statements. AI micro-lessons if user’s tone is too defensive or robotic. Collaboration fosters crisis simulation drills.",
+          "activities": [
+            "Crisis Simulation (20 XP): user crafts a short official statement plus an internal memo. AI logs repeated negativity or blame shifting.",
+            "Mini Quiz (5 XP): pick best approach for scenario-based Qs (like negative press coverage).",
+            "Team Chat: present your crisis plan, gather 5 XP once peers confirm clarity."
+          ],
+          "objectives": [
+            "Deliver advanced-level crisis statements and internal updates",
+            "Maintain calm, structured approach under public or staff scrutiny"
+          ],
+          "badgeUponCompletion": "Crisis Manager"
+        },
+        {
+          "lessonId": 1714,
+          "lessonNumber": 14,
+          "lessonTitle": "Personal Branding & Networking Language",
+          "summary": "Managers must brand themselves on LinkedIn or conferences. Earn XP for advanced intros, elevator pitches. AI flags repeated awkward phrases or overuse of clichés. Collaboration fosters peer-driven personal brand critiques.",
+          "activities": [
+            "LinkedIn Headline Draft (10 XP): user crafts a succinct professional tagline. AI checks if it’s unique, not a cliché.",
+            "Mini Quiz: 5 Qs about networking phrases. +1 XP each correct approach.",
+            "Team Chat: share your new tagline or elevator pitch, +5 XP on peer refinement."
+          ],
+          "objectives": [
+            "Refine personal branding in advanced professional contexts",
+            "Use concise, powerful lines for self-introduction or networking"
+          ],
+          "badgeUponCompletion": "Branding Ace"
+        },
+        {
+          "lessonId": 1715,
+          "lessonNumber": 15,
+          "lessonTitle": "Mock Managerial Review & Peer Panel",
+          "summary": "Consolidate all managerial English skills. Earn XP for a final role-play: leading a short staff meeting, giving feedback, answering stakeholder queries. AI highlights final errors, awarding or deducting XP. Collaboration fosters group panel feedback.",
+          "activities": [
+            "Managerial Role-play (20 XP): user leads a 5–7 minute scenario with performance review + short Q&A. AI tracks repeated grammar or abruptness.",
+            "Peer Panel: each group member critiques user’s style, awarding 5 XP once improvements are done.",
+            "Daily Streak Bonus: +5 XP for consistent usage leading to final test."
+          ],
+          "objectives": [
+            "Show integrated advanced managerial communication",
+            "Handle staff feedback loops, Q&A, meeting flow seamlessly"
+          ],
+          "badgeUponCompletion": "Managerial Simulation Hero"
+        },
+        {
+          "lessonId": 1716,
+          "lessonNumber": 16,
+          "lessonTitle": "Final Showcase: Business English Mastery",
+          "summary": "Deliver a polished advanced-level business presentation or negotiation scenario (7–10 minutes). Earn your 'Business English Manager (Advanced)' badge. AI corrects final repeated errors in real time, awarding a major XP boost for near-flawless performance.",
+          "activities": [
+            "User chooses either a strategic presentation or negotiation role-play, covering all advanced managerial aspects. Gains up to 50 XP based on clarity, courtesy, minimal errors.",
+            "Teacher/AI feedback: final error report plus celebratory end screen if user passes.",
+            "Reflection: user shares personal development from Lesson 1 to now."
+          ],
+          "objectives": [
+            "Demonstrate integrated advanced managerial communication skills",
+            "Handle presentations, negotiations, and formal speech with professionalism"
+          ],
+          "badgeUponCompletion": "Business English Manager (Advanced)"
+        }
+      ]
+    },
+    {
+      "courseId": 18,
+      "title": "English for Interviews & Job Success (Advanced)",
+      "level": "Advanced",
+      "languageInstruction": "Fully English",
+      "lessons": [
+        {
+          "lessonId": 1801,
+          "lessonNumber": 1,
+          "lessonTitle": "Mastering Advanced Interviews: Introduction",
+          "summary": "Meet Salma, an aspiring senior professional. This advanced course focuses on top-tier interview scenarios, complex behavioral questions, and post-offer negotiations. Earn daily streak XP as you refine your interview presence. AI flags repeated filler or disorganized replies.",
+          "activities": [
+            "Mini Quiz (5 XP): identify advanced vs. basic interview lines (e.g., “Could you elaborate on the team structure?” vs. “What does your company do?”).",
+            "Self-Reflection: share 2 advanced-level interview challenges. +5 XP daily streak bonus if done promptly.",
+            "AI micro-lesson if user repeats direct translations or over-casual phrasing."
+          ],
+          "objectives": [
+            "Understand advanced interview requirements",
+            "Set personal goals for high-level professional interviews"
+          ],
+          "badgeUponCompletion": "Interview Start"
+        },
+        {
+          "lessonId": 1802,
+          "lessonNumber": 2,
+          "lessonTitle": "Elevator Pitch & Personal Branding",
+          "summary": "Craft a concise summary of your professional journey. Earn XP for clarity and advanced industry terms. AI logs repeated filler or cliches. Collaboration fosters brand-statement rewrites.",
+          "activities": [
+            "Elevator Pitch Draft (10 XP): user writes a 30s pitch. AI checks for crispness, advanced vocabulary.",
+            "Mini Quiz: 5 Qs on best industry terms or personal branding phrases. +1 XP each correct.",
+            "Team Chat: share your pitch for peer feedback, awarding +5 XP on revision."
+          ],
+          "objectives": [
+            "Create a strong advanced-level elevator pitch",
+            "Use compelling professional language to stand out"
+          ],
+          "badgeUponCompletion": "Pitch Crafter"
+        },
+        {
+          "lessonId": 1803,
+          "lessonNumber": 3,
+          "lessonTitle": "Behavioral Interviews & STAR Method",
+          "summary": "Managers or C-suite interviews often use behavioral questions. Master the STAR (Situation, Task, Action, Result) method. Earn XP for structured answers. AI flags repeated tangents or incomplete results.",
+          "activities": [
+            "Role-play (15 XP): user answers a behavioral prompt using STAR. AI checks clarity, brevity, advanced phrasing.",
+            "Mini Quiz: 5 scenario Qs about common behavioral pitfalls (like rambling). +1 XP each correct approach.",
+            "Collaboration: post one behavioral Q in group chat, gather 5 XP once you respond concisely."
+          ],
+          "objectives": [
+            "Deliver advanced, structured responses for behavioral interviews",
+            "Stay focused on results and key achievements"
+          ],
+          "badgeUponCompletion": "STAR Method Pro"
+        },
+        {
+          "lessonId": 1804,
+          "lessonNumber": 4,
+          "lessonTitle": "Technical & Domain-Specific Questioning",
+          "summary": "Discuss specialized knowledge for advanced roles. Earn XP by formulating concise domain answers without jargon overload. AI micro-lessons if user repeatedly confuses specialized terms or lacks clarity. Collaboration fosters knowledge-sharing tasks.",
+          "activities": [
+            "Domain Drill (15 XP): user simulates a 2–3 min Q&A on their field (IT, finance, marketing, etc.). AI logs repeated filler or unclear definitions.",
+            "Mini Quiz: 5 Qs about bridging advanced domain terms to layman’s language, +1 XP each correct.",
+            "Team Chat: share your domain summary in 3 lines, gather 5 XP for clarity."
+          ],
+          "objectives": [
+            "Confidently explain technical expertise at advanced interviews",
+            "Balance domain specifics with understandable language"
+          ],
+          "badgeUponCompletion": "Domain Expert"
+        },
+        {
+          "lessonId": 1805,
+          "lessonNumber": 5,
+          "lessonTitle": "Advanced Persuasive Communication",
+          "summary": "Some high-level interviews require pitching your ideas or persuading the panel. Earn XP for strong rhetorical devices, capturing your vision. AI flags repeated meandering or repetitive phrases.",
+          "activities": [
+            "Pitch Simulation (15 XP): user outlines a project idea or solution in a 2-min advanced talk. AI checks for repeated waffle.",
+            "Mini Quiz: pick best persuasive transitions among 5 lines, +1 XP each correct.",
+            "Collaboration: share your 'persuasive pitch' in group chat, awarding +5 XP once revised."
+          ],
+          "objectives": [
+            "Demonstrate advanced persuasive language in interviews",
+            "Present ideas with clear structure and rhetorical flair"
+          ],
+          "badgeUponCompletion": "Persuasion Ace"
+        },
+        {
+          "lessonId": 1806,
+          "lessonNumber": 6,
+          "lessonTitle": "Cultural & Leadership-Focused Queries",
+          "summary": "High-level roles often ask about leadership philosophy or handling cross-cultural teams. Earn XP for global-minded answers. AI micro-lessons if user reverts to stereotypes or vague cliches.",
+          "activities": [
+            "Role-play (15 XP): user answers a question on team leadership style, referencing advanced examples. AI logs repeated filler or unclear expansions.",
+            "Mini Quiz (5 XP): choose best phrases for showing cultural sensitivity in leadership Qs.",
+            "Peer Reflection: share 2 lines about your leadership approach, gather +5 XP from group feedback."
+          ],
+          "objectives": [
+            "Respond to advanced leadership and culture-based questions",
+            "Use global, inclusive language to showcase your management ethos"
+          ],
+          "badgeUponCompletion": "Leadership Q Pro"
+        },
+        {
+          "lessonId": 1807,
+          "lessonNumber": 7,
+          "lessonTitle": "Salary & Offer Negotiations",
+          "summary": "After advanced interviews, you must negotiate compensation or benefits politely but firmly. Earn XP for each well-structured negotiation. AI flags repeated abrupt or uncertain phrases. Collaboration fosters mock negotiation practice.",
+          "activities": [
+            "Negotiation Role-play (15 XP): user requests a higher salary or improved perks. AI tracks politeness and clarity of arguments.",
+            "Mini Quiz: pick correct lines for a polite but assertive approach among 5 scenarios, +1 XP each correct.",
+            "Team Chat: share your negotiation script, +5 XP once peers confirm it’s well-balanced."
+          ],
+          "objectives": [
+            "Negotiate compensation effectively without appearing rigid or desperate",
+            "Use advanced expressions to justify your demands"
+          ],
+          "badgeUponCompletion": "Negotiation Star"
+        },
+        {
+          "lessonId": 1808,
+          "lessonNumber": 8,
+          "lessonTitle": "Handling Panel & Group Interviews",
+          "summary": "High-tier roles often involve multi-interviewer panels. Earn XP for addressing diverse personalities seamlessly. AI logs if user focuses on one panel member only or fails to pivot. Collaboration fosters group-simulation tasks.",
+          "activities": [
+            "Panel Simulation (15 XP): user fields Qs from 3 'panelists' in 3–5 min. AI tracks if you distribute eye contact and handle transitions well.",
+            "Mini Quiz (5 XP): pick best advanced courtesy lines for acknowledging multiple interviewers.",
+            "Peer Collaboration: share a short scenario with others in group chat, awarding +5 XP once you apply feedback."
+          ],
+          "objectives": [
+            "Engage multiple interviewers with balanced attention",
+            "Maintain advanced courtesy across diverse question styles"
+          ],
+          "badgeUponCompletion": "Panel Expert"
+        },
+        {
+          "lessonId": 1809,
+          "lessonNumber": 9,
+          "lessonTitle": "Video Interviews & Remote Assessments",
+          "summary": "Remote positions require top-tier on-camera presence. Earn XP for crisp intros, minimal lag phrases. AI micro-lessons if user repeatedly forgets formal attire or background concerns in scripts. Collaboration fosters remote interview simulations.",
+          "activities": [
+            "Video Simulation (15 XP): user does a 2-min 'mock remote interview' focusing on stable eye contact, formal greeting. AI tracks repeated filler.",
+            "Mini Quiz (5 XP): identify best solutions for technical disruptions or environment issues.",
+            "Team Chat: share a short remote interview tip, awarding +5 XP upon peer acknowledgment."
+          ],
+          "objectives": [
+            "Handle advanced remote interview protocols",
+            "Present professional on-camera presence with minimal disruptions"
+          ],
+          "badgeUponCompletion": "Remote Interview Pro"
+        },
+        {
+          "lessonId": 1810,
+          "lessonNumber": 10,
+          "lessonTitle": "Follow-up Emails & Post-Interview Etiquette",
+          "summary": "Learn advanced post-interview follow-up—thank-you notes, clarifying email, or polite check-ins. Earn XP for courtesy, brevity. AI flags repeated pushy or repetitive lines. Collaboration fosters rewriting tasks.",
+          "activities": [
+            "Follow-up Email Draft (10 XP): user composes a ~100-word message. AI checks advanced courtesy, no repeated sign-offs.",
+            "Mini Quiz (5 XP): best approach among 5 post-interview scenarios. +1 XP each correct.",
+            "Daily Streak Bonus: +5 XP for consistent usage leading up to advanced tasks."
+          ],
+          "objectives": [
+            "Compose polished follow-up messages or thank-you notes",
+            "Maintain professional courtesy without appearing desperate"
+          ],
+          "badgeUponCompletion": "Follow-up Expert"
+        },
+        {
+          "lessonId": 1811,
+          "lessonNumber": 11,
+          "lessonTitle": "Advanced Mock Interview Marathon",
+          "summary": "Consolidate the last 10 lessons. Face rapid-fire advanced Qs in a 5–7 minute simulation. Earn XP for calm, structured answers. AI personalizes micro-lessons if patterns re-emerge (rambling, filler). Collaboration fosters group panel feedback.",
+          "activities": [
+            "Marathon Role-play (20 XP): user handles 6 advanced Qs ranging from behavioral to domain-specific. AI tracks repeated slip-ups.",
+            "Mini Quiz: 5 scenario-based Qs about pivoting or bridging tough queries, +1 XP each correct approach.",
+            "Peer Panel: each group member critiques user’s performance, awarding +5 XP once improvements are shown."
+          ],
+          "objectives": [
+            "Demonstrate integrated advanced interview skills",
+            "Handle diverse question styles calmly and succinctly"
+          ],
+          "badgeUponCompletion": "Interview Marathoner"
+        },
+        {
+          "lessonId": 1812,
+          "lessonNumber": 12,
+          "lessonTitle": "Psychological Readiness & Confidence Boost",
+          "summary": "Some advanced interviews test your psychological resilience, e.g., stress tests or puzzle Qs. Earn XP for calm, rational responses. AI flags repeated self-doubt lines ('I guess…', 'Maybe…'). Collaboration fosters stress simulation drills.",
+          "activities": [
+            "Stress Simulation (15 XP): user answers a tricky puzzle or stress question for 2 min, maintaining composure. AI highlights negative or anxious phrases.",
+            "Mini Quiz (5 XP): best responses to stress/puzzle queries among 5 examples.",
+            "Team Chat: share a quick coping tip for interview stress, awarding +5 XP once posted."
+          ],
+          "objectives": [
+            "Stay calm under stress or puzzle-based interviews",
+            "Demonstrate confidence even if uncertain"
+          ],
+          "badgeUponCompletion": "Stress-Ready"
+        },
+        {
+          "lessonId": 1813,
+          "lessonNumber": 13,
+          "lessonTitle": "Body Language & Nonverbal Nuances",
+          "summary": "At advanced interviews, eye contact, firm handshakes, posture, and micro-expressions matter. Earn XP for consistent, confident nonverbal cues. AI micro-lesson if user’s video reveals repeated fidgeting or minimal eye contact. Collaboration fosters body language critiques.",
+          "activities": [
+            "Video Posture Drill (15 XP): record a 1-min stand-and-talk with advanced confidence. AI flags slouching, forced gestures.",
+            "Mini Quiz (5 XP): identify subtle differences between 'open posture' vs. 'closed posture' in 5 images.",
+            "Peer Collaboration: each user critiques one partner’s posture video, awarding +5 XP if constructive."
+          ],
+          "objectives": [
+            "Refine advanced nonverbal signals for professional interviews",
+            "Present confident, relaxed posture and gestures"
+          ],
+          "badgeUponCompletion": "Nonverbal Pro"
+        },
+        {
+          "lessonId": 1814,
+          "lessonNumber": 14,
+          "lessonTitle": "Error Analysis & Final Polishing",
+          "summary": "Review your personal AI-logged mistakes across advanced Q&As or role-plays. Earn XP for systematic correction. Collaboration fosters group reflection on improvement areas. Prepare for final interview simulation next lesson!",
+          "activities": [
+            "Mini Quiz (5 XP): fix 5 repeated user-specific errors from your logs.",
+            "Short Reflection: user writes 3 lines on how they overcame top grammar or communication flaws. +10 XP if well-structured.",
+            "Team Chat: share your personal improvement plan, awarding +5 XP once peers comment."
+          ],
+          "objectives": [
+            "Address persistent advanced interview slip-ups",
+            "Consolidate all key improvements for final demonstration"
+          ],
+          "badgeUponCompletion": "Pre-Final Polish"
+        },
+        {
+          "lessonId": 1815,
+          "lessonNumber": 15,
+          "lessonTitle": "Full-Length Advanced Mock Interview",
+          "summary": "Simulate a near-real 10–15 minute advanced interview, from intro to domain Qs, behavioral Qs, stress Qs, and final negotiation talk. Earn XP as AI logs your responses in real time. Collaboration fosters peer panel commentary.",
+          "activities": [
+            "Comprehensive Role-play (30 XP): user faces a multi-section interview. AI flags repeated shortfalls if any persist.",
+            "Peer Panel: each group member critiques a portion of your interview approach, awarding +5 XP if you revise effectively.",
+            "Daily Streak Bonus: +5 XP for consistent usage up to final. "
+          ],
+          "objectives": [
+            "Show integrated advanced interview skills in a single session",
+            "Manage varied question types and maintain composure"
+          ],
+          "badgeUponCompletion": "Mock Interview Pro"
+        },
+        {
+          "lessonId": 1816,
+          "lessonNumber": 16,
+          "lessonTitle": "Final Showcase: Job Success Mastery",
+          "summary": "Deliver your best advanced interview performance: from elevator pitch to domain Qs, negotiation points, and gracious closing. Earn the “Interview & Job Success Star (Advanced)” badge if minimal repeated errors. AI evaluates each segment for XP.",
+          "activities": [
+            "Ultimate Interview Simulation: 10–15 min with multiple segments. Each segment done well awards 10 XP, up to 50 total. Minimal repeated errors => +20 XP bonus.",
+            "Teacher/AI feedback: final scoreboard, personal error log improvements, big XP reward upon completion.",
+            "Reflection: user celebrates transformation from Lesson 1 to final advanced readiness."
+          ],
+          "objectives": [
+            "Demonstrate high-level professionalism across all advanced interview facets",
+            "Earn top-tier feedback for immediate job success"
+          ],
+          "badgeUponCompletion": "Interview & Job Success Star (Advanced)"
+        }
+      ]
+    },
+    {
+      "courseId": 19,
+      "title": "Medical English for Healthcare Workers (Advanced)",
+      "level": "Advanced",
+      "languageInstruction": "Fully English",
+      "lessons": [
+        {
+          "lessonId": 1901,
+          "lessonNumber": 1,
+          "lessonTitle": "Introduction to Advanced Medical English",
+          "summary": "Meet Dr. Nina, a dedicated physician who wants to refine complex patient interactions and medical documentation in English. Earn XP for daily streak logins, plus AI-driven error tracking for repeated medical terminology slip-ups.",
+          "activities": [
+            "Mini Quiz (5 XP): identify advanced medical phrases vs. basic synonyms, e.g., “hypertension” vs. “high blood pressure.”",
+            "Reflection: share 2 language goals (like better case notes). +5 XP if done quickly.",
+            "AI micro-lesson if user confuses certain medical root words or abbreviations."
+          ],
+          "objectives": [
+            "Recognize advanced medical English demands",
+            "Set personal improvement goals for professional healthcare contexts"
+          ],
+          "badgeUponCompletion": "MedEnglish Starter"
+        },
+        {
+          "lessonId": 1902,
+          "lessonNumber": 2,
+          "lessonTitle": "Doctor-Patient Communication: Complex Cases",
+          "summary": "Focus on advanced bed-side manner, explaining diagnoses, handling worried families. Earn XP for calm, empathetic language. AI flags repeated abruptness or over-technical jargon. Collaboration fosters role-play with emotional patients.",
+          "activities": [
+            "Role-play (15 XP): user manages a 3-min scenario with a patient anxious about test results. AI checks empathy phrases.",
+            "Mini Quiz: 5 Qs about balancing medical clarity with layman’s terms, +1 XP each correct.",
+            "Peer Chat: share a short example of handling emotional families, awarding +5 XP if respectful and advanced."
+          ],
+          "objectives": [
+            "Explain complex medical info in accessible language",
+            "Show empathy, reassurance, and clarity in advanced discussions"
+          ],
+          "badgeUponCompletion": "Patient Comm Pro"
+        },
+        {
+          "lessonId": 1903,
+          "lessonNumber": 3,
+          "lessonTitle": "Medical Terminology & Jargon Mastery",
+          "summary": "Dive deeper into advanced suffixes, prefixes, and specialized terms (e.g., 'cardiomyopathy,' 'radiological intervention'). Earn XP for correct usage in short paragraphs. AI highlights repeated confusion or mispronunciation. Collaboration fosters vocab drills.",
+          "activities": [
+            "Vocabulary Drill (10 XP): user writes 5 lines incorporating advanced terms. AI checks if usage is correct in context.",
+            "Mini Quiz: match 5 specialized words with definitions, +1 XP each correct.",
+            "Team Chat: share 3 new terms from your specialty, awarding +5 XP on usage validation."
+          ],
+          "objectives": [
+            "Expand advanced medical vocabulary with precise usage",
+            "Avoid confusion in specialized terms or mispronunciations"
+          ],
+          "badgeUponCompletion": "Terminology Expert"
+        },
+        {
+          "lessonId": 1904,
+          "lessonNumber": 4,
+          "lessonTitle": "Writing Detailed Case Notes & Reports",
+          "summary": "Advanced medical roles demand thorough yet concise charting, discharge summaries, or research notes. Earn XP for clarity. AI flags repeated grammar or structure errors. Collaboration fosters rewriting sample case notes.",
+          "activities": [
+            "Case Note Draft (15 XP): user composes a 150–200 word patient summary. AI logs repeated errors or missing formal structure.",
+            "Mini Quiz: 5 Qs about typical format of SOAP notes or advanced documentation, +1 XP each correct.",
+            "Team Chat: share your note, gather +5 XP after peer suggestions."
+          ],
+          "objectives": [
+            "Maintain advanced clarity in written medical notes",
+            "Organize data systematically for easy comprehension"
+          ],
+          "badgeUponCompletion": "Case Note Pro"
+        },
+        {
+          "lessonId": 1905,
+          "lessonNumber": 5,
+          "lessonTitle": "Handling Emergency Situations & Triage",
+          "summary": "Medical English in high-pressure scenarios: triage calls, rapid instructions to paramedics, or on-the-spot decisions. Earn XP for direct, calm phrases. AI micro-lessons if you revert to vague or overly casual lines.",
+          "activities": [
+            "Simulation (15 XP): user leads a 2-min triage scenario, giving instructions to staff. AI checks clarity, calm tone.",
+            "Mini Quiz: identify best lines among 5 for paramedic calls, +1 XP each correct.",
+            "Peer Reflection: share a short snippet of real or hypothetical urgent scenario, awarding +5 XP if advanced clarity is shown."
+          ],
+          "objectives": [
+            "Communicate efficiently under emergency constraints",
+            "Use advanced but succinct medical commands"
+          ],
+          "badgeUponCompletion": "Emergency Handling"
+        },
+        {
+          "lessonId": 1906,
+          "lessonNumber": 6,
+          "lessonTitle": "Patient Counseling & Informed Consent",
+          "summary": "Explain procedures, potential risks, or alternatives in advanced-level English so patients can truly understand. Earn XP for empathetic phrasing. AI logs repeated jargon or unclear disclaimers. Collaboration fosters counseling role-plays.",
+          "activities": [
+            "Role-play (15 XP): user obtains informed consent for a complex procedure, AI checks if user explains side effects well.",
+            "Mini Quiz: 5 scenario Qs about clarifying risk vs. benefit, +1 XP each correct approach.",
+            "Team Chat: share a short informed-consent script, awarding +5 XP once refined."
+          ],
+          "objectives": [
+            "Express procedure details with advanced clarity and empathy",
+            "Encourage patient questions, ensure informed decisions"
+          ],
+          "badgeUponCompletion": "Consent Specialist"
+        },
+        {
+          "lessonId": 1907,
+          "lessonNumber": 7,
+          "lessonTitle": "Doctor-Doctor Consultations & Referrals",
+          "summary": "Speak advanced medical English with colleagues—specialists, surgeons, or telemedicine consults. Earn XP for precise diagnoses, referencing lab results, or suggesting next steps. AI flags repeated filler or missing medical detail.",
+          "activities": [
+            "Consultation Role-play (15 XP): user describes a complex case to a specialist, ensuring correct advanced terminology. AI checks if user stumbles or is too vague.",
+            "Mini Quiz: 5 Qs on referencing lab values or imaging results. +1 XP each correct.",
+            "Peer Collaboration: share a referral note snippet, awarding +5 XP once peers confirm clarity."
+          ],
+          "objectives": [
+            "Convey advanced medical data to colleagues succinctly",
+            "Make or request professional referrals accurately"
+          ],
+          "badgeUponCompletion": "Collegial Communicator"
+        },
+        {
+          "lessonId": 1908,
+          "lessonNumber": 8,
+          "lessonTitle": "Medical Research & Journal Writing",
+          "summary": "Advanced roles often require producing or reading research papers. Earn XP for correct academic style, referencing guidelines. AI notes repeated grammar or citation format issues. Collaboration fosters short abstract writing tasks.",
+          "activities": [
+            "Abstract Draft (15 XP): user writes a ~100-word research abstract. AI checks advanced style, minimal fluff.",
+            "Mini Quiz: choose correct references/citation forms among 5 examples, +1 XP each correct.",
+            "Team Chat: share your abstract for peer suggestions, awarding +5 XP upon revision."
+          ],
+          "objectives": [
+            "Adopt formal, academic tone for medical research writing",
+            "Follow standard citation or referencing guidelines"
+          ],
+          "badgeUponCompletion": "Research Writer"
+        },
+        {
+          "lessonId": 1909,
+          "lessonNumber": 9,
+          "lessonTitle": "Handling Difficult Conversations: Terminal Illness & Ethical Dilemmas",
+          "summary": "Discuss end-of-life care, palliative options, or major ethical concerns. Earn XP for respectful, empathetic communication. AI micro-lessons if user’s language is too blunt or uncertain. Collaboration fosters scenario practice in sensitive contexts.",
+          "activities": [
+            "Scenario Role-play (15 XP): user explains palliative care to a patient’s family. AI tracks empathy, advanced disclaimers.",
+            "Mini Quiz: 5 Qs about phrasing for ethical dilemmas or do-not-resuscitate orders, +1 XP each correct.",
+            "Peer Reflection: share your approach to sensitive news, awarding +5 XP once refined."
+          ],
+          "objectives": [
+            "Convey advanced-level empathy, clarity in grave medical discussions",
+            "Handle ethical questions with professional language"
+          ],
+          "badgeUponCompletion": "Ethical Care Pro"
+        },
+        {
+          "lessonId": 1910,
+          "lessonNumber": 10,
+          "lessonTitle": "Pharmacology & Prescription Clarity",
+          "summary": "Advise dosage, side effects, and interactions in advanced English. Earn XP for precise instructions. AI flags repeated confusion between brand/generic names or missed disclaimers. Collaboration fosters cross-checking drug instructions.",
+          "activities": [
+            "Prescription Role-play (15 XP): user outlines medication plan for a complex condition. AI checks if instructions are precise with advanced disclaimers.",
+            "Mini Quiz: 5 Qs about difference between brand vs. generic naming, +1 XP each correct.",
+            "Daily Streak Bonus: +5 XP for consistent usage leading to final tasks."
+          ],
+          "objectives": [
+            "Explain advanced pharmacological details to patients or colleagues",
+            "Ensure thorough disclaimers and correct naming"
+          ],
+          "badgeUponCompletion": "Pharma Advisor"
+        },
+        {
+          "lessonId": 1911,
+          "lessonNumber": 11,
+          "lessonTitle": "Case Presentations & Grand Rounds",
+          "summary": "In advanced clinical settings, you present complex cases to peers or visiting specialists. Earn XP for structured summarizing, differential diagnoses, recommended treatments. AI notes repeated filler or disorganized logic. Collaboration fosters group rounds.",
+          "activities": [
+            "Grand Rounds Simulation (20 XP): user presents a complicated case in 3–5 min, covering background, labs, plan. AI flags if user omits key details.",
+            "Mini Quiz: 5 Qs about best transitions or signposting in case presentations, +1 XP each.",
+            "Peer Panel: group chat critique, awarding +5 XP once revised."
+          ],
+          "objectives": [
+            "Orchestrate advanced-level case presentations in clinical forums",
+            "Summarize findings, differential diagnoses, and recommended management with clarity"
+          ],
+          "badgeUponCompletion": "Rounds Presenter"
+        },
+        {
+          "lessonId": 1912,
+          "lessonNumber": 12,
+          "lessonTitle": "Handling Media & Public Health Announcements",
+          "summary": "Senior medical professionals may speak to media or the public. Earn XP for official-sounding statements about outbreaks, vaccination drives. AI flags repeated over-simplification or technical jargon. Collaboration fosters crisis-based communication.",
+          "activities": [
+            "Press Statement (15 XP): user delivers a 2–3 min talk about a health advisory, AI notes repeated shortfalls if too technical or vague.",
+            "Mini Quiz: 5 Qs about bridging public vs. medical language, +1 XP each correct.",
+            "Team Chat: share a short press release snippet, awarding +5 XP if refined."
+          ],
+          "objectives": [
+            "Communicate advanced public health info for general audiences",
+            "Balance official tone with approachable clarity"
+          ],
+          "badgeUponCompletion": "Public Health Announcer"
+        },
+        {
+          "lessonId": 1913,
+          "lessonNumber": 13,
+          "lessonTitle": "Peer & Subordinate Supervision",
+          "summary": "Senior roles require instructing junior doctors or healthcare staff in English: giving feedback on charting, leading departmental briefings. Earn XP for constructive tone. AI micro-lessons if user reverts to abrupt or overly complex forms. Collaboration fosters supervisory scenario tasks.",
+          "activities": [
+            "Department Briefing (15 XP): user simulates a short staff update. AI logs repeated filler or confusion.",
+            "Mini Quiz: 5 Qs about best ways to correct junior staff politely, +1 XP each correct approach.",
+            "Peer Collaboration: share your approach to subordinate feedback, awarding +5 XP once peers confirm clarity."
+          ],
+          "objectives": [
+            "Manage advanced-level departmental communication",
+            "Correct or guide junior staff with clarity, respect"
+          ],
+          "badgeUponCompletion": "Supervision Pro"
+        },
+        {
+          "lessonId": 1914,
+          "lessonNumber": 14,
+          "lessonTitle": "Advanced Error Analysis & Final Polish",
+          "summary": "Review your AI-logged mistakes in medical contexts—terminology confusion, incomplete disclaimers, unclear instructions. Earn XP for systematic corrections. Collaboration fosters final reflection on improvement.",
+          "activities": [
+            "Mini Quiz (5 XP): fix 5 repeated user-specific slip-ups from prior lessons.",
+            "Short Reflection: user writes 3 lines on top improvements in medical English. +10 XP if well-structured.",
+            "Team Chat: share final goals for mastery, awarding +5 XP once peers confirm progress."
+          ],
+          "objectives": [
+            "Address persistent advanced medical communication mistakes",
+            "Consolidate all improvements for final demonstration"
+          ],
+          "badgeUponCompletion": "MedEnglish Polisher"
+        },
+        {
+          "lessonId": 1915,
+          "lessonNumber": 15,
+          "lessonTitle": "Comprehensive Mock: Complex Medical Scenario",
+          "summary": "Simulate a 10–12 minute advanced scenario: from triage call to patient counseling, then a short staff briefing. Earn XP for each accurate segment. AI logs or corrects final repeated errors. Collaboration fosters group feedback panel.",
+          "activities": [
+            "Comprehensive Role-play (30 XP): user navigates multiple steps—urgent triage, family consult, internal staff notes. Minimal repeated errors => XP bonus.",
+            "Peer Panel: group chat critiques each segment, awarding +5 XP after improvements.",
+            "Daily Streak Bonus: +5 XP for consistent usage leading to final project."
+          ],
+          "objectives": [
+            "Demonstrate advanced-level medical communication across diverse scenarios",
+            "Manage patient, family, and staff interactions seamlessly"
+          ],
+          "badgeUponCompletion": "Mock Medical Hero"
+        },
+        {
+          "lessonId": 1916,
+          "lessonNumber": 16,
+          "lessonTitle": "Final Showcase: Advanced Medical Communicator",
+          "summary": "Deliver your best advanced medical English performance—like a ‘Grand Rounds + Press Statement + Patient Counseling’ composite. Earn the “Medical English (Advanced) Star” badge if minimal repeated mistakes. AI highlights real-time corrections.",
+          "activities": [
+            "Ultimate Medical Simulation: 10–15 min covering case presentation, short patient conversation, and a quick public health notice. Each segment done well = +10 XP, up to 50 total.",
+            "Teacher/AI final scoreboard: awarding large XP if repeated errors are minimal.",
+            "Reflection: user celebrates progress from Lesson 1 to advanced mastery."
+          ],
+          "objectives": [
+            "Show mastery of advanced medical communication in multiple contexts",
+            "Earn top-tier feedback, ensuring readiness for high-level healthcare roles"
+          ],
+          "badgeUponCompletion": "Medical English (Advanced) Star"
+        }
+      ]
+    },
+    {
+      "courseId": 20,
+      "title": "Tutor’s English Kit (Advanced)",
+      "level": "Advanced",
+      "languageInstruction": "Fully English",
+      "lessons": [
+        {
+          "lessonId": 2001,
+          "lessonNumber": 1,
+          "lessonTitle": "Becoming an Advanced English Tutor",
+          "summary": "Meet Jade, an English tutor who wants to refine advanced teaching strategies, handle diverse learner queries, and foster interactive classes. Earn daily streak XP to maintain momentum; AI tracks repeated structural or instructional slip-ups.",
+          "activities": [
+            "Mini Quiz (5 XP): identify advanced tutoring lines vs. basic instructions (e.g., “Let’s analyze your error log…”).",
+            "Reflection: share 2 top challenges in advanced-level tutoring, +5 XP if done quickly.",
+            "AI micro-lesson if user reverts to teacher-centered or overly formal language ignoring student engagement."
+          ],
+          "objectives": [
+            "Recognize advanced teaching approaches for English tutors",
+            "Set personal goals for high-level English instruction"
+          ],
+          "badgeUponCompletion": "Tutor Basics"
+        },
+        {
+          "lessonId": 2002,
+          "lessonNumber": 2,
+          "lessonTitle": "Designing High-Level Syllabi & Lesson Plans",
+          "summary": "Craft advanced lesson outlines for different learner profiles (exam prep, business, academic). Earn XP for structured planning. AI highlights repeated filler or disorganized objectives. Collaboration fosters group lesson-plan sharing.",
+          "activities": [
+            "Syllabus Draft (15 XP): user composes a 4-week advanced plan for a hypothetical group. AI logs repeated omissions of key details.",
+            "Mini Quiz: 5 Qs on best objective writing or outcome statements, +1 XP each correct.",
+            "Peer Chat: share your plan for feedback, awarding +5 XP once revised."
+          ],
+          "objectives": [
+            "Create advanced-level English lesson plans with clarity",
+            "Match objectives to learner needs effectively"
+          ],
+          "badgeUponCompletion": "Lesson Planner"
+        },
+        {
+          "lessonId": 2003,
+          "lessonNumber": 3,
+          "lessonTitle": "Error Correction Techniques for Advanced Learners",
+          "summary": "Dive into supportive vs. direct correction methods, recasts, elicitation, etc. Earn XP for demonstrating balanced feedback. AI micro-lessons if you repeatedly over-correct or skip key student errors. Collaboration fosters error-correction role-plays.",
+          "activities": [
+            "Role-play (15 XP): user addresses a typical advanced grammar slip from a hypothetical student, showing gentle correction. AI checks tone.",
+            "Mini Quiz: 5 Qs on correction strategies, +1 XP each correct.",
+            "Team Chat: share a short example of 'recast' or 'elicitation,' awarding +5 XP once refined."
+          ],
+          "objectives": [
+            "Adopt advanced correction strategies with minimal student frustration",
+            "Balance supportive feedback with precise error highlighting"
+          ],
+          "badgeUponCompletion": "Correction Strategist"
+        },
+        {
+          "lessonId": 2004,
+          "lessonNumber": 4,
+          "lessonTitle": "Teaching Pronunciation & Accent Refinement",
+          "summary": "Advanced learners need subtle accent coaching. Earn XP for knowledge of phonetic nuances, minimal pair drills, stress patterns. AI logs if your demos contain repeated unclear instructions. Collaboration fosters mini group practice sessions.",
+          "activities": [
+            "Pronunciation Drill (15 XP): user demonstrates advanced mouth positioning for tricky consonants or vowel shifts. AI checks clarity.",
+            "Mini Quiz: 5 Qs on stress/tone differences in advanced words, +1 XP each correct.",
+            "Team Chat: each user posts a short clip for accent feedback, awarding +5 XP once improved."
+          ],
+          "objectives": [
+            "Refine advanced-level accent coaching methods",
+            "Give precise feedback on stress, rhythm, and intonation"
+          ],
+          "badgeUponCompletion": "Accent Coach"
+        },
+        {
+          "lessonId": 2005,
+          "lessonNumber": 5,
+          "lessonTitle": "Handling Diverse Learning Styles & Levels",
+          "summary": "Advanced classes may have varied backgrounds—some focusing on business English, others on academic writing. Earn XP by tailoring tasks. AI micro-lessons if user lumps all learners together without differentiation. Collaboration fosters scenario-based grouping tasks.",
+          "activities": [
+            "Mini Quiz: 5 Qs about adapting tasks for different learner goals, +1 XP each correct.",
+            "Role-play (10 XP): user modifies a speaking activity for a business client vs. an exam prep student. AI tracks if user truly differentiates tasks.",
+            "Daily Streak Bonus: +5 XP for consistent usage."
+          ],
+          "objectives": [
+            "Adapt advanced lessons for varied proficiency or goals",
+            "Maintain inclusivity, ensuring each learner is challenged"
+          ],
+          "badgeUponCompletion": "Learner Differentiation"
+        },
+        {
+          "lessonId": 2006,
+          "lessonNumber": 6,
+          "lessonTitle": "Integrating Technology & Online Tools",
+          "summary": "Use advanced EdTech—digital whiteboards, interactive grammar apps, real-time quizzes. Earn XP for seamless integration. AI logs repeated confusion with instructions or ignoring screen-sharing etiquette. Collaboration fosters tool-sharing sessions.",
+          "activities": [
+            "Tool Demo (15 XP): user showcases an advanced grammar or vocab platform. AI checks if instructions are crisp.",
+            "Mini Quiz: pick correct netiquette lines among 5 tool-usage scenarios, +1 XP each correct.",
+            "Team Chat: post your favorite EdTech tool for advanced learners, awarding +5 XP once peers discuss."
+          ],
+          "objectives": [
+            "Incorporate advanced EdTech resources into lessons smoothly",
+            "Provide clear user instructions for online platforms"
+          ],
+          "badgeUponCompletion": "Tech Integrator"
+        },
+        {
+          "lessonId": 2007,
+          "lessonNumber": 7,
+          "lessonTitle": "Advanced Conversation & Debate Sessions",
+          "summary": "Teach high-level discussion classes—debates on global issues, role-play controversies. Earn XP for balancing moderate, neutral facilitation. AI flags repeated teacher domination or ignoring quieter students. Collaboration fosters mini debate tasks.",
+          "activities": [
+            "Debate Facilitation (15 XP): user moderates a 5-min advanced debate on a chosen topic. AI logs if user fails to give equal floor time.",
+            "Mini Quiz: best approach among 5 lines for controlling heated arguments, +1 XP each correct.",
+            "Team Chat: share your chosen debate topic, awarding +5 XP upon refinement."
+          ],
+          "objectives": [
+            "Host advanced-level discussion or debate sessions effectively",
+            "Ensure balanced speaking opportunities for all participants"
+          ],
+          "badgeUponCompletion": "Debate Facilitator"
+        },
+        {
+          "lessonId": 2008,
+          "lessonNumber": 8,
+          "lessonTitle": "Teaching Advanced Writing & Essay Structuring",
+          "summary": "Assist learners with formal essays, research proposals, or business reports. Earn XP for identifying nuanced grammar or style errors. AI micro-lessons if you skip referencing or transitions. Collaboration fosters group writing tasks.",
+          "activities": [
+            "Essay Workshop (15 XP): user critiques a 200-word advanced essay for style, grammar, coherence. AI checks if user addresses key issues.",
+            "Mini Quiz: 5 Qs about advanced transitional phrases or referencing, +1 XP each correct.",
+            "Team Chat: share a short writing prompt or correction approach, awarding +5 XP once integrated."
+          ],
+          "objectives": [
+            "Offer advanced writing guidance, focusing on style & structure",
+            "Use effective editing strategies for formal or academic texts"
+          ],
+          "badgeUponCompletion": "Writing Coach"
+        },
+        {
+          "lessonId": 2009,
+          "lessonNumber": 9,
+          "lessonTitle": "Evaluating Progress & Testing Strategies",
+          "summary": "Design advanced-level quizzes, mock tests, or real-time interviews for your students. Earn XP by aligning tests with objectives. AI logs repeated mismatch between tasks and goals. Collaboration fosters mock test creation.",
+          "activities": [
+            "Test Design (15 XP): user creates a mini advanced test (reading passage + grammar Qs). AI logs clarity or scope.",
+            "Mini Quiz: 5 Qs about aligning test items with lesson goals, +1 XP each correct.",
+            "Peer Check: share your test with the group, awarding +5 XP once refined."
+          ],
+          "objectives": [
+            "Construct advanced-level assessments matching objectives",
+            "Avoid ambiguous or off-level questions"
+          ],
+          "badgeUponCompletion": "Assessment Planner"
+        },
+        {
+          "lessonId": 2010,
+          "lessonNumber": 10,
+          "lessonTitle": "Coaching Pronunciation & Fluency for Non-Native Teachers",
+          "summary": "Support advanced-level trainees who themselves teach English but need nuance in accent or fluency. Earn XP for peer-like coaching style. AI flags repeated teacher-centered approach. Collaboration fosters co-teaching role-plays.",
+          "activities": [
+            "Co-Teacher Simulation (15 XP): user guides a 'non-native teacher' with advanced mouth-shape or intonation corrections. AI checks supportive tone.",
+            "Mini Quiz: 5 Qs about peer-level coaching do’s/don’ts, +1 XP each correct.",
+            "Team Chat: share 2 lines about supporting a colleague’s accent improvement, awarding +5 XP once peer feedback is addressed."
+          ],
+          "objectives": [
+            "Elevate advanced-level peers in accent or fluency teaching",
+            "Maintain a respectful, coach-like approach"
+          ],
+          "badgeUponCompletion": "Peer Coach"
+        },
+        {
+          "lessonId": 2011,
+          "lessonNumber": 11,
+          "lessonTitle": "Building Learner Autonomy & Motivation",
+          "summary": "Guide advanced learners to self-direct: recommended reading, writing logs, reflection diaries. Earn XP for creative motivation ideas. AI micro-lessons if user’s suggestions are too general. Collaboration fosters resource exchange.",
+          "activities": [
+            "Motivation Brainstorm (15 XP): user proposes 3 advanced autonomy-building tasks. AI logs clarity or feasibility.",
+            "Mini Quiz: 5 scenario Qs about sustaining motivation, +1 XP each correct.",
+            "Team Chat: share favorite advanced reading or journaling resource, awarding +5 XP upon group approval."
+          ],
+          "objectives": [
+            "Implement advanced autonomy techniques for high-level learners",
+            "Encourage consistent out-of-class practice"
+          ],
+          "badgeUponCompletion": "Motivation Driver"
+        },
+        {
+          "lessonId": 2012,
+          "lessonNumber": 12,
+          "lessonTitle": "Online Class Management & Group Dynamics",
+          "summary": "Handle advanced-level Zoom classes, breakout rooms, or forum discussions. Earn XP for well-paced instructions. AI flags repeated ignoring of quieter students or disorganized groupings. Collaboration fosters group activity planning.",
+          "activities": [
+            "Online Class Role-play (15 XP): user runs a 3–5 min advanced group activity. AI tracks instructions clarity, equal speaking chances.",
+            "Mini Quiz: 5 Qs about advanced breakout room tasks, +1 XP each correct.",
+            "Daily Streak Bonus: +5 XP for consistent usage leading up to final tasks."
+          ],
+          "objectives": [
+            "Facilitate advanced-level online sessions with structured tasks",
+            "Balance student talk time in digital formats"
+          ],
+          "badgeUponCompletion": "Online Tutor"
+        },
+        {
+          "lessonId": 2013,
+          "lessonNumber": 13,
+          "lessonTitle": "Diagnostic & Placement Evaluations",
+          "summary": "For advanced tutoring, initial or mid-course diagnostic tests are crucial. Earn XP for designing or analyzing placement results. AI logs repeated mismatch between level descriptors and tasks. Collaboration fosters sample test creation.",
+          "activities": [
+            "Diagnostic Design (15 XP): user compiles a quick advanced-level test to gauge writing, speaking, grammar. AI logs completeness or clarity.",
+            "Mini Quiz: 5 Qs on interpreting results and giving feedback, +1 XP each correct.",
+            "Team Chat: share your test approach, awarding +5 XP once refined by peers."
+          ],
+          "objectives": [
+            "Create accurate advanced diagnostic tools",
+            "Match test outcomes to correct learner placement or focus"
+          ],
+          "badgeUponCompletion": "Placement Evaluator"
+        },
+        {
+          "lessonId": 2014,
+          "lessonNumber": 14,
+          "lessonTitle": "Error Analysis & Tutor Self-Reflection",
+          "summary": "Review your own AI-logged mistakes while tutoring advanced learners. Earn XP for addressing repeated slip-ups (over-lecture, grammar confusion). Collaboration fosters final reflection on your teaching approach. Prepare for final project next!",
+          "activities": [
+            "Mini Quiz (5 XP): correct 5 typical advanced-level tutoring mistakes from your logs.",
+            "Short Reflection (10 XP): user notes 3 improvements since starting the course. AI checks coherence.",
+            "Peer Chat: share final improvement plan, awarding +5 XP once peers confirm readiness."
+          ],
+          "objectives": [
+            "Address repeated tutoring communication or approach errors",
+            "Consolidate best practices for advanced English teaching"
+          ],
+          "badgeUponCompletion": "Tutor Polisher"
+        },
+        {
+          "lessonId": 2015,
+          "lessonNumber": 15,
+          "lessonTitle": "Comprehensive Tutoring Simulation",
+          "summary": "Lead a 15–20 minute advanced tutoring session with multiple elements: error correction, short debate, writing feedback. Earn XP as AI logs real-time slip-ups. Collaboration fosters peer ‘observer’ roles for feedback.",
+          "activities": [
+            "Simulation (30 XP): user organizes a structured advanced class (speaking, grammar, writing). Minimal repeated errors => XP bonus.",
+            "Peer Panel: each observer notes 1 improvement or praise. +5 XP once you address feedback.",
+            "Daily Streak Bonus: +5 XP leading to final project."
+          ],
+          "objectives": [
+            "Show integrated advanced tutoring skills in multiple activities",
+            "Handle wide-ranging student needs with clarity"
+          ],
+          "badgeUponCompletion": "Tutor Simulation Hero"
+        },
+        {
+          "lessonId": 2016,
+          "lessonNumber": 16,
+          "lessonTitle": "Final Showcase: Advanced Tutor’s Mastery",
+          "summary": "Deliver a 20–30 minute advanced lesson plan demonstration (recorded or live). Incorporate edgy error correction, a mini discussion/debate, plus writing feedback. Earn the “Advanced Tutor’s English Kit Star” badge if minimal repeated mistakes. AI tracks final stats.",
+          "activities": [
+            "Ultimate Lesson Demo: user conducts a multi-section advanced class, awarding up to 50 XP for perfect structure, inclusive tasks, minimal repeated errors.",
+            "Teacher/AI final scoreboard: large XP reward if your repeated error count is low.",
+            "Reflection: user celebrates transformation from Lesson 1 to full advanced tutoring mastery."
+          ],
+          "objectives": [
+            "Demonstrate advanced-level tutoring across speaking, grammar, writing tasks",
+            "Model precise, engaging instruction with minimal slip-ups"
+          ],
+          "badgeUponCompletion": "Advanced Tutor’s English Kit Star"
+        }
+      ]
+    }
+  ]
+}
