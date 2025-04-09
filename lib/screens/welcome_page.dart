@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
 import 'package:fluentedge_app/localization/app_localizations.dart';
-import '../main.dart';
+import 'package:fluentedge_app/main.dart';
 
-class WelcomePage extends StatefulWidget {
+class WelcomePage extends ConsumerStatefulWidget {
   final Function(String, String) onUserInfoSubmitted;
 
   const WelcomePage({
@@ -12,10 +13,10 @@ class WelcomePage extends StatefulWidget {
   });
 
   @override
-  State<WelcomePage> createState() => _WelcomePageState();
+  ConsumerState<WelcomePage> createState() => _WelcomePageState();
 }
 
-class _WelcomePageState extends State<WelcomePage> {
+class _WelcomePageState extends ConsumerState<WelcomePage> {
   String selectedLanguage = "English";
   final TextEditingController _nameController = TextEditingController();
   final FocusNode _nameFocusNode = FocusNode();
@@ -63,23 +64,23 @@ class _WelcomePageState extends State<WelcomePage> {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
-          const SizedBox(height: 20),
+          const SizedBox(height: 10), // reduced
           Image.asset(
             'assets/images/FluentEdge Logo.png',
-            width: 200,
-            height: 200,
+            width: 160, // reduced
+            height: 160,
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 2), // reduced
           Lottie.asset(
             'assets/animations/ai_mentor_welcome.json',
-            width: 250,
-            height: 250,
+            width: 230, // slightly smaller
+            height: 220, // reduced
             fit: BoxFit.cover,
             errorBuilder: (context, error, stackTrace) {
               return const Icon(Icons.animation, size: 100, color: Colors.grey);
             },
           ),
-          const SizedBox(height: 15),
+          const SizedBox(height: 12), // reduced
           Text(
             localizations.getLocalizedWelcomeMessage(selectedLanguage),
             textAlign: TextAlign.center,
@@ -90,7 +91,7 @@ class _WelcomePageState extends State<WelcomePage> {
               color: Color(0xFF0D47A1),
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 8), // reduced
           Text(
             localizations.getLocalizedSubtitle(selectedLanguage),
             textAlign: TextAlign.center,
@@ -101,7 +102,7 @@ class _WelcomePageState extends State<WelcomePage> {
               color: Colors.black54,
             ),
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 20), // reduced
         ],
       ),
     );
@@ -163,9 +164,9 @@ class _WelcomePageState extends State<WelcomePage> {
                     setState(() {
                       selectedLanguage = newValue!;
                       if (newValue == "हिंदी") {
-                        FluentEdgeApp.setLocale(context, const Locale('hi'));
+                        FluentEdgeApp.updateLocale(ref, const Locale('hi'));
                       } else {
-                        FluentEdgeApp.setLocale(context, const Locale('en'));
+                        FluentEdgeApp.updateLocale(ref, const Locale('en'));
                       }
                     });
                   },

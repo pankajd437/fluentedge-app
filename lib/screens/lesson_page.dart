@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluentedge_app/constants.dart';
+import 'package:fluentedge_app/screens/lesson_activity_page.dart';
 
 class LessonPage extends StatelessWidget {
   final Map<String, dynamic> course;
@@ -11,10 +12,23 @@ class LessonPage extends StatelessWidget {
     final String title = course["title"] ?? "Course";
     final IconData icon = course["icon"] ?? Icons.menu_book;
     final Color color = course["color"] ?? kPrimaryBlue;
-    final List<String> lessons = List<String>.from(course["lessons"] ?? []);
+    final List lessonsRaw = course["lessons"] ?? [];
 
-    // 🔐 Fake lesson lock logic (e.g., only first 3 are unlocked)
     const int unlockedLessons = 3;
+
+    final List<Map<String, dynamic>> lessons = lessonsRaw.map<Map<String, dynamic>>((lesson) {
+      if (lesson is Map && lesson.containsKey('title')) {
+        return {
+          'title': lesson['title'].toString().trim(),
+          'lessonId': lesson['lessonId'] ?? '',
+        };
+      } else {
+        return {
+          'title': lesson.toString().trim(),
+          'lessonId': '',
+        };
+      }
+    }).toList();
 
     return Scaffold(
       backgroundColor: kBackgroundSoftBlue,
@@ -23,7 +37,7 @@ class LessonPage extends StatelessWidget {
         centerTitle: true,
         title: Text(
           "📘 $title",
-          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
       ),
       body: Padding(
@@ -31,24 +45,28 @@ class LessonPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Hero avatar
             Center(
               child: Hero(
                 tag: title,
                 child: CircleAvatar(
-                  radius: 32,
+                  radius: 34,
                   backgroundColor: color.withOpacity(0.15),
                   child: Icon(icon, size: 32, color: color),
                 ),
               ),
             ),
             const SizedBox(height: 24),
+
+            // Progress bar
             LinearProgressIndicator(
               value: (unlockedLessons / lessons.length).clamp(0.0, 1.0),
               minHeight: 8,
               backgroundColor: color.withOpacity(0.1),
               valueColor: AlwaysStoppedAnimation<Color>(color),
             ),
-            const SizedBox(height: 14),
+            const SizedBox(height: 16),
+
             const Text(
               "📖 Lessons Included",
               style: TextStyle(
@@ -57,74 +75,103 @@ class LessonPage extends StatelessWidget {
                 color: kPrimaryIconBlue,
               ),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 10),
+
+            // Lesson list
             Expanded(
-              child: ListView.builder(
+              child: ListView.separated(
                 itemCount: lessons.length,
+                separatorBuilder: (_, __) => const SizedBox(height: 12),
                 itemBuilder: (context, index) {
-                  final String lesson = lessons[index];
+                  final lesson = lessons[index];
                   final bool isUnlocked = index < unlockedLessons;
 
                   return AnimatedContainer(
-                    duration: const Duration(milliseconds: 350),
-                    curve: Curves.easeOut,
-                    margin: const EdgeInsets.only(bottom: 12),
-                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                    duration: const Duration(milliseconds: 300),
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: isUnlocked ? Colors.white : const Color(0xFFF0F4F8),
+                      border: Border.all(
+                        color: isUnlocked ? color.withOpacity(0.25) : Colors.grey.shade300,
+                      ),
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: color.withOpacity(0.2)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: color.withOpacity(0.07),
-                          blurRadius: 6,
-                          offset: const Offset(0, 3),
-                        ),
-                      ],
+                      boxShadow: isUnlocked
+                          ? [
+                              BoxShadow(
+                                color: color.withOpacity(0.08),
+                                blurRadius: 6,
+                                offset: const Offset(0, 3),
+                              ),
+                            ]
+                          : [],
                     ),
-                    child: Row(
-                      children: [
-                        AnimatedSwitcher(
-                          duration: const Duration(milliseconds: 300),
-                          child: isUnlocked
-                              ? Icon(Icons.lock_open, color: color, size: 20, key: ValueKey("open$index"))
-                              : Icon(Icons.lock_outline, color: Colors.grey.shade400, size: 20, key: ValueKey("lock$index")),
-                        ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: Text(
-                            lesson,
-                            style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w500,
-                              color: isUnlocked ? Colors.black87 : Colors.grey.shade500,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(12),
+                      onTap: isUnlocked
+                          ? () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LessonActivityPage(lesson: lesson),
+                                ),
+                              );
+                            }
+                          : null,
+                      child: Row(
+                        children: [
+                          AnimatedSwitcher(
+                            duration: const Duration(milliseconds: 300),
+                            child: Icon(
+                              isUnlocked ? Icons.lock_open_rounded : Icons.lock_outline_rounded,
+                              key: ValueKey(isUnlocked),
+                              color: isUnlocked ? kPrimaryBlue : Colors.grey.shade500,
+                              size: 22,
                             ),
                           ),
-                        ),
-                      ],
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Text(
+                              lesson['title'],
+                              style: TextStyle(
+                                fontSize: 13.5,
+                                fontWeight: FontWeight.w500,
+                                color: isUnlocked ? Colors.black87 : Colors.grey.shade600,
+                              ),
+                            ),
+                          ),
+                          if (isUnlocked)
+                            const Icon(Icons.arrow_forward_ios, size: 14, color: Colors.grey),
+                        ],
+                      ),
                     ),
                   );
                 },
               ),
             ),
-            const SizedBox(height: 10),
+
+            const SizedBox(height: 20),
+
+            // CTA Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
                 onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text("🚀 Starting your first lesson...")),
+                  final unlockedLesson = lessons.getRange(0, unlockedLessons).first;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LessonActivityPage(lesson: unlockedLesson),
+                    ),
                   );
                 },
-                icon: const Icon(Icons.play_arrow),
+                icon: const Icon(Icons.play_arrow_rounded),
                 label: const Text("Continue"),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: kAccentGreen,
                   foregroundColor: Colors.white,
+                  elevation: 2,
                   padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 ),
               ),
             ),

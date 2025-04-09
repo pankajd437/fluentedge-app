@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:fluentedge_app/localization/app_localizations.dart';
 import 'package:fluentedge_app/data/courses_list.dart';
 import 'package:fluentedge_app/screens/course_detail_page.dart';
@@ -61,7 +62,7 @@ class SmartCourseRecommendationPage extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.popUntil(context, (route) => route.isFirst),
+          onPressed: () => context.go('/welcome'),
         ),
       ),
       body: SafeArea(
@@ -83,7 +84,7 @@ class SmartCourseRecommendationPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final courseTitle = recommendedCourses[index];
                     final courseData = courses.firstWhere(
-                      (c) => c["title"].toLowerCase() == courseTitle.toLowerCase(),
+                      (c) => (c["title"] as String).toLowerCase() == courseTitle.toLowerCase(),
                       orElse: () => {
                         "title": courseTitle,
                         "icon": _getIconForCourse(courseTitle),
@@ -162,16 +163,7 @@ class SmartCourseRecommendationPage extends StatelessWidget {
                                 ),
                                 ElevatedButton(
                                   onPressed: () {
-                                    Navigator.of(context).push(
-                                      PageRouteBuilder(
-                                        pageBuilder: (_, __, ___) =>
-                                            CourseDetailPage(course: courseData),
-                                        transitionDuration: const Duration(milliseconds: 300),
-                                        transitionsBuilder: (context, animation, _, child) {
-                                          return FadeTransition(opacity: animation, child: child);
-                                        },
-                                      ),
-                                    );
+                                    context.push('/courseDetail', extra: courseData);
                                   },
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: const Color(0xFF43A047),
@@ -205,7 +197,7 @@ class SmartCourseRecommendationPage extends StatelessWidget {
               Center(
                 child: TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/coursesDashboard');
+                    context.go('/coursesDashboard');
                   },
                   child: Text(
                     isHindi ? "🔍 सभी कोर्स देखें" : "🔍 Explore All Courses",

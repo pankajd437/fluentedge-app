@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:fluentedge_app/localization/app_localizations.dart';
 import 'package:fluentedge_app/data/courses_list.dart';
 import 'package:fluentedge_app/screens/course_detail_page.dart';
@@ -9,13 +10,23 @@ class CoursesDashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context);
-    final isHindi = localizations?.locale.languageCode == 'hi';
+    final routeExtra = GoRouterState.of(context).extra;
+    final langPref = (routeExtra is Map && routeExtra['languagePreference'] is String)
+        ? routeExtra['languagePreference'] as String
+        : null;
+
+    final bool isHindi = langPref == 'हिंदी' ||
+        (langPref == null && localizations?.locale.languageCode == 'hi');
 
     return Scaffold(
       backgroundColor: const Color(0xFFF2F6FB),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(56),
         child: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
+            onPressed: () => context.go('/welcome'),
+          ),
           flexibleSpace: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -37,8 +48,21 @@ class CoursesDashboardPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // 🔗 Top Navigation Links
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _navButton(context, "🏅 ${isHindi ? "उपलब्धियां" : "Achievements"}", '/achievements'),
+                  _navButton(context, "👤 ${isHindi ? "डैशबोर्ड" : "Dashboard"}", '/userDashboard'),
+                ],
+              ),
+            ),
+
+            // 📘 Resume Questionnaire
             InkWell(
-              onTap: () => Navigator.pushNamed(context, '/questionnaire'),
+              onTap: () => context.go('/questionnaire'),
               child: Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(10),
@@ -61,7 +85,9 @@ class CoursesDashboardPage extends StatelessWidget {
                 ),
               ),
             ),
+
             const SizedBox(height: 20),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
@@ -74,6 +100,7 @@ class CoursesDashboardPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
+
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -145,15 +172,7 @@ class CoursesDashboardPage extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Navigator.of(context).push(
-                                    PageRouteBuilder(
-                                      pageBuilder: (_, __, ___) => CourseDetailPage(course: course),
-                                      transitionDuration: const Duration(milliseconds: 300),
-                                      transitionsBuilder: (context, animation, _, child) {
-                                        return FadeTransition(opacity: animation, child: child);
-                                      },
-                                    ),
-                                  );
+                                  context.go('/courseDetail', extra: course);
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFF43A047),
@@ -188,6 +207,20 @@ class CoursesDashboardPage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _navButton(BuildContext context, String label, String route) {
+    return OutlinedButton.icon(
+      onPressed: () => context.go(route),
+      icon: const Icon(Icons.arrow_forward_ios, size: 14),
+      label: Text(label, style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500)),
+      style: OutlinedButton.styleFrom(
+        foregroundColor: Colors.blue.shade800,
+        side: BorderSide(color: Colors.blue.shade200),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
     );
   }

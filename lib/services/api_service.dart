@@ -1,15 +1,63 @@
 import 'dart:convert';
+import 'dart:developer' as developer;
 import 'package:http/http.dart' as http;
+import 'package:fluentedge_app/constants.dart'; // For ApiConfig
 
-/// API service for FluentEdge backend integration
+/// ✅ API response model
+class UserResponseResult {
+  final String status;
+  final String userId;
+  final List<dynamic> recommendedCourses;
+
+  UserResponseResult({
+    required this.status,
+    required this.userId,
+    required this.recommendedCourses,
+  });
+
+  factory UserResponseResult.fromJson(Map<String, dynamic> json) {
+    return UserResponseResult(
+      status: json['status'].toString(), // Cast defensive
+      userId: json['user_id'].toString(), // Cast defensive
+      recommendedCourses: json['recommended_courses'] ?? [],
+    );
+  }
+}
+
+class CourseDetails {
+  final List<dynamic> courses;
+
+  CourseDetails({required this.courses});
+
+  factory CourseDetails.fromJson(Map<String, dynamic> json) {
+    return CourseDetails(courses: json['courses'] ?? []);
+  }
+}
+
 class ApiService {
-  // ======================== CONFIG ========================
-  static const String baseUrl = 'http://localhost:8000/api/v1';
+  // 🌐 Environment setup
+  static String baseUrl = ApiConfig.local;
+  static const Duration requestTimeout = Duration(seconds: 10);
 
-  // ====================== API METHODS ======================
+  static void setEnvironment(String env) {
+    switch (env) {
+      case 'local':
+        baseUrl = ApiConfig.local;
+        break;
+      case 'staging':
+        baseUrl = ApiConfig.staging;
+        break;
+      case 'prod':
+        baseUrl = ApiConfig.production;
+        break;
+      default:
+        baseUrl = ApiConfig.local;
+    }
+    developer.log('🌐 API environment set to: $env', name: 'ApiService');
+  }
 
-  /// Sends user responses to the backend and returns recommended courses
-  static Future<Map<String, dynamic>> saveUserResponses({
+  /// 🔁 Save user responses with retry support
+  static Future<UserResponseResult> saveUserResponses({
     required String name,
     required String motivation,
     required String englishLevel,
@@ -19,9 +67,9 @@ class ApiService {
     required String learningTimeline,
     required int age,
     required String gender,
+    int retryCount = 2,
   }) async {
     final url = Uri.parse('$baseUrl/save-responses');
-
     final body = jsonEncode({
       'name': name,
       'motivation': motivation,
@@ -34,77 +82,74 @@ class ApiService {
       'gender': gender,
     });
 
-    try {
-      final response = await http.post(
-        url,
-        headers: {'Content-Type': 'application/json'},
-        body: body,
-      );
+    int attempt = 0;
+    while (attempt <= retryCount) {
+      try {
+        final response = await http
+            .post(url, headers: {'Content-Type': 'application/json'}, body: body)
+            .timeout(requestTimeout);
 
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        return {
-          "status": data['status'],
-          "user_id": data['user_id'],
-          "recommended_courses": data['recommended_courses'] ?? [],
-        };
-      } else {
-        final error = jsonDecode(response.body);
-        throw Exception(
-          'Failed to save user responses.\nStatus: ${response.statusCode}\nMessage: ${error['detail'] ?? response.body}',
-        );
+        if (response.statusCode == 200) {
+          developer.log('✅ saveUserResponses success', name: 'ApiService');
+          final decoded = jsonDecode(response.body);
+          return UserResponseResult.fromJson(decoded);
+        } else {
+          final error = jsonDecode(response.body);
+          developer.log(
+            '❌ Error response from saveUserResponses: ${response.statusCode} - ${response.body}',
+            name: 'ApiService',
+          );
+          throw Exception(
+            'Failed to save user responses.\nStatus: ${response.statusCode}\nMessage: ${error['detail'] ?? response.body}',
+          );
+        }
+      } catch (e) {
+        developer.log('⚠️ Attempt ${attempt + 1} failed for saveUserResponses: $e', name: 'ApiService');
+        if (attempt == retryCount) {
+          throw Exception('Error occurred while saving responses: $e');
+        }
+        attempt++;
+        await Future.delayed(const Duration(seconds: 2));
       }
-    } catch (e) {
-      throw Exception('Error occurred while saving responses: $e');
     }
+    throw Exception('Unable to save user responses after multiple attempts.');
   }
 
-  /// Fetch all course details (used in course list pages)
-  static Future<List<dynamic>> fetchAllCourseDetails() async {
+  /// 🔁 Fetch all course details with retry support
+  static Future<CourseDetails> fetchAllCourseDetails({int retryCount = 2}) async {
     final url = Uri.parse('$baseUrl/courses/all-details');
 
-    try {
-      final response = await http.get(
-        url,
-        headers: {'Accept': 'application/json'},
-      );
+    int attempt = 0;
+    while (attempt <= retryCount) {
+      try {
+        final response = await http
+            .get(url, headers: {'Accept': 'application/json'})
+            .timeout(requestTimeout);
 
-      if (response.statusCode == 200) {
-        return jsonDecode(response.body)['courses'];
-      } else {
-        final error = jsonDecode(response.body);
-        throw Exception(
-          'Failed to fetch course details.\nStatus: ${response.statusCode}\nMessage: ${error['detail'] ?? response.body}',
-        );
+        if (response.statusCode == 200) {
+          developer.log('✅ fetchAllCourseDetails success', name: 'ApiService');
+          return CourseDetails.fromJson(jsonDecode(response.body));
+        } else {
+          final error = jsonDecode(response.body);
+          developer.log(
+            '❌ Error response from fetchAllCourseDetails: ${response.statusCode} - ${response.body}',
+            name: 'ApiService',
+          );
+          throw Exception(
+            'Failed to fetch course details.\nStatus: ${response.statusCode}\nMessage: ${error['detail'] ?? response.body}',
+          );
+        }
+      } catch (e) {
+        developer.log('⚠️ Attempt ${attempt + 1} failed for fetchAllCourseDetails: $e', name: 'ApiService');
+        if (attempt == retryCount) {
+          throw Exception('Error occurred while fetching course details: $e');
+        }
+        attempt++;
+        await Future.delayed(const Duration(seconds: 2));
       }
-    } catch (e) {
-      throw Exception('Error occurred while fetching all course details: $e');
     }
+    throw Exception('Unable to fetch course details after multiple attempts.');
   }
 
-  // ====================== UNUSED METHODS ======================
-  /*
-  /// Fetch lessons of a specific course [Deprecated: Using local data instead]
-  static Future<List<dynamic>> fetchCourseLessons(String courseTitle) async {
-    final url = Uri.parse('$baseUrl/courses/lessons?title=${Uri.encodeComponent(courseTitle)}');
-
-    try {
-      final response = await http.get(
-        url,
-        headers: {'Accept': 'application/json'},
-      );
-
-      if (response.statusCode == 200) {
-        return jsonDecode(response.body)['lessons'];
-      } else {
-        final error = jsonDecode(response.body);
-        throw Exception(
-          'Failed to fetch lessons.\nStatus: ${response.statusCode}\nMessage: ${error['detail'] ?? response.body}',
-        );
-      }
-    } catch (e) {
-      throw Exception('Error occurred while fetching lessons: $e');
-    }
-  }
-  */
+  // 🔕 Deprecated legacy fetchCourseLessons
 }

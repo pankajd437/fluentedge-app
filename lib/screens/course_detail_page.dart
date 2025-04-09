@@ -28,28 +28,46 @@ class CourseDetailPage extends StatelessWidget {
     final Color color = course["color"] ?? Colors.blue;
     final String description = course["description"] ?? "No description available.";
     final String tag = course["tag"] ?? kFreeCourseTag;
-    final List<dynamic> lessonsRaw = course["lessons"] ?? [];
-    final List<String> lessons = lessonsRaw.cast<String>().toSet().toList();
+
+    final List lessonsRaw = course["lessons"] ?? [];
+    final List<String> lessonTitles = lessonsRaw.map<String>((lesson) {
+      if (lesson is Map && lesson.containsKey('title')) {
+        return lesson['title'].toString();
+      } else if (lesson is String) {
+        return lesson.trim();
+      } else {
+        return lesson.toString();
+      }
+    }).toList();
 
     return Scaffold(
       backgroundColor: kBackgroundSoftBlue,
       appBar: AppBar(
-        title: Text(
-          title,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-            color: Colors.white,
-          ),
-        ),
-        centerTitle: true,
         elevation: 0,
+        backgroundColor: Colors.transparent,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [kPrimaryBlue, kSecondaryBlue],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
+            ),
+          ),
+        ),
+        centerTitle: true,
+        title: Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              title,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
@@ -62,7 +80,7 @@ class CourseDetailPage extends StatelessWidget {
             children: [
               Center(
                 child: Hero(
-                  tag: title, // Hero sync by course title
+                  tag: title,
                   child: CircleAvatar(
                     radius: 32,
                     backgroundColor: color.withOpacity(0.15),
@@ -108,10 +126,15 @@ class CourseDetailPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              lessons.isEmpty
-                  ? const Text(
-                      "No lessons available at this moment.",
-                      style: TextStyle(color: Colors.black54),
+              lessonTitles.isEmpty
+                  ? const Center(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 40),
+                        child: Text(
+                          "No lessons available at this moment.",
+                          style: TextStyle(color: Colors.black54),
+                        ),
+                      ),
                     )
                   : Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,7 +148,7 @@ class CourseDetailPage extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 12),
-                        ...lessons.asMap().entries.map((entry) {
+                        ...lessonTitles.asMap().entries.map((entry) {
                           final int index = entry.key;
                           final String lesson = entry.value;
                           final Color iconColor = iconColors[index % iconColors.length];
@@ -164,7 +187,7 @@ class CourseDetailPage extends StatelessWidget {
                 child: ElevatedButton.icon(
                   icon: const Icon(Icons.rocket_launch_rounded, size: 18),
                   onPressed: () {
-                    if (lessons.isNotEmpty) {
+                    if (lessonTitles.isNotEmpty) {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
