@@ -11,6 +11,7 @@ import 'package:audioplayers_web/audioplayers_web.dart';
 import 'package:flutter_native_splash/flutter_native_splash_web.dart';
 import 'package:flutter_secure_storage_web/flutter_secure_storage_web.dart';
 import 'package:just_audio_web/just_audio_web.dart';
+import 'package:permission_handler_html/permission_handler_html.dart';
 import 'package:record_web/record_web.dart';
 import 'package:shared_preferences_web/shared_preferences_web.dart';
 import 'package:speech_to_text/speech_to_text_web.dart';
@@ -23,6 +24,7 @@ void registerPlugins([final Registrar? pluginRegistrar]) {
   FlutterNativeSplashWeb.registerWith(registrar);
   FlutterSecureStorageWeb.registerWith(registrar);
   JustAudioPlugin.registerWith(registrar);
+  WebPermissionHandler.registerWith(registrar);
   RecordPluginWeb.registerWith(registrar);
   SharedPreferencesPlugin.registerWith(registrar);
   SpeechToTextPlugin.registerWith(registrar);

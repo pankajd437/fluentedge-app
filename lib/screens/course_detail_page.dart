@@ -45,6 +45,10 @@ class CourseDetailPage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(), // ✅ Use Navigator.pop
+        ),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -79,28 +83,61 @@ class CourseDetailPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(
-                child: Hero(
-                  tag: title,
-                  child: CircleAvatar(
-                    radius: 32,
-                    backgroundColor: color.withOpacity(0.15),
-                    child: Icon(icon, size: 32, color: color),
+                child: Container(
+                  margin: const EdgeInsets.only(top: 10, bottom: 14),
+                  padding: const EdgeInsets.all(18),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: color.withOpacity(0.1),
+                    boxShadow: [
+                      BoxShadow(
+                        color: color.withOpacity(0.25),
+                        blurRadius: 12,
+                        offset: const Offset(0, 6),
+                      )
+                    ],
+                  ),
+                  child: Hero(
+                    tag: title,
+                    child: Icon(icon, size: 42, color: color),
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
+
+              Center(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: tag == "free" ? Colors.green.shade100 : Colors.orange.shade100,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    tag == "free" ? "FREE COURSE" : "PREMIUM",
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      color: tag == "free" ? Colors.green.shade700 : Colors.orange.shade700,
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 10),
+
               Center(
                 child: Text(
                   title,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                    fontSize: 14.5,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: kPrimaryIconBlue,
                   ),
                 ),
               ),
+
               const SizedBox(height: 16),
+
               Container(
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
@@ -125,7 +162,9 @@ class CourseDetailPage extends StatelessWidget {
                   ),
                 ),
               ),
+
               const SizedBox(height: 24),
+
               lessonTitles.isEmpty
                   ? const Center(
                       child: Padding(
@@ -182,7 +221,9 @@ class CourseDetailPage extends StatelessWidget {
                         }),
                       ],
                     ),
+
               const SizedBox(height: 30),
+
               Center(
                 child: ElevatedButton.icon(
                   icon: const Icon(Icons.rocket_launch_rounded, size: 18),

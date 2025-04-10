@@ -60,49 +60,62 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
   }
 
   Widget _buildHeaderSection(AppLocalizations localizations) {
+    final isHindi = selectedLanguage == "हिंदी";
+
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
       child: Column(
         children: [
-          const SizedBox(height: 10), // reduced
-          Image.asset(
-            'assets/images/FluentEdge Logo.png',
-            width: 160, // reduced
-            height: 160,
+          Material(
+            color: Colors.transparent,
+            child: Hero(
+              tag: "fluentedge-logo",
+              child: Image.asset(
+                'assets/images/FluentEdge Logo.png',
+                width: 160,
+                height: 160,
+                fit: BoxFit.contain,
+              ),
+            ),
           ),
-          const SizedBox(height: 2), // reduced
+          const SizedBox(height: 2),
           Lottie.asset(
             'assets/animations/ai_mentor_welcome.json',
-            width: 230, // slightly smaller
-            height: 220, // reduced
-            fit: BoxFit.cover,
-            errorBuilder: (context, error, stackTrace) {
-              return const Icon(Icons.animation, size: 100, color: Colors.grey);
-            },
+            width: 230,
+            height: 210,
+            fit: BoxFit.contain,
+            errorBuilder: (context, error, stackTrace) =>
+                const Icon(Icons.animation, size: 100, color: Colors.grey),
           ),
-          const SizedBox(height: 12), // reduced
+          const SizedBox(height: 8),
           Text(
-            localizations.getLocalizedWelcomeMessage(selectedLanguage),
+            isHindi
+                ? localizations.welcomeMessageHindi
+                : localizations.welcomeMessage,
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
               fontFamily: 'Poppins',
               color: Color(0xFF0D47A1),
+              height: 1.4,
             ),
           ),
-          const SizedBox(height: 8), // reduced
+          const SizedBox(height: 4),
           Text(
-            localizations.getLocalizedSubtitle(selectedLanguage),
+            isHindi
+                ? "Real-time AI guidance के साथ English बोलना सीखें। आज से शुरू करें!"
+                : localizations.welcomeSubtitle,
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w500,
               fontFamily: 'Poppins',
               color: Colors.black54,
+              height: 1.6,
             ),
           ),
-          const SizedBox(height: 20), // reduced
+          const SizedBox(height: 12),
         ],
       ),
     );
@@ -130,17 +143,16 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
             focusNode: _nameFocusNode,
             autofocus: true,
             decoration: InputDecoration(
-              labelText: localizations.getLocalizedNameFieldLabel(selectedLanguage),
+              labelText:
+                  localizations.getLocalizedNameFieldLabel(selectedLanguage),
               labelStyle: const TextStyle(
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Poppins',
               ),
               border: const OutlineInputBorder(),
               prefixIcon: const Icon(Icons.person, color: Color(0xFF0D47A1)),
-              contentPadding: const EdgeInsets.symmetric(
-                vertical: 15,
-                horizontal: 15,
-              ),
+              contentPadding:
+                  const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
             ),
             textInputAction: TextInputAction.done,
           ),
@@ -163,11 +175,12 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
                   onChanged: (String? newValue) {
                     setState(() {
                       selectedLanguage = newValue!;
-                      if (newValue == "हिंदी") {
-                        FluentEdgeApp.updateLocale(ref, const Locale('hi'));
-                      } else {
-                        FluentEdgeApp.updateLocale(ref, const Locale('en'));
-                      }
+                      FluentEdgeApp.updateLocale(
+                        ref,
+                        newValue == "हिंदी"
+                            ? const Locale('hi')
+                            : const Locale('en'),
+                      );
                     });
                   },
                   style: const TextStyle(

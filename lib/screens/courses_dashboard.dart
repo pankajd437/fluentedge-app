@@ -2,10 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:fluentedge_app/localization/app_localizations.dart';
 import 'package:fluentedge_app/data/courses_list.dart';
-import 'package:fluentedge_app/screens/course_detail_page.dart';
 
-class CoursesDashboardPage extends StatelessWidget {
+class CoursesDashboardPage extends StatefulWidget {
   const CoursesDashboardPage({Key? key}) : super(key: key);
+
+  @override
+  State<CoursesDashboardPage> createState() => _CoursesDashboardPageState();
+}
+
+class _CoursesDashboardPageState extends State<CoursesDashboardPage> {
+  final Map<String, bool> _scaleStates = {
+    'achievements': false,
+    'dashboard': false,
+    'leaderboard': false,
+    'community': false,
+    'analytics': false, // ✅ NEW
+  };
+
+  void _animateButton(String key, VoidCallback action) {
+    setState(() => _scaleStates[key] = true);
+    Future.delayed(const Duration(milliseconds: 100), () {
+      setState(() => _scaleStates[key] = false);
+      action();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,78 +66,128 @@ class CoursesDashboardPage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🔗 Top Navigation Links
+            const SizedBox(height: 12),
+
+            // 📘 Resume Questionnaire
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: InkWell(
+                onTap: () => context.go('/questionnaire'),
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(10),
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Color(0xFFE3F2FD), Color(0xFFB3E5FC)],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                  ),
+                  child: Text(
+                    isHindi
+                        ? 'क्या आप पर्सनल सुझाव चाहते हैं? प्रश्नावली फिर से शुरू करें।'
+                        : 'Not sure where to start? Resume questionnaire →',
+                    style: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFF0D47A1),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 24),
+
+            // ✨ Animated Grid Buttons
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: GridView.count(
+                shrinkWrap: true,
+                crossAxisCount: 2,
+                crossAxisSpacing: 14,
+                mainAxisSpacing: 14,
+                childAspectRatio: 2.2,
+                physics: const NeverScrollableScrollPhysics(),
                 children: [
-                  _navButton(context, "🏅 ${isHindi ? "उपलब्धियां" : "Achievements"}", '/achievements'),
-                  _navButton(context, "👤 ${isHindi ? "डैशबोर्ड" : "Dashboard"}", '/userDashboard'),
+                  _animatedNavCard(
+                    keyName: 'achievements',
+                    icon: Icons.emoji_events_outlined,
+                    label: isHindi ? "उपलब्धियां" : "Achievements",
+                    color: Colors.deepOrange,
+                    onTap: () => context.push('/achievements'),
+                  ),
+                  _animatedNavCard(
+                    keyName: 'dashboard',
+                    icon: Icons.account_circle,
+                    label: isHindi ? "डैशबोर्ड" : "Dashboard",
+                    color: Colors.indigo,
+                    onTap: () => context.push('/userDashboard'),
+                  ),
+                  _animatedNavCard(
+                    keyName: 'leaderboard',
+                    icon: Icons.leaderboard,
+                    label: isHindi ? "लीडरबोर्ड" : "Leaderboard",
+                    color: Colors.teal,
+                    onTap: () => context.push('/leaderboard'),
+                  ),
+                  _animatedNavCard(
+                    keyName: 'community',
+                    icon: Icons.people_alt_rounded,
+                    label: isHindi ? "कम्युनिटी" : "Community",
+                    color: Colors.purple,
+                    onTap: () => context.push('/community'),
+                  ),
+                  _animatedNavCard(
+                    keyName: 'analytics',
+                    icon: Icons.bar_chart_rounded,
+                    label: isHindi ? "एनालिटिक्स" : "Analytics",
+                    color: Colors.blueGrey,
+                    onTap: () => context.push('/analytics'),
+                  ),
                 ],
               ),
             ),
 
-            // 📘 Resume Questionnaire
-            InkWell(
-              onTap: () => context.go('/questionnaire'),
-              child: Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(10),
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Color(0xFFE3F2FD), Color(0xFFB3E5FC)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
-                child: Text(
-                  isHindi
-                      ? 'क्या आप पर्सनल सुझाव चाहते हैं? प्रश्नावली फिर से शुरू करें।'
-                      : 'Not sure where to start? Resume questionnaire →',
-                  style: const TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF0D47A1),
-                  ),
-                ),
-              ),
-            ),
+            const SizedBox(height: 28),
 
-            const SizedBox(height: 20),
-
+            // 🧠 Featured Courses Section Title
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Text(
-                isHindi ? '✨ प्रमुख कोर्स' : "✨ Featured Courses",
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue.shade800,
-                ),
+              child: Row(
+                children: [
+                  Text(
+                    isHindi ? '✨ प्रमुख कोर्स' : "✨ Featured Courses",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue.shade800,
+                    ),
+                  ),
+                ],
               ),
             ),
+
             const SizedBox(height: 12),
 
+            // 🧩 Courses List
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 itemCount: courses.length,
                 itemBuilder: (context, index) {
                   final course = courses[index];
-
-                  return AnimatedContainer(
-                    duration: const Duration(milliseconds: 400),
-                    curve: Curves.easeInOut,
+                  return Container(
                     margin: const EdgeInsets.only(bottom: 14),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.15),
+                          color: Colors.grey.withOpacity(0.12),
                           blurRadius: 8,
                           offset: const Offset(0, 4),
                         ),
@@ -145,6 +215,7 @@ class CoursesDashboardPage extends StatelessWidget {
                                       style: const TextStyle(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 13.5,
+                                        color: Colors.black87,
                                       ),
                                     ),
                                     const SizedBox(height: 4),
@@ -172,7 +243,7 @@ class CoursesDashboardPage extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  context.go('/courseDetail', extra: course);
+                                  context.push('/courseDetail', extra: course);
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFF43A047),
@@ -211,16 +282,61 @@ class CoursesDashboardPage extends StatelessWidget {
     );
   }
 
-  Widget _navButton(BuildContext context, String label, String route) {
-    return OutlinedButton.icon(
-      onPressed: () => context.go(route),
-      icon: const Icon(Icons.arrow_forward_ios, size: 14),
-      label: Text(label, style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500)),
-      style: OutlinedButton.styleFrom(
-        foregroundColor: Colors.blue.shade800,
-        side: BorderSide(color: Colors.blue.shade200),
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+  Widget _animatedNavCard({
+    required String keyName,
+    required IconData icon,
+    required String label,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
+    final isScaled = _scaleStates[keyName] ?? false;
+
+    return AnimatedScale(
+      scale: isScaled ? 0.95 : 1.0,
+      duration: const Duration(milliseconds: 100),
+      child: GestureDetector(
+        onTap: () => _animateButton(keyName, onTap),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [color.withOpacity(0.8), color.withOpacity(0.6)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(14),
+            boxShadow: [
+              BoxShadow(
+                color: color.withOpacity(0.2),
+                blurRadius: 6,
+                offset: const Offset(0, 3),
+              ),
+            ],
+          ),
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, color: Colors.white, size: 24),
+              const SizedBox(height: 8),
+              Text(
+                label,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700, // ✅ Improved
+                  shadows: [
+                    Shadow(
+                      color: Colors.black38,
+                      offset: Offset(0, 1),
+                      blurRadius: 2,
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

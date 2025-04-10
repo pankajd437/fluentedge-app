@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:fluentedge_app/constants.dart';
+import 'package:lottie/lottie.dart';
 
 class BadgeDetailPage extends StatelessWidget {
   final String title;
-  final String imagePath; // ✅ renamed from `image`
+  final String imagePath; // Now used as Lottie animation path
   final bool unlocked;
   final String tag;
 
@@ -35,14 +36,24 @@ class BadgeDetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            // 🏅 Badge animation (unlocked or greyed)
             Hero(
               tag: tag,
-              child: Image.asset(
+              child: Lottie.asset(
                 imagePath,
                 height: 120,
-                width: 120,
+                repeat: unlocked,
+                animate: unlocked,
                 fit: BoxFit.contain,
-                color: unlocked ? null : Colors.grey.shade400,
+                frameRate: FrameRate.max,
+                delegates: LottieDelegates(
+                  values: [
+                    ValueDelegate.color(
+                      const ['**'],
+                      value: unlocked ? null : Colors.grey.shade400,
+                    ),
+                  ],
+                ),
               ),
             ),
             const SizedBox(height: 20),

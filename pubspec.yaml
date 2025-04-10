@@ -21,6 +21,12 @@ dependencies:
   lottie: ^3.3.1
   animations: ^2.0.7
   animated_text_kit: ^4.2.2
+  android_intent_plus: ^4.0.1
+
+  # ========== Notifications ==========
+  flutter_local_notifications:
+    path: ../flutter_plugins/flutter_local_notifications
+  permission_handler: ^11.3.0
 
   # ========== Networking & Data ==========
   http: ^1.3.0
@@ -88,6 +94,12 @@ flutter:
     - assets/animations/tick_animation.json
     - assets/animations/badge_unlocked.json
     - assets/animations/confetti_success.json
+    - assets/animations/badges/lesson_completion_badge.json
+    - assets/animations/badges/course_mastery_badge.json
+    - assets/animations/badges/daily_streak_badge.json
+    - assets/animations/badges/quiz_champion_badge.json
+    - assets/animations/badges/fast_learner_badge.json
+    - assets/animations/badges/perfect_score_badge.json
     - lib/l10n/
 
   fonts:

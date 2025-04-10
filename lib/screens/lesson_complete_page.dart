@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:fluentedge_app/constants.dart';
 import 'package:go_router/go_router.dart';
+import 'package:http/http.dart' as http;
+import 'package:fluentedge_app/data/user_state.dart';
+import 'package:hive/hive.dart';
+import 'package:fluentedge_app/services/notification_service.dart'; // ✅ NEW
 
-class LessonCompletePage extends StatelessWidget {
+class LessonCompletePage extends StatefulWidget {
   final String lessonTitle;
   final int earnedXP;
 
@@ -12,6 +16,51 @@ class LessonCompletePage extends StatelessWidget {
     required this.lessonTitle,
     this.earnedXP = kLessonCompletionPoints,
   }) : super(key: key);
+
+  @override
+  State<LessonCompletePage> createState() => _LessonCompletePageState();
+}
+
+class _LessonCompletePageState extends State<LessonCompletePage> {
+  bool _xpPosted = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _handleLessonCompletion();
+  }
+
+  Future<void> _handleLessonCompletion() async {
+    if (_xpPosted) return;
+
+    final name = await UserState.getUserName() ?? "Anonymous";
+    final lessonId = widget.lessonTitle.replaceAll(' ', '_').toLowerCase();
+    final xp = widget.earnedXP;
+
+    final xpUrl = Uri.parse("http://10.0.2.2:8000/api/v1/user/xp?name=$name&lesson_id=$lessonId&xp=$xp");
+    final streakUrl = Uri.parse("http://10.0.2.2:8000/api/v1/user/streak?name=$name&xp=$xp");
+
+    try {
+      await http.post(xpUrl);
+      await http.post(streakUrl);
+      await _markLessonAsCompleted(lessonId);
+      await NotificationService.scheduleDailyReminder(); // ✅ DAILY REMINDER
+      setState(() => _xpPosted = true);
+    } catch (e) {
+      debugPrint("❌ Failed to send XP, streak, or save lesson: $e");
+    }
+  }
+
+  Future<void> _markLessonAsCompleted(String lessonId) async {
+    final box = await Hive.openBox('completed_lessons');
+    if (!box.containsKey(lessonId)) {
+      await box.put(lessonId, true);
+      debugPrint("✅ Lesson marked completed: $lessonId");
+    }
+
+    debugPrint("📘 Total Completed Lessons: ${box.keys.length}");
+    debugPrint("📘 Completed IDs: ${box.keys.toList()}");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +80,6 @@ class LessonCompletePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // 🎊 Celebration Animation
             Lottie.asset(
               'assets/animations/confetti_success.json',
               height: 200,
@@ -39,8 +87,6 @@ class LessonCompletePage extends StatelessWidget {
               fit: BoxFit.contain,
             ),
             const SizedBox(height: 20),
-
-            // 🏅 Badge Animation
             Lottie.asset(
               'assets/animations/badge_unlocked.json',
               height: 120,
@@ -48,8 +94,6 @@ class LessonCompletePage extends StatelessWidget {
               fit: BoxFit.contain,
             ),
             const SizedBox(height: 16),
-
-            // 🎯 Title Message
             Text(
               "Well done!",
               style: TextStyle(
@@ -59,10 +103,8 @@ class LessonCompletePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-
-            // 📘 Lesson Info
             Text(
-              "You’ve completed the lesson:\n‘$lessonTitle’",
+              "You’ve completed the lesson:\n‘${widget.lessonTitle}’",
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 14.5,
@@ -71,8 +113,6 @@ class LessonCompletePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
-
-            // 🎮 XP Display
             Container(
               margin: const EdgeInsets.symmetric(vertical: 8),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -81,7 +121,7 @@ class LessonCompletePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                "🎓 +$earnedXP XP Earned!",
+                "🎓 +${widget.earnedXP} XP Earned!",
                 style: const TextStyle(
                   fontSize: 13.5,
                   fontWeight: FontWeight.w600,
@@ -89,10 +129,7 @@ class LessonCompletePage extends StatelessWidget {
                 ),
               ),
             ),
-
             const Spacer(),
-
-            // 🔄 CTA Buttons
             Column(
               children: [
                 SizedBox(

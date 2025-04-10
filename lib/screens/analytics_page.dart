@@ -1,20 +1,72 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:fluentedge_app/constants.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:fluentedge_app/data/user_state.dart';
 
-class AnalyticsPage extends StatelessWidget {
+class AnalyticsPage extends StatefulWidget {
   const AnalyticsPage({Key? key}) : super(key: key);
 
-  // 🔢 Mocked user stats (replace with backend in future)
-  final int totalXP = 820;
-  final int totalLessons = 14;
-  final int dailyStreak = 5;
-  final Duration totalTimeSpent = Duration(minutes: 146); // 2h 26m
+  @override
+  State<AnalyticsPage> createState() => _AnalyticsPageState();
+}
+
+class _AnalyticsPageState extends State<AnalyticsPage> {
+  int totalXP = 0;
+  int dailyStreak = 0; // ✅ was mocked, now dynamic
+  final int totalLessons = 14; // 🔜 Replace with backend
+  final Duration totalTimeSpent = Duration(minutes: 146); // 2h 26m (mock)
 
   String get formattedTime {
     final hours = totalTimeSpent.inHours;
     final minutes = totalTimeSpent.inMinutes.remainder(60);
     return "${hours}h ${minutes}m";
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchUserXP();
+    _fetchStreak(); // ✅ new
+  }
+
+  Future<void> _fetchUserXP() async {
+    final name = await UserState.getUserName() ?? "Anonymous";
+    final url = Uri.parse("http://10.0.2.2:8000/api/v1/user/xp?name=$name");
+
+    try {
+      final response = await http.get(url);
+      if (response.statusCode == 200) {
+        final json = jsonDecode(response.body);
+        setState(() {
+          totalXP = json['total_xp'] ?? 0;
+        });
+      } else {
+        debugPrint("❌ Failed to fetch XP: ${response.statusCode}");
+      }
+    } catch (e) {
+      debugPrint("❌ Error fetching XP: $e");
+    }
+  }
+
+  Future<void> _fetchStreak() async {
+    final name = await UserState.getUserName() ?? "Anonymous";
+    final url = Uri.parse("http://10.0.2.2:8000/api/v1/user/streak?name=$name");
+
+    try {
+      final response = await http.get(url);
+      if (response.statusCode == 200) {
+        final json = jsonDecode(response.body);
+        setState(() {
+          dailyStreak = json['streak'] ?? 0;
+        });
+      } else {
+        debugPrint("❌ Failed to fetch streak: ${response.statusCode}");
+      }
+    } catch (e) {
+      debugPrint("❌ Error fetching streak: $e");
+    }
   }
 
   @override
