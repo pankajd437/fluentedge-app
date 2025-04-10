@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluentedge_app/constants.dart';
 import 'package:fluentedge_app/screens/lesson_activity_page.dart';
+import 'package:fluentedge_app/widgets/animated_mentor_widget.dart'; // ✅ Mentor Widget
 
 class LessonPage extends StatelessWidget {
   final Map<String, dynamic> course;
@@ -45,7 +46,7 @@ class LessonPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Hero avatar
+            // 📘 Hero Icon for Course
             Center(
               child: Hero(
                 tag: title,
@@ -58,7 +59,16 @@ class LessonPage extends StatelessWidget {
             ),
             const SizedBox(height: 24),
 
-            // Progress bar
+            // 🤖 Static AI Mentor
+            const Center(
+              child: AnimatedMentorWidget(
+                size: 180,
+                expressionName: 'Greeting', // 👈 Static expression
+              ),
+            ),
+            const SizedBox(height: 24),
+
+            // 📊 Progress bar
             LinearProgressIndicator(
               value: (unlockedLessons / lessons.length).clamp(0.0, 1.0),
               minHeight: 8,
@@ -77,7 +87,7 @@ class LessonPage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
 
-            // Lesson list
+            // 📘 Lesson List
             Expanded(
               child: ListView.separated(
                 itemCount: lessons.length,
@@ -151,7 +161,7 @@ class LessonPage extends StatelessWidget {
 
             const SizedBox(height: 20),
 
-            // CTA Button
+            // ▶️ CTA Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(

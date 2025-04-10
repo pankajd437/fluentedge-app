@@ -1,57 +1,54 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lottie/lottie.dart';
 import 'package:fluentedge_app/constants.dart';
+import 'package:fluentedge_app/widgets/animated_mentor_widget.dart';
+import 'package:fluentedge_app/widgets/quiz_activity_widget.dart';
 
-class LessonActivityPage extends StatelessWidget {
+class LessonActivityPage extends StatefulWidget {
   final Map<String, dynamic> lesson;
 
-  const LessonActivityPage({
-    Key? key,
-    required this.lesson,
-  }) : super(key: key);
+  const LessonActivityPage({Key? key, required this.lesson}) : super(key: key);
 
-  void _showResultAnimation(BuildContext context, bool isCorrect) {
-    final overlay = Overlay.of(context);
-    final overlayEntry = OverlayEntry(
-      builder: (context) => Center(
-        child: SizedBox(
-          width: 220,
-          height: 220,
-          child: Lottie.asset(
-            isCorrect
-                ? 'assets/animations/activity_correct.json'
-                : 'assets/animations/activity_wrong.json',
-            repeat: false,
-            fit: BoxFit.contain,
-          ),
-        ),
-      ),
-    );
+  @override
+  State<LessonActivityPage> createState() => _LessonActivityPageState();
+}
 
-    overlay.insert(overlayEntry);
+class _LessonActivityPageState extends State<LessonActivityPage> {
+  String _expressionName = 'Processing';
+  String _speechText = "Let's get started!";
+  Timer? _resetTimer;
+  bool _lastAnswerCorrect = false;
 
-    Future.delayed(const Duration(seconds: 2), () {
-      overlayEntry.remove();
+  void _updateMentorFeedback(String newExpression, String speech, {bool reset = true}) {
+    setState(() {
+      _expressionName = newExpression;
+      _speechText = speech;
     });
+
+    _resetTimer?.cancel();
+
+    if (reset && newExpression != 'Confused') {
+      _resetTimer = Timer(const Duration(seconds: 2), () {
+        if (mounted) {
+          setState(() {
+            _expressionName = 'Processing';
+            _speechText = "Let's keep going!";
+          });
+        }
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _resetTimer?.cancel();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final String lessonTitle = lesson['title'] ?? 'Lesson Title';
-    final String lessonId = lesson['lessonId'] ?? 'lesson_id';
-
-    final String activityQuestion = "Which word means the opposite of 'cold'?";
-    final List<String> options = ['Hot', 'Warm', 'Freeze', 'Cool'];
-    final int correctIndex = 0;
-
-    final List<List<Color>> optionGradients = [
-      [Colors.deepPurple, Colors.purpleAccent],
-      [Colors.blue, Colors.lightBlue],
-      [Colors.green, Colors.lightGreen],
-      [Colors.orange, Colors.deepOrange],
-      [Colors.teal, Colors.cyan],
-    ];
+    final String lessonTitle = widget.lesson['title'] ?? 'Lesson Title';
 
     return Scaffold(
       backgroundColor: kBackgroundSoftBlue,
@@ -69,86 +66,77 @@ class LessonActivityPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "🧠 Activity",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: kPrimaryIconBlue,
-              ),
-            ),
-            const SizedBox(height: 16),
-            Text(
-              activityQuestion,
-              style: const TextStyle(
-                fontSize: 14.5,
-                fontWeight: FontWeight.w500,
-                color: Colors.black87,
-              ),
-            ),
-            const SizedBox(height: 24),
-
-            ...options.asMap().entries.map((entry) {
-              final index = entry.key;
-              final value = entry.value;
-              final gradient = optionGradients[index % optionGradients.length];
-
-              return Container(
-                margin: const EdgeInsets.only(bottom: 12),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: gradient),
-                  borderRadius: BorderRadius.circular(12),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 6,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: Material(
-                  color: Colors.transparent,
-                  child: InkWell(
+            // ✅ AI Mentor Section
+            Column(
+              children: [
+                Center(child: AnimatedMentorWidget(size: 140, expressionName: _expressionName)),
+                const SizedBox(height: 8),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
-                    onTap: () {
-                      final isCorrect = index == correctIndex;
-                      _showResultAnimation(context, isCorrect);
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                      child: Row(
-                        children: [
-                          const Icon(Icons.circle_outlined, color: Colors.white, size: 18),
-                          const SizedBox(width: 10),
-                          Expanded(
-                            child: Text(
-                              value,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    boxShadow: const [
+                      BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2))
+                    ],
+                  ),
+                  child: Text(
+                    _speechText,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 13.5,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black87,
                     ),
                   ),
                 ),
-              );
-            }),
+              ],
+            ),
+            const SizedBox(height: 24),
+
+            // 🎯 Quiz Widget
+            QuizActivityWidget(
+              question: "Which word means the opposite of 'cold'?",
+              options: ['Hot', 'Warm', 'Freeze', 'Cool'],
+              correctIndex: 0,
+              onCompleted: () {
+                if (_lastAnswerCorrect) {
+                  _updateMentorFeedback('Celebrating', "You did great!");
+                }
+                Future.delayed(const Duration(seconds: 1), () {
+                  GoRouter.of(context).push(
+                    '/lessonComplete',
+                    extra: {
+                      'lessonTitle': lessonTitle,
+                      'isCorrect': _lastAnswerCorrect,
+                    },
+                  );
+                });
+              },
+              onAnswerSelected: (isCorrect) {
+                _lastAnswerCorrect = isCorrect;
+                if (isCorrect) {
+                  _updateMentorFeedback('Celebrating', "That's right!");
+                } else {
+                  _updateMentorFeedback('Confused', "Oops! Not quite.", reset: false);
+                }
+              },
+            ),
 
             const Spacer(),
 
+            // Manual completion button (optional fallback)
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
                 onPressed: () {
                   GoRouter.of(context).push(
                     '/lessonComplete',
-                    extra: {'lessonTitle': lessonTitle},
+                    extra: {
+                      'lessonTitle': lessonTitle,
+                      'isCorrect': _lastAnswerCorrect,
+                    },
                   );
                 },
                 icon: const Icon(Icons.check_circle_outline),

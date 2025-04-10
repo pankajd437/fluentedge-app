@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:http/http.dart' as http;
 import 'package:fluentedge_app/data/user_state.dart';
 import 'package:hive/hive.dart';
-import 'package:fluentedge_app/services/notification_service.dart'; // ✅ NEW
+import 'package:fluentedge_app/services/notification_service.dart';
 
 class LessonCompletePage extends StatefulWidget {
   final String lessonTitle;
@@ -23,16 +23,23 @@ class LessonCompletePage extends StatefulWidget {
 
 class _LessonCompletePageState extends State<LessonCompletePage> {
   bool _xpPosted = false;
+  bool _isCorrect = true;
 
   @override
-  void initState() {
-    super.initState();
-    _handleLessonCompletion();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    final args = GoRouterState.of(context).extra;
+    if (args is Map && args.containsKey('isCorrect')) {
+      _isCorrect = args['isCorrect'] == true;
+    }
+
+    if (_isCorrect && !_xpPosted) {
+      _handleLessonCompletion();
+    }
   }
 
   Future<void> _handleLessonCompletion() async {
-    if (_xpPosted) return;
-
     final name = await UserState.getUserName() ?? "Anonymous";
     final lessonId = widget.lessonTitle.replaceAll(' ', '_').toLowerCase();
     final xp = widget.earnedXP;
@@ -44,7 +51,7 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
       await http.post(xpUrl);
       await http.post(streakUrl);
       await _markLessonAsCompleted(lessonId);
-      await NotificationService.scheduleDailyReminder(); // ✅ DAILY REMINDER
+      await NotificationService.scheduleDailyReminder();
       setState(() => _xpPosted = true);
     } catch (e) {
       debugPrint("❌ Failed to send XP, streak, or save lesson: $e");
@@ -64,6 +71,11 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
 
   @override
   Widget build(BuildContext context) {
+    final headlineText = _isCorrect ? "Well done!" : "Keep trying!";
+    final subText = _isCorrect
+        ? "You’ve completed the lesson:\n‘${widget.lessonTitle}’"
+        : "You attempted the lesson:\n‘${widget.lessonTitle}’";
+
     return Scaffold(
       backgroundColor: kBackgroundSoftBlue,
       appBar: AppBar(
@@ -95,7 +107,7 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
             ),
             const SizedBox(height: 16),
             Text(
-              "Well done!",
+              headlineText,
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: kWeightBold,
@@ -104,7 +116,7 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
             ),
             const SizedBox(height: 8),
             Text(
-              "You’ve completed the lesson:\n‘${widget.lessonTitle}’",
+              subText,
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 14.5,
@@ -113,23 +125,28 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
               ),
             ),
             const SizedBox(height: 12),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              decoration: BoxDecoration(
-                color: kAccentGreen.withOpacity(0.1),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Text(
-                "🎓 +${widget.earnedXP} XP Earned!",
-                style: const TextStyle(
-                  fontSize: 13.5,
-                  fontWeight: FontWeight.w600,
-                  color: kAccentGreen,
+
+            // XP container only shown on correct answer
+            if (_isCorrect)
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                decoration: BoxDecoration(
+                  color: kAccentGreen.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  "🎓 +${widget.earnedXP} XP Earned!",
+                  style: const TextStyle(
+                    fontSize: 13.5,
+                    fontWeight: FontWeight.w600,
+                    color: kAccentGreen,
+                  ),
                 ),
               ),
-            ),
+
             const Spacer(),
+
             Column(
               children: [
                 SizedBox(
