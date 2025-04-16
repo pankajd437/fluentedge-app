@@ -79,16 +79,141 @@ flutter:
   generate: true
 
   assets:
+    # ✅ Images
     - assets/images/
-    - assets/images/badges/
+    - assets/images/help_request_scene_16x9.png
+    - assets/images/help_request_market_scene.png
+    - assets/images/help_request_phone_lost.png
+    - assets/images/office_greetings.png
+    - assets/images/family_greetings.png
+    - assets/images/goodbye_variations.png
+    - assets/images/phone_call_scene.png
+
+    # For Lesson 2 comedic scenario (existing example)
+    - assets/images/help_request_comedic_16x9.png
+    - assets/images/lesson2_comedic_scenario_16x9.png
+
+    # ✅ AI Mentor PNG Expressions
     - assets/images/mentor_expressions/
+    - assets/images/mentor_expressions/Alert AI mentor.png
+    - assets/images/mentor_expressions/Angry AI mentor.png
+    - assets/images/mentor_expressions/Apologetic AI mentor.png
+    - assets/images/mentor_expressions/Awkward AI mentor.png
+    - assets/images/mentor_expressions/Celebrating AI mentor.png
+    - assets/images/mentor_expressions/Confident AI mentor.png
+    - assets/images/mentor_expressions/Confused AI mentor.png
+    - assets/images/mentor_expressions/Curious AI mentor.png
+    - assets/images/mentor_expressions/Encouraging AI mentor.png
+    - assets/images/mentor_expressions/Explaining AI mentor.png
+    - assets/images/mentor_expressions/Greeting AI mentor.png
+    - assets/images/mentor_expressions/Happy AI mentor.png
+    - assets/images/mentor_expressions/Idea AI mentor.png
+    - assets/images/mentor_expressions/Processing AI mentor.png
+    - assets/images/mentor_expressions/Sleepy AI mentor.png
+    - assets/images/mentor_expressions/Surprised AI mentor.png
+    - assets/images/old_friends_meeting_park.png
+
+    # === NEW Lesson 3 IMAGES ===
+    - assets/images/lesson3_introducing_strangers_16x9.png
+    - assets/images/lesson3_informal_group_16x9.png
+    - assets/images/lesson3_office_intro_16x9.png
+    - assets/images/lesson3_team_building_16x9.png
+    - assets/images/lesson3_confident_smile_16x9.png
+    - assets/images/lesson3_big_stage_intro_16x9.png
+    - assets/images/lesson3_friend_circle_fun_16x9.png
+
+    # === NEW Lesson 4 IMAGES ===
+    - assets/images/lesson4_question_expressions_16x9.png
+    - assets/images/lesson4_framing_sentences_16x9.png
+    - assets/images/lesson4_question_rules_16x9.png
+    - assets/images/lesson4_mini_dialogue_airport_16x9.png
+    - assets/images/lesson4_office_dialogue_16x9.png
+    - assets/images/lesson4_polite_question_16x9.png
+    - assets/images/lesson4_intonation_16x9.png
+    - assets/images/lesson4_comprehensive_list_16x9.png
+    - assets/images/lesson4_comprehensive_list2_16x9.png
+    - assets/images/lesson4_comprehensive_list3_16x9.png
+    - assets/images/lesson4_comprehensive_list4_16x9.png
+    - assets/images/lesson4_travel_scenario_16x9.png
+    - assets/images/lesson4_market_scene_16x9.png
+    - assets/images/lesson4_extra_scenarios_16x9.png
+
+    # ✅ Sounds (core + lesson audio)
     - assets/sounds/
     - assets/sounds/correct.mp3
     - assets/sounds/incorrect.mp3
+    - assets/sounds/lesson_audio/
+
+    # Existing lesson audio
+    - assets/sounds/lesson_audio/help_request_1.mp3
+    - assets/sounds/lesson_audio/help_request_2.mp3
+    - assets/sounds/lesson_audio/help_request_3.mp3
+    - assets/sounds/lesson_audio/speak_intro_fluent.mp3
+    - assets/sounds/lesson_audio/repeat_confident_tone.mp3
+    - assets/sounds/lesson_audio/greeting_intro_nicetomeetyou.mp3
+    - assets/sounds/lesson_audio/friendly_greeting_example.mp3
+    - assets/sounds/lesson_audio/goodbye_see_you.mp3
+    - assets/sounds/lesson_audio/morning_vibes_example.mp3
+    - assets/sounds/lesson_audio/enthusiastic_gm.mp3
+    - assets/sounds/lesson_audio/family_greeting_example.mp3
+    - assets/sounds/lesson_audio/family_hey_home.mp3
+    - assets/sounds/lesson_audio/casual_bye_example.mp3
+    - assets/sounds/lesson_audio/catch_you_later.mp3
+    - assets/sounds/lesson_audio/mistake_tips.mp3
+    - assets/sounds/lesson_audio/phone_call_goodbye.mp3
+    - assets/sounds/lesson_audio/challenge_reminder.mp3
+
+    # NEW lesson1 audio files
+    - assets/sounds/lesson_audio/L1_intro_auto.mp3
+    - assets/sounds/lesson_audio/L1_comedic_story.mp3
+
+    # NEW lesson2 audio files
+    - assets/sounds/lesson_audio/lesson2_intro_auto.mp3
+    - assets/sounds/lesson_audio/lesson2_comedic_story.mp3
+    - assets/sounds/lesson_audio/lesson2_challenge_reminder.mp3
+
+    # === NEW Lesson 3 AUDIO ===
+    - assets/sounds/lesson_audio/lesson3_intro_auto.mp3
+    - assets/sounds/lesson_audio/lesson3_basic_intro_example.mp3
+    - assets/sounds/lesson_audio/lesson3_comedic_story.mp3
+    - assets/sounds/lesson_audio/lesson3_encouraging_words.mp3
+    - assets/sounds/lesson_audio/lesson3_strong_line.mp3
+    - assets/sounds/lesson_audio/lesson3_mistake_tips.mp3
+    - assets/sounds/lesson_audio/lesson3_final_challenge.mp3
+    - assets/sounds/lesson_audio/lesson3_comedic_story2.mp3
+    - assets/sounds/lesson_audio/lesson3_hobbies_prompt.mp3
+    - assets/sounds/lesson_audio/lesson3_stage_performance_example.mp3
+
+    # === NEW Lesson 4 AUDIO ===
+    - assets/sounds/lesson_audio/lesson4_intro_auto.mp3
+    - assets/sounds/lesson_audio/lesson4_basic_wh_prompt.mp3
+    - assets/sounds/lesson_audio/lesson4_comedic_story1.mp3
+    - assets/sounds/lesson_audio/lesson4_yesno_prompt.mp3
+    - assets/sounds/lesson_audio/lesson4_list_part1_readaloud.mp3
+    - assets/sounds/lesson_audio/lesson4_list_part2_readaloud.mp3
+    - assets/sounds/lesson_audio/lesson4_list_part4_readaloud.mp3
+    - assets/sounds/lesson_audio/lesson4_encouraging_words.mp3
+    - assets/sounds/lesson_audio/lesson4_comedic_story2.mp3
+    - assets/sounds/lesson_audio/lesson4_comedic_story3.mp3
+    - assets/sounds/lesson_audio/lesson4_library_prompt.mp3
+    - assets/sounds/lesson_audio/lesson4_mistake_tips.mp3
+    - assets/sounds/lesson_audio/lesson4_comedic_story4.mp3
+    - assets/sounds/lesson_audio/lesson4_comedic_story5.mp3
+    - assets/sounds/lesson_audio/lesson4_final_challenge.mp3
+    - assets/sounds/lesson_audio/lesson4_comedic_story6.mp3
+
+    # ✅ JSON Lessons
+    - assets/lessons/
+
+    # ✅ Translations
     - assets/translations/
+
+    # ✅ Mentor Animations
     - assets/animations/
     - assets/animations/ai_mentor_thinking.json
     - assets/animations/ai_mentor_welcome.json
+
+    # ✅ Quiz & Completion Lottie Animations
     - assets/animations/activity_correct.json
     - assets/animations/activity_wrong.json
     - assets/animations/success_checkmark.json
@@ -97,12 +222,15 @@ flutter:
     - assets/animations/tick_animation.json
     - assets/animations/badge_unlocked.json
     - assets/animations/confetti_success.json
+
+    # ✅ Badge Lotties
     - assets/animations/badges/lesson_completion_badge.json
     - assets/animations/badges/course_mastery_badge.json
     - assets/animations/badges/daily_streak_badge.json
     - assets/animations/badges/quiz_champion_badge.json
     - assets/animations/badges/fast_learner_badge.json
     - assets/animations/badges/perfect_score_badge.json
+
     - lib/l10n/
 
   fonts:

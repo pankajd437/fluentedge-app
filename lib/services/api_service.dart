@@ -9,17 +9,22 @@ class UserResponseResult {
   final String userId;
   final List<dynamic> recommendedCourses;
 
+  /// ✅ NEW: Include userLevel
+  final String userLevel;
+
   UserResponseResult({
     required this.status,
     required this.userId,
     required this.recommendedCourses,
+    required this.userLevel,
   });
 
   factory UserResponseResult.fromJson(Map<String, dynamic> json) {
     return UserResponseResult(
-      status: json['status'].toString(), // Cast defensive
-      userId: json['user_id'].toString(), // Cast defensive
+      status: json['status'].toString(),
+      userId: json['user_id'].toString(),
       recommendedCourses: json['recommended_courses'] ?? [],
+      userLevel: json['user_level'] ?? 'beginner', // ✅ NEW
     );
   }
 }

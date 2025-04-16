@@ -1,23 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluentedge_app/localization/app_localizations.dart';
-import 'package:fluentedge_app/data/courses_list.dart';
+import 'package:fluentedge_app/data/beginner_courses_list.dart';
+import 'package:fluentedge_app/data/intermediate_courses_list.dart';
+import 'package:fluentedge_app/data/advanced_courses_list.dart';
+import 'package:fluentedge_app/screens/menu_page.dart'; // ✅ Import MenuPage
+import 'package:fluentedge_app/main.dart'; // ✅ for userLevelProvider
 
-class CoursesDashboardPage extends StatefulWidget {
+class CoursesDashboardPage extends ConsumerStatefulWidget {
   const CoursesDashboardPage({Key? key}) : super(key: key);
 
   @override
-  State<CoursesDashboardPage> createState() => _CoursesDashboardPageState();
+  ConsumerState<CoursesDashboardPage> createState() => _CoursesDashboardPageState();
 }
 
-class _CoursesDashboardPageState extends State<CoursesDashboardPage> {
+class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
   final Map<String, bool> _scaleStates = {
     'achievements': false,
     'dashboard': false,
     'leaderboard': false,
     'community': false,
-    'analytics': false, // ✅ NEW
+    'analytics': false,
   };
+
+  late String selectedLevel;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedLevel = ref.read(userLevelProvider); // ✅ Load from memory
+  }
 
   void _animateButton(String key, VoidCallback action) {
     setState(() => _scaleStates[key] = true);
@@ -25,6 +38,17 @@ class _CoursesDashboardPageState extends State<CoursesDashboardPage> {
       setState(() => _scaleStates[key] = false);
       action();
     });
+  }
+
+  List<Map<String, dynamic>> _getSelectedCourses() {
+    switch (selectedLevel) {
+      case 'intermediate':
+        return intermediateCourses;
+      case 'advanced':
+        return advancedCourses;
+      default:
+        return beginnerCourses;
+    }
   }
 
   @override
@@ -38,14 +62,23 @@ class _CoursesDashboardPageState extends State<CoursesDashboardPage> {
     final bool isHindi = langPref == 'हिंदी' ||
         (langPref == null && localizations?.locale.languageCode == 'hi');
 
+    final List<Map<String, dynamic>> selectedCourses = _getSelectedCourses();
+
     return Scaffold(
       backgroundColor: const Color(0xFFF2F6FB),
+      drawer: const Drawer(child: MenuPage()), // ✅ Add permanent menu
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(56),
         child: AppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
-            onPressed: () => context.go('/welcome'),
+          leading: Builder(
+            builder: (context) {
+              return IconButton(
+                icon: const Icon(Icons.menu, color: Colors.white), // ✅ Menu icon
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              );
+            },
           ),
           flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -68,8 +101,7 @@ class _CoursesDashboardPageState extends State<CoursesDashboardPage> {
         child: Column(
           children: [
             const SizedBox(height: 12),
-
-            // 📘 Resume Questionnaire
+            // 🔁 Resume Questionnaire Shortcut
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: InkWell(
@@ -100,9 +132,25 @@ class _CoursesDashboardPageState extends State<CoursesDashboardPage> {
               ),
             ),
 
-            const SizedBox(height: 24),
+            const SizedBox(height: 20),
 
-            // ✨ Animated Grid Buttons
+            // 🎛️ Level Switcher Buttons
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                children: [
+                  _levelToggle("beginner", isHindi ? "शुरुआती" : "Beginner"),
+                  const SizedBox(width: 8),
+                  _levelToggle("intermediate", isHindi ? "मध्यम" : "Intermediate"),
+                  const SizedBox(width: 8),
+                  _levelToggle("advanced", isHindi ? "उन्नत" : "Advanced"),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            // 🧠 Navigation Cards
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: GridView.count(
@@ -154,32 +202,13 @@ class _CoursesDashboardPageState extends State<CoursesDashboardPage> {
 
             const SizedBox(height: 28),
 
-            // 🧠 Featured Courses Section Title
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                children: [
-                  Text(
-                    isHindi ? '✨ प्रमुख कोर्स' : "✨ Featured Courses",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue.shade800,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 12),
-
-            // 🧩 Courses List
+            // 📚 Course List
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                itemCount: courses.length,
+                itemCount: selectedCourses.length,
                 itemBuilder: (context, index) {
-                  final course = courses[index];
+                  final course = selectedCourses[index];
                   return Container(
                     margin: const EdgeInsets.only(bottom: 14),
                     decoration: BoxDecoration(
@@ -242,9 +271,7 @@ class _CoursesDashboardPageState extends State<CoursesDashboardPage> {
                                 ),
                               ),
                               ElevatedButton(
-                                onPressed: () {
-                                  context.push('/courseDetail', extra: course);
-                                },
+                                onPressed: () => context.push('/courseDetail', extra: course),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFF43A047),
                                   foregroundColor: Colors.white,
@@ -264,10 +291,7 @@ class _CoursesDashboardPageState extends State<CoursesDashboardPage> {
                           const SizedBox(height: 10),
                           Text(
                             course["description"],
-                            style: const TextStyle(
-                              fontSize: 12.5,
-                              color: Colors.black87,
-                            ),
+                            style: const TextStyle(fontSize: 12.5, color: Colors.black87),
                           ),
                         ],
                       ),
@@ -282,6 +306,35 @@ class _CoursesDashboardPageState extends State<CoursesDashboardPage> {
     );
   }
 
+  // 🔁 Level Toggle Widget
+  Widget _levelToggle(String level, String label) {
+    final bool isSelected = level == selectedLevel;
+
+    return Expanded(
+      child: ElevatedButton(
+        onPressed: () {
+          setState(() {
+            selectedLevel = level;
+            ref.read(userLevelProvider.notifier).state = level;
+          });
+        },
+        style: ElevatedButton.styleFrom(
+          elevation: isSelected ? 4 : 0,
+          backgroundColor: isSelected ? Colors.blue : Colors.white,
+          foregroundColor: isSelected ? Colors.white : Colors.blue,
+          side: BorderSide(color: Colors.blue.shade300),
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        ),
+        child: Text(
+          label,
+          style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
+        ),
+      ),
+    );
+  }
+
+  // 🎯 Animated Nav Card Widget
   Widget _animatedNavCard({
     required String keyName,
     required IconData icon,
@@ -324,7 +377,7 @@ class _CoursesDashboardPageState extends State<CoursesDashboardPage> {
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 13,
-                  fontWeight: FontWeight.w700, // ✅ Improved
+                  fontWeight: FontWeight.w700,
                   shadows: [
                     Shadow(
                       color: Colors.black38,

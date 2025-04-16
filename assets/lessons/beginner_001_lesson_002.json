@@ -1,0 +1,385 @@
+{
+  "lessonId": "beginner_001_lesson_002",
+  "title": "Simple Greetings & Goodbyes",
+  "level": "beginner",
+  "part": 2,
+  "activities": [
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson2_intro_auto.mp3",
+      "text": "Hi! Lesson 2 mein aapka swagat hai— Iss Lesson me hum Greetings aur Goodbyes master karenge. Let's get started!",
+      "allowPause": true
+    },
+    {
+      "type": "message",
+      "text": "Is lesson ke end tak, aap confidently hello aur bye bolne ke saare tarike seekh jaaoge. No more awkwardness!"
+    },
+    {
+      "type": "poll",
+      "question": "What’s your biggest hesitation about greeting someone new?",
+      "options": [
+        "Mujhe sharam aati hai (I feel shy).",
+        "English words yaad nahi aate.",
+        "Lagta hai main rude lagunga/lagungi.",
+        "Kuch aur reason."
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Roadmap for Lesson 2",
+      "body": "• Friendly Greetings + casual meetups\n• Polite Goodbyes: short & sweet\n• Office & family greetings\n• Fun role-plays + comedic stories\n• Quizzes & polls to boost confidence\n\nAap sab kuch ek hi lesson mein cover karoge!"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/help_request_market_scene1.png",
+      "caption": "Meeting someone for the first time can be nerve-racking. But let's fix that!"
+    },
+    {
+      "type": "text",
+      "title": "👋 Basic Greetings",
+      "body": "• Hi! How are you?\n• Good morning!\n• Nice to meet you.\n• Hello, my name is [Your Name].\n\nIn sab lines se start karo. Aap instantly friendly lagoge!"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Try it: Good morning! My name is [Your Name]. Nice to meet you.",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/greeting_intro_nicetomeetyou.mp3"
+    },
+    {
+      "type": "roleplay", 
+      "text": "Role-play: Aap ek new friend se mil rahe ho. Use yeh lines practice karo. Phir socho wo friend kya reply karega? Banalo mini conversation!"
+    },
+    {
+      "type": "quiz",
+      "question": "If you meet a neighbor for the first time, which opener is best?",
+      "options": [
+        "Hey, what's up?",
+        "Who are you again?",
+        "Good morning! I'm [Your Name]. Nice to finally meet you!",
+        "I see you daily, but never talk to me!"
+      ],
+      "answerIndex": 2,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3"
+    },
+    {
+      "type": "message",
+      "text": "Exactly! A short greeting + your name = perfect first impression."
+    },
+
+    {
+      "type": "image",
+      "imagePath": "assets/images/old_friends_meeting_park.png",
+      "caption": "Spotting an old friend across the park? Let’s see what you'd say."
+    },
+    {
+      "type": "tip",
+      "title": "Dosti & Casual Meetups",
+      "body": "Dosti ke moments mein English bolna zyada natural lagega jab aap short, friendly lines use karoge, jaise: 'Long time no see!' or 'How have you been?'"
+    },
+    {
+      "type": "message",
+      "text": "Imagine: You see an old friend in a park. 'Hey, it’s been a while! How are you?' Kehne se unko accha feel hoga."
+    },
+
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson2_comedic_story.mp3",
+      "text": "Sunein ek mazedaar kahani—how a friend messed up a greeting!",
+      "allowPause": true
+    },
+    {
+      "type": "message",
+      "text": "Pro Tip: Kabhi 'Hey you, talk me!' mat bolo. Ek 'Excuse me' ya 'Hi' sab simplify kar deta hai. 😉"
+    },
+
+    {
+      "type": "text",
+      "title": "🚪 Polite Goodbyes ",
+      "body": "• It was nice talking to you.\n• See you later!\n• Have a great day!\n• Bye, take care.\n\nHamesha ek smile add karna na bhoolein."
+    },
+    {
+      "type": "quiz",
+      "question": "Pick the most polite goodbye:",
+      "options": [
+        "I go now!",
+        "See you later, take care!",
+        "I am going. Bye.",
+        "No talk now."
+      ],
+      "answerIndex": 1,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Practice: 'See you later! Have a great day!'",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/goodbye_see_you.mp3"
+    },
+    {
+      "type": "roleplay",
+      "text": "Role-play: End a short chat politely. Bolo: 'It was great talking, but I gotta run now. Bye!'"
+    },
+
+    {
+      "type": "poll",
+      "question": "Which part of goodbye is hardest for you?",
+      "options": [
+        "Feeling abrupt",
+        "Can't find the right words",
+        "Fear of seeming rude",
+        "All of the above"
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Friendly Connection",
+      "body": "A small phrase—“Have a good day!”—makes your goodbye memorable. Apna personal flair add karo!"
+    },
+
+    {
+      "type": "quiz",
+      "question": "Meeting someone new—what’s your best line?",
+      "options": [
+        "Where were you? So late!",
+        "You...Hello?",
+        "Hi! Nice to meet you!",
+        "Leave me alone, I'm busy!"
+      ],
+      "answerIndex": 2,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Say: 'Hi, nice to meet you! I'm [Your Name]. How are you doing today?'",
+      "audioSupport": false
+    },
+    {
+      "type": "message",
+      "text": "Easy, right? Polite hi sabse zyada effective hota hai. Confidence + smile = success!"
+    },
+
+    {
+      "type": "badge",
+      "title": "🙌 Greetings Pro Badge!",
+      "description": "You’re on your way to mastering greetings & goodbyes. Keep it up!",
+      "animation": "assets/animations/badge_unlocked.json"
+    },
+    {
+      "type": "message",
+      "text": "Now let’s jump to office greetings. Kya difference hota hai casual aur formal mein?"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/office_greetings.png",
+      "caption": "Office scenario: A morning greeting can boost everyone's mood!"
+    },
+    {
+      "type": "text",
+      "title": "🌅 Morning Greetings & Energy",
+      "body": "• Good morning, everyone!\n• Hope you slept well?\n• Nice to see you again.\n\nAapki positive energy sab infect karegi— best way to start the day!"
+    },
+    {
+      "type": "audio",
+      "audioPath": "assets/sounds/lesson_audio/morning_vibes_example.mp3",
+      "caption": "🎧 Listen to a warm, upbeat 'Good morning!'"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Try: Good morning, everyone! How’s everyone doing?",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/enthusiastic_gm.mp3"
+    },
+    {
+      "type": "quiz",
+      "question": "Which morning greeting is friendliest?",
+      "options": [
+        "You again? Ugh.",
+        "Good morning! Nice to see you!",
+        "Stop talking.",
+        "I'm not in the mood— don't bother me."
+      ],
+      "answerIndex": 1,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3"
+    },
+    {
+      "type": "message",
+      "text": "Perfect! A happy greeting sets a positive tone for the entire office."
+    },
+
+    {
+      "type": "image",
+      "imagePath": "assets/images/family_greetings.png",
+      "caption": "Evening at home: 'Hi, I’m back!' or 'Hey, how was your day?'"
+    },
+    {
+      "type": "text",
+      "title": "👪 Greeting Family & Friends",
+      "body": "• Hey, I’m home!\n• Did you have a good day?\n• It’s good to see you.\n\nCasual, warm lines keep relationships strong!"
+    },
+    {
+      "type": "audio",
+      "audioPath": "assets/sounds/lesson_audio/family_greeting_example.mp3",
+      "caption": "🎧 Listen: Family greeting sample"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Say: 'Hey, how was your day? I’m home!'",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/family_hey_home.mp3"
+    },
+    {
+      "type": "message",
+      "text": "3 new expressions done—imagine how easy it’ll be now to greet your family!"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/goodbye_variations.png",
+      "caption": "Wave, handshake, or a thumbs-up? All can be friendly goodbyes!"
+    },
+    {
+      "type": "text",
+      "title": "🚦 Fun Goodbye Variations",
+      "body": "• Catch you later\n• Talk to you soon\n• I gotta run\n• Take it easy\n\nTry them all— see which feels most you!"
+    },
+    {
+      "type": "quiz",
+      "question": "Which is a casual, friendly goodbye?",
+      "options": [
+        "I am leaving now, don’t follow!",
+        "Catch you later!",
+        "I must go, never see you again.",
+        "Stop wasting my time."
+      ],
+      "answerIndex": 1,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3"
+    },
+    {
+      "type": "audio",
+      "audioPath": "assets/sounds/lesson_audio/casual_bye_example.mp3",
+      "caption": "🎧 Example of a relaxed, casual 'Catch you later!'"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Practice: 'Catch you later!'",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/catch_you_later.mp3"
+    },
+    {
+      "type": "message",
+      "text": "Leaving a café? A friend’s place? 'Catch you later' keeps it light and cheerful."
+    },
+
+    {
+      "type": "text",
+      "title": "❗Common Mistakes to Avoid",
+      "body": "• Being abrupt: 'I go now.'\n• Sounding uninterested\n• Forgot a smile?\n\nA little extra courtesy can do wonders."
+    },
+    {
+      "type": "audio",
+      "audioPath": "assets/sounds/lesson_audio/mistake_tips.mp3",
+      "caption": "🎧 Listen: Quick ways to avoid sounding rude"
+    },
+    {
+      "type": "quiz",
+      "question": "Which line is wrong in tone?",
+      "options": [
+        "It was nice talking to you.",
+        "I go now.",
+        "Have a nice day!",
+        "See you soon!"
+      ],
+      "answerIndex": 1,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3"
+    },
+    {
+      "type": "message",
+      "text": "See how 'I go now' can sound harsh? Keep it friendly!"
+    },
+    {
+      "type": "quiz",
+      "question": "Leaving politely—best choice?",
+      "options": [
+        "Bye. Now I go.",
+        "Have a good one! See you soon.",
+        "You’re boring me.",
+        "I’m done. I leave."
+      ],
+      "answerIndex": 1,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "End a phone call politely: 'It was nice talking to you. Bye!'",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/phone_call_goodbye.mp3"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/phone_call_scene.png",
+      "caption": "Final line matters—'Bye, see you soon!' leaves a happy note"
+    },
+    {
+      "type": "tip",
+      "title": "💡 Smile!",
+      "body": "Yes, even on calls, people sense a smile. Keep that positivity going!"
+    },
+    {
+      "type": "quiz",
+      "question": "How do you leave an office meeting politely?",
+      "options": [
+        "The meeting is over. Bye.",
+        "Goodbye, you all are fools!",
+        "Catch you later, everyone!",
+        "I’m out. No more talks."
+      ],
+      "answerIndex": 2,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3"
+    },
+    {
+      "type": "message",
+      "text": "Amazing progress! You tried greetings in multiple scenarios + polite ways to exit any chat. Confident yet?"
+    },
+    {
+      "type": "text",
+      "title": "🔁 Recap at a Glance",
+      "body": "👋 Hi! How are you?\n🌅 Good morning!\n📝 Nice to meet you!\n💬 See you later!\n📞 It was nice talking to you.\n🎉 Catch you later!"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Final Practice: Combine a greeting + a short chat + a polite goodbye in one go!",
+      "audioSupport": false
+    },
+    {
+      "type": "audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson2_challenge_reminder.mp3",
+      "caption": "🎧 Bonus Challenge: Greet 3 people tomorrow & say goodbye politely!"
+    },
+    {
+      "type": "badge",
+      "title": "🌟 Greetings & Goodbyes Master!",
+      "description": "You’ve mastered everyday greetings & polite goodbyes. Practice daily to keep shining!",
+      "animation": "assets/animations/badge_unlocked.json"
+    },
+    {
+      "type": "message",
+      "text": "Aap bohot aage badh rahe ho! Polite greetings, short casual lines, and friendly goodbyes = unstoppable confidence!"
+    },
+    {
+      "type": "tip",
+      "title": "💡 Customize It!",
+      "body": "Har line ko apne style mein tweak karo. If ‘Hiya!’ feels more you, use it!"
+    },
+    {
+      "type": "message",
+      "text": "Congratulations—Lesson 2 complete! Ready to greet and goodbye like a pro. See you in Lesson 3!"
+    }
+  ]
+}

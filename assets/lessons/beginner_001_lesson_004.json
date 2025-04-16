@@ -1,0 +1,515 @@
+{
+  "lessonId": "beginner_001_lesson_004",
+  "title": "Asking Simple Questions",
+  "level": "beginner",
+  "part": 4,
+  "activities": [
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson4_intro_auto.mp3",
+      "text": "Namaste! Lesson 4 mein aapka swagat. Aaj hum seekhenge: ‘Simple Questions’ poochna kaise easy banayein—taaki koi confusion na ho!",
+      "allowPause": true
+    },
+    {
+      "type": "message",
+      "text": "Chote-chote questions: ‘What’s your name?’, ‘Where are you from?’—They’re powerful. Aaj sab cover karenge, par aur bhi in-depth, so let’s go!"
+    },
+    {
+      "type": "poll",
+      "question": "What’s your biggest difficulty in asking questions in English?",
+      "options": [
+        "Mujhe question structure nahi pata",
+        "Lagta hai grammar galat ho jayegi",
+        "Confidence ki kami",
+        "Kya poochu, samajh nahi aata"
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Roadmap for Lesson 4",
+      "body": "• Detailed grammar for forming questions step by step\n• Basic ‘Wh’ questions, Yes/No, Tag, Polite forms\n• Heavily expanded Real-Life Q’s list (no more guesswork!)\n• Role-plays, comedic stories, advanced practice\n• Quizzes with hints to guarantee success\n\nLesson ke end tak—aap sawaal poochne se kabhi nahi daroge!"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson4_question_expressions_16x9.png",
+      "caption": "Asking questions can be fun—Look at these curious expressions!"
+    },
+
+    {
+      "type": "text",
+      "title": "Foundation: Why Are Questions So Important?",
+      "body": "Sawaal hi aapka sabse powerful tool hai for learning, clarifying, or making friends. Aap jitne achche se poochoge, utni jaldi aapki English improve hogi!"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson4_question_rules_16x9.png",
+      "caption": "Master the rules, and you’ll never be stuck again!"
+    },
+
+    {
+      "type": "text",
+      "title": "Building Question Sentences: Detailed Rules (Part 1)",
+      "body": "1) **Identify the Info**: Pata karo aapko detail chahiye (WH) ya sirf yes/no?\n\n2) **Pick Your ‘Helper Word’** (auxiliary): do/does/did, is/are/am, can/could, will/would, etc.\n\n3) **Decide the Word Order**:\n   - For yes/no: [Aux] + [Subject] + [Verb] + (Object/extra)?\n     e.g., ‘Do you speak English?’\n   - For WH: [WH word] + [Aux] + [Subject] + [Verb]?\n     e.g., ‘Where do you live?’\n\n4) **Politeness** (if needed): add “Could you...?”, “Would you mind...?” or “May I...?”"
+    },
+    {
+      "type": "message",
+      "text": "Badi simple baat: English question = “Inversion” (aux before subject) + optional WH word. Bas yahi rule yaad rakho!"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson4_framing_sentences_16x9.png",
+      "caption": "This image helps visualize how we invert words to form questions."
+    },
+
+    {
+      "type": "text",
+      "title": "Building Question Sentences: Detailed Rules (Part 2)",
+      "body": "5) **Extra Words**: If a question needs a direct object or adverb, place it after the verb. E.g., “What do you like to eat for breakfast?”\n\n6) **Subject vs. Object Questions**: ‘Who ate the cake?’ (no auxiliary needed if “who” is the subject). But ‘Who did you meet?’ (aux needed if “who” is object). Trickier but helps advanced.\n\n7) **Tag Questions**: Add ‘..., isn’t it?’ or ‘..., do you?’ at the end for confirmation.\n\n8) **Practice**: The more you try building questions from these rules, the more natural it becomes!"
+    },
+    {
+      "type": "roleplay",
+      "text": "Role-play: Construct a question from scratch. Example: You want to know if your friend likes coffee. Step 1) yes/no => use do. Step 2) Invert => Do + subject (you) + verb (like) => ‘Do you like coffee?’"
+    },
+
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson4_comedic_story1.mp3",
+      "text": "Story #1: Ek banda bola, ‘Where do me live you?’ Samne wala confused! Let’s do it right: ‘Where do you live?’",
+      "allowPause": true
+    },
+    {
+      "type": "message",
+      "text": "Lesson: Grammar mistake se bacha ja sakta hai, agar aap basic structure yaad rakho!"
+    },
+
+    {
+      "type": "text",
+      "title": "Basic ‘Wh’ Questions",
+      "body": "• What’s your name?\n• Where do you live?\n• When does this shop open?\n• Who is your favorite singer?\n• Why are you studying English?\n• How can I get there?\n\nIn sab se aap conversation start ya continue kar sakte ho!"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Try saying: ‘What’s your name? Where are you from?’ in a friendly tone!",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/lesson4_basic_wh_prompt.mp3"
+    },
+    {
+      "type": "roleplay",
+      "text": "Role-play: You meet a new person at a cafe. Ask them 2 ‘Wh’ questions to break the ice!"
+    },
+
+    {
+      "type": "text",
+      "title": "Choosing WH vs. Yes/No",
+      "body": "If you want a short ‘Yes’ or ‘No’ answer => Start with do/does/is/are/can. But if you want details => Start with wh-word + [aux].\n\nFor example:\n• *Yes/No*: ‘Do you speak English?’ => answer: ‘Yes, I do!’\n• *WH*: ‘How many languages do you speak?’ => answer: ‘I speak 3...’"
+    },
+    {
+      "type": "poll",
+      "question": "Which question type do you personally use more often?",
+      "options": [
+        "Mostly WH questions",
+        "Mostly Yes/No questions",
+        "I never realized there’s a difference!",
+        "I’m still learning both equally"
+      ]
+    },
+
+    {
+      "type": "text",
+      "title": "Yes/No Questions—Simple But Powerful",
+      "body": "• Do you like coffee?\n• Can you help me?\n• Are you busy?\n• Is it raining?\n\nIn sab se short, direct answers milte hain!"
+    },
+    {
+      "type": "quiz",
+      "question": "Which is a proper yes/no question?",
+      "options": [
+        "You like pizza?",
+        "Do you like pizza?",
+        "Like pizza you do?",
+        "Pizza you like do?"
+      ],
+      "answerIndex": 1,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "hints": [
+        "Yes/No questions often start with do/does/am/is/are/can, etc.",
+        "In correct form: ‘Do you like ____?’"
+      ]
+    },
+    {
+      "type": "message",
+      "text": "Exactly! ‘Do you like pizza?’ sahi structure hai."
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Ask: ‘Do you need any help?’ in a polite, helpful tone.",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/lesson4_yesno_prompt.mp3"
+    },
+    {
+      "type": "poll",
+      "question": "Which do you find trickiest?",
+      "options": [
+        "What/Where/When type (WH questions)",
+        "Do/Does/Can type (Yes/No)",
+        "Unsure how to use them politely",
+        "Everything still confusing!"
+      ]
+    },
+
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson4_polite_question_16x9.png",
+      "caption": "A polite smile can make any question sound friendlier!"
+    },
+    {
+      "type": "text",
+      "title": "Polite Question Starters",
+      "body": "• ‘Could you please...?’\n• ‘Would you mind...?’\n• ‘May I ask...?’\n\nYeh phrases se aap formality & respect dikha sakte ho!"
+    },
+    {
+      "type": "quiz",
+      "question": "Which is more polite?",
+      "options": [
+        "Give me your phone number.",
+        "Could you please give me your phone number?",
+        "I want your phone, now.",
+        "Tell me your phone number... maybe?"
+      ],
+      "answerIndex": 1,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "allowRetry": true,
+      "encouragementOnFail": "Try again—look for a phrase that shows courtesy!"
+    },
+    {
+      "type": "message",
+      "text": "Yes, “Could you please...” is instantly more polite than commanding!"
+    },
+    {
+      "type": "roleplay",
+      "text": "Role-play: Aap ek new colleague se unka email address poochna chahte ho. Use a polite question starter!"
+    },
+
+    {
+      "type": "tip",
+      "title": "💡 Tag Questions",
+      "body": "‘It’s sunny today, isn’t it?’\n‘You can join us, can’t you?’\n\nTag questions make conversation friendly & keep the flow going!"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Try saying: ‘You like music, don’t you?’ with a light, friendly tone!",
+      "audioSupport": false
+    },
+    {
+      "type": "quiz",
+      "question": "Which tag question is correct?",
+      "options": [
+        "You are tired, are you?",
+        "They can help, can they help?",
+        "She’s coming tomorrow, isn’t she?",
+        "We speak English, do we speak it?"
+      ],
+      "answerIndex": 2,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "hints": [
+        "Tag questions usually invert the verb & pronoun: ‘..., isn’t she?’ ‘..., didn’t they?’"
+      ]
+    },
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson4_comedic_story2.mp3",
+      "text": "Story #2: ‘You love cricket, do you do you?’—Double question? Samne wala soch raha, ‘Huh?!’",
+      "allowPause": true
+    },
+    {
+      "type": "message",
+      "text": "Moral: Tag questions are short—‘..., do you?’ or ‘..., isn’t it?’—Don’t repeat it!"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Say: ‘This coffee is delicious, isn’t it?’",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/lesson4_tag_prompt.mp3"
+    },
+
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson4_friend_asking_question_16x9.png",
+      "caption": "Asking everyday questions with friends—makes life simpler!"
+    },
+    {
+      "type": "text",
+      "title": "Advanced Tip: Questions for Clarification",
+      "body": "When you don’t understand, use phrases:\n• ‘Pardon? Could you repeat that?’\n• ‘Sorry, what do you mean by that?’\n• ‘I’m not sure I follow—could you clarify?’\n\nConfidence boost: Don’t be afraid to ask again!"
+    },
+    {
+      "type": "poll",
+      "question": "If you don’t understand something, do you usually ask again?",
+      "options": [
+        "No, I feel shy",
+        "Sometimes, if it’s important",
+        "Yes, always—I want clarity!",
+        "I’m not sure"
+      ]
+    },
+    {
+      "type": "message",
+      "text": "English seeks clarity, so never hesitate to politely re-ask your question!"
+    },
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson4_encouraging_words.mp3",
+      "text": "Practice these question forms daily—zaroori hai to get comfortable in real conversations!",
+      "allowPause": true
+    },
+    {
+      "type": "quiz",
+      "question": "Which question politely asks for repetition?",
+      "options": [
+        "Tell me again fast!",
+        "Could you say that once more, please?",
+        "You speak? Speak again... now?",
+        "I not hear, sorry. Talk again?"
+      ],
+      "answerIndex": 1,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "hints": [
+        "Look for a ‘Could you... please?’ structure",
+        "Politeness is key!"
+      ]
+    },
+    {
+      "type": "message",
+      "text": "Good job! ‘Could you say that once more, please?’ is polite & clear."
+    },
+
+    {
+      "type": "text",
+      "title": "❗ Common Pitfalls",
+      "body": "• Mixing question word order: ‘Where you live do?’\n• Forgetting to be polite: ‘Give me info!’\n• Over-apologizing: ‘I sorry, I no speak well—listen me?’\n\nConfidence > Apologies!"
+    },
+    {
+      "type": "audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson4_mistake_tips.mp3",
+      "caption": "🎧 Quick ways to fix question structure errors"
+    },
+    {
+      "type": "quiz",
+      "question": "Which question is structured properly?",
+      "options": [
+        "Where you are going?",
+        "You go where?",
+        "Where are you going?",
+        "Going you are where?"
+      ],
+      "answerIndex": 2,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "hints": ["‘Where are you going?’ is standard S-V form with wh-word + be + subject + verb"]
+    },
+    {
+      "type": "roleplay",
+      "text": "Role-play: You’re lost in a new city. Ask a stranger for directions using a polite question. E.g., ‘Could you help me find...?’"
+    },
+    {
+      "type": "badge",
+      "title": "🙌 Question-Asking Champ!",
+      "description": "You’ve nailed ‘Wh’, yes/no, tag questions, polite forms—dang, that’s real progress!",
+      "animation": "assets/animations/badge_unlocked.json"
+    },
+    {
+      "type": "message",
+      "text": "But let’s go next-level with comedic lines & advanced practice!"
+    },
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson4_comedic_story3.mp3",
+      "text": "Story #3: ‘You can help me, can you can, or no can?’ Samne wala soch raha: ‘Kya scene hai?!’",
+      "allowPause": true
+    },
+    {
+      "type": "text",
+      "title": "🔥 Pro-Level Affirmation",
+      "body": "‘I can ask any question confidently!’—Repeat this in your mind whenever you hesitate."
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson4_bold_questions_16x9.png",
+      "caption": "Be bold—ask your questions with clarity, politeness, and a calm tone!"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Imagine you’re in a library. Ask the librarian: ‘Could you please show me where the English books are?’",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/lesson4_library_prompt.mp3"
+    },
+
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson4_comedic_story4.mp3",
+      "text": "Story #4 (Travel Scenario): Ek banda tried: ‘Where can I bus find to station the?’ Everyone was lost—Let’s fix that!",
+      "allowPause": true
+    },
+    {
+      "type": "roleplay",
+      "text": "Role-play: Travel scenario—You want to ask at the airport: ‘Where can I find the taxi stand?’ or ‘Could you tell me where Gate 5 is?’ Practice now!"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson4_travel_scenario_16x9.png",
+      "caption": "Travel scenario: Ask strangers for directions politely."
+    },
+    {
+      "type": "text",
+      "title": "Common Travel Questions",
+      "body": "• Where’s the ticket counter?\n• When does the next bus leave?\n• Do you know if this train goes to ____?\n• Could you tell me how much the fare is?\n\nYeh sab aapke safar ko easy bana denge!"
+    },
+
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson4_comedic_story5.mp3",
+      "text": "Story #5 (Market Confusion): ‘I want buy veggies. Where price? You me tell, yes no??’—Khichdi question. We can do better!",
+      "allowPause": true
+    },
+    {
+      "type": "roleplay",
+      "text": "Role-play: Market scenario—Ask the shopkeeper: ‘How much are these tomatoes?’ or ‘Could you please tell me the price of onions?’"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson4_market_scene_16x9.png",
+      "caption": "In a bustling market, short polite questions help you get quick info!"
+    },
+    {
+      "type": "text",
+      "title": "Common Market Questions",
+      "body": "• How much is this?\n• Do you have smaller notes/change?\n• Is there any discount?\n• Could you give me a bag, please?\n\nIn sab se aap confident shopper ban jaoge!"
+    },
+
+    {
+      "type": "text",
+      "title": "Comprehensive List: Real-Life Questions (Part 1)",
+      "body": "**A) Introductions / Basic Info**\n1) What’s your name?\n2) Where are you from?\n3) Which city do you live in?\n4) How old are you? (Use carefully—some find it personal)\n5) What do you do for a living?\n\n**B) Daily Life**\n1) Do you have time to talk?\n2) Are you free later?\n3) When do you usually wake up?\n4) Can you help me carry this?\n5) Where can I find a good restaurant nearby?\n\n**C) Friends / Social**\n1) Who’s your favorite actor?\n2) What kind of music do you like?\n3) Do you watch [sport/TV show]?\n4) Could you recommend me something fun to do?\n5) Are you on social media? (Polite: ‘May I add you?’)"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson4_comprehensive_list_16x9.png",
+      "caption": "A portion of real-life Q’s—so you never run out of ways to ask!"
+    },
+
+    {
+      "type": "text",
+      "title": "Comprehensive List: Real-Life Questions (Part 2)",
+      "body": "**D) Travel / Directions**\n1) Where is the bus stop?\n2) When is the next train?\n3) How long does it take to get there?\n4) Do I need to buy a ticket first?\n5) Could you show me the way on the map?\n\n**E) Work / Office**\n1) Could you send me that file?\n2) When is the deadline?\n3) Do you have a moment to discuss this?\n4) Who should I report to?\n5) May I schedule a meeting?\n\n**F) Services / Customer Support**\n1) Do you have [item/service] in stock?\n2) Could you please fix/replace this?\n3) How long does the process take?\n4) Is there any additional fee?\n5) May I speak to a manager (if it’s serious)?"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson4_comprehensive_list2_16x9.png",
+      "caption": "We’re still adding more so you never feel stuck!"
+    },
+
+    {
+      "type": "text",
+      "title": "Comprehensive List: Real-Life Questions (Part 3)",
+      "body": "**G) Restaurant / Food**\n1) Do you have vegetarian options?\n2) May I see the menu?\n3) What do you recommend?\n4) Could I have some water, please?\n5) Is there any spice level choice?\n\n**H) Health / Medical**\n1) Can I book an appointment?\n2) What time does the clinic open?\n3) Do I need a prescription?\n4) How do I take this medicine?\n5) Could you explain the side effects?\n\n**I) Formal Polite**\n1) Would you mind helping me with this task?\n2) Could I ask you a question about [topic]?\n3) May I interrupt for a moment?\n4) Might I get your opinion on this?\n5) Is it okay if I call you later?"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson4_comprehensive_list3_16x9.png",
+      "caption": "Endless possibilities—these question sets cover 90% of real scenarios!"
+    },
+
+    {
+      "type": "text",
+      "title": "Comprehensive List: Real-Life Questions (Part 4) - The Finale!",
+      "body": "**J) Phone Calls**\n1) May I speak to [Name]?\n2) Could you repeat the number/email?\n3) Do you have a moment to talk?\n4) Is this a good time, or should I call back?\n5) Would you mind sending me a text?\n\n**K) Confidence-Boosting**\n1) Did I frame that question okay?\n2) Could you correct me if I make mistakes?\n3) Is my English understandable?\n4) Are you comfortable with me asking?\n5) May I practice more questions with you?\n\n**These** will keep you prepared for nearly **any** everyday conversation scenario!"
+    },
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson4_comprehensive_list_explanation.mp3",
+      "text": "Audio note: These lists are your golden toolkit. Revisit them. Practice them. Mix & match to suit your life!",
+      "allowPause": true
+    },
+
+    {
+      "type": "poll",
+      "question": "Do you feel you now have enough real-life question examples to practice daily?",
+      "options": [
+        "Yes, more than enough!",
+        "Almost, but I'm still reading them carefully",
+        "I might want even more scenarios",
+        "Wow, so many—I’m excited!"
+      ]
+    },
+    {
+      "type": "message",
+      "text": "These examples are your stepping stones. Every question you see here can spark real conversation in daily life!"
+    },
+
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson4_comedic_story5.mp3",
+      "text": "Story #5 (Market Confusion): ‘I want buy veggies. Where price? You me tell, yes no??’—Khichdi question. We can do better!",
+      "allowPause": true
+    },
+    {
+      "type": "roleplay",
+      "text": "Role-play: Market scenario—Ask the shopkeeper: ‘How much are these tomatoes?’ or ‘Could you please tell me the price of onions?’"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson4_market_scene_16x9.png",
+      "caption": "In a bustling market, short polite questions help you get quick info!"
+    },
+    {
+      "type": "text",
+      "title": "Common Market Questions (Recap)",
+      "body": "• How much is this?\n• Do you have smaller notes/change?\n• Is there any discount?\n• Could you give me a bag, please?\n\nIn sab se aap confident shopper ban jaoge!"
+    },
+
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson4_comedic_story6.mp3",
+      "text": "Story #6: ‘At a restaurant: You can recommended me something, yes or not? I confusing!’—We can do better with ‘Could you recommend something for me?’",
+      "allowPause": true
+    },
+    {
+      "type": "roleplay",
+      "text": "Role-play: Restaurant scenario—Ask the waiter, ‘What do you recommend?’ or ‘Could I see the menu, please?’"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson4_extra_scenarios_16x9.png",
+      "caption": "Restaurants, shops, offices—these question forms apply everywhere!"
+    },
+
+    {
+      "type": "text",
+      "title": "🔁 Recap at a Glance",
+      "body": "1) Grammar: Inversion (aux + subject + verb) + optional wh-word.\n2) Politeness: “Could you...?” “Would you mind...?”\n3) Tag Q’s: “..., isn’t it?” for friendly check.\n4) Real scenarios: Travel, market, phone, coworker, restaurant, health.\n5) Huge question lists to handle 90% daily life queries!\n\nConfidence sabse zaroori hai!"
+    },
+    {
+      "type": "audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson4_final_challenge.mp3",
+      "caption": "🎧 Final Challenge: Ask at least 3 new questions in your day—milk shop, friend call, anything. Notice how it feels!"
+    },
+    {
+      "type": "badge",
+      "title": "🌟 Asking Simple Questions Expert!",
+      "description": "Done & dusted—no more fear in question-asking. This is how you roll—mastering Q’s in every scenario!",
+      "animation": "assets/animations/badge_unlocked.json"
+    },
+    {
+      "type": "message",
+      "text": "Ab aap confidently koi bhi question puch sakte ho. Lesson 4 complete—congratulations!"
+    },
+    {
+      "type": "tip",
+      "title": "💡 Keep Practicing!",
+      "body": "Every question you ask gets you more comfortable in English. Practice daily, and watch your confidence soar—You got this!"
+    }
+  ]
+}

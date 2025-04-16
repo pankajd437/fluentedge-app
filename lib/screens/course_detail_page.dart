@@ -28,17 +28,7 @@ class CourseDetailPage extends StatelessWidget {
     final Color color = course["color"] ?? Colors.blue;
     final String description = course["description"] ?? "No description available.";
     final String tag = course["tag"] ?? kFreeCourseTag;
-
-    final List lessonsRaw = course["lessons"] ?? [];
-    final List<String> lessonTitles = lessonsRaw.map<String>((lesson) {
-      if (lesson is Map && lesson.containsKey('title')) {
-        return lesson['title'].toString();
-      } else if (lesson is String) {
-        return lesson.trim();
-      } else {
-        return lesson.toString();
-      }
-    }).toList();
+    final List lessons = course["lessons"] ?? [];
 
     return Scaffold(
       backgroundColor: kBackgroundSoftBlue,
@@ -47,7 +37,7 @@ class CourseDetailPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.of(context).pop(), // ✅ Use Navigator.pop
+          onPressed: () => Navigator.of(context).pop(),
         ),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
@@ -103,7 +93,6 @@ class CourseDetailPage extends StatelessWidget {
                   ),
                 ),
               ),
-
               Center(
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
@@ -121,9 +110,7 @@ class CourseDetailPage extends StatelessWidget {
                   ),
                 ),
               ),
-
               const SizedBox(height: 10),
-
               Center(
                 child: Text(
                   title,
@@ -135,9 +122,7 @@ class CourseDetailPage extends StatelessWidget {
                   ),
                 ),
               ),
-
               const SizedBox(height: 16),
-
               Container(
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
@@ -162,10 +147,47 @@ class CourseDetailPage extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: 20),
 
-              const SizedBox(height: 24),
+              // ✅ Start Lesson Button (moved up)
+              Center(
+                child: ElevatedButton.icon(
+                  icon: const Icon(Icons.rocket_launch_rounded, size: 18),
+                  onPressed: () {
+                    if (lessons.isNotEmpty) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LessonPage(
+                            courseTitle: title,
+                            courseIcon: icon,
+                            courseColor: color,
+                            lessons: List<Map<String, String>>.from(lessons),
+                          ),
+                        ),
+                      );
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: kAccentGreen,
+                    foregroundColor: Colors.white,
+                    elevation: 3,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                  ),
+                  label: Text(
+                    tag == kPaidCourseTag ? "Unlock Premium" : "Start Lesson",
+                    style: const TextStyle(fontSize: 13.5, fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
 
-              lessonTitles.isEmpty
+              const SizedBox(height: 20),
+
+              // 🔽 Lessons Outline
+              lessons.isEmpty
                   ? const Center(
                       child: Padding(
                         padding: EdgeInsets.symmetric(vertical: 40),
@@ -187,12 +209,11 @@ class CourseDetailPage extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 12),
-                        ...lessonTitles.asMap().entries.map((entry) {
+                        ...lessons.asMap().entries.map((entry) {
                           final int index = entry.key;
-                          final String lesson = entry.value;
+                          final lesson = entry.value;
+                          final String lessonTitle = lesson['title'];
                           final Color iconColor = iconColors[index % iconColors.length];
-                          final bool isHindi = RegExp(r'[\u0900-\u097F]').hasMatch(lesson);
-
                           return Container(
                             margin: const EdgeInsets.only(bottom: 10),
                             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 14),
@@ -207,7 +228,7 @@ class CourseDetailPage extends StatelessWidget {
                                 const SizedBox(width: 10),
                                 Expanded(
                                   child: Text(
-                                    isHindi ? "📘 $lesson" : lesson,
+                                    lessonTitle,
                                     style: const TextStyle(
                                       fontSize: 13,
                                       fontWeight: FontWeight.w500,
@@ -221,37 +242,6 @@ class CourseDetailPage extends StatelessWidget {
                         }),
                       ],
                     ),
-
-              const SizedBox(height: 30),
-
-              Center(
-                child: ElevatedButton.icon(
-                  icon: const Icon(Icons.rocket_launch_rounded, size: 18),
-                  onPressed: () {
-                    if (lessonTitles.isNotEmpty) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => LessonPage(course: course),
-                        ),
-                      );
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: kAccentGreen,
-                    foregroundColor: Colors.white,
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                  ),
-                  label: Text(
-                    tag == kPaidCourseTag ? "Unlock Premium" : "Start Lesson",
-                    style: const TextStyle(fontSize: 13.5, fontWeight: FontWeight.w600),
-                  ),
-                ),
-              ),
             ],
           ),
         ),

@@ -1,44 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart'; // For the Home icon navigation
 import 'package:fluentedge_app/constants.dart';
 import 'package:fluentedge_app/screens/lesson_activity_page.dart';
-import 'package:fluentedge_app/widgets/animated_mentor_widget.dart'; // ✅ Mentor Widget
+import 'package:fluentedge_app/widgets/animated_mentor_widget.dart';
 
 class LessonPage extends StatelessWidget {
-  final Map<String, dynamic> course;
+  final String courseTitle;
+  final IconData courseIcon;
+  final Color courseColor;
+  final List<Map<String, String>> lessons;
 
-  const LessonPage({Key? key, required this.course}) : super(key: key);
+  const LessonPage({
+    Key? key,
+    required this.courseTitle,
+    required this.courseIcon,
+    required this.courseColor,
+    required this.lessons,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final String title = course["title"] ?? "Course";
-    final IconData icon = course["icon"] ?? Icons.menu_book;
-    final Color color = course["color"] ?? kPrimaryBlue;
-    final List lessonsRaw = course["lessons"] ?? [];
-
-    const int unlockedLessons = 3;
-
-    final List<Map<String, dynamic>> lessons = lessonsRaw.map<Map<String, dynamic>>((lesson) {
-      if (lesson is Map && lesson.containsKey('title')) {
-        return {
-          'title': lesson['title'].toString().trim(),
-          'lessonId': lesson['lessonId'] ?? '',
-        };
-      } else {
-        return {
-          'title': lesson.toString().trim(),
-          'lessonId': '',
-        };
-      }
-    }).toList();
+    final int unlockedLessons = lessons.length; // All lessons are unlocked
 
     return Scaffold(
       backgroundColor: kBackgroundSoftBlue,
       appBar: AppBar(
         backgroundColor: kPrimaryBlue,
+        foregroundColor: Colors.white,
         centerTitle: true,
         title: Text(
-          "📘 $title",
+          "📘 $courseTitle",
           style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+        ),
+      ),
+      // Bottom bar with Home icon → /coursesDashboard
+      bottomNavigationBar: BottomAppBar(
+        color: kPrimaryBlue,
+        child: SizedBox(
+          height: 50, // smaller bar height
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                iconSize: 36, // bigger home icon
+                icon: const Icon(Icons.home),
+                color: Colors.white,
+                onPressed: () {
+                  GoRouter.of(context).go('/coursesDashboard');
+                },
+              ),
+            ],
+          ),
         ),
       ),
       body: Padding(
@@ -46,34 +58,32 @@ class LessonPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 📘 Hero Icon for Course
             Center(
               child: Hero(
-                tag: title,
+                tag: courseTitle,
                 child: CircleAvatar(
                   radius: 34,
-                  backgroundColor: color.withOpacity(0.15),
-                  child: Icon(icon, size: 32, color: color),
+                  backgroundColor: courseColor.withOpacity(0.15),
+                  child: Icon(courseIcon, size: 32, color: courseColor),
                 ),
               ),
             ),
             const SizedBox(height: 24),
 
-            // 🤖 Static AI Mentor
+            // ✅ Animated Mentor
             const Center(
               child: AnimatedMentorWidget(
                 size: 180,
-                expressionName: 'Greeting', // 👈 Static expression
+                expressionName: 'Greeting',
               ),
             ),
             const SizedBox(height: 24),
 
-            // 📊 Progress bar
             LinearProgressIndicator(
               value: (unlockedLessons / lessons.length).clamp(0.0, 1.0),
               minHeight: 8,
-              backgroundColor: color.withOpacity(0.1),
-              valueColor: AlwaysStoppedAnimation<Color>(color),
+              backgroundColor: courseColor.withOpacity(0.1),
+              valueColor: AlwaysStoppedAnimation<Color>(courseColor),
             ),
             const SizedBox(height: 16),
 
@@ -87,13 +97,15 @@ class LessonPage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
 
-            // 📘 Lesson List
             Expanded(
               child: ListView.separated(
                 itemCount: lessons.length,
                 separatorBuilder: (_, __) => const SizedBox(height: 12),
                 itemBuilder: (context, index) {
                   final lesson = lessons[index];
+                  final String lessonTitle = lesson["title"] ?? "Untitled";
+                  final String lessonId = lesson["lessonId"] ?? "";
+                  final String lessonJsonPath = 'assets/lessons/$lessonId.json';
                   final bool isUnlocked = index < unlockedLessons;
 
                   return AnimatedContainer(
@@ -102,13 +114,13 @@ class LessonPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: isUnlocked ? Colors.white : const Color(0xFFF0F4F8),
                       border: Border.all(
-                        color: isUnlocked ? color.withOpacity(0.25) : Colors.grey.shade300,
+                        color: isUnlocked ? courseColor.withOpacity(0.25) : Colors.grey.shade300,
                       ),
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: isUnlocked
                           ? [
                               BoxShadow(
-                                color: color.withOpacity(0.08),
+                                color: courseColor.withOpacity(0.08),
                                 blurRadius: 6,
                                 offset: const Offset(0, 3),
                               ),
@@ -122,7 +134,10 @@ class LessonPage extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => LessonActivityPage(lesson: lesson),
+                                  builder: (context) => LessonActivityPage(
+                                    lessonTitle: lessonTitle,
+                                    lessonJsonPath: lessonJsonPath,
+                                  ),
                                 ),
                               );
                             }
@@ -141,7 +156,7 @@ class LessonPage extends StatelessWidget {
                           const SizedBox(width: 12),
                           Expanded(
                             child: Text(
-                              lesson['title'],
+                              lessonTitle,
                               style: TextStyle(
                                 fontSize: 13.5,
                                 fontWeight: FontWeight.w500,
@@ -158,19 +173,21 @@ class LessonPage extends StatelessWidget {
                 },
               ),
             ),
-
             const SizedBox(height: 20),
 
-            // ▶️ CTA Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
                 onPressed: () {
-                  final unlockedLesson = lessons.getRange(0, unlockedLessons).first;
+                  final unlockedLesson = lessons.first;
+                  final lessonJsonPath = 'assets/lessons/${unlockedLesson["lessonId"]}.json';
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => LessonActivityPage(lesson: unlockedLesson),
+                      builder: (context) => LessonActivityPage(
+                        lessonTitle: unlockedLesson["title"] ?? "Untitled",
+                        lessonJsonPath: lessonJsonPath,
+                      ),
                     ),
                   );
                 },

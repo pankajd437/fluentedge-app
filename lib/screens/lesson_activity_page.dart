@@ -1,158 +1,994 @@
+// -----------------------------------------
+// lesson_activity_page.dart
+// -----------------------------------------
+
 import 'dart:async';
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:fluentedge_app/constants.dart';
 import 'package:fluentedge_app/widgets/animated_mentor_widget.dart';
 import 'package:fluentedge_app/widgets/quiz_activity_widget.dart';
+import 'package:lottie/lottie.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:fluentedge_app/data/user_state.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
+// No menu_page.dart import, as you want no menu on this page.
+
+//
+// ---------- VIBRANT COLORS ----------
+const Color vibrantBlue = Color(0xFF007BFF);
+const Color vibrantPink = Color(0xFFE83E8C);
+
+// Refined green colors:
+const Color refinedGreenStart = Color(0xFF388E3C); // Darker green
+const Color refinedGreenEnd = Color(0xFF66BB6A);   // Lighter green
+
+// Other special colors:
+const Color pastelOrange = Color(0xFFFFE5B4);
+const Color pastelYellow = Color(0xFFFFFFB5);
+
+//
+// ---------- FONT & STYLE CONSTANTS ----------
+const double kBaseFontSize = 20.0;
+
+const TextStyle kActivityTitleStyle = TextStyle(
+  fontSize: kBaseFontSize + 4,
+  fontWeight: FontWeight.bold,
+  color: Colors.black87,
+);
+
+const TextStyle kActivityBodyStyle = TextStyle(
+  fontSize: kBaseFontSize,
+  color: Colors.black87,
+  height: 1.5,
+  fontWeight: FontWeight.w400,
+);
+
+const TextStyle kMessageStyle = TextStyle(
+  fontSize: kBaseFontSize,
+  color: Colors.black87,
+  height: 1.5,
+  fontWeight: FontWeight.w400,
+);
+
+// White caption style for clarity on colored backgrounds.
+final TextStyle kVibrantCaptionStyle = TextStyle(
+  fontSize: kBaseFontSize - 2,
+  color: Colors.white,
+  fontStyle: FontStyle.italic,
+);
+
+//
+// ---------- Vibrant Text Styles for Cards ----------
+const TextStyle kVibrantTitleStyle = TextStyle(
+  fontSize: kBaseFontSize + 4,
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+);
+
+const TextStyle kVibrantBodyStyle = TextStyle(
+  fontSize: kBaseFontSize,
+  color: Colors.white,
+  height: 1.5,
+  fontWeight: FontWeight.w400,
+);
+
+const TextStyle kVibrantMessageStyle = TextStyle(
+  fontSize: kBaseFontSize,
+  color: Colors.white,
+  height: 1.5,
+  fontWeight: FontWeight.w400,
+);
+
+//
+// ---------- Additional Text Styles ----------
+const TextStyle kAudioInstructionStyle = TextStyle(
+  fontSize: kBaseFontSize + 2,
+  fontWeight: FontWeight.w600,
+  color: Color(0xFF004D40),
+);
+
+const TextStyle kSpeakingPromptTitleStyleNew = TextStyle(
+  fontSize: kBaseFontSize + 2,
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+  shadows: [
+    Shadow(
+      offset: Offset(1, 1),
+      blurRadius: 2,
+      color: Colors.black26,
+    )
+  ],
+);
+
+//
+// ---------- HELPER FUNCTIONS ----------
+Widget buildActivityContainer({
+  Key? key,
+  required Widget child,
+  required List<Color> gradientColors,
+  required Color shadowColor,
+}) {
+  return Container(
+    key: key,
+    margin: const EdgeInsets.symmetric(vertical: 10),
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      gradient: LinearGradient(
+        colors: gradientColors,
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      ),
+      borderRadius: BorderRadius.circular(20),
+      boxShadow: [
+        BoxShadow(
+          color: shadowColor.withOpacity(0.3),
+          blurRadius: 10,
+          offset: const Offset(0, 6),
+        ),
+      ],
+    ),
+    child: child,
+  );
+}
+
+Widget buildSolidContainer({
+  Key? key,
+  required Widget child,
+  required Color backgroundColor,
+  required Color shadowColor,
+}) {
+  return Container(
+    key: key,
+    margin: const EdgeInsets.symmetric(vertical: 10),
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: backgroundColor,
+      borderRadius: BorderRadius.circular(20),
+      boxShadow: [
+        BoxShadow(
+          color: shadowColor.withOpacity(0.3),
+          blurRadius: 10,
+          offset: const Offset(0, 6),
+        ),
+      ],
+    ),
+    child: child,
+  );
+}
+
+//
+// ---------- USER TEXT HELPERS ----------
+String get userName => UserState.instance.userName ?? 'Friend';
+
+Widget buildTextWithUserName(String? rawText, {TextAlign align = TextAlign.center}) {
+  if (rawText == null || rawText.trim().isEmpty) {
+    return const Text('...');
+  }
+  final parts = rawText.split('[Your Name]');
+  return DefaultTextStyle(
+    style: const TextStyle(fontSize: kBaseFontSize, fontWeight: FontWeight.w500, color: Colors.white),
+    child: RichText(
+      textAlign: align,
+      text: TextSpan(
+        children: [
+          TextSpan(text: parts.isNotEmpty ? parts[0] : ''),
+          if (parts.length > 1)
+            TextSpan(
+              text: userName,
+              style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+            ),
+          if (parts.length > 1) TextSpan(text: parts[1]),
+        ],
+      ),
+    ),
+  );
+}
+
+//
+// ---------- LessonActivityPage CLASS (No Drawer) ----------
 class LessonActivityPage extends StatefulWidget {
-  final Map<String, dynamic> lesson;
+  final String lessonJsonPath;
+  final String lessonTitle;
 
-  const LessonActivityPage({Key? key, required this.lesson}) : super(key: key);
+  const LessonActivityPage({
+    Key? key,
+    required this.lessonJsonPath,
+    required this.lessonTitle,
+  }) : super(key: key);
 
   @override
   State<LessonActivityPage> createState() => _LessonActivityPageState();
 }
 
 class _LessonActivityPageState extends State<LessonActivityPage> {
+  final List<bool> _quizResults = [];
   String _expressionName = 'Processing';
-  String _speechText = "Let's get started!";
-  Timer? _resetTimer;
-  bool _lastAnswerCorrect = false;
+  bool _quizFailed = false;
 
-  void _updateMentorFeedback(String newExpression, String speech, {bool reset = true}) {
+  List<dynamic> _activities = [];
+  int _currentActivityIndex = 0;
+  bool _loading = true;
+  bool _loadError = false;
+
+  final AudioPlayer _audioPlayer = AudioPlayer();
+  bool _autoPlayDoneForThisActivity = false;
+  bool _autoAdvanceTriggered = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLessonJson();
+  }
+
+  Future<void> _loadLessonJson() async {
+    try {
+      final String content = await rootBundle.loadString(widget.lessonJsonPath);
+      final data = jsonDecode(content);
+      setState(() {
+        _activities = data['activities'] ?? [];
+        _loading = false;
+        _loadError = false;
+      });
+    } catch (e) {
+      debugPrint('❌ JSON Load Failed: $e');
+      setState(() {
+        _activities = [];
+        _loadError = true;
+        _loading = false;
+      });
+    }
+  }
+
+  void _handleAnswerSelected(bool isCorrect) {
+    _quizResults.add(isCorrect);
+    if (!isCorrect) {
+      setState(() => _quizFailed = true);
+    }
     setState(() {
-      _expressionName = newExpression;
-      _speechText = speech;
+      _expressionName = isCorrect ? 'Celebrating' : 'Encouraging';
     });
 
-    _resetTimer?.cancel();
+    if (isCorrect && !_autoAdvanceTriggered) {
+      _autoAdvanceTriggered = true;
+      Future.delayed(const Duration(seconds: 1), () {
+        _handleActivityCompleted();
+        setState(() {
+          _expressionName = 'Processing';
+          _autoAdvanceTriggered = false;
+        });
+      });
+    }
+  }
 
-    if (reset && newExpression != 'Confused') {
-      _resetTimer = Timer(const Duration(seconds: 2), () {
-        if (mounted) {
-          setState(() {
-            _expressionName = 'Processing';
-            _speechText = "Let's keep going!";
-          });
-        }
+  void _retryQuiz() {
+    setState(() => _quizFailed = false);
+  }
+
+  void _handleActivityCompleted() {
+    if (_currentActivityIndex < _activities.length - 1) {
+      setState(() {
+        _currentActivityIndex++;
+        _autoPlayDoneForThisActivity = false;
+        _expressionName = 'Processing';
+        _quizFailed = false;
+      });
+    } else {
+      final bool allCorrect = _quizResults.isNotEmpty && !_quizResults.contains(false);
+      GoRouter.of(context).push('/lessonComplete', extra: {
+        'lessonTitle': widget.lessonTitle,
+        'lessonId': widget.lessonTitle.replaceAll(' ', '_').toLowerCase(),
+        'isCorrect': allCorrect,
+        'earnedXP': allCorrect ? kLessonCompletionPoints : 0,
+        'badgeId': null,
       });
     }
   }
 
   @override
   void dispose() {
-    _resetTimer?.cancel();
+    _audioPlayer.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final String lessonTitle = widget.lesson['title'] ?? 'Lesson Title';
+    debugPrint("🧾 LessonActivityPage: no menu, smaller appbar font, refined card design.");
 
     return Scaffold(
-      backgroundColor: kBackgroundSoftBlue,
       appBar: AppBar(
-        backgroundColor: kPrimaryBlue,
-        foregroundColor: Colors.white,
         elevation: 0,
+        backgroundColor: kPrimaryBlue,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
+          onPressed: () => context.pop(),
+        ),
         title: Text(
-          lessonTitle,
-          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+          widget.lessonTitle,
+          style: const TextStyle(
+            fontSize: 17, // smaller to avoid overflow
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
+          ),
           overflow: TextOverflow.ellipsis,
-          maxLines: 2,
+          maxLines: 1,
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            // ✅ AI Mentor Section
-            Column(
+      // Custom smaller bottom bar with centered Home icon
+      bottomNavigationBar: BottomAppBar(
+        color: kPrimaryBlue,
+        child: SizedBox(
+          height: 50, // smaller height for bottom bar
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                iconSize: 36, // bigger home icon
+                icon: const Icon(Icons.home),
+                color: Colors.white,
+                onPressed: () {
+                  GoRouter.of(context).go('/coursesDashboard');
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: Container(
+        // Light gray to white background
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFFF5F5F5), Color(0xFFFFFFFF)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Center(child: AnimatedMentorWidget(size: 140, expressionName: _expressionName)),
-                const SizedBox(height: 8),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: const [
-                      BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2))
-                    ],
-                  ),
-                  child: Text(
-                    _speechText,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 13.5,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black87,
+                // Activity indicator
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Activity ${_currentActivityIndex + 1} of ${_activities.length}",
+                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                // Mentor
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: AnimatedMentorWidget(
+                    size: 110,
+                    expressionName: _expressionName,
                   ),
+                ),
+                const SizedBox(height: 24),
+                // Activity content via AnimatedSwitcher
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 500),
+                  transitionBuilder: (child, animation) {
+                    final slideAnimation = Tween<Offset>(
+                      begin: const Offset(0.1, 0),
+                      end: Offset.zero,
+                    ).animate(animation);
+
+                    return SlideTransition(
+                      position: slideAnimation,
+                      child: FadeTransition(opacity: animation, child: child),
+                    );
+                  },
+                  child: _buildCurrentActivity(),
+                ),
+                const SizedBox(height: 30),
+                // Previous/Next Buttons
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ElevatedButton(
+                      onPressed: _currentActivityIndex == 0
+                          ? null
+                          : () {
+                              if (_currentActivityIndex > 0) {
+                                setState(() {
+                                  _currentActivityIndex--;
+                                  _autoPlayDoneForThisActivity = false;
+                                  _expressionName = 'Processing';
+                                });
+                              }
+                            },
+                      style: ElevatedButton.styleFrom(
+                        disabledBackgroundColor: Colors.grey.shade300,
+                        disabledForegroundColor: Colors.black26,
+                        backgroundColor: kPrimaryBlue,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+                      ),
+                      child: const Text("Previous", style: TextStyle(fontSize: 18)),
+                    ),
+                    ElevatedButton(
+                      onPressed: _handleActivityCompleted,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: kPrimaryBlue,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+                      ),
+                      child: const Text("Next", style: TextStyle(fontSize: 18)),
+                    ),
+                  ],
                 ),
               ],
             ),
-            const SizedBox(height: 24),
+          ),
+        ),
+      ),
+    );
+  }
 
-            // 🎯 Quiz Widget
-            QuizActivityWidget(
-              question: "Which word means the opposite of 'cold'?",
-              options: ['Hot', 'Warm', 'Freeze', 'Cool'],
-              correctIndex: 0,
-              onCompleted: () {
-                if (_lastAnswerCorrect) {
-                  _updateMentorFeedback('Celebrating', "You did great!");
-                }
-                Future.delayed(const Duration(seconds: 1), () {
-                  GoRouter.of(context).push(
-                    '/lessonComplete',
-                    extra: {
-                      'lessonTitle': lessonTitle,
-                      'isCorrect': _lastAnswerCorrect,
-                    },
-                  );
-                });
-              },
-              onAnswerSelected: (isCorrect) {
-                _lastAnswerCorrect = isCorrect;
-                if (isCorrect) {
-                  _updateMentorFeedback('Celebrating', "That's right!");
-                } else {
-                  _updateMentorFeedback('Confused', "Oops! Not quite.", reset: false);
-                }
-              },
-            ),
+  // ---------------------------------------------------------------------
+  // Build the Current Activity
+  // ---------------------------------------------------------------------
+  Widget _buildCurrentActivity() {
+    if (_loading) {
+      return const Center(child: CircularProgressIndicator(key: ValueKey("loading")));
+    }
+    if (_loadError) {
+      return Column(
+        key: const ValueKey("error"),
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Lottie.asset(
+            'assets/animations/ai_mentor_thinking.json',
+            height: 120,
+            repeat: true,
+          ),
+          const SizedBox(height: 20),
+          Text(
+            "⚠️ This lesson’s content could not be loaded.",
+            style: kActivityBodyStyle.copyWith(color: Colors.redAccent),
+          ),
+        ],
+      );
+    }
+    if (_activities.isEmpty) {
+      return Center(
+        key: const ValueKey("empty"),
+        child: Text("⚠️ No activities found for this lesson.", style: kActivityBodyStyle),
+      );
+    }
 
-            const Spacer(),
+    final current = _activities[_currentActivityIndex];
+    final type = current['type'] as String? ?? '';
 
-            // Manual completion button (optional fallback)
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton.icon(
-                onPressed: () {
-                  GoRouter.of(context).push(
-                    '/lessonComplete',
-                    extra: {
-                      'lessonTitle': lessonTitle,
-                      'isCorrect': _lastAnswerCorrect,
-                    },
-                  );
+    switch (type) {
+      case 'auto_audio':
+        return _buildAutoAudio(current);
+      case 'quiz':
+        return _buildQuiz(current);
+      case 'audio':
+        return _buildAudio(current);
+      case 'image':
+        return _buildImage(current);
+      case 'text':
+      case 'text_display':
+        return _buildTextDisplay(current);
+      case 'poll':
+        return _buildPoll(current);
+      case 'tip':
+        return _buildTip(current);
+      case 'message':
+        return _buildMessage(current);
+      case 'speaking_prompt':
+        return _buildSpeakingPrompt(current);
+      case 'badge':
+        return _buildBadge(current);
+      case 'roleplay':
+        return _buildRoleplay(current);
+      default:
+        return Text(
+          "🚧 Unsupported activity type: $type",
+          style: kActivityBodyStyle.copyWith(fontWeight: FontWeight.w600),
+          key: const ValueKey("unsupported"),
+        );
+    }
+  }
+
+  // ---------------------------------------------------------------------
+  // auto_audio
+  // ---------------------------------------------------------------------
+  Widget _buildAutoAudio(Map<String, dynamic> activity) {
+    final audioPath = activity['audioPath']?.toString() ?? '';
+    final text = activity['text']?.toString() ?? '';
+    final allowPause = activity['allowPause'] == true;
+
+    if (!_autoPlayDoneForThisActivity && audioPath.isNotEmpty) {
+      _autoPlayDoneForThisActivity = true;
+      Future.microtask(() async {
+        try {
+          await _audioPlayer.stop();
+          final finalPath = audioPath.replaceFirst('assets/', '');
+          debugPrint("🔊 Auto-playing audio: $finalPath");
+          await _audioPlayer.play(AssetSource(finalPath));
+        } catch (e) {
+          debugPrint("❌ Auto-audio failed: $e");
+        }
+      });
+    }
+
+    return buildActivityContainer(
+      key: const ValueKey("auto_audio"),
+      gradientColors: [vibrantBlue.withOpacity(0.95), vibrantBlue],
+      shadowColor: Colors.deepOrangeAccent,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (text.trim().isNotEmpty)
+            Text(text, style: kVibrantMessageStyle),
+          const SizedBox(height: 12),
+          Row(
+            children: [
+              ElevatedButton.icon(
+                onPressed: () async {
+                  await _audioPlayer.stop();
+                  if (audioPath.isNotEmpty) {
+                    final finalPath = audioPath.replaceFirst('assets/', '');
+                    debugPrint("🔊 Re-playing audio: $finalPath");
+                    await _audioPlayer.play(AssetSource(finalPath));
+                  }
                 },
-                icon: const Icon(Icons.check_circle_outline),
-                label: const Text("Complete Lesson"),
+                icon: const Icon(Icons.play_arrow),
+                label: const Text("Replay"),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: kAccentGreen,
+                  backgroundColor: kPrimaryBlue,
                   foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(vertical: 14),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
               ),
+              const SizedBox(width: 10),
+              if (allowPause)
+                ElevatedButton.icon(
+                  onPressed: () async {
+                    await _audioPlayer.stop();
+                  },
+                  icon: const Icon(Icons.stop),
+                  label: const Text("Stop"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ---------------------------------------------------------------------
+  // quiz
+  // ---------------------------------------------------------------------
+  Widget _buildQuiz(Map<String, dynamic> current) {
+    final rawHints = current['hints'];
+    List<String>? hints;
+    if (rawHints is List) {
+      final stringHints = rawHints.whereType<String>().toList();
+      if (stringHints.isNotEmpty) hints = stringHints;
+    }
+    final allowRetry = current['allowRetry'] == true;
+    final encouragementOnFail = current['encouragementOnFail']?.toString();
+
+    return Column(
+      key: const ValueKey("quiz"),
+      children: [
+        Container(
+          margin: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: refinedGreenStart.withOpacity(0.8),
+                blurRadius: 20,
+                spreadRadius: 5,
+              ),
+            ],
+          ),
+          child: QuizActivityWidget(
+            question: current['question'],
+            options: List<String>.from(current['options']),
+            correctIndex: current['answerIndex'],
+            onAnswerSelected: _handleAnswerSelected,
+            onCompleted: () {},
+            correctSound: current['correctSound'],
+            wrongSound: current['wrongSound'],
+            hints: hints,
+            allowRetry: allowRetry,
+            encouragementOnFail: encouragementOnFail,
+          ),
+        ),
+        if (allowRetry && _quizFailed)
+          ElevatedButton.icon(
+            onPressed: _retryQuiz,
+            icon: const Icon(Icons.refresh),
+            label: const Text("Try Again", style: TextStyle(fontSize: 16)),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.deepOrange,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+              elevation: 5,
+            ),
+          ),
+      ],
+    );
+  }
+
+  // ---------------------------------------------------------------------
+  // audio
+  // ---------------------------------------------------------------------
+  Widget _buildAudio(Map<String, dynamic> current) {
+    final audioPath = current['audioPath']?.toString() ?? '';
+    final caption = current['caption']?.toString() ?? '';
+
+    final List<Color> audioGradient = [
+      Color(0xFF4DB6AC),
+      Color(0xFF80CBC4),
+    ];
+
+    return buildActivityContainer(
+      key: const ValueKey("audio"),
+      gradientColors: audioGradient,
+      shadowColor: Colors.tealAccent,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (caption.isNotEmpty)
+            Text(
+              caption,
+              style: kAudioInstructionStyle,
+            ),
+          const SizedBox(height: 16),
+          ElevatedButton.icon(
+            onPressed: () async {
+              await _audioPlayer.stop();
+              if (audioPath.trim().isNotEmpty) {
+                final finalPath = audioPath.replaceFirst('assets/', '');
+                debugPrint("🔊 Attempting audio: $finalPath");
+                await _audioPlayer.play(AssetSource(finalPath));
+              } else {
+                debugPrint("❌ No valid audioPath found for 'audio' activity.");
+              }
+            },
+            icon: const Icon(Icons.volume_up, size: 24),
+            label: const Text("Play Audio", style: TextStyle(fontSize: 16)),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xFF00796B),
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+              elevation: 5,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ---------------------------------------------------------------------
+  // image
+  // ---------------------------------------------------------------------
+  Widget _buildImage(Map<String, dynamic> current) {
+    final caption = current['caption']?.toString() ?? '';
+    final path = current['imagePath']?.toString() ?? '';
+
+    return buildActivityContainer(
+      key: const ValueKey("image"),
+      gradientColors: [vibrantPink.withOpacity(0.95), vibrantPink],
+      shadowColor: Colors.deepPurpleAccent,
+      child: Column(
+        children: [
+          if (caption.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Text(
+                caption,
+                style: kVibrantCaptionStyle,
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(14),
+            child: Image.asset(
+              path,
+              fit: BoxFit.cover,
+              errorBuilder: (_, __, ___) => Container(
+                height: 150,
+                color: Colors.grey.shade200,
+                alignment: Alignment.center,
+                child: const Text(
+                  'Image not found',
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ---------------------------------------------------------------------
+  // text / text_display
+  // ---------------------------------------------------------------------
+  Widget _buildTextDisplay(Map<String, dynamic> current) {
+    final title = current['title']?.toString() ?? '';
+    final body = current['body']?.toString() ?? current['content']?.toString() ?? '';
+
+    final List<Color> welcomeCardGradient = [
+      Color(0xFF283593),
+      Color(0xFF3F51B5),
+    ];
+
+    return buildActivityContainer(
+      key: const ValueKey("text"),
+      gradientColors: welcomeCardGradient,
+      shadowColor: Colors.redAccent,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (title.isNotEmpty)
+            Text(title, style: kVibrantTitleStyle),
+          const SizedBox(height: 6),
+          Text(body, style: kVibrantBodyStyle),
+        ],
+      ),
+    );
+  }
+
+  // ---------------------------------------------------------------------
+  // poll
+  // ---------------------------------------------------------------------
+  Widget _buildPoll(Map<String, dynamic> current) {
+    final question = current['question']?.toString() ?? '';
+    final options = List<String>.from(current['options'] ?? []);
+    final List<Color> optionColors = [
+      refinedGreenStart,
+      refinedGreenEnd,
+      Color(0xFF43A047),
+      Color(0xFF4CAF50),
+      refinedGreenEnd,
+    ];
+
+    return Container(
+      key: const ValueKey("poll"),
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: refinedGreenStart.withOpacity(0.8),
+            blurRadius: 20,
+            spreadRadius: 5,
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (question.isNotEmpty)
+            Text(
+              question,
+              style: kActivityTitleStyle.copyWith(color: Colors.black),
+            ),
+          const SizedBox(height: 10),
+          ...options.asMap().entries.map((entry) {
+            final index = entry.key;
+            final option = entry.value;
+            return Container(
+              margin: const EdgeInsets.only(bottom: 8),
+              child: ElevatedButton(
+                onPressed: _handleActivityCompleted,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: optionColors[index % optionColors.length],
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 14),
+                ),
+                child: Text(option, style: const TextStyle(fontWeight: FontWeight.w500)),
+              ),
+            );
+          }).toList(),
+        ],
+      ),
+    );
+  }
+
+  // ---------------------------------------------------------------------
+  // tip
+  // ---------------------------------------------------------------------
+  Widget _buildTip(Map<String, dynamic> current) {
+    final title = current['title']?.toString() ?? '';
+    final body = current['body']?.toString() ?? '';
+
+    return buildActivityContainer(
+      key: const ValueKey("tip"),
+      gradientColors: [pastelYellow.withOpacity(0.95), pastelYellow],
+      shadowColor: Colors.tealAccent,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (title.isNotEmpty)
+            Text(title, style: kActivityTitleStyle.copyWith(color: Colors.deepOrange)),
+          const SizedBox(height: 10),
+          Text(body, style: kActivityBodyStyle),
+        ],
+      ),
+    );
+  }
+
+  // ---------------------------------------------------------------------
+  // message
+  // ---------------------------------------------------------------------
+  Widget _buildMessage(Map<String, dynamic> current) {
+    final text = current['text']?.toString() ?? '';
+
+    return buildActivityContainer(
+      key: const ValueKey("message"),
+      gradientColors: [vibrantPink.withOpacity(0.95), vibrantPink],
+      shadowColor: Colors.amberAccent,
+      child: AnimatedTextKit(
+        isRepeatingAnimation: false,
+        animatedTexts: [
+          TypewriterAnimatedText(
+            text,
+            textStyle: kVibrantMessageStyle,
+            speed: const Duration(milliseconds: 40),
+            cursor: '▌',
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ---------------------------------------------------------------------
+  // speaking_prompt
+  // ---------------------------------------------------------------------
+  Widget _buildSpeakingPrompt(Map<String, dynamic> current) {
+    final prompt = current['prompt']?.toString() ?? '';
+    final audioPath = current['audioPath']?.toString() ?? '';
+    final audioSupport = current['audioSupport'] == true;
+
+    final List<Color> speakingPromptGradient = [
+      Color(0xFF4A148C),
+      Color(0xFF7B1FA2),
+    ];
+
+    return buildActivityContainer(
+      key: const ValueKey("speaking_prompt"),
+      gradientColors: speakingPromptGradient,
+      shadowColor: Colors.black45,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("🗣️ Try Saying This:", style: kSpeakingPromptTitleStyleNew),
+          const SizedBox(height: 8),
+          DefaultTextStyle(
+            style: const TextStyle(fontSize: 16, color: Colors.white),
+            child: buildTextWithUserName(prompt, align: TextAlign.start),
+          ),
+          if (audioSupport) ...[
+            const SizedBox(height: 20),
+            ElevatedButton.icon(
+              onPressed: () async {
+                await _audioPlayer.stop();
+                if (audioPath.trim().isNotEmpty) {
+                  final finalPath = audioPath.replaceFirst('assets/', '');
+                  debugPrint("🔊 Attempting speaking_prompt audio: $finalPath");
+                  await _audioPlayer.play(AssetSource(finalPath));
+                } else {
+                  debugPrint("❌ No valid speaking_prompt audioPath found.");
+                }
+              },
+              icon: const Icon(Icons.mic, size: 24),
+              label: const Text("Listen to Example", style: TextStyle(fontSize: 16)),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFF311B92),
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+                elevation: 5,
+              ),
             ),
           ],
-        ),
+        ],
+      ),
+    );
+  }
+
+  // ---------------------------------------------------------------------
+  // badge
+  // ---------------------------------------------------------------------
+  Widget _buildBadge(Map<String, dynamic> current) {
+    final title = current['title']?.toString() ?? '';
+    final description = current['description']?.toString() ?? '';
+    final animation = current['animation']?.toString();
+
+    return buildActivityContainer(
+      key: const ValueKey("badge"),
+      gradientColors: [vibrantPink.withOpacity(0.95), vibrantPink],
+      shadowColor: Colors.pinkAccent,
+      child: Column(
+        children: [
+          if (animation != null && animation.trim().isNotEmpty)
+            Lottie.asset(
+              animation,
+              repeat: false,
+              height: 180,
+              fit: BoxFit.contain,
+            ),
+          const SizedBox(height: 10),
+          Text(title, style: kVibrantTitleStyle),
+          const SizedBox(height: 6),
+          Text(
+            description,
+            style: kVibrantBodyStyle,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ---------------------------------------------------------------------
+  // roleplay
+  // ---------------------------------------------------------------------
+  Widget _buildRoleplay(Map<String, dynamic> current) {
+    final text = current['text']?.toString() ?? '';
+    return buildActivityContainer(
+      key: const ValueKey("roleplay"),
+      gradientColors: [
+        refinedGreenStart.withOpacity(0.95),
+        refinedGreenEnd,
+      ],
+      shadowColor: Colors.orangeAccent,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("🤝 Role-Play Time!", style: kVibrantTitleStyle),
+          const SizedBox(height: 10),
+          Text(text, style: kVibrantBodyStyle),
+        ],
       ),
     );
   }

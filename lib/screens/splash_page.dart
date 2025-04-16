@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fluentedge_app/services/notification_service.dart'; // ✅ Notification service import
+import 'package:lottie/lottie.dart';
+import 'package:fluentedge_app/services/notification_service.dart';
 
 class SplashPage extends StatefulWidget {
   final VoidCallback onInitializationComplete;
@@ -21,7 +22,7 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
 
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 1000),
     );
 
     _scaleAnimation = Tween<double>(begin: 0.8, end: 1.0).animate(
@@ -38,18 +39,16 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
 
   Future<void> _initializeApp() async {
     try {
-      // ✅ Initialize notifications
       await NotificationService.init();
       await NotificationService.scheduleDailyReminder();
 
-      // ✅ Show immediate test notification
-      await NotificationService.testNowNotification(); // ⬅️ Temporary for testing
+      // ✅ Uncomment for test notification if needed
+      // await NotificationService.testNowNotification();
     } catch (e) {
       debugPrint("❌ Notification setup failed: $e");
     }
 
-    // ✅ Continue to Welcome screen
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 1));
     widget.onInitializationComplete();
   }
 
@@ -62,23 +61,47 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF2F6FB), // ✅ App soft background
+      backgroundColor: const Color(0xFFF2F6FB),
       body: Center(
         child: FadeTransition(
           opacity: _fadeAnimation,
           child: ScaleTransition(
             scale: _scaleAnimation,
-            child: Material(
-              color: Colors.transparent,
-              child: Hero(
-                tag: "fluentedge-logo", // ✅ Shared Hero animation
-                child: Image.asset(
-                  'assets/images/FluentEdge Logo.png',
-                  width: 220,
-                  height: 220,
-                  fit: BoxFit.contain,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // ✅ Hero for future transition
+                Hero(
+                  tag: "fluentedge-logo",
+                  child: Image.asset(
+                    'assets/images/FluentEdge Logo.png',
+                    width: 160,
+                    height: 160,
+                    fit: BoxFit.contain,
+                  ),
                 ),
-              ),
+
+                const SizedBox(height: 16),
+
+                // ✅ Optional Lottie flair
+                Lottie.asset(
+                  'assets/animations/ai_mentor_welcome.json',
+                  width: 160,
+                  height: 160,
+                  fit: BoxFit.contain,
+                  repeat: true,
+                ),
+
+                const SizedBox(height: 12),
+                const Text(
+                  "Welcome to FluentEdge",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xFF1565C0),
+                  ),
+                ),
+              ],
             ),
           ),
         ),

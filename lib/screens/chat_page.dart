@@ -1,94 +1,173 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import '../../utils/text_direction_utils.dart';
+import 'package:go_router/go_router.dart';
+import 'package:fluentedge_app/constants.dart';
+import 'package:fluentedge_app/widgets/animated_mentor_widget.dart';
+import 'chat_bubble.dart';
 
-class ChatMessage {
-  final String text;
-  final DateTime timestamp;
-  final bool isAI;
-
-  ChatMessage({
-    required this.text,
-    required this.timestamp,
-    required this.isAI,
-  });
-}
-
-class ChatBubble extends StatelessWidget {
-  final ChatMessage message;
+class IceBreakingChatPage extends StatefulWidget {
+  final String userName;
   final String languagePreference;
 
-  const ChatBubble({
-    super.key,
-    required this.message,
+  const IceBreakingChatPage({
+    Key? key,
+    required this.userName,
     required this.languagePreference,
-  });
+  }) : super(key: key);
+
+  @override
+  State<IceBreakingChatPage> createState() => _IceBreakingChatPageState();
+}
+
+class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
+  final List<ChatMessage> _messages = [];
+  final TextEditingController _controller = TextEditingController();
+  final ScrollController _scrollController = ScrollController();
+
+  bool _isSending = false;
+
+  void _sendMessage(String text) {
+    if (text.trim().isEmpty) return;
+
+    final userMessage = ChatMessage(
+      text: text.trim(),
+      timestamp: DateTime.now(),
+      isAI: false,
+    );
+
+    setState(() {
+      _messages.add(userMessage);
+      _controller.clear();
+    });
+
+    _scrollToBottom();
+
+    _simulateAIResponse();
+  }
+
+  void _simulateAIResponse() async {
+    setState(() => _isSending = true);
+
+    await Future.delayed(const Duration(seconds: 1));
+
+    final aiMessage = ChatMessage(
+      text: "That's a great start, ${widget.userName}! 😄",
+      timestamp: DateTime.now(),
+      isAI: true,
+    );
+
+    setState(() {
+      _messages.add(aiMessage);
+      _isSending = false;
+    });
+
+    _scrollToBottom();
+  }
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    final timeString = DateFormat('h:mm a').format(message.timestamp);
-    final isRTL = languagePreference == 'हिंदी' || languagePreference == 'Hinglish';
+    final isHindi = widget.languagePreference == 'हिंदी';
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4),
-      child: Align(
-        alignment: message.isAI ? Alignment.centerLeft : Alignment.centerRight,
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width * 0.8,
-          ),
-          child: Container(
-            decoration: BoxDecoration(
-              color: message.isAI
-                  ? const Color(0xFFE3F2FD) // Soft AI bubble background
-                  : const Color(0xFF1565C0), // User message background
-              borderRadius: BorderRadius.only(
-                topLeft: const Radius.circular(12),
-                topRight: const Radius.circular(12),
-                bottomLeft: Radius.circular(message.isAI ? 0 : 12),
-                bottomRight: Radius.circular(message.isAI ? 12 : 0),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.blue.shade100.withOpacity(0.3),
-                  blurRadius: 6,
-                  offset: const Offset(0, 3),
-                ),
-              ],
-            ),
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Directionality(
-                  textDirection: getTextDirection(isRTL),
-                  child: Text(
-                    message.text,
-                    style: TextStyle(
-                      color: message.isAI ? Colors.black87 : Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 6),
-                Align(
-                  alignment:
-                      message.isAI ? Alignment.centerLeft : Alignment.centerRight,
-                  child: Text(
-                    timeString,
-                    style: TextStyle(
-                      fontSize: 10,
-                      color: message.isAI
-                          ? Colors.grey.shade700
-                          : Colors.white.withOpacity(0.8),
-                    ),
-                  ),
-                ),
-              ],
+    return Scaffold(
+      backgroundColor: kBackgroundSoftBlue,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () => GoRouter.of(context).pop(),
+        ),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [kPrimaryBlue, kSecondaryBlue],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
         ),
+        title: Text(
+          isHindi ? '🤖 चैट सहायक' : '🤖 Ice-Breaking Chat',
+          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+        ),
+      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                controller: _scrollController,
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                itemCount: _messages.length,
+                itemBuilder: (context, index) {
+                  return ChatBubble(
+                    message: _messages[index],
+                    languagePreference: widget.languagePreference,
+                  );
+                },
+              ),
+            ),
+            if (_isSending)
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Center(child: CircularProgressIndicator()),
+              ),
+            _buildInputBar(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildInputBar() {
+    return Container(
+      color: Colors.white,
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              controller: _controller,
+              textCapitalization: TextCapitalization.sentences,
+              textInputAction: TextInputAction.send,
+              onSubmitted: _sendMessage,
+              style: const TextStyle(fontSize: 14.5),
+              decoration: InputDecoration(
+                hintText: widget.languagePreference == 'हिंदी'
+                    ? "अपना संदेश लिखें..."
+                    : "Type your message...",
+                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(color: Colors.grey),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(width: 10),
+          ElevatedButton(
+            onPressed: () => _sendMessage(_controller.text),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: kPrimaryBlue,
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            ),
+            child: const Icon(Icons.send, size: 18),
+          ),
+        ],
       ),
     );
   }

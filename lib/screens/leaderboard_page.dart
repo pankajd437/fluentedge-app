@@ -56,117 +56,122 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
       ),
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
-          : ListView.builder(
-              padding: const EdgeInsets.all(16),
-              itemCount: leaderboard.length,
-              itemBuilder: (context, index) {
-                final user = leaderboard[index];
-                final rank = user['rank'];
-                final name = user['name'];
-                final xp = user['xp'];
-
-                // Use neutral card background for ALL
-                const Color cardColor = Colors.white;
-
-                // Only customize rank icon & accent, not full background
-                final Color borderColor = index == 0
-                    ? Colors.amber
-                    : index == 1
-                        ? Colors.grey
-                        : index == 2
-                            ? Colors.brown
-                            : Colors.blue.shade100;
-
-                final IconData? medalIcon = index == 0
-                    ? Icons.emoji_events
-                    : index == 1
-                        ? Icons.military_tech
-                        : index == 2
-                            ? Icons.workspace_premium
-                            : null;
-
-                return AnimatedContainer(
-                  duration: const Duration(milliseconds: 300),
-                  margin: const EdgeInsets.only(bottom: 14),
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                  decoration: BoxDecoration(
-                    color: cardColor,
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: Colors.grey.shade200),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black12.withOpacity(0.04),
-                        blurRadius: 6,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
+          : leaderboard.isEmpty
+              ? const Center(
+                  child: Text(
+                    "🏁 No leaderboard data yet.",
+                    style: TextStyle(fontSize: 14.5, fontWeight: FontWeight.w500, color: Colors.black54),
                   ),
-                  child: Row(
-                    children: [
-                      Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          CircleAvatar(
-                            radius: 24,
-                            backgroundColor: Colors.grey.shade100,
-                            child: Text(
-                              "$rank",
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black87,
-                              ),
-                            ),
+                )
+              : ListView.builder(
+                  padding: const EdgeInsets.all(16),
+                  itemCount: leaderboard.length,
+                  itemBuilder: (context, index) {
+                    final user = leaderboard[index];
+                    final rank = user['rank'];
+                    final name = user['name'];
+                    final xp = user['xp'];
+
+                    const Color cardColor = Colors.white;
+
+                    final Color borderColor = index == 0
+                        ? Colors.amber
+                        : index == 1
+                            ? Colors.grey
+                            : index == 2
+                                ? Colors.brown
+                                : Colors.blue.shade100;
+
+                    final IconData? medalIcon = index == 0
+                        ? Icons.emoji_events
+                        : index == 1
+                            ? Icons.military_tech
+                            : index == 2
+                                ? Icons.workspace_premium
+                                : null;
+
+                    return AnimatedContainer(
+                      duration: const Duration(milliseconds: 300),
+                      margin: const EdgeInsets.only(bottom: 14),
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                      decoration: BoxDecoration(
+                        color: cardColor,
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(color: Colors.grey.shade200),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12.withOpacity(0.04),
+                            blurRadius: 6,
+                            offset: const Offset(0, 4),
                           ),
-                          if (medalIcon != null)
-                            Positioned(
-                              bottom: -2,
-                              right: -2,
-                              child: Icon(
-                                medalIcon,
-                                size: 18,
-                                color: borderColor,
-                              ),
-                            ),
                         ],
                       ),
-                      const SizedBox(width: 14),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              name,
-                              style: const TextStyle(
-                                fontSize: 15.5,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black87,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                              decoration: BoxDecoration(
-                                color: kAccentGreen.withOpacity(0.08),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Text(
-                                "$xp XP",
-                                style: const TextStyle(
-                                  fontSize: 12.5,
-                                  fontWeight: FontWeight.bold,
-                                  color: kAccentGreen,
+                      child: Row(
+                        children: [
+                          Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              CircleAvatar(
+                                radius: 24,
+                                backgroundColor: Colors.grey.shade100,
+                                child: Text(
+                                  "$rank",
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black87,
+                                  ),
                                 ),
                               ),
+                              if (medalIcon != null)
+                                Positioned(
+                                  bottom: -2,
+                                  right: -2,
+                                  child: Icon(
+                                    medalIcon,
+                                    size: 18,
+                                    color: borderColor,
+                                  ),
+                                ),
+                            ],
+                          ),
+                          const SizedBox(width: 14),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  name,
+                                  style: const TextStyle(
+                                    fontSize: 15.5,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: kAccentGreen.withOpacity(0.08),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Text(
+                                    "$xp XP",
+                                    style: const TextStyle(
+                                      fontSize: 12.5,
+                                      fontWeight: FontWeight.bold,
+                                      color: kAccentGreen,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                );
-              },
-            ),
+                    );
+                  },
+                ),
     );
   }
 }

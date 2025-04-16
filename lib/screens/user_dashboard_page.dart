@@ -55,7 +55,7 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
-              // Future: Open settings
+              // 🚧 Coming soon
             },
           )
         ],
@@ -65,7 +65,7 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🎯 XP & Streak Banner
+            // 🔥 Streak + XP Banner
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(16),
@@ -83,27 +83,30 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
                       const Text(
                         kDailyStreakText,
                         style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: kPrimaryIconBlue),
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: kPrimaryIconBlue,
+                        ),
                       ),
                       const SizedBox(height: 6),
                       Text(
                         "🔥 $currentStreak-Day Streak",
                         style: const TextStyle(
-                            fontSize: 13.5, color: Colors.black87),
+                          fontSize: 13.5,
+                          color: Colors.black87,
+                        ),
                       ),
                     ],
                   ),
                   const Icon(Icons.local_fire_department,
-                      color: Colors.orange, size: 32)
+                      color: Colors.orange, size: 34),
                 ],
               ),
             ),
 
             const SizedBox(height: 24),
 
-            // 🧩 Resume Lesson CTA
+            // 🎓 Resume CTA
             Text("🎓 Continue Learning",
                 style: TextStyle(
                     fontSize: kFontMedium,
@@ -166,7 +169,7 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
 
             const SizedBox(height: 30),
 
-            // 🎖 Shortcut Grid
+            // 🎖 Quick Navigation Grid
             Text("🚀 Quick Access",
                 style: TextStyle(
                     fontSize: kFontMedium,

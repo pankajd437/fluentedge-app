@@ -1,0 +1,169 @@
+{
+  "lessonId": "beginner_001_lesson_001",
+  "title": "Welcome & Course Introduction",
+  "level": "beginner",
+  "part": 1,
+  "activities": [
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/L1_intro_auto.mp3",
+      "text": "Hello, main hoon Fluent—Aapka English mentor! Aaj hum seekhenge, agar aap public place par atak gaye ho, toh English mein help kaise maangna hai. Ready? Chaliye shuru karein!",
+      "allowPause": true
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/help_request_scene_16x9.png",
+      "caption": "Aap ek station ya airport par ho, aur direction nahi samajh aa raha hai. Kya karoge?"
+    },
+    {
+      "type": "message",
+      "text": "Aapke dimaag mein shayad yeh thoughts aarahe honge: “Kaise poochun? English yaad nahi aa rahi!” Ya “Log mujhe judge toh nahi karenge?” Don’t worry, hum sab handle karenge."
+    },
+    {
+      "type": "poll",
+      "question": "Sabse badi mushkil kya mehsoos karte ho jab public mein English bolni ho?",
+      "options": [
+        "Words ya phrases yaad nahi aate",
+        "Confidence ki kami",
+        "Tone polite rakhne mein problem",
+        "Log kya sochenge, yeh darr"
+      ]
+    },
+    {
+      "type": "message",
+      "text": "Samajh gaya—yeh common worries hain! Par iss course ki madad se aapko sab step-by-step samajh aa jayega."
+    },
+    {
+      "type": "text",
+      "title": "Roadmap: Iss Course Mein Aap Kya Seekhoge?",
+      "body": "• Lesson 2: Simple Greetings & Goodbyes – Dost aur new log se confidently baat karna.\n• Lesson 3: Introducing Yourself – Apna parichay dena bina sharam.\n• Lesson 4: Asking Simple Questions – “Kya yeh sahi hai?” “Mujhe yeh chahiye.”\n• Lesson 5: Responding Clearly & Politely\n• ...\n\nTotal 13 lessons mein hum aapko everyday conversation tak le jayenge. Course khatam hone tak, aap ek solid level par pahunch sakte ho!"
+    },
+    {
+      "type": "message",
+      "text": "Agar overall course quizzes mein aapka score 80% ya zyada hua, toh final badge milega! Agar 50% se kam raha, toh dubara revise karke practice karna—main aapke saath hoon!"
+    },
+    {
+      "type": "text",
+      "title": "Lesson 1 Focus: Urgent Help in Public",
+      "body": "Soch lo aap airport ya station par phase ho. English request karni hai. Chalo ek chhota scenario dekhte hain."
+    },
+    {
+      "type": "message",
+      "text": "Scenario: Aap ek airport par ho. Need help to find taxi stand. Log busy hain, aapko hichkichahat ho rahi hai. Kaise politely poochoge?"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Practice: “Excuse me, can you please tell me where the taxi stand is?”",
+      "audioSupport": false
+    },
+    {
+      "type": "message",
+      "text": "Dheere bolo, ek chhoti smile rakkho, aur 'Excuse me' se start karna politely attention grab karne ka best way hai."
+    },
+    {
+      "type": "quiz",
+      "question": "Politeness Check: Kaunsa line sabse respectful lagega?",
+      "options": [
+        "Hey, help me now!",
+        "Where taxi stand, yaar?",
+        "Excuse me, can you please show me the taxi stand?",
+        "Taxi? Hello? Are you free?"
+      ],
+      "answerIndex": 2,
+      "hints": [
+        "‘Excuse me’ + ‘please’ se request bohot polite lagti hai."
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "allowRetry": true,
+      "encouragementOnFail": "Koi baat nahi! Phir try karein. Politeness ke liye 'Excuse me' aur 'please' use karna yaad rakho."
+    },
+    {
+      "type": "audio",
+      "audioPath": "assets/sounds/lesson_audio/help_request_1.mp3",
+      "caption": "🎧 Listen: Kisi ko help request karte time tone kitna calm hai.",
+      "allowPause": true
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Ab aap bolo: “Could you please help me? I’m a bit lost.”",
+      "audioSupport": false
+    },
+    {
+      "type": "text",
+      "title": "Relief",
+      "body": "Mera ek dost tha—usne panic mein bola: “Hey, you find my phone now!” Shopkeeper confuse ho gaya. Agar ‘Excuse me…’ use kiya hota, help jaldi mil jati!"
+    },
+    {
+      "type": "audio",
+      "audioPath": "assets/sounds/lesson_audio/L1_comedic_story.mp3",
+      "caption": "🎧 Thodi hasi-mazaak: Sunein kaise polite tone ki importance hai!",
+      "allowPause": true
+    },
+    {
+      "type": "poll",
+      "question": "Aapko kya lagta hai tone se sabse zyada impact hota hai?",
+      "options": [
+        "Log aapki request ko kitna seriously lete hain",
+        "Grammatical correctness",
+        "Koi farq nahi padta",
+        "Tone se hi sab hota hai, words secondary hain"
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Tone & Body Language",
+      "body": "Polite tone + relaxed body language se log aapki help karne mein zyada ready honge. Panic avoid karo!"
+    },
+    {
+      "type": "quiz",
+      "question": "If you need directions but feel shy, which approach is best?",
+      "options": [
+        "Excuse me...I’m sorry, but could you tell me where the exit is?",
+        "Oi, exit kidhar hai?",
+        "Bhai, jaldi batao, time nahi hai!",
+        "I lost. You come here now!"
+      ],
+      "answerIndex": 0,
+      "hints": [
+        "‘I’m sorry, but could you...’ shows polite hesitation."
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "allowRetry": true,
+      "encouragementOnFail": "Chalta hai, dobara try karo. 'Excuse me' aur 'I’m sorry' se request friendly lagti hai."
+    },
+    {
+      "type": "message",
+      "text": "Awesome! Dekha aap kitna easily polite tone maintain kar sakte ho."
+    },
+    {
+      "type": "audio",
+      "audioPath": "assets/sounds/lesson_audio/repeat_confident_tone.mp3",
+      "caption": "🔁 Repeat: 'Excuse me, could you please help me find...' in a confident voice!",
+      "allowPause": true
+    },
+    {
+      "type": "message",
+      "text": "Is tarah aap aage ke lessons mein jitna practice karoge, utna hi comfortable feel karoge!"
+    },
+    {
+      "type": "text",
+      "title": "Lesson Recap",
+      "body": "• 'Excuse me' se politely start karo.\n• 'Could you please...' or 'I’m sorry...' se request friendly ban jati hai.\n• Tone + Smile = Log help karne ko tayyar honge.\n• Panic mat karo—confidence se bolo, words se zyada calmness matter karti hai."
+    },
+    {
+      "type": "message",
+      "text": "Aapne yeh sab sikh liya? Superb! Ab aap public place par help request kar sakte ho, bina dare."
+    },
+    {
+      "type": "message",
+      "text": "Yaad rakho, overall course score agar 80% se upar raha toh aapko final badge milega. Agar 50% se kam hua, koi tension nahi—dubara revise karo aur confident bano!"
+    },
+    {
+      "type": "text",
+      "title": "Aage Ka Safar",
+      "body": "Next Lesson (Lesson 2) mein hum greetings aur goodbyes pe focus karenge. Har conversation ki pehli aur aakhri line important hai! Milte hain wahan! 👋"
+    }
+  ]
+}

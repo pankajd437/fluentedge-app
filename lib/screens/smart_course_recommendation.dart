@@ -9,6 +9,7 @@ class SmartCourseRecommendationPage extends StatelessWidget {
   final String languagePreference;
   final String gender;
   final int age;
+  final String userLevel; // ✅ NEW
   final List<String> recommendedCourses;
 
   const SmartCourseRecommendationPage({
@@ -17,6 +18,7 @@ class SmartCourseRecommendationPage extends StatelessWidget {
     required this.languagePreference,
     required this.gender,
     required this.age,
+    required this.userLevel, // ✅ NEW
     required this.recommendedCourses,
   }) : super(key: key);
 

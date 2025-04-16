@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
 import 'package:fluentedge_app/localization/app_localizations.dart';
 import 'package:fluentedge_app/main.dart';
+import 'package:go_router/go_router.dart';
 
 class WelcomePage extends ConsumerStatefulWidget {
   final Function(String, String) onUserInfoSubmitted;
@@ -31,51 +32,44 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
+    final isHindi = selectedLanguage == "हिंदी";
 
     return Scaffold(
-      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xFFF2F6FB),
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          return SingleChildScrollView(
-            padding: EdgeInsets.only(
-              bottom: MediaQuery.of(context).viewInsets.bottom,
-            ),
-            child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: constraints.maxHeight),
-              child: SafeArea(
+      body: SafeArea(
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraints.maxHeight),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _buildHeaderSection(localizations),
-                    _buildInputSection(localizations),
+                    _buildHeader(localizations, isHindi),
+                    _buildForm(localizations),
                   ],
                 ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
 
-  Widget _buildHeaderSection(AppLocalizations localizations) {
-    final isHindi = selectedLanguage == "हिंदी";
-
+  Widget _buildHeader(AppLocalizations localizations, bool isHindi) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
       child: Column(
         children: [
-          Material(
-            color: Colors.transparent,
-            child: Hero(
-              tag: "fluentedge-logo",
-              child: Image.asset(
-                'assets/images/FluentEdge Logo.png',
-                width: 160,
-                height: 160,
-                fit: BoxFit.contain,
-              ),
+          Hero(
+            tag: "fluentedge-logo",
+            child: Image.asset(
+              'assets/images/FluentEdge Logo.png',
+              width: 160,
+              height: 160,
+              fit: BoxFit.contain,
             ),
           ),
           const SizedBox(height: 2),
@@ -83,21 +77,18 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
             'assets/animations/ai_mentor_welcome.json',
             width: 230,
             height: 210,
-            fit: BoxFit.contain,
-            errorBuilder: (context, error, stackTrace) =>
+            errorBuilder: (_, __, ___) =>
                 const Icon(Icons.animation, size: 100, color: Colors.grey),
           ),
           const SizedBox(height: 8),
           Text(
-            isHindi
-                ? localizations.welcomeMessageHindi
-                : localizations.welcomeMessage,
+            isHindi ? localizations.welcomeMessageHindi : localizations.welcomeMessage,
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Poppins',
               color: Color(0xFF0D47A1),
+              fontFamily: 'Poppins',
               height: 1.4,
             ),
           ),
@@ -110,27 +101,25 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
             style: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins',
               color: Colors.black54,
+              fontFamily: 'Poppins',
               height: 1.6,
             ),
           ),
-          const SizedBox(height: 12),
         ],
       ),
     );
   }
 
-  Widget _buildInputSection(AppLocalizations localizations) {
+  Widget _buildForm(AppLocalizations localizations) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
       decoration: const BoxDecoration(
         color: Colors.white,
         boxShadow: [
           BoxShadow(
             color: Colors.blueAccent,
             blurRadius: 6,
-            spreadRadius: 1,
             offset: Offset(0, -1),
           ),
         ],
@@ -141,22 +130,16 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
           TextField(
             controller: _nameController,
             focusNode: _nameFocusNode,
-            autofocus: true,
             decoration: InputDecoration(
               labelText:
                   localizations.getLocalizedNameFieldLabel(selectedLanguage),
-              labelStyle: const TextStyle(
-                fontWeight: FontWeight.w500,
-                fontFamily: 'Poppins',
-              ),
+              prefixIcon: const Icon(Icons.person),
               border: const OutlineInputBorder(),
-              prefixIcon: const Icon(Icons.person, color: Color(0xFF0D47A1)),
-              contentPadding:
-                  const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 14),
             ),
             textInputAction: TextInputAction.done,
           ),
-          const SizedBox(height: 15),
+          const SizedBox(height: 16),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -165,64 +148,68 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
                 style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
-                  fontFamily: 'Poppins',
                 ),
               ),
               const SizedBox(width: 10),
-              DropdownButtonHideUnderline(
-                child: DropdownButton<String>(
-                  value: selectedLanguage,
-                  onChanged: (String? newValue) {
+              DropdownButton<String>(
+                value: selectedLanguage,
+                onChanged: (value) {
+                  if (value != null) {
                     setState(() {
-                      selectedLanguage = newValue!;
+                      selectedLanguage = value;
                       FluentEdgeApp.updateLocale(
                         ref,
-                        newValue == "हिंदी"
-                            ? const Locale('hi')
-                            : const Locale('en'),
+                        value == "हिंदी" ? const Locale('hi') : const Locale('en'),
                       );
                     });
-                  },
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Poppins',
-                    color: Colors.black,
+                  }
+                },
+                items: [
+                  DropdownMenuItem(
+                    value: "English",
+                    child: Text(localizations.englishLanguageName),
                   ),
-                  items: [
-                    DropdownMenuItem(
-                      value: "English",
-                      child: Text(localizations.englishLanguageName),
-                    ),
-                    DropdownMenuItem(
-                      value: "हिंदी",
-                      child: Text(localizations.hindiLanguageName),
-                    ),
-                  ],
-                ),
+                  DropdownMenuItem(
+                    value: "हिंदी",
+                    child: Text(localizations.hindiLanguageName),
+                  ),
+                ],
               ),
             ],
           ),
-          const SizedBox(height: 15),
+          const SizedBox(height: 24),
+
+          // 🔵 Continue with Registration
           SizedBox(
             width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () => _handleContinue(context),
+            child: ElevatedButton.icon(
+              icon: const Icon(Icons.person_add),
+              onPressed: () => _continueWithRegistration(),
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 14),
                 backgroundColor: const Color(0xFF1565C0),
+                padding: const EdgeInsets.symmetric(vertical: 14),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
-              child: Text(
+              label: Text(
                 localizations.continueButton,
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'Poppins',
-                  color: Colors.white,
-                ),
+                style: const TextStyle(color: Colors.white, fontSize: 14),
+              ),
+            ),
+          ),
+
+          const SizedBox(height: 12),
+
+          // ⚪ Explore as Guest
+          TextButton(
+            onPressed: () => _continueAsGuest(context),
+            child: const Text(
+              "Explore as Guest",
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: Colors.black87,
               ),
             ),
           ),
@@ -231,16 +218,22 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
     );
   }
 
-  void _handleContinue(BuildContext context) {
-    final trimmedName = _nameController.text.trim();
-    if (trimmedName.isEmpty) {
+  void _continueWithRegistration() {
+    final name = _nameController.text.trim();
+    if (name.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(AppLocalizations.of(context)!.nameRequiredError),
         ),
       );
-    } else {
-      widget.onUserInfoSubmitted(trimmedName, selectedLanguage);
+      return;
     }
+    widget.onUserInfoSubmitted(name, selectedLanguage);
   }
-}
+
+  void _continueAsGuest(BuildContext context) {
+    final guestName = _nameController.text.trim().isNotEmpty
+        ? _nameController.text.trim()
+        : "Guest";
+
+    ref.read

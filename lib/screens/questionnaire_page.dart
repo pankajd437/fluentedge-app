@@ -5,11 +5,12 @@ import 'package:fluentedge_app/constants.dart';
 import 'package:fluentedge_app/services/api_service.dart';
 import 'package:fluentedge_app/data/user_state.dart';
 import 'package:go_router/go_router.dart';
+import 'package:fluentedge_app/screens/menu_page.dart'; // Import the menu page
 
 class QuestionnairePage extends StatefulWidget {
   final String userName;
   final String languagePreference;
-  final void Function(String gender, int age, List<String> recommendedCourses) onCompleted;
+  final void Function(String gender, int age, List<String> recommendedCourses, String userLevel) onCompleted;
 
   const QuestionnairePage({
     super.key,
@@ -26,7 +27,7 @@ class _QuestionnairePageState extends State<QuestionnairePage> with SingleTicker
   int _step = 0;
   late AnimationController _controller;
 
-  String? purpose, englishLevel, biggestChallenge, learningStyle, dailyTime, learningTimeline, age, gender;
+  String? motivation, englishLevel, biggestChallenge, learningStyle, dailyTime, learningTimeline, selectedAge, selectedGender;
 
   final emojis = ["🚀", "🌍", "💼", "📚", "🤓", "🥇", "🕰️", "👨‍🎓"];
 
@@ -101,16 +102,15 @@ class _QuestionnairePageState extends State<QuestionnairePage> with SingleTicker
   void _handleNext(String selectedValue) {
     setState(() {
       switch (_step) {
-        case 0: purpose = selectedValue; break;
+        case 0: motivation = selectedValue; break;
         case 1: englishLevel = selectedValue; break;
         case 2: biggestChallenge = selectedValue; break;
         case 3: learningStyle = selectedValue; break;
         case 4: dailyTime = selectedValue; break;
         case 5: learningTimeline = selectedValue; break;
-        case 6: age = selectedValue; break;
-        case 7: gender = selectedValue; break;
+        case 6: selectedAge = selectedValue; break;
+        case 7: selectedGender = selectedValue; break;
       }
-
       if (_step < 7) {
         _step++;
         _controller.forward(from: 0);
@@ -121,29 +121,30 @@ class _QuestionnairePageState extends State<QuestionnairePage> with SingleTicker
   }
 
   Future<void> _submitUserData() async {
-    final parsedAge = age != null ? int.tryParse(age!.replaceAll(RegExp(r'\D'), '')) ?? 0 : 0;
+    final int parsedAge = selectedAge != null ? int.tryParse(selectedAge!.replaceAll(RegExp(r'\D'), '')) ?? 0 : 0;
 
     final response = await ApiService.saveUserResponses(
       name: widget.userName,
-      motivation: purpose ?? '',
+      motivation: motivation ?? '',
       englishLevel: englishLevel ?? '',
       learningStyle: learningStyle ?? '',
       difficultyArea: biggestChallenge ?? '',
       dailyTime: dailyTime ?? '',
       learningTimeline: learningTimeline ?? '',
       age: parsedAge,
-      gender: gender ?? '',
+      gender: selectedGender ?? '',
     );
 
-    final recommendedCourses = response.recommendedCourses.cast<String>().isNotEmpty
+    final String userLevel = response.userLevel ?? 'beginner';
+    final List<String> recommendedCourses = response.recommendedCourses.cast<String>().isNotEmpty
         ? response.recommendedCourses.cast<String>()
         : ['Smart Daily Conversations'];
 
-    await UserState.setGender(gender ?? '');
+    await UserState.setGender(selectedGender ?? '');
     await UserState.setAge(parsedAge);
 
     if (mounted) {
-      widget.onCompleted(gender ?? '', parsedAge, recommendedCourses);
+      widget.onCompleted(selectedGender ?? '', parsedAge, recommendedCourses, userLevel);
     }
   }
 
@@ -157,7 +158,7 @@ class _QuestionnairePageState extends State<QuestionnairePage> with SingleTicker
         gradient: LinearGradient(colors: gradient),
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
-          BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2)),
+          BoxShadow(color: Colors.black12, blurRadius: 4, offset: const Offset(0, 2)),
         ],
       ),
       child: Material(
@@ -174,11 +175,7 @@ class _QuestionnairePageState extends State<QuestionnairePage> with SingleTicker
                 Expanded(
                   child: Text(
                     option,
-                    style: const TextStyle(
-                      fontSize: 14.5,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
+                    style: const TextStyle(fontSize: 14.5, fontWeight: FontWeight.w500, color: Colors.white),
                   ),
                 ),
               ],
@@ -207,21 +204,17 @@ class _QuestionnairePageState extends State<QuestionnairePage> with SingleTicker
             displayFullTextOnTap: true,
           ),
           const SizedBox(height: 20),
-          ...options.asMap().entries.map((entry) => _buildOption(entry.value, entry.key)).toList(),
+          ...options.map((option) => _buildOption(option, options.indexOf(option))).toList(),
           const SizedBox(height: 28),
           Center(
             child: TextButton.icon(
               onPressed: () {
-                GoRouter.of(context).go(
-                  '/coursesDashboard',
-                  extra: {'languagePreference': widget.languagePreference},
-                );
+                // Navigate to Courses Dashboard if user wants to skip.
+                GoRouter.of(context).go('/coursesDashboard', extra: {'languagePreference': widget.languagePreference});
               },
               icon: const Icon(Icons.explore, color: kPrimaryBlue),
               label: Text(
-                widget.languagePreference == 'हिंदी'
-                    ? "प्रश्न छोड़ें और कोर्स देखें"
-                    : "Skip & Explore All Courses",
+                widget.languagePreference == 'हिंदी' ? "प्रश्न छोड़ें और कोर्स देखें" : "Skip & Explore All Courses",
                 style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: kPrimaryBlue),
               ),
             ),
@@ -235,12 +228,14 @@ class _QuestionnairePageState extends State<QuestionnairePage> with SingleTicker
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.languagePreference == 'हिंदी'
-            ? "📝 आपकी इंग्लिश यात्रा"
-            : "📝 Your English Journey"),
+        title: Text(widget.languagePreference == 'हिंदी' ? "📝 आपकी इंग्लिश यात्रा" : "📝 Your English Journey"),
         backgroundColor: kPrimaryBlue,
         foregroundColor: Colors.white,
         elevation: 0,
+      ),
+      // Adding a permanent drawer to show the menu
+      drawer: const Drawer(
+        child: MenuPage(),
       ),
       body: Stack(
         children: [
@@ -256,12 +251,8 @@ class _QuestionnairePageState extends State<QuestionnairePage> with SingleTicker
           SingleChildScrollView(
             padding: const EdgeInsets.fromLTRB(20, 240, 20, 20),
             child: _buildAnimatedStep(
-              widget.languagePreference == 'हिंदी'
-                  ? questionsHindi[_step]
-                  : questionsEnglish[_step],
-              widget.languagePreference == 'हिंदी'
-                  ? answersHindi[_step]
-                  : answersEnglish[_step],
+              widget.languagePreference == 'हिंदी' ? questionsHindi[_step] : questionsEnglish[_step],
+              widget.languagePreference == 'हिंदी' ? answersHindi[_step] : answersEnglish[_step],
             ),
           ),
         ],

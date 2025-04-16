@@ -1,0 +1,382 @@
+{
+  "lessonId": "beginner_001_lesson_003",
+  "title": "Introducing Yourself Confidently",
+  "level": "beginner",
+  "part": 3,
+  "activities": [
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson3_intro_auto.mp3",
+      "text": "Hey there! Lesson 3 mein aapka swagat hai, this time, we’ll conquer self-introductions with style!",
+      "allowPause": true
+    },
+    {
+      "type": "message",
+      "text": "Aaj hum seekhenge: 'Apna intro dena'. Ready? Let’s jump in!"
+    },
+    {
+      "type": "poll",
+      "question": "What’s your biggest fear while introducing yourself?",
+      "options": [
+        "Words yaad nahi rehte!",
+        "Hichkichahat or shyness",
+        "Grammar mistakes ho jayenge",
+        "Mujhe pata nahi main kya bolun"
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Roadmap for Lesson 3",
+      "body": "• Basic intro lines: name, location, interests\n• Polite mini-stories about yourself\n• Formal & informal intros\n• Role-plays & examples\n• Quizzes \n\nLesson ke end tak—100% confidence!"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson3_introducing_strangers_16x9.png",
+      "caption": "Introducing yourself to strangers can be scary, but we’ll fix that!"
+    },
+    {
+      "type": "text",
+      "title": "🎯 Basic Intro Lines",
+      "body": "• Hi, my name is [Your Name].\n• I’m from ______.\n• I love ______.\n• Nice to meet you!\n\nYeh 4 lines se 80% intro cover ho jata hai!"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Say: Hello, I’m [Your Name], from [City Name]. I love music and meeting new people!",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/lesson3_basic_intro_example.mp3"
+    },
+    {
+      "type": "roleplay",
+      "text": "Role-play: Pretend you joined a new community group. Kaise apna intro doge? Practice a short speech!"
+    },
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson3_comedic_story.mp3",
+      "text": "Story: Suno ek mazedaar kahani about someone messing up their introduction…",
+      "allowPause": true
+    },
+    {
+      "type": "message",
+      "text": "Lesson: Koshish karo 'I… me…' lines avoid karke usko interesting banane ki. Jaise, 'I’m a big movie fan, always up for a chat!'"
+    },
+    {
+      "type": "text",
+      "title": "⚖️ Formal vs. Informal Intros",
+      "body": "Formal (e.g., office, interviews):\n• Good morning, I’m [Name], working in ______.\n• It’s a pleasure to meet you.\n\nInformal (friends, gatherings):\n• Hey, I’m [Name]. I love to ______.\n• Great to meet ya!"
+    },
+    {
+      "type": "quiz",
+      "question": "Which line is best for a professional setting?",
+      "options": [
+        "Hey, I’m [Name], I guess I do some job…?",
+        "Hello, I’m [Name]. I work at [Company]. Nice to meet you!",
+        "Yo, sup? I do business maybe?",
+        "I am bored. Sorry."
+      ],
+      "answerIndex": 1,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "hints": [
+        "Formal intros often mention job/role",
+        "Use polite words like 'Nice to meet you'"
+      ]
+    },
+    {
+      "type": "message",
+      "text": "Formal ho ya informal, ek smile or clarity sabse zyada matter karta hai."
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Try: Good morning! I’m [Your Name], and I’m excited to join [Company/Team].",
+      "audioSupport": false
+    },
+    {
+      "type": "poll",
+      "question": "Which part of a formal intro do you struggle with most?",
+      "options": [
+        "Confidence (shyness)",
+        "Proper English words",
+        "Describing my role clearly",
+        "All of it!"
+      ]
+    },
+    {
+      "type": "message",
+      "text": "Chinta mat karo—baaki steps hum handle karenge. Step by step approach!"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson3_informal_group_16x9.png",
+      "caption": "In an informal group? Introduce yourself with a fun fact!"
+    },
+    {
+      "type": "text",
+      "title": "Fun-Fact Intros",
+      "body": "• 'Hey, I’m [Name]. I love dancing in the rain!'\n• 'I’m super curious about space!'\n• 'I can cook 5 dishes in 10 minutes!'\n\nIsse log yaad rakhenge aapko!"
+    },
+    {
+      "type": "quiz",
+      "question": "Pick the best 'Fun Fact' opener in a casual meet?",
+      "options": [
+        "'Uhh, I guess I like things…?'",
+        "'You must guess my secret!' *silence*",
+        "'I’m [Name], big sports fan—crazy about cricket!'",
+        "No idea, skip."
+      ],
+      "answerIndex": 2,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "allowRetry": true,
+      "encouragementOnFail": "No worries! Try again and share something unique about yourself."
+    },
+    {
+      "type": "message",
+      "text": "Exactly! A short, interesting fact sets you apart, yaad reh jaoge!"
+    },
+    {
+      "type": "roleplay",
+      "text": "Role-play: Group hobby club join kar rahe ho—koi ek fun fact banao, mention your hobby, interest, etc. Practice out loud!"
+    },
+    {
+      "type": "tip",
+      "title": "💡 Pro Tip for Confident Speech",
+      "body": "Slow down thoda, words clearly bolo, maintain eye contact (agar real life meet hai). Aap jitna calm rahoge, samne wala itna hi interested hoga!"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Try a slow, clear line: 'Hello everyone, my name is [Your Name]. I’m really excited to join this group!'",
+      "audioSupport": false
+    },
+    {
+      "type": "quiz",
+      "question": "Which is the biggest mistake while introducing yourself?",
+      "options": [
+        "Talking too fast/unclear",
+        "Forgetting to say your name or interest",
+        "Sounding disinterested/awkward",
+        "All of the above"
+      ],
+      "answerIndex": 3,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3"
+    },
+    {
+      "type": "message",
+      "text": "Yes, sab mistakes avoid karne ke liye just be calm, short, friendly—and mention your name clearly!"
+    },
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson3_encouraging_words.mp3",
+      "text": "Aap bohot accha kar rahe ho—bas thoda sa practice aur, and you’ll be unstoppable!",
+      "allowPause": true
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "End with a strong line: 'It’s really nice to meet you all!'",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/lesson3_strong_line.mp3"
+    },
+    {
+      "type": "text",
+      "title": "❗ Common Pitfalls",
+      "body": "• Apna naam koi mushkil se sun paata hai—zara clear boliye\n• Zero energy? Thoda enthusiasm dikhayein!\n• Over-talk mat karo—intro short & sweet rakho"
+    },
+    {
+      "type": "audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson3_mistake_tips.mp3",
+      "caption": "🎧 Quick ways to avoid being too long-winded or too shy"
+    },
+    {
+      "type": "quiz",
+      "question": "Which fix helps you not talk too long in intros?",
+      "options": [
+        "Memorize a short script beforehand",
+        "Keep repeating 'I me I me' to fill time",
+        "Complain how you don’t like intros",
+        "Say everything about your life story"
+      ],
+      "answerIndex": 0,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "hints": [
+        "Focus on 2-3 key points: name, role/hobby, interesting fact"
+      ]
+    },
+    {
+      "type": "message",
+      "text": "A short, well-planned line is 10x better than rambling on and on!"
+    },
+    {
+      "type": "badge",
+      "title": "🙌 Self-Intro Star Badge",
+      "description": "You’re becoming a pro at introducing yourself—both formally & informally!",
+      "animation": "assets/animations/badge_unlocked.json"
+    },
+    {
+      "type": "message",
+      "text": "Ek aur level chahiye? Let’s see a final role-play!"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson3_office_intro_16x9.png",
+      "caption": "Formal office scenario—make your introduction stand out!"
+    },
+    {
+      "type": "roleplay",
+      "text": "Office role-play: Introduce yourself to senior colleagues. Focus on clarity + quick, interesting detail about your skill/hobby!"
+    },
+    {
+      "type": "text",
+      "title": "🔁 Recap at a Glance",
+      "body": "1) Say your name clearly\n2) Mention location, job, or interest\n3) Share a short fun fact or reason you’re there\n4) Smile and maintain a friendly tone!"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Final test: Combine a short intro + 1 interesting fact + a warm closing line.",
+      "audioSupport": false
+    },
+    {
+      "type": "audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson3_final_challenge.mp3",
+      "caption": "🎧 Last challenge: Introduce yourself to 2 new people tomorrow in real life!"
+    },
+    {
+      "type": "badge",
+      "title": "🌟 Introducing Yourself Confidently!",
+      "description": "You’ve mastered intros— short, sweet, and memorable. Keep practicing daily!",
+      "animation": "assets/animations/badge_unlocked.json"
+    },
+    {
+      "type": "message",
+      "text": "Aap ab confidently apna intro de sakte ho—no more jitters. Lesson 3 complete—Great job!"
+    },
+    {
+      "type": "tip",
+      "title": "💡 Keep Practicing!",
+      "body": "Small daily intros help you become unstoppable. Keep shining— see you in the next lesson!"
+    },
+    {
+      "type": "poll",
+      "question": "Do you still feel nervous? Where do you want more help?",
+      "options": [
+        "Formal intros (work/interviews)",
+        "Casual intros with friends",
+        "Sharing personal facts",
+        "All of the above"
+      ]
+    },
+    {
+      "type": "auto_audio",
+      "audioPath": "assets/sounds/lesson_audio/lesson3_comedic_story2.mp3",
+      "text": "Story : Ek banda apna intro dete hue, ‘Hello, I is name… oh no!’—koi tension nahin, sab hoga!",
+      "allowPause": true
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "A friend wants to know more about your hobbies. Introduce yourself and mention 2 hobbies quickly!",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/lesson3_hobbies_prompt.mp3"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson3_confident_smile_16x9.png",
+      "caption": "A confident smile instantly makes your intro more appealing!"
+    },
+    {
+      "type": "text",
+      "title": "Advanced Tip: Micro-Stories",
+      "body": "Instead of just 'I love music,' share a tiny story: 'I used to hum all day in school; that’s how I realized my love for music.' People connect more with mini-stories!"
+    },
+    {
+      "type": "quiz",
+      "question": "Which micro-story approach works best in an intro?",
+      "options": [
+        "Mentioning 1-2 personal anecdotes quickly",
+        "Telling your entire life story for 20 minutes",
+        "Jumping from topic to topic with no focus",
+        "Apologizing for being 'boring' upfront"
+      ],
+      "answerIndex": 0,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "hints": [
+        "Keep stories short & relevant",
+        "1-2 lines about how you discovered your passion"
+      ]
+    },
+    {
+      "type": "message",
+      "text": "Short micro-stories show personality but remain crisp. Perfect for leaving an impression!"
+    },
+    {
+      "type": "roleplay",
+      "text": "Role-play: A new coworker asks about your background. Give a 2-line micro-story about your favorite skill or hobby!"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson3_team_building_16x9.png",
+      "caption": "Team-building exercises often start with personal intros—be prepared!"
+    },
+        {
+      "type": "speaking_prompt",
+      "prompt": "Speak as if you’re on stage: 'Hello everyone, I’m [Name]. Let me share one fun fact about me—then you share yours!'",
+      "audioSupport": true,
+      "audioPath": "assets/sounds/lesson_audio/lesson3_stage_performance_example.mp3"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson3_big_stage_intro_16x9.png",
+      "caption": "Even on a big stage, a friendly introduction breaks all barriers!"
+    },
+    {
+      "type": "poll",
+      "question": "What do you think is your biggest improvement so far?",
+      "options": [
+        "Speaking more confidently",
+        "Knowing how to structure my intro",
+        "Adding fun facts & micro-stories",
+        "All of them!"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "You’re introducing yourself at a college event. Pick the best approach:",
+      "options": [
+        "I’m [Name]. I, uh... yeah, so next?",
+        "Hey, I’m [Name]. I study ______. Btw, big fan of sports. Great to be here!",
+        "I have nothing to say, sorry guys!",
+        "Please ignore me. I’m shy."
+      ],
+      "answerIndex": 1,
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "hints": [
+        "Mention your name, context (study?), fun detail, friendly vibe"
+      ]
+    },
+    {
+      "type": "message",
+      "text": "Yes! Keep it friendly, mention your context, and share a mini-fact or interest."
+    },
+    {
+      "type": "text",
+      "title": "🔥 Gratitude Trick",
+      "body": "Before you introduce yourself, feel grateful for the chance to speak. You’ll automatically sound calmer & more positive!"
+    },
+    {
+      "type": "image",
+      "imagePath": "assets/images/lesson3_friend_circle_fun_16x9.png",
+      "caption": "Friends or strangers—any introduction is simpler with a smile & calm mind!"
+    },
+    {
+      "type": "roleplay",
+      "text": "Role-play: You’re joining a friend circle for the first time. Practice a quick, positive introduction about yourself."
+    },
+    {
+      "type": "badge",
+      "title": "💎 Double Pro Badge: Self-Intro Master",
+      "description": "You’ve done advanced intros, comedic stories, and micro-stories. Seriously pro-level now!",
+      "animation": "assets/animations/badge_unlocked.json"
+    }
+  ]
+}

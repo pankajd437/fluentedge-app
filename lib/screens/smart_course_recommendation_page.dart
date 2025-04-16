@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluentedge_app/localization/app_localizations.dart';
-import 'package:fluentedge_app/data/courses_list.dart'; // ✅ Centralized data
+import 'package:fluentedge_app/data/beginner_courses_list.dart';
+import 'package:fluentedge_app/data/intermediate_courses_list.dart';
+import 'package:fluentedge_app/data/advanced_courses_list.dart';
+import 'package:go_router/go_router.dart';
 
 class SmartCourseRecommendationPage extends StatelessWidget {
   final String userName;
@@ -8,6 +11,10 @@ class SmartCourseRecommendationPage extends StatelessWidget {
   final String gender;
   final int age;
   final List<String> recommendedCourses;
+
+  /// For demonstration, userLevel is hard-coded.
+  /// In a real app, you might pass or compute this.
+  final String userLevel = "beginner"; // 'intermediate' or 'advanced'
 
   const SmartCourseRecommendationPage({
     Key? key,
@@ -23,8 +30,14 @@ class SmartCourseRecommendationPage extends StatelessWidget {
     final localizations = AppLocalizations.of(context)!;
     final safeUserName = userName.trim().isEmpty ? "there" : userName;
 
-    // Find course data from global list based on titles
-    final List<Map<String, dynamic>> matchedCourses = courses.where((course) {
+    // Select course list based on userLevel
+    final List<Map<String, dynamic>> allCourses = userLevel == "intermediate"
+        ? intermediateCourses
+        : userLevel == "advanced"
+            ? advancedCourses
+            : beginnerCourses;
+
+    final List<Map<String, dynamic>> matchedCourses = allCourses.where((course) {
       return recommendedCourses.contains(course["title"]);
     }).toList();
 
@@ -36,6 +49,27 @@ class SmartCourseRecommendationPage extends StatelessWidget {
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white),
         ),
         backgroundColor: const Color(0xFF1565C0),
+      ),
+      // Bottom bar with centered Home icon → /coursesDashboard
+      bottomNavigationBar: BottomAppBar(
+        color: const Color(0xFF1565C0),
+        child: SizedBox(
+          height: 50, // smaller bar height
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                iconSize: 36, // bigger home icon
+                icon: const Icon(Icons.home),
+                color: Colors.white,
+                onPressed: () {
+                  // Navigate to courses dashboard
+                  GoRouter.of(context).go('/coursesDashboard');
+                },
+              ),
+            ],
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -56,36 +90,47 @@ class SmartCourseRecommendationPage extends StatelessWidget {
               style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
             ),
             const SizedBox(height: 24),
-            Expanded(
-              child: ListView.builder(
-                itemCount: matchedCourses.length,
-                itemBuilder: (context, index) {
-                  final course = matchedCourses[index];
-                  return Card(
-                    elevation: 2,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                    margin: const EdgeInsets.symmetric(vertical: 8),
-                    child: ListTile(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/courseDetail', arguments: course);
-                      },
-                      leading: CircleAvatar(
-                        backgroundColor: course['color'].withOpacity(0.1),
-                        child: Icon(course['icon'], color: course['color']),
+
+            if (matchedCourses.isEmpty)
+              const Center(
+                child: Text(
+                  "No matching courses found.\nPlease complete the questionnaire again for fresh suggestions.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 13, color: Colors.black54),
+                ),
+              )
+            else
+              Expanded(
+                child: ListView.builder(
+                  itemCount: matchedCourses.length,
+                  itemBuilder: (context, index) {
+                    final course = matchedCourses[index];
+                    return Card(
+                      elevation: 2,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                      margin: const EdgeInsets.symmetric(vertical: 8),
+                      child: ListTile(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/courseDetail', arguments: course);
+                        },
+                        leading: CircleAvatar(
+                          backgroundColor: course['color'].withOpacity(0.1),
+                          child: Icon(course['icon'], color: course['color']),
+                        ),
+                        title: Text(
+                          course["title"],
+                          style: const TextStyle(fontWeight: FontWeight.w600),
+                        ),
+                        subtitle: Text(
+                          course["description"],
+                          style: const TextStyle(fontSize: 12),
+                        ),
                       ),
-                      title: Text(
-                        course["title"],
-                        style: const TextStyle(fontWeight: FontWeight.w600),
-                      ),
-                      subtitle: Text(
-                        course["description"],
-                        style: const TextStyle(fontSize: 12),
-                      ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
-            ),
+
             const SizedBox(height: 10),
             ElevatedButton.icon(
               onPressed: () {
@@ -105,14 +150,8 @@ class SmartCourseRecommendationPage extends StatelessWidget {
                 minimumSize: const Size(double.infinity, 48),
               ),
             ),
-            const SizedBox(height: 10),
-            TextButton.icon(
-              onPressed: () {
-                Navigator.popUntil(context, (route) => route.isFirst);
-              },
-              icon: const Icon(Icons.home_outlined),
-              label: Text(_getHomeLabel(languagePreference)),
-            ),
+
+            // Removed original "Go to Home" text button to avoid duplication with bottom bar.
           ],
         ),
       ),
@@ -127,9 +166,5 @@ class SmartCourseRecommendationPage extends StatelessWidget {
 
   String _getStartLabel(String lang) {
     return lang == 'हिंदी' ? "कोर्स शुरू करें" : "Start Course";
-  }
-
-  String _getHomeLabel(String lang) {
-    return lang == 'हिंदी' ? "होम पर जाएं" : "Go to Home";
   }
 }

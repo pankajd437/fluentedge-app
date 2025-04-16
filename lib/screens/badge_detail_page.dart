@@ -5,7 +5,7 @@ import 'package:lottie/lottie.dart';
 
 class BadgeDetailPage extends StatelessWidget {
   final String title;
-  final String imagePath; // Now used as Lottie animation path
+  final String imagePath;
   final bool unlocked;
   final String tag;
 
@@ -25,7 +25,7 @@ class BadgeDetailPage extends StatelessWidget {
         backgroundColor: kPrimaryBlue,
         foregroundColor: Colors.white,
         elevation: 0,
-        title: const Text("🎖 Badge Details"),
+        title: const Text("🏅 Badge Details"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () => GoRouter.of(context).pop(),
@@ -36,29 +36,45 @@ class BadgeDetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // 🏅 Badge animation (unlocked or greyed)
+            // 🏅 Badge animation
             Hero(
               tag: tag,
-              child: Lottie.asset(
-                imagePath,
-                height: 120,
-                repeat: unlocked,
-                animate: unlocked,
-                fit: BoxFit.contain,
-                frameRate: FrameRate.max,
-                delegates: LottieDelegates(
-                  values: [
-                    ValueDelegate.color(
-                      const ['**'],
-                      value: unlocked ? null : Colors.grey.shade400,
-                    ),
-                  ],
+              child: Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: unlocked ? Colors.white : Colors.grey.shade200,
+                  boxShadow: unlocked
+                      ? [
+                          BoxShadow(
+                            color: kAccentGreen.withOpacity(0.15),
+                            blurRadius: 12,
+                            offset: const Offset(0, 4),
+                          ),
+                        ]
+                      : [],
+                ),
+                child: Lottie.asset(
+                  imagePath,
+                  height: 130,
+                  repeat: unlocked,
+                  animate: unlocked,
+                  fit: BoxFit.contain,
+                  frameRate: FrameRate.max,
+                  delegates: LottieDelegates(
+                    values: [
+                      ValueDelegate.color(
+                        const ['**'],
+                        value: unlocked ? null : Colors.grey.shade400,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 24),
 
-            // 🏷 Badge title
+            // 🎖 Badge title
             Text(
               title,
               style: const TextStyle(
@@ -68,13 +84,13 @@ class BadgeDetailPage extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 14),
 
-            // 🔓 Status Box
+            // 🔓 Unlock status
             Container(
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
               decoration: BoxDecoration(
-                color: unlocked ? kAccentGreen.withOpacity(0.15) : Colors.grey.shade200,
+                color: unlocked ? kAccentGreen.withOpacity(0.15) : Colors.grey.shade100,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
@@ -82,13 +98,14 @@ class BadgeDetailPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 13.5,
                   fontWeight: FontWeight.w600,
-                  color: unlocked ? kAccentGreen : Colors.grey,
+                  color: unlocked ? kAccentGreen : Colors.grey.shade600,
                 ),
               ),
             ),
-            const SizedBox(height: 20),
 
-            // 📋 How to earn
+            const SizedBox(height: 24),
+
+            // ℹ️ How to earn badge
             const Text(
               "How to earn this badge:",
               style: TextStyle(
@@ -98,10 +115,10 @@ class BadgeDetailPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Text(
-              "📌 Complete relevant milestones such as finishing lessons, maintaining a streak, or scoring high in quizzes to earn this badge.",
+            const Text(
+              "📌 Complete relevant milestones like finishing lessons, maintaining streaks, or scoring high in quizzes to earn this badge.",
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 13.5,
                 fontWeight: FontWeight.w500,
                 color: Colors.black87,
@@ -110,7 +127,7 @@ class BadgeDetailPage extends StatelessWidget {
 
             const Spacer(),
 
-            // CTA Button
+            // ✅ CTA
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(

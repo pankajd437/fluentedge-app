@@ -57,16 +57,28 @@ class _AchievementsPageState extends State<AchievementsPage> {
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> _badges = [
       {
-        "title": "Lesson Completion",
+        "title": "Lesson Starter",
         "animation": "assets/animations/badges/lesson_completion_badge.json",
-        "unlocked": true,
-        "tag": "completion_badge"
+        "unlocked": completedLessons >= 1,
+        "tag": "lesson_1"
       },
       {
-        "title": "Mastery Badge",
-        "animation": "assets/animations/badges/course_mastery_badge.json",
-        "unlocked": true,
-        "tag": "mastery_badge"
+        "title": "5 Lessons Completed",
+        "animation": "assets/animations/badges/quiz_champion_badge.json",
+        "unlocked": completedLessons >= 5,
+        "tag": "lesson_5"
+      },
+      {
+        "title": "10 Lessons Completed",
+        "animation": "assets/animations/badges/fast_learner_badge.json",
+        "unlocked": completedLessons >= 10,
+        "tag": "lesson_10"
+      },
+      {
+        "title": "25 Lessons Completed",
+        "animation": "assets/animations/badges/perfect_score_badge.json",
+        "unlocked": completedLessons >= 25,
+        "tag": "lesson_25"
       },
       {
         "title": "🔥 3-Day Streak",
@@ -92,24 +104,6 @@ class _AchievementsPageState extends State<AchievementsPage> {
         "unlocked": streak >= 30,
         "tag": "streak_30"
       },
-      {
-        "title": "📚 5 Lessons Completed",
-        "animation": "assets/animations/badges/quiz_champion_badge.json",
-        "unlocked": completedLessons >= 5,
-        "tag": "lesson_5"
-      },
-      {
-        "title": "📚 10 Lessons Completed",
-        "animation": "assets/animations/badges/fast_learner_badge.json",
-        "unlocked": completedLessons >= 10,
-        "tag": "lesson_10"
-      },
-      {
-        "title": "📚 25 Lessons Completed",
-        "animation": "assets/animations/badges/perfect_score_badge.json",
-        "unlocked": completedLessons >= 25,
-        "tag": "lesson_25"
-      },
     ];
 
     return Scaffold(
@@ -129,6 +123,26 @@ class _AchievementsPageState extends State<AchievementsPage> {
             onPressed: () => GoRouter.of(context).go('/coursesDashboard'),
           )
         ],
+      ),
+      // Bottom bar with centered Home icon → /coursesDashboard
+      bottomNavigationBar: BottomAppBar(
+        color: kPrimaryBlue,
+        child: SizedBox(
+          height: 50, // smaller bar height
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                iconSize: 36, // bigger home icon
+                icon: const Icon(Icons.home),
+                color: Colors.white,
+                onPressed: () {
+                  GoRouter.of(context).go('/coursesDashboard');
+                },
+              ),
+            ],
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(18),
