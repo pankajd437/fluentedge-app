@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:fluentedge_app/localization/app_localizations.dart';
 import 'package:fluentedge_app/main.dart';
-import 'package:go_router/go_router.dart';
+import 'package:fluentedge_app/constants.dart';
 
 class WelcomePage extends ConsumerStatefulWidget {
   final Function(String, String) onUserInfoSubmitted;
@@ -73,12 +76,17 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
             ),
           ),
           const SizedBox(height: 2),
+          // ✅ Mentor Animation or Fallback PNG
           Lottie.asset(
             'assets/animations/ai_mentor_welcome.json',
-            width: 230,
-            height: 210,
-            errorBuilder: (_, __, ___) =>
-                const Icon(Icons.animation, size: 100, color: Colors.grey),
+            width: 220,
+            height: 200,
+            fit: BoxFit.contain,
+            errorBuilder: (_, __, ___) => Image.asset(
+              'assets/images/mentor_expressions/mentor_wave_smile_full.png',
+              width: 180,
+              height: 180,
+            ),
           ),
           const SizedBox(height: 8),
           Text(
@@ -153,15 +161,17 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
               const SizedBox(width: 10),
               DropdownButton<String>(
                 value: selectedLanguage,
-                onChanged: (value) {
+                onChanged: (value) async {
                   if (value != null) {
                     setState(() {
                       selectedLanguage = value;
-                      FluentEdgeApp.updateLocale(
-                        ref,
-                        value == "हिंदी" ? const Locale('hi') : const Locale('en'),
-                      );
                     });
+                    FluentEdgeApp.updateLocale(
+                      ref,
+                      value == "हिंदी" ? const Locale('hi') : const Locale('en'),
+                    );
+                    final box = await Hive.openBox('settings');
+                    await box.put('language', selectedLanguage);
                   }
                 },
                 items: [
@@ -178,8 +188,6 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
             ],
           ),
           const SizedBox(height: 24),
-
-          // 🔵 Continue with Registration
           SizedBox(
             width: double.infinity,
             child: ElevatedButton.icon(
@@ -198,10 +206,7 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
               ),
             ),
           ),
-
           const SizedBox(height: 12),
-
-          // ⚪ Explore as Guest
           TextButton(
             onPressed: () => _continueAsGuest(context),
             child: const Text(
@@ -236,4 +241,7 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
         ? _nameController.text.trim()
         : "Guest";
 
-    ref.read
+    // Save guest state, or skip registration logic
+    context.go('/courses');
+  }
+}

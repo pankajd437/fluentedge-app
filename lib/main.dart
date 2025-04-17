@@ -9,12 +9,15 @@ import 'package:fluentedge_app/data/user_state.dart';
 import 'package:fluentedge_app/services/notification_service.dart';
 import 'package:fluentedge_app/localization/app_localizations.dart';
 
-// Screens
+// Onboarding screens
 import 'package:fluentedge_app/screens/splash_page.dart';
 import 'package:fluentedge_app/screens/welcome_page.dart';
-import 'package:fluentedge_app/screens/registration_page.dart'; // ✅ NEW
-import 'package:fluentedge_app/screens/questionnaire_page.dart';
-import 'package:fluentedge_app/screens/smart_course_recommendation.dart';
+import 'package:fluentedge_app/screens/registration_page.dart';
+import 'package:fluentedge_app/screens/profiling_chat_page.dart';
+import 'package:fluentedge_app/screens/skill_check_page.dart';
+import 'package:fluentedge_app/screens/smart_course_recommendation_page.dart';
+
+// Other app screens
 import 'package:fluentedge_app/screens/courses_dashboard.dart';
 import 'package:fluentedge_app/screens/course_detail_page.dart';
 import 'package:fluentedge_app/screens/lesson_page.dart';
@@ -29,10 +32,11 @@ import 'package:fluentedge_app/screens/friend_detail_page.dart';
 import 'package:fluentedge_app/screens/analytics_page.dart';
 import 'package:fluentedge_app/screens/menu_page.dart';
 
-final localeProvider = StateProvider<Locale>((ref) => const Locale('en'));
-final userNameProvider = StateProvider<String>((ref) => '');
+/// Providers for global state
+final localeProvider       = StateProvider<Locale>((ref) => const Locale('en'));
+final userNameProvider     = StateProvider<String>((ref) => '');
 final languagePrefProvider = StateProvider<String>((ref) => 'English');
-final userLevelProvider = StateProvider<String>((ref) => 'beginner');
+final userLevelProvider    = StateProvider<String>((ref) => 'beginner');
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,18 +44,19 @@ Future<void> main() async {
   await UserState.init();
   await NotificationService.init();
 
+  // Load persisted settings
   final storedLocale = await UserState.getLocale() ?? 'en';
-  final userName = await UserState.getUserName() ?? '';
-  final langPref = await UserState.getLanguagePreference() ?? 'English';
-  final userLevel = await UserState.getUserLevel();
+  final storedName   = await UserState.getUserName() ?? '';
+  final storedLang   = await UserState.getLanguagePreference() ?? 'English';
+  final storedLevel  = await UserState.getUserLevel();
 
   runApp(
     ProviderScope(
       overrides: [
         localeProvider.overrideWith((_) => Locale(storedLocale)),
-        userNameProvider.overrideWith((_) => userName),
-        languagePrefProvider.overrideWith((_) => langPref),
-        userLevelProvider.overrideWith((_) => userLevel),
+        userNameProvider.overrideWith((_) => storedName),
+        languagePrefProvider.overrideWith((_) => storedLang),
+        userLevelProvider.overrideWith((_) => storedLevel),
       ],
       child: FluentEdgeApp(initialLocale: Locale(storedLocale)),
     ),
@@ -60,8 +65,9 @@ Future<void> main() async {
 
 class FluentEdgeApp extends ConsumerStatefulWidget {
   final Locale initialLocale;
-  const FluentEdgeApp({super.key, required this.initialLocale});
+  const FluentEdgeApp({Key? key, required this.initialLocale}) : super(key: key);
 
+  /// Call this to change locale at runtime
   static Future<void> updateLocale(WidgetRef ref, Locale newLocale) async {
     await UserState.setLocale(newLocale.languageCode);
     ref.read(localeProvider.notifier).state = newLocale;
@@ -78,7 +84,7 @@ class _FluentEdgeAppState extends ConsumerState<FluentEdgeApp> {
   void initState() {
     super.initState();
     _setupRouter();
-    _debugInitialization();
+    _debugInit();
   }
 
   void _setupRouter() {
@@ -94,40 +100,27 @@ class _FluentEdgeAppState extends ConsumerState<FluentEdgeApp> {
         GoRoute(
           path: '/welcome',
           builder: (_, __) => WelcomePage(
-            onUserInfoSubmitted: (name, langPref) async {
+            onUserInfoSubmitted: (name, lang) async {
+              // Persist name & language
               await UserState.setUserName(name);
-              await UserState.setLanguagePreference(langPref);
-              ref.read(userNameProvider.notifier).state = name;
-              ref.read(languagePrefProvider.notifier).state = langPref;
-              _router.go('/register'); // ✅ Updated to go to registration page
+              await UserState.setLanguagePreference(lang);
+              ref.read(userNameProvider.notifier).state     = name;
+              ref.read(languagePrefProvider.notifier).state = lang;
+              _router.go('/register');
             },
           ),
         ),
         GoRoute(
           path: '/register',
-          builder: (_, __) => const RegistrationPage(), // ✅ NEW Route
+          builder: (_, __) => const RegistrationPage(),
         ),
         GoRoute(
-          path: '/questionnaire',
-          builder: (_, __) => QuestionnairePage(
-            key: const ValueKey('questionnaire_page'),
-            userName: ref.watch(userNameProvider),
-            languagePreference: ref.watch(languagePrefProvider),
-            onCompleted: (gender, age, recommendedCourses, userLevel) async {
-              await UserState.setGender(gender);
-              await UserState.setAge(age);
-              await UserState.setUserLevel(userLevel);
-              ref.read(userLevelProvider.notifier).state = userLevel;
-              _router.go('/smartRecommendation', extra: {
-                'userName': ref.read(userNameProvider),
-                'languagePreference': ref.read(languagePrefProvider),
-                'gender': gender,
-                'age': age,
-                'userLevel': userLevel,
-                'recommendedCourses': recommendedCourses,
-              });
-            },
-          ),
+          path: '/profiling_chat_page',
+          builder: (_, __) => const ProfilingChatPage(),
+        ),
+        GoRoute(
+          path: '/skill_check_page',
+          builder: (_, __) => const SkillCheckPage(),
         ),
         GoRoute(
           path: '/smartRecommendation',
@@ -135,23 +128,27 @@ class _FluentEdgeAppState extends ConsumerState<FluentEdgeApp> {
             final data = state.extra as Map<String, dynamic>?;
             return CustomTransitionPage(
               transitionDuration: const Duration(milliseconds: 400),
-              transitionsBuilder: (context, animation, _, child) =>
+              transitionsBuilder: (_, animation, __, child) =>
                   FadeTransition(opacity: animation, child: child),
               child: data != null
                   ? SmartCourseRecommendationPage(
-                      userName: data['userName'],
-                      languagePreference: data['languagePreference'],
-                      gender: data['gender'],
-                      age: data['age'],
-                      userLevel: data['userLevel'],
-                      recommendedCourses:
-                          List<String>.from(data['recommendedCourses']),
+                      userName: data['userName'] as String,
+                      languagePreference: data['languagePreference'] as String,
+                      gender: data['gender'] as String,
+                      age: data['age'] as String,
+                      userLevel: data['userLevel'] as String,
+                      recommendedCourses: List<String>.from(data['recommendedCourses'] as List),
                     )
-                  : const Scaffold(body: Center(child: Text("❌ No data."))),
+                  : const Scaffold(body: Center(child: Text("❌ No data provided"))),
             );
           },
         ),
-        GoRoute(path: '/chat', builder: (_, __) => IceBreakingChatPage(userName: ref.watch(userNameProvider), languagePreference: ref.watch(languagePrefProvider))),
+
+        // ... other routes unchanged ...
+        GoRoute(path: '/chat', builder: (_, __) => IceBreakingChatPage(
+          userName: ref.watch(userNameProvider),
+          languagePreference: ref.watch(languagePrefProvider),
+        )),
         GoRoute(path: '/menu', builder: (_, __) => const MenuPage()),
         GoRoute(path: '/coursesDashboard', builder: (_, __) => const CoursesDashboardPage()),
         GoRoute(
@@ -160,9 +157,11 @@ class _FluentEdgeAppState extends ConsumerState<FluentEdgeApp> {
             final course = state.extra as Map<String, dynamic>?;
             return CustomTransitionPage(
               transitionDuration: const Duration(milliseconds: 300),
-              transitionsBuilder: (context, animation, _, child) =>
+              transitionsBuilder: (_, animation, __, child) =>
                   FadeTransition(opacity: animation, child: child),
-              child: course != null ? CourseDetailPage(course: course) : const Scaffold(body: Center(child: Text("❌ Invalid course data."))),
+              child: course != null
+                  ? CourseDetailPage(course: course)
+                  : const Scaffold(body: Center(child: Text("❌ Invalid course data."))),
             );
           },
         ),
@@ -172,14 +171,14 @@ class _FluentEdgeAppState extends ConsumerState<FluentEdgeApp> {
             final course = state.extra as Map<String, dynamic>?;
             return CustomTransitionPage(
               transitionDuration: const Duration(milliseconds: 300),
-              transitionsBuilder: (context, animation, _, child) =>
+              transitionsBuilder: (_, animation, __, child) =>
                   FadeTransition(opacity: animation, child: child),
               child: course != null
                   ? LessonPage(
-                      courseTitle: course["title"],
-                      courseIcon: course["icon"],
-                      courseColor: course["color"],
-                      lessons: List<Map<String, String>>.from(course["lessons"] ?? []),
+                      courseTitle: course['title'] as String,
+                      courseIcon : course['icon']  as String,
+                      courseColor: course['color'] as int,
+                      lessons    : List<Map<String, String>>.from(course['lessons'] as List),
                     )
                   : const Scaffold(body: Center(child: Text("❌ Invalid lesson data."))),
             );
@@ -191,14 +190,14 @@ class _FluentEdgeAppState extends ConsumerState<FluentEdgeApp> {
             final data = state.extra as Map<String, dynamic>?;
             return CustomTransitionPage(
               transitionDuration: const Duration(milliseconds: 300),
-              transitionsBuilder: (context, animation, _, child) =>
+              transitionsBuilder: (_, animation, __, child) =>
                   FadeTransition(opacity: animation, child: child),
               child: data != null
                   ? LessonCompletePage(
-                      lessonId: data['lessonId'] ?? '',
-                      lessonTitle: data['lessonTitle'] ?? '',
-                      earnedXP: data['earnedXP'] ?? 10,
-                      badgeId: data['badgeId'],
+                      lessonId   : data['lessonId']    as String,
+                      lessonTitle: data['lessonTitle'] as String,
+                      earnedXP   : data['earnedXP']    as int,
+                      badgeId    : data['badgeId']     as String?,
                     )
                   : const Scaffold(body: Center(child: Text("❌ Lesson data missing."))),
             );
@@ -211,36 +210,38 @@ class _FluentEdgeAppState extends ConsumerState<FluentEdgeApp> {
             final badge = state.extra as Map<String, dynamic>?;
             return CustomTransitionPage(
               transitionDuration: const Duration(milliseconds: 300),
-              transitionsBuilder: (context, animation, _, child) =>
+              transitionsBuilder: (_, animation, __, child) =>
                   FadeTransition(opacity: animation, child: child),
               child: badge != null
                   ? BadgeDetailPage(
-                      title: badge['title'],
-                      imagePath: badge['image'],
-                      unlocked: badge['unlocked'],
-                      tag: badge['tag'],
+                      title    : badge['title']     as String,
+                      imagePath: badge['image']     as String,
+                      unlocked : badge['unlocked']  as bool,
+                      tag      : badge['tag']       as String,
                     )
                   : const Scaffold(body: Center(child: Text("❌ Badge data missing."))),
             );
           },
         ),
         GoRoute(path: '/userDashboard', builder: (_, __) => const UserDashboardPage()),
-        GoRoute(path: '/leaderboard', builder: (_, __) => const LeaderboardPage()),
-        GoRoute(path: '/community', builder: (_, __) => const CommunityPage()),
+        GoRoute(path: '/leaderboard',     builder: (_, __) => const LeaderboardPage()),
+        GoRoute(path: '/community',       builder: (_, __) => const CommunityPage()),
         GoRoute(
           path: '/friendDetail',
           pageBuilder: (_, state) {
             final data = state.extra as Map<String, dynamic>?;
             return CustomTransitionPage(
               transitionDuration: const Duration(milliseconds: 300),
-              transitionsBuilder: (context, animation, _, child) =>
+              transitionsBuilder: (_, animation, __, child) =>
                   FadeTransition(opacity: animation, child: child),
-              child: FriendDetailPage(
-                friendName: data?['friendName'] ?? 'Friend',
-                avatarEmoji: data?['avatarEmoji'] ?? '🙂',
-                xp: data?['xp'] ?? 0,
-                badges: List<Map<String, dynamic>>.from(data?['badges'] ?? []),
-              ),
+              child: data != null
+                  ? FriendDetailPage(
+                      friendName : data['friendName']  as String,
+                      avatarEmoji: data['avatarEmoji'] as String,
+                      xp         : data['xp']          as int,
+                      badges     : List<Map<String, dynamic>>.from(data['badges'] as List),
+                    )
+                  : const Scaffold(body: Center(child: Text("❌ Friend data missing."))),
             );
           },
         ),
@@ -249,13 +250,13 @@ class _FluentEdgeAppState extends ConsumerState<FluentEdgeApp> {
     );
   }
 
-  void _debugInitialization() {
+  void _debugInit() {
     Future.microtask(() {
-      debugPrint('🚀 FluentEdge Debug Init:');
+      debugPrint('🚀 FluentEdge Initialized with:');
       debugPrint('Locale: ${ref.read(localeProvider)}');
-      debugPrint('User: ${ref.read(userNameProvider)}');
-      debugPrint('Lang: ${ref.read(languagePrefProvider)}');
-      debugPrint('Level: ${ref.read(userLevelProvider)}');
+      debugPrint('User:   ${ref.read(userNameProvider)}');
+      debugPrint('Lang:   ${ref.read(languagePrefProvider)}');
+      debugPrint('Level:  ${ref.read(userLevelProvider)}');
     });
   }
 

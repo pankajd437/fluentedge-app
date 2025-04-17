@@ -3,8 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class AnimatedMentorWidget extends StatefulWidget {
+  final String expressionName; // e.g., 'mentor_tip_upper.png'
   final double size;
-  final String expressionName;
   final bool loop;
   final Duration idleSwitchDuration;
 
@@ -22,76 +22,53 @@ class AnimatedMentorWidget extends StatefulWidget {
 
 class _AnimatedMentorWidgetState extends State<AnimatedMentorWidget> {
   final List<String> expressions = [
-    'Alert',
-    'Angry',
-    'Apologetic',
-    'Awkward',
-    'Celebrating',
-    'Confident',
-    'Confused',
-    'Curious',
-    'Encouraging',
-    'Explaining',
-    'Greeting',
-    'Happy',
-    'Idea',
-    'Processing',
-    'Sleepy',
-    'Surprised',
+    'mentor_alert_upper.png',
+    'mentor_thinking_upper.png',
+    'mentor_tip_upper.png',
+    'mentor_encouraging_upper.png',
+    'mentor_confused_upper.png',
+    'mentor_proud_full.png',
+    'mentor_sad_upper.png',
+    'mentor_wave_smile_full.png',
   ];
 
-  String _currentExpression = 'Greeting';
   late String _currentPath;
   Timer? _switchTimer;
 
   @override
   void initState() {
     super.initState();
-    // Set initial expression + path from the widget
-    _currentExpression = widget.expressionName.isNotEmpty
-        ? widget.expressionName
-        : 'Greeting'; // fallback if expressionName is empty
-    _currentPath = _getPngPath(_currentExpression);
+    _setInitialPath();
 
-    // If loop is true and expressionName is empty, randomly switch expressions
     if (widget.loop && widget.expressionName.isEmpty) {
       _startLoop();
     }
   }
 
-  /// **NEW**: If parent changes `expressionName`, we update the image to match.
+  void _setInitialPath() {
+    _currentPath = _buildAssetPath(widget.expressionName);
+  }
+
   @override
   void didUpdateWidget(covariant AnimatedMentorWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-
-    // Only update if expressionName actually changed
-    if (oldWidget.expressionName != widget.expressionName) {
+    if (widget.expressionName != oldWidget.expressionName) {
       setState(() {
-        _currentExpression = widget.expressionName.isNotEmpty
-            ? widget.expressionName
-            : 'Greeting'; // fallback
-        _currentPath = _getPngPath(_currentExpression);
+        _currentPath = _buildAssetPath(widget.expressionName);
       });
     }
   }
 
-  /// Called periodically if we're in loop mode with an empty expressionName
   void _startLoop() {
     _switchTimer = Timer.periodic(widget.idleSwitchDuration, (_) {
       final random = expressions[Random().nextInt(expressions.length)];
-      setState(() => _currentPath = _getPngPath(random));
+      setState(() => _currentPath = _buildAssetPath(random));
     });
   }
 
-  /// Build a PNG path from the expression name
-  String _getPngPath(String expression) {
-    final normalized = expression.toLowerCase().replaceAll(' ', '_');
-    return 'assets/images/mentor_expressions/${_capitalize(normalized)} AI mentor.png';
-  }
-
-  /// Ensure first letter is uppercase
-  String _capitalize(String text) {
-    return text.isEmpty ? text : text[0].toUpperCase() + text.substring(1);
+  String _buildAssetPath(String name) {
+    final normalized = name.toLowerCase().replaceAll(' ', '_');
+    return 'assets/images/mentor_expressions/$normalized';
   }
 
   @override
@@ -103,8 +80,8 @@ class _AnimatedMentorWidgetState extends State<AnimatedMentorWidget> {
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<double>(
-      tween: Tween(begin: 0.95, end: 1.0),
-      duration: const Duration(milliseconds: 600),
+      tween: Tween(begin: 0.9, end: 1.0),
+      duration: const Duration(milliseconds: 500),
       curve: Curves.easeOutBack,
       builder: (context, scale, child) {
         return Transform.scale(
@@ -112,20 +89,19 @@ class _AnimatedMentorWidgetState extends State<AnimatedMentorWidget> {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(widget.size * 0.5),
             child: Image.asset(
-              // We always use the newly updated path
-              _getPngPath(_currentExpression),
+              _currentPath,
               width: widget.size,
               height: widget.size,
               fit: BoxFit.contain,
               errorBuilder: (_, __, ___) {
-                debugPrint("❌ Mentor image not found for: $_currentExpression");
+                debugPrint("❌ Mentor image not found: $_currentPath");
                 return Container(
                   width: widget.size,
                   height: widget.size,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.red.shade100,
+                    color: Colors.grey.shade200,
                   ),
                   child: const Icon(Icons.error_outline, size: 48, color: Colors.red),
                 );

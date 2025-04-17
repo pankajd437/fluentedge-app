@@ -1,61 +1,45 @@
 import 'package:hive_flutter/hive_flutter.dart';
 
-/// A hybrid static + singleton approach:
-/// - You can still call static methods like `setUserName(...)`.
-/// - You can also reference `UserState.instance.userName` synchronously 
-///   (once you've called `UserState.init()` at app startup).
+/// A hybrid static + singleton approach to access persistent user data.
 class UserState {
-  // ------------------------------------------------------------------
-  // Singleton pattern so you can do: UserState.instance.userName
-  // ------------------------------------------------------------------
   static final UserState instance = UserState._internal();
   UserState._internal();
 
-  // In-memory fallback for the user's name
-  // (this will be updated once we call init() or setUserName())
-  String userName = 'Friend';
-
-  // ------------------------------------------------------------------
-  // Hive Box Definitions
-  // ------------------------------------------------------------------
   static const String _boxName = 'user_state';
 
   static Future<Box> get _box async => Hive.openBox(_boxName);
 
-  /// Call this once early in your app (e.g., main.dart) so that 
-  /// `UserState.instance.userName` is populated from Hive.
+  // ✅ Fallback for UI before Hive loads
+  String userName = 'Friend';
+
+  // ------------------------------------------------------------------
+  // 🟦 Initialization at app start
+  // ------------------------------------------------------------------
   static Future<void> init() async {
     final box = await _box;
     instance.userName = box.get('user_name', defaultValue: 'Friend');
   }
 
-  // ------------------------------------------------------------------
-  // Synchronous method to get userName (required by UI)
-  // ------------------------------------------------------------------
   static String getUserNameSync() {
     return instance.userName;
   }
 
   // ------------------------------------------------------------------
-  // Locale (language code: en / hi)
+  // 🟨 Registration Data
   // ------------------------------------------------------------------
-  static Future<void> setLocale(String localeCode) async {
+  static Future<void> setUserId(String userId) async {
     final box = await _box;
-    await box.put('locale', localeCode);
+    await box.put('user_id', userId);
   }
 
-  static Future<String?> getLocale() async {
+  static Future<String?> getUserId() async {
     final box = await _box;
-    return box.get('locale', defaultValue: 'en');
+    return box.get('user_id');
   }
 
-  // ------------------------------------------------------------------
-  // User Name
-  // ------------------------------------------------------------------
   static Future<void> setUserName(String name) async {
     final box = await _box;
     await box.put('user_name', name);
-    // Keep in-memory userName in sync
     instance.userName = name;
   }
 
@@ -64,22 +48,16 @@ class UserState {
     return box.get('user_name');
   }
 
-  // ------------------------------------------------------------------
-  // Language Preference (English / हिंदी)
-  // ------------------------------------------------------------------
-  static Future<void> setLanguagePreference(String languagePreference) async {
+  static Future<void> setEmail(String email) async {
     final box = await _box;
-    await box.put('language_preference', languagePreference);
+    await box.put('email', email);
   }
 
-  static Future<String?> getLanguagePreference() async {
+  static Future<String?> getEmail() async {
     final box = await _box;
-    return box.get('language_preference', defaultValue: 'English');
+    return box.get('email');
   }
 
-  // ------------------------------------------------------------------
-  // Gender
-  // ------------------------------------------------------------------
   static Future<void> setGender(String gender) async {
     final box = await _box;
     await box.put('gender', gender);
@@ -90,25 +68,32 @@ class UserState {
     return box.get('gender');
   }
 
-  // ------------------------------------------------------------------
-  // Age
-  // ------------------------------------------------------------------
-  static Future<void> setAge(int age) async {
+  static Future<void> setAge(String ageGroup) async {
     final box = await _box;
-    await box.put('age', age);
+    await box.put('age_group', ageGroup);
   }
 
-  static Future<int?> getAge() async {
+  static Future<String?> getAge() async {
     final box = await _box;
-    return box.get('age');
+    return box.get('age_group');
+  }
+
+  static Future<void> setLearningGoal(String goal) async {
+    final box = await _box;
+    await box.put('learning_goal', goal);
+  }
+
+  static Future<String?> getLearningGoal() async {
+    final box = await _box;
+    return box.get('learning_goal');
   }
 
   // ------------------------------------------------------------------
-  // ✅ User Level: beginner / intermediate / advanced
+  // 🟩 Profiling / Recommendation
   // ------------------------------------------------------------------
-  static Future<void> setUserLevel(String userLevel) async {
+  static Future<void> setUserLevel(String level) async {
     final box = await _box;
-    await box.put('user_level', userLevel.toLowerCase());
+    await box.put('user_level', level.toLowerCase());
   }
 
   static Future<String> getUserLevel() async {
@@ -116,13 +101,50 @@ class UserState {
     return box.get('user_level', defaultValue: 'beginner');
   }
 
+  static Future<void> setLanguagePreference(String lang) async {
+    final box = await _box;
+    await box.put('language_preference', lang);
+  }
+
+  static Future<String> getLanguagePreference() async {
+    final box = await _box;
+    return box.get('language_preference', defaultValue: 'English');
+  }
+
+  static Future<void> setLocale(String code) async {
+    final box = await _box;
+    await box.put('locale', code);
+  }
+
+  static Future<String?> getLocale() async {
+    final box = await _box;
+    return box.get('locale', defaultValue: 'en');
+  }
+
   // ------------------------------------------------------------------
-  // Reset everything in this user_state box
+  // 🧼 Reset all user data
   // ------------------------------------------------------------------
   static Future<void> clearUserState() async {
     final box = await _box;
     await box.clear();
-    // Reset in-memory fallback
     instance.userName = 'Friend';
+  }
+
+  // ------------------------------------------------------------------
+  // 🧾 Get full user profile (for analytics, debugging, etc.)
+  // ------------------------------------------------------------------
+  static Future<Map<String, dynamic>> getAllUserProfile() async {
+    final box = await _box;
+    return {
+      'user_id': box.get('user_id'),
+      'user_name': box.get('user_name'),
+      'email': box.get('email'),
+      'gender': box.get('gender'),
+      'age_group': box.get('age_group'),
+      'learning_goal': box.get('learning_goal'),
+      'user_level': box.get('user_level'),
+      'language_preference': box.get('language_preference'),
+      'locale': box.get('locale'),
+    };
   }
 }
