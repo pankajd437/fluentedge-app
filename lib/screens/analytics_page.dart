@@ -1,8 +1,8 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:fluentedge_app/constants.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'package:fluentedge_app/data/user_state.dart';
 
 class AnalyticsPage extends StatefulWidget {
@@ -14,21 +14,22 @@ class AnalyticsPage extends StatefulWidget {
 
 class _AnalyticsPageState extends State<AnalyticsPage> {
   int totalXP = 0;
-  int dailyStreak = 0; // ✅ was mocked, now dynamic
-  final int totalLessons = 14; // 🔜 Replace with backend
-  final Duration totalTimeSpent = Duration(minutes: 146); // 2h 26m (mock)
-
-  String get formattedTime {
-    final hours = totalTimeSpent.inHours;
-    final minutes = totalTimeSpent.inMinutes.remainder(60);
-    return "${hours}h ${minutes}m";
-  }
+  int dailyStreak = 0;
+  int totalLessons = 0;
+  Duration totalTimeSpent = const Duration(); // Placeholder
 
   @override
   void initState() {
     super.initState();
     _fetchUserXP();
-    _fetchStreak(); // ✅ new
+    _fetchStreak();
+    _fetchLessonStats();
+  }
+
+  String get formattedTime {
+    final hours = totalTimeSpent.inHours;
+    final minutes = totalTimeSpent.inMinutes.remainder(60);
+    return "${hours}h ${minutes}m";
   }
 
   Future<void> _fetchUserXP() async {
@@ -69,6 +70,27 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
     }
   }
 
+  Future<void> _fetchLessonStats() async {
+    final name = await UserState.getUserName() ?? "Anonymous";
+    final url = Uri.parse("http://10.0.2.2:8000/api/v1/user/lessons?name=$name");
+
+    try {
+      final response = await http.get(url);
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        setState(() {
+          totalLessons = data['completed_lessons'] ?? 0;
+          int minutes = data['minutes_spent'] ?? 0;
+          totalTimeSpent = Duration(minutes: minutes);
+        });
+      } else {
+        debugPrint("❌ Failed to fetch lesson stats: ${response.statusCode}");
+      }
+    } catch (e) {
+      debugPrint("❌ Error fetching lesson stats: $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +106,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: Column(
+        child: ListView(
           children: [
             _buildStatCard(
               icon: Icons.star,
@@ -133,11 +155,11 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withOpacity(0.15)),
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: color.withOpacity(0.05),
+            color: color.withOpacity(0.08),
             blurRadius: 6,
             offset: const Offset(0, 4),
           ),
@@ -145,7 +167,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
       ),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: color.withOpacity(0.15),
+          backgroundColor: color.withOpacity(0.12),
           child: Icon(icon, color: color),
         ),
         title: Text(
@@ -166,7 +188,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
         ),
         trailing: Lottie.asset(
           lottie,
-          height: 40,
+          height: 42,
           repeat: false,
         ),
       ),

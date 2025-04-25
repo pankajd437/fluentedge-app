@@ -1,9 +1,13 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:fluentedge_app/constants.dart';
 import 'package:fluentedge_app/data/user_state.dart';
+import 'package:fluentedge_app/data/beginner_courses_list.dart';
+import 'package:fluentedge_app/data/intermediate_courses_list.dart';
+import 'package:fluentedge_app/data/advanced_courses_list.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:hive/hive.dart';
 
 class UserDashboardPage extends StatefulWidget {
   const UserDashboardPage({super.key});
@@ -14,11 +18,22 @@ class UserDashboardPage extends StatefulWidget {
 
 class _UserDashboardPageState extends State<UserDashboardPage> {
   int currentStreak = 0;
+  List<Map<String, dynamic>> matchedCourses = [];
+  String userName = "User";
 
   @override
   void initState() {
     super.initState();
+    _loadUserData();
     _fetchStreak();
+    _loadRecommendedCourses();
+  }
+
+  Future<void> _loadUserData() async {
+    final name = await UserState.getUserName();
+    if (name != null && name.isNotEmpty) {
+      setState(() => userName = name);
+    }
   }
 
   Future<void> _fetchStreak() async {
@@ -38,6 +53,27 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
     }
   }
 
+  Future<void> _loadRecommendedCourses() async {
+    final box = await Hive.openBox(kHiveBoxSettings);
+    final List<dynamic>? recommended = box.get(kHiveKeyRecommendedCourses);
+    final String userLevel = box.get(kHiveKeyUserLevel) ?? 'beginner';
+
+    List<Map<String, dynamic>> allCourses = userLevel == 'intermediate'
+        ? intermediateCourses
+        : userLevel == 'advanced'
+            ? advancedCourses
+            : beginnerCourses;
+
+    if (recommended != null && recommended.isNotEmpty) {
+      final titles = recommended.cast<String>();
+      setState(() {
+        matchedCourses = allCourses
+            .where((course) => titles.contains(course['title']))
+            .toList();
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,173 +90,65 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
-            onPressed: () {
-              // 🚧 Coming soon
-            },
+            onPressed: () {},
           )
         ],
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🔥 Streak + XP Banner
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(14),
-                boxShadow: kCardBoxShadow,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        kDailyStreakText,
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: kPrimaryIconBlue,
-                        ),
-                      ),
-                      const SizedBox(height: 6),
-                      Text(
-                        "🔥 $currentStreak-Day Streak",
-                        style: const TextStyle(
-                          fontSize: 13.5,
-                          color: Colors.black87,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const Icon(Icons.local_fire_department,
-                      color: Colors.orange, size: 34),
-                ],
+            // 🧠 Greeting
+            Text(
+              "👋 Welcome back, $userName!",
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: kPrimaryIconBlue,
               ),
             ),
+            const SizedBox(height: 16),
 
+            _buildStreakCard(),
             const SizedBox(height: 24),
 
-            // 🎓 Resume CTA
-            Text("🎓 Continue Learning",
-                style: TextStyle(
-                    fontSize: kFontMedium,
-                    fontWeight: FontWeight.bold,
-                    color: kPrimaryIconBlue)),
+            if (matchedCourses.isNotEmpty) ...[
+              Text("🎯 Recommended Courses",
+                  style: TextStyle(
+                      fontSize: kFontMedium,
+                      fontWeight: FontWeight.bold,
+                      color: kPrimaryIconBlue)),
+              const SizedBox(height: 12),
+              ...matchedCourses.map((course) => _buildRecommendedCard(course)).toList(),
+              const SizedBox(height: 30),
+            ],
 
-            const SizedBox(height: 12),
-            GestureDetector(
-              onTap: () {
-                GoRouter.of(context).push('/lessonPage', extra: {
-                  "courseId": "course_001",
-                  "title": "Speak English Fluently",
-                  "icon": Icons.record_voice_over,
-                  "color": Colors.orange,
-                  "tag": "free",
-                  "description":
-                      "Still hesitating while speaking? Start fluently handling daily conversations now.",
-                  "lessons": [
-                    {
-                      "lessonId": "course_001_lesson_001",
-                      "title": "Course Introduction & Goals"
-                    },
-                    {
-                      "lessonId": "course_001_lesson_002",
-                      "title": "Basic Vocabulary & Key Phrases"
-                    },
-                    {
-                      "lessonId": "course_001_lesson_003",
-                      "title": "Role-Play and Practice"
-                    }
-                  ]
-                });
-              },
-              child: Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  gradient: kPrimaryGradient,
-                  borderRadius: BorderRadius.circular(14),
-                  boxShadow: kCardBoxShadow,
-                ),
-                child: Row(
-                  children: const [
-                    Icon(Icons.play_circle_fill, color: Colors.white, size: 28),
-                    SizedBox(width: 12),
-                    Expanded(
-                      child: Text(
-                        "Resume: Speak English Fluently",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 30),
-
-            // 🎖 Quick Navigation Grid
             Text("🚀 Quick Access",
                 style: TextStyle(
                     fontSize: kFontMedium,
                     fontWeight: FontWeight.bold,
                     color: kPrimaryIconBlue)),
-
             const SizedBox(height: 14),
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
-                childAspectRatio: 3 / 2.6,
-                children: [
-                  _buildShortcutTile(
-                    context,
-                    title: "Achievements",
-                    icon: Icons.emoji_events_outlined,
-                    color: Colors.amber,
-                    route: '/achievements',
-                  ),
-                  _buildShortcutTile(
-                    context,
-                    title: "Explore Courses",
-                    icon: Icons.menu_book_rounded,
-                    color: Colors.deepPurple,
-                    route: '/coursesDashboard',
-                  ),
-                  _buildShortcutTile(
-                    context,
-                    title: "AI Mentor (Soon)",
-                    icon: Icons.smart_toy_outlined,
-                    color: Colors.cyan,
-                    route: '/chat',
-                  ),
-                  _buildShortcutTile(
-                    context,
-                    title: "Leaderboard",
-                    icon: Icons.leaderboard,
-                    color: Colors.pinkAccent,
-                    route: '/leaderboard',
-                  ),
-                  _buildShortcutTile(
-                    context,
-                    title: "My Analytics",
-                    icon: Icons.bar_chart_rounded,
-                    color: Colors.blueGrey,
-                    route: '/analytics',
-                  ),
-                ],
-              ),
+            GridView.count(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              crossAxisCount: 2,
+              crossAxisSpacing: 16,
+              mainAxisSpacing: 16,
+              childAspectRatio: 3 / 2.6,
+              children: [
+                _buildShortcutTile("Achievements", Icons.emoji_events_outlined,
+                    Colors.amber, '/achievements'),
+                _buildShortcutTile("Explore Courses", Icons.menu_book_rounded,
+                    Colors.deepPurple, '/coursesDashboard'),
+                _buildShortcutTile("AI Mentor (Soon)", Icons.smart_toy_outlined,
+                    Colors.cyan, '/chat'),
+                _buildShortcutTile("Leaderboard", Icons.leaderboard,
+                    Colors.pinkAccent, '/leaderboard'),
+                _buildShortcutTile("My Analytics", Icons.bar_chart_rounded,
+                    Colors.blueGrey, '/analytics'),
+              ],
             ),
           ],
         ),
@@ -228,11 +156,92 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
     );
   }
 
-  Widget _buildShortcutTile(BuildContext context,
-      {required String title,
-      required IconData icon,
-      required Color color,
-      required String route}) {
+  Widget _buildStreakCard() {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(14),
+        boxShadow: kCardBoxShadow,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                kDailyStreakText,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: kPrimaryIconBlue,
+                ),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                "🔥 $currentStreak-Day Streak",
+                style: const TextStyle(
+                  fontSize: 13.5,
+                  color: Colors.black87,
+                ),
+              ),
+            ],
+          ),
+          const Icon(Icons.local_fire_department,
+              color: Colors.orange, size: 34),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRecommendedCard(Map<String, dynamic> course) {
+    return GestureDetector(
+      onTap: () => GoRouter.of(context).push('/courseDetail', extra: course),
+      child: Container(
+        width: double.infinity,
+        margin: const EdgeInsets.only(bottom: 12),
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(14),
+          boxShadow: kCardBoxShadow,
+        ),
+        child: Row(
+          children: [
+            Icon(course['icon'], color: course['color'], size: 28),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    course['title'],
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    course['description'],
+                    style:
+                        const TextStyle(fontSize: 13, color: Colors.black54),
+                  ),
+                ],
+              ),
+            ),
+            const Icon(Icons.arrow_forward_ios_rounded,
+                size: 18, color: kPrimaryIconBlue),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildShortcutTile(
+      String title, IconData icon, Color color, String route) {
     return GestureDetector(
       onTap: () => GoRouter.of(context).push(route),
       child: AnimatedContainer(

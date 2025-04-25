@@ -1,6 +1,5 @@
 name: fluentedge_app
 description: "FluentEdge - AI-Powered English Learning App 🚀"
-
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -113,6 +112,27 @@ flutter:
     - assets/images/mentor_expressions/Surprised AI mentor.png
     - assets/images/old_friends_meeting_park.png
 
+    # ✅ NEW Approved Mentor Expressions
+    - assets/images/mentor_expressions/
+    - assets/images/mentor_expressions/mentor_analytical_upper.png
+    - assets/images/mentor_expressions/mentor_audio_ready_upper.png
+    - assets/images/mentor_expressions/mentor_celebrate_full.png
+    - assets/images/mentor_expressions/mentor_confused_upper.png
+    - assets/images/mentor_expressions/mentor_curious_upper.png
+    - assets/images/mentor_expressions/mentor_encouraging_upper.png
+    - assets/images/mentor_expressions/mentor_excited_full.png
+    - assets/images/mentor_expressions/mentor_pointing_full.png
+    - assets/images/mentor_expressions/mentor_proud_full.png
+    - assets/images/mentor_expressions/mentor_reassure_upper.png
+    - assets/images/mentor_expressions/mentor_sad_upper.png
+    - assets/images/mentor_expressions/mentor_silly_upper.png
+    - assets/images/mentor_expressions/mentor_sleepy_upper.png
+    - assets/images/mentor_expressions/mentor_surprised_upper.png
+    - assets/images/mentor_expressions/mentor_thinking_upper.png
+    - assets/images/mentor_expressions/mentor_thumbs_up_full.png
+    - assets/images/mentor_expressions/mentor_tip_upper.png
+    - assets/images/mentor_expressions/mentor_wave_smile_full.png
+
     # === NEW Lesson 3 IMAGES ===
     - assets/images/lesson3_introducing_strangers_16x9.png
     - assets/images/lesson3_informal_group_16x9.png
@@ -138,13 +158,11 @@ flutter:
     - assets/images/lesson4_market_scene_16x9.png
     - assets/images/lesson4_extra_scenarios_16x9.png
 
-    # ✅ Sounds (core + lesson audio)
+    # === Sounds (Core + Lesson Audio)
     - assets/sounds/
     - assets/sounds/correct.mp3
     - assets/sounds/incorrect.mp3
     - assets/sounds/lesson_audio/
-
-    # Existing lesson audio
     - assets/sounds/lesson_audio/help_request_1.mp3
     - assets/sounds/lesson_audio/help_request_2.mp3
     - assets/sounds/lesson_audio/help_request_3.mp3
@@ -162,17 +180,23 @@ flutter:
     - assets/sounds/lesson_audio/mistake_tips.mp3
     - assets/sounds/lesson_audio/phone_call_goodbye.mp3
     - assets/sounds/lesson_audio/challenge_reminder.mp3
+    - assets/audio/en/audio_profiling_intro_en.mp3
+    - assets/audio/hi/audio_profiling_intro_hi.mp3
+    - assets/audio/en/audio_encourage_en.mp3
+    - assets/audio/hi/audio_encourage_hi.mp3
+    - assets/audio/en/audio_tip_en.mp3
+    - assets/audio/hi/audio_tip_hi.mp3
 
-    # NEW lesson1 audio files
+    # NEW lesson1 audio
     - assets/sounds/lesson_audio/L1_intro_auto.mp3
     - assets/sounds/lesson_audio/L1_comedic_story.mp3
 
-    # NEW lesson2 audio files
+    # NEW lesson2 audio
     - assets/sounds/lesson_audio/lesson2_intro_auto.mp3
     - assets/sounds/lesson_audio/lesson2_comedic_story.mp3
     - assets/sounds/lesson_audio/lesson2_challenge_reminder.mp3
 
-    # === NEW Lesson 3 AUDIO ===
+    # NEW Lesson 3 AUDIO
     - assets/sounds/lesson_audio/lesson3_intro_auto.mp3
     - assets/sounds/lesson_audio/lesson3_basic_intro_example.mp3
     - assets/sounds/lesson_audio/lesson3_comedic_story.mp3
@@ -184,7 +208,7 @@ flutter:
     - assets/sounds/lesson_audio/lesson3_hobbies_prompt.mp3
     - assets/sounds/lesson_audio/lesson3_stage_performance_example.mp3
 
-    # === NEW Lesson 4 AUDIO ===
+    # NEW Lesson 4 AUDIO
     - assets/sounds/lesson_audio/lesson4_intro_auto.mp3
     - assets/sounds/lesson_audio/lesson4_basic_wh_prompt.mp3
     - assets/sounds/lesson_audio/lesson4_comedic_story1.mp3
@@ -201,6 +225,11 @@ flutter:
     - assets/sounds/lesson_audio/lesson4_comedic_story5.mp3
     - assets/sounds/lesson_audio/lesson4_final_challenge.mp3
     - assets/sounds/lesson_audio/lesson4_comedic_story6.mp3
+
+    # === NEW: Folders for EN & HI Audio
+    - assets/audio/
+    - assets/audio/en/
+    - assets/audio/hi/
 
     # ✅ JSON Lessons
     - assets/lessons/

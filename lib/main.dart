@@ -4,20 +4,17 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:fluentedge_app/constants.dart';
+import 'package:fluentedge_app/constants.dart'; // Make sure routeRegistration = "/registration"
 import 'package:fluentedge_app/data/user_state.dart';
 import 'package:fluentedge_app/services/notification_service.dart';
 import 'package:fluentedge_app/localization/app_localizations.dart';
 
-// Onboarding screens
+// Screens
 import 'package:fluentedge_app/screens/splash_page.dart';
 import 'package:fluentedge_app/screens/welcome_page.dart';
 import 'package:fluentedge_app/screens/registration_page.dart';
 import 'package:fluentedge_app/screens/profiling_chat_page.dart';
-import 'package:fluentedge_app/screens/skill_check_page.dart';
 import 'package:fluentedge_app/screens/smart_course_recommendation_page.dart';
-
-// Other app screens
 import 'package:fluentedge_app/screens/courses_dashboard.dart';
 import 'package:fluentedge_app/screens/course_detail_page.dart';
 import 'package:fluentedge_app/screens/lesson_page.dart';
@@ -32,11 +29,18 @@ import 'package:fluentedge_app/screens/friend_detail_page.dart';
 import 'package:fluentedge_app/screens/analytics_page.dart';
 import 'package:fluentedge_app/screens/menu_page.dart';
 
-/// Providers for global state
-final localeProvider       = StateProvider<Locale>((ref) => const Locale('en'));
-final userNameProvider     = StateProvider<String>((ref) => '');
+// Newly imported pages
+import 'package:fluentedge_app/screens/skill_check_page.dart';
+import 'package:fluentedge_app/screens/profiling_result_page.dart';
+
+// ✅ Import the new login page
+import 'package:fluentedge_app/screens/login_page.dart';
+
+// Riverpod providers
+final localeProvider = StateProvider<Locale>((ref) => const Locale('en'));
+final userNameProvider = StateProvider<String>((ref) => '');
 final languagePrefProvider = StateProvider<String>((ref) => 'English');
-final userLevelProvider    = StateProvider<String>((ref) => 'beginner');
+final userLevelProvider = StateProvider<String>((ref) => 'beginner');
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,11 +48,10 @@ Future<void> main() async {
   await UserState.init();
   await NotificationService.init();
 
-  // Load persisted settings
   final storedLocale = await UserState.getLocale() ?? 'en';
-  final storedName   = await UserState.getUserName() ?? '';
-  final storedLang   = await UserState.getLanguagePreference() ?? 'English';
-  final storedLevel  = await UserState.getUserLevel();
+  final storedName = await UserState.getUserName() ?? '';
+  final storedLang = await UserState.getLanguagePreference() ?? 'English';
+  final storedLevel = await UserState.getUserLevel();
 
   runApp(
     ProviderScope(
@@ -67,7 +70,6 @@ class FluentEdgeApp extends ConsumerStatefulWidget {
   final Locale initialLocale;
   const FluentEdgeApp({Key? key, required this.initialLocale}) : super(key: key);
 
-  /// Call this to change locale at runtime
   static Future<void> updateLocale(WidgetRef ref, Locale newLocale) async {
     await UserState.setLocale(newLocale.languageCode);
     ref.read(localeProvider.notifier).state = newLocale;
@@ -83,186 +85,316 @@ class _FluentEdgeAppState extends ConsumerState<FluentEdgeApp> {
   @override
   void initState() {
     super.initState();
-    _setupRouter();
-    _debugInit();
+    _router = _setupRouter();
   }
 
-  void _setupRouter() {
-    _router = GoRouter(
-      initialLocation: '/splash',
+  GoRouter _setupRouter() {
+    return GoRouter(
+      initialLocation: routeWelcome,
       routes: [
+        // 1) WELCOME PAGE
         GoRoute(
-          path: '/splash',
-          builder: (_, __) => SplashPage(
-            onInitializationComplete: () => _router.push('/welcome'),
-          ),
-        ),
-        GoRoute(
-          path: '/welcome',
+          path: routeWelcome,
           builder: (_, __) => WelcomePage(
             onUserInfoSubmitted: (name, lang) async {
-              // Persist name & language
               await UserState.setUserName(name);
               await UserState.setLanguagePreference(lang);
-              ref.read(userNameProvider.notifier).state     = name;
+              ref.read(userNameProvider.notifier).state = name;
               ref.read(languagePrefProvider.notifier).state = lang;
-              _router.go('/register');
+
+              // Navigate to Registration
+              Future.microtask(() {
+                _router.go(routeRegistration, extra: {'name': name});
+              });
             },
           ),
         ),
+
+        // 2) REGISTRATION PAGE
         GoRoute(
-          path: '/register',
-          builder: (_, __) => const RegistrationPage(),
+          path: routeRegistration,
+          builder: (context, state) {
+            final name = (state.extra as Map<String, dynamic>?)?['name'] ?? '';
+            return RegistrationPage(prefilledName: name);
+          },
         ),
+
+        // 3) PROFILING PAGE
         GoRoute(
-          path: '/profiling_chat_page',
+          path: routeProfilingChat,
           builder: (_, __) => const ProfilingChatPage(),
         ),
+
+        // 4) PROFILING RESULT (first usage)
         GoRoute(
-          path: '/skill_check_page',
-          builder: (_, __) => const SkillCheckPage(),
-        ),
-        GoRoute(
-          path: '/smartRecommendation',
-          pageBuilder: (_, state) {
-            final data = state.extra as Map<String, dynamic>?;
-            return CustomTransitionPage(
-              transitionDuration: const Duration(milliseconds: 400),
-              transitionsBuilder: (_, animation, __, child) =>
-                  FadeTransition(opacity: animation, child: child),
-              child: data != null
-                  ? SmartCourseRecommendationPage(
-                      userName: data['userName'] as String,
-                      languagePreference: data['languagePreference'] as String,
-                      gender: data['gender'] as String,
-                      age: data['age'] as String,
-                      userLevel: data['userLevel'] as String,
-                      recommendedCourses: List<String>.from(data['recommendedCourses'] as List),
-                    )
-                  : const Scaffold(body: Center(child: Text("❌ No data provided"))),
+          path: routeProfilingResult,
+          builder: (context, state) {
+            final args = state.extra as Map<String, dynamic>? ?? {};
+            debugPrint("DEBUG => Going to ProfilingResultPage with userLevel=${args['userLevel']}");
+            debugPrint("DEBUG => recommendedCourses=${args['recommendedCourses']}");
+
+            return ProfilingResultPage(
+              score: args['score'],
+              total: args['totalQuestions'],
+              userName: args['userName'],
+              languagePreference: args['languagePreference'],
+              gender: args['gender'],
+              age: args['age'],
+              recommendedCourses: List<String>.from(
+                args['recommendedCourses'] ?? [],
+              ),
+              userLevel: args['userLevel'] ?? 'beginner',
             );
           },
         ),
 
-        // ... other routes unchanged ...
-        GoRoute(path: '/chat', builder: (_, __) => IceBreakingChatPage(
-          userName: ref.watch(userNameProvider),
-          languagePreference: ref.watch(languagePrefProvider),
-        )),
-        GoRoute(path: '/menu', builder: (_, __) => const MenuPage()),
-        GoRoute(path: '/coursesDashboard', builder: (_, __) => const CoursesDashboardPage()),
+        // 5) COURSE RECOMMENDATIONS
         GoRoute(
-          path: '/courseDetail',
+          path: routeCourseRecommendations,
+          builder: (context, state) {
+            final data = state.extra as Map<String, dynamic>? ?? {};
+            debugPrint("DEBUG => Going to SmartCourseRecommendation with userLevel=${data['userLevel']}");
+            debugPrint("DEBUG => recommendedCourses=${data['recommendedCourses']}");
+
+            return SmartCourseRecommendationPage(
+              userName: data['userName'],
+              languagePreference: data['languagePreference'],
+              gender: data['gender'],
+              age: data['age'],
+              recommendedCourses: List<String>.from(
+                data['recommendedCourses'] ?? [],
+              ),
+              userLevel: data['userLevel'] ?? 'beginner',
+            );
+          },
+        ),
+
+        // 6) COURSES DASHBOARD
+        GoRoute(
+          path: routeCoursesDashboard,
+          builder: (_, __) => const CoursesDashboardPage(),
+        ),
+
+        // 7) COURSE DETAIL PAGE
+        GoRoute(
+          path: routeCourseDetail,
           pageBuilder: (_, state) {
             final course = state.extra as Map<String, dynamic>?;
             return CustomTransitionPage(
-              transitionDuration: const Duration(milliseconds: 300),
+              transitionDuration: kPageTransitionDuration,
               transitionsBuilder: (_, animation, __, child) =>
                   FadeTransition(opacity: animation, child: child),
               child: course != null
                   ? CourseDetailPage(course: course)
-                  : const Scaffold(body: Center(child: Text("❌ Invalid course data."))),
+                  : const Scaffold(
+                      body: Center(child: Text("❌ Invalid course data.")),
+                    ),
             );
           },
         ),
+
+        // 8) LESSON PAGE
         GoRoute(
-          path: '/lessonPage',
+          path: routeLessonPage,
           pageBuilder: (_, state) {
             final course = state.extra as Map<String, dynamic>?;
             return CustomTransitionPage(
-              transitionDuration: const Duration(milliseconds: 300),
+              transitionDuration: kPageTransitionDuration,
               transitionsBuilder: (_, animation, __, child) =>
                   FadeTransition(opacity: animation, child: child),
               child: course != null
                   ? LessonPage(
-                      courseTitle: course['title'] as String,
-                      courseIcon : course['icon']  as String,
-                      courseColor: course['color'] as int,
-                      lessons    : List<Map<String, String>>.from(course['lessons'] as List),
+                      courseTitle: course['title'],
+                      courseIcon: course['icon'],
+                      courseColor: course['color'],
+                      lessons: List<Map<String, String>>.from(course['lessons']),
                     )
-                  : const Scaffold(body: Center(child: Text("❌ Invalid lesson data."))),
+                  : const Scaffold(
+                      body: Center(child: Text("❌ Invalid lesson data.")),
+                    ),
             );
           },
         ),
+
+        // 9) LESSON COMPLETE PAGE
         GoRoute(
-          path: '/lessonComplete',
+          path: routeLessonComplete,
           pageBuilder: (_, state) {
             final data = state.extra as Map<String, dynamic>?;
             return CustomTransitionPage(
-              transitionDuration: const Duration(milliseconds: 300),
+              transitionDuration: kPageTransitionDuration,
               transitionsBuilder: (_, animation, __, child) =>
                   FadeTransition(opacity: animation, child: child),
               child: data != null
                   ? LessonCompletePage(
-                      lessonId   : data['lessonId']    as String,
-                      lessonTitle: data['lessonTitle'] as String,
-                      earnedXP   : data['earnedXP']    as int,
-                      badgeId    : data['badgeId']     as String?,
+                      lessonId: data['lessonId'],
+                      lessonTitle: data['lessonTitle'],
+                      earnedXP: data['earnedXP'],
+                      badgeId: data['badgeId'],
+                      isCorrect: data['isCorrect'] ?? true,
                     )
-                  : const Scaffold(body: Center(child: Text("❌ Lesson data missing."))),
+                  : const Scaffold(
+                      body: Center(child: Text("❌ Lesson data missing.")),
+                    ),
             );
           },
         ),
-        GoRoute(path: '/achievements', builder: (_, __) => const AchievementsPage()),
+
+        // 10) OTHER ROUTES...
         GoRoute(
-          path: '/badgeDetail',
-          pageBuilder: (_, state) {
-            final badge = state.extra as Map<String, dynamic>?;
-            return CustomTransitionPage(
-              transitionDuration: const Duration(milliseconds: 300),
-              transitionsBuilder: (_, animation, __, child) =>
-                  FadeTransition(opacity: animation, child: child),
-              child: badge != null
-                  ? BadgeDetailPage(
-                      title    : badge['title']     as String,
-                      imagePath: badge['image']     as String,
-                      unlocked : badge['unlocked']  as bool,
-                      tag      : badge['tag']       as String,
-                    )
-                  : const Scaffold(body: Center(child: Text("❌ Badge data missing."))),
-            );
-          },
+          path: routeAchievements,
+          builder: (_, __) => const AchievementsPage(),
         ),
-        GoRoute(path: '/userDashboard', builder: (_, __) => const UserDashboardPage()),
-        GoRoute(path: '/leaderboard',     builder: (_, __) => const LeaderboardPage()),
-        GoRoute(path: '/community',       builder: (_, __) => const CommunityPage()),
         GoRoute(
-          path: '/friendDetail',
+          path: routeUserDashboard,
+          builder: (_, __) => const UserDashboardPage(),
+        ),
+        GoRoute(
+          path: routeLeaderboard,
+          builder: (_, __) => const LeaderboardPage(),
+        ),
+        GoRoute(
+          path: routeCommunity,
+          builder: (_, __) => const CommunityPage(),
+        ),
+        GoRoute(
+          path: routeFriendDetail,
           pageBuilder: (_, state) {
             final data = state.extra as Map<String, dynamic>?;
             return CustomTransitionPage(
-              transitionDuration: const Duration(milliseconds: 300),
+              transitionDuration: kPageTransitionDuration,
               transitionsBuilder: (_, animation, __, child) =>
                   FadeTransition(opacity: animation, child: child),
               child: data != null
                   ? FriendDetailPage(
-                      friendName : data['friendName']  as String,
-                      avatarEmoji: data['avatarEmoji'] as String,
-                      xp         : data['xp']          as int,
-                      badges     : List<Map<String, dynamic>>.from(data['badges'] as List),
+                      friendName: data['friendName'],
+                      avatarEmoji: data['avatarEmoji'],
+                      xp: data['xp'],
+                      badges: List<Map<String, dynamic>>.from(data['badges']),
                     )
-                  : const Scaffold(body: Center(child: Text("❌ Friend data missing."))),
+                  : const Scaffold(
+                      body: Center(child: Text("❌ Friend data missing.")),
+                    ),
             );
           },
         ),
-        GoRoute(path: '/analytics', builder: (_, __) => const AnalyticsPage()),
+        GoRoute(
+          path: routeBadgeDetail,
+          pageBuilder: (_, state) {
+            final badge = state.extra as Map<String, dynamic>?;
+            return CustomTransitionPage(
+              transitionDuration: kPageTransitionDuration,
+              transitionsBuilder: (_, animation, __, child) =>
+                  FadeTransition(opacity: animation, child: child),
+              child: badge != null
+                  ? BadgeDetailPage(
+                      title: badge['title'],
+                      imagePath: badge['image'],
+                      unlocked: badge['unlocked'],
+                      tag: badge['tag'],
+                    )
+                  : const Scaffold(
+                      body: Center(child: Text("❌ Badge data missing.")),
+                    ),
+            );
+          },
+        ),
+        GoRoute(path: routeAnalytics, builder: (_, __) => const AnalyticsPage()),
+        GoRoute(path: routeMenu, builder: (_, __) => const MenuPage()),
+        GoRoute(
+          path: routeChat,
+          builder: (_, __) => IceBreakingChatPage(
+            userName: ref.watch(userNameProvider),
+            languagePreference: ref.watch(languagePrefProvider),
+          ),
+        ),
+
+        // ✅ SkillCheck Route with correct arguments
+        GoRoute(
+          path: routeSkillCheck, // e.g., "/skillCheck"
+          builder: (context, state) {
+            final data = state.extra as Map<String, dynamic>? ?? {};
+            return SkillCheckPage(
+              userName: data['userName'],
+              languagePreference: data['languagePreference'],
+              gender: data['gender'],
+              age: data['age'],
+              recommendedCourses: List<String>.from(data['recommendedCourses'] ?? []),
+              userLevel: data['userLevel'] ?? 'beginner',
+            );
+          },
+        ),
+
+        // Final 'ProfilingResult' route with additional data (2nd usage)
+        GoRoute(
+          path: routeProfilingResult,
+          builder: (context, state) {
+            final args = state.extra as Map<String, dynamic>? ?? {};
+            debugPrint("DEBUG => (Second usage) ProfilingResult with userLevel=${args['userLevel']}");
+            debugPrint("DEBUG => recommendedCourses=${args['recommendedCourses']}");
+
+            return ProfilingResultPage(
+              score: args['score'],
+              total: args['totalQuestions'],
+              userName: args['userName'],
+              languagePreference: args['languagePreference'],
+              gender: args['gender'],
+              age: args['age'],
+              recommendedCourses: List<String>.from(
+                args['recommendedCourses'] ?? [],
+              ),
+              userLevel: args['userLevel'] ?? 'beginner',
+            );
+          },
+        ),
+
+        // ✅ NEW LOGIN ROUTE (for returning users)
+        GoRoute(
+          path: '/login',
+          builder: (context, state) => const LoginPage(),
+        ),
       ],
     );
   }
 
-  void _debugInit() {
-    Future.microtask(() {
-      debugPrint('🚀 FluentEdge Initialized with:');
-      debugPrint('Locale: ${ref.read(localeProvider)}');
-      debugPrint('User:   ${ref.read(userNameProvider)}');
-      debugPrint('Lang:   ${ref.read(languagePrefProvider)}');
-      debugPrint('Level:  ${ref.read(userLevelProvider)}');
-    });
+  /// Placeholder method for building a default 'profiling result' screen
+  /// if you needed it without extra data.
+  Widget _buildProfilingResultPage(Map<String, dynamic> data) {
+    final recommendedCourses = data['recommended_courses'];
+    final coursesList = recommendedCourses is List<dynamic>
+        ? List<String>.from(recommendedCourses)
+        : <String>[];
+
+    return Scaffold(
+      appBar: AppBar(title: const Text("Profiling Result")),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Name: ${data['userName']}"),
+              Text("Language: ${data['languagePreference']}"),
+              Text("Gender: ${data['gender']}"),
+              Text("Age: ${data['age']}"),
+              Text("User Level: ${data['userLevel']}"),
+              const SizedBox(height: 16),
+              const Text(
+                "Recommended Courses:",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              for (final c in coursesList) Text("- $c"),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final locale = ref.watch(localeProvider);
+
     return MaterialApp.router(
       title: 'FluentEdge',
       debugShowCheckedModeBanner: false,

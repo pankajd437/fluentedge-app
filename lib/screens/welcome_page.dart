@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lottie/lottie.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:fluentedge_app/localization/app_localizations.dart';
 import 'package:fluentedge_app/main.dart';
 import 'package:fluentedge_app/constants.dart';
+import 'package:fluentedge_app/widgets/animated_mentor_widget.dart';
 
 class WelcomePage extends ConsumerStatefulWidget {
   final Function(String, String) onUserInfoSubmitted;
@@ -22,14 +22,14 @@ class WelcomePage extends ConsumerStatefulWidget {
 
 class _WelcomePageState extends ConsumerState<WelcomePage> {
   String selectedLanguage = "English";
-  final TextEditingController _nameController = TextEditingController();
-  final FocusNode _nameFocusNode = FocusNode();
+  bool showWelcomeText = false;
 
   @override
-  void dispose() {
-    _nameController.dispose();
-    _nameFocusNode.dispose();
-    super.dispose();
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(milliseconds: 1200), () {
+      setState(() => showWelcomeText = true);
+    });
   }
 
   @override
@@ -40,131 +40,44 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
     return Scaffold(
       backgroundColor: const Color(0xFFF2F6FB),
       body: SafeArea(
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            return SingleChildScrollView(
-              padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-              child: ConstrainedBox(
-                constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _buildHeader(localizations, isHindi),
-                    _buildForm(localizations),
-                  ],
-                ),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
+        child: Column(
+          children: [
+            const SizedBox(height: 24),
 
-  Widget _buildHeader(AppLocalizations localizations, bool isHindi) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
-      child: Column(
-        children: [
-          Hero(
-            tag: "fluentedge-logo",
-            child: Image.asset(
-              'assets/images/FluentEdge Logo.png',
-              width: 160,
-              height: 160,
-              fit: BoxFit.contain,
-            ),
-          ),
-          const SizedBox(height: 2),
-          // ✅ Mentor Animation or Fallback PNG
-          Lottie.asset(
-            'assets/animations/ai_mentor_welcome.json',
-            width: 220,
-            height: 200,
-            fit: BoxFit.contain,
-            errorBuilder: (_, __, ___) => Image.asset(
-              'assets/images/mentor_expressions/mentor_wave_smile_full.png',
-              width: 180,
-              height: 180,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            isHindi ? localizations.welcomeMessageHindi : localizations.welcomeMessage,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Color(0xFF0D47A1),
-              fontFamily: 'Poppins',
-              height: 1.4,
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            isHindi
-                ? "Real-time AI guidance के साथ English बोलना सीखें। आज से शुरू करें!"
-                : localizations.welcomeSubtitle,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: Colors.black54,
-              fontFamily: 'Poppins',
-              height: 1.6,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildForm(AppLocalizations localizations) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.blueAccent,
-            blurRadius: 6,
-            offset: Offset(0, -1),
-          ),
-        ],
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      child: Column(
-        children: [
-          TextField(
-            controller: _nameController,
-            focusNode: _nameFocusNode,
-            decoration: InputDecoration(
-              labelText:
-                  localizations.getLocalizedNameFieldLabel(selectedLanguage),
-              prefixIcon: const Icon(Icons.person),
-              border: const OutlineInputBorder(),
-              contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 14),
-            ),
-            textInputAction: TextInputAction.done,
-          ),
-          const SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                localizations.languageSelectionLabel,
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
+            // 🚀 FluentEdge Logo
+            Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: Image.asset(
+                'assets/images/FluentEdge Logo.png',
+                width: 120,
+                height: 120,
               ),
-              const SizedBox(width: 10),
-              DropdownButton<String>(
+            ),
+
+            // Mentor image + animated greeting
+            const AnimatedMentorWidget(
+              size: 200,
+              expressionName: 'mentor_wave_smile_full.png',
+            ),
+
+            const SizedBox(height: 20),
+
+            // 🌐 Language selection
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: DropdownButtonFormField<String>(
                 value: selectedLanguage,
+                decoration: const InputDecoration(
+                  labelText: "Select Language / भाषा चुनें",
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(),
+                ),
                 onChanged: (value) async {
                   if (value != null) {
                     setState(() {
                       selectedLanguage = value;
+                      showWelcomeText = true;
                     });
                     FluentEdgeApp.updateLocale(
                       ref,
@@ -175,73 +88,130 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
                   }
                 },
                 items: [
-                  DropdownMenuItem(
-                    value: "English",
-                    child: Text(localizations.englishLanguageName),
-                  ),
-                  DropdownMenuItem(
-                    value: "हिंदी",
-                    child: Text(localizations.hindiLanguageName),
-                  ),
+                  DropdownMenuItem(value: "English", child: Text(localizations.englishLanguageName)),
+                  DropdownMenuItem(value: "हिंदी", child: Text(localizations.hindiLanguageName)),
                 ],
               ),
-            ],
-          ),
-          const SizedBox(height: 24),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton.icon(
-              icon: const Icon(Icons.person_add),
-              onPressed: () => _continueWithRegistration(),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF1565C0),
-                padding: const EdgeInsets.symmetric(vertical: 14),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+            ),
+
+            const SizedBox(height: 20),
+
+            // 🧠 Welcome message after language selected
+            if (showWelcomeText)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: Column(
+                  children: [
+                    AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 600),
+                      transitionBuilder: (child, animation) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: ScaleTransition(scale: animation, child: child),
+                        );
+                      },
+                      child: Text(
+                        isHindi
+                            ? localizations.welcomeMessageHindi
+                            : localizations.welcomeMessage,
+                        key: ValueKey<bool>(isHindi),
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF0D47A1),
+                          height: 1.4,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 600),
+                      transitionBuilder: (child, animation) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: ScaleTransition(scale: animation, child: child),
+                        );
+                      },
+                      child: Text(
+                        isHindi
+                            ? "AI Mentor के साथ English बोलना शुरू करें — आपकी ज़रूरतों के अनुसार!"
+                            : localizations.welcomeSubtitle,
+                        key: ValueKey<String>(selectedLanguage),
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black87,
+                          height: 1.6,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              label: Text(
-                localizations.continueButton,
-                style: const TextStyle(color: Colors.white, fontSize: 14),
+
+            const Spacer(),
+
+            // 🎯 Three main CTA buttons
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      GoRouter.of(context).go(routeRegistration);
+                    },
+                    icon: const Icon(Icons.person_add),
+                    label: const Text("Register"),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: kPrimaryBlue,
+                      foregroundColor: Colors.white,
+                      minimumSize: const Size.fromHeight(48),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  OutlinedButton.icon(
+                    onPressed: () {
+                      GoRouter.of(context).go(routeLogin);
+                    },
+                    icon: const Icon(Icons.login),
+                    label: const Text("Login"),
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: kPrimaryBlue,
+                      side: const BorderSide(color: kPrimaryBlue),
+                      minimumSize: const Size.fromHeight(48),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  TextButton(
+                    onPressed: () {
+                      ref.read(userNameProvider.notifier).state = "Guest";
+                      ref.read(languagePrefProvider.notifier).state = selectedLanguage;
+                      GoRouter.of(context).go(routeCoursesDashboard);
+                    },
+                    child: const Text(
+                      "Explore as Guest",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black87,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                ],
               ),
             ),
-          ),
-          const SizedBox(height: 12),
-          TextButton(
-            onPressed: () => _continueAsGuest(context),
-            child: const Text(
-              "Explore as Guest",
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                color: Colors.black87,
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
-  }
-
-  void _continueWithRegistration() {
-    final name = _nameController.text.trim();
-    if (name.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(AppLocalizations.of(context)!.nameRequiredError),
-        ),
-      );
-      return;
-    }
-    widget.onUserInfoSubmitted(name, selectedLanguage);
-  }
-
-  void _continueAsGuest(BuildContext context) {
-    final guestName = _nameController.text.trim().isNotEmpty
-        ? _nameController.text.trim()
-        : "Guest";
-
-    // Save guest state, or skip registration logic
-    context.go('/courses');
   }
 }

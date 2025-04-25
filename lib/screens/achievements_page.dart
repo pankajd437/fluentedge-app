@@ -1,10 +1,10 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:fluentedge_app/constants.dart';
 import 'package:go_router/go_router.dart';
 import 'package:fluentedge_app/data/user_state.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'package:hive/hive.dart';
 
 class AchievementsPage extends StatefulWidget {
@@ -43,66 +43,72 @@ class _AchievementsPageState extends State<AchievementsPage> {
   }
 
   Future<void> _countCompletedLessons() async {
-    final box = await Hive.openBox('completed_lessons');
+    final box = await Hive.openBox(kHiveBoxCompletedLessons);
     final keys = box.keys.toList();
     setState(() {
       completedLessons = keys.length;
     });
-
-    debugPrint("📘 Total Completed Lessons: $completedLessons");
-    debugPrint("📘 Lesson IDs: $keys");
+    debugPrint("📘 Completed Lessons: $completedLessons");
   }
 
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, dynamic>> _badges = [
+    final List<Map<String, dynamic>> badges = [
       {
         "title": "Lesson Starter",
         "animation": "assets/animations/badges/lesson_completion_badge.json",
         "unlocked": completedLessons >= 1,
-        "tag": "lesson_1"
+        "tag": "lesson_1",
+        "xp": 100,
       },
       {
         "title": "5 Lessons Completed",
         "animation": "assets/animations/badges/quiz_champion_badge.json",
         "unlocked": completedLessons >= 5,
-        "tag": "lesson_5"
+        "tag": "lesson_5",
+        "xp": 300,
       },
       {
         "title": "10 Lessons Completed",
         "animation": "assets/animations/badges/fast_learner_badge.json",
         "unlocked": completedLessons >= 10,
-        "tag": "lesson_10"
+        "tag": "lesson_10",
+        "xp": 600,
       },
       {
         "title": "25 Lessons Completed",
         "animation": "assets/animations/badges/perfect_score_badge.json",
         "unlocked": completedLessons >= 25,
-        "tag": "lesson_25"
+        "tag": "lesson_25",
+        "xp": 1200,
       },
       {
         "title": "🔥 3-Day Streak",
         "animation": "assets/animations/badges/daily_streak_badge.json",
         "unlocked": streak >= 3,
-        "tag": "streak_3"
+        "tag": "streak_3",
+        "xp": 100,
       },
       {
         "title": "🔥 7-Day Streak",
         "animation": "assets/animations/badges/fast_learner_badge.json",
         "unlocked": streak >= 7,
-        "tag": "streak_7"
+        "tag": "streak_7",
+        "xp": 300,
       },
       {
         "title": "🔥 14-Day Streak",
         "animation": "assets/animations/badges/quiz_champion_badge.json",
         "unlocked": streak >= 14,
-        "tag": "streak_14"
+        "tag": "streak_14",
+        "xp": 600,
       },
       {
         "title": "🔥 30-Day Streak",
         "animation": "assets/animations/badges/perfect_score_badge.json",
         "unlocked": streak >= 30,
-        "tag": "streak_30"
+        "tag": "streak_30",
+        "xp": 1500,
       },
     ];
 
@@ -120,25 +126,22 @@ class _AchievementsPageState extends State<AchievementsPage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.close),
-            onPressed: () => GoRouter.of(context).go('/coursesDashboard'),
+            onPressed: () => GoRouter.of(context).go(routeCoursesDashboard),
           )
         ],
       ),
-      // Bottom bar with centered Home icon → /coursesDashboard
       bottomNavigationBar: BottomAppBar(
         color: kPrimaryBlue,
         child: SizedBox(
-          height: 50, // smaller bar height
+          height: 50,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                iconSize: 36, // bigger home icon
+                iconSize: 36,
                 icon: const Icon(Icons.home),
                 color: Colors.white,
-                onPressed: () {
-                  GoRouter.of(context).go('/coursesDashboard');
-                },
+                onPressed: () => GoRouter.of(context).go(routeCoursesDashboard),
               ),
             ],
           ),
@@ -160,7 +163,7 @@ class _AchievementsPageState extends State<AchievementsPage> {
             const SizedBox(height: 14),
             Expanded(
               child: GridView.builder(
-                itemCount: _badges.length,
+                itemCount: badges.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.85,
@@ -168,11 +171,12 @@ class _AchievementsPageState extends State<AchievementsPage> {
                   mainAxisSpacing: 16,
                 ),
                 itemBuilder: (context, index) {
-                  final badge = _badges[index];
+                  final badge = badges[index];
                   final unlocked = badge['unlocked'];
                   final animation = badge['animation'];
                   final title = badge['title'];
                   final tag = badge['tag'];
+                  final xp = badge['xp'];
 
                   return Hero(
                     tag: tag,
@@ -235,14 +239,29 @@ class _AchievementsPageState extends State<AchievementsPage> {
                                 color: unlocked ? Colors.black87 : Colors.grey,
                               ),
                             ),
-                            if (unlocked) ...[
-                              const SizedBox(height: 8),
+                            const SizedBox(height: 6),
+                            if (unlocked)
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Icon(Icons.bolt_rounded, size: 14, color: Colors.orange),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    "$xp XP",
+                                    style: const TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.orange,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            if (unlocked)
                               Lottie.asset(
                                 'assets/animations/badge_unlocked.json',
-                                height: 32,
+                                height: 34,
                                 repeat: false,
                               ),
-                            ]
                           ],
                         ),
                       ),

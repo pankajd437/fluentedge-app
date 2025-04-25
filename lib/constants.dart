@@ -26,6 +26,7 @@ final LinearGradient kPrimaryGradient = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
 );
+
 final LinearGradient kBannerGradient = LinearGradient(
   colors: [Color(0xFFE3F2FD), Color(0xFFB3E5FC)],
   begin: Alignment.topLeft,
@@ -33,8 +34,12 @@ final LinearGradient kBannerGradient = LinearGradient(
 );
 
 /// 🧱 CARD & CONTAINER STYLING
-const double kCardPadding = 12.0;
-const double kCardRadius  = 16.0;
+const double kCardPadding   = 12.0;
+const double kCardRadius    = 16.0;
+const double kCardRadiusSm  = 8.0;
+const double kCardRadiusMed = 14.0;
+const double kCardRadiusLg  = 24.0;
+const double kCardRadiusLarge = 20.0;
 
 final List<BoxShadow> kCardBoxShadow = [
   BoxShadow(color: Colors.black26, blurRadius: 6, offset: Offset(0, 4)),
@@ -49,44 +54,117 @@ const double kFontMedium  = 13.5;
 const double kFontLarge   = 16.0;
 const double kFontXLarge  = 18.0;
 
-const FontWeight kWeightRegular    = FontWeight.w400;
-const FontWeight kWeightMedium     = FontWeight.w500;
-const FontWeight kWeightBold       = FontWeight.w600;
-const FontWeight kWeightExtraBold  = FontWeight.w700;
+const FontWeight kWeightRegular   = FontWeight.w400;
+const FontWeight kWeightMedium    = FontWeight.w500;
+const FontWeight kWeightBold      = FontWeight.w600;
+const FontWeight kWeightExtraBold = FontWeight.w700;
 
 final TextTheme kAppTextTheme = const TextTheme(
   displayLarge:   TextStyle(fontSize: 32.0, fontWeight: kWeightBold),
   displayMedium:  TextStyle(fontSize: 24.0, fontWeight: kWeightBold),
   headlineMedium: TextStyle(fontSize: kFontXLarge, fontWeight: kWeightBold),
-  titleLarge:     TextStyle(fontSize: kFontLarge, fontWeight: kWeightMedium),
+  titleLarge:     TextStyle(fontSize: kFontLarge,  fontWeight: kWeightMedium),
   bodyLarge:      TextStyle(fontSize: kFontMedium, fontWeight: kWeightRegular),
-  bodyMedium:     TextStyle(fontSize: kFontSmall, fontWeight: kWeightRegular),
-  labelLarge:     TextStyle(fontSize: kFontLarge, fontWeight: kWeightBold),
+  bodyMedium:     TextStyle(fontSize: kFontSmall,  fontWeight: kWeightRegular),
+  labelLarge:     TextStyle(fontSize: kFontLarge,  fontWeight: kWeightBold),
 );
 
 /// 🧩 BUTTON STYLES
-const double kButtonHeight           = 48.0;
-const double kButtonRadius           = 12.0;
-const double kButtonTextSize         = 14.0;
-const double kButtonElevation        = 2.0;
-const Color  kButtonBackgroundColor  = kPrimaryBlue;
-const Color  kButtonForegroundColor  = Colors.white;
+const double kButtonHeight          = 48.0;
+const double kButtonRadius          = 12.0;
+const double kButtonTextSize        = 14.0;
+const double kButtonElevation       = 2.0;
+const Color  kButtonBackgroundColor = kPrimaryBlue;
+const Color  kButtonForegroundColor = Colors.white;
 
 /// 💡 ONBOARDING & TIP SETTINGS
-const Duration kTipDelay = Duration(seconds: 6);
+const Duration kTipDelay   = Duration(seconds: 6);
 const String   kTipMessage = "💡 Not sure? Just pick what feels most like you!";
 
-/// 🧑‍🏫 MENTOR WIDGET
-const double kMentorWidgetSize = 180.0;
+/// 📌 SPACING CONSTANTS
+const double kSpacingXSmall = 4.0;
+const double kSpacingSmall  = 8.0;
+const double kSpacingMedium = 16.0;
+const double kSpacingLarge  = 24.0;
+const double kPagePadding   = 16.0;
+
+/// 🧑‍🏫 MENTOR WIDGET SIZES
+const double kMentorWidgetSize     = 180.0;
+const double kMentorUpperBodySize  = 180.0;
+const double kMentorFullBodySize   = 280.0;
+
+/// 🏆 XP & PROGRESS
+const String kDailyStreakText        = "Daily Streak";
+const String kXPPointsText           = "XP Points";
+const int    kLessonCompletionPoints = 100;
+
+/// 🧾 HIVE KEYS
+const String kHiveBoxSettings          = 'settingsBox';
+const String kHiveKeyLanguage          = 'preferredLanguage';
+const String kHiveKeyOnboarding        = 'onboardingComplete';
+const String kHiveBoxUserState         = 'user_state';
+const String kHiveKeyUserName          = 'user_name';
+const String kHiveKeyEmail             = 'email';
+const String kHiveKeyGender            = 'gender';
+const String kHiveKeyAgeGroup          = 'age_group';
+const String kHiveKeyLearningGoal      = 'learning_goal';
+const String kHiveKeyUserLevel         = 'user_level';
+const String kHiveKeyComfortLevel      = 'comfort_level';
+const String kHiveKeyPracticeFrequency = 'practice_frequency';
+const String kHiveKeyInterests         = 'interests';
+const String kHiveKeyChallenges        = 'challenges';
+const String kHiveKeyProficiencyScore  = 'proficiency_score';
+const String kHiveKeyLanguagePreference= 'language_preference';
+const String kHiveKeyLocale            = 'locale';
+const String kHiveBoxCompletedLessons  = 'completed_lessons';
+const String kHiveKeyRecommendedCourses = 'recommended_courses'; // ✅ NEW
 
 /// 📐 GRID SYSTEM
-const int    kGridCrossAxisCount  = 2;
+const int    kGridCrossAxisCount   = 2;
 const double kGridChildAspectRatio = 3 / 2.2;
-const double kGridSpacing         = 16.0;
+const double kGridSpacing          = 16.0;
+
+/// 📎 STYLING CONSTANTS
+const Duration kShortAnimationDuration = Duration(milliseconds: 200);
+const TextStyle kActivityTitleStyle = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.bold,
+);
 
 /// 🏷 COURSE TAGS
-const String kFreeCourseTag = "FREE";
-const String kPaidCourseTag = "PREMIUM";
+const String kFreeCourseTag  = "FREE";
+const String kPaidCourseTag  = "PREMIUM";
+
+/// 🔄 PAGE TRANSITIONS
+const Duration kPageTransitionDuration = Duration(milliseconds: 300);
+const Curve    kPageTransitionCurve    = Curves.easeInOut;
+
+/// 🔊 AUDIO PATHS
+const String kAudioAssetPrefixEn = 'assets/audio/en/';
+const String kAudioAssetPrefixHi = 'assets/audio/hi/';
+
+/// 🚀 ROUTE NAMES
+const String routeWelcome               = '/';
+const String routeRegistration          = '/registration';
+const String routeLogin                 = '/login'; // ✅ NEW
+const String routeProfilingChat         = '/profiling';
+const String routeSkillCheck            = '/skillcheck';
+const String routeProfilingResult       = '/profilingresult';
+const String routeCourseRecommendations = '/recommendations';
+
+const String routeCoursesDashboard   = '/coursesDashboard';
+const String routeAchievements       = '/achievements';
+const String routeUserDashboard      = '/userDashboard';
+const String routeLeaderboard        = '/leaderboard';
+const String routeCommunity          = '/community';
+const String routeFriendDetail       = '/friendDetail';
+const String routeBadgeDetail        = '/badgeDetail';
+const String routeAnalytics          = '/analytics';
+const String routeMenu               = '/menu';
+const String routeCourseDetail       = '/courseDetail';
+const String routeLessonPage         = '/lessonPage';
+const String routeLessonComplete     = '/lessonComplete';
+const String routeChat               = '/chat';
 
 /// 🌐 API CONFIGURATION
 class ApiConfig {

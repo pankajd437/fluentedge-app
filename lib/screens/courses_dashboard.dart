@@ -65,18 +65,24 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
     final List<Map<String, dynamic>> selectedCourses = _getSelectedCourses();
 
     return Scaffold(
+      // Subtle background color
       backgroundColor: const Color(0xFFF2F6FB),
-      drawer: const Drawer(child: MenuPage()), // ✅ Add permanent menu
+
+      // Drawer with a permanent menu
+      drawer: const Drawer(child: MenuPage()),
+
+      // Gradient AppBar
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(56),
         child: AppBar(
           leading: Builder(
             builder: (context) {
-              return IconButton(
-                icon: const Icon(Icons.menu, color: Colors.white), // ✅ Menu icon
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
+              return Hero(
+                tag: 'menuIconHero',
+                child: IconButton(
+                  icon: const Icon(Icons.menu, color: Colors.white),
+                  onPressed: () => Scaffold.of(context).openDrawer(),
+                ),
               );
             },
           ),
@@ -91,48 +97,22 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
           ),
           title: Text(
             isHindi ? 'आपका कोर्स डैशबोर्ड' : 'Your Personalized Course Hub',
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white),
+            style: const TextStyle(
+              fontSize: 17,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
           ),
+          centerTitle: true,
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
       ),
+
       body: SafeArea(
         child: Column(
           children: [
-            const SizedBox(height: 12),
-            // 🔁 Resume Questionnaire Shortcut
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: InkWell(
-                onTap: () => context.go('/questionnaire'),
-                borderRadius: BorderRadius.circular(12),
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(10),
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color(0xFFE3F2FD), Color(0xFFB3E5FC)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                  ),
-                  child: Text(
-                    isHindi
-                        ? 'क्या आप पर्सनल सुझाव चाहते हैं? प्रश्नावली फिर से शुरू करें।'
-                        : 'Not sure where to start? Resume questionnaire →',
-                    style: const TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF0D47A1),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 20),
+            const SizedBox(height: 24),
 
             // 🎛️ Level Switcher Buttons
             Padding(
@@ -148,7 +128,7 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
               ),
             ),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 24),
 
             // 🧠 Navigation Cards
             Padding(
@@ -230,7 +210,7 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
                           Row(
                             children: [
                               CircleAvatar(
-                                radius: 22,
+                                radius: 24,
                                 backgroundColor: Colors.blue.shade100,
                                 child: Icon(course["icon"], color: course["color"], size: 22),
                               ),
@@ -243,11 +223,11 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
                                       course["title"],
                                       style: const TextStyle(
                                         fontWeight: FontWeight.w600,
-                                        fontSize: 13.5,
+                                        fontSize: 14,
                                         color: Colors.black87,
                                       ),
                                     ),
-                                    const SizedBox(height: 4),
+                                    const SizedBox(height: 6),
                                     Container(
                                       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                       decoration: BoxDecoration(
@@ -275,7 +255,7 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFF43A047),
                                   foregroundColor: Colors.white,
-                                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
                                   ),
@@ -283,15 +263,32 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
                                 ),
                                 child: Text(
                                   isHindi ? "शुरू करें" : "Start Now",
-                                  style: const TextStyle(fontSize: 12),
+                                  style: const TextStyle(fontSize: 13),
                                 ),
                               ),
                             ],
                           ),
-                          const SizedBox(height: 10),
+                          const SizedBox(height: 12),
+                          Row(
+                            children: const [
+                              Icon(Icons.star, color: Colors.amber, size: 16),
+                              Icon(Icons.star, color: Colors.amber, size: 16),
+                              Icon(Icons.star, color: Colors.amber, size: 16),
+                              Icon(Icons.star, color: Colors.amber, size: 16),
+                              Icon(Icons.star_half, color: Colors.amber, size: 16),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
                           Text(
-                            course["description"],
-                            style: const TextStyle(fontSize: 12.5, color: Colors.black87),
+                            "• ${course["description"]}\n"
+                            "• Engaging lessons & practical tips\n"
+                            "• Expert mentors & peer community\n"
+                            "• Ideal for daily practice & confidence",
+                            style: const TextStyle(
+                              fontSize: 14,
+                              color: Colors.black87,
+                              height: 1.4,
+                            ),
                           ),
                         ],
                       ),
@@ -309,7 +306,6 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
   // 🔁 Level Toggle Widget
   Widget _levelToggle(String level, String label) {
     final bool isSelected = level == selectedLevel;
-
     return Expanded(
       child: ElevatedButton(
         onPressed: () {
@@ -323,12 +319,15 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
           backgroundColor: isSelected ? Colors.blue : Colors.white,
           foregroundColor: isSelected ? Colors.white : Colors.blue,
           side: BorderSide(color: Colors.blue.shade300),
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.symmetric(vertical: 12),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         ),
         child: Text(
           label,
-          style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
+          style: const TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 14,
+          ),
         ),
       ),
     );
@@ -343,7 +342,6 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
     required VoidCallback onTap,
   }) {
     final isScaled = _scaleStates[keyName] ?? false;
-
     return AnimatedScale(
       scale: isScaled ? 0.95 : 1.0,
       duration: const Duration(milliseconds: 100),
@@ -365,7 +363,7 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
               ),
             ],
           ),
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -376,7 +374,7 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 13,
+                  fontSize: 14,
                   fontWeight: FontWeight.w700,
                   shadows: [
                     Shadow(

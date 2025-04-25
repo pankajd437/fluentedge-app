@@ -33,9 +33,8 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
   }
 
   void _addWelcomeMessage() {
-    final welcomeText = AppLocalizations.of(context)!
-        .getWelcomeResponse(widget.userName, widget.languagePreference);
-    _addMessage(welcomeText, isAI: true);
+    final response = _getWelcomeResponse();
+    _addMessage(response, isAI: true);
   }
 
   void _addMessage(String text, {required bool isAI}) {
@@ -46,18 +45,18 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
   }
 
   Future<void> _sendMessage() async {
-    if (_messageController.text.isEmpty) return;
+    if (_messageController.text.trim().isEmpty) return;
 
-    final userMessage = _messageController.text;
+    final userMessage = _messageController.text.trim();
     _messageController.clear();
     _addMessage(userMessage, isAI: false);
 
     setState(() => _isAIThinking = true);
     await Future.delayed(const Duration(seconds: 1));
+
     if (!mounted) return;
 
-    final response = AppLocalizations.of(context)!
-        .getAIResponse(widget.userName, widget.languagePreference);
+    final response = _getAIResponse();
     _addMessage(response, isAI: true);
     setState(() => _isAIThinking = false);
   }
@@ -74,37 +73,83 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
     });
   }
 
+  String _getWelcomeResponse() {
+    final name = widget.userName;
+    final lang = widget.languagePreference.toLowerCase();
+
+    if (lang.contains('hi')) {
+      return 'नमस्ते $name! अभ्यास शुरू करें?';
+    } else {
+      return 'Hi $name! Ready to start your English journey?';
+    }
+  }
+
+  String _getAIResponse() {
+    final lang = widget.languagePreference.toLowerCase();
+    return lang.contains('hi')
+        ? 'मैं आपकी मदद के लिए यहाँ हूँ! कोई भी सवाल पूछें।'
+        : 'I’m here to help! Ask me anything to get started.';
+  }
+
+  void _showLanguageInfo() {
+    final lang = widget.languagePreference.toLowerCase();
+    final localizations = AppLocalizations.of(context);
+
+    final title = lang.contains('hi') ? 'आप किस भाषा में अभ्यास करना चाहेंगे?' : 'Preferred Practice Language';
+    final message = lang.contains('hi')
+        ? 'आपने भाषा पसंद में हिंदी चुनी है। यह अभ्यास अनुभव को प्रभावित करेगा।'
+        : 'You’ve selected English as your preferred language. This affects how you practice.';
+
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+        content: Text(message),
+        actions: [
+          TextButton(
+            child: Text(localizations.okButton),
+            onPressed: () => Navigator.pop(context),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _messageController.dispose();
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
 
     return Scaffold(
       backgroundColor: const Color(0xFFF2F6FB),
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(56),
-        child: AppBar(
-          elevation: 0,
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Color(0xFF1976D2), Color(0xFF42A5F5)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFF1976D2), Color(0xFF42A5F5)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
-          title: Text(
-            localizations.chatTitle(widget.userName),
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-          ),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.language, color: Colors.white),
-              onPressed: _showLanguageInfo,
-            ),
-          ],
-          backgroundColor: Colors.transparent,
         ),
+        title: Text(
+          localizations.chatTitle(widget.userName),
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.language, color: Colors.white),
+            onPressed: _showLanguageInfo,
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -133,13 +178,13 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
               },
             ),
           ),
-          _buildMessageInput(),
+          _buildMessageInput(localizations),
         ],
       ),
     );
   }
 
-  Widget _buildMessageInput() {
+  Widget _buildMessageInput(AppLocalizations localizations) {
     return Padding(
       padding: EdgeInsets.only(
         bottom: MediaQuery.of(context).viewInsets.bottom,
@@ -152,7 +197,7 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
             child: TextField(
               controller: _messageController,
               decoration: InputDecoration(
-                hintText: AppLocalizations.of(context)!.messageHint,
+                hintText: localizations.messageHint,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -168,41 +213,6 @@ class _IceBreakingChatPageState extends State<IceBreakingChatPage> {
         ],
       ),
     );
-  }
-
-  void _showLanguageInfo() {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(
-          AppLocalizations.of(context)!.languageInfoTitle,
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-        ),
-        content: Text(
-          AppLocalizations.of(context)!
-              .getPracticeLanguageMessage(widget.languagePreference),
-        ),
-        actions: [
-          TextButton(
-            child: const Text(
-              "OK",
-              style: TextStyle(
-                color: Color(0xFF1565C0),
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            onPressed: () => Navigator.pop(context),
-          ),
-        ],
-      ),
-    );
-  }
-
-  @override
-  void dispose() {
-    _messageController.dispose();
-    _scrollController.dispose();
-    super.dispose();
   }
 }
 

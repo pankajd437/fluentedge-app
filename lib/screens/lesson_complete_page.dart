@@ -1,14 +1,11 @@
-// -----------------------------------------
-// lesson_complete_page.dart
-// -----------------------------------------
-
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:fluentedge_app/constants.dart';
 import 'package:go_router/go_router.dart';
 import 'package:http/http.dart' as http;
-import 'package:fluentedge_app/data/user_state.dart';
 import 'package:hive/hive.dart';
+
+import 'package:fluentedge_app/constants.dart';
+import 'package:fluentedge_app/data/user_state.dart';
 import 'package:fluentedge_app/services/notification_service.dart';
 
 class LessonCompletePage extends StatefulWidget {
@@ -16,6 +13,7 @@ class LessonCompletePage extends StatefulWidget {
   final String lessonTitle;
   final int earnedXP;
   final String? badgeId;
+  final bool isCorrect;
 
   const LessonCompletePage({
     Key? key,
@@ -23,6 +21,7 @@ class LessonCompletePage extends StatefulWidget {
     required this.lessonTitle,
     this.earnedXP = kLessonCompletionPoints,
     this.badgeId,
+    required this.isCorrect,
   }) : super(key: key);
 
   @override
@@ -31,39 +30,26 @@ class LessonCompletePage extends StatefulWidget {
 
 class _LessonCompletePageState extends State<LessonCompletePage> {
   bool _xpPosted = false;
-  bool _isCorrect = false;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final args = GoRouterState.of(context).extra;
-    if (args is Map && args.containsKey('isCorrect')) {
-      _isCorrect = args['isCorrect'] == true;
-    }
-
-    // Only mark as completed & post XP if user passed and we haven't already posted
-    if (_isCorrect && !_xpPosted) {
+    if (widget.isCorrect && !_xpPosted) {
       _handleLessonCompletion();
     }
   }
 
-  /// Posts XP, updates streak, marks lesson completed, schedules reminder
   Future<void> _handleLessonCompletion() async {
     final name = await UserState.getUserName() ?? "Anonymous";
     final xp = widget.earnedXP;
 
-    final xpUrl = Uri.parse("http://10.0.2.2:8000/api/v1/user/xp?name=$name&lesson_id=${widget.lessonId}&xp=$xp");
-    final streakUrl = Uri.parse("http://10.0.2.2:8000/api/v1/user/streak?name=$name&xp=$xp");
+    final xpUrl = Uri.parse("${ApiConfig.local}/user/xp?name=$name&lesson_id=${widget.lessonId}&xp=$xp");
+    final streakUrl = Uri.parse("${ApiConfig.local}/user/streak?name=$name&xp=$xp");
 
     try {
-      // Post XP & streak increment
       await http.post(xpUrl);
       await http.post(streakUrl);
-
-      // Mark lesson completed locally
       await _markLessonAsCompleted(widget.lessonId);
-
-      // Schedule daily reminder
       await NotificationService.scheduleDailyReminder();
 
       setState(() => _xpPosted = true);
@@ -72,9 +58,8 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
     }
   }
 
-  /// Stores lessonId in 'completed_lessons' box if not present
   Future<void> _markLessonAsCompleted(String lessonId) async {
-    final box = await Hive.openBox('completed_lessons');
+    final box = await Hive.openBox(kHiveBoxCompletedLessons);
     if (!box.containsKey(lessonId)) {
       await box.put(lessonId, true);
       debugPrint("✅ Lesson marked completed: $lessonId");
@@ -84,8 +69,8 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isPassed = _isCorrect;
-    // Headline & subtext differ based on pass/fail
+    final isPassed = widget.isCorrect;
+
     final String headline = isPassed ? "🎉 Great Job!" : "😅 Not Quite!";
     final String subText = isPassed
         ? "You’ve completed:\n‘${widget.lessonTitle}’"
@@ -97,26 +82,23 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
         backgroundColor: kPrimaryBlue,
         foregroundColor: Colors.white,
         title: const Text(
-          "Lesson Complete",
+          "Lesson Complete", // TODO: localize
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
         elevation: 0,
       ),
-      // Bottom bar with centered Home icon → /coursesDashboard
       bottomNavigationBar: BottomAppBar(
         color: kPrimaryBlue,
         child: SizedBox(
-          height: 50, // smaller bar height
+          height: 50,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                iconSize: 36, // bigger home icon
+                iconSize: 36,
                 icon: const Icon(Icons.home),
                 color: Colors.white,
-                onPressed: () {
-                  GoRouter.of(context).go('/coursesDashboard');
-                },
+                onPressed: () => context.go(routeCoursesDashboard),
               ),
             ],
           ),
@@ -124,30 +106,31 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
       ),
       body: Stack(
         children: [
-          // Subtle background animation
           Positioned.fill(
             child: Opacity(
               opacity: 0.05,
               child: Lottie.asset(
-                isPassed ? 'assets/animations/confetti_success.json' : 'assets/animations/activity_wrong.json',
+                isPassed
+                    ? 'assets/animations/confetti_success.json'
+                    : 'assets/animations/activity_wrong.json',
                 repeat: true,
               ),
             ),
           ),
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.all(24),
+              padding: const EdgeInsets.all(kPagePadding),
               child: Column(
                 children: [
-                  // Main success/fail animation
                   Lottie.asset(
-                    isPassed ? 'assets/animations/success_checkmark.json' : 'assets/animations/activity_wrong.json',
+                    isPassed
+                        ? 'assets/animations/success_checkmark.json'
+                        : 'assets/animations/activity_wrong.json',
                     height: 160,
                     repeat: false,
                   ),
                   const SizedBox(height: 14),
 
-                  // Show the badge if user passed & there's a badgeId
                   if (isPassed && widget.badgeId != null) ...[
                     const Text(
                       "🏅 You’ve unlocked a badge!",
@@ -162,7 +145,6 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                   ],
 
                   const SizedBox(height: 20),
-                  // Headline & subText
                   Text(
                     headline,
                     style: TextStyle(
@@ -180,10 +162,9 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                   ),
                   const SizedBox(height: 16),
 
-                  // Show XP earned if user passed
                   if (isPassed)
                     AnimatedContainer(
-                      duration: const Duration(milliseconds: 400),
+                      duration: kShortAnimationDuration,
                       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                       decoration: BoxDecoration(
                         color: kAccentGreen.withOpacity(0.12),
@@ -202,16 +183,15 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
 
                   const Spacer(),
 
-                  // Bottom Buttons
+                  // Action Buttons
                   Column(
                     children: [
-                      // Return to Dashboard
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton.icon(
-                          onPressed: () => GoRouter.of(context).go('/coursesDashboard'),
+                          onPressed: () => context.go(routeCoursesDashboard),
                           icon: const Icon(Icons.dashboard),
-                          label: const Text("Back to Dashboard"),
+                          label: const Text("Back to Dashboard"), // TODO: localize
                           style: ElevatedButton.styleFrom(
                             backgroundColor: kAccentGreen,
                             foregroundColor: Colors.white,
@@ -222,12 +202,11 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                       ),
                       const SizedBox(height: 10),
 
-                      // If passed, show Next Lesson or Another Lesson
                       if (isPassed)
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton.icon(
-                            onPressed: () => GoRouter.of(context).go('/lessonPage'),
+                            onPressed: () => context.go(routeLessonPage),
                             icon: const Icon(Icons.menu_book_outlined),
                             label: const Text("Next Lesson / Choose Another"),
                             style: ElevatedButton.styleFrom(
@@ -240,10 +219,9 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                         ),
                       const SizedBox(height: 10),
 
-                      // If passed, show Achievements; if not, show Try Again
                       if (isPassed)
                         TextButton.icon(
-                          onPressed: () => GoRouter.of(context).push('/achievements'),
+                          onPressed: () => context.push(routeAchievements),
                           icon: const Icon(Icons.emoji_events_outlined, color: kPrimaryBlue),
                           label: const Text(
                             "View Achievements",
@@ -252,10 +230,7 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                         )
                       else
                         TextButton.icon(
-                          onPressed: () {
-                            // e.g. navigate them back to the same lesson
-                            GoRouter.of(context).go('/lessonPage');
-                          },
+                          onPressed: () => context.go(routeLessonPage),
                           icon: const Icon(Icons.refresh, color: Colors.orange),
                           label: const Text(
                             "Try Again",

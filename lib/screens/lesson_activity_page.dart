@@ -1,7 +1,3 @@
-// -----------------------------------------
-// lesson_activity_page.dart
-// -----------------------------------------
-
 import 'dart:async';
 import 'dart:convert';
 
@@ -16,18 +12,40 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:fluentedge_app/data/user_state.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
-// No menu_page.dart import, as you want no menu on this page.
+//
+// ---------- REPLACED OLD LIST WITH NEW APPROVED MENTOR EXPRESSIONS ----------
+//
+// # ✅ NEW Approved Mentor Expressions
+//   - assets/images/mentor_expressions/
+//   - assets/images/mentor_expressions/mentor_analytical_upper.png
+//   - assets/images/mentor_expressions/mentor_audio_ready_upper.png
+//   - assets/images/mentor_expressions/mentor_celebrate_full.png
+//   - assets/images/mentor_expressions/mentor_confused_upper.png
+//   - assets/images/mentor_expressions/mentor_curious_upper.png
+//   - assets/images/mentor_expressions/mentor_encouraging_upper.png
+//   - assets/images/mentor_expressions/mentor_excited_full.png
+//   - assets/images/mentor_expressions/mentor_pointing_full.png
+//   - assets/images/mentor_expressions/mentor_proud_full.png
+//   - assets/images/mentor_expressions/mentor_reassure_upper.png
+//   - assets/images/mentor_expressions/mentor_sad_upper.png
+//   - assets/images/mentor_expressions/mentor_silly_upper.png
+//   - assets/images/mentor_expressions/mentor_sleepy_upper.png
+//   - assets/images/mentor_expressions/mentor_surprised_upper.png
+//   - assets/images/mentor_expressions/mentor_thinking_upper.png
+//   - assets/images/mentor_expressions/mentor_thumbs_up_full.png
+//   - assets/images/mentor_expressions/mentor_tip_upper.png
+//   - assets/images/mentor_expressions/mentor_wave_smile_full.png
+//
+// ---------------------------------------------------------------------------
 
 //
 // ---------- VIBRANT COLORS ----------
 const Color vibrantBlue = Color(0xFF007BFF);
 const Color vibrantPink = Color(0xFFE83E8C);
 
-// Refined green colors:
-const Color refinedGreenStart = Color(0xFF388E3C); // Darker green
-const Color refinedGreenEnd = Color(0xFF66BB6A);   // Lighter green
+const Color refinedGreenStart = Color(0xFF388E3C);
+const Color refinedGreenEnd = Color(0xFF66BB6A);
 
-// Other special colors:
 const Color pastelOrange = Color(0xFFFFE5B4);
 const Color pastelYellow = Color(0xFFFFFFB5);
 
@@ -55,15 +73,12 @@ const TextStyle kMessageStyle = TextStyle(
   fontWeight: FontWeight.w400,
 );
 
-// White caption style for clarity on colored backgrounds.
 final TextStyle kVibrantCaptionStyle = TextStyle(
   fontSize: kBaseFontSize - 2,
   color: Colors.white,
   fontStyle: FontStyle.italic,
 );
 
-//
-// ---------- Vibrant Text Styles for Cards ----------
 const TextStyle kVibrantTitleStyle = TextStyle(
   fontSize: kBaseFontSize + 4,
   fontWeight: FontWeight.bold,
@@ -84,8 +99,6 @@ const TextStyle kVibrantMessageStyle = TextStyle(
   fontWeight: FontWeight.w400,
 );
 
-//
-// ---------- Additional Text Styles ----------
 const TextStyle kAudioInstructionStyle = TextStyle(
   fontSize: kBaseFontSize + 2,
   fontWeight: FontWeight.w600,
@@ -105,8 +118,6 @@ const TextStyle kSpeakingPromptTitleStyleNew = TextStyle(
   ],
 );
 
-//
-// ---------- HELPER FUNCTIONS ----------
 Widget buildActivityContainer({
   Key? key,
   required Widget child,
@@ -136,33 +147,6 @@ Widget buildActivityContainer({
   );
 }
 
-Widget buildSolidContainer({
-  Key? key,
-  required Widget child,
-  required Color backgroundColor,
-  required Color shadowColor,
-}) {
-  return Container(
-    key: key,
-    margin: const EdgeInsets.symmetric(vertical: 10),
-    padding: const EdgeInsets.all(16),
-    decoration: BoxDecoration(
-      color: backgroundColor,
-      borderRadius: BorderRadius.circular(20),
-      boxShadow: [
-        BoxShadow(
-          color: shadowColor.withOpacity(0.3),
-          blurRadius: 10,
-          offset: const Offset(0, 6),
-        ),
-      ],
-    ),
-    child: child,
-  );
-}
-
-//
-// ---------- USER TEXT HELPERS ----------
 String get userName => UserState.instance.userName ?? 'Friend';
 
 Widget buildTextWithUserName(String? rawText, {TextAlign align = TextAlign.center}) {
@@ -189,8 +173,6 @@ Widget buildTextWithUserName(String? rawText, {TextAlign align = TextAlign.cente
   );
 }
 
-//
-// ---------- LessonActivityPage CLASS (No Drawer) ----------
 class LessonActivityPage extends StatefulWidget {
   final String lessonJsonPath;
   final String lessonTitle;
@@ -207,9 +189,11 @@ class LessonActivityPage extends StatefulWidget {
 
 class _LessonActivityPageState extends State<LessonActivityPage> {
   final List<bool> _quizResults = [];
-  String _expressionName = 'Processing';
-  bool _quizFailed = false;
 
+  // Default expression => 'mentor_thinking_upper.png'
+  String _expressionName = 'mentor_thinking_upper.png';
+
+  bool _quizFailed = false;
   List<dynamic> _activities = [];
   int _currentActivityIndex = 0;
   bool _loading = true;
@@ -249,8 +233,12 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
     if (!isCorrect) {
       setState(() => _quizFailed = true);
     }
+    // Switch expression based on correctness
     setState(() {
-      _expressionName = isCorrect ? 'Celebrating' : 'Encouraging';
+      // If correct => 'mentor_celebrate_full.png', else => 'mentor_encouraging_upper.png'
+      _expressionName = isCorrect
+          ? 'mentor_celebrate_full.png'
+          : 'mentor_encouraging_upper.png';
     });
 
     if (isCorrect && !_autoAdvanceTriggered) {
@@ -258,7 +246,8 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
       Future.delayed(const Duration(seconds: 1), () {
         _handleActivityCompleted();
         setState(() {
-          _expressionName = 'Processing';
+          // Reset to 'mentor_thinking_upper.png' after moving to next activity
+          _expressionName = 'mentor_thinking_upper.png';
           _autoAdvanceTriggered = false;
         });
       });
@@ -274,7 +263,8 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
       setState(() {
         _currentActivityIndex++;
         _autoPlayDoneForThisActivity = false;
-        _expressionName = 'Processing';
+        // Reset expression to 'mentor_thinking_upper.png'
+        _expressionName = 'mentor_thinking_upper.png';
         _quizFailed = false;
       });
     } else {
@@ -299,140 +289,160 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
   Widget build(BuildContext context) {
     debugPrint("🧾 LessonActivityPage: no menu, smaller appbar font, refined card design.");
 
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: kPrimaryBlue,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
-          onPressed: () => context.pop(),
-        ),
-        title: Text(
-          widget.lessonTitle,
-          style: const TextStyle(
-            fontSize: 17, // smaller to avoid overflow
-            fontWeight: FontWeight.w700,
-            color: Colors.white,
+    // Wrap the entire Scaffold in fade+zoom
+    return TweenAnimationBuilder<double>(
+      tween: Tween(begin: 0.0, end: 1.0),
+      duration: const Duration(milliseconds: 600),
+      curve: Curves.easeOut,
+      builder: (context, value, child) {
+        final scale = 0.95 + (0.05 * value);
+        return Transform.scale(
+          scale: scale,
+          child: Opacity(
+            opacity: value,
+            child: child,
           ),
-          overflow: TextOverflow.ellipsis,
-          maxLines: 1,
-        ),
-      ),
-      // Custom smaller bottom bar with centered Home icon
-      bottomNavigationBar: BottomAppBar(
-        color: kPrimaryBlue,
-        child: SizedBox(
-          height: 50, // smaller height for bottom bar
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                iconSize: 36, // bigger home icon
-                icon: const Icon(Icons.home),
-                color: Colors.white,
-                onPressed: () {
-                  GoRouter.of(context).go('/coursesDashboard');
-                },
-              ),
-            ],
+        );
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: kPrimaryBlue,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
+            onPressed: () => context.pop(),
+          ),
+          title: Text(
+            widget.lessonTitle,
+            style: const TextStyle(
+              fontSize: 17, // smaller to avoid overflow
+              fontWeight: FontWeight.w700,
+              color: Colors.white,
+            ),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
           ),
         ),
-      ),
-      body: Container(
-        // Light gray to white background
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFF5F5F5), Color(0xFFFFFFFF)],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+        // Custom smaller bottom bar with centered Home icon
+        bottomNavigationBar: BottomAppBar(
+          color: kPrimaryBlue,
+          child: SizedBox(
+            height: 50, // smaller height for bottom bar
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Activity indicator
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Activity ${_currentActivityIndex + 1} of ${_activities.length}",
-                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                // Mentor
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: AnimatedMentorWidget(
-                    size: 110,
-                    expressionName: _expressionName,
-                  ),
-                ),
-                const SizedBox(height: 24),
-                // Activity content via AnimatedSwitcher
-                AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 500),
-                  transitionBuilder: (child, animation) {
-                    final slideAnimation = Tween<Offset>(
-                      begin: const Offset(0.1, 0),
-                      end: Offset.zero,
-                    ).animate(animation);
-
-                    return SlideTransition(
-                      position: slideAnimation,
-                      child: FadeTransition(opacity: animation, child: child),
-                    );
+                IconButton(
+                  iconSize: 36, // bigger home icon
+                  icon: const Icon(Icons.home),
+                  color: Colors.white,
+                  onPressed: () {
+                    GoRouter.of(context).go('/coursesDashboard');
                   },
-                  child: _buildCurrentActivity(),
-                ),
-                const SizedBox(height: 30),
-                // Previous/Next Buttons
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ElevatedButton(
-                      onPressed: _currentActivityIndex == 0
-                          ? null
-                          : () {
-                              if (_currentActivityIndex > 0) {
-                                setState(() {
-                                  _currentActivityIndex--;
-                                  _autoPlayDoneForThisActivity = false;
-                                  _expressionName = 'Processing';
-                                });
-                              }
-                            },
-                      style: ElevatedButton.styleFrom(
-                        disabledBackgroundColor: Colors.grey.shade300,
-                        disabledForegroundColor: Colors.black26,
-                        backgroundColor: kPrimaryBlue,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
-                      ),
-                      child: const Text("Previous", style: TextStyle(fontSize: 18)),
-                    ),
-                    ElevatedButton(
-                      onPressed: _handleActivityCompleted,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: kPrimaryBlue,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
-                      ),
-                      child: const Text("Next", style: TextStyle(fontSize: 18)),
-                    ),
-                  ],
                 ),
               ],
+            ),
+          ),
+        ),
+        body: Container(
+          // Light gray to white background
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFFF5F5F5), Color(0xFFFFFFFF)],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+          child: SafeArea(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // Activity indicator
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Activity ${_currentActivityIndex + 1} of ${_activities.length}",
+                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Mentor
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: AnimatedMentorWidget(
+                      size: 110,
+                      expressionName: _expressionName, // e.g. 'mentor_thinking_upper.png'
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+
+                  // Activity content via AnimatedSwitcher
+                  AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 500),
+                    transitionBuilder: (child, animation) {
+                      final slideAnimation = Tween<Offset>(
+                        begin: const Offset(0.1, 0),
+                        end: Offset.zero,
+                      ).animate(animation);
+
+                      return SlideTransition(
+                        position: slideAnimation,
+                        child: FadeTransition(opacity: animation, child: child),
+                      );
+                    },
+                    child: _buildCurrentActivity(),
+                  ),
+                  const SizedBox(height: 30),
+
+                  // Previous/Next Buttons
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton(
+                        onPressed: _currentActivityIndex == 0
+                            ? null
+                            : () {
+                                if (_currentActivityIndex > 0) {
+                                  setState(() {
+                                    _currentActivityIndex--;
+                                    _autoPlayDoneForThisActivity = false;
+                                    // revert to 'mentor_thinking_upper.png'
+                                    _expressionName = 'mentor_thinking_upper.png';
+                                  });
+                                }
+                              },
+                        style: ElevatedButton.styleFrom(
+                          disabledBackgroundColor: Colors.grey.shade300,
+                          disabledForegroundColor: Colors.black26,
+                          backgroundColor: kPrimaryBlue,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+                        ),
+                        child: const Text("Previous", style: TextStyle(fontSize: 18)),
+                      ),
+                      ElevatedButton(
+                        onPressed: _handleActivityCompleted,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: kPrimaryBlue,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+                        ),
+                        child: const Text("Next", style: TextStyle(fontSize: 18)),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -440,9 +450,6 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
     );
   }
 
-  // ---------------------------------------------------------------------
-  // Build the Current Activity
-  // ---------------------------------------------------------------------
   Widget _buildCurrentActivity() {
     if (_loading) {
       return const Center(child: CircularProgressIndicator(key: ValueKey("loading")));
@@ -508,9 +515,6 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
     }
   }
 
-  // ---------------------------------------------------------------------
-  // auto_audio
-  // ---------------------------------------------------------------------
   Widget _buildAutoAudio(Map<String, dynamic> activity) {
     final audioPath = activity['audioPath']?.toString() ?? '';
     final text = activity['text']?.toString() ?? '';
@@ -521,9 +525,11 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
       Future.microtask(() async {
         try {
           await _audioPlayer.stop();
-          final finalPath = audioPath.replaceFirst('assets/', '');
-          debugPrint("🔊 Auto-playing audio: $finalPath");
-          await _audioPlayer.play(AssetSource(finalPath));
+          final relative = audioPath.startsWith('assets/')
+              ? audioPath.replaceFirst('assets/', '')
+              : audioPath;
+          debugPrint("🔊 Auto-playing audio: $relative");
+          await _audioPlayer.play(AssetSource(relative));
         } catch (e) {
           debugPrint("❌ Auto-audio failed: $e");
         }
@@ -546,9 +552,11 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
                 onPressed: () async {
                   await _audioPlayer.stop();
                   if (audioPath.isNotEmpty) {
-                    final finalPath = audioPath.replaceFirst('assets/', '');
-                    debugPrint("🔊 Re-playing audio: $finalPath");
-                    await _audioPlayer.play(AssetSource(finalPath));
+                    final relative = audioPath.startsWith('assets/')
+                        ? audioPath.replaceFirst('assets/', '')
+                        : audioPath;
+                    debugPrint("🔊 Re-playing audio: $relative");
+                    await _audioPlayer.play(AssetSource(relative));
                   }
                 },
                 icon: const Icon(Icons.play_arrow),
@@ -584,9 +592,6 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
     );
   }
 
-  // ---------------------------------------------------------------------
-  // quiz
-  // ---------------------------------------------------------------------
   Widget _buildQuiz(Map<String, dynamic> current) {
     final rawHints = current['hints'];
     List<String>? hints;
@@ -646,16 +651,13 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
     );
   }
 
-  // ---------------------------------------------------------------------
-  // audio
-  // ---------------------------------------------------------------------
   Widget _buildAudio(Map<String, dynamic> current) {
     final audioPath = current['audioPath']?.toString() ?? '';
     final caption = current['caption']?.toString() ?? '';
 
     final List<Color> audioGradient = [
-      Color(0xFF4DB6AC),
-      Color(0xFF80CBC4),
+      const Color(0xFF4DB6AC),
+      const Color(0xFF80CBC4),
     ];
 
     return buildActivityContainer(
@@ -675,9 +677,11 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
             onPressed: () async {
               await _audioPlayer.stop();
               if (audioPath.trim().isNotEmpty) {
-                final finalPath = audioPath.replaceFirst('assets/', '');
-                debugPrint("🔊 Attempting audio: $finalPath");
-                await _audioPlayer.play(AssetSource(finalPath));
+                final relative = audioPath.startsWith('assets/')
+                    ? audioPath.replaceFirst('assets/', '')
+                    : audioPath;
+                debugPrint("🔊 Attempting audio: $relative");
+                await _audioPlayer.play(AssetSource(relative));
               } else {
                 debugPrint("❌ No valid audioPath found for 'audio' activity.");
               }
@@ -685,7 +689,7 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
             icon: const Icon(Icons.volume_up, size: 24),
             label: const Text("Play Audio", style: TextStyle(fontSize: 16)),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF00796B),
+              backgroundColor: const Color(0xFF00796B),
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
@@ -699,9 +703,6 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
     );
   }
 
-  // ---------------------------------------------------------------------
-  // image
-  // ---------------------------------------------------------------------
   Widget _buildImage(Map<String, dynamic> current) {
     final caption = current['caption']?.toString() ?? '';
     final path = current['imagePath']?.toString() ?? '';
@@ -742,16 +743,13 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
     );
   }
 
-  // ---------------------------------------------------------------------
-  // text / text_display
-  // ---------------------------------------------------------------------
   Widget _buildTextDisplay(Map<String, dynamic> current) {
     final title = current['title']?.toString() ?? '';
     final body = current['body']?.toString() ?? current['content']?.toString() ?? '';
 
     final List<Color> welcomeCardGradient = [
-      Color(0xFF283593),
-      Color(0xFF3F51B5),
+      const Color(0xFF283593),
+      const Color(0xFF3F51B5),
     ];
 
     return buildActivityContainer(
@@ -770,17 +768,14 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
     );
   }
 
-  // ---------------------------------------------------------------------
-  // poll
-  // ---------------------------------------------------------------------
   Widget _buildPoll(Map<String, dynamic> current) {
     final question = current['question']?.toString() ?? '';
     final options = List<String>.from(current['options'] ?? []);
     final List<Color> optionColors = [
       refinedGreenStart,
       refinedGreenEnd,
-      Color(0xFF43A047),
-      Color(0xFF4CAF50),
+      const Color(0xFF43A047),
+      const Color(0xFF4CAF50),
       refinedGreenEnd,
     ];
 
@@ -832,9 +827,6 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
     );
   }
 
-  // ---------------------------------------------------------------------
-  // tip
-  // ---------------------------------------------------------------------
   Widget _buildTip(Map<String, dynamic> current) {
     final title = current['title']?.toString() ?? '';
     final body = current['body']?.toString() ?? '';
@@ -855,9 +847,6 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
     );
   }
 
-  // ---------------------------------------------------------------------
-  // message
-  // ---------------------------------------------------------------------
   Widget _buildMessage(Map<String, dynamic> current) {
     final text = current['text']?.toString() ?? '';
 
@@ -879,17 +868,14 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
     );
   }
 
-  // ---------------------------------------------------------------------
-  // speaking_prompt
-  // ---------------------------------------------------------------------
   Widget _buildSpeakingPrompt(Map<String, dynamic> current) {
     final prompt = current['prompt']?.toString() ?? '';
     final audioPath = current['audioPath']?.toString() ?? '';
     final audioSupport = current['audioSupport'] == true;
 
     final List<Color> speakingPromptGradient = [
-      Color(0xFF4A148C),
-      Color(0xFF7B1FA2),
+      const Color(0xFF4A148C),
+      const Color(0xFF7B1FA2),
     ];
 
     return buildActivityContainer(
@@ -911,9 +897,11 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
               onPressed: () async {
                 await _audioPlayer.stop();
                 if (audioPath.trim().isNotEmpty) {
-                  final finalPath = audioPath.replaceFirst('assets/', '');
-                  debugPrint("🔊 Attempting speaking_prompt audio: $finalPath");
-                  await _audioPlayer.play(AssetSource(finalPath));
+                  final relative = audioPath.startsWith('assets/')
+                      ? audioPath.replaceFirst('assets/', '')
+                      : audioPath;
+                  debugPrint("🔊 Attempting speaking_prompt audio: $relative");
+                  await _audioPlayer.play(AssetSource(relative));
                 } else {
                   debugPrint("❌ No valid speaking_prompt audioPath found.");
                 }
@@ -921,7 +909,7 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
               icon: const Icon(Icons.mic, size: 24),
               label: const Text("Listen to Example", style: TextStyle(fontSize: 16)),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF311B92),
+                backgroundColor: const Color(0xFF311B92),
                 foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
@@ -936,9 +924,6 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
     );
   }
 
-  // ---------------------------------------------------------------------
-  // badge
-  // ---------------------------------------------------------------------
   Widget _buildBadge(Map<String, dynamic> current) {
     final title = current['title']?.toString() ?? '';
     final description = current['description']?.toString() ?? '';
@@ -970,9 +955,6 @@ class _LessonActivityPageState extends State<LessonActivityPage> {
     );
   }
 
-  // ---------------------------------------------------------------------
-  // roleplay
-  // ---------------------------------------------------------------------
   Widget _buildRoleplay(Map<String, dynamic> current) {
     final text = current['text']?.toString() ?? '';
     return buildActivityContainer(
