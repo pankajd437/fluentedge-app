@@ -22,12 +22,14 @@ class _AchievementsPageState extends State<AchievementsPage> {
   void initState() {
     super.initState();
     _fetchStreak();
-    _countCompletedLessons();
+    // Attempt fetching completed lessons from backend first
+    _fetchCompletedLessons();
   }
 
+  /// Fetch daily streak from the backend; fallback if needed
   Future<void> _fetchStreak() async {
     final name = await UserState.getUserName() ?? "Anonymous";
-    final url = Uri.parse("http://10.0.2.2:8000/api/v1/user/streak?name=$name");
+    final url = Uri.parse("${ApiConfig.local}/api/v1/user/streak?name=$name");
 
     try {
       final response = await http.get(url);
@@ -36,23 +38,51 @@ class _AchievementsPageState extends State<AchievementsPage> {
         setState(() {
           streak = data['streak'] ?? 0;
         });
+      } else {
+        debugPrint("❌ Failed to fetch streak (status: ${response.statusCode}).");
       }
     } catch (e) {
       debugPrint("❌ Failed to fetch streak: $e");
     }
   }
 
-  Future<void> _countCompletedLessons() async {
+  /// Attempt to fetch completed lessons from backend
+  /// If something goes wrong, fallback to local Hive approach
+  Future<void> _fetchCompletedLessons() async {
+    final name = await UserState.getUserName() ?? "Anonymous";
+    final url = Uri.parse("${ApiConfig.local}/api/v1/user/lessons?name=$name");
+
+    try {
+      final response = await http.get(url);
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        final int fetchedCount = data['completed_lessons'] ?? 0;
+        setState(() {
+          completedLessons = fetchedCount;
+        });
+      } else {
+        debugPrint("❌ Failed to fetch lesson stats (status: ${response.statusCode}). Fallback to local.");
+        _countCompletedLessonsLocal();
+      }
+    } catch (e) {
+      debugPrint("❌ Error fetching lesson stats: $e. Fallback to local.");
+      _countCompletedLessonsLocal();
+    }
+  }
+
+  /// Local fallback: read from Hive box
+  Future<void> _countCompletedLessonsLocal() async {
     final box = await Hive.openBox(kHiveBoxCompletedLessons);
     final keys = box.keys.toList();
     setState(() {
       completedLessons = keys.length;
     });
-    debugPrint("📘 Completed Lessons: $completedLessons");
+    debugPrint("📘 [Fallback] Completed Lessons (local Hive): $completedLessons");
   }
 
   @override
   Widget build(BuildContext context) {
+    // Local badges array, referencing the streak and completedLessons
     final List<Map<String, dynamic>> badges = [
       {
         "title": "Lesson Starter",
@@ -195,7 +225,8 @@ class _AchievementsPageState extends State<AchievementsPage> {
                         decoration: BoxDecoration(
                           color: unlocked ? Colors.white : Colors.grey.shade100,
                           border: Border.all(
-                            color: unlocked ? kAccentGreen : Colors.grey.shade300,
+                            color:
+                                unlocked ? kAccentGreen : Colors.grey.shade300,
                           ),
                           borderRadius: BorderRadius.circular(16),
                           boxShadow: unlocked
@@ -244,7 +275,8 @@ class _AchievementsPageState extends State<AchievementsPage> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  const Icon(Icons.bolt_rounded, size: 14, color: Colors.orange),
+                                  const Icon(Icons.bolt_rounded,
+                                      size: 14, color: Colors.orange),
                                   const SizedBox(width: 4),
                                   Text(
                                     "$xp XP",

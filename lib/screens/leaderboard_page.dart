@@ -24,18 +24,20 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
 
   Future<void> fetchLeaderboard() async {
     try {
-      final response = await http.get(Uri.parse("http://10.0.2.2:8000/api/v1/leaderboard"));
+      // Replaced hardcoded URL with environment-based approach:
+      final url = Uri.parse("${ApiConfig.local}/api/v1/leaderboard");
+      final response = await http.get(url);
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         setState(() {
-          leaderboard = data["leaderboard"];
+          leaderboard = data["leaderboard"] ?? [];
           isLoading = false;
         });
       } else {
-        throw Exception("Failed to load leaderboard");
+        throw Exception("Failed to load leaderboard (status: ${response.statusCode})");
       }
     } catch (e) {
-      debugPrint("❌ Error: $e");
+      debugPrint("❌ Error fetching leaderboard: $e");
       setState(() => isLoading = false);
     }
   }

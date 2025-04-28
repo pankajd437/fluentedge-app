@@ -15,6 +15,10 @@ class LessonCompletePage extends StatefulWidget {
   final String? badgeId;
   final bool isCorrect;
 
+  // 🔹 (New optional fields from updated structure)
+  final String? badgeAnimation;  // e.g., "assets/animations/badge_unlocked.json"
+  final String? badgeTitle;      // e.g., "Intro Master" from "badgeAwarded" in JSON
+
   const LessonCompletePage({
     Key? key,
     required this.lessonId,
@@ -22,6 +26,10 @@ class LessonCompletePage extends StatefulWidget {
     this.earnedXP = kLessonCompletionPoints,
     this.badgeId,
     required this.isCorrect,
+
+    // 🔹 Optional new parameters with default = null
+    this.badgeAnimation,
+    this.badgeTitle,
   }) : super(key: key);
 
   @override
@@ -34,6 +42,7 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    // If user passed the quiz, we post XP/streak only once
     if (widget.isCorrect && !_xpPosted) {
       _handleLessonCompletion();
     }
@@ -43,6 +52,7 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
     final name = await UserState.getUserName() ?? "Anonymous";
     final xp = widget.earnedXP;
 
+    // 🔹 Using your "ApiConfig.local" for XP & Streak update
     final xpUrl = Uri.parse("${ApiConfig.local}/user/xp?name=$name&lesson_id=${widget.lessonId}&xp=$xp");
     final streakUrl = Uri.parse("${ApiConfig.local}/user/streak?name=$name&xp=$xp");
 
@@ -76,8 +86,22 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
         ? "You’ve completed:\n‘${widget.lessonTitle}’"
         : "You attempted:\n‘${widget.lessonTitle}’\nBut don’t worry — let’s try again soon!";
 
+    // 🔹 If the user unlocked a badge, show it — else null.
+    final bool hasBadge = (isPassed && widget.badgeId != null);
+
+    // 🔹 Use either the custom or fallback badge animation
+    final String badgeAnimationPath = widget.badgeAnimation?.trim().isNotEmpty == true
+        ? widget.badgeAnimation!
+        : 'assets/animations/badge_unlocked.json';
+
+    // If the JSON had a special badge title, show it, else fallback
+    final String? badgeTitle = widget.badgeTitle?.trim().isNotEmpty == true
+        ? widget.badgeTitle
+        : null;
+
     return Scaffold(
       backgroundColor: kBackgroundSoftBlue,
+      // Removed bottomNavigationBar to meet your request
       appBar: AppBar(
         backgroundColor: kPrimaryBlue,
         foregroundColor: Colors.white,
@@ -87,25 +111,9 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
         ),
         elevation: 0,
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: kPrimaryBlue,
-        child: SizedBox(
-          height: 50,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                iconSize: 36,
-                icon: const Icon(Icons.home),
-                color: Colors.white,
-                onPressed: () => context.go(routeCoursesDashboard),
-              ),
-            ],
-          ),
-        ),
-      ),
       body: Stack(
         children: [
+          // Subtle Lottie background for success/fail
           Positioned.fill(
             child: Opacity(
               opacity: 0.05,
@@ -122,6 +130,7 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
               padding: const EdgeInsets.all(kPagePadding),
               child: Column(
                 children: [
+                  // Main animation: success or fail
                   Lottie.asset(
                     isPassed
                         ? 'assets/animations/success_checkmark.json'
@@ -131,14 +140,23 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                   ),
                   const SizedBox(height: 14),
 
-                  if (isPassed && widget.badgeId != null) ...[
-                    const Text(
-                      "🏅 You’ve unlocked a badge!",
-                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: kAccentGreen),
+                  // 🔹 If we have a badge ID -> Show badge
+                  if (hasBadge) ...[
+                    Text(
+                      badgeTitle != null
+                          ? "🏅 You’ve unlocked the badge: $badgeTitle!"
+                          : "🏅 You’ve unlocked a badge!",
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: kAccentGreen,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 10),
+                    // Use custom or fallback badge animation
                     Lottie.asset(
-                      'assets/animations/badge_unlocked.json',
+                      badgeAnimationPath,
                       height: 100,
                       repeat: false,
                     ),
@@ -158,10 +176,15 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                   Text(
                     subText,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 14.5, fontWeight: FontWeight.w500, color: Colors.black87),
+                    style: const TextStyle(
+                      fontSize: 14.5,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black87,
+                    ),
                   ),
                   const SizedBox(height: 16),
 
+                  // 🎓 Show XP earned if passed
                   if (isPassed)
                     AnimatedContainer(
                       duration: kShortAnimationDuration,
@@ -183,9 +206,10 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
 
                   const Spacer(),
 
-                  // Action Buttons
+                  // Bottom Buttons
                   Column(
                     children: [
+                      // 🔹 Back to Dashboard
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton.icon(
@@ -196,12 +220,34 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                             backgroundColor: kAccentGreen,
                             foregroundColor: Colors.white,
                             padding: const EdgeInsets.symmetric(vertical: 14),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14),
+                            ),
                           ),
                         ),
                       ),
                       const SizedBox(height: 10),
 
+                      // 🔹 Go to User Dashboard
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton.icon(
+                          onPressed: () => context.go('/userDashboard'),
+                          icon: const Icon(Icons.person),
+                          label: const Text("User Dashboard"),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: kPrimaryBlue,
+                            foregroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(vertical: 14),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+
+                      // 🔹 Next Lesson or Try Another
                       if (isPassed)
                         SizedBox(
                           width: double.infinity,
@@ -210,22 +256,29 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                             icon: const Icon(Icons.menu_book_outlined),
                             label: const Text("Next Lesson / Choose Another"),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: kPrimaryBlue,
+                              backgroundColor: Colors.deepPurple,
                               foregroundColor: Colors.white,
                               padding: const EdgeInsets.symmetric(vertical: 14),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(14),
+                              ),
                             ),
                           ),
                         ),
                       const SizedBox(height: 10),
 
+                      // Achievements or Try Again
                       if (isPassed)
                         TextButton.icon(
                           onPressed: () => context.push(routeAchievements),
                           icon: const Icon(Icons.emoji_events_outlined, color: kPrimaryBlue),
                           label: const Text(
                             "View Achievements",
-                            style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w600, color: kPrimaryBlue),
+                            style: TextStyle(
+                              fontSize: 13.5,
+                              fontWeight: FontWeight.w600,
+                              color: kPrimaryBlue,
+                            ),
                           ),
                         )
                       else
@@ -234,7 +287,11 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                           icon: const Icon(Icons.refresh, color: Colors.orange),
                           label: const Text(
                             "Try Again",
-                            style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w600, color: Colors.orange),
+                            style: TextStyle(
+                              fontSize: 13.5,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.orange,
+                            ),
                           ),
                         ),
                     ],

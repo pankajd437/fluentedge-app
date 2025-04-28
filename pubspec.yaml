@@ -64,6 +64,9 @@ dependencies:
   path_provider: ^2.1.5
   universal_html: ^2.2.4
 
+  # --- REMOVED reorderables since Dart 3+ can't install it ---
+  # reorderables: ^0.6.6
+
 dev_dependencies:
   build_runner: ^2.4.6
   flutter_lints: ^5.0.0
@@ -158,6 +161,76 @@ flutter:
     - assets/images/lesson4_market_scene_16x9.png
     - assets/images/lesson4_extra_scenarios_16x9.png
 
+    # --- NEW Lesson 1 Wedding Scene (Optional) ---
+    - assets/images/lesson1_wedding_chaos_16x9.png
+
+    # === NEW Lesson 1 IMAGES ===
+    - assets/images/lesson1_nervous_thoughts_16x9.png
+    - assets/images/lesson1_calm_official_16x9.png
+    - assets/images/lesson1_rude_request_16x9.png
+    - assets/images/lesson1_confident_pose_16x9.png
+    - assets/images/lesson1_big_station_16x9.png
+    - assets/images/chat_friend_blue.png
+    - assets/images/chat_user_pink.png
+    - assets/images/polite_gesture.png
+    - assets/images/smile_emoji.png
+    - assets/images/lesson2_keep_in_touch.png
+    - assets/images/excuse_me.png
+    - assets/images/lost_sign.png
+    - assets/images/guide_icon.png
+    - assets/images/lesson1_course_intro.png
+
+
+    # === Lesson 2 IMAGES (Newly Added)
+    - assets/images/lesson2_welcome_intro.png
+    - assets/images/lesson2_course_intro.png
+    - assets/images/lesson2_greetings_scene_01.png
+    - assets/images/lesson2_smile_guide.png
+    - assets/images/lesson2_vocab_hello.png
+    - assets/images/lesson2_keep_in_touch.png
+    - assets/images/lesson2_vocab_hi.png
+    - assets/images/lesson2_vocab_goodbye.png
+    - assets/images/lesson2_vocab_seeyousoon.png
+    - assets/images/lesson2_vocab_nicetomeetyou.png
+    - assets/images/lesson2_conversation_start.png
+    - assets/images/lesson2_meeting_end.png
+    - assets/images/lesson2_confident_pose_16x9.png
+    - assets/images/lesson2_small_talk.png
+    - assets/images/lesson2_farewell_friendhouse.png
+    - assets/images/lesson2_self_intro.png
+    - assets/images/lesson2_speaking_prompt.png
+    - assets/images/lesson2_spot_error.png
+    - assets/images/lesson2_office_meeting.png
+    - assets/images/lesson2_mentor_explain_formal.png
+    - assets/images/lesson2_team_intro.png
+    - assets/images/lesson2_leaving_home.png
+    - assets/images/lesson2_warm_farewell.png
+    - assets/images/lesson2_emotional_goodbye.png
+    - assets/images/lesson2_mall_meetup.png
+    - assets/images/lesson2_small_group.png
+    - assets/images/lesson2_mall_leaving.png
+    - assets/images/lesson2_smile_farewell.png
+    - assets/images/lesson2_hi_power.png
+    - assets/images/lesson2_mentor_speaking.png
+    - assets/images/lesson2_how_have_you_been.png
+    - assets/images/lesson2_spot_error_friendly.png
+    - assets/images/lesson2_poll_family_farewell.png
+    - assets/images/lesson2_fun_meet.png
+    - assets/images/lesson2_sentence_construct_great.png
+    - assets/images/lesson2_speaking_great2seeu.png
+    - assets/images/lesson2_friend_party.png
+    - assets/images/lesson2_fun_chat.png
+    - assets/images/lesson2_alright_gotta_go.png
+    - assets/images/lesson2_bye_ttyl.png
+    - assets/images/lesson2_spot_error_rude.png
+    - assets/images/lesson2_final_impression.png
+    - assets/images/lesson2_good_morning_scene.png
+    - assets/images/lesson2_office_story.png
+    - assets/images/lesson2_office_bye.png
+    - assets/images/lesson2_boss_greeting.png
+    - assets/images/lesson2_meeting.png
+    - assets/images/lesson2_next_lesson.png
+
     # === Sounds (Core + Lesson Audio)
     - assets/sounds/
     - assets/sounds/correct.mp3
@@ -191,6 +264,14 @@ flutter:
     - assets/sounds/lesson_audio/L1_intro_auto.mp3
     - assets/sounds/lesson_audio/L1_comedic_story.mp3
 
+    # Add the newly recorded Lesson 1 audio files
+    - assets/sounds/lesson_audio/lesson1_intro_auto.mp3
+    - assets/sounds/lesson_audio/lesson1_examples_polite.mp3
+    - assets/sounds/lesson_audio/lesson1_correct.mp3
+    - assets/sounds/lesson_audio/lesson1_incorrect.mp3
+    - assets/sounds/lesson_audio/lesson1_speaking_prompt_example.mp3
+    - assets/sounds/lesson_audio/lesson1_comedic_story.mp3
+
     # NEW lesson2 audio
     - assets/sounds/lesson_audio/lesson2_intro_auto.mp3
     - assets/sounds/lesson_audio/lesson2_comedic_story.mp3
@@ -221,8 +302,8 @@ flutter:
     - assets/sounds/lesson_audio/lesson4_comedic_story3.mp3
     - assets/sounds/lesson_audio/lesson4_library_prompt.mp3
     - assets/sounds/lesson_audio/lesson4_mistake_tips.mp3
-    - assets/sounds/lesson_audio/lesson4_comedic_story4.mp3
-    - assets/sounds/lesson_audio/lesson4_comedic_story5.mp3
+    - assets/sounds/lesson_audio/lesson4_comedic_story2.mp3
+    - assets/sounds/lesson_audio/lesson4_comedic_story3.mp3
     - assets/sounds/lesson_audio/lesson4_final_challenge.mp3
     - assets/sounds/lesson_audio/lesson4_comedic_story6.mp3
 
@@ -262,31 +343,31 @@ flutter:
 
     - lib/l10n/
 
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: assets/fonts/Poppins-Thin.ttf
-          weight: 100
-        - asset: assets/fonts/Poppins-ExtraLight.ttf
-          weight: 200
-        - asset: assets/fonts/Poppins-Light.ttf
-          weight: 300
-        - asset: assets/fonts/Poppins-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Poppins-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Poppins-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Poppins-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Poppins-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/Poppins-Black.ttf
-          weight: 900
+fonts:
+  - family: Poppins
+    fonts:
+      - asset: assets/fonts/Poppins-Thin.ttf
+        weight: 100
+      - asset: assets/fonts/Poppins-ExtraLight.ttf
+        weight: 200
+      - asset: assets/fonts/Poppins-Light.ttf
+        weight: 300
+      - asset: assets/fonts/Poppins-Regular.ttf
+        weight: 400
+      - asset: assets/fonts/Poppins-Medium.ttf
+        weight: 500
+      - asset: assets/fonts/Poppins-SemiBold.ttf
+        weight: 600
+      - asset: assets/fonts/Poppins-Bold.ttf
+        weight: 700
+      - asset: assets/fonts/Poppins-ExtraBold.ttf
+        weight: 800
+      - asset: assets/fonts/Poppins-Black.ttf
+        weight: 900
 
-    - family: NotoSansDevanagari
-      fonts:
-        - asset: assets/fonts/NotoSansDevanagari.ttf
+  - family: NotoSansDevanagari
+    fonts:
+      - asset: assets/fonts/NotoSansDevanagari.ttf
 
 flutter_native_splash:
   color: "#42a5f5"

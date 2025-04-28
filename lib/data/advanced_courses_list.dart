@@ -11,8 +11,22 @@ final List<Map<String, dynamic>> advancedCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Master sophisticated English communication for executive roles, strategic meetings, negotiations, and presentations.',
-    'lessons': [
-      {'lessonId': 'advanced_001_lesson_001', 'title': 'Course Introduction & Goals'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'advanced_001_lesson_001',
+        'title': 'Course Introduction & Goals',
+        // NEW: demonstration of "dialogue_reconstruction"
+        'lessonActivities': [
+          {
+            'type': 'dialogue_reconstruction',
+            'messages': [
+              {'text': "Welcome, let's discuss your executive goals.", 'isSender': true},
+              {'text': "Sure, I'm aiming to polish my communication for board meetings.", 'isSender': false},
+              {'text': "Great! We'll focus on persuasive language and clarity.", 'isSender': true},
+            ],
+          }
+        ],
+      },
       {'lessonId': 'advanced_001_lesson_002', 'title': 'Executive Vocabulary & Phrases'},
       {'lessonId': 'advanced_001_lesson_003', 'title': 'High-level Meeting Communication'},
       {'lessonId': 'advanced_001_lesson_004', 'title': 'Persuasive Presentations'},
@@ -35,8 +49,22 @@ final List<Map<String, dynamic>> advancedCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Enhance leadership communication, persuasive speaking, and influential techniques for managers.',
-    'lessons': [
-      {'lessonId': 'advanced_002_lesson_001', 'title': "Course Intro: Leader's Voice"},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'advanced_002_lesson_001',
+        'title': "Course Intro: Leader's Voice",
+        // NEW: demonstration of "fill_in_the_blanks"
+        'lessonActivities': [
+          {
+            'type': 'fill_in_the_blanks',
+            'sentence': "I want to ______ (motivate/demotivate) my team effectively.",
+            'correctWord': "motivate",
+            'imagePath': "assets/images/leadership_scene.png",
+            'correctSound': "assets/sounds/correct.mp3",
+            'wrongSound': "assets/sounds/incorrect.mp3",
+          }
+        ],
+      },
       {'lessonId': 'advanced_002_lesson_002', 'title': 'Leadership Vocabulary Mastery'},
       {'lessonId': 'advanced_002_lesson_003', 'title': 'Persuasive Speaking Techniques'},
       {'lessonId': 'advanced_002_lesson_004', 'title': 'Influencing & Inspiring Teams'},
@@ -59,8 +87,20 @@ final List<Map<String, dynamic>> advancedCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Perfect your grammar and professional writing skills through practical business scenarios.',
-    'lessons': [
-      {'lessonId': 'advanced_003_lesson_001', 'title': 'Intro: Grammar for Professionals'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'advanced_003_lesson_001',
+        'title': 'Intro: Grammar for Professionals',
+        // NEW: demonstration of "sentence_construction"
+        'lessonActivities': [
+          {
+            'type': 'sentence_construction',
+            'words': ["Please", "review", "the", "attached", "document."],
+            'correctOrder': ["Please", "review", "the", "attached", "document."],
+            'imagePath': "assets/images/business_writing_scene.png",
+          }
+        ],
+      },
       {'lessonId': 'advanced_003_lesson_002', 'title': 'Complex Sentence Structures'},
       {'lessonId': 'advanced_003_lesson_003', 'title': 'Common Advanced Errors & Fixes'},
       {'lessonId': 'advanced_003_lesson_004', 'title': 'Writing Reports & Proposals'},
@@ -83,8 +123,20 @@ final List<Map<String, dynamic>> advancedCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Achieve clear, natural fluency by mastering advanced accent reduction techniques.',
-    'lessons': [
-      {'lessonId': 'advanced_004_lesson_001', 'title': 'Course Intro: Accent & Identity'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'advanced_004_lesson_001',
+        'title': 'Course Intro: Accent & Identity',
+        // NEW: demonstration of "word_builder"
+        'lessonActivities': [
+          {
+            'type': 'word_builder',
+            'letters': ["F", "L", "U", "E", "N", "C", "Y"],
+            'correctWord': "FLUENCY",
+            'extraLetters': ["X", "Z"],
+          }
+        ],
+      },
       {'lessonId': 'advanced_004_lesson_002', 'title': 'Identifying Pronunciation Habits'},
       {'lessonId': 'advanced_004_lesson_003', 'title': 'Mastering Challenging Sounds'},
       {'lessonId': 'advanced_004_lesson_004', 'title': 'Natural Intonation Patterns'},
@@ -107,8 +159,27 @@ final List<Map<String, dynamic>> advancedCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Excel in diplomatic, governmental, and formal international communication with precision.',
-    'lessons': [
-      {'lessonId': 'advanced_005_lesson_001', 'title': 'Intro: Formal Communication Essentials'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'advanced_005_lesson_001',
+        'title': 'Intro: Formal Communication Essentials',
+        // NEW: demonstration of "mini_stories"
+        'lessonActivities': [
+          {
+            'type': 'mini_stories',
+            'scenes': [
+              {
+                'imagePath': 'assets/images/diplomatic_scene1.png',
+                'text': "A foreign delegate arrives for negotiations. You greet them formally."
+              },
+              {
+                'imagePath': 'assets/images/diplomatic_scene2.png',
+                'text': "You present your agenda politely, ensuring respectful tone throughout."
+              },
+            ],
+          }
+        ],
+      },
       {'lessonId': 'advanced_005_lesson_002', 'title': 'Diplomatic Vocabulary & Expressions'},
       {'lessonId': 'advanced_005_lesson_003', 'title': 'Formal Correspondence Mastery'},
       {'lessonId': 'advanced_005_lesson_004', 'title': 'Handling Diplomatic Conversations'},
@@ -131,8 +202,21 @@ final List<Map<String, dynamic>> advancedCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Master advanced public speaking, storytelling strategies, and impactful presentations for large audiences.',
-    'lessons': [
-      {'lessonId': 'advanced_006_lesson_001', 'title': 'Course Introduction: Speaking Excellence'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'advanced_006_lesson_001',
+        'title': 'Course Introduction: Speaking Excellence',
+        // NEW: demonstration of "spot_the_error"
+        'lessonActivities': [
+          {
+            'type': 'spot_the_error',
+            'sentence': "I has prepared an amazing speech.",
+            'correctedSentence': "I have prepared an amazing speech.",
+            'explanation': "Use 'have' with 'I' not 'has'.",
+            'imagePath': "assets/images/public_speaking_error.png",
+          }
+        ],
+      },
       {'lessonId': 'advanced_006_lesson_002', 'title': 'Crafting Compelling Stories'},
       {'lessonId': 'advanced_006_lesson_003', 'title': 'Advanced Speech Structuring'},
       {'lessonId': 'advanced_006_lesson_004', 'title': 'Audience Engagement Techniques'},
@@ -155,8 +239,29 @@ final List<Map<String, dynamic>> advancedCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Achieve native-like fluency, idiomatic expression, and conversational sophistication through intensive practice.',
-    'lessons': [
-      {'lessonId': 'advanced_007_lesson_001', 'title': 'Intro: Path to Native Fluency'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'advanced_007_lesson_001',
+        'title': 'Intro: Path to Native Fluency',
+        // NEW: demonstration of "today_vocabulary"
+        'lessonActivities': [
+          {
+            'type': 'today_vocabulary',
+            'vocabItems': [
+              {
+                'word': "Idiomatic",
+                'meaning': "Using expressions natural to native speakers",
+                'image': "assets/images/idiomatic_expressions.png",
+              },
+              {
+                'word': "Sophistication",
+                'meaning': "Refined complexity in language",
+                'image': "assets/images/sophistication_icon.png",
+              },
+            ],
+          },
+        ],
+      },
       {'lessonId': 'advanced_007_lesson_002', 'title': 'Idiomatic Expressions & Usage'},
       {'lessonId': 'advanced_007_lesson_003', 'title': 'Complex Conversation Practice'},
       {'lessonId': 'advanced_007_lesson_004', 'title': 'Understanding Cultural References'},
@@ -179,8 +284,22 @@ final List<Map<String, dynamic>> advancedCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Master advanced networking and relationship management conversations essential for professional growth.',
-    'lessons': [
-      {'lessonId': 'advanced_008_lesson_001', 'title': 'Course Intro: Networking Essentials'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'advanced_008_lesson_001',
+        'title': 'Course Intro: Networking Essentials',
+        // NEW: demonstration of "dialogue_reconstruction"
+        'lessonActivities': [
+          {
+            'type': 'dialogue_reconstruction',
+            'messages': [
+              {'text': "Hi, I saw your profile. I'd love to connect about marketing ideas.", 'isSender': true},
+              {'text': "Sure, let's chat. I'm open to new collaboration opportunities!", 'isSender': false},
+              {'text': "Perfect, let's schedule a quick call soon.", 'isSender': true},
+            ],
+          }
+        ],
+      },
       {'lessonId': 'advanced_008_lesson_002', 'title': 'Making Professional Introductions'},
       {'lessonId': 'advanced_008_lesson_003', 'title': 'Effective Follow-up Communication'},
       {'lessonId': 'advanced_008_lesson_004', 'title': 'Maintaining Professional Relationships'},
@@ -202,8 +321,20 @@ final List<Map<String, dynamic>> advancedCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Master specialized vocabulary and advanced communication skills tailored for tech, finance, healthcare, and law.',
-    'lessons': [
-      {'lessonId': 'advanced_009_lesson_001', 'title': 'Intro: Industry-specific Language'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'advanced_009_lesson_001',
+        'title': 'Intro: Industry-specific Language',
+        // NEW: demonstration of "fill_in_the_blanks"
+        'lessonActivities': [
+          {
+            'type': 'fill_in_the_blanks',
+            'sentence': "We're analyzing ______ (data/music) for this project.",
+            'correctWord': "data",
+            'imagePath': "assets/images/tech_scene.png",
+          }
+        ],
+      },
       {'lessonId': 'advanced_009_lesson_002', 'title': 'Tech Industry Communication'},
       {'lessonId': 'advanced_009_lesson_003', 'title': 'Financial Terminology & Usage'},
       {'lessonId': 'advanced_009_lesson_004', 'title': 'Healthcare Professional Conversations'},
@@ -225,8 +356,20 @@ final List<Map<String, dynamic>> advancedCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Master sophisticated language for negotiations, persuasive arguments, and effectively resolving conflicts.',
-    'lessons': [
-      {'lessonId': 'advanced_010_lesson_001', 'title': 'Introduction: Mastering Negotiations'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'advanced_010_lesson_001',
+        'title': 'Introduction: Mastering Negotiations',
+        // NEW: demonstration of "sentence_construction"
+        'lessonActivities': [
+          {
+            'type': 'sentence_construction',
+            'words': ["We", "need", "to", "reach", "a", "mutual", "agreement."],
+            'correctOrder': ["We", "need", "to", "reach", "a", "mutual", "agreement."],
+            'imagePath': "assets/images/negotiation_scene.png",
+          },
+        ],
+      },
       {'lessonId': 'advanced_010_lesson_002', 'title': 'Persuasive Language Techniques'},
       {'lessonId': 'advanced_010_lesson_003', 'title': 'Negotiation Strategies & Vocabulary'},
       {'lessonId': 'advanced_010_lesson_004', 'title': 'Conflict Resolution Essentials'},
@@ -249,8 +392,20 @@ final List<Map<String, dynamic>> advancedCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Achieve fluency and confidence navigating global conversations, cultural nuances, and international etiquette.',
-    'lessons': [
-      {'lessonId': 'advanced_011_lesson_001', 'title': 'Course Introduction: Cultural Fluency'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'advanced_011_lesson_001',
+        'title': 'Course Introduction: Cultural Fluency',
+        // NEW: demonstration of "word_builder"
+        'lessonActivities': [
+          {
+            'type': 'word_builder',
+            'letters': ["C", "U", "L", "T", "U", "R", "E"],
+            'correctWord': "CULTURE",
+            'extraLetters': ["Q", "Y"],
+          },
+        ],
+      },
       {'lessonId': 'advanced_011_lesson_002', 'title': 'Understanding Cultural Differences'},
       {'lessonId': 'advanced_011_lesson_003', 'title': 'Global Etiquette & Manners'},
       {'lessonId': 'advanced_011_lesson_004', 'title': 'Handling Cultural Misunderstandings'},
@@ -273,8 +428,27 @@ final List<Map<String, dynamic>> advancedCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Advanced skills for media interactions, press releases, crisis management, and public relations.',
-    'lessons': [
-      {'lessonId': 'advanced_012_lesson_001', 'title': 'Intro: Navigating Media Relations'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'advanced_012_lesson_001',
+        'title': 'Intro: Navigating Media Relations',
+        // NEW: demonstration of "mini_stories"
+        'lessonActivities': [
+          {
+            'type': 'mini_stories',
+            'scenes': [
+              {
+                'imagePath': 'assets/images/media_briefing1.png',
+                'text': "Your company is facing a minor crisis. You prepare a calm press statement."
+              },
+              {
+                'imagePath': 'assets/images/media_briefing2.png',
+                'text': "During the Q&A, you handle tough questions confidently, no panic."
+              },
+            ],
+          }
+        ],
+      },
       {'lessonId': 'advanced_012_lesson_002', 'title': 'Crafting Press Releases'},
       {'lessonId': 'advanced_012_lesson_003', 'title': 'Managing Media Interviews'},
       {'lessonId': 'advanced_012_lesson_004', 'title': 'Handling Crisis Communications'},
@@ -297,8 +471,21 @@ final List<Map<String, dynamic>> advancedCourses = [
     'tag': kPaidCourseTag,
     'description':
         'High-level coaching to master executive and boardroom communication with stakeholders and strategic partners.',
-    'lessons': [
-      {'lessonId': 'advanced_013_lesson_001', 'title': 'Course Intro: Executive Communication'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'advanced_013_lesson_001',
+        'title': 'Course Intro: Executive Communication',
+        // NEW: demonstration of "spot_the_error"
+        'lessonActivities': [
+          {
+            'type': 'spot_the_error',
+            'sentence': "We was planning the merger details.",
+            'correctedSentence': "We were planning the merger details.",
+            'explanation': "Use 'were' with 'we' not 'was'.",
+            'imagePath': "assets/images/boardroom_error.png",
+          }
+        ],
+      },
       {'lessonId': 'advanced_013_lesson_002', 'title': 'Boardroom Language Essentials'},
       {'lessonId': 'advanced_013_lesson_003', 'title': 'Persuasive Stakeholder Presentations'},
       {'lessonId': 'advanced_013_lesson_004', 'title': 'Strategic Discussion Facilitation'},

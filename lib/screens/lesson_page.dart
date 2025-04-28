@@ -8,7 +8,8 @@ class LessonPage extends StatelessWidget {
   final String courseTitle;
   final IconData courseIcon;
   final Color courseColor;
-  final List<Map<String, String>> lessons;
+  // Updated: from List<Map<String, String>> to List<Map<String, dynamic>>
+  final List<Map<String, dynamic>> lessons;
 
   const LessonPage({
     Key? key,
@@ -20,7 +21,7 @@ class LessonPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final int unlockedLessons = lessons.length;
+    final int unlockedLessons = lessons.length; // existing logic
 
     return TweenAnimationBuilder<double>(
       tween: Tween(begin: 0.0, end: 1.0),
@@ -53,30 +54,12 @@ class LessonPage extends StatelessWidget {
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
           ),
         ),
-        bottomNavigationBar: BottomAppBar(
-          color: kPrimaryBlue,
-          child: SizedBox(
-            height: 50,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(
-                  iconSize: 36,
-                  icon: const Icon(Icons.home),
-                  color: Colors.white,
-                  onPressed: () {
-                    GoRouter.of(context).go('/coursesDashboard');
-                  },
-                ),
-              ],
-            ),
-          ),
-        ),
         body: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Course icon in center
               Center(
                 child: Hero(
                   tag: courseTitle,
@@ -89,6 +72,7 @@ class LessonPage extends StatelessWidget {
               ),
               const SizedBox(height: 24),
 
+              // Mentor widget
               Center(
                 child: AnimatedMentorWidget(
                   size: 180,
@@ -97,6 +81,7 @@ class LessonPage extends StatelessWidget {
               ),
               const SizedBox(height: 24),
 
+              // Progress bar
               LinearProgressIndicator(
                 value: (unlockedLessons / lessons.length).clamp(0.0, 1.0),
                 minHeight: 8,
@@ -115,6 +100,7 @@ class LessonPage extends StatelessWidget {
               ),
               const SizedBox(height: 10),
 
+              // Lesson cards list
               Expanded(
                 child: ListView.separated(
                   itemCount: lessons.length,
@@ -124,44 +110,61 @@ class LessonPage extends StatelessWidget {
                     final String lessonTitle = lesson["title"] ?? "Untitled";
                     final String lessonId = lesson["lessonId"] ?? "";
                     final String lessonJsonPath = 'assets/lessons/$lessonId.json';
+
+                    // existing locked/unlocked logic
                     final bool isUnlocked = index < unlockedLessons;
 
-                    return AnimatedContainer(
-                      duration: const Duration(milliseconds: 300),
-                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
-                      decoration: BoxDecoration(
-                        color: isUnlocked ? Colors.white : const Color(0xFFF0F4F8),
-                        border: Border.all(
-                          color: isUnlocked
-                              ? courseColor.withOpacity(0.25)
-                              : Colors.grey.shade300,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                        boxShadow: isUnlocked
-                            ? [
-                                BoxShadow(
-                                  color: courseColor.withOpacity(0.08),
-                                  blurRadius: 6,
-                                  offset: const Offset(0, 3),
-                                ),
-                              ]
-                            : [],
-                      ),
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(12),
-                        onTap: isUnlocked
-                            ? () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => LessonActivityPage(
-                                      lessonTitle: lessonTitle,
-                                      lessonJsonPath: lessonJsonPath,
-                                    ),
+                    // We'll do a subtle gradient for "unlocked" vs. a subdued gradient if locked
+                    final List<Color> cardGradient = isUnlocked
+                        ? [
+                            Colors.white,
+                            Colors.white70,
+                          ]
+                        : [
+                            const Color(0xFFF0F4F8),
+                            const Color(0xFFE4ECF2),
+                          ];
+
+                    return InkWell(
+                      borderRadius: BorderRadius.circular(16),
+                      onTap: isUnlocked
+                          ? () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LessonActivityPage(
+                                    lessonTitle: lessonTitle,
+                                    lessonJsonPath: lessonJsonPath,
                                   ),
-                                );
-                              }
-                            : null,
+                                ),
+                              );
+                            }
+                          : null,
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 300),
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: cardGradient,
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          border: Border.all(
+                            color: isUnlocked
+                                ? courseColor.withOpacity(0.25)
+                                : Colors.grey.shade300,
+                          ),
+                          borderRadius: BorderRadius.circular(16),
+                          boxShadow: isUnlocked
+                              ? [
+                                  BoxShadow(
+                                    color: courseColor.withOpacity(0.12),
+                                    blurRadius: 6,
+                                    offset: const Offset(0, 3),
+                                  ),
+                                ]
+                              : [],
+                        ),
                         child: Row(
                           children: [
                             AnimatedSwitcher(
@@ -182,7 +185,7 @@ class LessonPage extends StatelessWidget {
                               child: Text(
                                 lessonTitle,
                                 style: TextStyle(
-                                  fontSize: 13.5,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.w500,
                                   color: isUnlocked
                                       ? Colors.black87
@@ -191,8 +194,11 @@ class LessonPage extends StatelessWidget {
                               ),
                             ),
                             if (isUnlocked)
-                              const Icon(Icons.arrow_forward_ios,
-                                  size: 14, color: Colors.grey),
+                              const Icon(
+                                Icons.arrow_forward_ios,
+                                size: 14,
+                                color: Colors.grey,
+                              ),
                           ],
                         ),
                       ),
@@ -200,38 +206,7 @@ class LessonPage extends StatelessWidget {
                   },
                 ),
               ),
-              const SizedBox(height: 20),
-
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton.icon(
-                  onPressed: () {
-                    final unlockedLesson = lessons.first;
-                    final lessonJsonPath =
-                        'assets/lessons/${unlockedLesson["lessonId"]}.json';
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LessonActivityPage(
-                          lessonTitle: unlockedLesson["title"] ?? "Untitled",
-                          lessonJsonPath: lessonJsonPath,
-                        ),
-                      ),
-                    );
-                  },
-                  icon: const Icon(Icons.play_arrow_rounded),
-                  label: const Text("Continue"),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: kAccentGreen,
-                    foregroundColor: Colors.white,
-                    elevation: 2,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                ),
-              ),
+              // NO "Continue" button any more
             ],
           ),
         ),

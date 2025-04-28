@@ -16,7 +16,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
   int totalXP = 0;
   int dailyStreak = 0;
   int totalLessons = 0;
-  Duration totalTimeSpent = const Duration(); // Placeholder
+  Duration totalTimeSpent = const Duration(); // Replaced hardcoded placeholder with real data
 
   @override
   void initState() {
@@ -26,22 +26,25 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
     _fetchLessonStats();
   }
 
+  /// Formats the Duration into "Hh Mm" for display
   String get formattedTime {
     final hours = totalTimeSpent.inHours;
     final minutes = totalTimeSpent.inMinutes.remainder(60);
     return "${hours}h ${minutes}m";
   }
 
+  /// Fetch total XP from backend
   Future<void> _fetchUserXP() async {
     final name = await UserState.getUserName() ?? "Anonymous";
-    final url = Uri.parse("http://10.0.2.2:8000/api/v1/user/xp?name=$name");
+    // Use your configured environment (e.g. ApiConfig.local)
+    final url = Uri.parse("${ApiConfig.local}/api/v1/user/xp?name=$name");
 
     try {
       final response = await http.get(url);
       if (response.statusCode == 200) {
-        final json = jsonDecode(response.body);
+        final jsonData = jsonDecode(response.body);
         setState(() {
-          totalXP = json['total_xp'] ?? 0;
+          totalXP = jsonData['total_xp'] ?? 0;
         });
       } else {
         debugPrint("❌ Failed to fetch XP: ${response.statusCode}");
@@ -51,16 +54,17 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
     }
   }
 
+  /// Fetch daily streak from backend
   Future<void> _fetchStreak() async {
     final name = await UserState.getUserName() ?? "Anonymous";
-    final url = Uri.parse("http://10.0.2.2:8000/api/v1/user/streak?name=$name");
+    final url = Uri.parse("${ApiConfig.local}/api/v1/user/streak?name=$name");
 
     try {
       final response = await http.get(url);
       if (response.statusCode == 200) {
-        final json = jsonDecode(response.body);
+        final jsonData = jsonDecode(response.body);
         setState(() {
-          dailyStreak = json['streak'] ?? 0;
+          dailyStreak = jsonData['streak'] ?? 0;
         });
       } else {
         debugPrint("❌ Failed to fetch streak: ${response.statusCode}");
@@ -70,9 +74,10 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
     }
   }
 
+  /// Fetch completed lessons + total time from backend
   Future<void> _fetchLessonStats() async {
     final name = await UserState.getUserName() ?? "Anonymous";
-    final url = Uri.parse("http://10.0.2.2:8000/api/v1/user/lessons?name=$name");
+    final url = Uri.parse("${ApiConfig.local}/api/v1/user/lessons?name=$name");
 
     try {
       final response = await http.get(url);
@@ -80,7 +85,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
         final data = jsonDecode(response.body);
         setState(() {
           totalLessons = data['completed_lessons'] ?? 0;
-          int minutes = data['minutes_spent'] ?? 0;
+          final minutes = data['minutes_spent'] ?? 0;
           totalTimeSpent = Duration(minutes: minutes);
         });
       } else {
@@ -145,6 +150,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
     );
   }
 
+  /// Reusable method that builds each stat row
   Widget _buildStatCard({
     required IconData icon,
     required String label,

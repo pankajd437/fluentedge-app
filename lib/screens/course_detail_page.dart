@@ -149,7 +149,7 @@ class CourseDetailPage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              // ✅ Start Lesson Button (moved up)
+              // ✅ Start Lesson Button
               Center(
                 child: ElevatedButton.icon(
                   icon: const Icon(Icons.rocket_launch_rounded, size: 18),
@@ -162,7 +162,8 @@ class CourseDetailPage extends StatelessWidget {
                             courseTitle: title,
                             courseIcon: icon,
                             courseColor: color,
-                            lessons: List<Map<String, String>>.from(lessons),
+                            // Fix: Convert to List<Map<String, dynamic>> instead of <String>
+                            lessons: List<Map<String, dynamic>>.from(lessons),
                           ),
                         ),
                       );
@@ -239,7 +240,7 @@ class CourseDetailPage extends StatelessWidget {
                               ],
                             ),
                           );
-                        }),
+                        }).toList(),
                       ],
                     ),
             ],

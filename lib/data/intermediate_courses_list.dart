@@ -11,8 +11,30 @@ final List<Map<String, dynamic>> intermediateCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Build social confidence and master real-life conversations, from small talk to friendships.',
-    'lessons': [
-      {'lessonId': 'intermediate_001_lesson_001', 'title': 'Course Intro & Social Anxiety'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'intermediate_001_lesson_001',
+        'title': 'Course Intro & Social Anxiety',
+        // NEW - Demonstration of new activity types in "lessonActivities"
+        'lessonActivities': [
+          {
+            'type': 'dialogue_reconstruction',
+            'messages': [
+              {'text': "Hey, I'd love to chat but I'm nervous about my English.", 'isSender': false},
+              {'text': "No worries! Start with small talk, you'll be fine!", 'isSender': true},
+              {'text': "Thanks, let's do it!", 'isSender': false},
+            ],
+          },
+          {
+            'type': 'fill_in_the_blanks',
+            'sentence': "I'm a bit ______ (shy/confident) in group talks.",
+            'correctWord': "shy",
+            'imagePath': "assets/images/social_anxiety_scene.png",
+            'correctSound': "assets/sounds/correct.mp3",
+            'wrongSound': "assets/sounds/incorrect.mp3",
+          },
+        ],
+      },
       {'lessonId': 'intermediate_001_lesson_002', 'title': 'Mastering Small Talk'},
       {'lessonId': 'intermediate_001_lesson_003', 'title': 'Engaging in Group Conversations'},
       {'lessonId': 'intermediate_001_lesson_004', 'title': 'Expressing Opinions Politely'},
@@ -35,8 +57,26 @@ final List<Map<String, dynamic>> intermediateCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Gain confidence for daily workplace tasks, meetings, and professional interactions.',
-    'lessons': [
-      {'lessonId': 'intermediate_002_lesson_001', 'title': 'Course Intro: Workplace Communication'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'intermediate_002_lesson_001',
+        'title': 'Course Intro: Workplace Communication',
+        'lessonActivities': [
+          {
+            'type': 'sentence_construction',
+            'words': ["Could", "you", "send", "me", "that", "email?"],
+            'correctOrder': ["Could", "you", "send", "me", "that", "email?"],
+            'imagePath': "assets/images/workplace_scene.png",
+          },
+          {
+            'type': 'spot_the_error',
+            'sentence': "I has a meeting at 10 AM.",
+            'correctedSentence': "I have a meeting at 10 AM.",
+            'explanation': "Use 'have' instead of 'has' with 'I'.",
+            'imagePath': "assets/images/work_mistake.png",
+          },
+        ],
+      },
       {'lessonId': 'intermediate_002_lesson_002', 'title': 'Clear Communication in Meetings'},
       {'lessonId': 'intermediate_002_lesson_003', 'title': 'Writing Professional Emails'},
       {'lessonId': 'intermediate_002_lesson_004', 'title': 'Giving and Receiving Feedback'},
@@ -59,8 +99,21 @@ final List<Map<String, dynamic>> intermediateCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Handle every travel scenario smoothly, from airports to sightseeing, with confident English.',
-    'lessons': [
-      {'lessonId': 'intermediate_003_lesson_001', 'title': 'Course Intro: Smooth Travels'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'intermediate_003_lesson_001',
+        'title': 'Course Intro: Smooth Travels',
+        'lessonActivities': [
+          {
+            'type': 'dialogue_reconstruction',
+            'messages': [
+              {'text': "Is this the right gate for Mumbai?", 'isSender': false},
+              {'text': "Yes, gate 12. When does your flight board?", 'isSender': true},
+              {'text': "In 30 minutes, thank you!", 'isSender': false},
+            ],
+          },
+        ],
+      },
       {'lessonId': 'intermediate_003_lesson_002', 'title': 'Airport Check-in & Security'},
       {'lessonId': 'intermediate_003_lesson_003', 'title': 'Immigration & Customs Conversations'},
       {'lessonId': 'intermediate_003_lesson_004', 'title': 'Public Transport & Directions'},
@@ -83,8 +136,26 @@ final List<Map<String, dynamic>> intermediateCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Learn grammar practically and naturally through engaging real-world conversations.',
-    'lessons': [
-      {'lessonId': 'intermediate_004_lesson_001', 'title': 'Intro: Practical Grammar'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'intermediate_004_lesson_001',
+        'title': 'Intro: Practical Grammar',
+        'lessonActivities': [
+          {
+            'type': 'fill_in_the_blanks',
+            'sentence': "He ______ (go/goes) to the gym every morning.",
+            'correctWord': "goes",
+            'imagePath': "assets/images/grammar_practice.png",
+          },
+          {
+            'type': 'spot_the_error',
+            'sentence': "They is my friends.",
+            'correctedSentence': "They are my friends.",
+            'explanation': "Use 'are' with 'they'.",
+            'imagePath': "assets/images/grammar_spoterror.png",
+          },
+        ],
+      },
       {'lessonId': 'intermediate_004_lesson_002', 'title': 'Using Tenses Naturally'},
       {'lessonId': 'intermediate_004_lesson_003', 'title': 'Correcting Common Grammar Errors'},
       {'lessonId': 'intermediate_004_lesson_004', 'title': 'Grammar for Clear Communication'},
@@ -107,8 +178,28 @@ final List<Map<String, dynamic>> intermediateCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Enhance your pronunciation skills and become clearly understood in real-life situations.',
-    'lessons': [
-      {'lessonId': 'intermediate_005_lesson_001', 'title': 'Course Intro: Importance of Pronunciation'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'intermediate_005_lesson_001',
+        'title': 'Course Intro: Importance of Pronunciation',
+        'lessonActivities': [
+          {
+            'type': 'today_vocabulary',
+            'vocabItems': [
+              {
+                'word': "Articulation",
+                'meaning': "Clarity in pronouncing words",
+                'image': "assets/images/articulation_icon.png",
+              },
+              {
+                'word': "Enunciate",
+                'meaning': "Speak each sound clearly",
+                'image': "assets/images/enunciate_tips.png",
+              },
+            ],
+          },
+        ],
+      },
       {'lessonId': 'intermediate_005_lesson_002', 'title': 'Mastering Difficult Sounds'},
       {'lessonId': 'intermediate_005_lesson_003', 'title': 'Stress and Intonation Basics'},
       {'lessonId': 'intermediate_005_lesson_004', 'title': 'Pronunciation in Conversations'},
@@ -131,8 +222,19 @@ final List<Map<String, dynamic>> intermediateCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Build your public speaking skills and overcome anxiety in front of groups.',
-    'lessons': [
-      {'lessonId': 'intermediate_006_lesson_001', 'title': 'Intro: Overcoming Public Speaking Anxiety'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'intermediate_006_lesson_001',
+        'title': 'Intro: Overcoming Public Speaking Anxiety',
+        'lessonActivities': [
+          {
+            'type': 'fill_in_the_blanks',
+            'sentence': "I get nervous when I stand in ______ of people.",
+            'correctWord': "front",
+            'imagePath': "assets/images/public_speaking_fear.png",
+          },
+        ],
+      },
       {'lessonId': 'intermediate_006_lesson_002', 'title': 'Structuring Your Speech'},
       {'lessonId': 'intermediate_006_lesson_003', 'title': 'Voice Control & Clarity'},
       {'lessonId': 'intermediate_006_lesson_004', 'title': 'Engaging Your Audience'},
@@ -155,8 +257,21 @@ final List<Map<String, dynamic>> intermediateCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Improve your clarity on calls and video chats, removing stress and hesitation.',
-    'lessons': [
-      {'lessonId': 'intermediate_007_lesson_001', 'title': 'Intro: Confident Call Skills'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'intermediate_007_lesson_001',
+        'title': 'Intro: Confident Call Skills',
+        'lessonActivities': [
+          {
+            'type': 'dialogue_reconstruction',
+            'messages': [
+              {'text': "Hello, may I speak to Mr. Roy?", 'isSender': true},
+              {'text': "Sure, let me transfer your call.", 'isSender': false},
+              {'text': "Thank you, appreciate it.", 'isSender': true},
+            ],
+          }
+        ],
+      },
       {'lessonId': 'intermediate_007_lesson_002', 'title': 'Common Phrases for Calls'},
       {'lessonId': 'intermediate_007_lesson_003', 'title': 'Answering & Making Calls Clearly'},
       {'lessonId': 'intermediate_007_lesson_004', 'title': 'Managing Misunderstandings'},
@@ -179,8 +294,19 @@ final List<Map<String, dynamic>> intermediateCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Confidently communicate online, mastering emails, messaging, and digital interactions.',
-    'lessons': [
-      {'lessonId': 'intermediate_008_lesson_001', 'title': 'Intro: Clear Digital Communication'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'intermediate_008_lesson_001',
+        'title': 'Intro: Clear Digital Communication',
+        'lessonActivities': [
+          {
+            'type': 'word_builder',
+            'letters': ["M", "E", "S", "S", "A", "G", "E"],
+            'correctWord': "MESSAGE",
+            'extraLetters': ["X", "T"],
+          },
+        ],
+      },
       {'lessonId': 'intermediate_008_lesson_002', 'title': 'Writing Clear Emails'},
       {'lessonId': 'intermediate_008_lesson_003', 'title': 'Social Media Conversations'},
       {'lessonId': 'intermediate_008_lesson_004', 'title': 'Messaging & Chatting Clearly'},
@@ -203,8 +329,26 @@ final List<Map<String, dynamic>> intermediateCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Enhance your speaking skills naturally through storytelling and engaging conversations.',
-    'lessons': [
-      {'lessonId': 'intermediate_009_lesson_001', 'title': 'Intro: Power of Storytelling'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'intermediate_009_lesson_001',
+        'title': 'Intro: Power of Storytelling',
+        'lessonActivities': [
+          {
+            'type': 'mini_stories',
+            'scenes': [
+              {
+                'imagePath': 'assets/images/story_intro_scene.png',
+                'text': "Meet Rahul, who wants to share his personal story but feels shy."
+              },
+              {
+                'imagePath': 'assets/images/story_intro_scene2.png',
+                'text': "He decides to speak slowly, with small details, to engage the listener."
+              },
+            ],
+          }
+        ],
+      },
       {'lessonId': 'intermediate_009_lesson_002', 'title': 'Building Vocabulary with Stories'},
       {'lessonId': 'intermediate_009_lesson_003', 'title': 'Expressing Emotions Clearly'},
       {'lessonId': 'intermediate_009_lesson_004', 'title': 'Connecting Ideas Naturally'},
@@ -227,8 +371,19 @@ final List<Map<String, dynamic>> intermediateCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Strengthen listening skills to respond confidently in everyday conversations.',
-    'lessons': [
-      {'lessonId': 'intermediate_010_lesson_001', 'title': 'Intro: The Art of Listening'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'intermediate_010_lesson_001',
+        'title': 'Intro: The Art of Listening',
+        'lessonActivities': [
+          {
+            'type': 'fill_in_the_blanks',
+            'sentence': "I try to ______ (talk/listen) first before replying.",
+            'correctWord': "listen",
+            'imagePath': "assets/images/listening_scene.png",
+          },
+        ],
+      },
       {'lessonId': 'intermediate_010_lesson_002', 'title': 'Active Listening Techniques'},
       {'lessonId': 'intermediate_010_lesson_003', 'title': 'Responding Naturally & Appropriately'},
       {'lessonId': 'intermediate_010_lesson_004', 'title': 'Interactive Role-play: Everyday Dialogues'},
@@ -251,8 +406,28 @@ final List<Map<String, dynamic>> intermediateCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Handle restaurant scenarios confidently and engage comfortably in casual chats.',
-    'lessons': [
-      {'lessonId': 'intermediate_011_lesson_001', 'title': 'Intro: Dining Out with Confidence'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'intermediate_011_lesson_001',
+        'title': 'Intro: Dining Out with Confidence',
+        'lessonActivities': [
+          {
+            'type': 'today_vocabulary',
+            'vocabItems': [
+              {
+                'word': "Menu",
+                'meaning': "List of available dishes",
+                'image': "assets/images/menu_item.png",
+              },
+              {
+                'word': "Waiter",
+                'meaning': "Person who serves customers",
+                'image': "assets/images/waiter_icon.png",
+              },
+            ],
+          },
+        ],
+      },
       {'lessonId': 'intermediate_011_lesson_002', 'title': 'Vocabulary for Restaurants & Cafés'},
       {'lessonId': 'intermediate_011_lesson_003', 'title': 'Ordering Food & Drinks Clearly'},
       {'lessonId': 'intermediate_011_lesson_004', 'title': 'Handling Special Requests'},
@@ -275,8 +450,19 @@ final List<Map<String, dynamic>> intermediateCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Master clear communication for shopping and daily errands, improving your routine speaking skills.',
-    'lessons': [
-      {'lessonId': 'intermediate_012_lesson_001', 'title': 'Intro: Shopping Confidence'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'intermediate_012_lesson_001',
+        'title': 'Intro: Shopping Confidence',
+        'lessonActivities': [
+          {
+            'type': 'word_builder',
+            'letters': ["C", "A", "R", "T"],
+            'correctWord': "CART",
+            'extraLetters': ["P", "X"],
+          },
+        ],
+      },
       {'lessonId': 'intermediate_012_lesson_002', 'title': 'Essential Vocabulary for Shopping'},
       {'lessonId': 'intermediate_012_lesson_003', 'title': 'Asking Questions & Getting Assistance'},
       {'lessonId': 'intermediate_012_lesson_004', 'title': 'Interactive Role-play: Daily Errands'},
@@ -299,8 +485,19 @@ final List<Map<String, dynamic>> intermediateCourses = [
     'tag': kPaidCourseTag,
     'description':
         'Communicate confidently at gyms, doctor’s offices, and in health situations.',
-    'lessons': [
-      {'lessonId': 'intermediate_013_lesson_001', 'title': 'Intro: Health & Fitness Communication'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'intermediate_013_lesson_001',
+        'title': 'Intro: Health & Fitness Communication',
+        'lessonActivities': [
+          {
+            'type': 'fill_in_the_blanks',
+            'sentence': "I feel ______ (healthy/tired) after my workout.",
+            'correctWord': "healthy",
+            'imagePath': "assets/images/health_fitness_scene.png",
+          },
+        ],
+      },
       {'lessonId': 'intermediate_013_lesson_002', 'title': 'Vocabulary for Health & Wellness'},
       {'lessonId': 'intermediate_013_lesson_003', 'title': 'Talking to Doctors & Health Professionals'},
       {'lessonId': 'intermediate_013_lesson_004', 'title': 'Gym & Fitness Conversations'},

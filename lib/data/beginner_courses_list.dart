@@ -13,8 +13,47 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Start speaking immediately with simple, everyday dialogues. No grammar, just practical conversations.',
-    'lessons': [
-      {'lessonId': 'beginner_001_lesson_001', 'title': 'Welcome & Course Introduction'},
+    // Explicitly define "lessons" as a List<Map<String, dynamic>> to avoid type issues
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'beginner_001_lesson_001',
+        'title': 'Welcome & Course Introduction',
+        /// CHANGED KEY from "lessonActivities" → "activities"
+        'activities': [
+          {
+            'type': 'dialogue_reconstruction',
+            'messages': [
+              {'text': "Hey there! Any tips on starting English?", 'isSender': false},
+              {'text': "Sure! Start with short daily dialogues!", 'isSender': true},
+              {'text': "Thanks, I'm excited!", 'isSender': false},
+            ],
+          },
+          {
+            'type': 'fill_in_the_blanks',
+            'sentence': "Hello, could you ______ me find the bus stop?",
+            'correctWord': "help",
+            'imagePath': "assets/images/help_request_scene_16x9.png",
+            'hints': ["Think about a polite request word!"],
+            'correctSound': "assets/sounds/correct.mp3",
+            'wrongSound': "assets/sounds/incorrect.mp3",
+          },
+          {
+            'type': 'today_vocabulary',
+            'vocabItems': [
+              {
+                'word': "Hello",
+                'meaning': "A common greeting",
+                'image': "assets/images/greetings_hello.png"
+              },
+              {
+                'word': "Excuse me",
+                'meaning': "Polite phrase to get attention",
+                'image': "assets/images/excuse_me.png"
+              },
+            ],
+          },
+        ],
+      },
       {'lessonId': 'beginner_001_lesson_002', 'title': 'Simple Greetings & Goodbyes'},
       {'lessonId': 'beginner_001_lesson_003', 'title': 'Introducing Yourself Confidently'},
       {'lessonId': 'beginner_001_lesson_004', 'title': 'Asking Simple Questions'},
@@ -37,8 +76,25 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Never learned English before? Start here with basic words, phrases, and confidence boosters.',
-    'lessons': [
-      {'lessonId': 'beginner_002_lesson_001', 'title': 'Getting Started: No English, No Problem!'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'beginner_002_lesson_001',
+        'title': 'Getting Started: No English, No Problem!',
+        'activities': [
+          {
+            'type': 'word_builder',
+            'letters': ["H", "E", "L", "P"],
+            'correctWord': "HELP",
+            'extraLetters': ["A", "S"],
+          },
+          {
+            'type': 'sentence_construction',
+            'words': ["Excuse", "me,", "can", "I", "sit?", "please"],
+            'correctOrder': ["Excuse", "me,", "can", "I", "sit?", "please"],
+            'imagePath': "assets/images/lesson2_drag_drop.png",
+          },
+        ],
+      },
       {'lessonId': 'beginner_002_lesson_002', 'title': 'Basic Words: Things Around You'},
       {'lessonId': 'beginner_002_lesson_003', 'title': 'Useful Everyday Phrases'},
       {'lessonId': 'beginner_002_lesson_004', 'title': 'Making Simple Sentences'},
@@ -61,8 +117,33 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Talk comfortably with family members about daily tasks, feelings, and common home scenarios.',
-    'lessons': [
-      {'lessonId': 'beginner_003_lesson_001', 'title': 'Course Intro & Family Words'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'beginner_003_lesson_001',
+        'title': 'Course Intro & Family Words',
+        'activities': [
+          {
+            'type': 'mini_stories',
+            'scenes': [
+              {
+                'imagePath': 'assets/images/family_intro_scene.png',
+                'text': 'You wake up, greet your family: "Good morning, everyone!"'
+              },
+              {
+                'imagePath': 'assets/images/family_intro_scene2.png',
+                'text': 'Your mom asks: "Could you help me with breakfast?"'
+              },
+            ],
+          },
+          {
+            'type': 'spot_the_error',
+            'sentence': "I am make breakfast now.",
+            'correctedSentence': "I am making breakfast now.",
+            'explanation': "Use the continuous form 'making.'",
+            'imagePath': "assets/images/error_scene.png",
+          },
+        ],
+      },
       {'lessonId': 'beginner_003_lesson_002', 'title': 'Talking About Daily Routines'},
       {'lessonId': 'beginner_003_lesson_003', 'title': 'Expressing Feelings at Home'},
       {'lessonId': 'beginner_003_lesson_004', 'title': 'Helping Children with English'},
@@ -85,8 +166,21 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Talk confidently during festivals, invite guests, and share rituals clearly in English.',
-    'lessons': [
-      {'lessonId': 'beginner_004_lesson_001', 'title': 'Welcome to Festival English!'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'beginner_004_lesson_001',
+        'title': 'Welcome to Festival English!',
+        'activities': [
+          {
+            'type': 'dialogue_reconstruction',
+            'messages': [
+              {'text': "Namaste! Could you come to my Diwali party?", 'isSender': true},
+              {'text': "Sure! I'd love to. What time?", 'isSender': false},
+              {'text': "7 PM at my home, see you there!", 'isSender': true},
+            ],
+          },
+        ],
+      },
       {'lessonId': 'beginner_004_lesson_002', 'title': 'Basic Vocabulary for Celebrations'},
       {'lessonId': 'beginner_004_lesson_003', 'title': 'Inviting Guests & Friends'},
       {'lessonId': 'beginner_004_lesson_004', 'title': 'Explaining Your Traditions Simply'},
@@ -109,8 +203,19 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Handle urgent situations confidently by clearly communicating emergencies in English.',
-    'lessons': [
-      {'lessonId': 'beginner_005_lesson_001', 'title': 'Course Introduction & Goals'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'beginner_005_lesson_001',
+        'title': 'Course Introduction & Goals',
+        'activities': [
+          {
+            'type': 'fill_in_the_blanks',
+            'sentence': "I need help! My friend is ______ (hurt/safe)?",
+            'correctWord': "hurt",
+            'imagePath': "assets/images/emergency_scene.png",
+          },
+        ],
+      },
       {'lessonId': 'beginner_005_lesson_002', 'title': 'Key Vocabulary for Emergencies'},
       {'lessonId': 'beginner_005_lesson_003', 'title': 'Calling for Help: Simple & Clear'},
       {'lessonId': 'beginner_005_lesson_004', 'title': 'Explaining Problems Clearly'},
@@ -133,8 +238,28 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Communicate clearly with classmates and teachers, and present projects confidently.',
-    'lessons': [
-      {'lessonId': 'beginner_006_lesson_001', 'title': 'Welcome to School English!'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'beginner_006_lesson_001',
+        'title': 'Welcome to School English!',
+        'activities': [
+          {
+            'type': 'today_vocabulary',
+            'vocabItems': [
+              {
+                'word': "Classroom",
+                'meaning': "Place where lessons occur",
+                'image': "assets/images/classroom.png",
+              },
+              {
+                'word': "Teacher",
+                'meaning': "Person who guides students",
+                'image': "assets/images/teacher_icon.png",
+              },
+            ],
+          },
+        ],
+      },
       {'lessonId': 'beginner_006_lesson_002', 'title': 'Basic School Vocabulary'},
       {'lessonId': 'beginner_006_lesson_003', 'title': 'Introducing Yourself at School'},
       {'lessonId': 'beginner_006_lesson_004', 'title': 'Talking with Friends Confidently'},
@@ -158,8 +283,20 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Speak comfortably while travelling—airport, hotel, restaurant—without fear or hesitation.',
-    'lessons': [
-      {'lessonId': 'beginner_007_lesson_001', 'title': 'Introduction: Travel with Confidence'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'beginner_007_lesson_001',
+        'title': 'Introduction: Travel with Confidence',
+        'activities': [
+          {
+            'type': 'spot_the_error',
+            'sentence': "I are looking for the airport gate.",
+            'correctedSentence': "I am looking for the airport gate.",
+            'explanation': "Use 'am' not 'are' with 'I'.",
+            'imagePath': "assets/images/travel_spoterror.png",
+          }
+        ],
+      },
       {'lessonId': 'beginner_007_lesson_002', 'title': 'Key Travel Vocabulary'},
       {'lessonId': 'beginner_007_lesson_003', 'title': 'Basic Conversations at Airport'},
       {'lessonId': 'beginner_007_lesson_004', 'title': 'Checking In: Hotel Dialogues'},
@@ -182,8 +319,21 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Handle phone and video calls confidently, clearly, and without stress, even if you’re nervous.',
-    'lessons': [
-      {'lessonId': 'beginner_008_lesson_001', 'title': 'Course Introduction: Calls Made Easy'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'beginner_008_lesson_001',
+        'title': 'Course Introduction: Calls Made Easy',
+        'activities': [
+          {
+            'type': 'dialogue_reconstruction',
+            'messages': [
+              {'text': "Hello, can you hear me well?", 'isSender': true},
+              {'text': "Yes, loud and clear!", 'isSender': false},
+              {'text': "Great, let's start our call!", 'isSender': true},
+            ],
+          }
+        ],
+      },
       {'lessonId': 'beginner_008_lesson_002', 'title': 'Essential Call Vocabulary'},
       {'lessonId': 'beginner_008_lesson_003', 'title': 'Answering & Starting Calls'},
       {'lessonId': 'beginner_008_lesson_004', 'title': 'Asking Simple Questions Clearly'},
@@ -206,8 +356,19 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Speak politely and respectfully in everyday scenarios—at home, work, or public places.',
-    'lessons': [
-      {'lessonId': 'beginner_009_lesson_001', 'title': 'Introduction: Politeness Matters'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'beginner_009_lesson_001',
+        'title': 'Introduction: Politeness Matters',
+        'activities': [
+          {
+            'type': 'fill_in_the_blanks',
+            'sentence': "Could you please ______ me the time?",
+            'correctWord': "tell",
+            'imagePath': "assets/images/politeness_scene.png",
+          }
+        ],
+      },
       {'lessonId': 'beginner_009_lesson_002', 'title': 'Basic Etiquette Vocabulary'},
       {'lessonId': 'beginner_009_lesson_003', 'title': 'Greeting & Introducing Politely'},
       {'lessonId': 'beginner_009_lesson_004', 'title': 'Saying Please, Thank You & Sorry'},
@@ -230,9 +391,20 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Understand grammar naturally through real-life speaking scenarios, without memorizing rules.',
-    'lessons': [
-      {'lessonId': 'beginner_010_lesson_001', 'title': 'Introduction: Grammar Naturally'},
-      // ▼▼ FIXED HERE: replaced the broken line with a correct lessonId
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'beginner_010_lesson_001',
+        'title': 'Introduction: Grammar Naturally',
+        'activities': [
+          {
+            'type': 'spot_the_error',
+            'sentence': "She go to market yesterday.",
+            'correctedSentence': "She went to market yesterday.",
+            'explanation': "Use the past tense 'went' not 'go'.",
+            'imagePath': "assets/images/grammar_spoterror.png",
+          },
+        ],
+      },
       {'lessonId': 'beginner_010_lesson_002', 'title': 'Basic Sentence Structures'},
       {'lessonId': 'beginner_010_lesson_003', 'title': 'Everyday Verb Usage'},
       {'lessonId': 'beginner_010_lesson_004', 'title': 'Asking Simple Questions'},
@@ -255,8 +427,28 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Improve your pronunciation step-by-step, and speak English words clearly from day one.',
-    'lessons': [
-      {'lessonId': 'beginner_011_lesson_001', 'title': 'Intro: Pronunciation Basics'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'beginner_011_lesson_001',
+        'title': 'Intro: Pronunciation Basics',
+        'activities': [
+          {
+            'type': 'today_vocabulary',
+            'vocabItems': [
+              {
+                'word': "Pronunciation",
+                'meaning': "Way a word is spoken",
+                'image': "assets/images/pronunciation_tips.png",
+              },
+              {
+                'word': "Clarity",
+                'meaning': "Being understandable",
+                'image': "assets/images/clarity_icon.png",
+              },
+            ],
+          },
+        ],
+      },
       {'lessonId': 'beginner_011_lesson_002', 'title': 'Basic Sounds & Practice'},
       {'lessonId': 'beginner_011_lesson_003', 'title': 'Common Words Pronunciation'},
       {'lessonId': 'beginner_011_lesson_004', 'title': 'Listening & Repeating Exercises'},
@@ -279,8 +471,19 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Gain basic confidence to speak on stage or in front of small groups, overcoming anxiety step-by-step.',
-    'lessons': [
-      {'lessonId': 'beginner_012_lesson_001', 'title': 'Introduction: Why Stage Fear?'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'beginner_012_lesson_001',
+        'title': 'Introduction: Why Stage Fear?',
+        'activities': [
+          {
+            'type': 'fill_in_the_blanks',
+            'sentence': "I'm feeling ______ (nervous/brave) about speaking in front of people.",
+            'correctWord': "nervous",
+            'imagePath': "assets/images/stage_fear_scene.png",
+          },
+        ],
+      },
       {'lessonId': 'beginner_012_lesson_002', 'title': 'Getting Comfortable with Your Voice'},
       {'lessonId': 'beginner_012_lesson_003', 'title': 'Speaking Clearly & Slowly'},
       {'lessonId': 'beginner_012_lesson_004', 'title': 'Short Introduction Speech Practice'},
@@ -302,8 +505,18 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Prepare confidently for your first interview. Learn exactly what to say to get hired.',
-    'lessons': [
-      {'lessonId': 'beginner_013_lesson_001', 'title': 'Intro: Understanding Interviews'},
+    'lessons': <Map<String, dynamic>>[
+      {
+        'lessonId': 'beginner_013_lesson_001',
+        'title': 'Intro: Understanding Interviews',
+        'activities': [
+          {
+            'type': 'sentence_construction',
+            'words': ["Tell", "me", "about", "yourself,"],
+            'correctOrder': ["Tell", "me", "about", "yourself,"],
+          },
+        ],
+      },
       {'lessonId': 'beginner_013_lesson_002', 'title': 'Common Interview Questions'},
       {'lessonId': 'beginner_013_lesson_003', 'title': 'Giving Clear Answers'},
       {'lessonId': 'beginner_013_lesson_004', 'title': 'Talking About Yourself'},
