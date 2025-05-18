@@ -1,0 +1,618 @@
+{
+  "lessonId": "beginner_001_lesson_010",
+  "title": "Describing Your Daily Life",
+  "level": "beginner",
+  "themeColor": "#4A90E2",
+  "xpTotal": 500,
+  "objectives": [
+    "अपनी दैनिक दिनचर्या और शौक़ों के बारे में आत्मविश्वास से बात करना",
+    "अपने रोज़ के कामों को समझाने के लिए ज़रूरी वाक्य प्रयोग करना",
+    "हिंदी-अंग्रेज़ी मिश्रित तरीके से अपनी रुचियों और शौक़ों को व्यक्त करना",
+    "फ्रेंड्स, परिवार, या सहकर्मियों से अपनी दिनचर्या और शौक़ों के बारे में सहजता से बात करना"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": ["en", "hi"],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "routine_hobby_champion",
+    "title": "Routine & Hobbies Champion",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+
+    {
+      "type": "mentor_intro",
+      "text": "नमस्ते! आज हम सीखेंगे ‘Talking About Daily Routine & Hobbies’ -यानि अपने रोज़मर्रा के कामों और रुचियों के बारे में इंग्लिश में बातचीत करना. इससे आप सुबह से रात तक की दिनचर्या और अपने शौक़ों को आसानी से साझा कर पाएँगे!",
+      "imagePath": "assets/images/lesson10_intro.png",
+      "audioPath": "assets/audio/lesson10_mentor_intro_1.mp3"
+    },
+
+    {
+      "type": "text_card",
+      "title": "Daily Routine & Hobbies Toolkit (5 Steps)",
+      "body": "1) **Daily Routine**: Wake-up time, morning tasks\n2) **Work/School**: Describe a typical day\n3) **Hobbies**: Favorite pastimes\n4) **Weekend**: How is it different?\n5) **Closing**: Ask about the other person\n\nइन steps से रोज़मर्रा और शौक़ पर मज़ेदार बातचीत कर सकते हैं!",
+      "audioPath": "assets/audio/lesson10_toolkit_card.mp3"
+    },
+
+    {
+      "type": "text_card",
+      "title": "Definition Box: Key Concepts",
+      "body": "**Routine (रूटीन)**: Daily schedule or set of tasks\n\n**Hobby (हॉबी)**: Activity you enjoy in free time (शौक़)\n\n**Weekday (वीकडे)**: Monday–Friday typically (सामान्य कामकाजी दिन)\n\n**Weekend (वीकेंड)**: Saturday–Sunday or days off (छुट्टी के दिन)\n\n**Spare time (स्पेयर टाइम)**: Free/leisure time (खाली समय)",
+      "audioPath": "assets/audio/lesson10_definition_box.mp3"
+    },
+
+    {
+      "type": "poll",
+      "question": "आपका दिन शुरू होने पर सबसे ज़्यादा क्या मुश्किल लगता है?",
+      "options": [
+        "सुबह जल्दी उठना",
+        "शाम तक काम खत्म करना",
+        "रूटीन को follow करना",
+        "कोई परेशानी नहीं होती!"
+      ],
+      "dynamicFeedback": {
+        "0": "सुबह उठने से पहले हल्का स्ट्रेच या पानी पीने की आदत मदद कर सकती है!",
+        "1": "एक to-do list बनाएँ -सब time slot में set करें!",
+        "2": "Basic routine तय करें: कब उठना, कब खाना, etc.",
+        "3": "कमाल है! आप already disciplined हैं!"
+      },
+      "imagePath": "assets/images/lesson10_poll_routine.png"
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "हमारे दिन की शुरुआत बहुत कुछ बता देती है -‘I wake up at 7 AM’, ‘I do yoga for 10 minutes,’ आदि. अब scenarios में देखते हैं कि आप कैसे describe करें!",
+      "imagePath": "assets/images/lesson10_mentor_explain_intro.png",
+      "audioPath": "assets/audio/lesson10_mentor_explain_intro.mp3"
+    },
+
+    {
+      "type": "mentor_surprise_fact",
+      "title": " Surprise Fact",
+      "body": "क्या आप जानते हैं? हर दिन सिर्फ़ 15 मिनट की reading या exercise से आप अपनी English और सेहत दोनों में 20% तक सुधार कर सकते हैं! Try करना -बड़ा फ़र्क दिखेगा!",
+      "imagePath": "assets/images/lesson10_surprise_fact.png",
+      "audioPath": "assets/audio/lesson10_surprise_fact.mp3"
+    },
+
+    {
+      "type": "short_stories",
+      "title": "Sharing a simple morning routine",
+      "audioPath": "assets/audio/lesson10_scenario1_routine.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson10_routine_scene.png",
+          "text": "You: “I wake up at 6 AM every day. After that, I do some stretching and have a cup of tea.”\n\nFriend: “Sounds like a good start!”\n\nYou: “Yes, I also go for a walk around the neighborhood after breakfast.”"
+        }
+      ]
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Daily Routine Phrases",
+      "audioPath": "assets/audio/lesson10_flashcards_routine.mp3",
+      "cards": [
+        {
+          "term": "I wake up at __",
+          "definition": " ‘मैं __ बजे उठता/उठती हूँ.’\nUsage: ‘I wake up at 7 AM.’"
+        },
+        {
+          "term": "After that, I __",
+          "definition": " ‘उसके बाद मैं __ करता/करती हूँ.’\nUsage: ‘After that, I have breakfast.’"
+        },
+        {
+          "term": "I go for a walk/run",
+          "definition": " ‘मैं टहलने/दौड़ने जाता/जाती हूँ.’\nUsage: Morning exercise or park routine."
+        },
+        {
+          "term": "Then I head to work/school",
+          "definition": " ‘फिर मैं काम/स्कूल के लिए निकलता/निकलती हूँ.’\nUsage: Transition from morning to midday."
+        }
+      ]
+    },
+
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "I wake up at ______ (7 AM/8 PM), then I get ready for work/school.",
+      "correctWord": "7 AM",
+      "imagePath": "assets/images/lesson10_fill_in_time.png",
+      "hints": [
+        " सुबह जल्दी उठना (7 AM) ज़्यादा common है!",
+        "8 PM तो शाम/रात का समय है -morning routine नहीं!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "सही! 7 AM is a typical morning time.",
+        "wrongText": "8 PM evening होता है -morning routine नहीं!"
+      },
+      "submitLabel": "Check Answer"
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "छोटे, आसान वाक्यों में अपने routine बताएँ: ‘I shower at 7:30, leave by 8...’ etc. सुनने वाले को steps अच्छी तरह समझ आते हैं.",
+      "imagePath": "assets/images/lesson10_mentor_explain_routine.png",
+      "audioPath": "assets/audio/lesson10_mentor_explain_routine.mp3"
+    },
+
+    {
+      "type": "short_stories",
+      "title": "Talking About Hobbies",
+      "audioPath": "assets/audio/lesson10_scenario2_hobbies.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson10_hobby_scene.png",
+          "text": "You: “I enjoy reading books in my free time. I like fiction and mystery novels.”\n\nFriend: “Sounds interesting! Which is the last book you read?”\n\nYou: “I just finished a novel by Agatha Christie.”"
+        }
+      ]
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Talking About Hobbies",
+      "audioPath": "assets/audio/lesson10_flashcards_hobbies.mp3",
+      "cards": [
+        {
+          "term": "I enjoy ___",
+          "definition": " ‘मुझे __ करना पसंद है.’\nUsage: Sports, reading, art, etc."
+        },
+        {
+          "term": "I like ___",
+          "definition": " ‘मुझे __ अच्छा लगता है.’\nUsage: General preference -music, movies, etc."
+        },
+        {
+          "term": "I’m interested in ___",
+          "definition": " ‘मैं __ में रुचि रखता/रखती हूँ.’\nUsage: Deeper hobbies (history, coding, etc.)"
+        },
+        {
+          "term": "I’m passionate about ___",
+          "definition": " ‘मैं __ के प्रति बहुत उत्साही हूँ.’\nUsage: Strong emphasis on a favorite pursuit."
+        }
+      ]
+    },
+
+    {
+      "type": "quiz",
+      "question": "‘I enjoy playing __’ में कौन-सा विकल्प सही होगा?",
+      "options": [
+        "Books",
+        "Football",
+        "Reading",
+        "Reading books"
+      ],
+      "answerIndex": 1,
+      "hints": [
+        " ‘Playing’ के साथ sports/game match करें!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "allowRetry": true,
+      "encouragementOnFail": "‘I enjoy playing football/cricket/chess!’ is common usage."
+    },
+
+    {
+      "type": "short_stories",
+      "title": "Weekend Plans",
+      "audioPath": "assets/audio/lesson10_scenario3_weekend.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson10_weekend_scene.png",
+          "text": "You: “On weekends, I usually meet friends or watch a new movie.”\n\nFriend: “That’s fun. Do you travel out of town sometimes?”\n\nYou: “If it’s a long weekend, I like visiting my grandparents.”"
+        }
+      ]
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Weekend Activities",
+      "audioPath": "assets/audio/lesson10_flashcards_weekend.mp3",
+      "cards": [
+        {
+          "term": "On weekends, I usually ___",
+          "definition": " ‘वीकेंड पर मैं अक्सर __ करता/करती हूँ.’\nUsage: Meeting friends, relaxing, etc."
+        },
+        {
+          "term": "Sometimes, I ___",
+          "definition": " ‘कभी-कभी मैं __ करता/करती हूँ.’\nUsage: Occasional weekend trips."
+        },
+        {
+          "term": "If I have time, I ___",
+          "definition": " ‘अगर समय हो तो मैं __ करता/करती हूँ.’\nUsage: Extra optional activities."
+        }
+      ]
+    },
+
+    {
+      "type": "scene_image",
+      "caption": "Weekend fun: “I either watch a movie or go on a short trip.” सीखें कैसे describe करें!",
+      "imagePath": "assets/images/lesson10_weekend_activity.png",
+      "audioPath": "assets/audio/lesson10_scene_image_weekend.mp3"
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "Weekend tone casual होता है -‘I chill at home,’ ‘I catch up on sleep,’ etc. ये सामने वाले को relatable लगता है!",
+      "imagePath": "assets/images/lesson10_mentor_explain_weekend.png",
+      "audioPath": "assets/audio/lesson10_mentor_explain_end.mp3"
+    },
+
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "In the evenings, I ______ (watch/working) TV for about an hour.",
+      "correctWord": "watch",
+      "imagePath": "assets/images/lesson10_fill_in_evening.png",
+      "hints": [
+        " ‘watch TV’ सही phrase है, ‘working TV’ अजीब लगेगा!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "सही! ‘Watch TV’ is natural usage.",
+        "wrongText": "‘Working TV’ doesn’t fit routine context."
+      },
+      "submitLabel": "Check Answer"
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "शाम को क्या करते हैं -TV, dinner time, कोई hobby -सभी छोटे वाक्यों में शेयर करें. Clarity से बात आसान होती है!",
+      "imagePath": "assets/images/lesson10_mentor_explain_routine_end.png",
+      "audioPath": "assets/audio/lesson10_mentor_explain_routine_end.mp3"
+    },
+
+    {
+      "type": "speaking_prompt",
+      "prompt": "बोलकर प्रैक्टिस : ‘मैं सुबह __ बजे उठता/उठती हूँ. Then I ___.’\nअब personalize करके अपनी दिनचर्या बोलें!",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson10_speaking_prompt.png",
+      "audioPath": "assets/audio/lesson10_speaking_prompt.mp3"
+    },
+
+    {
+      "type": "poll",
+      "question": "शौक़ों के बारे में बात करते हुए आप ज़्यादा क्या बताना पसंद करते हैं?",
+      "options": [
+        "सिर्फ़ एक-दो hobbies",
+        "कई शौक़ों का ज़िक्र",
+        "थोड़ी जानकारी देकर छोड़ना",
+        "मैं casually बताता हूँ"
+      ],
+      "dynamicFeedback": {
+        "0": "Focused approach if you have 1-2 main passions!",
+        "1": "Variety is fine, just keep it organized!",
+        "2": "Enough to pique interest -add personal notes.",
+        "3": "Casual is good -conversation stays free-flowing!"
+      },
+      "imagePath": "assets/images/lesson10_poll_hobbies.png"
+    },
+
+    {
+      "type": "text_card",
+      "title": "Lesson 10 Recap (Part 1)",
+      "body": "1) Morning routines: ‘I wake up at __’\n2) Hobbies: ‘I enjoy __’\n3) Weekend differences: ‘On weekends, I…’\n4) Short, simple lines keep it clear!",
+      "audioPath": "assets/audio/lesson10_partial_recap.mp3"
+    },
+
+    {
+      "type": "short_stories",
+      "title": "Evening & Night Routine",
+      "audioPath": "assets/audio/lesson10_scenario4_evening.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson10_evening_scene.png",
+          "text": "You: “After work, I usually cook dinner around 8 PM. Then I watch a TV series or read.”\n\nFriend: “Nice. Do you sleep early?”\n\nYou: “I try. Around 10:30 PM, I wind down and check my next day’s schedule.”"
+        }
+      ]
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Evening & Night Routine",
+      "audioPath": "assets/audio/lesson10_flashcards_evening_night.mp3",
+      "cards": [
+        {
+          "term": "I usually cook dinner at __",
+          "definition": " ‘मैं आमतौर पर __ बजे खाना बनाता/बनाती हूँ.’\nUsage: Evening mealtime phrase."
+        },
+        {
+          "term": "I wind down by __",
+          "definition": " ‘मैं __ करके दिन समाप्त करता/करती हूँ.’\nUsage: E.g., listening to music or reading."
+        },
+        {
+          "term": "I go to bed around __",
+          "definition": " ‘मैं करीब __ बजे सो जाता/सो जाती हूँ.’\nUsage: Bedtime phrase."
+        }
+      ]
+    },
+
+    {
+      "type": "poll",
+      "question": "आपको शाम/रात की दिनचर्या में सबसे बड़ा challenge क्या लगता है?",
+      "options": [
+        "Dinner time manage करना",
+        "TV या mobile पर ज़्यादा time",
+        "जल्दी सोना",
+        "कोई दिक्कत नहीं"
+      ],
+      "dynamicFeedback": {
+        "0": "Cook/plan ahead if possible!",
+        "1": "Set a limit: 1 hr max for TV/scroll!",
+        "2": "Lots of people struggle -try relaxing routines!",
+        "3": "Great! Your evening routine is perfect!"
+      },
+      "imagePath": "assets/images/lesson10_poll_evening.png"
+    },
+
+    {
+      "type": "short_stories",
+      "title": "Weekday vs. Weekend",
+      "audioPath": "assets/audio/lesson10_scenario5_weekdayvsweekend.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson10_weekdayvsweekend.png",
+          "text": "You: “On weekdays, I focus on work from 9 AM to 6 PM. But on weekends, I sleep in and meet friends.”\n\nColleague: “Same here. My weekends are more relaxed -I get up at 9 AM!”\n\nYou: “Exactly. Weekdays are busy, weekends feel like freedom!”"
+        }
+      ]
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Weekday vs Weekend",
+      "audioPath": "assets/audio/lesson10_flashcards_weekday_weekend.mp3",
+      "cards": [
+        {
+          "term": "On weekdays, I ___",
+          "definition": " ‘कामकाजी दिनों में, मैं __ करता/करती हूँ.’\nUsage: Office/school schedule."
+        },
+        {
+          "term": "On weekends, I ___",
+          "definition": " ‘वीकेंड में, मैं __ करता/करती हूँ.’\nUsage: Relaxing or socializing."
+        },
+        {
+          "term": "It’s more relaxed/busy",
+          "definition": " ‘यह ज़्यादा आरामदेह/व्यस्त है.’\nUsage: Describe vibe difference."
+        }
+      ]
+    },
+
+    {
+      "type": "short_stories",
+      "title": "Asking Others About Their Hobbies",
+      "audioPath": "assets/audio/lesson10_scenario6_askothers.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson10_ask_others.png",
+          "text": "You: “So, what do you like doing in your spare time?”\n\nNew Friend: “I enjoy playing guitar. It helps me relax!”\n\nYou: “That’s cool. I love music too -maybe you can show me some chords?”"
+        }
+      ]
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Asking About Hobbies",
+      "audioPath": "assets/audio/lesson10_flashcards_ask_hobbies.mp3",
+      "cards": [
+        {
+          "term": "What do you like doing?",
+          "definition": " ‘आप खाली समय में क्या करना पसंद करते हैं?’\nUsage: Generic hobby question."
+        },
+        {
+          "term": "How do you relax?",
+          "definition": " ‘आप आराम कैसे करते हैं?’\nUsage: Invite deeper conversation."
+        },
+        {
+          "term": "That’s cool, I also __",
+          "definition": " ‘बहुत बढ़िया, मैं भी __ करता/करती हूँ.’\nUsage: Show shared interest."
+        }
+      ]
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "अगर आपके पास कोई ‘special’ hobby नहीं, तो honest रहें -‘I watch YouTube’ या ‘I chat with friends online’ भी valid hobbies हैं!",
+      "imagePath": "assets/images/lesson10_mentor_explain_nohobby.png",
+      "audioPath": "assets/audio/lesson10_mentor_explain_nohobby.mp3"
+    },
+
+    {
+      "type": "poll",
+      "question": "‘No hobbies’ situation में आप क्या करते हैं?",
+      "options": [
+        "कुछ random बोल देता/देती हूँ",
+        "झूठी hobby बना लेता/लेती हूँ",
+        "I just watch YouTube or chat, that’s also okay!",
+        "I avoid the topic"
+      ],
+      "dynamicFeedback": {
+        "0": "Try giving a simple real answer instead!",
+        "1": "No need to fake it -authenticity is better!",
+        "2": "Exactly -daily activities count too!",
+        "3": "Don’t skip -this is a good chance to connect!"
+      },
+      "imagePath": "assets/images/lesson10_poll_nohobby.png"
+    },
+
+    {
+      "type": "short_stories",
+      "title": "Student’s Daily Routine",
+      "audioPath": "assets/audio/lesson10_scenario7_student.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson10_student_scene.png",
+          "text": "You: “I’m a college student. I have classes from 9 AM to 2 PM. After lunch, I work on assignments.”\n\nFriend: “Busy schedule. Any time for hobbies?”\n\nYou: “Sometimes in the evening, I play badminton with friends.”"
+        }
+      ]
+    },
+
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "I have classes from 9 AM to _____ (5 PM/1 AM). Then I study in the library.",
+      "correctWord": "5 PM",
+      "imagePath": "assets/images/lesson10_fill_in_student.png",
+      "hints": [
+        " आमतौर पर शाम तक classes चलती हैं, रात 1 बजे नहीं!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "सही! Daytime classes often end by evening.",
+        "wrongText": "1 AM बहुत देर रात -classes usual नहीं!"
+      },
+      "submitLabel": "Check Answer"
+    },
+
+    {
+      "type": "short_stories",
+      "title": "Homemaker Routine",
+      "audioPath": "assets/audio/lesson10_scenario8_homemaker.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson10_homemaker_scene.png",
+          "text": "You: “I’m a homemaker, so my day starts at 6 AM. I prepare breakfast and help my kids get ready.”\n\nNeighbor: “That’s busy!”\n\nYou: “It is, but I enjoy cooking. In the afternoon, I do some gardening to relax.”"
+        }
+      ]
+    },
+
+    {
+      "type": "quiz",
+      "question": "Homemaker routine में सबसे common line क्या हो सकती है?",
+      "options": [
+        "I have classes all day",
+        "I handle cooking and kids’ schedules",
+        "I work in an IT firm",
+        "None of these"
+      ],
+      "answerIndex": 1,
+      "hints": [
+        " गृहिणी आमतौर पर घर का खाना और बच्चों का schedule संभालती है"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "allowRetry": true,
+      "encouragementOnFail": "Think daily tasks: cooking, kids, errands!"
+    },
+
+    {
+      "type": "short_stories",
+      "title": "Retired Person’s Routine",
+      "audioPath": "assets/audio/lesson10_scenario9_retired.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson10_retired_scene.png",
+          "text": "You: “I’m retired now, so I wake up around 7 AM, read the newspaper, then do some light exercise.”\n\nFriend: “Sounds peaceful.”\n\nYou: “Yes, I enjoy gardening in the evening or visiting old friends.”"
+        }
+      ]
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Extra Vocab: Different Life Roles",
+      "audioPath": "assets/audio/lesson10_flashcards_roles.mp3",
+      "cards": [
+        {
+          "term": "Student Life",
+          "definition": " ‘छात्र जीवन: assignments, lectures, projects’"
+        },
+        {
+          "term": "Homemaker",
+          "definition": " ‘खाना बनाना, बच्चों का schedule, घर manage करना’"
+        },
+        {
+          "term": "Retired",
+          "definition": " ‘आरामदायक दिनचर्या, सुबह की सैर, अख़बार पढ़ना’"
+        }
+      ]
+    },
+
+    {
+      "type": "speaking_prompt",
+      "prompt": "Try describing your day : ‘मैं __ हूँ (student/homemaker/retired). I usually __ in the morning...’",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson10_speaking_prompt_roles.png",
+      "audioPath": "assets/audio/lesson10_speaking_prompt_roles.mp3"
+    },
+
+    {
+      "type": "poll",
+      "question": "Which role best matches your current lifestyle?",
+      "options": [
+        "Student",
+        "Homemaker",
+        "Working Professional",
+        "Retired or Others"
+      ],
+      "dynamicFeedback": {
+        "0": "Classes & study define your routine!",
+        "1": "House management + family tasks + personal breaks!",
+        "2": "Work hours vs. free time -balance them!",
+        "3": "Peaceful or flexible schedule!"
+      },
+      "imagePath": "assets/images/lesson10_poll_roles.png"
+    },
+
+    {
+      "type": "text_card",
+      "title": "Lesson 10 Recap (Part 2)",
+      "body": "1) Evening & night routine: dinner, relaxing\n2) Weekday vs. weekend -compare busy vs. free\n3) Ask others: ‘What do you like doing?’\n4) Different roles (student, homemaker, retired) have unique day patterns.\n5) No-hobby scenario भी normal -be honest!",
+      "audioPath": "assets/audio/lesson10_extended_recap.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Cultural Note: Night Routine",
+      "body": "बड़े शहरों में लोग देर रात जागते हैं (late-night TV, calls). छोटे शहरों/गाँव में रात जल्दी. आप अपनी असली दिनचर्या बताएँ -‘I stay up till midnight’ या ‘I sleep by 9 PM,’ दोनों valid!",
+      "audioPath": "assets/audio/lesson10_cultural_note_night.mp3"
+    },
+
+    {
+      "type": "speaking_prompt",
+      "prompt": "बोलकर अभ्यास करें: ‘At night, I usually __ before sleeping.’\n(e.g., read a book, watch TV) -अपना वाक्य बनाईए!",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson10_speaking_prompt_night.png",
+      "audioPath": "assets/audio/lesson10_speaking_prompt_night.mp3"
+    },
+
+    {
+      "type": "text_card",
+      "title": "Journal Prompt",
+      "body": "आज 5 मिनट निकालकर अपनी सुबह से रात तक की दिनचर्या + शौक़ लिखें. फिर aloud बोलें! अगली बार कोई पूछेगा तो आप मज़ेदार तरीके से share कर पाएँगे!",
+      "audioPath": "assets/audio/lesson10_journal_prompt.mp3"
+    },
+
+    {
+      "type": "text_card",
+      "title": "Lesson 10 Final Recap",
+      "body": "1) Daily routine: सुबह, दोपहर, शाम -short steps\n2) Hobbies: ‘I enjoy…’/‘I like…’\n3) Weekday vs. weekend contrast\n4) Ask others: ‘What about you? How do you relax?’\n5) Different roles: student, homemaker, retired -adjust routine\n6) Night routine mention -कब सोते हैं, कैसे unwind करते हैं\n7) No-hobby? Normal -just be real!\n\nअब आप अपने दिन का पूरा सफ़र confidently बता सकते हैं!",
+      "audioPath": "assets/audio/lesson10_final_recap.mp3"
+    },
+
+    {
+      "type": "spot_the_error",
+      "instruction": "Incorrect phrase चुनें",
+      "originalSentence": "I enjoy to watch TV, then I reading books at night, and next day at 5 PM I wake up.",
+      "choices": [
+        "I enjoy to watch TV,",
+        "then I reading books at night,",
+        "and next day at 5 PM I wake up."
+      ],
+      "correctChoiceIndex": 0,
+      "explanation": " ‘enjoy’ के बाद verb-ing: ‘I enjoy watching TV’ सही है!",
+      "imagePath": "assets/images/lesson10_spot_error.png"
+    },
+
+    {
+      "type": "badge_award",
+      "title": "Routine & Hobbies Champion!",
+      "description": "बधाई हो! आपने Lesson 10 के सभी points सीख लिए -अब आप अपनी दिनचर्या और शौक़ों को किसी भी setting में साझा कर सकते हैं!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson10_badge_award.mp3"
+    }
+  ]
+}

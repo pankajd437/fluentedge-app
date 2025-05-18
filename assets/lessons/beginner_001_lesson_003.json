@@ -2,381 +2,522 @@
   "lessonId": "beginner_001_lesson_003",
   "title": "Introducing Yourself Confidently",
   "level": "beginner",
-  "part": 3,
+  "themeColor": "#4A90E2",
+  "xpTotal": 600,
+  "objectives": [
+    "Learn to introduce yourself in English without fear",
+    "Use simple sentence patterns for name, hometown, hobbies, etc.",
+    "Mix short Hindi if needed, while keeping politeness",
+    "Build confidence to speak about yourself in daily conversations"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": ["en", "hi"],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "self_intro_pro",
+    "title": "Self-Intro Pro",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
   "activities": [
     {
-      "type": "auto_audio",
-      "audioPath": "assets/sounds/lesson_audio/lesson3_intro_auto.mp3",
-      "text": "Hey there! Lesson 3 mein aapka swagat hai, this time, we’ll conquer self-introductions with style!",
-      "allowPause": true
-    },
-    {
-      "type": "message",
-      "text": "Aaj hum seekhenge: 'Apna intro dena'. Ready? Let’s jump in!"
+      "type": "mentor_intro",
+      "text": "नमस्ते! इस Lesson 3 में आज हम सीखेंगे ‘Introducing Yourself Confidently.’ कई बार हम simple बातें भी नहीं कह पाते, जैसे ‘मैं कौन हूँ’ या ‘क्या पसंद है.’ आज हम वही basics cover करेंगे, ताकि आप किसी से भी अपने बारे में मज़े से बात कर सकें!",
+      "imagePath": "assets/images/lesson3_intro.png",
+      "audioPath": "assets/audio/lesson3_mentor_intro.mp3"
     },
     {
       "type": "poll",
-      "question": "What’s your biggest fear while introducing yourself?",
+      "question": "जब आपको अपना परिचय देना होता है, आपको सबसे ज़्यादा क्या डर लगता है?",
       "options": [
-        "Words yaad nahi rehte!",
-        "Hichkichahat or shyness",
-        "Grammar mistakes ho jayenge",
-        "Mujhe pata nahi main kya bolun"
+        "अंग्रेज़ी के सही वाक्य याद नहीं आते",
+        "शर्म आती है बोलने में",
+        "कोई पूछ लेगा ‘और क्या?’ तो क्या कहूँ?",
+        "डर नहीं लगता, मुझे मज़ा आता है!"
+      ],
+      "dynamicFeedback": {
+        "0": "हम basic patterns सीखेंगे—बहुत कुछ याद करने की ज़रूरत नहीं!",
+        "1": "Practice से shyness कम होगी—short lines से शुरू करें.",
+        "2": "हम बताएँगे कैसे ‘hobbies/interests’ mention करें!",
+        "3": "बहुत बढ़िया—अब और refined सीखेंगे!"
+      },
+      "imagePath": "assets/images/lesson3_poll_fear.png"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Self-intro key points:",
+      "text": "1) Name (आप कौन हैं?)\n2) Location (कहाँ से हैं?)\n3) Occupation/role (क्या काम या पढ़ाई करते हैं?)\n4) Hobbies/interest (क्या पसंद है?).\n\nइन चार पहलुओं से आप अपना अच्छा Short introduction बना सकते हैं.",
+      "imagePath": "assets/images/lesson3_mentor_explain_points.png",
+      "audioPath": "assets/audio/lesson3_mentor_explain_key_points.mp3"
+    },
+    {
+      "type": "today_vocabulary",
+      "vocabItems": [
+        {
+          "word": "My name is...",
+          "meaning": "अपना नाम बताने का simplest तरीका—‘Mera naam ... hai’ का English version.",
+          "image": "assets/images/lesson3_vocab_mynameis.png",
+          "audioPath": "assets/audio/vocab_my_name_is.mp3"
+        },
+        {
+          "word": "I’m from...",
+          "meaning": "अपनी city या देश बताने के लिए use करें. e.g., ‘I’m from Delhi.’",
+          "image": "assets/images/lesson3_vocab_imfrom.png",
+          "audioPath": "assets/audio/vocab_im_from.mp3"
+        },
+        {
+          "word": "I work as a...",
+          "meaning": "Occupation mention करने का short pattern. e.g., ‘I work as a teacher.’",
+          "image": "assets/images/lesson3_vocab_iworkas.png",
+          "audioPath": "assets/audio/vocab_i_work_as.mp3"
+        },
+        {
+          "word": "I love / I enjoy...",
+          "meaning": "Hobbies/interests बताने के लिए—for example, ‘I love painting’ or ‘I enjoy playing cricket.’",
+          "image": "assets/images/lesson3_vocab_ilove.png",
+          "audioPath": "assets/audio/vocab_i_love.mp3"
+        }
       ]
     },
     {
-      "type": "tip",
-      "title": "Roadmap for Lesson 3",
-      "body": "• Basic intro lines: name, location, interests\n• Polite mini-stories about yourself\n• Formal & informal intros\n• Role-plays & examples\n• Quizzes \n\nLesson ke end tak—100% confidence!"
+      "type": "mentor_explain",
+      "text": "कभी-कभी नर्वस होना normal है. याद रखें,अधिकतर लोग आपके बारे में सुनने को उत्सुक रहते हैं. थोड़ा-सा unique detail जैसे hobby & passion, आपके self introduction को memorable बना देता है!",
+      "imagePath": "assets/images/lesson3_mini_success_story.png",
+      "audioPath": "assets/audio/lesson3_mentor_explain_empathy.mp3"
     },
     {
-      "type": "image",
-      "imagePath": "assets/images/lesson3_introducing_strangers_16x9.png",
-      "caption": "Introducing yourself to strangers can be scary, but we’ll fix that!"
-    },
-    {
-      "type": "text",
-      "title": "🎯 Basic Intro Lines",
-      "body": "• Hi, my name is [Your Name].\n• I’m from ______.\n• I love ______.\n• Nice to meet you!\n\nYeh 4 lines se 80% intro cover ho jata hai!"
-    },
-    {
-      "type": "speaking_prompt",
-      "prompt": "Say: Hello, I’m [Your Name], from [City Name]. I love music and meeting new people!",
-      "audioSupport": true,
-      "audioPath": "assets/sounds/lesson_audio/lesson3_basic_intro_example.mp3"
-    },
-    {
-      "type": "roleplay",
-      "text": "Role-play: Pretend you joined a new community group. Kaise apna intro doge? Practice a short speech!"
-    },
-    {
-      "type": "auto_audio",
-      "audioPath": "assets/sounds/lesson_audio/lesson3_comedic_story.mp3",
-      "text": "Story: Suno ek mazedaar kahani about someone messing up their introduction…",
-      "allowPause": true
-    },
-    {
-      "type": "message",
-      "text": "Lesson: Koshish karo 'I… me…' lines avoid karke usko interesting banane ki. Jaise, 'I’m a big movie fan, always up for a chat!'"
-    },
-    {
-      "type": "text",
-      "title": "⚖️ Formal vs. Informal Intros",
-      "body": "Formal (e.g., office, interviews):\n• Good morning, I’m [Name], working in ______.\n• It’s a pleasure to meet you.\n\nInformal (friends, gatherings):\n• Hey, I’m [Name]. I love to ______.\n• Great to meet ya!"
-    },
-    {
-      "type": "quiz",
-      "question": "Which line is best for a professional setting?",
-      "options": [
-        "Hey, I’m [Name], I guess I do some job…?",
-        "Hello, I’m [Name]. I work at [Company]. Nice to meet you!",
-        "Yo, sup? I do business maybe?",
-        "I am bored. Sorry."
+      "type": "fill_in_the_blanks",
+      "sentence": "Hello, ______ name is Rohan. I’m from Pune.",
+      "correctWord": "my",
+      "imagePath": "assets/images/lesson3_self_intro_blank.png",
+      "hints": [
+        "English में ‘my name is ...’ common pattern",
+        "Hindi idea: ‘Mera naam Rohan hai’"
       ],
-      "answerIndex": 1,
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/thumbs_up_vote.json",
+      "wrongLottie": "assets/animations/confused_thinking.json",
+      "submitLabel": "Check Answer",
+      "feedback": {
+        "correctText": "सही! ‘My name is Rohan’—सबसे आसान intro line!",
+        "wrongText": "We need ‘my’ to talk about ‘my name!’"
+      }
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Phrases like 'My name is Priya,' 'I’m from Delhi,' 'I work as a teacher,' 'I love painting' से आप quickly अपना short introduction बना सकते हैं. just keep it short and clear.",
+      "imagePath": null,
+      "audioPath": "assets/audio/lesson3_mentor_explain_quick_intro.mp3"
+    },
+    {
+      "type": "spot_the_error",
+      "instruction": "कौन-सा शब्द गलत choice है? Check the grammar of self-intro:",
+      "originalSentence": "Hello, I am from Delhi and I loves reading.",
+      "choices": ["Hello", "from", "Delhi", " I loves"],
+      "correctChoiceIndex": 3,
+      "explanation": "‘I loves’ is incorrect. सही form है ‘I love reading.’ या ‘I enjoy reading.’",
+      "imagePath": "assets/images/lesson3_spot_error_grammar.png"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "ध्यान दें Verb में 's' तभी लगता है जब subject 'he', 'she' या 'it' हो. अपने लिए बोलेंगे तो हमेशा 'I love', 'I enjoy', 'I work' लिखेंगे, 'loves' या 'enjoys' नहीं। अब एक और fill-in practice try करें!",
+      "imagePath": "assets/images/lesson3_mentor_explain_verb.png",
+      "audioPath": "assets/audio/lesson3_mentor_explain_verb_tip.mp3"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "Namaste, ______ (I am / He is) from Jaipur. I work as a designer.",
+      "correctWord": "I am",
+      "imagePath": "assets/images/lesson3_jaipur_intro.png",
       "hints": [
-        "Formal intros often mention job/role",
-        "Use polite words like 'Nice to meet you'"
-      ]
+        "Self-intro में ‘I am’ use करते हैं.",
+        "Hindi logic: ‘Main Jaipur se hoon’ → ‘I’m from Jaipur.’"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/thumbs_up_vote.json",
+      "wrongLottie": "assets/animations/confused_thinking.json",
+      "submitLabel": "Check Answer",
+      "feedback": {
+        "correctText": "Exactly! ‘I’m from Jaipur’—short and correct.",
+        "wrongText": "‘He’s’ would mean somebody else, not yourself!"
+      }
     },
     {
-      "type": "message",
-      "text": "Formal ho ya informal, ek smile or clarity sabse zyada matter karta hai."
-    },
-    {
-      "type": "speaking_prompt",
-      "prompt": "Try: Good morning! I’m [Your Name], and I’m excited to join [Company/Team].",
-      "audioSupport": false
+      "type": "mentor_explain",
+      "text": "कुछ लोग hobbies mention करने में भी डरते हैं. ‘I love painting’ या ‘I enjoy watching movies’ कहना easy है. Let’s do a quick poll on your favorite hobbies mention!",
+      "imagePath": null,
+      "audioPath": "assets/audio/lesson3_mentor_explain_hobbies.mp3"
     },
     {
       "type": "poll",
-      "question": "Which part of a formal intro do you struggle with most?",
+      "question": "Hobby बताने में आपको सबसे बड़ा confusion क्या लगता है?",
       "options": [
-        "Confidence (shyness)",
-        "Proper English words",
-        "Describing my role clearly",
-        "All of it!"
-      ]
+        "English words for my hobby याद नहीं",
+        "Sharm आती है बोलने में",
+        "लगता है bore कर दूँगा",
+        "Mujhe hobby batana easy लगता है"
+      ],
+      "dynamicFeedback": {
+        "0": "Hobby के words simple रख सकते हैं: ‘I love cooking’ or ‘I enjoy dancing.’",
+        "1": "Practice से self-consciousness कम होगी—बस casually बोलें!",
+        "2": "Short mention काफी है—details में मत जाएँ अगर time कम है!",
+        "3": "Awesome—phir toh आगे और refine करेंगे!"
+      },
+      "imagePath": "assets/images/lesson3_poll_hobby.png"
     },
     {
-      "type": "message",
-      "text": "Chinta mat karo—baaki steps hum handle karenge. Step by step approach!"
+      "type": "mentor_explain",
+      "text": "Great! अब देखते हैं real short stories scenarios में लोग कैसे खुद को introduce करते हैं.",
+      "imagePath": null,
+      "audioPath": "assets/audio/lesson3_mentor_explain_short_stories.mp3"
     },
     {
-      "type": "image",
-      "imagePath": "assets/images/lesson3_informal_group_16x9.png",
-      "caption": "In an informal group? Introduce yourself with a fun fact!"
+      "type": "short_stories",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson3_small_party.png",
+          "text": "Scenario 1: A small get-together. ‘Hi, I’m Neha. I’m from Lucknow, working in IT. I love baking cupcakes on weekends!’"
+        },
+        {
+          "imagePath": "assets/images/lesson3_college_classroom.png",
+          "text": "Scenario 2: College classroom. ‘Hello everyone, my name is Arjun. I study B.Com. I enjoy playing badminton in my free time.’"
+        }
+      ],
+      "audioPath": "assets/audio/lesson3_short_stories_1_2.mp3"
     },
     {
-      "type": "text",
-      "title": "Fun-Fact Intros",
-      "body": "• 'Hey, I’m [Name]. I love dancing in the rain!'\n• 'I’m super curious about space!'\n• 'I can cook 5 dishes in 10 minutes!'\n\nIsse log yaad rakhenge aapko!"
+      "type": "mentor_explain",
+      "text": "Homemaker या Senior citizen भी Polite और आसान lines से अपना intro दे सकते हैं! next short stories scenarios में देखते हैं कैसे ?",
+      "imagePath": "assets/images/lesson3_homemaker_senior_intro.png",
+      "audioPath": "assets/audio/lesson3_mentor_explain_homemaker_senior.mp3"
+    },
+    {
+      "type": "short_stories",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson3_homemaker.png",
+          "text": "Scenario 3 (Homemaker): ‘Namaste, I’m Rima. I’m from Kanpur. I manage my home, and I love gardening. My plants are like my family!’"
+        },
+        {
+          "imagePath": "assets/images/lesson3_senior_citizen.png",
+          "text": "Scenario 4 (Senior Citizen): ‘Hello, I’m Mr. Gupta from Bhopal. I’m retired now, but I enjoy evening walks and reading newspapers.’"
+        }
+      ],
+      "audioPath": "assets/audio/lesson3_short_stories_3_4.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "कभी-कभी अनपेक्षित जगहों पर भी introduction देना पड़ता है. जैसे नया जॉब, हॉबी क्लास, ज़ूम मीटिंग, या अचानक नए पड़ोसियों से मुलाक़ात होने पर. चलिए इन्हें भी देखते हैं!",
+      "imagePath": null,
+      "audioPath": "assets/audio/lesson3_mentor_explain_new_scenarios.mp3"
+    },
+    {
+      "type": "scene_image",
+      "caption": "Imagine आप पहले दिन ऑफिस में हैं, ब्रेक रूम में नए coworkers से मिलते हुए. खुद को कैसे introduce करेंगे?",
+      "imagePath": "assets/images/lesson3_new_job_scenario.png",
+      "audioPath": "assets/audio/lesson3_scene_new_job.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Speak: “Hi, I’m [Your Name], I just joined as [Your Role]. I enjoy [Your hobby]. Pleased to meet you!”",
+      "audioSupport": true,
+      "imagePath": "assets/images/lesson3_new_job_scenario.png",
+      "audioPath": "assets/audio/lesson3_speaking_new_job_prompt.mp3"
+    },
+    {
+      "type": "scene_image",
+      "caption": "आप एक weekend baking class join करते हैं. सबको अपना intro दीजिए!",
+      "imagePath": "assets/images/lesson3_hobby_class_scenario.png",
+      "audioPath": "assets/audio/lesson3_scene_hobby_class.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Say: “Hello! I’m [Your Name]. I’m here to learn baking because I love experimenting with new recipes!”",
+      "audioSupport": true,
+      "imagePath": "assets/images/lesson3_hobby_class_scenario.png",
+      "audioPath": "assets/audio/lesson3_speaking_hobby_class_prompt.mp3"
+    },
+    {
+      "type": "scene_image",
+      "caption": "Online language class join कर रहे हैं? Camera पर confidently introduce कीजिए!",
+      "imagePath": "assets/images/lesson3_zoom_class_scenario.png",
+      "audioPath": "assets/audio/lesson3_scene_zoom_class.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Speak: “Hi everyone, I’m [Your Name] from [Your City]. I’m learning English to improve my speaking skills. I enjoy meeting new people!”",
+      "audioSupport": true,
+      "imagePath": "assets/images/lesson3_zoom_class_scenario.png",
+      "audioPath": "assets/audio/lesson3_speaking_zoom_class_prompt.mp3"
+    },
+    {
+      "type": "scene_image",
+      "caption": "Unexpected visitors या नए पड़ोसी से मिलते हुए छोटी-सी बातचीत!",
+      "imagePath": "assets/images/lesson3_meeting_neighbors.png",
+      "audioPath": "assets/audio/lesson3_scene_meeting_neighbors.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Try saying: “Hello, I’m [Your Name]. I live here. I love gardening and would love to share some plants with you!”",
+      "audioSupport": true,
+      "imagePath": "assets/images/lesson3_meeting_neighbors.png",
+      "audioPath": "assets/audio/lesson3_speaking_meeting_neighbors_prompt.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Tip: इन scenarios में confident body language भी मदद करती है, हल्की मुस्कान, eye contact, और clear voice. Pronunciation को practice करने के लिए बार-बार बोलिए!",
+      "imagePath": null,
+      "audioPath": "assets/audio/lesson3_mentor_explain_body_language.mp3"
+    },
+    {
+      "type": "short_stories",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson3_international_friends.png",
+          "text": "Scenario: आप international crowd में हैं, simple intro: ‘Hello, I’m Kunal from India. I’ve been learning English for 3 months. I enjoy cricket and cooking!’"
+        },
+        {
+          "imagePath": "assets/images/lesson3_conference.png",
+          "text": "Scenario: Conference setting ‘Good afternoon, my name is Shreya. I work as a marketing intern. I love creative writing in my spare time.’"
+        }
+      ],
+      "audioPath": "assets/audio/lesson3_short_stories_international_conf.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Key Self-Intro Phrases",
+      "cards": [
+        {
+          "term": "I’m (your name)",
+          "definition": "उदाहरण: ‘I’m Priya.’ इस छोटे वाक्य से आप तुरंत identity दे देते हैं."
+        },
+        {
+          "term": "I’m from (city/country)",
+          "definition": "उदाहरण: ‘I’m from Agra.’ Location mention करने से people आपसे relate कर सकते हैं."
+        },
+        {
+          "term": "I work as a… / I study in…",
+          "definition": "उदाहरण: ‘I work as a software engineer.’ या ‘I study in 12th grade.’"
+        },
+        {
+          "term": "I love (hobby)",
+          "definition": "उदाहरण: ‘I love painting.’— बता दें कि आपको क्या passion है."
+        },
+        {
+          "term": "I enjoy (activity)",
+          "definition": "उदाहरण: ‘I enjoy traveling on weekends.’—helps spark conversation."
+        },
+        {
+          "term": "I have been (doing something)…",
+          "definition": "e.g., ‘I have been learning guitar for 2 months.’ थोड़ा advanced है, लेकिन self-intro में impressive लगता है."
+        }
+      ],
+      "audioPath": "assets/audio/lesson3_flashcards_key_phrases.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Flashcards se revise कीजिए. अब हम एक ‘Guided Self-Intro Builder’ करके देखते हैं, जहाँ हम step-by-step आपके intro की lines बना देंगे! (आप इसे सेव भी कर सकते हैं, ताकी future में practice करते रहें.)",
+      "imagePath": "assets/images/lesson3_mentor_explain_builder.png",
+      "audioPath": "assets/audio/lesson3_mentor_explain_builder.mp3"
+    },
+    {
+      "type": "guided_self_intro",
+      "title": "Self-Intro Builder",
+      "instructions": "हर स्टेप का जवाब संक्षेप में दो। आख़िर में, हम सबको मिलाकर एक छोटा सा introduction बनाएंगे!\n\n(You can save this introduction for future reference.)",
+      "steps": [
+        {
+          "prompt": "Step 1: What's your name? (e.g., 'I’m Priya.')",
+          "placeholder": "______.",
+          "keyName": "nameLine"
+        },
+        {
+          "prompt": "Step 2: Where are you from? (e.g., 'I’m from Mumbai.')",
+          "placeholder": "______.",
+          "keyName": "locationLine"
+        },
+        {
+          "prompt": "Step 3: What do you do—work, study, or anything else? (e.g., 'I work as a teacher' / 'I study in 10th grade.')",
+          "placeholder": "______.",
+          "keyName": "occupationLine"
+        },
+        {
+          "prompt": "Step 4: One hobby or interest? (e.g., 'I love painting.')",
+          "placeholder": "______.",
+          "keyName": "hobbyLine"
+        }
+      ],
+      "combineFormat": "Hello! {nameLine} {locationLine} {occupationLine} {hobbyLine} Nice to meet you!",
+      "allowSave": true
+    },
+    {
+      "type": "sentence_construction",
+      "words": ["my", "reading", "love", "I", "books!"],
+      "correctOrder": ["I", "love", "reading", "my", "books!"],
+      "imagePath": "assets/images/lesson3_sentence_construct_hobby.png"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "Hello, ______ (I am/You are) Kritika. I study in class 10.",
+      "correctWord": "I am",
+      "imagePath": "assets/images/lesson3_student_intro.png",
+      "hints": [
+        "Self-intro में ‘I am ...’ ही use करेंगे.",
+        "Hindi reflection: ‘Main hoon Kritika.’"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/thumbs_up_vote.json",
+      "wrongLottie": "assets/animations/confused_thinking.json",
+      "submitLabel": "Check Answer",
+      "feedback": {
+        "correctText": "Good! ‘I am Kritika’ is the simplest form.",
+        "wrongText": "‘You are Kritika’ would mean someone else is telling about you!"
+      }
     },
     {
       "type": "quiz",
-      "question": "Pick the best 'Fun Fact' opener in a casual meet?",
+      "question": "Which introduction is politely direct & clear?",
       "options": [
-        "'Uhh, I guess I like things…?'",
-        "'You must guess my secret!' *silence*",
-        "'I’m [Name], big sports fan—crazy about cricket!'",
-        "No idea, skip."
+        "Hey guys, guess who? It's me from somewhere.",
+        "Um...I not sure, from city maybe?",
+        "Hi everyone, I’m Suraj from Mumbai. I work as a teacher.",
+        "Hello... I'm forgetful, so not sure what I do!"
       ],
       "answerIndex": 2,
+      "hints": [
+        "Look for clarity: name + place + role/hobby in short lines."
+      ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
       "allowRetry": true,
-      "encouragementOnFail": "No worries! Try again and share something unique about yourself."
+      "encouragementOnFail": "Try again—clear, direct introduction कौन-सा है?"
     },
     {
-      "type": "message",
-      "text": "Exactly! A short, interesting fact sets you apart, yaad reh jaoge!"
+      "type": "mentor_surprise_fact",
+      "title": "Did You Know?",
+      "body": "People often remember someone who shares 1 unique detail in their intro, like a quirky hobby or interesting role. It breaks the ice!",
+      "audioPath": "assets/audio/lesson3_mentor_surprise_fact.mp3"
     },
     {
-      "type": "roleplay",
-      "text": "Role-play: Group hobby club join kar rahe ho—koi ek fun fact banao, mention your hobby, interest, etc. Practice out loud!"
+      "type": "word_builder",
+      "letters": ["M", "E", "N", "A"],
+      "correctWord": "NAME",
+      "extraLetters": ["R", "O"],
+      "instruction": "Build a key word we use to talk about 'who we are.' 4 letters!"
     },
     {
-      "type": "tip",
-      "title": "💡 Pro Tip for Confident Speech",
-      "body": "Slow down thoda, words clearly bolo, maintain eye contact (agar real life meet hai). Aap jitna calm rahoge, samne wala itna hi interested hoga!"
-    },
-    {
-      "type": "speaking_prompt",
-      "prompt": "Try a slow, clear line: 'Hello everyone, my name is [Your Name]. I’m really excited to join this group!'",
-      "audioSupport": false
-    },
-    {
-      "type": "quiz",
-      "question": "Which is the biggest mistake while introducing yourself?",
-      "options": [
-        "Talking too fast/unclear",
-        "Forgetting to say your name or interest",
-        "Sounding disinterested/awkward",
-        "All of the above"
-      ],
-      "answerIndex": 3,
-      "correctSound": "assets/sounds/correct.mp3",
-      "wrongSound": "assets/sounds/incorrect.mp3"
-    },
-    {
-      "type": "message",
-      "text": "Yes, sab mistakes avoid karne ke liye just be calm, short, friendly—and mention your name clearly!"
-    },
-    {
-      "type": "auto_audio",
-      "audioPath": "assets/sounds/lesson_audio/lesson3_encouraging_words.mp3",
-      "text": "Aap bohot accha kar rahe ho—bas thoda sa practice aur, and you’ll be unstoppable!",
-      "allowPause": true
-    },
-    {
-      "type": "speaking_prompt",
-      "prompt": "End with a strong line: 'It’s really nice to meet you all!'",
-      "audioSupport": true,
-      "audioPath": "assets/sounds/lesson_audio/lesson3_strong_line.mp3"
-    },
-    {
-      "type": "text",
-      "title": "❗ Common Pitfalls",
-      "body": "• Apna naam koi mushkil se sun paata hai—zara clear boliye\n• Zero energy? Thoda enthusiasm dikhayein!\n• Over-talk mat karo—intro short & sweet rakho"
-    },
-    {
-      "type": "audio",
-      "audioPath": "assets/sounds/lesson_audio/lesson3_mistake_tips.mp3",
-      "caption": "🎧 Quick ways to avoid being too long-winded or too shy"
-    },
-    {
-      "type": "quiz",
-      "question": "Which fix helps you not talk too long in intros?",
-      "options": [
-        "Memorize a short script beforehand",
-        "Keep repeating 'I me I me' to fill time",
-        "Complain how you don’t like intros",
-        "Say everything about your life story"
-      ],
-      "answerIndex": 0,
-      "correctSound": "assets/sounds/correct.mp3",
-      "wrongSound": "assets/sounds/incorrect.mp3",
-      "hints": [
-        "Focus on 2-3 key points: name, role/hobby, interesting fact"
-      ]
-    },
-    {
-      "type": "message",
-      "text": "A short, well-planned line is 10x better than rambling on and on!"
-    },
-    {
-      "type": "badge",
-      "title": "🙌 Self-Intro Star Badge",
-      "description": "You’re becoming a pro at introducing yourself—both formally & informally!",
-      "animation": "assets/animations/badge_unlocked.json"
-    },
-    {
-      "type": "message",
-      "text": "Ek aur level chahiye? Let’s see a final role-play!"
-    },
-    {
-      "type": "image",
-      "imagePath": "assets/images/lesson3_office_intro_16x9.png",
-      "caption": "Formal office scenario—make your introduction stand out!"
-    },
-    {
-      "type": "roleplay",
-      "text": "Office role-play: Introduce yourself to senior colleagues. Focus on clarity + quick, interesting detail about your skill/hobby!"
-    },
-    {
-      "type": "text",
-      "title": "🔁 Recap at a Glance",
-      "body": "1) Say your name clearly\n2) Mention location, job, or interest\n3) Share a short fun fact or reason you’re there\n4) Smile and maintain a friendly tone!"
-    },
-    {
-      "type": "speaking_prompt",
-      "prompt": "Final test: Combine a short intro + 1 interesting fact + a warm closing line.",
-      "audioSupport": false
-    },
-    {
-      "type": "audio",
-      "audioPath": "assets/sounds/lesson_audio/lesson3_final_challenge.mp3",
-      "caption": "🎧 Last challenge: Introduce yourself to 2 new people tomorrow in real life!"
-    },
-    {
-      "type": "badge",
-      "title": "🌟 Introducing Yourself Confidently!",
-      "description": "You’ve mastered intros— short, sweet, and memorable. Keep practicing daily!",
-      "animation": "assets/animations/badge_unlocked.json"
-    },
-    {
-      "type": "message",
-      "text": "Aap ab confidently apna intro de sakte ho—no more jitters. Lesson 3 complete—Great job!"
-    },
-    {
-      "type": "tip",
-      "title": "💡 Keep Practicing!",
-      "body": "Small daily intros help you become unstoppable. Keep shining— see you in the next lesson!"
+      "type": "mentor_explain",
+      "text": "Great job! ‘NAME’ is often the first detail we give about ourselves. ‘My name is...’ से simple start कर सकते हैं.",
+      "imagePath": "assets/images/lesson3_name_explain.png",
+      "audioPath": "assets/audio/lesson3_mentor_explain_name.mp3"
     },
     {
       "type": "poll",
-      "question": "Do you still feel nervous? Where do you want more help?",
+      "question": "Which part of a self-intro do you find most fun?",
       "options": [
-        "Formal intros (work/interviews)",
-        "Casual intros with friends",
-        "Sharing personal facts",
-        "All of the above"
-      ]
-    },
-    {
-      "type": "auto_audio",
-      "audioPath": "assets/sounds/lesson_audio/lesson3_comedic_story2.mp3",
-      "text": "Story : Ek banda apna intro dete hue, ‘Hello, I is name… oh no!’—koi tension nahin, sab hoga!",
-      "allowPause": true
-    },
-    {
-      "type": "speaking_prompt",
-      "prompt": "A friend wants to know more about your hobbies. Introduce yourself and mention 2 hobbies quickly!",
-      "audioSupport": true,
-      "audioPath": "assets/sounds/lesson_audio/lesson3_hobbies_prompt.mp3"
-    },
-    {
-      "type": "image",
-      "imagePath": "assets/images/lesson3_confident_smile_16x9.png",
-      "caption": "A confident smile instantly makes your intro more appealing!"
-    },
-    {
-      "type": "text",
-      "title": "Advanced Tip: Micro-Stories",
-      "body": "Instead of just 'I love music,' share a tiny story: 'I used to hum all day in school; that’s how I realized my love for music.' People connect more with mini-stories!"
-    },
-    {
-      "type": "quiz",
-      "question": "Which micro-story approach works best in an intro?",
-      "options": [
-        "Mentioning 1-2 personal anecdotes quickly",
-        "Telling your entire life story for 20 minutes",
-        "Jumping from topic to topic with no focus",
-        "Apologizing for being 'boring' upfront"
+        "Telling my name",
+        "Telling my hobbies",
+        "Talking about job/studies",
+        "All are equally fun!"
       ],
-      "answerIndex": 0,
+      "dynamicFeedback": {
+        "0": "Name is the simplest—like ‘I’m Ravi.’ Keep it short!",
+        "1": "Hobbies add personal touch, people get curious!",
+        "2": "Job/studies show daily life context.",
+        "3": "Well done—balanced approach keeps it interesting."
+      },
+      "imagePath": "assets/images/lesson3_poll_funpart.png"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "Hi, my name is Alia and I ______ (love/hate) dancing. Nice to meet you!",
+      "correctWord": "love",
+      "imagePath": "assets/images/lesson3_dancing_intro.png",
+      "hints": [
+        "Positivity दिखाने के लिए ‘love’—hobbies में hate कम ही use होता है!",
+        "Hindi: ‘Mujhe dance pasand hai!’ → ‘I love dancing!’"
+      ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
-      "hints": [
-        "Keep stories short & relevant",
-        "1-2 lines about how you discovered your passion"
-      ]
-    },
-    {
-      "type": "message",
-      "text": "Short micro-stories show personality but remain crisp. Perfect for leaving an impression!"
-    },
-    {
-      "type": "roleplay",
-      "text": "Role-play: A new coworker asks about your background. Give a 2-line micro-story about your favorite skill or hobby!"
-    },
-    {
-      "type": "image",
-      "imagePath": "assets/images/lesson3_team_building_16x9.png",
-      "caption": "Team-building exercises often start with personal intros—be prepared!"
-    },
-        {
-      "type": "speaking_prompt",
-      "prompt": "Speak as if you’re on stage: 'Hello everyone, I’m [Name]. Let me share one fun fact about me—then you share yours!'",
-      "audioSupport": true,
-      "audioPath": "assets/sounds/lesson_audio/lesson3_stage_performance_example.mp3"
-    },
-    {
-      "type": "image",
-      "imagePath": "assets/images/lesson3_big_stage_intro_16x9.png",
-      "caption": "Even on a big stage, a friendly introduction breaks all barriers!"
-    },
-    {
-      "type": "poll",
-      "question": "What do you think is your biggest improvement so far?",
-      "options": [
-        "Speaking more confidently",
-        "Knowing how to structure my intro",
-        "Adding fun facts & micro-stories",
-        "All of them!"
-      ]
+      "correctLottie": "assets/animations/thumbs_up_vote.json",
+      "wrongLottie": "assets/animations/confused_thinking.json",
+      "submitLabel": "Check Answer",
+      "feedback": {
+        "correctText": "Yes! Showing a liked activity makes intros more interesting!",
+        "wrongText": "‘Hate dancing’ might be honest, but less friendly for a first intro!"
+      }
     },
     {
       "type": "quiz",
-      "question": "You’re introducing yourself at a college event. Pick the best approach:",
+      "question": "Which self-intro is short, clear, and personal?",
       "options": [
-        "I’m [Name]. I, uh... yeah, so next?",
-        "Hey, I’m [Name]. I study ______. Btw, big fan of sports. Great to be here!",
-        "I have nothing to say, sorry guys!",
-        "Please ignore me. I’m shy."
+        "I am from a place, I do something maybe.",
+        "Namaste, I’m Reema from Chandigarh, I love painting on Sundays.",
+        "Hmm, guess me, I do random things.",
+        "I talk about me, but not sure how to say it..."
       ],
       "answerIndex": 1,
+      "hints": [
+        "Look for clarity + personal detail."
+      ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
-      "hints": [
-        "Mention your name, context (study?), fun detail, friendly vibe"
-      ]
+      "allowRetry": true,
+      "encouragementOnFail": "Focus on name, place, and a personal note. Try again!"
     },
     {
-      "type": "message",
-      "text": "Yes! Keep it friendly, mention your context, and share a mini-fact or interest."
+      "type": "speaking_prompt",
+      "prompt": "Boliye: ‘Hi, my name is ____. I’m from ___. I enjoy ___. Nice to meet you!’ (Speak with a smile!)",
+      "audioSupport": true,
+      "imagePath": "assets/images/lesson3_speaking_prompt.png",
+      "audioPath": "assets/audio/lesson3_speaking_prompt.mp3"
     },
     {
-      "type": "text",
-      "title": "🔥 Gratitude Trick",
-      "body": "Before you introduce yourself, feel grateful for the chance to speak. You’ll automatically sound calmer & more positive!"
+      "type": "flashcards",
+      "title": "Reverse Recall Practice",
+      "cards": [
+        {
+          "term": "Hobby: painting",
+          "definition": "Match phrase: ‘I love ______ .’"
+        },
+        {
+          "term": "City: Agra",
+          "definition": "Guess the line: ‘I’m from ______ .’"
+        },
+        {
+          "term": "Name: Aarti",
+          "definition": "Recall: ‘My name is ______.’"
+        }
+      ],
+      "audioPath": "assets/audio/lesson3_reverse_recall_practice.mp3"
     },
     {
-      "type": "image",
-      "imagePath": "assets/images/lesson3_friend_circle_fun_16x9.png",
-      "caption": "Friends or strangers—any introduction is simpler with a smile & calm mind!"
+      "type": "text_card",
+      "title": "Lesson 3 Recap",
+      "body": "1) Name, place, job/studies, hobbies are 4 pillars of a self-intro\n2) Keep sentences short: ‘I’m... I love...’\n3) Positive detail adds warmth\n4) Hindi mix is fine, but clarity is most important",
+      "audioPath": "assets/audio/lesson3_text_card_recap.mp3"
     },
     {
-      "type": "roleplay",
-      "text": "Role-play: You’re joining a friend circle for the first time. Practice a quick, positive introduction about yourself."
+      "type": "mentor_explain",
+      "text": "Congratulations! अब आप अपना परिचय ज़्यादा confidence से दे पाएँगे. Next lesson में हम simple questions और answers की practice करेंगे—‘Where are you from?’ ‘What do you do?’ वगैरह. Ready?",
+      "imagePath": "assets/images/lesson3_mentor_ready.png",
+      "audioPath": "assets/audio/lesson3_mentor_outro.mp3"
     },
     {
-      "type": "badge",
-      "title": "💎 Double Pro Badge: Self-Intro Master",
-      "description": "You’ve done advanced intros, comedic stories, and micro-stories. Seriously pro-level now!",
-      "animation": "assets/animations/badge_unlocked.json"
+      "type": "next_lesson_preview",
+      "title": "Next: Asking & Answering Simple Questions",
+      "description": "Friendly Question & Answer आपकी conversations को आगे बढ़ाती है. चलिए सीखते हैं ‘What’s your job?’ ‘How’s life?’ जैसे सवालों के polite जवाब!",
+      "imagePath": null
+    },
+    {
+      "type": "badge_award",
+      "title": "Self-Intro Pro!",
+      "description": "Lesson 3 complete—अब आप बिना हिचकिचाहट के अपना परिचय दे सकते हैं! Keep going for deeper fluency!\n\n(Share your new badge on our community feed!)",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson3_badge_award.mp3"
     }
   ]
 }

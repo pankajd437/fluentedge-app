@@ -13,12 +13,10 @@ const List<Map<String, dynamic>> beginnerCourses = [
     'tag': kFreeCourseTag,
     'description':
         'Start speaking immediately with simple, everyday dialogues. No grammar, just practical conversations.',
-    // Explicitly define "lessons" as a List<Map<String, dynamic>> to avoid type issues
     'lessons': <Map<String, dynamic>>[
       {
         'lessonId': 'beginner_001_lesson_001',
         'title': 'Welcome & Course Introduction',
-        /// CHANGED KEY from "lessonActivities" → "activities"
         'activities': [
           {
             'type': 'dialogue_reconstruction',
@@ -54,18 +52,75 @@ const List<Map<String, dynamic>> beginnerCourses = [
           },
         ],
       },
-      {'lessonId': 'beginner_001_lesson_002', 'title': 'Simple Greetings & Goodbyes'},
-      {'lessonId': 'beginner_001_lesson_003', 'title': 'Introducing Yourself Confidently'},
-      {'lessonId': 'beginner_001_lesson_004', 'title': 'Asking Simple Questions'},
-      {'lessonId': 'beginner_001_lesson_005', 'title': 'Responding Clearly & Politely'},
-      {'lessonId': 'beginner_001_lesson_006', 'title': 'Practical Dialogues: Buying Things'},
-      {'lessonId': 'beginner_001_lesson_007', 'title': 'Practical Dialogues: Asking Directions'},
-      {'lessonId': 'beginner_001_lesson_008', 'title': 'Role-play: Daily Life Conversations'},
-      {'lessonId': 'beginner_001_lesson_009', 'title': 'Speaking Challenge: Small Talk Practice'},
-      {'lessonId': 'beginner_001_lesson_010', 'title': 'Reflection: How Confident Are You Now?'},
-      {'lessonId': 'beginner_001_lesson_011', 'title': 'Mini-Project: Record a Daily Dialogue'},
-      {'lessonId': 'beginner_001_lesson_012', 'title': 'Final Showcase: Everyday Conversations'},
-      {'lessonId': 'beginner_001_lesson_013', 'title': 'Earn Your Badge: Conversation Starter'},
+      {
+        'lessonId': 'beginner_001_lesson_002',
+        'title': 'Getting Immediate Help in Public',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_003',
+        'title': 'Introducing Yourself Confidently',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_004',
+        'title': 'Asking Simple Questions',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_005',
+        'title': 'Responding Clearly & Politely',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_006',
+        'title': 'Making Small Talk That Feels Natural',
+      },
+      // Removed lesson 7 as requested
+      {
+        'lessonId': 'beginner_001_lesson_007',
+        'title': 'Ordering Food Confidently',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_008',
+        'title': 'Asking & Giving Directions Clearly',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_009',
+        'title': 'Talking About Family & Where You’re From',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_010',
+        'title': 'Describing Your Daily Life',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_011',
+        'title': 'Phone & Video Call Basics',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_012',
+        'title': 'Speak in Real Life Today! — Confidence Practice Lab',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_013',
+        'title': 'Handling Awkward Moments Gracefully',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_014',
+        'title': 'When You Don’t Understand Someone',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_015',
+        'title': 'Expressing Feelings & Reactions in Conversation',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_016',
+        'title': 'Saying Yes, No & Maybe with Confidence',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_017',
+        'title': 'English for Festive Wishes & Invitations',
+      },
+      {
+        'lessonId': 'beginner_001_lesson_018',
+        'title': 'Your English Journey: Revision & Celebration!',
+      },
     ],
   },
   {
@@ -478,7 +533,8 @@ const List<Map<String, dynamic>> beginnerCourses = [
         'activities': [
           {
             'type': 'fill_in_the_blanks',
-            'sentence': "I'm feeling ______ (nervous/brave) about speaking in front of people.",
+            'sentence':
+                "I'm feeling ______ (nervous/brave) about speaking in front of people.",
             'correctWord': "nervous",
             'imagePath': "assets/images/stage_fear_scene.png",
           },

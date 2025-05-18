@@ -61,28 +61,27 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
   /// Attempts to load recommended courses from the backend
   /// Falls back to local Hive data if needed
   Future<void> _loadRecommendedCourses() async {
-    // If you have a userId stored in UserState, use that for backend calls
-    final userId = await UserState.getUserId(); // or read from Hive if needed
+    final userId = await UserState.getUserId();
     if (userId == null || userId.isEmpty) {
       debugPrint("⚠️ userId not found. Fallback to local recommended logic.");
       _loadRecommendedCoursesFallback();
       return;
     }
 
-    final url = Uri.parse("${ApiConfig.local}/api/v1/user/$userId/recommendations");
+    final url =
+        Uri.parse("${ApiConfig.local}/api/v1/user/$userId/recommendations");
     try {
       final response = await http.get(url);
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        // Expecting data to be a list of course objects
         if (data is List) {
           setState(() {
             matchedCourses = List<Map<String, dynamic>>.from(data);
           });
 
-          // If backend returned an empty list, fallback to local
           if (matchedCourses.isEmpty) {
-            debugPrint("No recommended courses from backend. Fallback to local data.");
+            debugPrint(
+                "No recommended courses from backend. Fallback to local data.");
             _loadRecommendedCoursesFallback();
           }
         } else {
@@ -90,7 +89,8 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
           _loadRecommendedCoursesFallback();
         }
       } else {
-        debugPrint("❌ Failed to fetch recommended courses: ${response.statusCode}");
+        debugPrint(
+            "❌ Failed to fetch recommended courses: ${response.statusCode}");
         _loadRecommendedCoursesFallback();
       }
     } catch (e) {
@@ -173,7 +173,9 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
                 ),
               ),
               const SizedBox(height: 12),
-              ...matchedCourses.map((course) => _buildRecommendedCard(course)).toList(),
+              ...matchedCourses
+                  .map((course) => _buildRecommendedCard(course))
+                  .toList(),
               const SizedBox(height: 30),
             ],
 
@@ -234,51 +236,11 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
   }
 
   Widget _buildStreakCard() {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(14),
-        boxShadow: kCardBoxShadow,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                kDailyStreakText,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: kPrimaryIconBlue,
-                ),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                "🔥 $currentStreak-Day Streak",
-                style: const TextStyle(
-                  fontSize: 13.5,
-                  color: Colors.black87,
-                ),
-              ),
-            ],
-          ),
-          const Icon(Icons.local_fire_department,
-              color: Colors.orange, size: 34),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildRecommendedCard(Map<String, dynamic> course) {
-    return GestureDetector(
-      onTap: () => GoRouter.of(context).push('/courseDetail', extra: course),
+    return Material(
+      elevation: 4, // <-- Added elevation to make card appear raised
+      borderRadius: BorderRadius.circular(14),
       child: Container(
         width: double.infinity,
-        margin: const EdgeInsets.only(bottom: 12),
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -286,36 +248,82 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
           boxShadow: kCardBoxShadow,
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // Assuming backend or local fallback includes 'icon' & 'color'
-            // Otherwise you may handle safely if missing
-            Icon(course['icon'], color: course['color'], size: 28),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    course['title'],
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 14,
-                    ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  kDailyStreakText,
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: kPrimaryIconBlue,
                   ),
-                  const SizedBox(height: 6),
-                  Text(
-                    course['description'],
-                    style: const TextStyle(
-                      fontSize: 13,
-                      color: Colors.black54,
-                    ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  "🔥 $currentStreak-Day Streak",
+                  style: const TextStyle(
+                    fontSize: 13.5,
+                    color: Colors.black87,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            const Icon(Icons.arrow_forward_ios_rounded,
-                size: 18, color: kPrimaryIconBlue),
+            const Icon(Icons.local_fire_department,
+                color: Colors.orange, size: 34),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRecommendedCard(Map<String, dynamic> course) {
+    return GestureDetector(
+      onTap: () => GoRouter.of(context).push('/courseDetail', extra: course),
+      child: Material(
+        elevation: 4, // <-- Added elevation to make card appear raised
+        borderRadius: BorderRadius.circular(14),
+        child: Container(
+          width: double.infinity,
+          margin: const EdgeInsets.only(bottom: 12),
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(14),
+            boxShadow: kCardBoxShadow,
+          ),
+          child: Row(
+            children: [
+              Icon(course['icon'], color: course['color'], size: 28),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      course['title'],
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      course['description'],
+                      style: const TextStyle(
+                        fontSize: 13,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(Icons.arrow_forward_ios_rounded,
+                  size: 18, color: kPrimaryIconBlue),
+            ],
+          ),
         ),
       ),
     );
@@ -329,43 +337,47 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
   ) {
     return GestureDetector(
       onTap: () => GoRouter.of(context).push(route),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              color.withOpacity(0.2),
-              Colors.white.withOpacity(0.1),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: color.withOpacity(0.3)),
-          boxShadow: [
-            BoxShadow(
-              color: color.withOpacity(0.2),
-              blurRadius: 12,
-              offset: const Offset(0, 4),
+      child: Material(
+        elevation: 4, // <-- Added elevation to make tile appear raised
+        borderRadius: BorderRadius.circular(14),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                color.withOpacity(0.2),
+                Colors.white.withOpacity(0.1),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
-          ],
-        ),
-        padding: const EdgeInsets.all(18),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, color: color, size: 36),
-            const SizedBox(height: 12),
-            Text(
-              title,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 13.5,
-                fontWeight: FontWeight.w600,
-                color: Colors.black87,
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: color.withOpacity(0.3)),
+            boxShadow: [
+              BoxShadow(
+                color: color.withOpacity(0.2),
+                blurRadius: 12,
+                offset: const Offset(0, 4),
               ),
-            ),
-          ],
+            ],
+          ),
+          padding: const EdgeInsets.all(18),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, color: color, size: 36),
+              const SizedBox(height: 12),
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 13.5,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black87,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

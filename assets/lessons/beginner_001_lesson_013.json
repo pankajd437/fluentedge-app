@@ -1,0 +1,424 @@
+{
+  "lessonId": "beginner_001_lesson_013",
+  "title": "Handling Awkward Moments Gracefully",
+  "level": "beginner",
+  "themeColor": "#4A90E2",
+  "xpTotal": 500,
+  "objectives": [
+    "Recognize common awkward moments in English conversations",
+    "Learn quick, simple phrases to recover politely",
+    "Gain confidence through real-life scenario practice",
+    "Build emotional resilience—mistakes are normal!"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": [
+      "en",
+      "hi"
+    ],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "awkward_moment_hero",
+    "title": "Awkward Moment Hero",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+    {
+      "type": "mentor_intro",
+      "text": "नमस्ते! Welcome to Lesson 13: ‘Handling Awkward Moments Gracefully.’ कभी English बोलते हुए word भूल जाएँ, समझ न आए, या कुछ गलत बोल दें? Today we’ll learn practical steps to stay calm and recover quickly. Ready?",
+      "imagePath": "assets/images/lesson13_intro.png",
+      "audioPath": "assets/audio/lesson13_intro.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "4 Common Awkward Moments",
+      "body": "1) Forgetting a word\n2) Not understanding someone\n3) Misunderstanding the meaning\n4) Saying something incorrect or mispronouncing\n\nकोई बात नहीं—let’s learn quick solutions for each!",
+      "audioPath": "assets/audio/lesson13_text_card_1.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Mistakes happen! Don’t freeze—use short phrases to clarify. ‘I’m sorry, what did you say?’ or ‘Sorry, I forgot the word.’ Remember, everyone faces these moments, so stay calm!",
+      "imagePath": "assets/images/lesson13_mentor_explain_intro.png",
+      "audioPath": "assets/audio/lesson13_mentor_explain_intro.mp3"
+    },
+    {
+      "type": "poll",
+      "question": "Which awkward moment do you fear most?",
+      "options": [
+        "Forgetting a word mid-sentence",
+        "Not understanding the other person",
+        "Mispronouncing words",
+        "Saying something incorrect"
+      ],
+      "dynamicFeedback": {
+        "0": "Use a filler: ‘Umm, sorry, I forgot the English word.’",
+        "1": "Ask politely: ‘Could you repeat slowly, please?’",
+        "2": "Just say: ‘Sorry, my pronunciation is not perfect yet!’",
+        "3": "Correct quickly: ‘Oops, that’s not what I meant!’"
+      },
+      "imagePath": "assets/images/lesson13_poll_fears.png"
+    },
+    {
+      "type": "today_vocabulary",
+      "vocabItems": [
+        {
+          "word": "Repeat",
+          "meaning": "To say again, e.g. “Could you repeat that, please?”",
+          "image": "assets/images/lesson13_vocab_repeat.png"
+        },
+        {
+          "word": "Misunderstand",
+          "meaning": "Not catching the correct meaning: “Sorry, I misunderstood.”",
+          "image": "assets/images/lesson13_vocab_misunderstand.png"
+        },
+        {
+          "word": "Meant",
+          "meaning": "Intended meaning: “I meant to say __.”",
+          "image": "assets/images/lesson13_vocab_meant.png"
+        },
+        {
+          "word": "Pronounce",
+          "meaning": "How you say a word: “I can’t pronounce this well.”",
+          "image": "assets/images/lesson13_vocab_pronounce.png"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "text": "First awkward situation: forgetting a word. Simply say: “Umm, sorry, I forgot the word.” Or describe it briefly. Relax—people often help guess the word!",
+      "imagePath": "assets/images/lesson13_forget_word.png",
+      "audioPath": "assets/audio/lesson13_mentor_explain_forget.mp3"
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson13_scenario_forget.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson13_forget_scene.png",
+          "text": "**Scenario 1: Forgot a Word**\n\nYou: “I need… umm… oh sorry, I forgot the English word! It’s the thing we use to cut paper...”\nShopkeeper: “Scissors?”\nYou: “Yes, scissors! Thank you. Could I have one, please?”\n\n**Key Learning**: Describe or gesture if you forget the word—stay calm!"
+        }
+      ]
+    },
+    {
+      "type": "flashcards",
+      "title": "Forgetting a Word – Quick Phrases",
+      "cards": [
+        {
+          "term": "I forgot the word",
+          "definition": "Immediate phrase to admit forgetting. “Sorry, I forgot the word.”",
+          "audio": "assets/audio/lesson13_flashcard_forgotword.mp3"
+        },
+        {
+          "term": "It’s like...",
+          "definition": "Give a hint or describe function. “It’s like a tool for cutting.”",
+          "audio": "assets/audio/lesson13_flashcard_itslike.mp3"
+        },
+        {
+          "term": "Could you help me?",
+          "definition": "Ask them to guess. “Could you help me find the right word?”",
+          "audio": "assets/audio/lesson13_flashcard_couldyouhelp.mp3"
+        }
+      ]
+    },
+    {
+      "type": "sentence_construction",
+      "words": [
+        "Oh",
+        "sorry,",
+        "I",
+        "forgot",
+        "the",
+        "word!"
+      ],
+      "correctOrder": [
+        "Oh",
+        "sorry,",
+        "I",
+        "forgot",
+        "the",
+        "word!"
+      ],
+      "imagePath": "assets/images/lesson13_sentence_construct.png"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Second awkward situation: not understanding the other person. Don’t just nod—ask politely: “Could you repeat slowly?” या “I’m sorry, I didn’t catch that.”",
+      "imagePath": "assets/images/lesson13_mentor_explain_didntget.png",
+      "audioPath": "assets/audio/lesson13_mentor_explain_didntget.mp3"
+    },
+    {
+      "type": "roleplay",
+      "title": "Scenario 2: Not Understanding Someone",
+      "scenes": [
+        {
+          "userLine": "Hello, can you tell me the directions again?",
+          "mentorLine": "Sure, go straight and then turn left at the café.",
+          "mentorTip": "If you don’t get it, say: ‘Could you repeat slowly, please?’"
+        },
+        {
+          "userLine": "I’m sorry, I didn’t catch that. Could you repeat slowly?",
+          "mentorLine": "Yes, go straight, then turn left.",
+          "mentorTip": "See how politely you asked them to slow down!"
+        }
+      ],
+      "imagePath": "assets/images/lesson13_roleplay_directions.png",
+      "audioPath": "assets/audio/lesson13_roleplay_directions.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Mentor Feedback",
+      "body": "Great! Asking someone to repeat slowly is a powerful strategy. You can smile or nod while asking—it shows friendliness and calmness!",
+      "audioPath": "assets/audio/lesson13_mentor_feedback_roleplay2.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Let’s add another scenario for misunderstanding the speaker’s meaning (not just hearing). Maybe you heard the words but took it incorrectly. No worries—just clarify quickly!",
+      "imagePath": "assets/images/lesson13_mentor_explain_meaning.png",
+      "audioPath": "assets/audio/lesson13_mentor_explain_meaning.mp3"
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson13_scenario_misunderstand.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson13_scenario_misunderstanding.png",
+          "text": "**Scenario 3: Misunderstanding the Meaning**\n\nFriend: “Hey, let’s grab ‘dessert’ later!”\nYou (confused): “Oh! You mean ‘desert’—like sandy place?”\nFriend: “No, no. ‘Dessert’ as in sweets after a meal!”\nYou: “Oh sorry, I misunderstood. Yes, dessert sounds great!”\n\n**Key Learning**: If you confuse the meaning, say: “Sorry, I misunderstood.” Then correct it."
+        }
+      ]
+    },
+    {
+      "type": "sentence_construction",
+      "words": [
+        "I’m",
+        "sorry,",
+        "could",
+        "you",
+        "repeat",
+        "that",
+        "slowly,",
+        "please?"
+      ],
+      "correctOrder": [
+        "I’m",
+        "sorry,",
+        "could",
+        "you",
+        "repeat",
+        "that",
+        "slowly,",
+        "please?"
+      ],
+      "imagePath": "assets/images/lesson13_sentence_construct_repeat_request.png"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "Could you ______ (repeat/eat) that, please? I didn’t understand.",
+      "correctWord": "repeat",
+      "imagePath": "assets/images/lesson13_fill_blank.png",
+      "hints": [
+        "You want them to say it again: 'repeat!'"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "Yes! ‘Repeat’ is the right phrase to ask them to say it again.",
+        "wrongText": "‘Eat’ doesn’t make sense here!"
+      },
+      "submitLabel": "Check Answer"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Third awkward situation: saying something incorrect (or rude) by mistake. Quick fix: ‘Oops, sorry! I meant…’ Then continue. Check out a café example.",
+      "imagePath": "assets/images/lesson13_mentor_explain_incorrect.png",
+      "audioPath": "assets/audio/lesson13_mentor_explain_incorrect.mp3"
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson13_scenario_incorrect.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson13_cafe_incorrect.png",
+          "text": "**Scenario 4: Incorrect Phrase in a Café**\n\nYou: “I want a big coffee… oh, sorry, I meant a large coffee, please!”\nServer: “Sure, no problem.”\nYou: “I said ‘big coffee’—that sounded odd. Thank you for understanding!”\n\n**Key Learning**: Quickly correct yourself—‘I meant ___.’ Don’t over-apologize."
+        }
+      ]
+    },
+    {
+      "type": "flashcards",
+      "title": "Correcting Mistakes – Quick Phrases",
+      "cards": [
+        {
+          "term": "Oops, sorry!",
+          "definition": "Immediate reaction if you used a wrong word. ‘Oops, sorry!’",
+          "audio": "assets/audio/lesson13_flashcard_oopssorry.mp3"
+        },
+        {
+          "term": "I meant ___",
+          "definition": "E.g. ‘I meant large coffee, not big coffee.’",
+          "audio": "assets/audio/lesson13_flashcard_imeant.mp3"
+        },
+        {
+          "term": "That’s not what I meant",
+          "definition": "Use if it sounded rude. ‘That’s not what I meant. Sorry!’",
+          "audio": "assets/audio/lesson13_flashcard_notmeant.mp3"
+        }
+      ]
+    },
+    {
+      "type": "poll",
+      "question": "When you say something wrong, do you usually:",
+      "options": [
+        "Stay silent, feeling embarrassed",
+        "Immediately correct yourself",
+        "Explain in Hindi",
+        "Ignore it"
+      ],
+      "dynamicFeedback": {
+        "0": "No need to feel ashamed. Quick fix is enough!",
+        "1": "Perfect approach—correct & move on!",
+        "2": "Hindi is okay, but short English fix helps build confidence!",
+        "3": "Better to clarify or confusion remains!"
+      },
+      "imagePath": "assets/images/lesson13_poll_incorrect.png"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Fourth awkward moment: pronunciation error causing confusion. Don’t panic— ‘Sorry, my pronunciation is not perfect. I meant ___.’ Quick fix. Let’s see a phone call example!",
+      "imagePath": "assets/images/lesson13_mentor_explain_pronounce.png",
+      "audioPath": "assets/audio/lesson13_mentor_explain_pronounce.mp3"
+    },
+    {
+      "type": "roleplay",
+      "title": "Scenario 5: Pronunciation Error in a Phone Call",
+      "scenes": [
+        {
+          "userLine": "Hello, is that Ms. Rina? (mispronounces ‘Rina’ as ‘Ree-nah’)",
+          "mentorLine": "Yes, Rina here. Sorry, did you say my name differently?",
+          "mentorTip": "If you realize the mistake, correct: ‘Oh sorry, I meant Rina.’"
+        },
+        {
+          "userLine": "Oh sorry, my pronunciation was off. I meant Rina!",
+          "mentorLine": "No worries! How can I help you?",
+          "mentorTip": "Short, calm correction works best."
+        }
+      ],
+      "imagePath": "assets/images/lesson13_roleplay_phonecall.png",
+      "audioPath": "assets/audio/lesson13_roleplay_phonecall.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Mentor Feedback",
+      "body": "Well done! Quick correction helps you move on. You can also smile gently or tilt your head in apology—it shows you’re sincere and calm!",
+      "audioPath": "assets/audio/lesson13_mentor_feedback_roleplay5.mp3"
+    },
+    {
+      "type": "audio_clip",
+      "title": "Correct vs. Incorrect Pronunciation",
+      "clips": [
+        {
+          "label": "Incorrect",
+          "audio": "assets/audio/lesson13_incorrect_pronunciation.mp3",
+          "transcript": "“Hello, is that Ree-nah?”"
+        },
+        {
+          "label": "Correct",
+          "audio": "assets/audio/lesson13_correct_pronunciation.mp3",
+          "transcript": "“Hello, is that Rina?”"
+        }
+      ]
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Say out loud: ‘Sorry, my pronunciation is not perfect. I meant __.’",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson13_speaking_prompt_phone.png",
+      "audioPath": "assets/audio/lesson13_prompt_pronunciation.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Awkward moments happen! The key is calmness. Use short phrases: ‘I’m sorry, let me rephrase,’ or ‘Could you repeat?’ सिर्फ़ 2-3 words, and you’re back on track!",
+      "imagePath": "assets/images/lesson13_mentor_explain_calm.png",
+      "audioPath": "assets/audio/lesson13_mentor_explain_calm.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Emotional Boost",
+      "body": "Remember, you’re allowed to make mistakes. किसी को perfect English नहीं आती. हर awkward moment एक practice opportunity है. Keep smiling, keep trying!",
+      "audioPath": "assets/audio/lesson13_emotional_boost.mp3"
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson13_scenario_mixup.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson13_scenario_mixup.png",
+          "text": "**Scenario 6: Meeting Someone New**\n\nYou: “Hi, I’m Rahul. Sorry if my English isn’t very good yet.”\nThey: “That’s okay! Nice to meet you, Rahul.”\nYou: “I might say something wrong—please let me know, okay?”\nThey: “Sure, no worries. We’re here to learn!”\n\n**Key Learning**: Preemptive honesty—‘My English isn’t very good yet’—helps set a friendly tone."
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Finally, a hint: थोड़ी Hindi mix is also fine. Example: “I’m sorry, thoda गलत बोल दिया. I meant to say ___.” People appreciate your attempt!",
+      "imagePath": "assets/images/lesson13_mentor_explain_hinglish.png",
+      "audioPath": "assets/audio/lesson13_mentor_explain_hinglish.mp3"
+    },
+    {
+      "type": "sentence_construction",
+      "words": [
+        "I",
+        "meant",
+        "to",
+        "say",
+        "this,",
+        "sorry!"
+      ],
+      "correctOrder": [
+        "I",
+        "meant",
+        "to",
+        "say",
+        "this,",
+        "sorry!"
+      ],
+      "imagePath": "assets/images/lesson13_sentence_construct2.png"
+    },
+    {
+      "type": "poll",
+      "question": "Which short phrase do you like best for awkward corrections?",
+      "options": [
+        "I meant __",
+        "Could you repeat?",
+        "Oops, that’s not what I meant",
+        "All are useful"
+      ],
+      "dynamicFeedback": {
+        "0": "Simple & direct correction is great!",
+        "1": "Polite request to clarify—awesome!",
+        "2": "Yes, clarifies your real meaning quickly!",
+        "3": "Exactly, each phrase suits a different situation!"
+      },
+      "imagePath": "assets/images/lesson13_poll_corrections.png"
+    },
+    {
+      "type": "text_card",
+      "title": "Mini Challenge",
+      "body": "Practice 1 scenario in real life:\n• If you forget a word, say: ‘Sorry, I forgot the English word.’\n• If you mispronounce, say: ‘Sorry, I meant ___.’\n\nUse it once today, see how others respond!",
+      "audioPath": "assets/audio/lesson13_mini_challenge.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Quick Recap Before You Earn Your Badge",
+      "body": "1) Forgot a word? ‘I forgot the word. It’s like…’\n2) Didn’t understand? ‘Could you repeat slowly?’\n3) Misspoke? ‘Oops, I meant…’\n4) Misunderstood meaning? ‘Sorry, I misunderstood.’\n\nStay calm, smile, and move on!",
+      "audioPath": "assets/audio/lesson13_recap_card.mp3"
+    },
+    {
+      "type": "badge_award",
+      "title": "Awkward Moment Hero",
+      "description": "Congratulations! You can handle awkward English moments gracefully now. Mistakes aren’t scary—they’re stepping stones!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson13_badge_award.mp3"
+    }
+  ]
+}

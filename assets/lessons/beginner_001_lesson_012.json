@@ -1,0 +1,312 @@
+{
+  "lessonId": "beginner_001_lesson_012",
+  "title": "Speak in Real Life Today! — Confidence Practice Lab",
+  "level": "beginner",
+  "themeColor": "#4A90E2",
+  "xpTotal": 500,
+  "objectives": [
+    "Build the courage to speak English in real-world situations",
+    "Learn polite, practical phrases for daily interactions",
+    "Embrace small mistakes and keep the conversation going",
+    "Bridge the gap from practice-mode to real-life usage"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": ["en", "hi"],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "real_life_speaker",
+    "title": "Real-Life Speaker",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+    {
+      "type": "mentor_intro",
+      "text": "Welcome to Lesson 12: “Speak in Real Life Today!” This is our Confidence Practice Lab. You’ve learned basic phrases and grammar—now it’s time to use them outside in the real world! थोड़ा Hindi mix and lots of English for real action.",
+      "imagePath": "assets/images/lesson12_intro.png",
+      "audioPath": "assets/audio/lesson12_mentor_intro_1.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Why This Lesson Is Important",
+      "body": "Many learners freeze when they face real conversations. Don’t worry—mistakes are normal. Focus on delivering your message. Mixing Hindi is okay too. The goal here? Jump from practice → real-life action!",
+      "audioPath": "assets/audio/lesson12_text_card_why.mp3"
+    },
+    {
+      "type": "poll",
+      "question": "What’s your biggest fear in REAL English conversations?",
+      "options": [
+        "I forget all words!",
+        "People speak too fast",
+        "I mix Hindi & English, feel awkward",
+        "No fear—I’m ready!"
+      ],
+      "dynamicFeedback": {
+        "0": "Try 1-2 short phrases you remember—don’t panic!",
+        "1": "Politely ask them to slow down: “Could you speak slower, please?”",
+        "2": "It’s okay! Hinglish is a stepping stone, keep speaking!",
+        "3": "Fantastic, let’s push further!"
+      },
+      "imagePath": "assets/images/lesson12_poll_fears.png"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Mistakes mean you tried—congratulations! आप 100 times आगे हो than someone who stays silent. Today, we’ll see 5 real-life practice zones with short phrases. Jump in, make small talk, and improve!",
+      "imagePath": "assets/images/lesson12_mentor_explain_mistakes.png",
+      "audioPath": "assets/audio/lesson12_mentor_explain_mistakes.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "5 Real-Life Practice Zones",
+      "body": "1) At a Shop\n2) With a Family Member\n3) At a Tea Stall / Café\n4) With a Stranger (park)\n5) On a Phone Call\n\nUse short phrases, polite tone, and smile. We’ll give you templates, then you try in real life!",
+      "audioPath": "assets/audio/lesson12_5zones_card.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Let’s begin with Zone 1: At a Shop. You’ll ask price, greet, and end politely. Remember: “Hello, how much is this?” Simple line, big impact!",
+      "imagePath": "assets/images/lesson12_mentor_explain_shop.png",
+      "audioPath": "assets/audio/lesson12_mentor_explain_shop.mp3"
+    },
+    {
+      "type": "today_vocabulary",
+      "vocabItems": [
+        {
+          "word": "Sir / Ma’am",
+          "meaning": "Used for polite address: “Excuse me, Sir?”",
+          "image": "assets/images/lesson12_vocab_sir.png"
+        },
+        {
+          "word": "How much",
+          "meaning": "When asking price: “How much is this, please?”",
+          "image": "assets/images/lesson12_vocab_howmuch.png"
+        },
+        {
+          "word": "Please",
+          "meaning": "Adds politeness: “Could you pack it, please?”",
+          "image": "assets/images/lesson12_vocab_please.png"
+        },
+        {
+          "word": "Thank you",
+          "meaning": "Close on a polite note: “Thank you for your help!”",
+          "image": "assets/images/lesson12_vocab_thanks.png"
+        }
+      ]
+    },
+    {
+      "type": "roleplay",
+      "title": "Zone 1 Roleplay: At a Shop",
+      "scenes": [
+        {
+          "userLine": "Hello, how much is this?",
+          "mentorLine": "It’s 50 rupees.",
+          "mentorTip": "Sound confident: ‘Hello, how much is this, please?’"
+        },
+        {
+          "userLine": "Okay, I’ll take it. Can you pack it?",
+          "mentorLine": "Sure, here you go.",
+          "mentorTip": "Remember to say ‘please’: ‘Can you pack it, please?’"
+        }
+      ],
+      "imagePath": "assets/images/lesson12_roleplay_shop.png",
+      "audioPath": "assets/audio/lesson12_roleplay_shop.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Try saying out loud: “Excuse me, Sir, how much is this?”",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson12_speaking_prompt_shop.png",
+      "audioPath": "assets/audio/lesson12_prompt_shop.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Next, Zone 2: Talk with a Family Member in English, even if it’s for 2 lines. It might feel strange, but it helps you warm up! Example: “Mom, I’m going out for a walk,” or “Papa, I finished my homework.”",
+      "imagePath": "assets/images/lesson12_family_member.png",
+      "audioPath": "assets/audio/lesson12_mentor_explain_family.mp3"
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson12_scenario_family.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson12_scenario_family.png",
+          "text": "**Scenario: With a Family Member**\n\nYou: “Mom, I’m heading out to meet a friend. I’ll be back by 7 PM.”\nMom: “Alright, take care.”\nYou: “Sure. Do you need anything from the shop?”\nMom: “No, I’m good. Thank you!”\n\n**Key Learning**: Small daily lines in English—totally fine to mix some Hindi if stuck!"
+        }
+      ]
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Practice: ‘Mom, I’m going out for a walk. I’ll be back by ___ PM.’",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson12_speaking_prompt_family.png",
+      "audioPath": "assets/audio/lesson12_prompt_family.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Zone 3: At a Tea Stall or Café. Order politely, say ‘please’ and ‘thank you.’ Even short lines like ‘Bhaiya, ek chai dena’ can become ‘Could I have one tea, please?’",
+      "imagePath": "assets/images/lesson12_cafe.png",
+      "audioPath": "assets/audio/lesson12_mentor_explain_cafe.mp3"
+    },
+    {
+      "type": "roleplay",
+      "title": "Zone 3 Roleplay: Tea Stall/Café",
+      "scenes": [
+        {
+          "userLine": "Hi, can I get a cup of tea, please?",
+          "mentorLine": "Yes, sure. Anything else?",
+          "mentorTip": "Add ‘please’ for politeness!"
+        },
+        {
+          "userLine": "No, that’s all. Thank you!",
+          "mentorLine": "Here you go, enjoy.",
+          "mentorTip": "End with a friendly ‘thank you!’"
+        }
+      ],
+      "imagePath": "assets/images/lesson12_roleplay_cafe.png",
+      "audioPath": "assets/audio/lesson12_roleplay_cafe.mp3"
+    },
+    {
+      "type": "sentence_construction",
+      "words": ["Could", "I", "have", "a", "cup", "of", "tea,", "please?"],
+      "correctOrder": ["Could", "I", "have", "a", "cup", "of", "tea,", "please?"],
+      "imagePath": "assets/images/lesson12_sentence_construction_tea.png"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Zone 4: With a Stranger (like in a park). You can start by asking the time, or directions. Be polite and brief. Example: “Excuse me, do you know what time it is?”",
+      "imagePath": "assets/images/lesson12_stranger_park.png",
+      "audioPath": "assets/audio/lesson12_mentor_explain_stranger.mp3"
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson12_scenario_stranger.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson12_stranger_scenario.png",
+          "text": "**Scenario: Stranger in a Park**\n\nYou: “Excuse me, could you tell me how far the main gate is?”\nStranger: “It’s about 200 meters ahead.”\nYou: “Great, thanks! Also, do you know what time it is?”\nStranger: “It’s 5:30 PM.”\n\n**Key Learning**: Keep it short and simple, always add a ‘thank you’ or ‘thanks!’"
+        }
+      ]
+    },
+    {
+      "type": "today_vocabulary",
+      "vocabItems": [
+        {
+          "word": "Excuse me",
+          "meaning": "Use before asking: 'Excuse me, could you help?'",
+          "image": "assets/images/lesson12_vocab_excuse.png"
+        },
+        {
+          "word": "Could you tell me",
+          "meaning": "'Could you tell me how far the gate is?' Polite phrase for directions.",
+          "image": "assets/images/lesson12_vocab_couldyoutell.png"
+        },
+        {
+          "word": "Thank you so much",
+          "meaning": "Extra polite: 'Thank you so much for your help!'",
+          "image": "assets/images/lesson12_vocab_thankyoumuch.png"
+        }
+      ]
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Practice: ‘Excuse me, do you know what time it is?’",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson12_speaking_prompt_stranger.png",
+      "audioPath": "assets/audio/lesson12_prompt_stranger.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Zone 5: On a Phone Call—call a friend or family member and try 2-3 lines in English. Basic steps: Greet, ask a question, end politely. You got this!",
+      "imagePath": "assets/images/lesson12_phone_call.png",
+      "audioPath": "assets/audio/lesson12_mentor_explain_phone.mp3"
+    },
+    {
+      "type": "roleplay",
+      "title": "Zone 5 Roleplay: Phone Call",
+      "scenes": [
+        {
+          "userLine": "Hey, how are you? Are you busy right now?",
+          "mentorLine": "I’m good! No, I’m free—tell me?",
+          "mentorTip": "Open with ‘Hey/Hello, how are you?’"
+        },
+        {
+          "userLine": "I just wanted to ask if you’re free this weekend.",
+          "mentorLine": "Yes, let’s plan something!",
+          "mentorTip": "Invite them or ask a quick question!"
+        }
+      ],
+      "imagePath": "assets/images/lesson12_roleplay_phone.png",
+      "audioPath": "assets/audio/lesson12_roleplay_phone.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "If You Get Stuck",
+      "body": "1) Pause and smile\n2) Use Hindi if needed, then switch back\n3) Ask them to repeat: “I’m sorry, could you say that again?”\n4) End with positivity: “Thank you for understanding!”",
+      "audioPath": "assets/audio/lesson12_stuck_tips.mp3"
+    },
+    {
+      "type": "audio_clip",
+      "title": "Fluent vs. Broken English Demo",
+      "clips": [
+        {
+          "label": "Broken: Fearful Tone",
+          "audio": "assets/audio/lesson12_broken_demo.mp3",
+          "transcript": "“Uh… Hello… how… how much… is… this?”"
+        },
+        {
+          "label": "Fluent: Confident Tone",
+          "audio": "assets/audio/lesson12_fluent_demo.mp3",
+          "transcript": "“Hello! How much is this, please?”"
+        }
+      ]
+    },
+    {
+      "type": "poll",
+      "question": "Hearing these clips, what do you think is the main difference?",
+      "options": [
+        "Confidence and politeness",
+        "Better grammar",
+        "Voice pitch",
+        "I’m not sure"
+      ],
+      "dynamicFeedback": {
+        "0": "Yes! Tone and clarity matter more than perfect grammar.",
+        "1": "Grammar helps, but tone & confidence are bigger factors.",
+        "2": "Pitch can help, but it’s not the main difference.",
+        "3": "Focus on short lines, confident tone!"
+      },
+      "imagePath": "assets/images/lesson12_poll_fluent.png"
+    },
+    {
+      "type": "text_card",
+      "title": "Emotional Support",
+      "body": "Mistake? Great job, you tried!\nYou’re 100x ahead of someone silent.\nOne English word a day keeps fear away.\nKeep going—you’re unstoppable!",
+      "audioPath": "assets/audio/lesson12_emotional_support.mp3"
+    },
+    {
+      "type": "sentence_construction",
+      "words": ["Could", "you", "repeat", "that", "please?"],
+      "correctOrder": ["Could", "you", "repeat", "that", "please?"],
+      "imagePath": "assets/images/lesson12_sentence_construct_repeat.png"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "If you try these 5 zones in real life—even 1 short conversation daily—you’ll see fast improvement. Don’t wait for perfection, jump in and speak!",
+      "imagePath": "assets/images/lesson12_mentor_explain_final.png",
+      "audioPath": "assets/audio/lesson12_mentor_explain_final.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Mini-Homework",
+      "body": "Today, pick 1 Zone (shop/family/tea stall/stranger/phone call) and use at least 2 lines of English. That’s all—just do it, no overthinking!",
+      "audioPath": "assets/audio/lesson12_homework.mp3"
+    },
+    {
+      "type": "badge_award",
+      "title": "Real-Life Speaker",
+      "description": "Congratulations! You’ve unlocked confidence to speak in real-life English scenarios. Celebrate your small steps—they lead to big success!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson12_badge_award.mp3"
+    }
+  ]
+}

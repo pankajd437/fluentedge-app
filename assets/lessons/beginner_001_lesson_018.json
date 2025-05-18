@@ -1,0 +1,150 @@
+{
+  "lessonId": "beginner_001_lesson_018",
+  "title": "Your English Journey: Revision & Celebration!",
+  "level": "beginner",
+  "themeColor": "#FFD700",
+  "xpTotal": 500,
+  "objectives": [
+    "Recap key practical phrases from all previous lessons",
+    "Celebrate progress and build final confidence",
+    "Offer a self-assessment quiz covering core real-life scenarios",
+    "Encourage learners to continue speaking English in everyday situations"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": ["en", "hi"],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "everyday_conversation_champion",
+    "title": "Everyday Conversation Champion",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+    {
+      "type": "mentor_intro",
+      "text": "Namaste and congratulations! आज हम पहुँचे हैं Lesson 18 पर—‘Your English Journey: Revision & Celebration!’ You’ve covered 17 lessons of practical, everyday English. Let’s review your big wins and celebrate your progress!",
+      "imagePath": "assets/images/lesson18_intro.png",
+      "audioPath": "assets/audio/lesson18_intro_mentor.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "A Quick Journey Recap",
+      "body": "You’ve learned:\n1) **Welcome & Immediate Help** (Lessons 1 & 2)\n2) **Introducing Yourself** (Lessons 3–5)\n3) **Small Talk, Ordering Food, Directions** (Lessons 6–8)\n4) **Family & Hometown + Phone Calls** (Lessons 9–10)\n5) **Shopping, Real-life Practice, Awkward Moments** (Lessons 11–13)\n6) **Clarifying, Expressing Feelings, Saying Yes/No/Maybe** (Lessons 14–16)\n7) **Festive Wishes & Invitations** (Lesson 17)\n\nNow, let’s consolidate everything in a final celebration!",
+      "audioPath": "assets/audio/lesson18_quick_journey_recap.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Across these lessons, you learned short, polite English phrases for daily life: ‘Could you help me?’, ‘Yes, of course!’, ‘Sorry, I didn’t catch that’, ‘I’m so happy for you!’, ‘Would you like to join us?’, and many more. ये छोटे-छोटे phrases आपकी conversation को effortless बना सकते हैं!",
+      "imagePath": "assets/images/lesson18_mentor_explain_highlights.png",
+      "audioPath": "assets/audio/lesson18_explain_highlights.mp3"
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson18_story_revision.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson18_revision.png",
+          "text": "**Scenario: A Day in Your English Life**\n\n1) You greet a coworker politely: “Hello, how are you?”\n2) You get help at a shop: “Could you show me where the snacks are, please?”\n3) You confirm directions: “I’m sorry, could you repeat that more slowly?”\n4) You invite a friend: “We’re celebrating a small get-together—would you like to join?”\n5) You respond to an awkward moment: “Oops, sorry, I meant to say...!”\n6) You express happiness: “Wow, that’s wonderful news!”\n\n**Key Learning**: All these phrases are from your previous lessons—see how they blend into one day’s conversations!"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Amazing, right? You’ve built a toolbox of English phrases for everyday life. अब आपके पास words हैं to handle public help, phone calls, family talk, festive wishes, and more! A genuine smile and short polite lines will take you far.",
+      "imagePath": "assets/images/lesson18_mentor_explain_toolbox.png",
+      "audioPath": "assets/audio/lesson18_explain_toolbox.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Self-Assessment Quiz – Revisit Your Skills",
+      "body": "Test yourself on key scenarios from lessons 1–17.\n\n1) How do you politely ask for directions if someone is speaking too fast?\n2) If you forgot a word mid-sentence, what short phrase can you use?\n3) How can you politely say ‘No’ to an invitation?\n4) Name one phrase for wishing someone on a festival.\n\nThink of your answers before the quiz activity!",
+      "audioPath": "assets/audio/lesson18_self_assessment_intro.mp3"
+    },
+    {
+      "type": "quiz",
+      "question": "Quick Quiz: Choose the best responses",
+      "options": [
+        "1) ‘Speak slow, you...’ 2) ‘Sorry, I blank…’ 3) ‘No, never!’ 4) ‘I festival you!’",
+        "1) ‘Could you speak more slowly, please?’ 2) ‘Oops, sorry, I forgot the word!’ 3) ‘I’d love to, but I’m busy’ 4) ‘Happy Diwali!’",
+        "1) ‘Repeat again or go away!’ 2) ‘I skip the word…’ 3) ‘No, no, no’ 4) ‘All festival same!’",
+        "None of these"
+      ],
+      "answerIndex": 1,
+      "hints": [
+        "Look for polite, short lines that match your lessons!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "allowRetry": true,
+      "encouragementOnFail": "Remember the polite and practical phrases from your lessons!"
+    },
+    {
+      "type": "poll",
+      "question": "Which everyday skill do you feel most confident about now?",
+      "options": [
+        "Inviting or saying no politely",
+        "Ordering or shopping conversations",
+        "Expressing emotions & clarifying misunderstandings",
+        "Wishing & explaining my festival traditions",
+        "All of them—I feel ready!"
+      ],
+      "dynamicFeedback": {
+        "0": "Great job! Your yes/no skills are strong—keep practicing short lines confidently.",
+        "1": "Awesome, everyday tasks will feel simpler now!",
+        "2": "That’s huge—you can handle awkward moments with polite phrases!",
+        "3": "Cool! Keep sharing your culture in short, simple English!",
+        "4": "Shabash—go use them in real-life conversations!"
+      },
+      "imagePath": "assets/images/lesson18_poll_confidence.png"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "No matter your favorite skill—remember, daily small practice is key. थोड़ा-सा भी English bolna, even mixing Hindi, boosts confidence! Aaj hum karenge final challenge to cement your learning and celebrate your journey!",
+      "imagePath": "assets/images/lesson18_mentor_explain_finalchallenge.png",
+      "audioPath": "assets/audio/lesson18_explain_finalchallenge.mp3"
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson18_story_success.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson18_feeling_proud.png",
+          "text": "**Scenario: Realizing Your Progress**\n\nYou meet a new colleague who speaks only English:\nYou greet them confidently, ask a few small-talk questions, even clarify if they speak fast. Later, you wish them for an upcoming festival—‘Merry Christmas in advance!’\n\nYou realize—this was all done in English without panic. That’s your success story!\n\n**Key Learning**: Your daily phrases make real conversations possible."
+        }
+      ]
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Final Speaking Challenge: briefly talk about your journey. For example: “I started shy, but now I can say hello, ask for help, and invite friends in English. I feel more confident!”",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson18_speaking_prompt_final.png",
+      "audioPath": "assets/audio/lesson18_speaking_prompt_final.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Free Text Practice: Craft Your Own Celebration Statement!",
+      "body": "Write a short paragraph or lines in English about your biggest improvement. Example:\n\n“I can order chai politely, say ‘No’ to invites calmly, and explain my festival easily.”\n\nNo fancy grammar needed—simple lines that show your growth are enough!",
+      "audioPath": "assets/audio/lesson18_free_text_practice.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Dekha—simple expressions, yet they show your entire progress! A little Hindi mix is fine if you get stuck. The key is you’re speaking up now—no more fear!",
+      "imagePath": "assets/images/lesson18_mentor_explain_finalcelebration.png",
+      "audioPath": "assets/audio/lesson18_explain_finalcelebration.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Lesson 18 Recap",
+      "body": "1) You recapped all 17 lessons\n2) You tested yourself with a short quiz\n3) You realized your everyday English toolkit is now strong\n4) You did a final speaking/writing challenge about your journey\n\nYeh pura course ab aapke haath mein hai—keep practicing daily!",
+      "audioPath": "assets/audio/lesson18_recap_card.mp3"
+    },
+    {
+      "type": "badge_award",
+      "title": "Everyday Conversation Champion",
+      "description": "Congratulations on completing all 18 lessons of ‘Everyday Conversations: Start Talking from Day One!’ You’ve built real confidence and practical English skills—go out and speak, unafraid!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson18_badge_award.mp3"
+    }
+  ]
+}

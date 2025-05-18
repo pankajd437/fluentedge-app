@@ -7,7 +7,7 @@
   "objectives": [
     "Ask strangers for help in English with confidence",
     "Balance politeness and directness without sounding rude",
-    "Blend short Hindi touches for comfort",
+    "Blend short हिंदी touches for comfort",
     "Feel calmer when stuck in unfamiliar places"
   ],
   "mentorDefaults": {
@@ -23,50 +23,54 @@
   "activities": [
     {
       "type": "mentor_intro",
-      "text": "Namaste and Welcome! Aaj hum seekhenge help maangna, bina awkward feel kiye. Iss lesson ke end mein, aap confidently bol paoge “Excuse me…” bina dar, bina tension ke!",
-      "imagePath": "assets/images/lesson1_course_intro.png"
+      "text": "नमस्ते और Welcome! ये ‘Everyday Conversations’ कोर्स का आपका पहला lesson है. आज हम सीखेंगे कैसे help माँगी जाए politely, बिना किसी बड़ी grammar complication के. पूरे कोर्स में हम Greetings, Self-Intro, Simple Questions जैसी छोटी-छोटी helpful lines सीखेंगे, ताकि आप तुरंत बातचीत कर सकें. चलिए शुरू करें!",
+      "imagePath": "assets/images/lesson1_course_intro.png",
+      "audioPath": "assets/audio/en/lesson1_mentor_intro01.mp3"
     },
     {
       "type": "scene_image",
-      "caption": "Imagine: Aap ek bade station mein ho, har koi busy dikh raha hai —aur aap bahar jane ka rasta dhoond rahe ho. Chahein aap thoda lost feel karo, par hum politely strangers se rasta puch sakte hain!",
-      "imagePath": "assets/images/lesson1_big_station_16x9.png"
+      "caption": "Imagine कीजिए: आप एक बड़े station में हैं—भीड़भाड़, confusing signs, और आपको exit ढूँढना है. थोड़ी घबराहट स्वाभाविक है, लेकिन कोई बात नहीं, हम strangers से मदद ले सकते हैं—polite होकर!",
+      "imagePath": "assets/images/lesson1_big_station_16x9.png",
+      "audioPath": "assets/audio/en/lesson1_scene_image01.mp3"
     },
     {
       "type": "mentor_explain",
-      "text": "Humara main goal: short, polite phrases use karna, jo logon se quick help dilaye. Fancy grammar chhod do — tone aur smile is enough!"
+      "text": "हमारा उद्देश्य है छोटे और polite English phrases use करना, ताकि लोग तुरंत समझें कि आपको help चाहिए और वो भी happily करें.",
+      "audioPath": "assets/audio/lesson1_mentor_explain01.mp3"
     },
     {
       "type": "today_vocabulary",
       "vocabItems": [
         {
           "word": "Excuse me",
-          "meaning": "Polite phrase to get attention, like ‘Maaf kijiye’ but English version.",
+          "meaning": "Polite ध्यान आकर्षित करने का phrase, हिंदी ‘माफ कीजिए’ जैसा.",
           "image": "assets/images/excuse_me.png"
         },
         {
           "word": "Lost",
-          "meaning": "When you can’t find your way (e.g., 'Mujhe raasta nahi pata').",
+          "meaning": "जब आपको रास्ता न पता हो: जैसे ‘मैं direction में उलझ गया हूं.’",
           "image": "assets/images/lost_sign.png"
         },
         {
           "word": "Guide",
-          "meaning": "To show or direct someone to a place or solution.",
+          "meaning": "किसी को रास्ता दिखाने या direction बताने का तरीका.",
           "image": "assets/images/guide_icon.png"
         }
       ]
     },
     {
       "type": "mentor_explain",
-      "text": "Yeh words yaad kar lo: ‘Excuse me’ (attention), ‘lost’ (confusion), and ‘guide’ (show way). Tone is must! Ab ek fill-in-the-blank try karein?"
+      "text": "ये words important हैं: ‘Excuse me’ (attention), ‘lost’ (confusion), ‘guide’ (direction). इनका सही इस्तेमाल आपको confident बनाएगा. चलिए fill-in-the-blanks करके देखें!",
+      "audioPath": "assets/audio/lesson1_mentor_explain02.mp3"
     },
     {
       "type": "fill_in_the_blanks",
-      "sentence": "Excuse me, main thoda ______ hoon. Could you guide me, please?",
+      "sentence": "Excuse me, I am a bit ______. Could you guide me, please?",
       "correctWord": "lost",
       "imagePath": "assets/images/help_request_scene_16x9.png",
       "hints": [
-        "Hindi clue: 'Mujhe raasta nahi pata!'",
-        "English clue: Means you can’t find your way"
+        "Hindi clue: 'मुझे रास्ता नहीं पता!'",
+        "English clue: Means you can’t find your path"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
@@ -74,13 +78,14 @@
       "wrongLottie": "assets/animations/activity_wrong.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Perfect! ‘Lost’ bolne se log samajh jaayenge aapko direction chahiye!",
-        "wrongText": "Close! Correct word is ‘lost’—yaad rakho, means no idea about the route."
+        "correctText": "Perfect! ‘lost’ कहने से सामने वाला समझेगा कि आपको दिशा चाहिए!",
+        "wrongText": "पास था—सही शब्द ‘lost’ है, जिससे clear होता है you need directions."
       }
     },
     {
       "type": "mentor_explain",
-      "text": "Dekha na, small & polite requests kitne kaam aate hain. Ab hum ek aur short question try karte hain!"
+      "text": "देखा? Simple & polite phrases लोगों को मदद के लिए उत्साहित करते हैं. अब एक और fill-in-the-blank: ticket counter ढूँढने में मदद माँगना!",
+      "audioPath": "assets/audio/lesson1_mentor_explain03.mp3"
     },
     {
       "type": "fill_in_the_blanks",
@@ -88,8 +93,8 @@
       "correctWord": "help",
       "imagePath": "assets/images/lesson1_confident_pose_16x9.png",
       "hints": [
-        "Polite request ke liye help word best hai",
-        "Opposite is ignore—wo to hum chaahte hi nahi!"
+        "Polite request में ‘help’ यूज़ करें",
+        "‘ignore’ तो उल्टा है—we want assistance!"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
@@ -97,53 +102,57 @@
       "wrongLottie": "assets/animations/activity_wrong.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Yes! ‘Help’ is correct. Polite tareeke se request karo.",
-        "wrongText": "Nope—‘ignore’ kyun hoga? Humein to unki madad chahiye."
+        "correctText": "Yes! ‘help’ perfect है—clear और polite.",
+        "wrongText": "No—if you need assistance, ‘ignore’ makes no sense!"
       }
     },
     {
       "type": "mentor_explain",
-      "text": "Dekha na, small & polite requests kitne kaam aate hain. Ab hum dialogue chat par chalte hain!"
+      "text": "देखिए, बस दो sentence में आप मदद माँग सकते हैं! चलिए अब एक mini dialogue देखते हैं, जहां आप friend से कैसे politely मदद माँगते हैं.",
+      "audioPath": "assets/audio/lesson1_mentor_explain04.mp3"
     },
     {
       "type": "dialogue_reconstruction",
-      "contextTitle": "Aap apke dost se help maang rahe ho station par",
+      "contextTitle": "आप अपने friend से help मांग रहे हैं at the station",
       "messages": [
         {
-          "text": "Hey, main station par hoon par exit nahi mil raha. Kya tum meri help kar sakte ho?",
+          "text": "Hey, I’m at the station but can’t find the exit. Can you help me?",
           "isSender": true,
-          "avatarPath": "assets/images/chat_user_pink.png"
+          "avatar": "assets/images/chat_user_pink.png"
         },
         {
           "text": "Of course! Just check the station map or politely ask a staff member.",
           "isSender": false,
-          "avatarPath": "assets/images/chat_friend_blue.png"
+          "avatar": "assets/images/chat_friend_blue.png"
         },
         {
-          "text": "Thanks! Bina hesitation ke, ‘Excuse me…’ se start karta hoon!",
+          "text": "Thanks! I'll start with ‘Excuse me…’ without being shy!",
           "isSender": true,
-          "avatarPath": "assets/images/chat_user_pink.png"
+          "avatar": "assets/images/chat_user_pink.png"
         }
       ],
-      "visualDesignHint": "Glowing chat bubble style for an immersive experience",
-      "learningTakeaway": "Friendly chat can remind you: politely approach staff with short lines & calm tone."
+      "learningTakeaway": "Friendly chats remind us: clear tone + short lines = quicker help!"
     },
     {
       "type": "mentor_explain",
-      "text": "Yaad rakho, real life conversation me politeness hi sabse zyada matter karta hai! Let’s fix a short error next."
+      "text": "Polite approach बहुत ज़रूरी है. अगर आपका tone rude होगा, लोग पीछे हट सकते हैं. अगले activity में देखते हैं rude vs. polite का फर्क.",
+      "audioPath": "assets/audio/lesson1_mentor_explain05.mp3"
     },
     {
       "type": "spot_the_error",
-      "instruction": "Spot the rude or inappropriate phrase:",
+      "instruction": "Rude या improper phrase पहचानें:",
       "originalSentence": "I need help, come here now!",
       "choices": ["I", "need", "help,", "come", "here", "now!"],
       "correctChoiceIndex": 5,
-      "explanation": "Saying 'now!' rudely sounds demanding. Always request politely, like 'Could you please help me?' instead of shouting.",
-      "imagePath": "assets/images/lesson1_rude_request_16x9.png"
+      "explanation": "‘now!’ command जैसा लगता है—‘Could you help me, please?’ ज़्यादा polite है.",
+      "imagePath": "assets/images/lesson1_rude_request_16x9.png",
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3"
     },
     {
       "type": "mentor_explain",
-      "text": "Awesome. Politeness ke saath thoda correct order of approach se bahut help milti hai!"
+      "text": "Good job! Tone respectful रखेंगे तो लोग मदद करने के लिए तैयार होंगे. A little humility takes you far.",
+      "audioPath": "assets/audio/lesson1_mentor_explain06.mp3"
     },
     {
       "type": "fill_in_the_blanks",
@@ -151,8 +160,8 @@
       "correctWord": "nervous",
       "imagePath": "assets/images/lesson1_nervous_thoughts_16x9.png",
       "hints": [
-        "Beginner stage pe aap confident kam, nervous zyada hotey ho",
-        "English me 'anxious' or 'nervous' is typical"
+        "शुरुआती stage पर nervous होना normal है",
+        "‘nervous’ या ‘anxious’ common English words हैं"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
@@ -160,118 +169,163 @@
       "wrongLottie": "assets/animations/activity_wrong.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Yes, 'nervous' is normal. But polite approach se confidence aayega!",
-        "wrongText": "Hmm, 'confident' is not typical for newbies. Sahi answer: nervous."
+        "correctText": "Yes, 'nervous' is typical. But polite requests build confidence!",
+        "wrongText": "Understandable, but beginners often feel ‘nervous’ not fully confident."
       }
     },
     {
       "type": "mentor_explain",
-      "text": "Koi problem nahi, nervous feel karna normal hai. Practice se sab theek hoga!"
+      "text": "No worries, शुरुवात में घबराहट होती है. जितनी practice, उतना confidence. Polite होकर आप लोगों का support आसानी से पा सकेंगे.",
+      "audioPath": "assets/audio/lesson1_mentor_explain07.mp3"
     },
     {
       "type": "poll",
       "question": "What is your current biggest hesitation in public help-seeking?",
       "options": [
         "Still shy",
-        "Language barrier—Hindi se English mein pahle translate karna aur phir bolna",
+        "Language barrier — switching from Hindi to English",
         "Unsure which phrase is correct",
         "All of these"
       ],
       "dynamicFeedback": {
-        "0": "Shy? Smile + short line helps break ice.",
-        "1": "Switch is okay—thoda Hinglish chalti hai!",
-        "2": "Keep phrases from this lesson as cheat sheet!",
-        "3": "We’ll keep practicing with more examples!"
+        "0": "Shy? बस ek smile aur short phrase se shyness break!",
+        "1": "Hinglish भी कर सकते हैं—practice बढ़ेगी!",
+        "2": "Is lesson की lines को note करें—easy reference!",
+        "3": "बहुत लोग ये सारे points feel करते हैं—हम practice से सब improve करेंगे!"
       }
     },
     {
+      "type": "mentor_surprise_fact",
+      "title": "Surprise Fact",
+      "body": "Studies दिखाती हैं कि ‘please’ और ‘thank you’ बोलना आपकी help मिलने की chances लगभग 40% तक बढ़ा देता है, भले ही grammar perfect न हो!",
+      "audioPath": "assets/audio/en/lesson1_surprisefact01.mp3"
+    },
+    {
       "type": "mentor_explain",
-      "text": "Chalo! Let’s do a short reorder. Keep it super polite!"
+      "text": "Excellent! अब एक quick reorder practice से sentence structure polish करेंगे. ये आपको सिखाएगा कि polite request कैसे frame करें.",
+      "audioPath": "assets/audio/lesson1_mentor_explain08.mp3"
     },
     {
       "type": "sentence_construction",
-      "words": ["Could", "guide", "please", "me?", "you"],
+      "words": ["guide", "please", "me?", "Could", "you"],
       "correctOrder": ["Could", "you", "please", "guide", "me?"],
-      "imagePath": "assets/images/lesson1_calm_official_16x9.png"
+      "imagePath": "assets/images/lesson1_calm_official_16x9.png",
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3"
     },
     {
       "type": "mentor_explain",
-      "text": "Dekho, pehle 'Could you', phir 'please guide me?'— This flow is easy, polite. Let’s see a mini story now!"
+      "text": "Perfect structure—‘Could you please guide me?’ Direct yet polite. अब चलें real-life examples पर!",
+      "audioPath": "assets/audio/lesson1_mentor_explain09.mp3"
     },
     {
-      "type": "mini_stories",
+      "type": "short_stories",
       "scenes": [
         {
           "imagePath": "assets/images/lesson1_wedding_chaos_16x9.png",
-          "text": "Scenario: Aap ek huge Indian wedding mein ho, sab dance kar rahe hain and You want to ask someone to find the food counter politely!"
+          "text": "Scenario: आप एक बड़ी Indian शादी में हैं, शोरगुल, music, dance में आपको खाना चाहिए, पर buffet area ढूँढना मुश्किल हो रहा है."
         },
         {
           "imagePath": "assets/images/lesson1_confident_pose_16x9.png",
-          "text": "Instead of ‘Bhai, buffet kahan hai?!’ say: ‘Excuse me, main thoda lost hoon. Could you please guide me to the food area?’"
+          "text": "अगर आप सिर्फ ‘Bhai, buffet कहाँ है?!’ बोलें, थोड़ा direct लगेगा. Better: ‘Excuse me, I'm a bit lost. Could you help me find the buffet?’"
         },
         {
           "imagePath": "assets/images/lesson1_big_station_16x9.png",
-          "text": "Lesson moral: Station ho ya wedding, polite approach + short request = help guaranteed!"
+          "text": "Moral: चाहे station हो या wedding, polite approach + short phrases = success!"
+        }
+      ],
+      "audioPath": "assets/audio/en/lesson1_short_stories01.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Key Phrases Quick Review",
+      "cards": [
+        {
+          "term": "Excuse me",
+          "definition": "उदाहरण: 'Excuse me, can you help me?'—शांत तरीके से ध्यान आकर्षित करने का बेहतरीन तरीका."
+        },
+        {
+          "term": "Lost",
+          "definition": "उदाहरण: ‘I’m lost’ से लोग समझ जाते हैं कि आपको direction चाहिए—कोई लंबी explanation की ज़रूरत नहीं."
+        },
+        {
+          "term": "Guide",
+          "definition": "उदाहरण: ‘Could you guide me...?’ विनम्र request दर्शाता है, bossy tone को टालता है."
+        },
+        {
+          "term": "Could",
+          "definition": "उदाहरण: ‘Could you please...?’—किसी भी request को polite बनाता है, direct demand नहीं लगता."
+        },
+        {
+          "term": "Please",
+          "definition": "उदाहरण: ‘Please show me the exit.’—एक शब्द से ही वाक्य का tone friendly हो जाता है."
+        },
+        {
+          "term": "Thank you",
+          "definition": "उदाहरण: ‘Thank you for your help!’—मदद मिलने के बाद यह कहना ज़रूरी है, जिससे goodwill बढ़ता है."
         }
       ]
     },
     {
       "type": "mentor_explain",
-      "text": "Dekha—consistent polite formula har jagah kaam aata hai. Next, ek word-builder try karein?"
+      "text": "देखा, flashcards से कैसे quickly phrases revise कर सकते हैं! अब एक short word-builder try करते है, दिए गए letters मे से सही letters को drag करके सही word बनाएँ!",
+      "audioPath": "assets/audio/lesson1_mentor_explain10.mp3"
     },
     {
       "type": "word_builder",
       "letters": ["H", "E", "L", "P"],
       "correctWord": "HELP",
       "extraLetters": ["R", "A"],
-      "instruction": "Drag letters to form the word ‘HELP’. Basic but crucial word for seeking assistance!"
+      "instruction": "Drag letters to form ‘HELP’. A small word with big impact!",
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3"
     },
     {
       "type": "mentor_explain",
-      "text": "Bas yaad rakho: Tone + 'HELP' request = you’ll do fine in tricky spots. One final quiz!"
+      "text": "Great job! ‘HELP’ छोटा word है लेकिन बहुत power रखता है. अब last quiz से देखते हैं आपने क्या सीखा.",
+      "audioPath": "assets/audio/lesson1_mentor_explain11.mp3"
     },
     {
       "type": "quiz",
-      "question": "Which line sounds politely direct, bina over-apology?",
+      "question": "Which line is politely direct, without too much apology or abruptness?",
       "options": [
         "Hey, quickly tell me where to go now!",
         "I’m sorry, sorry, sorry…help me?",
         "Excuse me, I’m a bit lost—could you show me the exit?",
-        "Bhai, exit ka raasta bata do, yaar."
+        "Bhai, please show me the exit."
       ],
       "answerIndex": 2,
       "hints": [
-        "Look for short apology + direct request + polite tone."
+        "एक polite line में ‘Excuse me’ + simple request + soft courtesy!"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
       "allowRetry": true,
-      "encouragementOnFail": "No big deal, re-check polite vs. rude lines!"
+      "encouragementOnFail": "फिर सोचें—pushy tone को कम करके polite expression देखें!"
     },
     {
       "type": "speaking_prompt",
-      "prompt": "Verbal practice: ‘Excuse me, could you help me find [Your Place]? Thanks!’ Ab loud bolke dekh lo!",
-      "audioSupport": false
+      "prompt": "Zor से बोलें: ‘Excuse me, could you help me find [Your Place]? Thanks!’—ज़्यादा confident लगेगा!",
+      "audioSupport": true,
+      "audioPath": "assets/audio/en/lesson1_speakingprompt01.mp3"
     },
     {
       "type": "text_card",
       "title": "Lesson Recap",
-      "body": "1) ‘Excuse me…’ se start karo\n2) Bol do ‘I’m a bit lost’ or ‘Need help’\n3) Tone & courtesy sabse important hota hai\n4) Thoda Hindi mix is okay—but remain polite"
+      "body": "1) Start with ‘Excuse me…’\n2) बताएं ‘I’m a bit lost’ या ‘I need help’\n3) Tone & courtesy सबसे बड़ी key\n4) थोड़ी-बहुत हिंदी mix कर सकते हैं—but stay polite",
+      "audioPath": "assets/audio/en/lesson1_text_card01.mp3"
     },
     {
       "type": "mentor_explain",
-      "text": "Congratulations! Aap ab har situation me help maang sakte ho politely bina awkward hue. Keep going!"
-    },
-    {
-      "type": "next_lesson_preview",
-      "title": "Next: Greetings & Goodbyes",
-      "description": "Aapka pehla ‘Hello’ aur aakhri ‘Bye’ hi logon ke dimaag mein aapki image banaata hai. Ready to master that next?"
+      "text": "Congratulations! अब आप अजनबियों से मदद माँगने में ज्यादा आरामदायक होंगे. Next lesson में greetings और goodbyes सीखेंगे, क्योंकि पहली ‘Hello’ और आख़िरी ‘Bye’ ही अधिकतर आपकी image बनाती है!",
+      "audioPath": "assets/audio/lesson1_mentor_explain12.mp3"
     },
     {
       "type": "badge_award",
       "title": "Help Seeker Hero!",
-      "description": "Lesson 1 done—ab aap politely help maang sakte ho, tension-free. Keep practicing aur milte hain next lesson mein!",
-      "animation": "assets/animations/badge_unlocked.json"
+      "description": "Lesson 1 done—अब बिना झिझक assistance माँग पाएँगे. Keep practicing, मिलते हैं next lesson में!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/en/lesson1_badge_award01.mp3"
     }
   ]
 }

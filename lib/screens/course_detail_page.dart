@@ -12,17 +12,6 @@ class CourseDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Color> iconColors = [
-      Colors.orange,
-      Colors.teal,
-      Colors.purple,
-      Colors.pinkAccent,
-      Colors.green,
-      Colors.indigo,
-      Colors.deepOrange,
-      Colors.cyan,
-    ];
-
     final String title = course["title"] ?? "Course Title";
     final IconData icon = course["icon"] ?? Icons.info_outline;
     final Color color = course["color"] ?? Colors.blue;
@@ -70,179 +59,201 @@ class CourseDetailPage extends StatelessWidget {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(18),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: Container(
-                  margin: const EdgeInsets.only(top: 10, bottom: 14),
-                  padding: const EdgeInsets.all(18),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: color.withOpacity(0.1),
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withOpacity(0.25),
-                        blurRadius: 12,
-                        offset: const Offset(0, 6),
-                      )
-                    ],
-                  ),
-                  child: Hero(
-                    tag: title,
-                    child: Icon(icon, size: 42, color: color),
-                  ),
+              // ---------- Course Name Card ----------
+              Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
                 ),
-              ),
-              Center(
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: tag == "free" ? Colors.green.shade100 : Colors.orange.shade100,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Text(
-                    tag == "free" ? "FREE COURSE" : "PREMIUM",
-                    style: TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.bold,
-                      color: tag == "free" ? Colors.green.shade700 : Colors.orange.shade700,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 10),
-              Center(
-                child: Text(
-                  title,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: kPrimaryIconBlue,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 16),
-              Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: Colors.blue.shade100),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.blue.shade50,
-                      blurRadius: 8,
-                      offset: const Offset(0, 4),
-                    )
-                  ],
-                ),
-                child: Text(
-                  description,
-                  style: const TextStyle(
-                    fontSize: 13.5,
-                    height: 1.5,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black87,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20),
-
-              // ✅ Start Lesson Button
-              Center(
-                child: ElevatedButton.icon(
-                  icon: const Icon(Icons.rocket_launch_rounded, size: 18),
-                  onPressed: () {
-                    if (lessons.isNotEmpty) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => LessonPage(
-                            courseTitle: title,
-                            courseIcon: icon,
-                            courseColor: color,
-                            // Fix: Convert to List<Map<String, dynamic>> instead of <String>
-                            lessons: List<Map<String, dynamic>>.from(lessons),
+                margin: const EdgeInsets.symmetric(vertical: 8),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    children: [
+                      // Icon in the center top
+                      Hero(
+                        tag: title,
+                        child: CircleAvatar(
+                          radius: 28,
+                          backgroundColor: color.withOpacity(0.1),
+                          child: Icon(
+                            icon,
+                            color: color,
+                            size: 26,
                           ),
-                        ),
-                      );
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: kAccentGreen,
-                    foregroundColor: Colors.white,
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                  ),
-                  label: Text(
-                    tag == kPaidCourseTag ? "Unlock Premium" : "Start Lesson",
-                    style: const TextStyle(fontSize: 13.5, fontWeight: FontWeight.w600),
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 20),
-
-              // 🔽 Lessons Outline
-              lessons.isEmpty
-                  ? const Center(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 40),
-                        child: Text(
-                          "No lessons available at this moment.",
-                          style: TextStyle(color: Colors.black54),
                         ),
                       ),
-                    )
-                  : Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          "Lessons Outline",
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: kPrimaryIconBlue,
+
+                      const SizedBox(height: 8),
+
+                      // Premium or Free tag below the icon
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 4,
+                        ),
+                        decoration: BoxDecoration(
+                          color: tag == "free" ? Colors.green : Colors.orange,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Text(
+                          tag == "free" ? "FREE" : "PREMIUM",
+                          style: const TextStyle(
+                            fontSize: 10,
+                            color: Colors.white,
                           ),
                         ),
-                        const SizedBox(height: 12),
-                        ...lessons.asMap().entries.map((entry) {
-                          final int index = entry.key;
-                          final lesson = entry.value;
-                          final String lessonTitle = lesson['title'];
-                          final Color iconColor = iconColors[index % iconColors.length];
-                          return Container(
-                            margin: const EdgeInsets.only(bottom: 10),
-                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 14),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(color: const Color(0xFFE3F2FD)),
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(Icons.play_circle_fill_rounded, color: iconColor, size: 24),
-                                const SizedBox(width: 10),
-                                Expanded(
-                                  child: Text(
-                                    lessonTitle,
-                                    style: const TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.black87,
-                                    ),
+                      ),
+
+                      const SizedBox(height: 12),
+
+                      // Course Title
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+
+                      const SizedBox(height: 8),
+
+                      // Star rating row (optional)
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.star, color: Colors.amber, size: 16),
+                          Icon(Icons.star, color: Colors.amber, size: 16),
+                          Icon(Icons.star, color: Colors.amber, size: 16),
+                          Icon(Icons.star, color: Colors.amber, size: 16),
+                          Icon(Icons.star_half, color: Colors.amber, size: 16),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              // ---------- Detailed Course Overview Card ----------
+              Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                margin: const EdgeInsets.only(top: 16),
+                child: Padding(
+                  padding: const EdgeInsets.all(14.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Detailed Course Overview",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+
+                      // Full description
+                      Text(
+                        description +
+                            "\n\n"
+                            "This course offers an in-depth exploration of the subject matter, "
+                            "including structured lessons, engaging activities, and interactive "
+                            "practice sessions to solidify your learning. Whether you're starting "
+                            "from scratch or building upon existing knowledge, this program aims "
+                            "to boost your confidence, improve your skills, and help you achieve "
+                            "mastery over key concepts.\n\n"
+                            "By the end of this course, you will:\n"
+                            "• Grasp critical fundamentals and advanced techniques\n"
+                            "• Gain real-world insights and practical strategies\n"
+                            "• Collaborate with mentors and peers in a supportive environment\n"
+                            "• Be prepared to apply these skills in daily life or professional settings\n",
+                        style: const TextStyle(
+                          fontSize: 14,
+                          height: 1.4,
+                          color: Colors.black87,
+                        ),
+                      ),
+
+                      const SizedBox(height: 16),
+
+                      // "Start Now" / "Unlock Premium" button at bottom
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: ElevatedButton(
+                          clipBehavior: Clip.antiAlias,
+                          onPressed: () {
+                            // Navigate to lessons page if lessons available
+                            if (lessons.isNotEmpty) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LessonPage(
+                                    courseTitle: title,
+                                    courseIcon: icon,
+                                    courseColor: color,
+                                    lessons: List<Map<String, dynamic>>.from(lessons),
                                   ),
                                 ),
-                              ],
+                              );
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                          );
-                        }).toList(),
-                      ],
-                    ),
+                            elevation: 2,
+                            backgroundColor: Colors.transparent,
+                            foregroundColor: Colors.white,
+                            shadowColor: Colors.transparent,
+                          ).copyWith(
+                            side: MaterialStateProperty.all(BorderSide.none),
+                          ),
+                          child: Ink(
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [
+                                  Color(0xFF43A047), // Darker green
+                                  Color(0xFF2E7D32), // Lighter green
+                                ],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Container(
+                              alignment: Alignment.center,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 14,
+                                vertical: 10,
+                              ),
+                              child: Text(
+                                tag == kPaidCourseTag ? "Unlock Premium" : "Start Now",
+                                style: const TextStyle(
+                                  fontSize: 13,
+                                  shadows: [
+                                    Shadow(
+                                      offset: Offset(0, 2),
+                                      blurRadius: 3,
+                                      color: Colors.black38,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

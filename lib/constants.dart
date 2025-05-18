@@ -119,6 +119,9 @@ const String kHiveKeyLocale            = 'locale';
 const String kHiveBoxCompletedLessons  = 'completed_lessons';
 const String kHiveKeyRecommendedCourses = 'recommended_courses'; // ✅ NEW
 
+/// 🏅 AWARDED XP KEYS (to avoid duplicate XP across sessions)
+const String kHiveBoxAwardedXP = 'awarded_xp_keys'; // ✅ NEW
+
 /// 📐 GRID SYSTEM
 const int    kGridCrossAxisCount   = 2;
 const double kGridChildAspectRatio = 3 / 2.2;
@@ -168,7 +171,7 @@ const String routeChat               = '/chat';
 
 /// 🌐 API CONFIGURATION
 class ApiConfig {
-  static const String local      = "http://10.0.2.2:8000/api/v1";
+  static const String local      = "http://10.0.2.2:8000"; // ✅ FIXED: Removed trailing /api/v1
   static const String staging    = "https://staging.api.yourdomain.com/api/v1";
   static const String production = "https://api.yourdomain.com/api/v1";
 }
@@ -177,10 +180,8 @@ class ApiConfig {
 /// Additional styles used in LessonActivityPage
 /// ------------------------------------------------------------
 
-// Base font size used in LessonActivityPage
 const double kBaseFontSize = 20.0;
 
-/// "Body" style for main activity texts
 const TextStyle kActivityBodyStyle = TextStyle(
   fontSize: kBaseFontSize,
   color: Colors.black87,
@@ -188,28 +189,22 @@ const TextStyle kActivityBodyStyle = TextStyle(
   fontWeight: FontWeight.w400,
 );
 
-/// Pink color used frequently in LessonActivityPage
 const Color vibrantPink = Color(0xFFE83E8C);
-
-/// Greens used in "real-life simulation" or other LessonActivity sections
 const Color refinedGreenStart = Color(0xFF388E3C);
 const Color refinedGreenEnd   = Color(0xFF66BB6A);
 
-/// Vibrant caption style
 const TextStyle kVibrantCaptionStyle = TextStyle(
   fontSize: kBaseFontSize - 2,
   color: Colors.white,
   fontStyle: FontStyle.italic,
 );
 
-/// Vibrant "title" style (white text, bigger, bold)
 const TextStyle kVibrantTitleStyle = TextStyle(
   fontSize: kBaseFontSize + 4,
   fontWeight: FontWeight.bold,
   color: Colors.white,
 );
 
-/// Vibrant "body" style (white text, normal weight)
 const TextStyle kVibrantBodyStyle = TextStyle(
   fontSize: kBaseFontSize,
   color: Colors.white,
@@ -217,7 +212,6 @@ const TextStyle kVibrantBodyStyle = TextStyle(
   fontWeight: FontWeight.w400,
 );
 
-/// Vibrant message style (like VibrantBodyStyle but repeated in code references)
 const TextStyle kVibrantMessageStyle = TextStyle(
   fontSize: kBaseFontSize,
   color: Colors.white,
@@ -225,14 +219,12 @@ const TextStyle kVibrantMessageStyle = TextStyle(
   fontWeight: FontWeight.w400,
 );
 
-/// Audio instruction style
 const TextStyle kAudioInstructionStyle = TextStyle(
   fontSize: kBaseFontSize + 2,
   fontWeight: FontWeight.w600,
   color: Color(0xFF004D40),
 );
 
-/// Speaking prompt style for emphasis
 const TextStyle kSpeakingPromptTitleStyleNew = TextStyle(
   fontSize: kBaseFontSize + 2,
   fontWeight: FontWeight.bold,

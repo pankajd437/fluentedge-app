@@ -1,0 +1,272 @@
+{
+  "lessonId": "beginner_001_lesson_011",
+  "title": "Phone & Video Call Basics",
+  "level": "beginner",
+  "themeColor": "#4A90E2",
+  "xpTotal": 500,
+  "objectives": [
+    "फ़ोन या वीडियो कॉल के दौरान बुनियादी इंग्लिश वाक्यों में सहज होना",
+    "Incoming और outgoing कॉल में greetings, identity confirm करना सीखना",
+    "5-Step Toolkit के जरिए कॉल की शुरुआत, जानकारी शेयर करना, समस्या समाधान और अंत करना",
+    "हिंदी-अंग्रेज़ी मिश्रित अंदाज़ में अनेक real-world call scenarios में आत्मविश्वास पाना"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": ["en", "hi"],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "phone_video_call_champion",
+    "title": "Phone & Video Call Champion",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+    {
+      "type": "mentor_intro",
+      "text": "नमस्ते! आज हम सीखेंगे ‘Phone & Video Call Basics.’ कई लोग फ़ोन पर इंग्लिश में घबरा जाते हैं, इसलिए हमने बनाया है एक आसान 5-Step Toolkit. इससे आप confidently कॉल शुरू, जारी, और ख़त्म कर पाएँगे!",
+      "imagePath": "assets/images/lesson11_intro.png",
+      "audioPath": "assets/audio/lesson11_intro.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "5-Step Phone/Video Call Toolkit",
+      "body": "1) **Greeting & Opening** – ‘Hello, this is ___.’\n2) **Purpose** – ‘I’m calling about ___.’ या ‘Could you help me with ___?’\n3) **Ask & Clarify** – ‘Could you speak louder?’, ‘Could you confirm ___?’\n4) **Tech Issues / Wrong No.** – ‘You’re breaking up’, ‘I think this is a wrong number.’\n5) **Close Politely** – ‘Thanks for your time, bye!’\n\nहर कॉल में यही 5 steps दोहराएँ—चाहे डॉक्टर को कॉल हो या दोस्त को!",
+      "audioPath": "assets/audio/lesson11_text_card_toolkit.mp3"
+    },
+    {
+      "type": "poll",
+      "question": "कॉल या वीडियो कॉल में आपको सबसे challenging कौन-सा Step लगता है?",
+      "options": [
+        "Step 1: Greeting खोलना",
+        "Step 2: Purpose बताना",
+        "Step 3: Clarifications लेना/देना",
+        "Step 4: Tech issues handle करना",
+        "Step 5: Ending politely"
+      ],
+      "dynamicFeedback": {
+        "0": "बस bold रहें: ‘Hello, this is ___.’",
+        "1": "Simple line: ‘I’m calling about ___.’",
+        "2": "Say: ‘Could you explain that again?’, ‘Could you speak slower?’",
+        "3": "Tell them: ‘You’re breaking up. Let’s reconnect.’",
+        "4": "End with: ‘Thanks for your help. Take care!’"
+      },
+      "imagePath": "assets/images/lesson11_poll_toolkit.png"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Toolkit सरल है: Greeting से कॉल शुरू, फिर सामने वाले को अपना मक़सद बताते हैं, पूछताछ या clarify करना हो तो करते हैं, tech issue या गलत नंबर हो तो politely handle करें, और अंत में call close करें. अब real-life scenarios देखें!",
+      "imagePath": "assets/images/lesson11_mentor_explain_toolkit.png",
+      "audioPath": "assets/audio/lesson11_explain_toolkit.mp3"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "Hello, ______ (this is / you are) Riya. I’m calling about my flight booking.",
+      "correctWord": "this is",
+      "imagePath": "assets/images/lesson11_fill_in_the_blanks.png",
+      "hints": [
+        "‘This is Riya’ — correct way to identify yourself",
+        "‘You are Riya’ sounds like you're telling them who they are!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/thumbs_up_vote.json",
+      "wrongLottie": "assets/animations/confused_thinking.json",
+      "submitLabel": "Check Answer",
+      "feedback": {
+        "correctText": "सही! Step 1 (Greeting & Opening) में यही phrasing सही है.",
+        "wrongText": "‘You are Riya’ contextually गलत—आप कॉलर हैं, अपना नाम बता रहे हैं!"
+      }
+    },
+    {
+      "type": "scene_image",
+      "caption": "Network issue? कहें: ‘Sorry, you’re breaking up. Can I call you back?’",
+      "imagePath": "assets/images/lesson11_network_issue.png",
+      "audioPath": "assets/audio/lesson11_scene_image_network.mp3"
+    },
+
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson11_hospital_scenario.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson11_hospital_scene.png",
+          "text": "**Scenario #1: Hospital (Appointment / Emergency)**\n\n1) Greeting: “Hello, this is Priya speaking.”\n2) Purpose: “I’d like to book an appointment with Dr. Mehta for tomorrow.”\n3) Ask: “Could you tell me if he’s available in the morning?”\n4) Tech Issues/Wrong No.: If line is unclear: ‘You’re breaking up, could you repeat?’\n5) Close: “Alright, thank you for your help. Goodbye!”\n\nअचानक इमरजेंसी हो तो: “It’s urgent. Could I speak to Dr. Mehta right away?”\n\n**Key Learning**: Be direct if urgent, but always polite."
+        }
+      ]
+    },
+    {
+      "type": "flashcards",
+      "title": "Hospital / Doctor Calls",
+      "cards": [
+        {
+          "term": "Appointment",
+          "definition": "“I’d like to book an appointment with Dr. ___.”\nUse when you have a planned visit."
+        },
+        {
+          "term": "Urgent/Emergency",
+          "definition": "“It’s urgent. Could you connect me immediately?”\nUse short lines, emphasize urgency."
+        },
+        {
+          "term": "Available Timings",
+          "definition": "“Could you tell me the visiting hours?”\nWhen you need specific slot/time info."
+        }
+      ]
+    },
+
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson11_restaurant_scenario.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson11_restaurant_scene.png",
+          "text": "**Scenario #2: Restaurant (Table Booking)**\n\n1) Greeting: “Hello, may I speak to the reservation desk?”\n2) Purpose: “I’m calling to book a table for 4 at 8 PM tonight.”\n3) Ask: “Could you confirm if there’s a non-smoking section?”\n4) Tech Issues: If they ask ‘Who’s calling?’ → ‘This is Rakesh.’\n5) Close: “Thanks! See you tonight, bye.”\n\n**Key Learning**: State your desired time/size. Then confirm any preference (like non-smoking)."
+        }
+      ]
+    },
+    {
+      "type": "flashcards",
+      "title": "Restaurant Bookings",
+      "cards": [
+        {
+          "term": "Reservation Opening",
+          "definition": "“Hello, I'd like to book a table for __.”\nUsed to specify time & number of people."
+        },
+        {
+          "term": "Preferences",
+          "definition": "“Could we have a window seat?” या “Is it a non-smoking area?”"
+        },
+        {
+          "term": "Confirmation",
+          "definition": "“Thanks, see you at 8 PM!”\nAlways restate time to avoid confusion."
+        }
+      ]
+    },
+
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson11_friend_scenario.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson11_friend_scene.png",
+          "text": "**Scenario #3: Friend (Casual)**\n\n1) Greeting: “Hey Amit, how have you been?”\n2) Purpose: “I’m calling to see if you’re free this weekend.”\n3) Ask: “Could we catch up for coffee on Sunday?”\n4) Tech Issue: If mic is low: ‘Could you speak louder?’\n5) Close: “Okay, see you soon. Take care!”\n\n**Key Learning**: Casual tone, friendly vibe. Perfect for personal calls."
+        }
+      ]
+    },
+    {
+      "type": "flashcards",
+      "title": "Casual Friend Calls",
+      "cards": [
+        {
+          "term": "Friendly Greeting",
+          "definition": "“Hey, how’ve you been?” ‘Hey buddy, long time!’"
+        },
+        {
+          "term": "Making Plans",
+          "definition": "“Are you free on ___?”\n‘Do you want to meet up for coffee?’"
+        },
+        {
+          "term": "Polite Close",
+          "definition": "“Alright, talk soon!”\nKeep it cheerful, not abrupt."
+        }
+      ]
+    },
+
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson11_bank_scenario.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson11_bank_scene.png",
+          "text": "**Scenario #4: Customer Care / Bank**\n\n1) Greeting: “Hello, this is Rohit. I have a query about my account.”\n2) Purpose: “I’d like to check my recent transaction.”\n3) Ask: “Could you confirm the amount credited?”\n4) Issue: If line is unclear, “Sorry, could you repeat that?”\n5) Close: “Thank you for your help, have a great day!”\n\n**Key Learning**: Be clear and to-the-point with official calls."
+        }
+      ]
+    },
+    {
+      "type": "flashcards",
+      "title": "Customer Care / Bank Calls",
+      "cards": [
+        {
+          "term": "Identify",
+          "definition": "“Hello, this is ___. I have a query about ___.”"
+        },
+        {
+          "term": "Specific Request",
+          "definition": "“Could you confirm ___?”\n‘Could you help me with __?’"
+        },
+        {
+          "term": "Wrapping Up",
+          "definition": "“Thank you for your assistance. Bye!”"
+        }
+      ]
+    },
+
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson11_travel_scenario.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson11_travel_agent_scene.png",
+          "text": "**Scenario #5: Travel Agent (Booking Tickets)**\n\n1) Greeting: “Good morning, is this Sky Travels?”\n2) Purpose: “I want to book a flight ticket for next Friday.”\n3) Ask: “Could you tell me the timings and fares?”\n4) Tech Issue: If put on hold, “Sure, I can wait.”\n5) Close: “That’s all, thanks for your assistance! Bye.”\n\n**Key Learning**: Mention your date, ask for details (cost, timings)."
+        }
+      ]
+    },
+    {
+      "type": "flashcards",
+      "title": "Travel / Ticket Booking Calls",
+      "cards": [
+        {
+          "term": "Greeting + Agency",
+          "definition": "“Hello, is this [Agency Name]?”\nConfirm you dialed the right place."
+        },
+        {
+          "term": "Booking Info",
+          "definition": "“I need to book a flight for next Friday.”\nClearly specify date/destination."
+        },
+        {
+          "term": "Cost & Details",
+          "definition": "“Could you share the timings and fare?”\nAsk for clarity so you can decide."
+        }
+      ]
+    },
+
+    {
+      "type": "quiz",
+      "question": "Urgent call करते वक्त सबसे ज़रूरी क्या होता है?",
+      "options": [
+        "लंबी कहानी सुनाना",
+        "Short lines, ‘It’s urgent’ mention",
+        "Casual hello",
+        "Wait for them to guess your problem"
+      ],
+      "answerIndex": 1,
+      "hints": [
+        "Emergency में short & direct आपका best friend है!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "allowRetry": true,
+      "encouragementOnFail": "ध्यान रखें—जितना urgent call होगा, उतना ही direct होने की ज़रूरत!"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "प्रैक्टिस: ‘Hello, this is ___. I’m calling about ___.’ (सिंपल but effective!)",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson11_speaking_prompt.png",
+      "audioPath": "assets/audio/lesson11_speaking_prompt.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Lesson 11 Recap",
+      "body": "### 5-Step Toolkit Recap\n1) Greeting & Opening: ‘Hello, this is ___.’\n2) Purpose: ‘I’m calling about ___.’\n3) Ask/Clarify: ‘Could you confirm ___?’ ‘Could you speak louder?’\n4) Tech/Stranger: ‘You’re breaking up.’ ‘Wrong number?’\n5) Close Politely: ‘Thanks for your help, bye!’\n\nआपके सामने कितने भी scenarios आएँ—बस यह 5-Step pattern याद रखिये!",
+      "audioPath": "assets/audio/lesson11_recap.mp3"
+    },
+    {
+      "type": "badge_award",
+      "title": "Phone & Video Call Champion!",
+      "description": "बधाई हो, आप Lesson 11 पूरा कर चुके हैं! अब आप Hospital, Restaurant, Friend, Bank, Travel Agent… किसी को भी कॉल कर सकते हैं, आत्मविश्वास से!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson11_badge_award.mp3"
+    }
+  ]
+}
+

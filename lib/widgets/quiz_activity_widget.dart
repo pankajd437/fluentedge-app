@@ -7,15 +7,22 @@ class QuizActivityWidget extends StatefulWidget {
   final String question;
   final List<String> options;
   final int correctIndex;
+
+  /// Called when user completes the entire quiz. Usually triggers
+  /// a "Next" or "Continue" in the parent, if you want auto-advance.
   final VoidCallback onCompleted;
+
+  /// Called immediately when user picks an answer. We'll use it to
+  /// call `_handleAnswerSelected(isCorrect)` in `lesson_activity_page.dart`.
   final ValueChanged<bool>? onAnswerSelected;
+
   final String? correctSound;
   final String? wrongSound;
 
   // NEW optional fields:
   final List<String>? hints;            // If user can request a hint
-  final bool allowRetry;               // If user can try answering again after failing
-  final String? encouragementOnFail;   // Show if user picks the wrong answer
+  final bool allowRetry;               // If user can try again after failing
+  final String? encouragementOnFail;   // Shown if user picks wrong answer
 
   const QuizActivityWidget({
     Key? key,
@@ -44,7 +51,7 @@ class _QuizActivityWidgetState extends State<QuizActivityWidget> {
   // For hints
   bool _hintVisible = false;
 
-  // If the user got it wrong and is allowed to retry
+  // If user got it wrong and can retry
   bool _failedAttempt = false;
 
   @override
@@ -67,34 +74,35 @@ class _QuizActivityWidgetState extends State<QuizActivityWidget> {
     }
   }
 
-  void _showFeedbackAnimation(bool isCorrect) {
-    final overlay = Overlay.of(context);
-    if (overlay == null) return;
+void _showFeedbackAnimation(bool isCorrect) {
+  final overlay = Overlay.of(context);
+  if (overlay == null) return;
 
-    final overlayEntry = OverlayEntry(
-      builder: (context) => Center(
-        child: SizedBox(
-          width: 180,
-          height: 180,
-          child: Lottie.asset(
-            isCorrect
-                ? 'assets/animations/activity_correct.json'
-                : 'assets/animations/activity_wrong.json',
-            repeat: false,
-            fit: BoxFit.contain,
-          ),
+  final overlayEntry = OverlayEntry(
+    builder: (_) => Center(
+      child: SizedBox(
+        width: 180,
+        height: 180,
+        child: Lottie.asset(
+          isCorrect
+              ? 'assets/animations/star_pop.json'
+              : 'assets/animations/alert_attention.json',
+          repeat: false,
+          fit: BoxFit.contain,
         ),
       ),
-    );
+    ),
+  );
 
-    overlay.insert(overlayEntry);
-    Future.delayed(const Duration(seconds: 2), () => overlayEntry.remove());
-  }
+  overlay.insert(overlayEntry);
+  Future.delayed(const Duration(seconds: 2), () => overlayEntry.remove());
+}
+
 
   void _handleAnswer(int index) async {
-    // if user has already answered, don't accept a new tap unless allowRetry is true
+    // If user answered and there's no retry, ignore new taps
     if (_answered && !widget.allowRetry) return;
-    // if user answered correct once, no need to re-answer
+    // If user answered correct once, no need to re-answer
     if (_answered && widget.allowRetry && !_failedAttempt) return;
 
     setState(() {
@@ -102,19 +110,20 @@ class _QuizActivityWidgetState extends State<QuizActivityWidget> {
       _answered = true;
     });
 
-    final isCorrect = index == widget.correctIndex;
+    final isCorrect = (index == widget.correctIndex);
 
+    // 1) Play sound and show animation
     await _playSound(isCorrect);
     _showFeedbackAnimation(isCorrect);
+
+    // 2) Trigger the parent's onAnswerSelected => calls _handleAnswerSelected
     widget.onAnswerSelected?.call(isCorrect);
 
     if (!isCorrect) {
-      // Wrong answer => show encouragement and possibly let user retry
+      // Wrong answer => show encouragement, allow retry if enabled
       setState(() => _failedAttempt = true);
     } else {
-      // Correct => quiz completed
-      // By default, user must press "Next" in LessonActivityPage
-      // If you want to auto-jump after correct, uncomment:
+      // If you want auto-jump after correct, you can do:
       // Future.delayed(const Duration(seconds: 2), widget.onCompleted);
     }
   }
@@ -143,10 +152,11 @@ class _QuizActivityWidgetState extends State<QuizActivityWidget> {
       [Colors.teal, Colors.cyan],
     ];
 
-    final bool isCorrect = (_selectedIndex != null && _selectedIndex == widget.correctIndex);
-    final bool showRetryButton = widget.allowRetry && _failedAttempt && !_answeredCorrectlyYet();
+    final bool isCorrect =
+        (_selectedIndex != null && _selectedIndex == widget.correctIndex);
+    final bool showRetryButton =
+        widget.allowRetry && _failedAttempt && !_answeredCorrectlyYet();
 
-    // Wrap entire quiz in fade+zoom
     return TweenAnimationBuilder<double>(
       tween: Tween(begin: 0.0, end: 1.0),
       duration: const Duration(milliseconds: 500),
@@ -158,7 +168,6 @@ class _QuizActivityWidgetState extends State<QuizActivityWidget> {
           child: Opacity(opacity: value, child: child),
         );
       },
-      // The main quiz content
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -183,8 +192,9 @@ class _QuizActivityWidgetState extends State<QuizActivityWidget> {
           ),
           const SizedBox(height: 16),
 
-          // HINT Button if we have hints and haven't answered or still allowed to retry
-          if ((widget.hints != null && widget.hints!.isNotEmpty) && !_answeredCorrectlyYet())
+          // HINT Button if we have hints and not answered correct yet
+          if ((widget.hints != null && widget.hints!.isNotEmpty) &&
+              !_answeredCorrectlyYet()) ...[
             Row(
               children: [
                 ElevatedButton.icon(
@@ -194,12 +204,17 @@ class _QuizActivityWidgetState extends State<QuizActivityWidget> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orangeAccent,
                     foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 14,
+                      vertical: 10,
+                    ),
                   ),
                 ),
-                if (_hintVisible && !_answeredCorrectlyYet()) ...[
-                  const SizedBox(width: 12),
+                const SizedBox(width: 12),
+                if (_hintVisible && !_answeredCorrectlyYet())
                   Expanded(
                     child: Container(
                       padding: const EdgeInsets.all(8),
@@ -209,25 +224,28 @@ class _QuizActivityWidgetState extends State<QuizActivityWidget> {
                         border: Border.all(color: Colors.orange.shade200),
                       ),
                       child: Text(
-                        // For simplicity, show the first hint or combine all hints
+                        // For simplicity, show the first hint or combine them
                         widget.hints!.join("\n• "),
-                        style: const TextStyle(color: Colors.black87, fontSize: 14),
+                        style: const TextStyle(
+                          color: Colors.black87,
+                          fontSize: 14,
+                        ),
                       ),
                     ),
                   ),
-                ],
               ],
             ),
-
-          const SizedBox(height: 12),
+            const SizedBox(height: 12),
+          ],
 
           // The multiple-choice options
           ...widget.options.asMap().entries.map((entry) {
             final index = entry.key;
             final option = entry.value;
             final gradient = gradients[index % gradients.length];
-            final isSelected = index == _selectedIndex;
-            final isOptionCorrect = index == widget.correctIndex;
+
+            final isSelected = (index == _selectedIndex);
+            final isOptionCorrect = (index == widget.correctIndex);
 
             Color? backgroundColor;
             if (_answered) {
@@ -243,7 +261,9 @@ class _QuizActivityWidgetState extends State<QuizActivityWidget> {
               margin: const EdgeInsets.only(bottom: 14),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(14),
-                gradient: !_answered ? LinearGradient(colors: gradient) : null,
+                gradient: !_answered
+                    ? LinearGradient(colors: gradient)
+                    : null,
                 color: _answered ? backgroundColor : null,
                 boxShadow: [
                   BoxShadow(
@@ -261,12 +281,17 @@ class _QuizActivityWidgetState extends State<QuizActivityWidget> {
                       ? () => _handleAnswer(index)
                       : null,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 14,
+                    ),
                     child: Row(
                       children: [
                         Icon(
                           _answered && isSelected
-                              ? (isOptionCorrect ? Icons.check_circle : Icons.cancel)
+                              ? (isOptionCorrect
+                                  ? Icons.check_circle
+                                  : Icons.cancel)
                               : Icons.circle_outlined,
                           color: Colors.white,
                           size: 20,
@@ -288,9 +313,9 @@ class _QuizActivityWidgetState extends State<QuizActivityWidget> {
                 ),
               ),
             );
-          }),
+          }).toList(),
 
-          // If user got it wrong and there's an encouragementOnFail, show it
+          // If user got it wrong and there's an encouragementOnFail
           if (_failedAttempt && !isCorrect && widget.encouragementOnFail != null && _answered)
             Container(
               margin: const EdgeInsets.only(top: 10),
@@ -306,7 +331,7 @@ class _QuizActivityWidgetState extends State<QuizActivityWidget> {
               ),
             ),
 
-          // Show retry button if user is allowed to retry and has answered incorrectly
+          // Show 'Try Again' if user is allowed to retry and got it wrong
           if (showRetryButton)
             Container(
               margin: const EdgeInsets.only(top: 10),
@@ -317,7 +342,9 @@ class _QuizActivityWidgetState extends State<QuizActivityWidget> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.orange,
                   foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
                 ),
               ),

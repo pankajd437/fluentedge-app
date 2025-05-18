@@ -4,26 +4,28 @@ import 'package:lottie/lottie.dart';
 import 'package:fluentedge_app/constants.dart';
 import 'package:http/http.dart' as http;
 import 'package:fluentedge_app/data/user_state.dart';
+// 🔥 NEW
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AnalyticsPage extends StatefulWidget {
+class AnalyticsPage extends ConsumerStatefulWidget {
   const AnalyticsPage({Key? key}) : super(key: key);
 
   @override
-  State<AnalyticsPage> createState() => _AnalyticsPageState();
+  ConsumerState<AnalyticsPage> createState() => _AnalyticsPageState();
 }
 
-class _AnalyticsPageState extends State<AnalyticsPage> {
-  int totalXP = 0;
-  int dailyStreak = 0;
-  int totalLessons = 0;
-  Duration totalTimeSpent = const Duration(); // Replaced hardcoded placeholder with real data
+class _AnalyticsPageState extends ConsumerState<AnalyticsPage> {
+  int totalXP = 0;        // from backend
+  int dailyStreak = 0;    // from backend
+  int totalLessons = 0;   // from backend
+  Duration totalTimeSpent = const Duration(); // from backend
 
   @override
   void initState() {
     super.initState();
-    _fetchUserXP();
-    _fetchStreak();
-    _fetchLessonStats();
+    _fetchUserXP();      // pulls from backend
+    _fetchStreak();      // pulls from backend
+    _fetchLessonStats(); // pulls from backend
   }
 
   /// Formats the Duration into "Hh Mm" for display
@@ -36,7 +38,6 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
   /// Fetch total XP from backend
   Future<void> _fetchUserXP() async {
     final name = await UserState.getUserName() ?? "Anonymous";
-    // Use your configured environment (e.g. ApiConfig.local)
     final url = Uri.parse("${ApiConfig.local}/api/v1/user/xp?name=$name");
 
     try {
@@ -98,6 +99,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
 
   @override
   Widget build(BuildContext context) {
+    // 1) Watch local XP from xpProvider
+    final localXP = ref.watch(xpProvider);
+
+    // 2) Decide which XP to display (local or backend)
+    final xpDisplayed = localXP >= totalXP ? localXP : totalXP;
+
     return Scaffold(
       backgroundColor: kBackgroundSoftBlue,
       appBar: AppBar(
@@ -113,10 +120,11 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
         padding: const EdgeInsets.all(20),
         child: ListView(
           children: [
+            // 3) Show xpDisplayed for XP stat
             _buildStatCard(
               icon: Icons.star,
               label: kXPPointsText,
-              value: "$totalXP XP",
+              value: "$xpDisplayed XP",
               color: kAccentGreen,
               lottie: 'assets/animations/success_checkmark.json',
             ),

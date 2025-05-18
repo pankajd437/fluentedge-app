@@ -7,7 +7,8 @@ import 'package:go_router/go_router.dart';
 
 import 'package:fluentedge_app/constants.dart';
 import 'package:fluentedge_app/widgets/animated_mentor_widget.dart';
-import 'package:fluentedge_app/main.dart';
+import 'package:fluentedge_app/main.dart'; // for route references
+import 'package:fluentedge_app/data/user_state.dart'; // ensure we can call UserState
 
 class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -34,8 +35,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     setState(() => _isLoading = true);
 
     try {
+      // Use the correct endpoint /api/v1/login
       final response = await http.post(
-        Uri.parse('${ApiConfig.local}/login'),
+        Uri.parse('${ApiConfig.local}/api/v1/login'),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({"email": email}),
       );
@@ -53,8 +55,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       final String language = loginData["language"];
       final String learningGoal = loginData["learning_goal"];
 
+      // Next, fetch recommended courses from /api/v1/user/{user_id}/recommendations
       final recRes = await http.get(
-        Uri.parse('${ApiConfig.local}/user/$userId/recommendations'),
+        Uri.parse('${ApiConfig.local}/api/v1/user/$userId/recommendations'),
       );
 
       if (recRes.statusCode != 200) {
@@ -66,8 +69,10 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
       final recData = jsonDecode(recRes.body);
       final String userLevel = recData["user_level"];
-      final List<String> recommendedCourses = List<String>.from(recData["recommended_courses"]);
+      final List<String> recommendedCourses =
+          List<String>.from(recData["recommended_courses"]);
 
+      // Store user data in Hive
       final userBox = await Hive.openBox(kHiveBoxSettings);
       await userBox.put('user_id', userId);
       await userBox.put(kHiveKeyUserName, name);
@@ -77,14 +82,20 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       await userBox.put(kHiveKeyUserLevel, userLevel);
       await userBox.put(kHiveKeyRecommendedCourses, recommendedCourses);
 
+      // 🔥 IMPORTANT: Also set in UserState so other screens see the correct name:
+      await UserState.setUserName(name);
+
+      // Update Riverpod states for immediate use
       ref.read(userNameProvider.notifier).state = name;
       ref.read(languagePrefProvider.notifier).state = language;
       ref.read(userLevelProvider.notifier).state = userLevel;
 
+      // Small user feedback
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("👋 Welcome back, $name!")),
       );
 
+      // brief delay, then navigate
       Future.delayed(const Duration(milliseconds: 700), () {
         context.go(routeUserDashboard);
       });
@@ -107,7 +118,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
           children: [
             const SizedBox(height: 40),
 
-            // 🎯 Animated Mentor with increased size and animation
+            // 🎯 Mentor animation
             AnimatedSwitcher(
               duration: const Duration(milliseconds: 700),
               transitionBuilder: (child, animation) {
@@ -118,7 +129,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               },
               child: const AnimatedMentorWidget(
                 key: ValueKey("mentor_big"),
-                size: 320, // 2x size
+                size: 320,
                 expressionName: 'mentor_wave_smile_full.png',
               ),
             ),
@@ -139,7 +150,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
             ),
             const SizedBox(height: 32),
 
-            // 📩 Email Input Field
+            // 📩 Email field
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: TextField(
@@ -151,14 +162,16 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   prefixIcon: const Icon(Icons.email),
                   filled: true,
                   fillColor: Colors.white,
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
               ),
             ),
 
             const SizedBox(height: 30),
 
-            // 🔘 Continue Button
+            // 🔘 Continue button
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: SizedBox(
@@ -179,7 +192,10 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                         ? const SizedBox(
                             width: 20,
                             height: 20,
-                            child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
                           )
                         : const Text(
                             "Continue",
@@ -187,7 +203,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
-                              color: Colors.white, // ✅ Ensures visibility
+                              color: Colors.white,
                             ),
                           ),
                   ),

@@ -1,0 +1,543 @@
+{
+  "lessonId": "beginner_001_lesson_005",
+  "title": "साफ़ और विनम्र तरीके से जवाब देना (Responding Clearly & Politely)",
+  "level": "beginner",
+  "themeColor": "#4A90E2",
+  "xpTotal": 600,
+  "objectives": [
+    "ध्यान से सुनकर छोटे, सरल English वाक्यों में जवाब देना",
+    "‘Certainly (सर्टेनली)’, ‘Sorry (सॉरी)’ जैसे विनम्र शब्दों का सही इस्तेमाल",
+    "रोज़मर्रा की बातचीत में आत्मविश्वास बढ़ाना और आसान scenarios में अभ्यास करना"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": ["en", "hi"],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "polite_responses_master",
+    "title": "Polite Responses Master",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+    {
+      "type": "mentor_intro",
+      "text": "नमस्ते और Lesson 5 में आपका स्वागत है! आज हम सीखेंगे आसान, छोटे वाक्यों में polite जवाब कैसे दें.",
+      "imagePath": "assets/images/lesson5_intro_hero.png",
+      "audioPath": "assets/audio/lesson5_mentor_intro.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Why Polite Responses?",
+      "body": "Polite responses आपको respectful और friendly दिखाते हैं. इससे सामने वाला आपकी बात को सकारात्मक रूप से लेता है. आइए देखें ये कैसे काम करते हैं!",
+      "imagePath": "assets/images/lesson5_why_polite.png",
+      "audioPath": "assets/audio/lesson5_why_polite.mp3"
+    },
+    {
+      "type": "today_vocabulary",
+      "vocabItems": [
+        {
+          "word": "Certainly",
+          "meaning": "बिलकुल, ज़रूर",
+          "phonetic": "सर्टेनली",
+          "image": "assets/images/lesson5_certainly_icon.png"
+        },
+        {
+          "word": "Sorry",
+          "meaning": "माफ़ कीजिए / माफ़ करना",
+          "phonetic": "सॉरी",
+          "image": "assets/images/lesson5_sorry_icon.png"
+        },
+        {
+          "word": "Thank you",
+          "meaning": "धन्यवाद / शुक्रिया कहना",
+          "phonetic": "थैंक यू",
+          "image": "assets/images/lesson5_thankyou_icon.png"
+        },
+        {
+          "word": "I appreciate",
+          "meaning": "मैं आपकी मदद / बात की कद्र करता हूँ",
+          "phonetic": "आई अ-प्रिशिएट",
+          "image": "assets/images/lesson5_appreciate_icon.png"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Read & Repeat",
+      "text": "1) Certainly (सर्टेनली)\n2) Sorry (सॉरी)\n3) Thank you (थैंक यू)\n4) I appreciate (आई अ-प्रिशिएट)\n\nइन शब्दों को ज़ोर से दोहराएँ और बातचीत में प्रयोग करें!",
+      "imagePath": "assets/images/lesson5_word_focus.png",
+      "audioPath": "assets/audio/lesson5_explain_read.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Very Simple, Polite Replies",
+      "cards": [
+        {
+          "term": "Certainly!",
+          "phonetic": "सर्टेनली",
+          "definition": "जब कोई आपसे कुछ माँगे और आप सहमत हों. Means ‘Yes, ज़रूर!’",
+          "image": "assets/icons/thumbs_up.png"
+        },
+        {
+          "term": "No problem!",
+          "phonetic": "नो प्रॉब्लम",
+          "definition": "जब कोई आपको ‘Thank you’ कहे, तो जवाब देने के लिए. ‘No worries!’ जैसा भी है.",
+          "image": "assets/icons/smile.png"
+        },
+        {
+          "term": "I’m sorry",
+          "phonetic": "आइएम सॉरी",
+          "definition": "छोटी गलती या टकरा जाने पर बोलें. विनम्रता दिखाता है.",
+          "image": "assets/icons/apology.png"
+        },
+        {
+          "term": "Thank you very much",
+          "phonetic": "थैंक यू वेरी मच",
+          "definition": "जब आप extra आभार जताना चाहें. सामने वाले को अहमियत मिलेगी.",
+          "image": "assets/icons/heart.png"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Small Reply Advantage",
+      "text": "छोटे जवाब English में बहुत मददगार होते हैं, जैसे ‘Certainly!’, ‘No problem!’. इतने से आप काफी polite और सहज लगेंगे.",
+      "imagePath": "assets/images/lesson5_explain_polite.png",
+      "audioPath": "assets/audio/lesson5_explain_small_reply.mp3"
+    },
+    {
+      "type": "mentor_surprise_fact",
+      "title": "Surprise Fact ",
+      "body": "क्या आप जानते हैं? ‘Thank you’ कहने से सामने वाला 60% cases में आपकी मदद को positively याद रखता है. Next time you ask for help, do say ‘Thank you’—it really makes a difference!",
+      "imagePath": "assets/images/lesson5_surprise_fact.png",
+      "audioPath": "assets/audio/lesson5_surprise_fact.mp3"
+    },
+    {
+      "type": "scene_image",
+      "caption": "Imagine Shaurya: किसी ने कहा 'Thank you for your help!' Shaurya ने जवाब दिया, 'No problem!'",
+      "imagePath": "assets/images/lesson5_shaurya_response.png",
+      "audioPath": "assets/audio/lesson5_scene1.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Compliments",
+      "text": "अगर कोई आपकी तारीफ़ करे, आप कह सकते हैं: ‘Thank you very much’ या ‘I appreciate it!’. इससे सामने वाले को अच्छा महसूस होता है.",
+      "imagePath": "assets/images/lesson5_compliment.png",
+      "audioPath": "assets/audio/lesson5_explain_practice.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Compliment Responses",
+      "cards": [
+        {
+          "term": "Thank you very much",
+          "phonetic": "थैंक यू वेरी मच",
+          "definition": "जब कोई आपकी तारीफ़ करे और आप extra आभार जताना चाहें. सामने वाले को आपका धन्यवाद साफ़ महसूस होगा.",
+          "image": "assets/icons/heart.png"
+        },
+        {
+          "term": "I appreciate it!",
+          "phonetic": "आई अ-प्रिशिएट इट",
+          "definition": "जब आप उसकी तारीफ़ या मदद की कद्र दिखाना चाहें.",
+          "image": "assets/icons/smile.png"
+        }
+      ]
+    },
+    {
+      "type": "poll",
+      "question": "‘Thank you’ के बाद आप क्या जोड़ना चाहेंगे?",
+      "options": [
+        "‘Thank you, I appreciate it!’",
+        "‘Thanks, that’s so kind!’",
+        "‘Thank you. Good bye.’",
+        "Just ‘Thank you.’"
+      ],
+      "dynamicFeedback": {
+        "0": "बहुत बढ़िया! ‘I appreciate it’ से positivity बढ़ती है.",
+        "1": "Friendly tone, ‘That’s so kind!’ भी warm महसूस होता है.",
+        "2": "थोड़ा short है. Maybe something extra to keep friendly.",
+        "3": "और भी short. कुछ और polite words जोड़ें."
+      },
+      "imagePath": "assets/images/lesson5_poll_thankyou.png"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Listen First",
+      "text": "जब कोई आपसे कुछ पूछे, पहले ध्यान से सुनिए. फिर छोटे, respectful जवाब दीजिए. इससे आप confident दिखेंगे!",
+      "imagePath": "assets/images/lesson5_listening.png",
+      "audioPath": "assets/audio/lesson5_explain_listen.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Tip",
+      "body": "1) सामने वाले की बात पूरी सुनें.\n2) समझ आए तो ‘Yes’ या ‘No’ के साथ polite शब्द डालें (जैसे **‘Yes, sure!’**).\n3) मुस्कुराएँ—चेहरे की अभिव्यक्ति महत्त्वपूर्ण है.\n4) ‘Thank you’ या ‘Sorry’ कहने में झिझक न करें!",
+      "imagePath": "assets/images/lesson5_beginners_tip.png",
+      "audioPath": "assets/audio/lesson5_tip.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Quick Reference Chart",
+      "body": "**Yes** → **‘Yes, sure!’** / **‘Yes, certainly!’**\n\n**No** → **‘No, sorry.’** / **‘I’m afraid I can’t.’**\n\n**Sorry** → **‘I’m sorry, I didn’t understand.’**\n\n**Thank you** → **‘Thank you, I appreciate it!’**",
+      "imagePath": "assets/images/lesson5_reference_chart.png",
+      "audioPath": "assets/audio/lesson5_quick_reference_chart.mp3"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "Would you like some tea? __________ (Yes, sure / No, I’m sorry)",
+      "correctWord": "Yes, sure",
+      "imagePath": "assets/images/lesson5_tea_offer.png",
+      "hints": [
+        "अगर आप चाय पीना चाहते हैं, तो ‘Yes, sure!’"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/thumbs_up_vote.json",
+      "wrongLottie": "assets/animations/confused_thinking.json",
+      "submitLabel": "Check Answer",
+      "feedback": {
+        "correctText": "शानदार! छोटा और विनम्र जवाब: ‘Yes, sure!’",
+        "wrongText": "अगर आप चाय नहीं चाहते, तो ‘No, sorry.’ बोलें."
+      }
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Politely Saying No",
+      "text": "जब ‘No’ बोलना हो, softly कहें: ‘No, sorry,’ या ‘I’m afraid I can’t.’ (आइएम अफ्रेड आइ कैंट). इससे आप rude नहीं लगेंगे!",
+      "imagePath": "assets/images/lesson5_no_soft.png",
+      "audioPath": "assets/audio/lesson5_explain_no_soft.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Saying ‘No’ Softly",
+      "cards": [
+        {
+          "term": "No, sorry",
+          "phonetic": "नो, सॉरी",
+          "definition": "जब आप politely मना करना चाहें. सामने वाले को बुरा नहीं लगेगा.",
+          "image": "assets/icons/stop_hand.png"
+        },
+        {
+          "term": "I’m afraid I can’t",
+          "phonetic": "आइएम अफ्रेड आइ कैंट",
+          "definition": "मना करने का एक respectful तरीका. Situations जहाँ आप संभवतः मदद नहीं कर सकते.",
+          "image": "assets/icons/apology.png"
+        },
+        {
+          "term": "I wish I could, but...",
+          "phonetic": "आइ विश आइ कुड, बट...",
+          "definition": "जब आप regret जताते हुए मना करना चाहें.",
+          "image": "assets/icons/regret.png"
+        },
+        {
+          "term": "I’m afraid I can’t join you today",
+          "phonetic": "आइएम अफ्रेड आइ कैंट जॉइन यू टुडे",
+          "definition": "जब आपको आज किसी ऑफर को politely ठुकराना हो. जैसे किसी पार्टी या मीटिंग में.",
+          "image": "assets/icons/regret.png"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Daily Phrases Drill",
+      "body": "ज़ोर से बोलें:\n1) ‘Sorry, I’m busy right now.’\n2) ‘Thank you, that’s very kind.’\n3) ‘Yes, certainly, I can help!’",
+      "imagePath": "assets/images/lesson5_daily_phrases.png",
+      "audioPath": "assets/audio/lesson5_daily_phrases.mp3"
+    },
+    {
+      "type": "message",
+      "title": "Micro Practice",
+      "text": "आपका दोस्त पूछता है, ‘Can you help me with homework?’\n\nआप कहें: ‘Certainly, I’m happy to help!’",
+      "imagePath": "assets/images/lesson5_micro_practice.png",
+      "audioPath": "assets/audio/lesson5_micro_practice.mp3"
+    },
+    {
+      "type": "dialogue_reconstruction",
+      "title": "Shaurya at the Café",
+      "contextTitle": "Two-line conversation",
+      "messages": [
+        {
+          "text": "Hello, would you like a seat by the window?",
+          "isSender": false,
+          "avatar": "assets/images/chat_user_pink.png"
+        },
+        {
+          "text": "Yes, certainly. Thank you!",
+          "isSender": true,
+          "avatar": "assets/images/chat_friend_blue.png"
+        }
+      ],
+      "learningTakeaway": "Shaurya का जवाब short और polite है: ‘Yes, certainly. Thank you!’",
+      "imagePath": "assets/images/lesson5_dialogue_cafe.png"
+    },
+    {
+      "type": "message",
+      "imagePath": "assets/images/lesson5_dialogue_variation.png",
+      "audioPath": "assets/audio/lesson5_dialogue_variation.mp3",
+      "text": "Try a Variation:\n‘Would you like a seat by the window?’\nShaurya: ‘No, sorry, I want a seat near the door.’\n\nअभ्यास करें Yes & No answers."
+    },
+    {
+      "type": "text",
+      "title": "Politely Saying ‘No’",
+      "body": "1) ‘No, sorry.’\n2) ‘I’m afraid I can’t.’\n3) ‘I wish I could, but...’\n\nइन gentle तरीकों से मना करने पर आप रूखे नहीं लगेंगे.",
+      "imagePath": "assets/images/lesson5_politely_no.png",
+      "audioPath": "assets/audio/lesson5_politely_no.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Practice in Steps",
+      "text": "छोटे steps से शुरुआत करें. कोई पूछे—‘Yes, sure!’ या ‘No, sorry!’ बोलकर बार-बार practice करें.",
+      "imagePath": "assets/images/lesson5_small_steps.png",
+      "audioPath": "assets/audio/lesson5_explain_small_steps.mp3"
+    },
+    {
+      "type": "poll",
+      "question": "If a colleague asks you to stay late and you can’t, what do you say?",
+      "options": [
+        "No, I won’t do it!",
+        "I’m afraid I can’t stay today, sorry.",
+        "I’m busy, leave me alone!",
+        "I don’t know. Ask someone else!"
+      ],
+      "dynamicFeedback": {
+        "0": "थोड़ा रूखा लग रहा है. Try softer words.",
+        "1": "बहुत अच्छा! Respectful refusal है.",
+        "2": "बहुत direct, यह सुनने में rude लग सकता है.",
+        "3": "अधिक polite हो सकते हैं: ‘No, sorry.’ या ‘I’m afraid I can’t.’"
+      },
+      "imagePath": "assets/images/lesson5_poll_colleague.png"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Micro-Reflection",
+      "text": "क्या आपने कभी ‘No’ बोलते हुए असहज महसूस किया है? उस समय आपने कैसे संभाला? इस पर सोचें—अगली बार polite लेकिन clear रहना और आसान होगा!",
+      "imagePath": "assets/images/lesson5_reflection.png",
+      "audioPath": "assets/audio/lesson5_micro_reflection.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Apologies & Thank You",
+      "cards": [
+        {
+          "term": "I’m sorry",
+          "phonetic": "आइएम सॉरी",
+          "definition": "छोटी गलती या टकरा जाने पर बोलें. सामने वाले को respect दिखता है.",
+          "image": "assets/icons/apology.png"
+        },
+        {
+          "term": "Thank you, I appreciate it",
+          "phonetic": "थैंक यू, आई अ-प्रिशिएट इट",
+          "definition": "जब कोई आपकी मदद या तारीफ़ करे. उसे आभार ज़ाहिर कीजिए.",
+          "image": "assets/icons/heart.png"
+        },
+        {
+          "term": "No problem!",
+          "phonetic": "नो प्रॉब्लम",
+          "definition": "जब कोई ‘Thank you’ कहे, आप ये reply कर सकते हैं. एक friendly तरीका है.",
+          "image": "assets/icons/smile.png"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Extra Phrases",
+      "text": "सिर्फ ‘I’m sorry’ या ‘Thank you’ से काम चल सकता है, लेकिन कभी-कभी एक extra phrase माहौल को और अच्छा बनाता है!",
+      "imagePath": "assets/images/lesson5_extra_phrase.png",
+      "audioPath": "assets/audio/lesson5_explain_extra_phrase.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "More Polite Phrases (Extra Practice)",
+      "cards": [
+        {
+          "term": "You're welcome!",
+          "phonetic": "योर वेल्कम",
+          "definition": "‘Thank you’ के जवाब में यह कहा जाता है. सुनने में बहुत विनम्र लगता है.",
+          "image": "assets/icons/welcome.png"
+        },
+        {
+          "term": "Excuse me",
+          "phonetic": "एक्सक्यूज़ मी",
+          "definition": "ध्यान खींचने या रास्ता माँगने के लिए. शिष्टता दर्शाता है.",
+          "image": "assets/icons/hand_raise.png"
+        },
+        {
+          "term": "That’s alright",
+          "phonetic": "दैट्स ऑलराइट",
+          "definition": "किसी ने माफ़ी माँगी, तो इस phrase से आप उन्हें reassure कर सकते हैं.",
+          "image": "assets/icons/check.png"
+        },
+        {
+          "term": "I understand",
+          "phonetic": "आइ अंडरस्टैंड",
+          "definition": "जब आपको सामने वाले की बात समझ आ गई हो. या सहमति जतानी हो.",
+          "image": "assets/icons/idea.png"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Grammar Point (Very Simple)",
+      "text": "Polite phrases वे शब्द हैं जो बातचीत में शिष्टता दिखाते हैं, जैसे 'Certainly', 'Sorry', 'Thank you'. अक्सर सिर्फ 2-3 शब्द ही पर्याप्त होते हैं—‘Yes, sure!’, ‘No, sorry!’, ‘You’re welcome!’",
+      "imagePath": "assets/images/lesson5_grammar_point.png",
+      "audioPath": "assets/audio/lesson5_explain_grammar_point.mp3"
+    },
+    {
+      "type": "word_builder",
+      "title": "Drag & Drop Practice",
+      "instruction": "नीचे दिए शब्दों से विनम्र जवाब बनाइए:",
+      "multiWordSets": [
+        {
+          "correctWord": "I appreciate your help!",
+          "words": [
+            "appreciate",
+            "help!",
+            "I",
+            "your"
+          ],
+          "correctOrder": [
+            "I",
+            "appreciate",
+            "your",
+            "help!"
+          ],
+          "hint": "जब कोई आपकी सहायता करे, तो ये phrase बोलिए."
+        },
+        {
+          "correctWord": "Certainly, I can do that.",
+          "words": [
+            "Certainly,",
+            "I",
+            "that.",
+            "can",
+            "do"
+          ],
+          "correctOrder": [
+            "Certainly,",
+            "I",
+            "can",
+            "do",
+            "that."
+          ],
+          "hint": "मतलब ‘Yes, मैं ख़ुशी से मदद करूँगा!’"
+        }
+      ],
+      "imagePath": "assets/images/lesson5_dragdrop_responses.png"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "One Extra Word = Big Impact",
+      "text": "बहुत अच्छे! याद रखें, सिर्फ 1-2 extra polite words से आपका जवाब और आकर्षक बनता है.",
+      "imagePath": "assets/images/lesson5_extra_polite_words.png",
+      "audioPath": "assets/audio/lesson5_explain_extra_polite.mp3"
+    },
+    {
+      "type": "scene_image",
+      "caption": "Shaurya politely responding at the office",
+      "imagePath": "assets/images/lesson5_shaurya_office.png",
+      "audioPath": "assets/audio/lesson5_scene_office.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "बोलकर अभ्यास (Speak Out Loud):\n1) ‘Yes, certainly!’ (जब आप खुशी से agree करें)\n2) ‘No, sorry.’ (when you politely refuse)\n3) ‘Thank you, I appreciate it.’ (जब मदद मिले और आप आभार जताना चाहें)\n4) ‘You’re welcome!’ (जब कोई ‘Thank you’ कहे)",
+      "audioPath": "assets/audio/lesson5_speaking_prompt.mp3"
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson5_short_stories.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson5_shortstory_store.png",
+          "text": "Context: How to respond politely in a store.\nSalesperson: ‘Would you like a bag?’\nShaurya: ‘Yes, please. Thank you!’\n\nPractice: अगली बार किसी दुकान पर छोटे और polite जवाब दें."
+        },
+        {
+          "imagePath": "assets/images/lesson5_shortstory_friend.png",
+          "text": "Context: How to politely refuse a party invitation.\nFriend: ‘Hey, can you come to my party tomorrow?’\nShaurya (busy): ‘I’m afraid I can’t, sorry!’\n\nStill polite and clear. कोई बुरा नहीं मानेगा!"
+        },
+        {
+          "imagePath": "assets/images/lesson5_shortstory_variation.png",
+          "text": "Context: Another way to refuse politely.\nFriend: ‘Can you come tomorrow?’\nShaurya: ‘No, sorry, I have work.’\nShort, but gentle!"
+        }
+      ]
+    },
+    {
+      "type": "poll",
+      "question": "Where will you practice polite responses first?",
+      "options": [
+        "Home with family",
+        "A local shop",
+        "Friends on phone",
+        "Office or college"
+      ],
+      "dynamicFeedback": {
+        "0": "घर में family के साथ शुरुआत करना सबसे सुरक्षित तरीका है!",
+        "1": "शॉप पर real-life practice करने से आपका confidence बढ़ेगा!",
+        "2": "दोस्तों के साथ कम शर्म महसूस होगी!",
+        "3": "ऑफिस/कॉलेज में ये phrases बहुत काम आते हैं!"
+      },
+      "imagePath": "assets/images/lesson5_poll_practice.png"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Steady Improvement",
+      "text": "रोज़ थोड़ा अभ्यास करें. शर्माएँ नहीं—अपनी आवाज़ रिकॉर्ड करें या किसी दोस्त से बात करें. इस तरह जल्दी improvement होगा!",
+      "imagePath": "assets/images/lesson5_mentor_explain.png",
+      "audioPath": "assets/audio/lesson5_explain_improvement.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Structured Summary",
+      "body": "1) छोटे वाक्यों का इस्तेमाल करें: **‘Yes, sure’**, **‘No, sorry’**, **‘I’m sorry’**, **‘Thank you’**.\n2) Polite शब्द (जैसे **‘Certainly (सर्टेनली)’**, **‘I appreciate (आई अ-प्रिशिएट)’**, **‘Excuse me’**, **‘You’re welcome!’**) से शिष्टता दिखाएँ.\n3) मना करना हो तो soft बोलें: **‘I’m afraid I can’t.’**\n4) मुस्कुराएँ और स्वर friendly रखें!\n\n**महत्वपूर्ण**: दोस्तों/परिवार के साथ प्रैक्टिस करें—इससे आपका कॉन्फ़िडेंस बहुत बढ़ता है!",
+      "imagePath": "assets/images/lesson5_structured_summary.png",
+      "audioPath": "assets/audio/lesson5_structured_summary.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Mini Practice Task: 3 Key Responses",
+      "body": "1) Accept politely: **‘Yes, sure!’**\n2) Refuse politely: **‘No, sorry…’**\n3) Apologize politely: **‘I’m sorry.’**\n\nहर एक phrase को ज़ोर से बोलकर देखें!",
+      "imagePath": "assets/images/lesson5_mini_practice.png",
+      "audioPath": "assets/audio/lesson5_mini_practice_task_overview.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Practice Audio Clips",
+      "body": "Tap each phrase to hear and repeat:",
+      "imagePath": "assets/images/lesson5_audio_phrases.png",
+      "audioPath": "",
+      "cards": [
+        {
+          "text": "‘Yes, sure!’",
+          "audio": "assets/audio/lesson5_yes_sure.mp3"
+        },
+        {
+          "text": "‘No, sorry…’",
+          "audio": "assets/audio/lesson5_no_sorry.mp3"
+        },
+        {
+          "text": "‘I’m sorry.’",
+          "audio": "assets/audio/lesson5_im_sorry.mp3"
+        }
+      ]
+    },
+    {
+      "type": "badge_award",
+      "title": "Polite Responses Master!",
+      "description": "बधाई हो! आपने Lesson 5 पूरा कर लिया. अब आप छोटे और सरल English sentences में विनम्रता से जवाब दे सकते हैं!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson5_badge_award.mp3"
+    },
+    {
+      "type": "message",
+      "text": "Lesson 5 पूरी हुई! Short, polite responses को दोहराते रहें. अगले lesson में हम English confidence और बढ़ाएँगे!",
+      "imagePath": "assets/images/lesson5_message_finish.png",
+      "audioPath": "assets/audio/lesson5_message_finish.mp3"
+    },
+    {
+      "type": "tip",
+      "title": "Stay Cheerful!",
+      "body": "छोटा ‘Thank you!’ या ‘Sorry!’ बड़ी असर डालता है. इन्हें रोज़ practice करें, आपका confidence बढ़ेगा!",
+      "imagePath": "assets/images/lesson5_tip_extra.png",
+      "audioPath": "assets/audio/lesson5_tip_extra.mp3"
+    }
+  ]
+}

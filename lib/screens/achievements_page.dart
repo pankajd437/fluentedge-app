@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
 import 'package:fluentedge_app/constants.dart';
 import 'package:go_router/go_router.dart';
@@ -7,23 +8,26 @@ import 'package:fluentedge_app/data/user_state.dart';
 import 'package:http/http.dart' as http;
 import 'package:hive/hive.dart';
 
-class AchievementsPage extends StatefulWidget {
+class AchievementsPage extends ConsumerStatefulWidget {
   const AchievementsPage({Key? key}) : super(key: key);
 
   @override
-  State<AchievementsPage> createState() => _AchievementsPageState();
+  ConsumerState<AchievementsPage> createState() => _AchievementsPageState();
 }
 
-class _AchievementsPageState extends State<AchievementsPage> {
+class _AchievementsPageState extends ConsumerState<AchievementsPage> {
   int streak = 0;
   int completedLessons = 0;
+
+  // Existing local XP field (fallback from older logic)
+  int totalXP = 0; 
 
   @override
   void initState() {
     super.initState();
     _fetchStreak();
-    // Attempt fetching completed lessons from backend first
     _fetchCompletedLessons();
+    _fetchUserXP(); // 🆕 fetch from /api/v1/user/xp, then sync into xpProvider
   }
 
   /// Fetch daily streak from the backend; fallback if needed
@@ -61,7 +65,8 @@ class _AchievementsPageState extends State<AchievementsPage> {
           completedLessons = fetchedCount;
         });
       } else {
-        debugPrint("❌ Failed to fetch lesson stats (status: ${response.statusCode}). Fallback to local.");
+        debugPrint(
+            "❌ Failed to fetch lesson stats (status: ${response.statusCode}). Fallback to local.");
         _countCompletedLessonsLocal();
       }
     } catch (e) {
@@ -80,8 +85,45 @@ class _AchievementsPageState extends State<AchievementsPage> {
     debugPrint("📘 [Fallback] Completed Lessons (local Hive): $completedLessons");
   }
 
+  /// 🆕 New method to fetch real total XP from /api/v1/user/xp
+  /// and sync with xpProvider so we display real-time local XP
+  Future<void> _fetchUserXP() async {
+    final name = await UserState.getUserName() ?? "Anonymous";
+    final url = Uri.parse("${ApiConfig.local}/api/v1/user/xp?name=$name");
+
+    try {
+      final response = await http.get(url);
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        final serverXP = data['total_xp'] ?? 0;
+
+        // Keep old local state field for fallback
+        setState(() {
+          totalXP = serverXP;
+        });
+
+        // 🆕 If server XP is greater than local XP, update xpProvider
+        final localXP = ref.read(xpProvider); 
+        if (serverXP > localXP) {
+          ref.read(xpProvider.notifier).setXP(serverXP);
+          debugPrint("🌐 [Achievements] Server XP $serverXP is higher; updating local to match.");
+        } else {
+          debugPrint("🌐 [Achievements] Local XP is higher or equal, ignoring server XP.");
+        }
+      } else {
+        debugPrint("❌ Failed to fetch XP: ${response.statusCode} => ${response.body}");
+      }
+    } catch (e) {
+      debugPrint("❌ Error fetching XP: $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    // 🆕 Instead of showing local `totalXP` from the server call,
+    // we watch xpProvider for real-time XP across the app.
+    final currentXP = ref.watch(xpProvider);
+
     // Local badges array, referencing the streak and completedLessons
     final List<Map<String, dynamic>> badges = [
       {
@@ -182,9 +224,19 @@ class _AchievementsPageState extends State<AchievementsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            // 🆕 Show real-time XP (from xpProvider)
+            Text(
+              "Your Total XP: $currentXP",
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: kAccentGreen,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
               "🎖 Your Badges",
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: kPrimaryIconBlue,
@@ -219,82 +271,83 @@ class _AchievementsPageState extends State<AchievementsPage> {
                           'tag': tag,
                         });
                       },
-                      child: Container(
-                        constraints: const BoxConstraints(minHeight: 160),
-                        padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                          color: unlocked ? Colors.white : Colors.grey.shade100,
-                          border: Border.all(
-                            color:
-                                unlocked ? kAccentGreen : Colors.grey.shade300,
-                          ),
+                      child: Card(
+                        elevation: 4,
+                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
-                          boxShadow: unlocked
-                              ? [
-                                  BoxShadow(
-                                    color: kAccentGreen.withOpacity(0.1),
-                                    blurRadius: 8,
-                                    offset: const Offset(0, 4),
-                                  )
-                                ]
-                              : [],
                         ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Lottie.asset(
-                              animation,
-                              height: 56,
-                              repeat: unlocked,
-                              animate: unlocked,
-                              fit: BoxFit.contain,
-                              frameRate: FrameRate.max,
-                              delegates: LottieDelegates(
-                                values: [
-                                  ValueDelegate.color(
-                                    const ['**'],
-                                    value: unlocked ? null : Colors.grey.shade400,
-                                  ),
-                                ],
-                              ),
+                        margin: EdgeInsets.zero,
+                        child: Container(
+                          constraints: const BoxConstraints(minHeight: 160),
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: unlocked ? Colors.white : Colors.grey.shade100,
+                            border: Border.all(
+                              color: unlocked
+                                  ? kAccentGreen
+                                  : Colors.grey.shade300,
                             ),
-                            const SizedBox(height: 10),
-                            Text(
-                              title,
-                              textAlign: TextAlign.center,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w600,
-                                color: unlocked ? Colors.black87 : Colors.grey,
-                              ),
-                            ),
-                            const SizedBox(height: 6),
-                            if (unlocked)
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Icon(Icons.bolt_rounded,
-                                      size: 14, color: Colors.orange),
-                                  const SizedBox(width: 4),
-                                  Text(
-                                    "$xp XP",
-                                    style: const TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.orange,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            if (unlocked)
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
                               Lottie.asset(
-                                'assets/animations/badge_unlocked.json',
-                                height: 34,
-                                repeat: false,
+                                animation,
+                                height: 56,
+                                repeat: unlocked,
+                                animate: unlocked,
+                                fit: BoxFit.contain,
+                                frameRate: FrameRate.max,
+                                delegates: LottieDelegates(
+                                  values: [
+                                    ValueDelegate.color(
+                                      const ['**'],
+                                      value: unlocked
+                                          ? null
+                                          : Colors.grey.shade400,
+                                    ),
+                                  ],
+                                ),
                               ),
-                          ],
+                              const SizedBox(height: 10),
+                              Text(
+                                title,
+                                textAlign: TextAlign.center,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600,
+                                  color: unlocked ? Colors.black87 : Colors.grey,
+                                ),
+                              ),
+                              const SizedBox(height: 6),
+                              if (unlocked)
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Icon(Icons.bolt_rounded,
+                                        size: 14, color: Colors.orange),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      "$xp XP",
+                                      style: const TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.orange,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              if (unlocked)
+                                Lottie.asset(
+                                  'assets/animations/badge_unlocked.json',
+                                  height: 34,
+                                  repeat: false,
+                                ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

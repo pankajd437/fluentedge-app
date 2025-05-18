@@ -1,0 +1,284 @@
+{
+  "lessonId": "beginner_001_lesson_016",
+  "title": "Saying Yes, No & Maybe with Confidence",
+  "level": "beginner",
+  "themeColor": "#4A90E2",
+  "xpTotal": 500,
+  "objectives": [
+    "Learn confident ‘Yes’ phrases for daily use",
+    "Politely say ‘No’ without awkwardness",
+    "Express uncertainty (‘Maybe’) in clear, simple English",
+    "Boost self-assurance when responding to requests and invitations"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": ["en", "hi"],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "decision_making_star",
+    "title": "Decision-Making Star",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+    {
+      "type": "mentor_intro",
+      "text": "Welcome to Lesson 16: ‘Saying Yes, No & Maybe with Confidence.’ कितनी बार हम चाहकर भी English में ‘No’ बोलने से डरते हैं या ‘Yes’ बोलते हुए hichkichाहट महसूस करते हैं? कोई बात नहीं—today, we’ll learn clear, polite ways to say yes, no, and maybe in real situations!",
+      "imagePath": "assets/images/lesson16_intro.png",
+      "audioPath": "assets/audio/lesson16_intro_mentor.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Everyday Scenarios for Yes/No/Maybe",
+      "body": "1) Invitations (parties, trips, events)\n2) Favors or requests (borrowing items, help)\n3) Plans & scheduling\n4) Offers & proposals\n\nइन scenarios में sometimes ‘Yes, absolutely!’ या ‘No, sorry, I can’t’ या ‘Maybe, I’ll check.’ बोलने की जरूरत होती है.",
+      "audioPath": "assets/audio/lesson16_text_card_scenarios.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Let’s learn short phrases:\n\n**YES**\n• ‘Yes, of course!’\n• ‘Absolutely!’\n• ‘Sure, no problem!’\n• ‘I’d love to!’\n\n**NO**\n• ‘No, sorry I can’t.’\n• ‘Thanks, but maybe next time.’\n• ‘I’d love to, but I’m busy.’\n• ‘Sorry, I don’t think I can.’\n\n**MAYBE**\n• ‘Maybe, let me check.’\n• ‘I’m not sure yet.’\n• ‘I’ll let you know soon.’\n\nछोटे phrases that make daily conversation smoother!",
+      "imagePath": "assets/images/lesson16_mentor_explain_phrases.png",
+      "audioPath": "assets/audio/lesson16_explain_phrases.mp3"
+    },
+    {
+      "type": "today_vocabulary",
+      "vocabItems": [
+        {
+          "word": "Absolutely",
+          "meaning": "Strong ‘yes’: “Yes, absolutely!”",
+          "image": "assets/images/lesson16_vocab_absolutely.png"
+        },
+        {
+          "word": "Maybe",
+          "meaning": "Uncertain response: “Maybe, let me think.”",
+          "image": "assets/images/lesson16_vocab_maybe.png"
+        },
+        {
+          "word": "Busy",
+          "meaning": "Occupied, no free time: “I’m busy right now.”",
+          "image": "assets/images/lesson16_vocab_busy.png"
+        },
+        {
+          "word": "Sure",
+          "meaning": "Polite yes: “Sure, no problem!”",
+          "image": "assets/images/lesson16_vocab_sure.png"
+        },
+        {
+          "word": "Problem",
+          "meaning": "Issue or difficulty: “No problem—happy to help!”",
+          "image": "assets/images/lesson16_vocab_problem.png"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson16_scenario_yes.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson16_yes_invite.png",
+          "text": "**Scenario 1: Saying ‘Yes’ to Invitation**\n\nFriend: “We’re planning a movie night. Want to come?”\nYou: “Yes, of course! I’d love to join.”\nFriend: “Great, see you at 7 PM!”\nYou: “Sure, no problem!”\n\n**Key Learning**: Use lines: ‘Yes, of course!’, ‘I’d love to!’"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson16_scenario_no.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson16_no_favor.png",
+          "text": "**Scenario 2: Politely Saying ‘No’ to a Request**\n\nNeighbor: “Could you lend me your laptop for the evening?”\nYou: “I’m sorry, I don’t think I can. I need it for work tonight.”\nNeighbor: “Oh, okay. Maybe another time.”\nYou: “Yes, sorry about that.”\n\n**Key Learning**: A short reason + apology is enough. E.g. ‘Sorry, I don’t think I can.’"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson16_scenario_maybe.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson16_maybe_uncertain.png",
+          "text": "**Scenario 3: Using ‘Maybe’ (Uncertain)**\n\nColleague: “We have a small picnic on Sunday—want to join?”\nYou: “Maybe, let me check my schedule. I’m not sure yet.”\nColleague: “No worries, let me know soon!”\nYou: “Sure, I’ll let you know by tomorrow.”\n\n**Key Learning**: Use lines: ‘Maybe, let me check.’ ‘I’m not sure yet.’"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson16_scenario_decline_offer.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson16_decline_offer.png",
+          "text": "**Scenario 4: Polite Decline with Next Time**\n\nFriend: “We’re going to a concert tonight—join us?”\nYou: “I’d love to, but I’m busy. Thanks, but maybe next time.”\nFriend: “Sure, no problem!”\n\n**Key Learning**: Soft refusal + future possibility: ‘I’d love to, but… maybe next time.’"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Remember, saying ‘No’ is normal—आपको हमेशा हाँ नहीं बोलना पड़ेगा. बस short polite lines use करें. Also ‘maybe’ is okay if you’re unsure. Clarity is better than forced yes or no!",
+      "imagePath": "assets/images/lesson16_mentor_explain_normal.png",
+      "audioPath": "assets/audio/lesson16_explain_normal.mp3"
+    },
+    {
+      "type": "roleplay",
+      "title": "Yes/No/Maybe Roleplay Practice",
+      "scenes": [
+        {
+          "userLine": "Coworker: “Can you stay late to finish this project?”",
+          "mentorLine": "You: “Sure, no problem!” (Confident yes)",
+          "mentorTip": "Enthusiastic tone for yes!"
+        },
+        {
+          "userLine": "Coworker: “Could you do my shift tomorrow?”",
+          "mentorLine": "You: “I’m sorry, I can’t. I have plans.” (Polite no)",
+          "mentorTip": "Soft tone + short reason is enough."
+        },
+        {
+          "userLine": "Coworker: “We might need your help next week.”",
+          "mentorLine": "You: “Maybe, let me check my schedule.” (Uncertain yet polite)",
+          "mentorTip": "Keep it open with ‘let me check.’"
+        }
+      ],
+      "imagePath": "assets/images/lesson16_roleplay.png",
+      "audioPath": "assets/audio/lesson16_roleplay_ynm.mp3"
+    },
+    {
+      "type": "poll",
+      "question": "Which is hardest for you: yes, no, or maybe?",
+      "options": [
+        "Yes—sounds too excited or forced",
+        "No—I feel rude or guilty",
+        "Maybe—I sound unsure",
+        "All are okay"
+      ],
+      "dynamicFeedback": {
+        "0": "Try: ‘Yes, of course!’ or ‘Absolutely!’—simple & friendly.",
+        "1": "Short apology + a reason: ‘Sorry, I can’t. I’m busy.’",
+        "2": "Just be honest—‘Maybe, I’ll let you know soon.’",
+        "3": "Amazing, practice them daily!"
+      },
+      "imagePath": "assets/images/lesson16_poll_difficulty.png"
+    },
+    {
+      "type": "sentence_construction",
+      "words": ["Yes,", "of", "course!", "I'd", "love", "to."],
+      "correctOrder": ["Yes,", "of", "course!", "I'd", "love", "to."],
+      "imagePath": "assets/images/lesson16_sentence_construct_yes.png"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "I’m sorry, I _____ (don’t/doesn’t) think I can come tomorrow.",
+      "correctWord": "don’t",
+      "imagePath": "assets/images/lesson16_fill_blanks_no.png",
+      "hints": [
+        "Use 'don’t' for I in negative sentence—‘I don’t think I can.’"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "Yes—‘I don’t think I can’ is correct for polite refusal!",
+        "wrongText": "We use ‘don’t’ with ‘I’ not ‘doesn’t.’"
+      },
+      "submitLabel": "Check Answer"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Practice a confident ‘Yes’: “Absolutely! I’m happy to help!”",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson16_speaking_prompt_yes.png",
+      "audioPath": "assets/audio/lesson16_speaking_yes.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Practice a polite ‘No’: “I’d love to, but I’m busy. Sorry!”",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson16_speaking_prompt_no.png",
+      "audioPath": "assets/audio/lesson16_speaking_no.mp3"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "Maybe, _____ (I’ll/you’ll) let you know soon. I’m not sure yet.",
+      "correctWord": "I’ll",
+      "imagePath": "assets/images/lesson16_fill_blanks_maybe.png",
+      "hints": [
+        "Talking about yourself giving an update, use 'I’ll let you know!'"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "Yes, ‘I’ll let you know soon!’ is a perfect way to say maybe.",
+        "wrongText": "‘You’ll let you know soon?’ is incorrect structure!"
+      },
+      "submitLabel": "Check Answer"
+    },
+    {
+      "type": "audio_clip",
+      "title": "Tones for Yes, No & Maybe",
+      "clips": [
+        {
+          "label": "Yes (enthusiastic)",
+          "audio": "assets/audio/lesson16_yes_tone.mp3",
+          "transcript": "“Sure, no problem! I’d love to!”"
+        },
+        {
+          "label": "No (gentle, polite)",
+          "audio": "assets/audio/lesson16_no_tone.mp3",
+          "transcript": "“Sorry, I can’t. Maybe next time.”"
+        },
+        {
+          "label": "Maybe (uncertain)",
+          "audio": "assets/audio/lesson16_maybe_tone.mp3",
+          "transcript": "“I’m not sure yet. I’ll let you know soon.”"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Notice: Yes has an upbeat tone, No is gentle but firm, and Maybe has a calm, thoughtful tone. थोड़ा-सा voice change big difference ला सकता है!",
+      "imagePath": "assets/images/lesson16_mentor_explain_tone.png",
+      "audioPath": "assets/audio/lesson16_mentor_explain_tone.mp3"
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson16_scenario_variations.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson16_variation.png",
+          "text": "**Scenario 5: Variation of Responses**\n\n1) Friend: “Want to join my online study group?”\nYou: “Yes, of course! I’d love to.”\n\n2) Friend: “Can you lend me 1000 rupees?”\nYou: “No, sorry, I can’t. I’m broke right now.”\n\n3) Friend: “We might go on a trip next month—join?”\nYou: “Maybe, let me see my budget. I’m not sure yet.”\n\n**Key Learning**: Same situation, different yes/no/maybe usage depending on your choice."
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Saying ‘no’ politely isn’t rude—it’s normal. एक छोटा apology + reason काफी है. Saying ‘maybe’ is also helpful if you need time. Being honest > forced yes.",
+      "imagePath": "assets/images/lesson16_mentor_explain_honesty.png",
+      "audioPath": "assets/audio/lesson16_mentor_explain_honesty.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Emotional Encouragement",
+      "body": "No tension! ‘No’ कहना or ‘Maybe’ बोलना पूरी तरह normal है. Polite lines like ‘Sorry, I’m busy’ या ‘I’ll let you know’ की practice करें—this builds your confidence!",
+      "audioPath": "assets/audio/lesson16_emotional_encouragement.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Say: “Thanks, but maybe next time.” (practice soft ‘no’ tone)",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson16_speaking_prompt_softno.png",
+      "audioPath": "assets/audio/lesson16_speaking_softno.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Lesson 16 Recap",
+      "body": "1) Yes phrases: ‘Yes, of course!’, ‘Absolutely!’, ‘Sure, no problem!’\n2) No phrases: ‘No, sorry I can’t.’, ‘I’d love to, but I’m busy.’, ‘Thanks, but maybe next time.’\n3) Maybe phrases: ‘I’m not sure yet.’, ‘I’ll let you know soon.’\n4) Tone counts—be gentle & polite, no long excuses needed!",
+      "audioPath": "assets/audio/lesson16_recap.mp3"
+    },
+    {
+      "type": "badge_award",
+      "title": "Decision-Making Star",
+      "description": "Congratulations! You can now say yes, no, or maybe in English with confidence. Practice these short lines daily to stay polite and clear!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson16_badge_award.mp3"
+    }
+  ]
+}

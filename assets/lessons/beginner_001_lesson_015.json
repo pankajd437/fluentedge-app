@@ -1,0 +1,337 @@
+{
+  "lessonId": "beginner_001_lesson_015",
+  "title": "Expressing Feelings & Reactions in Conversation",
+  "level": "beginner",
+  "themeColor": "#4A90E2",
+  "xpTotal": 500,
+  "objectives": [
+    "Learn common phrases to express basic feelings (happiness, sadness, surprise, excitement, empathy)",
+    "Respond naturally in real-life situations with emotional reactions",
+    "Gain confidence in expressing genuine feelings without hesitation",
+    "Recognize when and how to use short emotional responses in everyday conversations"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": [
+      "en",
+      "hi"
+    ],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "express_yourself_champion",
+    "title": "Express Yourself Champion",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+    {
+      "type": "mentor_intro",
+      "text": "Welcome to Lesson 15: ‘Expressing Feelings & Reactions in Conversation!’ अक्सर हम simple phrases बोल लेते हैं, पर emotional reactions जैसे ‘Wow, that’s great!’ कहने में हिचकिचाते हैं. कोई बात नहीं—we’ll learn how to express happiness, sadness, surprise, and more in a natural way!",
+      "imagePath": "assets/images/lesson15_intro.png",
+      "audioPath": "assets/audio/lesson15_intro_mentor.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Everyday Situations Needing Emotional Responses",
+      "body": "1) Good news from a friend\n2) Bad news or sad events\n3) Surprising or unexpected info\n4) Exciting invitations or plans\n\nइन situations में simple reaction phrases are key!",
+      "audioPath": "assets/audio/lesson15_text_card_situations.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Let’s learn short phrases for each feeling:\n\n• Happiness: ‘That’s wonderful!’\n• Sadness: ‘I’m sorry to hear that.’\n• Surprise: ‘Really? That’s surprising!’\n• Excitement: ‘That’s exciting!’\n• Empathy: ‘I understand how you feel.’\n\nकई बार छोटी English line आपकी true feelings दिखाने में काफी होती है!",
+      "imagePath": "assets/images/lesson15_mentor_explain_feelings.png",
+      "audioPath": "assets/audio/lesson15_explain_feelings.mp3"
+    },
+    {
+      "type": "today_vocabulary",
+      "vocabItems": [
+        {
+          "word": "Happy",
+          "meaning": "Feeling or showing pleasure (e.g. ‘I’m so happy for you!’)",
+          "image": "assets/images/lesson15_vocab_happy.png"
+        },
+        {
+          "word": "Sad",
+          "meaning": "Feeling sorrow (e.g. ‘Oh no, that’s sad.’)",
+          "image": "assets/images/lesson15_vocab_sad.png"
+        },
+        {
+          "word": "Surprised",
+          "meaning": "Feeling astonishment (e.g. ‘Wow, really? That’s surprising!’)",
+          "image": "assets/images/lesson15_vocab_surprised.png"
+        },
+        {
+          "word": "Excited",
+          "meaning": "Feeling eager or enthusiastic (e.g. ‘That’s exciting!’)",
+          "image": "assets/images/lesson15_vocab_excited.png"
+        },
+        {
+          "word": "Understand",
+          "meaning": "To empathize or grasp feelings (e.g. ‘I understand how you feel.’)",
+          "image": "assets/images/lesson15_vocab_understand.png"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson15_story_goodnews.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson15_good_news.png",
+          "text": "**Scenario 1: Friend Shares Good News (Happiness)**\n\nFriend: “I got a new job offer!”\nYou: “Wow, that’s wonderful! I’m so happy for you!”\nFriend: “Thank you! I was nervous, but it finally worked out.”\nYou: “That’s great news. Let’s celebrate soon!”\n\n**Key Learning**: Use cheerful lines: ‘That’s wonderful! I’m so happy for you!’"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson15_story_sadnews.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson15_sad_news.png",
+          "text": "**Scenario 2: Friend Shares Sad News (Sadness)**\n\nFriend: “My trip got canceled because of family emergency.”\nYou: “Oh no, that’s sad. I’m sorry to hear that.”\nFriend: “Yeah, it’s disappointing, but what can I do?”\nYou: “I understand how you feel. Let me know if you need anything, okay?”\n\n**Key Learning**: Show empathy with lines like ‘I’m sorry to hear that’ and ‘I understand how you feel.’"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson15_story_surprise.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson15_surprise.png",
+          "text": "**Scenario 3: Someone Gives Surprising Info (Surprise)**\n\nClassmate: “Did you know our favorite café is closing?”\nYou: “Really? That’s surprising! I never expected that.”\nClassmate: “I know, right? They suddenly announced it today.”\nYou: “Wow, that’s such unexpected news.”\n\n**Key Learning**: Surprise lines: ‘Really? That’s surprising!’ ‘Wow, I didn’t expect that!’"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson15_story_exciting.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson15_excitement.png",
+          "text": "**Scenario 4: Friend Invites You to Exciting Event (Excitement)**\n\nFriend: “We’re planning a weekend trip to the mountains!”\nYou: “That’s exciting! I can’t wait to join you guys.”\nFriend: “Yes, it’ll be so much fun.”\nYou: “Absolutely. I’m looking forward to it!”\n\n**Key Learning**: Express excitement with phrases like ‘That’s exciting!’ or ‘I can’t wait!’"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Also show empathy/support phrases:\n• ‘Don’t worry, it’ll be okay.’\n• ‘I’m here if you need help.’\n\nये छोटे sentences बहुत comfort देते हैं!",
+      "imagePath": "assets/images/lesson15_mentor_explain_empathy.png",
+      "audioPath": "assets/audio/lesson15_mentor_explain_empathy.mp3"
+    },
+    {
+      "type": "roleplay",
+      "title": "Emotional Reactions Practice",
+      "scenes": [
+        {
+          "userLine": "Friend: ‘I just won a dance competition!’",
+          "mentorLine": "You: ‘Wow, that’s awesome! I’m so proud of you!’",
+          "mentorTip": "Use an enthusiastic tone—like real excitement!"
+        },
+        {
+          "userLine": "Friend: ‘I lost my phone today...’",
+          "mentorLine": "You: ‘Oh no, that’s sad. I’m sorry it happened.’",
+          "mentorTip": "Show a soft, concerned tone for sadness."
+        }
+      ],
+      "imagePath": "assets/images/lesson15_roleplay_emotions.png",
+      "audioPath": "assets/audio/lesson15_roleplay_emotions.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Tone matters! Happiness = bright tone, sadness = softer tone, surprise = a bit higher pitch. एक small change in your voice can convey real feelings.",
+      "imagePath": "assets/images/lesson15_mentor_explain_tone.png",
+      "audioPath": "assets/audio/lesson15_mentor_explain_tone.mp3"
+    },
+    {
+      "type": "poll",
+      "question": "Which emotion do you find hardest to express?",
+      "options": [
+        "Happiness",
+        "Sadness",
+        "Surprise",
+        "Excitement",
+        "Empathy/Support"
+      ],
+      "dynamicFeedback": {
+        "0": "Try: ‘I’m so happy for you!’ or ‘That’s wonderful!’",
+        "1": "Use: ‘I’m sorry to hear that.’ ‘Oh no!’",
+        "2": "Go with: ‘Really? That’s surprising!’",
+        "3": "Try: ‘That’s exciting!’ ‘I can’t wait!’",
+        "4": "Use: ‘I understand how you feel.’ ‘Don’t worry.’"
+      },
+      "imagePath": "assets/images/lesson15_poll_emotions.png"
+    },
+    {
+      "type": "sentence_construction",
+      "words": [
+        "Oh",
+        "no,",
+        "that's",
+        "sad.",
+        "I'm",
+        "sorry",
+        "to",
+        "hear",
+        "that."
+      ],
+      "correctOrder": [
+        "Oh",
+        "no,",
+        "that's",
+        "sad.",
+        "I'm",
+        "sorry",
+        "to",
+        "hear",
+        "that."
+      ],
+      "imagePath": "assets/images/lesson15_sentence_construct_sad.png"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "______ (That’s exciting/I’m sad) I can’t wait to go!",
+      "correctWord": "That’s exciting",
+      "imagePath": "assets/images/lesson15_fill_blanks_exciting.png",
+      "hints": [
+        "We’re expressing excitement, so choose the positive phrase!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "Perfect for excitement! ‘That’s exciting!’",
+        "wrongText": "We’re not sad here—excitement is the right feeling."
+      },
+      "submitLabel": "Check Answer"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Say out loud: ‘Really? That’s surprising! I didn’t know that.’ (practice a surprised tone!)",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson15_speaking_prompt_surprise.png",
+      "audioPath": "assets/audio/lesson15_speaking_prompt_surprise.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Practice sadness phrase: ‘Oh no, that’s sad. I’m sorry to hear that.’ (soft tone, show concern)",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson15_speaking_prompt_sad.png",
+      "audioPath": "assets/audio/lesson15_speaking_prompt_sad.mp3"
+    },
+    {
+      "type": "audio_clip",
+      "title": "Tone & Delivery Examples",
+      "clips": [
+        {
+          "label": "Excited Tone",
+          "audio": "assets/audio/lesson15_excited_tone.mp3",
+          "transcript": "“Wow, that’s amazing! I can’t wait!”"
+        },
+        {
+          "label": "Sad Tone",
+          "audio": "assets/audio/lesson15_sad_tone.mp3",
+          "transcript": "“Oh no...that’s really unfortunate. I’m sorry.”"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson15_support_story.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson15_support.png",
+          "text": "**Scenario 5: Showing Support & Empathy**\n\nFriend: “I’m worried about my exams.”\nYou: “I understand how you feel. Don’t worry, you’ll do fine!”\nFriend: “Thanks for understanding.”\n\n**Key Learning**: Simple empathy line: ‘I understand how you feel. Don’t worry!’"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Remember: इन short phrases से आप real feelings easily express कर सकते हैं! No huge sentences needed—just 1-2 lines with the right tone is enough to connect emotionally.",
+      "imagePath": "assets/images/lesson15_mentor_explain_reminder.png",
+      "audioPath": "assets/audio/lesson15_mentor_explain_reminder.mp3"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "Wow, ______ (that’s great/oh no)! I’m so happy for you!",
+      "correctWord": "that’s great",
+      "imagePath": "assets/images/lesson15_fill_blanks_great.png",
+      "hints": [
+        "Response to good news, so ‘that’s great’ is correct!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "Exactly—‘that’s great!’ shows a positive reaction.",
+        "wrongText": "‘Oh no’ is used for sad or negative news."
+      },
+      "submitLabel": "Check Answer"
+    },
+    {
+      "type": "sentence_construction",
+      "words": [
+        "I",
+        "understand",
+        "how",
+        "you",
+        "feel.",
+        "Don’t",
+        "worry!"
+      ],
+      "correctOrder": [
+        "I",
+        "understand",
+        "how",
+        "you",
+        "feel.",
+        "Don’t",
+        "worry!"
+      ],
+      "imagePath": "assets/images/lesson15_sentence_construct_support.png"
+    },
+    {
+      "type": "poll",
+      "question": "Which new phrase do you love most so far?",
+      "options": [
+        "I’m so happy for you!",
+        "Oh no, that’s sad.",
+        "Really? That’s surprising!",
+        "That’s exciting!"
+      ],
+      "dynamicFeedback": {
+        "0": "Great for sharing in someone’s happiness!",
+        "1": "Perfect sympathy line.",
+        "2": "Yes, it shows genuine surprise!",
+        "3": "Use for big events or plans!"
+      },
+      "imagePath": "assets/images/lesson15_poll_phrases.png"
+    },
+    {
+      "type": "text_card",
+      "title": "Emotional Encouragement",
+      "body": "Feelings express करना कोई formal भाषा नहीं—just short, real lines with genuine tone. थोड़ी Hindi mix भी चलेगा. It shows you care!",
+      "audioPath": "assets/audio/lesson15_emotional_encouragement.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Anytime someone shares something, think: Is it good, bad, surprising, exciting, or needs support? Use these short reaction lines. Practice them daily—boldly express yourself!",
+      "imagePath": "assets/images/lesson15_mentor_explain_final.png",
+      "audioPath": "assets/audio/lesson15_mentor_explain_final.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Lesson 15 Recap",
+      "body": "1) Happiness: ‘That’s wonderful! I’m so happy for you!’\n2) Sadness: ‘I’m sorry to hear that.’ ‘Oh no, that’s sad.’\n3) Surprise: ‘Really? That’s surprising!’\n4) Excitement: ‘That’s exciting!’ ‘I can’t wait!’\n5) Empathy: ‘I understand how you feel.’ ‘Don’t worry!’\n\nShort phrases, real feelings!",
+      "audioPath": "assets/audio/lesson15_recap.mp3"
+    },
+    {
+      "type": "badge_award",
+      "title": "Express Yourself Champion",
+      "description": "Congratulations! You’ve learned how to express your feelings and reactions naturally in English. Keep using these small lines and share your emotions confidently!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson15_badge_award.mp3"
+    }
+  ]
+}

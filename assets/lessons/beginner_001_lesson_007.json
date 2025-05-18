@@ -1,0 +1,386 @@
+{
+  "lessonId": "beginner_001_lesson_007",
+  "title": "Ordering Food Confidently",
+  "level": "beginner",
+  "themeColor": "#4A90E2",
+  "xpTotal": 800,
+  "objectives": [
+    "Learn polite English phrases for ordering food and drinks",
+    "Practice real-life dialogues with cafe staff",
+    "Use short questions to confirm prices, requests, or modifications",
+    "Gain confidence to handle any quick-service scenario"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": ["en","hi"],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "food_ordering_pro",
+    "title": "Food Ordering Pro!",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+    {
+      "type": "mentor_intro",
+      "text": "नमस्ते! आज हम सीखेंगे कि English में food order करते समय क्या कहना चाहिए, और इस बार हम इस्तेमाल करेंगे आसान 5-Step Toolkit. आज की कहानी में Neha पहली बार कैफ़े जा रही है. चलिए, हम भी उसके साथ सीखते हैं!",
+      "imagePath": "assets/images/lesson7_intro_hero.png",
+      "audioPath": "assets/audio/lesson7_mentor_intro.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Neha की कहानी",
+      "body": "Neha एक college student है जो English में confidently order करना सीखना चाहती है. उसे थोड़ी घबराहट है, लेकिन वो कोशिश करना चाहती है. चलिए, हम उसकी मदद करते हैं – ताकि वो politely और clearly बोल सके!",
+      "imagePath": "assets/images/lesson7_neha_story.png",
+      "audioPath": "assets/audio/lesson7_neha_story.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "5-Step Toolkit",
+      "text": "जब भी आप कुछ order करने जाएँ, ये पाँच स्टेप्स याद रखिए:\n1) Greet: 'Excuse me...' या 'Hello!'\n2) Order: 'I’d like...' या 'Could I have...'\n3) Respond: कुछ और चाहिए या नहीं?\n4) Clarify/Modify: 'Actually, could I change...?'\n5) Confirm & Pay: 'How much is it?' + 'Thank you!'\n\nइन्हें follow करने से आपकी ordering smooth रहेगी!",
+      "imagePath": "assets/images/lesson7_five_step_toolkit.png",
+      "audioPath": "assets/audio/lesson7_five_step_toolkit.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "5-Step Ordering Summary",
+      "audioPath": "assets/audio/lesson7_flashcards_5steps.mp3",
+      "cards": [
+        {
+          "term": "Greet",
+          "definition": "‘Excuse me... Hello!’ – स्टाफ को politely address करें। (Step 1)"
+        },
+        {
+          "term": "Order",
+          "definition": "‘I’d like a coffee, please.’ – अपनी wish बताएं। (Step 2)"
+        },
+        {
+          "term": "Respond",
+          "definition": "‘No, that’s all. Thank you.’ – कुछ और नहीं चाहिए तो कहें। (Step 3)"
+        },
+        {
+          "term": "Modify",
+          "definition": "‘Could I change my order?’ – कुछ बदलना हो तो politely पूछें। (Step 4)"
+        },
+        {
+          "term": "Confirm & Pay",
+          "definition": "‘How much is it?’ – कीमत पूछकर ‘Thank you’ कहें। (Step 5)"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Polite Staff Questions",
+      "text": "Staff अक्सर पूछ सकता है:\n• ‘What would you like?’\n• ‘Anything else?’\n• ‘For here or to go?’\n• ‘Cash or card?’\n\nइनका जवाब छोटे, विनम्र वाक्यों में दें: ‘I’d like a sandwich, please.’ या ‘No, that’s all.’",
+      "imagePath": "assets/images/lesson7_staff_questions.png",
+      "audioPath": "assets/audio/lesson7_staff_questions.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Common Staff Questions (With Short Hindi)",
+      "audioPath": "assets/audio/lesson7_flashcards_staff_questions.mp3",
+      "cards": [
+        {
+          "term": "What would you like?",
+          "definition": "जब स्टाफ पूछे: ‘क्या लेंगे?’\nकहें: ‘I’d like a coffee, please.’"
+        },
+        {
+          "term": "Anything else?",
+          "definition": "मतलब: ‘कुछ और चाहिए?’\nकहें: ‘No, that’s all, thank you.’"
+        },
+        {
+          "term": "For here or to go?",
+          "definition": "यहीं बैठकर खाएँगे या pack करवाएँगे?\nकहें: ‘For here, please.’ या ‘To go, please.’"
+        },
+        {
+          "term": "Cash or card?",
+          "definition": "Payment का तरीका?\nकहें: ‘I’ll pay by card.’ या ‘I have cash.’"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Grammar Micro-Explanation",
+      "text": "Polite request (विनम्र अनुरोध) वह होता है जहाँ हम शालीनता से कुछ माँगते हैं:\n\n• ‘Could I have...?’ (सबसे polite)\n• ‘I’d like...’ (common polite form)\n• ‘Can I get...?’ (थोड़ा casual लेकिन acceptable)\n\nExamples:\n1) ‘Could I have a sandwich, please?’\n2) ‘I’d like a tea, please.’\n3) ‘Can I get fries, please?’",
+      "imagePath": "assets/images/lesson7_grammar_explanation.png",
+      "audioPath": "assets/audio/lesson7_grammar_explanation.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Polite Request Examples",
+      "audioPath": "assets/audio/lesson7_flashcards_polite_requests.mp3",
+      "cards": [
+        {
+          "term": "Could I have a sandwich, please?",
+          "definition": "जब आप sandwich order करना चाहें, ये बोलें। (Very polite)"
+        },
+        {
+          "term": "I’d like a coffee, please.",
+          "definition": "Café में पसंद बताने के लिए। (Common polite form)"
+        },
+        {
+          "term": "Can I get fries, please?",
+          "definition": "थोड़ा casual — but still polite with ‘please’।"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "title": "कैसे जवाब दें?",
+      "text": "Staff के सवाल:\n1) What would you like? → ‘I’d like a sandwich, please.’\n2) Anything else? → ‘No, that’s all, thank you.’\n3) For here or to go? → ‘For here, please.’ या ‘To go, please.’\n4) Cash or card? → ‘I’ll pay by card.’\n\nआपकी tone और smile भी बहुत अहम हैं!",
+      "imagePath": "assets/images/lesson7_answers_explained.png",
+      "audioPath": "assets/audio/lesson7_how_to_respond.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Answering Staff Quickly",
+      "audioPath": "assets/audio/lesson7_flashcards_staff_answers.mp3",
+      "cards": [
+        {
+          "term": "No, that’s all. Thank you.",
+          "definition": "जब आपको कुछ और नहीं चाहिए, ये phrase use करें।"
+        },
+        {
+          "term": "Yes, fries too, please.",
+          "definition": "Order में कुछ add करना हो — polite + direct!"
+        },
+        {
+          "term": "I’ll pay by card.",
+          "definition": "Payment clarify करने के लिए।"
+        }
+      ]
+    },
+    {
+      "type": "text_card",
+      "title": "Menu देखें और Order करें",
+      "body": "Imagine the cafe has: Hot tea, Coffee, French fries, Sandwich, Cookies.\n\nExamples:\n- I’d like a coffee, please.\n- Could I have a sandwich?\n- How much is the coffee?",
+      "imagePath": "assets/images/lesson7_menu_imagine.png",
+      "audioPath": "assets/audio/lesson7_menu_imagine.mp3"
+    },
+    {
+      "type": "sentence_construction",
+      "title": "Reorder the Polite Request",
+      "words": ["cookies,", "Could", "some", "I", "have", "please?"],
+      "correctOrder": ["Could", "I", "have", "some", "cookies,", "please?"],
+      "imagePath": "assets/images/lesson7_reorder_cookies.png",
+      "audioPath": "assets/audio/lesson7_sentence_construction.mp3"
+    },
+    {
+      "type": "poll",
+      "question": "Which sentence is more polite if Neha wants a sandwich?",
+      "options": [
+        "Give me a sandwich!",
+        "Sandwich now, please.",
+        "Could I have a sandwich, please?",
+        "One sandwich. Hurry!"
+      ],
+      "dynamicFeedback": {
+        "0": "Very direct. ‘Please’ भी नहीं है.",
+        "1": "Abrupt tone. Need more courtesy.",
+        "2": "Yes, this is nicely polite!",
+        "3": "Sounds bossy or impatient."
+      },
+      "imagePath": "assets/images/lesson7_poll_sandwich.png"
+    },
+    {
+      "type": "mentor_surprise_fact",
+      "title": "Surprise Fact",
+      "body": "क्या आप जानते हैं? ‘Please’ बोलने से सामने वाले का सहयोग लगभग 40% बढ़ जाता है! Next time, say it clearly: ‘Could I have a chai, please?’",
+      "imagePath": "assets/images/lesson7_surprise_fact.png",
+      "audioPath": "assets/audio/lesson7_surprise_fact.mp3"
+    },
+    {
+      "type": "short_stories",
+      "title": "Neha’s First Cafe Visit",
+      "audioPath": "assets/audio/lesson7_short_story_cafe.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson7_neha_cafe_scene.png",
+          "text": "Neha enters a cafe.\nStaff: 'Hello, what would you like?' (Step 1: Greet + Step 2: Order)\nNeha: 'Could I have a hot tea and cookies, please?'"
+        },
+        {
+          "imagePath": "assets/images/lesson7_neha_staff.png",
+          "text": "Staff: 'Sure. Will you have them here or to go?' (Common Question)\nNeha: 'I’ll have them here. Thank you!'"
+        }
+      ]
+    },
+    {
+      "type": "text_card",
+      "title": "Key Learning (Story #1)",
+      "body": "Notice how Neha first greets, then orders with ‘please.’ यह एक छोटा कदम है पर बड़ा असर करता है!",
+      "imagePath": "assets/images/lesson7_key_learning1.png",
+      "audioPath": "assets/audio/lesson7_key_learning_cafe.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Step 4: Modify Order",
+      "text": "मान लीजिए आपने cookies order कीं, पर अब fries चाहते हैं. Politely request to change:\n- ‘Sorry, could I change my order?’\n- ‘Actually, I’d like fries instead.’\n\nStaff मदद करेगा – बस softly पूछें.",
+      "imagePath": "assets/images/lesson7_change_order.png",
+      "audioPath": "assets/audio/lesson7_modify_order.mp3"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "________, could I change my order? I'd like fries instead.",
+      "correctWord": "Sorry",
+      "hints": [
+        "Hint (हिंट): छोटा apologize करें और फिर request करें।"
+      ],
+      "imagePath": "assets/images/lesson7_sorry_change_order.png",
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "feedback": {
+        "correctText": "Yes! Always begin politely with 'Sorry'.",
+        "wrongText": "Try again. A short apology softens the request."
+      }
+    },
+    {
+      "type": "dialogue_reconstruction",
+      "title": "Neha’s Dialogue (Steps 1-4)",
+      "contextTitle": "Placing & Modifying an Order",
+      "messages": [
+        {
+          "text": "Staff: Good afternoon! What would you like?",
+          "isSender": false,
+          "avatar": "assets/images/chat_friend_blue.png"
+        },
+        {
+          "text": "Neha: Could I have a hot tea and cookies, please?",
+          "isSender": true,
+          "avatar": "assets/images/chat_user_pink.png"
+        },
+        {
+          "text": "Staff: Sure. Anything else?",
+          "isSender": false,
+          "avatar": "assets/images/chat_friend_blue.png"
+        },
+        {
+          "text": "Neha: Actually, I’d like fries instead of cookies, please.",
+          "isSender": true,
+          "avatar": "assets/images/chat_user_pink.png"
+        },
+        {
+          "text": "Staff: No problem! Hot tea and fries. That’ll be $6. For here or to go?",
+          "isSender": false,
+          "avatar": "assets/images/chat_friend_blue.png"
+        },
+        {
+          "text": "Neha: For here, thank you!",
+          "isSender": true,
+          "avatar": "assets/images/chat_user_pink.png"
+        }
+      ],
+      "learningTakeaway": "Use Steps 1–4 to greet, order, respond, and modify politely.",
+      "imagePath": "assets/images/lesson7_dialogue_reconstruction.png",
+      "audioPath": "assets/audio/lesson7_dialogue_reconstruction.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Key Learning (Story #2)",
+      "body": "Neha politely changes her order—notice ‘Actually…’ + ‘please.’ कोई परेशानी नहीं, staff happily helps!",
+      "imagePath": "assets/images/lesson7_key_learning2.png",
+      "audioPath": "assets/audio/lesson7_key_learning_modify.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Staff Recommendations",
+      "text": "कभी-कभी स्टाफ suggest करता है:\n- ‘Would you like to try our special pastry?’\n- ‘We have fresh cupcakes. Interested?’\n\nहाँ: ‘Yes, I’d love to try that!’\nना: ‘No, thank you.’\n\nOrder process का हिस्सा—polite रहना ज़रूरी!",
+      "imagePath": "assets/images/lesson7_special_recommendation.png",
+      "audioPath": "assets/audio/lesson7_staff_recommendations.mp3"
+    },
+    {
+      "type": "poll",
+      "question": "Staff: 'We have fresh cupcakes. Would you like one?' How should Neha respond politely?",
+      "options": [
+        "Yes, definitely. Give me two!",
+        "No, not now.",
+        "Sure, I’d love one! Thank you.",
+        "Maybe later, I guess."
+      ],
+      "dynamicFeedback": {
+        "0": "Could be gentler. Try adding ‘please’ or a polite tone.",
+        "1": "Add ‘thank you’ for politeness.",
+        "2": "Perfect acceptance + courtesy!",
+        "3": "A bit vague. If no, say ‘No, thanks.’"
+      },
+      "imagePath": "assets/images/lesson7_cupcake_poll.png"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Step 5: Confirm & Pay",
+      "text": "अक्सर price confirm करना होता है:\n- ‘How much is it?’\n- ‘Is it card or cash?’\n\nफिर payment के बाद: ‘Thank you!’ और मुस्कुराइए—इतना आसान!",
+      "imagePath": "assets/images/lesson7_payment_confirm.png",
+      "audioPath": "assets/audio/lesson7_confirm_pay.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Final Lines: Confirm & Pay",
+      "audioPath": "assets/audio/lesson7_flashcards_confirm_pay.mp3",
+      "cards": [
+        {
+          "term": "How much is it?",
+          "definition": "बिल या कीमत पूछने के लिए (Step 5)."
+        },
+        {
+          "term": "I’ll pay by card, thanks.",
+          "definition": "जब आप card से पे करना चाहें—‘thanks’ जोड़ें!"
+        },
+        {
+          "term": "No, that’s all. Thank you!",
+          "definition": "Order finalize करने के बाद ‘Thank you’ ज़रूर कहें!"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "title": "Neha’s Payment Scene",
+      "audioPath": "assets/audio/lesson7_short_story_payment.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson7_neha_payment.png",
+          "text": "Neha: ‘How much is it?’\nStaff: ‘$6 total. Cash or card?’\nNeha: ‘I’ll pay by card, thank you!’\n\nNeha taps her card, receives her food.\n**Key Learning:** Confirm the total cost politely, and end with a ‘thank you’ + smile."
+        }
+      ]
+    },
+    {
+      "type": "text_card",
+      "title": "Recap: 5 Key Takeaways",
+      "body": "1) Start with a greeting: ‘Excuse me…’ या ‘Hello!’\n2) Use polite requests: ‘Could I have…?’ / ‘I’d like…’\n3) Respond to staff: ‘No, that’s all, thank you.’\n4) Modify politely: ‘Actually, could I change my order?’\n5) Confirm & Pay: ‘How much is it?’ और ‘Thank you!’",
+      "imagePath": "assets/images/lesson7_recap_takeaways.png",
+      "audioPath": "assets/audio/lesson7_recap_takeaways.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Cafe में बोलिए: ‘Excuse me, could I have a sandwich, please?’ और अपना नाम बताइए—confidence के साथ! Practice aloud and imagine you’re at the counter.",
+      "audioPath": "assets/audio/lesson7_speaking_prompt.mp3",
+      "imagePath": "assets/images/lesson7_speaking_prompt.png"
+    },
+    {
+      "type": "text_card",
+      "title": "Final Tip",
+      "body": "धीरे बोलिए, मुस्कुराइए, और ‘please’ व ‘thank you’ ज़रूर use करें. अगर भूल जाएँ, तो calmly समझाइए. Staff मदद करेगा—ये 5-Step Toolkit हर जगह काम आता है!",
+      "imagePath": "assets/images/lesson7_final_tip.png",
+      "audioPath": "assets/audio/lesson7_final_tip.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Mentor’s Outro",
+      "text": "बहुत बढ़िया! अब आप आसानी से café या restaurant में confidently order कर सकते हैं. Keep practicing—हर बार 5-step toolkit याद रखें!",
+      "imagePath": "assets/images/lesson7_mentor_outro.png",
+      "audioPath": "assets/audio/lesson7_mentor_outro.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Reflect & Rehearse",
+      "body": "आज का सीख: अगली बार आप कैफ़े में जाएंगे तो कौन-सी English लाइन सबसे पहले बोलेंगे?\n\nएक बार सोचकर ज़ोर से बोलें—visualize your success!",
+      "imagePath": "assets/images/lesson7_reflect_prompt.png",
+      "audioPath": "assets/audio/lesson7_reflect_prompt.mp3"
+    },
+    {
+      "type": "badge_award",
+      "title": "Food Ordering Pro!",
+      "description": "बधाई हो! आपने Neha की कहानी के साथ English ordering सीखा – अब आप दुनिया के किसी भी cafe या counter पर निडरता से ऑर्डर कर सकते हैं. Keep using the 5-Step Toolkit!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson7_badge_award.mp3"
+    }
+  ]
+}

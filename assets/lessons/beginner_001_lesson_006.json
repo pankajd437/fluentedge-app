@@ -1,0 +1,557 @@
+{
+  "lessonId": "beginner_001_lesson_006",
+  "title": "Making Small Talk That Feels Natural: 5-Step Builder Toolkit",
+  "level": "beginner",
+  "themeColor": "#4A90E2",
+  "xpTotal": 700,
+  "objectives": [
+    "Learn a simple 5-step approach for small talk in any situation",
+    "Build short, easy English sentences even with limited vocabulary",
+    "Use Hindi guidance + audio prompts to feel comfortable and confident",
+    "Practice polite ways to keep or end a casual conversation",
+    "Gamify your learning with a Sentence Framing Lab and final challenge"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": ["en", "hi"],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "small_talk_starter",
+    "title": "Small Talk Starter",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+    {
+      "type": "mentor_intro",
+      "text": "नमस्ते! आज हम सीखेंगे ‘small talk’ के 5 आसान स्टेप्स - Observe, Comment, Ask, Bounce & End. साथ ही, कुछ सरल English sentence-बनाने की प्रैक्टिस भी करेंगे, और अंत में आपके लिए है एक मज़ेदार challenge! चलिए शुरू करते हैं!",
+      "imagePath": "assets/images/lesson6_intro.png",
+      "audioPath": "assets/audio/lesson6_mentor_intro.mp3"
+    },
+    {
+      "type": "scene_image",
+      "caption": "5-Step Small Talk Toolkit: Observe → Comment → Ask → Bounce → End. एक नज़र में पूरा flow याद रखें!",
+      "imagePath": "assets/images/lesson6_5step_infographic.png",
+      "audioPath": "assets/audio/lesson6_5step_infographic.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Context",
+      "body": "मान लीजिए आप एक नए दोस्त या सहकर्मी से पहली बार मिल रहे हैं, यहाँ Small Talk शुरू करने के 5 steps सीखेंगे।",
+      "imagePath": "assets/images/lesson6_context_intro.png",
+      "audioPath": "assets/audio/lesson6_context_intro.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Small Talk का उद्देश्य",
+      "text": "छोटी बातचीत (small talk) सिर्फ़ ‘Hi, how are you?’ तक सीमित नहीं होती. ये नए लोगों से जुड़ने का बढ़िया ज़रिया है. इस lesson में, हम सीखेंगे 5 steps of small talk + आसान sentence framing. कम शब्दों में भी आप आसानी से बातचीत शुरू कर पाएँगे!",
+      "imagePath": "assets/images/lesson6_smalltalk_goal.png",
+      "audioPath": "assets/audio/lesson6_smalltalk_goal.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "5-Step Builder Toolkit (Short Overview)",
+      "body": "Step 1 - Observe (ध्यान से देखें)\n\nStep 2 - Comment (टिप्पणी करें)\n\nStep 3 - Ask (सवाल पूछें)\n\nStep 4 - Bounce (सामने वाले को बोलने दें)\n\nStep 5 - End (बातचीत समाप्त करें)\n\nहर स्टेप पर हम Basic English में वाक्य बनाना सीखेंगे,\nसाथ ही आप ख़ुद अभ्यास भी कर पाएँगे!",
+      "imagePath": "assets/images/lesson6_5step_overview.png",
+      "audioPath": "assets/audio/lesson6_5step_overview.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Helpful Simple Sentence Patterns",
+      "body": "- It’s so hot, isn’t it?\n\n- Are you also waiting in this line?\n\n- I think this place is really nice!\n\n- I’m sorry, could you repeat?\n\n- I need to go, but nice talking! (exit)",
+      "imagePath": "assets/images/lesson6_helpful_patterns.png",
+      "audioPath": "assets/audio/lesson6_helpful_patterns.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Step 1: Observe (देखें)",
+      "text": "जब आप किसी Bus Stop, Canteen, या Market में हों, कोई ‘छोटी चीज़’ notice कीजिए (भीड़, मौसम, कोई बैग...).\n1) भीड़ → ‘It is so crowded!’\n2) गरमी → ‘It is so hot!’\n\nबस एक सेकंड देखें, फिर एक छोटा observation ready!",
+      "imagePath": "assets/images/lesson6_step1_observe.png",
+      "audioPath": "assets/audio/lesson6_step1_observe.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Sentence Framing (Observe & Comment)",
+      "audioPath": "assets/audio/lesson6_flashcards_observe_comment.mp3",
+      "cards": [
+        {
+          "term": "Hindi Thought → English",
+          "definition": "‘इस जगह पर कितनी भीड़ है।’ → 'It’s so crowded here!'"
+        },
+        {
+          "term": "Use Basic Adjectives",
+          "definition": "Crowded, Hot, Cool, Busy, etc."
+        },
+        {
+          "term": "Short Pattern",
+          "definition": "It + is + [adjective] + here/today → 'It’s a busy day today!'"
+        },
+        {
+          "term": "Tag Ending",
+          "definition": "‘It’s really hot, isn’t it?’ लोगों को अपनी बात में शामिल करने के लिए."
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Step 2: Comment (टिप्पणी करें)",
+      "text": "Observation से 1 short line बोलिए:\n- This line is so long!\n- It’s really hot today.\n- Your bag is really nice.\n\nप्रैक्टिस: ‘It’s so crowded here!’ or ‘This line is long, isn’t it?’",
+      "imagePath": "assets/images/lesson6_step2_comment.png",
+      "audioPath": "assets/audio/lesson6_step2_comment.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Comment Starters",
+      "audioPath": "assets/audio/lesson6_flashcards_comment.mp3",
+      "cards": [
+        {
+          "term": "That’s a nice ___!",
+          "definition": "किसी की चीज़ की तारीफ़ करें (bag, phone)."
+        },
+        {
+          "term": "This place is so busy!",
+          "definition": "जब जगह पर बहुत भीड़ हो."
+        },
+        {
+          "term": "It’s really hot today",
+          "definition": "मौसम से related simple observation."
+        }
+      ]
+    },
+    {
+      "type": "sentence_construction",
+      "words": [
+        "It’s",
+        "so",
+        "buying",
+        "Are",
+        "you",
+        "busy",
+        "here!",
+        "also",
+        "something?"
+      ],
+      "correctOrder": [
+        "It’s",
+        "so",
+        "busy",
+        "here!",
+        "Are",
+        "you",
+        "also",
+        "buying",
+        "something?"
+      ],
+      "imagePath": "assets/images/lesson6_store_sentence.png",
+      "audioPath": "assets/audio/lesson6_sentence_construction.mp3"
+    },
+    {
+      "type": "text_card",
+      
+      "body": "बहुत अच्छा प्रयास! अब अगले स्टेप पर बढ़ें,Practice makes you perfect.",
+      "audioPath": "assets/audio/lesson6_encouragement1.mp3",
+      "imagePath": "assets/images/lesson6_encouragement.png"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Step 3: Ask (सवाल पूछें)",
+      "text": "Comment के बाद, छोटा सवाल:\n1) Are you also waiting?\n2) Is it usually so crowded here?\n3) Have you been here before?\n\nइससे बातचीत आगे बढ़ती है!",
+      "imagePath": "assets/images/lesson6_step3_ask.png",
+      "audioPath": "assets/audio/lesson6_step3_ask.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Ask Starters",
+      "audioPath": "assets/audio/lesson6_flashcards_ask.mp3",
+      "cards": [
+        {
+          "term": "Are you...?",
+          "definition": "e.g. Are you also from here?"
+        },
+        {
+          "term": "Have you...?",
+          "definition": "e.g. Have you tried this restaurant before?"
+        },
+        {
+          "term": "Is it...?",
+          "definition": "e.g. Is it your first time here?"
+        }
+      ]
+    },
+    {
+      "type": "text_card",
+      
+      "body": "Awesome! सवाल पूछना ही छोटा-सा दरवाज़ा खोल देता है,बात आगे बढ़ती है!",
+      "audioPath": "assets/audio/lesson6_encouragement2.mp3",
+      "imagePath": "assets/images/lesson6_encouragement.png"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Step 4: Bounce (सामने वाले को भी बोलने दें)",
+      "text": "जब सामने वाला जवाब दे, आप आगे पूछें:\n• Oh, really? How about you?\n• That’s nice! Tell me more!\n\nसुनने वाला feel करेगा कि आप genuinely interested हैं.",
+      "imagePath": "assets/images/lesson6_step4_bounce.png",
+      "audioPath": "assets/audio/lesson6_step4_bounce.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Bounce Lines",
+      "audioPath": "assets/audio/lesson6_flashcards_bounce.mp3",
+      "cards": [
+        {
+          "term": "How about you?",
+          "definition": "उनका viewpoint जानने के लिए."
+        },
+        {
+          "term": "Tell me more!",
+          "definition": "अगर short answer आए, expand करने का मौका दें."
+        },
+        {
+          "term": "Oh really?",
+          "definition": "Surprise या interest दिखाने के लिए."
+        }
+      ]
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "Toolkit Steps: 1) Observe, 2) ________, 3) Ask, 4) Bounce, 5) End",
+      "correctWord": "Comment",
+      "imagePath": "assets/images/lesson6_fill_steps.png",
+      "hints": [
+        "पहले देखो (Observe), फिर Comment!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "सही,Step 2 है Comment!",
+        "wrongText": "पुनः कोशिश करें,Step 2 Comment ही है!"
+      }
+    },
+    {
+      "type": "text_card",
+      
+      "body": "आपने Steps याद कर लिए! Practice जारी रखें.",
+      "audioPath": "assets/audio/lesson6_encouragement3.mp3",
+      "imagePath": "assets/images/lesson6_encouragement.png"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Step 5: End (आराम से बातचीत समाप्त करें)",
+      "text": "अगर बात बढ़ाना चाहें तो अपना experience शेयर करें. वरना politely exit करें:\n• I need to go, nice talking!\n• I’m heading out,good to meet you!",
+      "imagePath": "assets/images/lesson6_step5_end.png",
+      "audioPath": "assets/audio/lesson6_step5_end.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Exit Phrases (Quick Reference)",
+      "audioPath": "assets/audio/lesson6_flashcards_exit_phrases.mp3",
+      "cards": [
+        {
+          "term": "I better get going,great chatting!",
+          "definition": "बीच में ही politely निकलना हो."
+        },
+        {
+          "term": "Sorry, I have to meet someone,see you!",
+          "definition": "Event या पार्टी में इस्तेमाल करें."
+        },
+        {
+          "term": "I need to get back to work, bye!",
+          "definition": "ऑफिस scenario में बढ़िया."
+        },
+        {
+          "term": "Before I go, tell me more about ___",
+          "definition": "White Flag ट्रिक,अंत में 1 सवाल."
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Sentence Framing Lab",
+      "text": "चलो, एक छोटा exercise करें,Imagine भीड़ वाले स्टोर में कोई product देख रहा है. Steps:\n1) Observe (भीड़)\n2) Comment (It is so ______!)\n3) Ask (Are you also ________?)\n\nकम English में भी आप ऐसे छोटे वाक्य बनाकर small talk शुरू कर सकते हैं!",
+      "imagePath": "assets/images/lesson6_sentence_lab.png",
+      "audioPath": "assets/audio/lesson6_sentence_framing_lab.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Mini Vocabulary for Beginners",
+      "body": "Adjectives (विशेषण) for Comment:\n- Crowded, Hot/Warm, Cold, Nice, Busy\n\nBasic Question Starters:\n- Are you...?\n- Is it...?\n- Do you...?\n- Have you...?\n\nइनसे 2-3 short lines बनाकर practice कीजिए!",
+      "imagePath": "assets/images/lesson6_mini_vocab.png",
+      "audioPath": "assets/audio/lesson6_mini_vocab.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Using ‘Tell me more’ + Basic Structure",
+      "text": "अगर सामने वाला बोले ‘I love cricket,’ आप: “Tell me more!” या “Which team do you like?”\n\nछोटे सवालों से बातचीत आगे बढ़ती है,वो भी कम vocab में!",
+      "imagePath": "assets/images/lesson6_tell_me_more.png",
+      "audioPath": "assets/audio/lesson6_tell_me_more.mp3"
+    },
+    {
+      "type": "quiz",
+      "question": "Which of these sentences helps you Bounce (Step 4)?",
+      "options": [
+        "I need to go now, sorry!",
+        "It’s really crowded today.",
+        "How about you?",
+        "This place is new to me."
+      ],
+      "answerIndex": 2,
+      "hints": [
+        "Bounce step में सामने वाले को दोबारा बोलने का मौका देते हैं."
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "allowRetry": true,
+      "encouragementOnFail": "किसी line में ‘आप भी बताइए’ वाला भाव दिखता है?",
+      "imagePath": "assets/images/lesson6_quiz_bounce.png"
+    },
+    {
+      "type": "text_card",
+      
+      "body": "बहुत बढ़िया! Bounce step लोगों को आगे बोलने का मौका देता है.",
+      "audioPath": "assets/audio/lesson6_encouragement4.mp3",
+      "imagePath": "assets/images/lesson6_encouragement.png"
+    },
+    {
+      "type": "spot_the_error",
+      "instruction": "कौन-सा शब्द small talk में ज़्यादा कठोर लगेगा?",
+      "originalSentence": "I demand you tell me about your day!",
+      "choices": [
+        "I",
+        "demand",
+        "you",
+        "tell",
+        "me",
+        "about",
+        "your",
+        "day!"
+      ],
+      "correctChoiceIndex": 1,
+      "explanation": "‘demand’ सख़्त लगता है. Small talk में polite tone रखें,‘Could you tell me…?’",
+      "imagePath": "assets/images/lesson6_spot_error_demand.png"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Ending Gracefully (Optional Last Step)",
+      "text": "बात ज़्यादा लंबी नहीं करनी? बस simple exit:\n• I have to go,nice talking!\n• It was good meeting you!\n\nबिलकुल rude नहीं लगेगा, tone friendly रखें.",
+      "imagePath": "assets/images/lesson6_ending_gracefully.png",
+      "audioPath": "assets/audio/lesson6_ending_gracefully.mp3"
+    },
+    {
+      "type": "short_stories",
+      "title": "Short Real-Life Example (Park)",
+      "audioPath": "assets/audio/lesson6_short_story_park.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson6_scenario_park.png",
+          "text": "पार्क में अजनबी के पास बैठे हैं,थोड़ा डर, पर शुरुआत करनी है।\nLearning Goal: Learn to break the ice with a simple observation and question.\n\nYou: “These birds are so loud today.” (Observe & Comment)\nYou: “Do you come here often?” (Ask)\nYou: “Oh, what do you like about this park?” (Bounce)\nYou: “I need to leave,nice chatting with you!” (End)\n\nKey Takeaway: शुरुआत में simple observation या comment conversation शुरू करने का सबसे आसान तरीका है!"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "title": "Short Real-Life Example (Electronics Store)",
+      "audioPath": "assets/audio/lesson6_short_story_store.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson6_scenario_store.png",
+          "text": " Electronics store में हैं, फ़ोन खरीदने पर विचार.\nLearning Goal: Use a common situation/item to spark a conversation.\n\nYou: “So many models, kinda confusing!” (Observe & Comment)\nYou: “Are you buying a new phone too?” (Ask)\nYou: “Oh, that brand is good,tell me more!” (Bounce)\nYou: “I need to check another aisle,nice to meet you!” (End)\n\nKey Takeaway: किसी भी shared experience या product को लेकर बातचीत शुरू की जा सकती है!"
+        }
+      ]
+    },
+    {
+      "type": "mentor_surprise_fact",
+      "title": "Surprise Fact (अजब तथ्य)",
+      "body": "क्या आप जानते हैं? ‘Nice weather today, isn’t it?’ कहने से small talk शुरू करने में 70% लोग comfortable महसूस करते हैं! Try it next time you see someone waiting.",
+      "imagePath": "assets/images/lesson6_surprise_fact.png",
+      "audioPath": "assets/audio/lesson6_surprise_fact.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "प्रैक्टिस करें: ‘Are you also waiting in this line?’\nजोर से बोलें (Speak aloud) और थोड़ा मुस्कुराएँ.\n\nफिर पूछें: ‘Do you come here often?’",
+      "audioPath": "assets/audio/lesson6_speaking_prompt.mp3"
+    },
+    {
+      "type": "text_card",
+      
+      "body": "Good job! अब आप किसी भी आम सवाल से small talk कर सकते हैं.",
+      "audioPath": "assets/audio/lesson6_encouragement5.mp3",
+      "imagePath": "assets/images/lesson6_encouragement.png"
+    },
+    {
+      "type": "dialogue_reconstruction",
+      "title": "A Canteen Conversation",
+      "contextTitle": "दो लोग कॉलेज की कैंटीन में, कम vocab होने पर भी...",
+      "messages": [
+        {
+          "text": "Hey, so many options on the menu,very confusing, right?",
+          "isSender": true,
+          "avatar": "assets/images/chat_user_pink.png"
+        },
+        {
+          "text": "Yeah, I can’t decide. Everything looks good!",
+          "isSender": false,
+          "avatar": "assets/images/chat_friend_blue.png"
+        },
+        {
+          "text": "Do you come here often?",
+          "isSender": true,
+          "avatar": "assets/images/chat_user_pink.png"
+        },
+        {
+          "text": "Sometimes. Usually I just get chai. You?",
+          "isSender": false,
+          "avatar": "assets/images/chat_friend_blue.png"
+        },
+        {
+          "text": "I also love chai! Which chai is best here?",
+          "isSender": true,
+          "avatar": "assets/images/chat_user_pink.png"
+        },
+        {
+          "text": "Masala chai is nice here. You should try it!",
+          "isSender": false,
+          "avatar": "assets/images/chat_friend_blue.png"
+        },
+        {
+          "text": "Sounds great. I'll try. Need to go now,nice talking!",
+          "isSender": true,
+          "avatar": "assets/images/chat_user_pink.png"
+        }
+      ],
+      "learningTakeaway": "We applied 5 steps: Observe (menu), Comment, Ask, Bounce, and End. Simple, friendly, and effective!",
+      "imagePath": "assets/images/lesson6_dialogue_canteen.png",
+      "audioPath": "assets/audio/lesson6_dialogue_canteen.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Sentence Framing: Short & Polite Lines",
+      "audioPath": "assets/audio/lesson6_flashcards_sentence_framing.mp3",
+      "cards": [
+        {
+          "term": "Basic Q–A",
+          "definition": "Do you...? / Yes, I do. / No, I don’t."
+        },
+        {
+          "term": "Tag Endings",
+          "definition": "It’s hot, isn’t it? (Short, engaging)"
+        },
+        {
+          "term": "Hindi to English",
+          "definition": "‘आप क्या सोच रहे हैं?’ → ‘What are you thinking?’"
+        },
+        {
+          "term": "Exit with Gratitude",
+          "definition": "Thanks for the chat! I must go."
+        }
+      ]
+    },
+    {
+      "type": "poll",
+      "question": "कौन-सा स्टेप आपको सबसे मुश्किल लगता है?",
+      "options": [
+        "Observe",
+        "Comment",
+        "Ask",
+        "Bounce",
+        "End"
+      ],
+      "dynamicFeedback": {
+        "0": "Observing में बस 5 सेकंड चुप रहें, कोई detail चुनें.",
+        "1": "Comment = ‘It’s so ___!’ छोटा line भी काम करता है.",
+        "2": "Ask = ‘Are you…? Do you…? Have you…?’",
+        "3": "Bounce = ‘Oh, really? How about you?’ या ‘Tell me more.’",
+        "4": "Ending में कोई बहाना या direct line: ‘I must go, nice chat!’"
+      },
+      "imagePath": "assets/images/lesson6_poll_steps.png"
+    },
+    {
+      "type": "text_card",
+      
+      "body": "आपने poll पूरा किया! अब अगले अभ्यास पर चलें,keep practicing!",
+      "audioPath": "assets/audio/lesson6_encouragement6.mp3",
+      "imagePath": "assets/images/lesson6_encouragement.png"
+    },
+    {
+      "type": "quiz",
+      "question": "Which line fits best in ‘Ask’ step?",
+      "options": [
+        "It’s really hot today.",
+        "How about you?",
+        "Have you tried this place before?",
+        "I need to leave now, sorry."
+      ],
+      "answerIndex": 2,
+      "hints": [
+        "Ask step: Direct question!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "allowRetry": true,
+      "imagePath": "assets/images/lesson6_quiz_ask.png"
+    },
+    {
+      "type": "text_card",
+      
+      "body": "Great job on the quiz! Each question step builds your confidence.",
+      "audioPath": "assets/audio/lesson6_encouragement7.mp3",
+      "imagePath": "assets/images/lesson6_encouragement.png"
+    },
+    {
+      "type": "mentor_explain",
+      "title": "You’re Ready Now!",
+      "text": "बधाई! अब आप toolkit जानते हैं. याद रखें,छोटे वाक्य, और अगर ज़रूरत पड़े, कुछ Hindi mix कर लें. ज़रूरी है कि आप conversation शुरू करें और friendly बनें!",
+      "imagePath": "assets/images/lesson6_mentor_explain_final.png",
+      "audioPath": "assets/audio/lesson6_mentor_explain_final.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Lesson Recap (Key Takeaways)",
+      "body": "1) **Observe**: किसी 1 चीज़ को नोटिस करें.\n2) **Comment**: ‘It’s so hot today!’\n3) **Ask**: ‘Are you also waiting?’\n4) **Bounce**: ‘Oh really? Tell me more!’\n5) **End**: ‘I need to go,nice talking!’\n\nकम English हो या ज्यादा,ये 5 steps आपकी मदद करेंगे!",
+      "imagePath": "assets/images/lesson6_lesson_recap.png",
+      "audioPath": "assets/audio/lesson6_lesson_recap.mp3"
+    },
+    {
+      "type": "flashcards",
+      "title": "Exit Lines (Recap Flashcard)",
+      "audioPath": "assets/audio/lesson6_recap_flashcards_exit_lines.mp3",
+      "cards": [
+        {
+          "term": "I need to leave, nice talking!",
+          "definition": "Use this when you have to go quickly."
+        },
+        {
+          "term": "It was good meeting you!",
+          "definition": "A polite way to finish the conversation."
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "title": "Challenge for you: 5-Step Mission",
+      "text": "नीचे 2 scenarios हैं,चुनें कि आप किस पर practice करेंगे और 5-Step Toolkit follow करें.\n\n1) Cafe: You see someone sipping coffee.\n2) Train Station: You see someone waiting on the platform.\n\n• Step 1 (Observe)\n• Step 2 (Comment)\n• Step 3 (Ask)\n• Step 4 (Bounce)\n• Step 5 (End)\n\nTry mixing Hindi→English lines from earlier flashcards!",
+      "imagePath": "assets/images/lesson6_gamified_challenge.png",
+      "audioPath": "assets/audio/lesson6_challenge.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "अब खुद सोचिए,आप अपने आस-पास (पार्क, बस स्टॉप, दुकान) किसी से छोटी-सी बातचीत शुरू करेंगे तो 5-Step Toolkit कैसे इस्तेमाल करेंगे?\n\nTry aloud: Step 1 (Observe), Step 2 (Comment), Step 3 (Ask), Step 4 (Bounce), Step 5 (End).\n\nExample: ‘It’s so crowded here! Are you also waiting?’\n\nअब आप खुद अपने example बनाकर जोर से बोलें!",
+      "audioPath": "assets/audio/lesson6_speaking_personalization.mp3",
+      "imagePath": "assets/images/lesson6_personalization_practice.png"
+    },
+    {
+      "type": "text_card",
+      "title": "Free Response Practice",
+      "body": "अब नीचे अपना खुद का small talk example लिखें या बोलें:\n1) एक observation लिखें (e.g., ‘It’s nice weather today.’)\n2) एक comment या सवाल जोड़ें (e.g., ‘Are you waiting too?’)\n3) सामने वाले को bounce दें (e.g., ‘Oh, what do you like about this place?’)\n4) Exit line लिखें (e.g., ‘Nice meeting you, I need to go!’)\n\n*Tip: चाहें तो mentor के साथ रिकॉर्ड करके सुनें!*",
+      "audioPath": "assets/audio/lesson6_free_response.mp3",
+      "imagePath": "assets/images/lesson6_free_response.png"
+    },
+    {
+      "type": "badge_award",
+      "title": "Small Talk Starter",
+      "description": "Lesson 6 पूरा! अब आप कहीं भी 5-step toolkit + sentence framing से simple small talk कर सकते हैं. Practice ज़रूर करें!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson6_badge_award.mp3"
+    }
+  ]
+}

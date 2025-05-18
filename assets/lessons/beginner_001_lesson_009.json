@@ -1,0 +1,573 @@
+{
+  "lessonId": "beginner_001_lesson_009",
+  "title": "Talking About Family & Where You’re From",
+  "level": "beginner",
+  "themeColor": "#4A90E2",
+  "xpTotal": 500,
+  "objectives": [
+    "अपने परिवार और पृष्ठभूमि के बारे में आत्मविश्वास से बात करना",
+    "अपने शहर/गाँव के अनूठे पहलुओं को इंग्लिश में बताना",
+    "हिंदी-अंग्रेज़ी मिश्रित अंदाज़ में अनौपचारिक व औपचारिक परिचय संभालना",
+    "Real-world scenarios में ‘family & hometown’ टॉपिक comfortably हैंडल करना"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": ["en","hi"],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "family_hometown_champion",
+    "title": "Family & Hometown Champion",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+
+    {
+      "type": "mentor_intro",
+      "text": "नमस्ते! इस Lesson 9 में हम सीखेंगे कि अपने परिवार और hometown के बारे में इंग्लिश में कैसे बात करें. अक्सर यही सवाल होता है: “Tell me about yourself, where are you from?” चलिए इसे मज़ेदार बनाते हैं!",
+      "imagePath": "assets/images/lesson9_intro.png",
+      "audioPath": "assets/audio/lesson9_intro.mp3"
+    },
+
+    {
+      "type": "text_card",
+      "title": "Family & Hometown – 5-Step Overview",
+      "body": "1) Introduce Family Size/Structure\n2) Joint या Nuclear Family?\n3) Hometown का नाम + ख़ास बातें\n4) Culture/Food/Festivals Mention करें\n5) Positively Wrap Up (ask about their family, too!)\n\nये ढाँचा conversation को शुरू और आगे बढ़ाने में बहुत मदद करता है!",
+      "audioPath": "assets/audio/lesson9_toolkit_card.mp3"
+    },
+
+    {
+      "type": "text_card",
+      "title": "Definition Box: Important Terms",
+      "body": "1) **Joint Family (जॉइंट फैमिली)**: Multiple generations under one roof. (हिंदी: संयुक्त परिवार)\n2) **Nuclear Family (न्यूक्लियर फैमिली)**: Parents + children only. (हिंदी: छोटा परिवार)\n3) **Extended Relatives (एक्सटेंडेड रिलेटिव्स)**: Uncles, aunts, cousins, grandparents. (हिंदी: अतिरिक्त रिश्तेदार)\n4) **Occupation (व्यवसाय)**: A person’s job or profession. (हिंदी: कामकाज/नौकरी)\n5) **Festival (त्योहार)**: Special celebrations (Diwali, Eid, etc.). (हिंदी: उत्सव/पर्व)",
+      "audioPath": "assets/audio/lesson9_definition_box.mp3"
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "इन terms को आगे use करेंगे, इसलिए ये definitions याद रखें. Joint family = बड़ा संयुक्त परिवार, Nuclear family = छोटा immediate family. Occupation = काम/जॉब, Festival = त्योहार!",
+      "imagePath": "assets/images/lesson9_mentor_explain_terms.png",
+      "audioPath": "assets/audio/lesson9_mentor_explain_terms.mp3"
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Key Phrases (Basic Introductions)",
+      "audioPath": "assets/audio/lesson9_flashcards_intro_phrases.mp3",
+      "cards": [
+        {
+          "term": "I’m originally from...",
+          "definition": "हिंदी: ‘मैं मूल रूप से __ से हूँ.’\nUsage: अपना hometown बताने के लिए."
+        },
+        {
+          "term": "We are a joint family.",
+          "definition": "हिंदी: ‘हम संयुक्त परिवार हैं.’\nUsage: जब कई पीढ़ियों के साथ रहने की बात करें."
+        },
+        {
+          "term": "My father’s occupation is...",
+          "definition": "हिंदी: ‘मेरे पिता का व्यवसाय __ है.’\nUsage: उनके काम या जॉब का ज़िक्र."
+        },
+        {
+          "term": "We celebrate ___ festival.",
+          "definition": "हिंदी: ‘हम ___ त्योहार को धूमधाम से मनाते हैं.’\nUsage: culture mention करने के लिए."
+        }
+      ]
+    },
+
+    {
+      "type": "poll",
+      "question": "परिवार या hometown के बारे में बात करते हुए आपको क्या सबसे मुश्किल लगता है? ",
+      "options": [
+        "Family size या members explain करना",
+        "Joint vs. nuclear family को इंग्लिश में बताना",
+        "शहर/गाँव का नाम/ख़ासियत समझाना",
+        "कोई परेशानी नहीं होती"
+      ],
+      "dynamicFeedback": {
+        "0": "सिंपल start: ‘We are 5 in the family—my parents, my sister, my grandmother, and me!’",
+        "1": "Joint = ‘I live with extended relatives.’ Nuclear = ‘Just my parents and siblings.’",
+        "2": "‘My hometown is known for ___. We have amazing ___!’",
+        "3": "Awesome! आप already confident हैं!"
+      },
+      "imagePath": "assets/images/lesson9_poll_challenges.png"
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "ये 5-Step Overview आपकी conversation को smooth रखेगा. अब scenarios देखें ताकि आप Practically apply कर सकें!",
+      "imagePath": "assets/images/lesson9_mentor_explain_overview.png",
+      "audioPath": "assets/audio/lesson9_mentor_explain_overview.mp3"
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Mini-Summary: Family Structure",
+      "audioPath": "assets/audio/lesson9_flashcards_familystructure.mp3",
+      "cards": [
+        {
+          "term": "We have a big family",
+          "definition": "हिंदी: ‘हमारा परिवार बड़ा है.’\nContext: Joint or many siblings/cousins."
+        },
+        {
+          "term": "I live with my parents only",
+          "definition": "हिंदी: ‘मैं सिर्फ़ माता-पिता के साथ रहता/रहती हूँ.’\nContext: Nuclear family setup."
+        },
+        {
+          "term": "I have many cousins",
+          "definition": "हिंदी: ‘मेरे बहुत से चचेरे-ममेरे भाई-बहन हैं.’\nContext: Extended family mention."
+        },
+        {
+          "term": "My grandparents also stay with us",
+          "definition": "हिंदी: ‘मेरे दादा-दादी भी हमारे साथ रहते हैं.’\nContext: Multi-generation joint family."
+        }
+      ]
+    },
+
+    {
+      "type": "scene_image",
+      "caption": "5-Step Infographic: देखें कैसे बातचीत को दिशाबद्ध किया जा सकता है!",
+      "imagePath": "assets/images/lesson9_infographic_5steps.png",
+      "audioPath": "assets/audio/lesson9_scene_image_infographic.mp3"
+    },
+
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "I’m ______ (originally/eventually) from Patna, but I live in Delhi now.",
+      "correctWord": "originally",
+      "imagePath": "assets/images/lesson9_fill_origfrom.png",
+      "hints": [
+        "अपने hometown की बात करें तो ‘originally from’ कहें.",
+        "हिंदी: ‘मैं मूल रूप से पटना का हूँ, अब दिल्ली में रहता हूँ.’"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "सही! ‘Originally from’ hometown बताने का common phrase है.",
+        "wrongText": "‘Eventually’ सही नहीं—use ‘originally from.’"
+      },
+      "submitLabel": "Check Answer"
+    },
+
+    {
+      "type": "short_stories",
+      "title":"Introducing a joint family in casual conversation.",
+      "audioPath": "assets/audio/lesson9_scenario_meetfriend.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson9_friend_meet.png",
+          "text":" \n\nYou: “I come from a joint family in Lucknow. My parents, grandparents, and two siblings all live together.”\n\nFriend: “That’s cool! So you have a big family?”\n\nYou: “Yes, it’s fun, especially during festivals. We have a lot of cousins!”\n\nLesson Takeaway: Joint family = कई पीढ़ियाँ एक घर में."
+        }
+      ]
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "Joint family introduce करना इतना आसान है! अब कुछ flashcards में joint vs. nuclear concept फिर से summarize करें!",
+      "imagePath": "assets/images/lesson9_mentor_explain_joint.png",
+      "audioPath": "assets/audio/lesson9_mentor_explain_joint.mp3"
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Joint vs. Nuclear",
+      "audioPath": "assets/audio/lesson9_flashcards_jointvnuclear.mp3",
+      "cards": [
+        {
+          "term": "Joint Family",
+          "definition": "Multiple generations together. (हिंदी: संयुक्त परिवार)\nUsage: ‘Uncles, aunts, grandparents living with us.’"
+        },
+        {
+          "term": "Nuclear Family",
+          "definition": "Parents + children only. (हिंदी: छोटा immediate परिवार)\nUsage: ‘Just me, my parents, siblings.’"
+        },
+        {
+          "term": "Extended Relatives",
+          "definition": "Uncles, aunts, cousins. (हिंदी: अतिरिक्त रिश्तेदार)\nUsage: When bigger circle is involved."
+        },
+        {
+          "term": "Cousins / Siblings",
+          "definition": "Cousins = चचेरे भाई-बहन, Siblings = real brother-sister.\nUsage: Clarify difference in conversation."
+        }
+      ]
+    },
+
+    {
+      "type": "poll",
+      "question": "Joint family में सबसे बड़ी ख़ूबी क्या होती है? ",
+      "options": [
+        "We share responsibilities",
+        "Festivals are super fun",
+        "Crowded but lively",
+        "I prefer a small nuclear family!"
+      ],
+      "dynamicFeedback": {
+        "0": "True—सब मिलकर घर चलाना आसान!",
+        "1": "Yes, सब इकट्ठे होने से मज़ा बढ़ जाता है!",
+        "2": "भीड़-भाड़ लेकिन दिलचस्प!",
+        "3": "हर किसी की preference अलग हो सकती है!"
+      },
+      "imagePath": "assets/images/lesson9_poll_joint.png"
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "अब hometown के बारे में—‘I’m originally from X. It’s known for Y.’ बस इतना कहना start में काफ़ी है!",
+      "imagePath": "assets/images/lesson9_mentor_explain_hometown.png",
+      "audioPath": "assets/audio/lesson9_mentor_explain_hometown.mp3"
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Hometown Basics",
+      "audioPath": "assets/audio/lesson9_flashcards_hometown_basics.mp3",
+      "cards": [
+        {
+          "term": "I’m from (city/town)",
+          "definition": "हिंदी: ‘मैं __ शहर या गाँव से हूँ.’\nUsage: Basic location start."
+        },
+        {
+          "term": "It’s famous for ___",
+          "definition": "हिंदी: ‘यहाँ का __ मशहूर है.’\nUsage: Culture, food, monument."
+        },
+        {
+          "term": "We celebrate ___",
+          "definition": "हिंदी: ‘हम __ त्योहार मनाते हैं.’\nUsage: Add color via festivals."
+        },
+        {
+          "term": "Green / Peaceful / Busy",
+          "definition": "हिंदी: ‘शांत, हरा-भरा या भीड़-भाड़ वाला.’\nUsage: City vibe descriptors."
+        }
+      ]
+    },
+
+    {
+      "type": "short_stories",
+      "title":"Describing unique features of your city.",
+      "audioPath": "assets/audio/lesson9_scenario_hometown.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson9_hometown_local.png",
+          "text": "You: “My hometown is Jaipur. It’s known for its historic forts and vibrant culture.”\n\nFriend: “Sounds exciting! Do you visit often?”\n\nYou: “Yes, I go during festivals. The city is so colorful, especially during Diwali!”\n\nLesson Takeaway: 1-2 ख़ास बातें बताकर hometown introduce करें."
+        }
+      ]
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "Festivals या culture add करने से conversation मज़ेदार बनती है. अब कुछ flashcards!",
+      "imagePath": "assets/images/lesson9_mentor_explain_food.png",
+      "audioPath": "assets/audio/lesson9_mentor_explain_food.mp3"
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Hometown Highlights (Food & Culture)",
+      "audioPath": "assets/audio/lesson9_flashcards_hometown_highlights.mp3",
+      "cards": [
+        {
+          "term": "Festivals",
+          "definition": "हिंदी: ‘त्योहार जैसे Diwali, Holi, Eid…’\nUsage: ‘We celebrate __ with joy!’"
+        },
+        {
+          "term": "Famous Food",
+          "definition": "हिंदी: ‘यहाँ का __ बहुत स्वादिष्ट है.’\nUsage: Always a fun topic!"
+        },
+        {
+          "term": "Historic places",
+          "definition": "हिंदी: ‘पुराने क़िले, महल, मंदिर.’\nUsage: Give your city’s heritage."
+        },
+        {
+          "term": "Peaceful / Vibrant",
+          "definition": "हिंदी: ‘शांत या चहल-पहल भरा!’\nUsage: Describing city environment."
+        }
+      ]
+    },
+
+    {
+      "type": "speaking_prompt",
+      "prompt": "बोलकर अभ्यास करें: ‘I’m from ___. We have amazing food and celebrate ___ festival!’\nअब personalize भी करें—e.g., mention a local dish or event.",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson9_speaking_prompt_culture.png",
+      "audioPath": "assets/audio/lesson9_speaking_prompt_1.mp3"
+    },
+
+    {
+      "type": "poll",
+      "question": "Hometown describing में सबसे ज़्यादा आप क्या बताना पसंद करते हैं? ",
+      "options": [
+        "Local food & cuisine",
+        "Historical places",
+        "Festivals & culture",
+        "Nothing special"
+      ],
+      "dynamicFeedback": {
+        "0": "Food is a great conversation starter!",
+        "1": "History buffs love forts & monuments!",
+        "2": "Festivals bring color to your story!",
+        "3": "हर जगह में कुछ न कुछ ख़ास ज़रूर होता है!"
+      },
+      "imagePath": "assets/images/lesson9_poll_culture.png"
+    },
+
+    {
+      "type": "short_stories",
+      "title":"Expressing emotional connect to hometown/festivals.",
+      "audioPath": "assets/audio/lesson9_scenario_friend2.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson9_friend_convo.png",
+          "text": "You: “I’m from Kolkata, but I live in Mumbai for work. My parents still stay in Kolkata.”\n\nFriend: “Do you miss your hometown?”\n\nYou: “Sometimes, especially during Durga Puja. The city looks magical then!”\n\nLesson Takeaway: अपने शहर की याद, ख़ास त्योहारों से जुड़ी feelings ज़ाहिर करें."
+        }
+      ]
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "Hometown सिर्फ़ geographic जानकारी नहीं—emotions भी हैं! “I miss it, especially during festivals.” अब flashcards देखते हैं!",
+      "imagePath": "assets/images/lesson9_mentor_explain_emotion.png",
+      "audioPath": "assets/audio/lesson9_mentor_explain_emotion.mp3"
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Expressing Emotion About Hometown",
+      "audioPath": "assets/audio/lesson9_flashcards_emotion.mp3",
+      "cards": [
+        {
+          "term": "I miss it",
+          "definition": "हिंदी: ‘अपने शहर की याद आती है.’\nUsage: Nostalgia or longing."
+        },
+        {
+          "term": "It feels magical",
+          "definition": "हिंदी: ‘वो समय जादुई लगता है!’\nUsage: Festivals or special events."
+        },
+        {
+          "term": "I go back often",
+          "definition": "हिंदी: ‘मैं अक्सर जाता/जाती हूँ.’\nUsage: Show strong ties to home."
+        },
+        {
+          "term": "Festive mood",
+          "definition": "हिंदी: ‘त्योहारों पर पूरा माहौल बदल जाता है.’\nUsage: Special vibe or atmosphere."
+        }
+      ]
+    },
+
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "I come from a ______ (tiny/delicious) village. It’s peaceful and green!",
+      "correctWord": "tiny",
+      "imagePath": "assets/images/lesson9_fill_in_village.png",
+      "hints": [
+        "Village descriptor = small/tiny, not ‘delicious.’",
+        "हिंदी: ‘छोटा-सा गाँव’—‘स्वादिष्ट’ गाँव अजीब लगेगा!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "सही! ‘Tiny village’ sounds natural.",
+        "wrongText": "‘Delicious village’ doesn’t make sense!"
+      },
+      "submitLabel": "Check Answer"
+    },
+
+    {
+      "type": "short_stories",
+      "title":"Talking about siblings/cousins in conversation.",
+      "audioPath": "assets/audio/lesson9_scenario_cousins.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson9_cousins_scene.png",
+          "text": "You: “I have an elder sister and a younger brother. They live in Hyderabad for their jobs.”\n\nFriend: “So do you meet them often?”\n\nYou: “Yes, we catch up during holidays. Plus, I have cousins in the US—sometimes we have a big family reunion!”\n\nLesson Takeaway: ‘Elder/Younger’ for siblings, mention cousins abroad if relevant."
+        }
+      ]
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "हर परिवार अलग—single parent, blended family, etc. सब valid हैं! “I stay with my mom only.” या “We have a blended setup.” कोई issue नहीं. हर परिवार अनोखा है!",
+      "imagePath": "assets/images/lesson9_mentor_explain_sensitivity.png",
+      "audioPath": "assets/audio/lesson9_mentor_explain_sensitivity.mp3"
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Unique Family Setups (Encouragement)",
+      "audioPath": "assets/audio/lesson9_flashcards_unique_family.mp3",
+      "cards": [
+        {
+          "term": "Single parent household",
+          "definition": "हिंदी: ‘सिर्फ़ माँ या पिता के साथ.’\nEncouragement: हर परिवार अनोखा है—be proud!"
+        },
+        {
+          "term": "Blended family",
+          "definition": "हिंदी: ‘Step-siblings या remarried parents.’\nEncouragement: सब valid setups, कोई judgment नहीं!"
+        },
+        {
+          "term": "I stay alone, visit family sometimes",
+          "definition": "हिंदी: ‘मैं अकेला रहता/रहती हूँ, family से कभी-कभी मिलता/मिलती हूँ.’\nEncouragement: यह भी normal है!"
+        },
+        {
+          "term": "Relatives support me",
+          "definition": "हिंदी: ‘रिश्तेदारों का सहयोग मिलता है.’\nEncouragement: Help लेना ठीक है!"
+        }
+      ]
+    },
+
+    {
+      "type": "speaking_prompt",
+      "prompt": "बोलकर अभ्यास (Speak aloud): ‘We have a (joint/nuclear) family. We’re from ___.’\nअब personalize करें: 1 detail और add करें—e.g., ‘My father’s occupation is…’",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson9_speaking_prompt.png",
+      "audioPath": "assets/audio/lesson9_speaking_prompt_2.mp3"
+    },
+
+    {
+      "type": "poll",
+      "question": "Family की बात करते समय आप ज़्यादा क्या दिखाना पसंद करते हैं? ",
+      "options": [
+        "Emotional warmth (festivals, fun moments)",
+        "Practical info (who does what job)",
+        "Both—थोड़ा emotion + कुछ facts",
+        "I keep it minimal"
+      ],
+      "dynamicFeedback": {
+        "0": "Emotional side conversation को और मजबूत करता है!",
+        "1": "Formal या quick intro में helpful!",
+        "2": "Best of both worlds—balance!",
+        "3": "Brief is fine, मगर थोड़ा personal touch भी अच्छा है!"
+      },
+      "imagePath": "assets/images/lesson9_poll_family_talk.png"
+    },
+
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "We’re a ______ (joint/nuclear) family, just me, my parents, and my sister.",
+      "correctWord": "nuclear",
+      "imagePath": "assets/images/lesson9_fill_in_nuclear.png",
+      "hints": [
+        "Small family—parents + kids only.",
+        "हिंदी: Joint में चाचा-चाची आदि भी होते हैं."
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "Yes, nuclear = immediate family only.",
+        "wrongText": "Joint = bigger set of relatives!"
+      },
+      "submitLabel": "Check Answer"
+    },
+
+    {
+      "type": "scene_image",
+      "caption": "Family Photo Moment: एक तस्वीर लोगों को समझा देती है कि आपका परिवार कैसा है!",
+      "imagePath": "assets/images/lesson9_family_photo.png",
+      "audioPath": "assets/audio/lesson9_scene_image_3.mp3"
+    },
+
+    {
+      "type": "short_stories",
+      "title":"Mentioning language & livelihood.",
+      "audioPath": "assets/audio/lesson9_scenario_friend3.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson9_friend_convo2.png",
+          "text": "You: “My family lives in a small town in Gujarat. We speak Gujarati at home, but I’m comfortable in Hindi and English too.”\n\nFriend: “That’s great! How big is your family?”\n\nYou: “We’re four—my parents, my younger sister, and me. We have a small shop in our town.”\n\nLesson Takeaway: Language mention + family size + occupation info = solid intro!"
+        }
+      ]
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "Formal context (interview या college) में बहुत detail न दें—2-3 lines में parents’ occupation, hometown highlights. बस!",
+      "imagePath": "assets/images/lesson9_mentor_explain_formal.png",
+      "audioPath": "assets/audio/lesson9_mentor_explain_formal.mp3"
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Formal/Interview Context",
+      "audioPath": "assets/audio/lesson9_flashcards_formal.mp3",
+      "cards": [
+        {
+          "term": "I come from a ___ family",
+          "definition": "हिंदी: ‘हमारे परिवार में __ लोग हैं.’\nUsage: Start with family size."
+        },
+        {
+          "term": "My father/mother works for ___",
+          "definition": "हिंदी: पिता/माता का व्यवसाय.\nUsage: Bank, Govt. office, etc."
+        },
+        {
+          "term": "My hometown is known for ___",
+          "definition": "हिंदी: शहर की कोई ख़ासियत, e.g. tech hubs.\nUsage: 1-2 lines only."
+        },
+        {
+          "term": "We enjoy celebrating ___",
+          "definition": "हिंदी: त्योहार का ज़िक्र भी कर सकते हैं.\nUsage: Keeps it warm yet concise."
+        }
+      ]
+    },
+
+    {
+      "type": "short_stories",
+      "title":"Being concise in an interview.",
+      "audioPath": "assets/audio/lesson9_scenario_interview.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson9_interview_scene.png",
+          "text": "Interviewer: “So, tell us about your family background.”\n\nYou: “I come from a nuclear family in Bangalore. My father works for a bank, and my mother is a homemaker.”\n\nInterviewer: “Interesting. And your hometown?”\n\nYou: “Bangalore is known for its tech hubs and pleasant weather. We enjoy celebrating festivals like Ugadi!”\n\nLesson Takeaway : Formal setup → Short, polite lines about family & city."
+        }
+      ]
+    },
+
+    {
+      "type": "mentor_explain",
+      "text": "Conversation end करते समय politely curiosity दिखाएँ: ‘What about your family?’ या ‘Where are you from?’—ताकि दूसरा व्यक्ति भी share कर सके!",
+      "imagePath": "assets/images/lesson9_mentor_explain_closure.png",
+      "audioPath": "assets/audio/lesson9_mentor_explain_closure.mp3"
+    },
+
+    {
+      "type": "speaking_prompt",
+      "prompt": "बोलकर अभ्यास (Speak aloud): ‘I come from a (joint/nuclear) family in ___. My father works as a ___.’\nअब personalize करें—थोड़ा और detail दें, फिर पूछें ‘And you?’",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson9_speaking_prompt_2.png",
+      "audioPath": "assets/audio/lesson9_speaking_prompt_interview.mp3"
+    },
+
+    {
+      "type": "text_card",
+      "title": "Cultural Sensitivity",
+      "body": "हर परिवार का setup अलग—single parent, blended, etc. Respect all differences!\n\nExamples:\n• “I stay with my mom only.”\n• “I live alone, but my uncle supports me.”\n• “We have a blended family.”\n\nहर परिवार अनोखा है—आपका अनुभव भी अनोखा!",
+      "audioPath": "assets/audio/lesson9_cultural_sensitivity.mp3"
+    },
+
+    {
+      "type": "text_card",
+      "title": "Real-Life Journal Prompt",
+      "body": "Lesson के बाद, 5-6 lines का draft लिखें:\n1) Family structure (joint/nuclear)\n2) Hometown\n3) Culture/Festivals (1-2 points)\n\nफिर aloud बोलें—अगली बार किसी से मिलें, उसी flow में पेश करें!",
+      "audioPath": "assets/audio/lesson9_journal_prompt.mp3"
+    },
+
+    {
+      "type": "text_card",
+      "title": "Lesson 9 Recap",
+      "body": "1) Family size & type (joint/nuclear)\n2) Parents’ occupation, siblings, cousins\n3) Hometown highlights—food, culture, festivals\n4) Emotional angle (‘I miss it’, ‘I visit often’)\n5) Formal context → concise info\n6) Respect different family setups, always politely ask about theirs too!",
+      "audioPath": "assets/audio/lesson9_recap_card.mp3"
+    },
+
+    {
+      "type": "badge_award",
+      "title": "Family & Hometown Champion",
+      "description": "बधाई हो! आपने Lesson 9 पूरा कर लिया. अब आप अपने परिवार और hometown को—चाहे joint या nuclear—confidently introduce कर सकते हैं!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson9_badge_award.mp3"
+    }
+
+  ]
+}

@@ -65,10 +65,7 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
     final List<Map<String, dynamic>> selectedCourses = _getSelectedCourses();
 
     return Scaffold(
-      // Subtle background color
       backgroundColor: const Color(0xFFF2F6FB),
-
-      // Drawer with a permanent menu
       drawer: const Drawer(child: MenuPage()),
 
       // Gradient AppBar
@@ -130,7 +127,7 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
 
             const SizedBox(height: 24),
 
-            // 🧠 Navigation Cards
+            // 🧠 Navigation Cards (3D effect with multiple box shadows)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: GridView.count(
@@ -182,93 +179,68 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
 
             const SizedBox(height: 28),
 
-            // 📚 Course List
+            // 📚 Course List (replicate design from SmartCourseRecommendationPage)
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 itemCount: selectedCourses.length,
                 itemBuilder: (context, index) {
                   final course = selectedCourses[index];
-                  return Container(
-                    margin: const EdgeInsets.only(bottom: 14),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(12),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.12),
-                          blurRadius: 8,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
+                  return Card(
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
                     ),
+                    margin: const EdgeInsets.symmetric(vertical: 8),
                     child: Padding(
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(12.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          // Row for icon + FREE/PREMIUM
                           Row(
                             children: [
-                              CircleAvatar(
-                                radius: 24,
-                                backgroundColor: Colors.blue.shade100,
-                                child: Icon(course["icon"], color: course["color"], size: 22),
-                              ),
-                              const SizedBox(width: 12),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      course["title"],
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 14,
-                                        color: Colors.black87,
-                                      ),
-                                    ),
-                                    const SizedBox(height: 6),
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                      decoration: BoxDecoration(
-                                        color: course["tag"] == "free"
-                                            ? Colors.green.shade100
-                                            : Colors.orange.shade100,
-                                        borderRadius: BorderRadius.circular(6),
-                                      ),
-                                      child: Text(
-                                        course["tag"] == "free" ? "FREE" : "PREMIUM",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.bold,
-                                          color: course["tag"] == "free"
-                                              ? Colors.green.shade700
-                                              : Colors.orange.shade700,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                              // Optional hero tag (like in recommended page)
+                              Hero(
+                                tag: course["title"],
+                                child: CircleAvatar(
+                                  backgroundColor: course["color"].withOpacity(0.1),
+                                  child: Icon(course["icon"], color: course["color"]),
                                 ),
                               ),
-                              ElevatedButton(
-                                onPressed: () => context.push('/courseDetail', extra: course),
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFF43A047),
-                                  foregroundColor: Colors.white,
-                                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  elevation: 2,
+                              const SizedBox(width: 8),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 4,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: course["tag"] == "free"
+                                      ? Colors.green
+                                      : Colors.orange,
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Text(
-                                  isHindi ? "शुरू करें" : "Start Now",
-                                  style: const TextStyle(fontSize: 13),
+                                  course["tag"] == "free" ? "FREE" : "PREMIUM",
+                                  style: const TextStyle(
+                                    fontSize: 10,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ],
                           ),
-                          const SizedBox(height: 12),
+                          const SizedBox(height: 8),
+                          // Course Title
+                          Text(
+                            course["title"],
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          // Star Row (extra from the dashboard page)
                           Row(
                             children: const [
                               Icon(Icons.star, color: Colors.amber, size: 16),
@@ -279,6 +251,7 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
                             ],
                           ),
                           const SizedBox(height: 8),
+                          // Course Description
                           Text(
                             "• ${course["description"]}\n"
                             "• Engaging lessons & practical tips\n"
@@ -288,6 +261,61 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
                               fontSize: 14,
                               color: Colors.black87,
                               height: 1.4,
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          // "Start Now" button (keep gradient from original)
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: ElevatedButton(
+                              clipBehavior: Clip.antiAlias,
+                              onPressed: () =>
+                                  context.push('/courseDetail', extra: course),
+                              style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                elevation: 2,
+                                backgroundColor: Colors.transparent,
+                                foregroundColor: Colors.white,
+                                shadowColor: Colors.transparent,
+                              ).copyWith(
+                                side: MaterialStateProperty.all(BorderSide.none),
+                              ),
+                              child: Ink(
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Color(0xFF43A047), // Darker green
+                                      Color(0xFF2E7D32), // Lighter green
+                                    ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 14,
+                                    vertical: 10,
+                                  ),
+                                  child: Text(
+                                    isHindi ? "शुरू करें" : "Start Now",
+                                    style: const TextStyle(
+                                      fontSize: 13,
+                                      shadows: [
+                                        Shadow(
+                                          offset: Offset(0, 2),
+                                          blurRadius: 3,
+                                          color: Colors.black38,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -303,7 +331,7 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
     );
   }
 
-  // 🔁 Level Toggle Widget
+  // 🔁 Level Toggle Widget (unchanged)
   Widget _levelToggle(String level, String label) {
     final bool isSelected = level == selectedLevel;
     return Expanded(
@@ -333,7 +361,7 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
     );
   }
 
-  // 🎯 Animated Nav Card Widget
+  // 🎯 Animated Nav Card Widget (3D effect with multiple shadows)
   Widget _animatedNavCard({
     required String keyName,
     required IconData icon,
@@ -350,16 +378,25 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [color.withOpacity(0.8), color.withOpacity(0.6)],
+              colors: [
+                color.withOpacity(0.9),
+                color.withOpacity(0.6),
+              ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
             borderRadius: BorderRadius.circular(14),
+            // 3D effect with multiple shadows
             boxShadow: [
               BoxShadow(
-                color: color.withOpacity(0.2),
+                color: Colors.black.withOpacity(0.3),
                 blurRadius: 6,
-                offset: const Offset(0, 3),
+                offset: const Offset(3, 3),
+              ),
+              BoxShadow(
+                color: Colors.white.withOpacity(0.5),
+                blurRadius: 4,
+                offset: const Offset(-3, -3),
               ),
             ],
           ),
@@ -378,10 +415,10 @@ class _CoursesDashboardPageState extends ConsumerState<CoursesDashboardPage> {
                   fontWeight: FontWeight.w700,
                   shadows: [
                     Shadow(
+                      offset: Offset(0, 2),
+                      blurRadius: 3,
                       color: Colors.black38,
-                      offset: Offset(0, 1),
-                      blurRadius: 2,
-                    )
+                    ),
                   ],
                 ),
               ),

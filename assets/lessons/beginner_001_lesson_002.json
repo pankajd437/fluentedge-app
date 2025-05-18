@@ -5,10 +5,10 @@
   "themeColor": "#4A90E2",
   "xpTotal": 500,
   "objectives": [
-    "Build confidence in greeting people in English using basic words",
-    "Learn polite ways to say Hello and Goodbye",
-    "Mix short Hindi for comfort without losing politeness",
-    "Enjoy small talk without feeling awkward"
+    "English में लोगों को greet करने का आत्मविश्वास बढ़ाना",
+    "Hello और Goodbye politely कहने के तरीके सीखना",
+    "थोड़ा हिंदी मिलाकर comfort रखना (लेकिन polite बने रहना)",
+    "छोटी-छोटी बातचीत का आनंद लेना, awkward महसूस किए बिना"
   ],
   "mentorDefaults": {
     "expression": "mentor_tip_upper.png",
@@ -21,64 +21,62 @@
     "animation": "assets/animations/badge_unlocked.json"
   },
   "activities": [
-
     {
       "type": "mentor_intro",
-      "text": "Namaste & Welcome to Lesson 2! Aaj hum seekhenge 'Greetings & Goodbyes'—yaani aapka pehla ‘Hello’ aur aakhri ‘Bye’ kaise magical ho sakta hai!",
-      "imagePath": "assets/images/lesson2_course_intro.png"
+      "text": "नमस्ते और स्वागत है आपका Lesson 2 में! आज हम सीखेंगे ‘Greetings & Goodbyes’ यानि आपके पहले ‘Hello’ और आख़िरी ‘Bye’ को कैसे ख़ास बनाया जाए। एक छोटी मुस्कान और सही शब्द सामने वाले पर आपका शानदार असर डाल सकते हैं!",
+      "imagePath": "assets/images/lesson2_course_intro.png",
+      "audioPath": "assets/audio/lesson2_mentor_intro_1..mp3"
     },
-
     {
       "type": "scene_image",
-      "caption": "Imagine: Aap ek dost ya new coworker se mil rahe ho . Pehla impression hi sab kuch hai!",
-      "imagePath": "assets/images/lesson2_greetings_scene_01.png"
+      "caption": "कल्पना कीजिए: आप किसी दोस्त या नए सहकर्मी से मिल रहे हैं। आपका पहला इम्प्रेशन बहुत ज़रूरी होता है!",
+      "imagePath": "assets/images/lesson2_greetings_scene_01.png",
+      "audioPath": "assets/audio/lesson2_scene_image_1.mp3"
     },
-
     {
       "type": "mentor_explain",
-      "text": "Is lesson mein hum basic greetings seekhenge—like 'Hello', 'Hi', 'Goodbye', etc. Par dhyan rahe ki tone & smile sabse important hai!",
-      "imagePath": "assets/images/lesson2_smile_guide.png"
+      "text": "इस lesson में हम सीखेंगे बुनियादी ‘Hello’, ‘Hi’, ‘Goodbye’ आदि। लेकिन असली जादू आपके टोन और चेहरे की मुस्कान में होता है! आप जितने warm और सम्मानजनक होंगे, उतना सामने वाला आराम से आपसे बात करेगा।",
+      "imagePath": "assets/images/lesson2_mentor_explain_formal.png",
+      "audioPath": "assets/audio/lesson2_mentor_explain_1.mp3"
     },
-
     {
       "type": "today_vocabulary",
       "vocabItems": [
         {
           "word": "Hello",
-          "meaning": "A simple universal greeting, ‘Namaste’ vibe in English.",
+          "meaning": "एक सरल universal greeting, जैसे हिंदी में ‘नमस्ते’ कहना।",
           "image": "assets/images/lesson2_vocab_hello.png"
         },
         {
           "word": "Hi",
-          "meaning": "Short, casual greeting—like ‘Hey!’",
+          "meaning": "छोटा, casual अभिवादन—जैसे ‘अरे!’",
           "image": "assets/images/lesson2_vocab_hi.png"
         },
         {
           "word": "Goodbye",
-          "meaning": "Polite farewell—like ‘Alvida’ in English tone.",
+          "meaning": "शिष्टाचार भरा विदाई शब्द—हिंदी में ‘अलविदा’ जैसा।",
           "image": "assets/images/lesson2_vocab_goodbye.png"
         },
         {
           "word": "See you soon",
-          "meaning": "Friendly parting phrase, suggests you’ll meet again quickly.",
+          "meaning": "मिलने का वादा जताने वाला वाक्य—बताता है कि आप जल्दी फिर मिलेंगे।",
           "image": "assets/images/lesson2_vocab_seeyousoon.png"
         },
         {
           "word": "Nice to meet you",
-          "meaning": "Express happiness in meeting someone new.",
+          "meaning": "किसी नए व्यक्ति से मिलकर ख़ुशी जताने का तरीका।",
           "image": "assets/images/lesson2_vocab_nicetomeetyou.png"
         }
       ]
     },
-
     {
       "type": "fill_in_the_blanks",
       "sentence": "______! My name is Priya. How are you?",
       "correctWord": "Hello",
       "imagePath": "assets/images/lesson2_conversation_start.png",
       "hints": [
-        "Short greeting, English me sabse common word!",
-        "Hindi: ‘Namaste’ ki English version"
+        "छोटा और सबसे आम इंग्लिश greeting!",
+        "हिंदी समानार्थ: ‘नमस्ते’"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
@@ -86,37 +84,35 @@
       "wrongLottie": "assets/animations/activity_wrong.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Yes, ‘Hello’ is perfect to start a conversation politely!",
-        "wrongText": "Try ‘Hello’—short, universal, easy. ‘Hi’ also works but let’s pick the standard answer."
+        "correctText": "बिल्कुल! ‘Hello’ से बातचीत politely शुरू होती है!",
+        "wrongText": "‘Hello’ सबसे standard greeting है, ‘Hi’ भी ठीक है पर इस वाक्य में ‘Hello’ लेना बेहतर है।"
       }
     },
-
     {
       "type": "poll",
-      "question": "Aap greeting karne se pahle sabse zyada kya sochte ho?",
+      "question": "Greeting करने से पहले आपको सबसे ज़्यादा क्या सोचने पर मजबूर करता है?",
       "options": [
-        "Meri English theek hai ya nahi?",
-        "Sharma jaata hoon (feel shy)!",
-        "Kuch zyada bolna padega?",
-        "Nothing—I’m confident!"
+        "मेरी अंग्रेज़ी सही है या नहीं?",
+        "शरमाता/शरमाती हूँ!",
+        "ज़्यादा बात करनी पड़ेगी?",
+        "कुछ नहीं—मैं confident हूँ!"
       ],
       "dynamicFeedback": {
-        "0": "Grammar chhodo—short & sweet English enough hai Greeting ke liye!",
-        "1": "Smile + short line breaks shyness!",
-        "2": "2-3 lines enough for a greeting—koi essay nahi!",
-        "3": "Wah, that’s great! Keep it up!"
+        "0": "Grammar पर मत उलझें—छोटे और सरल वाक्य काफी हैं Greeting के लिए!",
+        "1": "एक मुस्कान और छोटा-सा शब्द डर कम करता है!",
+        "2": "2-3 लाइन ही काफ़ी हैं formal Hello के लिए!",
+        "3": "कमाल है! ऐसे ही मज़े से बोलते रहिए!"
       },
       "imagePath": "assets/images/lesson2_poll_hesitation.png"
     },
-
     {
       "type": "fill_in_the_blanks",
       "sentence": "It was ______ (nice/boring) to meet you. See you soon!",
       "correctWord": "nice",
       "imagePath": "assets/images/lesson2_meeting_end.png",
       "hints": [
-        "After a greeting, you show positivity with ‘nice’",
-        "Hindi: ‘Mujhe accha laga aapse milke!’"
+        "मिलने के बाद positivity दिखाने के लिए ‘nice’ कहें",
+        "हिंदी: ‘आपसे मिलकर अच्छा लगा’"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
@@ -124,14 +120,19 @@
       "wrongLottie": "assets/animations/activity_wrong.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Yes! Always be positive. ‘Nice to meet you’ sets a good tone.",
-        "wrongText": "‘Boring’ would be rude or negative, na? Politeness chahiye!"
+        "correctText": "सही! ‘Nice to meet you’ हमेशा मिलनसार लगता है!",
+        "wrongText": "‘Boring’ बोलना negative है—हम हमेशा positivity दिखाना चाहते हैं!"
       }
     },
-
+    {
+      "type": "mentor_surprise_fact",
+      "title": "Surprise Fact",
+      "body": "एक अध्ययन से पता चला कि ‘Hello’ बोलते समय हल्की मुस्कान आपकी बातचीत को 60% तक अधिक सफल बना सकती है—चाहे आपकी अंग्रेज़ी perfect न भी हो!",
+      "audioPath": "assets/audio/lesson2_mentor_surprise_fact_1.mp3"
+    },
     {
       "type": "quiz",
-      "question": "Which greeting is best for a new coworker in an office?",
+      "question": "एक नए सहकर्मी (coworker) से ऑफिस में मिलने पर सबसे अच्छा Greeting क्या होगा?",
       "options": [
         "Hi bro, what’s up?",
         "Yo man!",
@@ -140,34 +141,33 @@
       ],
       "answerIndex": 2,
       "hints": [
-        "Formal or semi-formal environment—polite English phrase is ideal."
+        "Formal या semi-formal माहौल में polite इंग्लिश phrase चुनें"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
       "allowRetry": true,
-      "encouragementOnFail": "No worries, check politeness & positivity!"
+      "encouragementOnFail": "कोई बात नहीं, politely और positivity वाली line तलाशें!"
     },
-
     {
       "type": "scene_image",
-      "caption": "Office scenario: Meeting your new teammate politely.",
-      "imagePath": "assets/images/lesson2_office_meeting.png"
+      "caption": "Office scenario: आप आज ऑफिस में एक नए teammate से मिल रहे हैं, ध्यान रखिए शिष्टाचार ज़रूरी है!",
+      "imagePath": "assets/images/lesson2_office_meeting.png",
+      "audioPath": "assets/audio/lesson2_scene_image_2.mp3"
     },
-
     {
       "type": "mentor_explain",
-      "text": "Dekho, formal ya new person ke liye ‘Hello, nice to meet you’ is best. Bhai/Yaarr is good for close friends only!",
-      "imagePath": "assets/images/lesson2_mentor_explain_formal.png"
+      "text": "देखिए, formally या नए व्यक्ति के लिए “Hello, nice to meet you” बेहतरीन रहता है। ‘Bhai’ या ‘Yaar’ सिर्फ़ क़रीबी दोस्तों के बीच ठीक है, काम के माहौल में थोड़ा casual लग सकता है।",
+      "imagePath": "assets/images/lesson2_mentor_explain_formal.png",
+      "audioPath": "assets/audio/lesson2_mentor_explain_2.mp3"
     },
-
     {
       "type": "fill_in_the_blanks",
       "sentence": "Hi, I’m Rahul. ______ (Nice to meet/Go away) you!",
       "correctWord": "Nice to meet",
       "imagePath": "assets/images/lesson2_team_intro.png",
       "hints": [
-        "When you greet, show positivity!",
-        "Hindi idea: ‘Aapse milkar acha laga’"
+        "Greeting में positivity ज़रूरी!",
+        "हिंदी में: ‘आपसे मिलकर बहुत अच्छा लगा’"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
@@ -175,33 +175,31 @@
       "wrongLottie": "assets/animations/activity_wrong.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Spot on! ‘Nice to meet you’ is a friendly starter.",
-        "wrongText": "‘Go away’?! That’s rude—avoid negativity!"
+        "correctText": "बिल्कुल सही! ‘Nice to meet you’ से दोस्ताना शुरुआत होती है!",
+        "wrongText": "‘Go away’ कहने से सब बिगड़ जाएगा—avoid negativity!"
       }
     },
-
     {
       "type": "sentence_construction",
       "words": ["is", "Ayesha!", "name", "Hello,", "my"],
       "correctOrder": ["Hello,", "my", "name", "is", "Ayesha!"],
       "imagePath": "assets/images/lesson2_self_intro.png"
     },
-
     {
       "type": "speaking_prompt",
-      "prompt": "Bolkar practice: ‘Hello, my name is ____. Nice to meet you!’ Louder, with a smile!",
+      "prompt": "बोलकर प्रैक्टिस करें: ‘Hello, my name is ____. Nice to meet you!’ ज़ोर से, मुस्कान के साथ!",
       "audioSupport": false,
-      "imagePath": "assets/images/lesson2_speaking_prompt.png"
+      "imagePath": "assets/images/lesson2_speaking_prompt.png",
+      "audioPath": "assets/audio/lesson2_speaking_prompt_1.mp3"
     },
-
     {
       "type": "fill_in_the_blanks",
       "sentence": "______, how’s your day? (Hi/Bye)",
       "correctWord": "Hi",
       "imagePath": "assets/images/lesson2_small_talk.png",
       "hints": [
-        "Short casual greeting before you chat further",
-        "Hindi sense: ‘Arre hi!’"
+        "Casual greeting से बात आगे बढ़ाना आसान",
+        "हिंदी में सोचें: ‘नमस्ते, दिन कैसा जा रहा है?’"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
@@ -209,22 +207,22 @@
       "wrongLottie": "assets/animations/activity_wrong.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Yes! Start with ‘Hi, how’s your day?’— super casual & friendly!",
-        "wrongText": "Wrong—If you say ‘Bye’, conversation ends!"
+        "correctText": "सही! ‘Hi, how’s your day?’ बहुत ही फ्रेंडली शुरुआत है!",
+        "wrongText": "‘Bye’ बोलेंगे तो बातचीत ख़त्म—शुरू कैसे होगी?"
       }
     },
     {
       "type": "spot_the_error",
-      "instruction": "Identify the inappropriate word for this situation.",
+      "instruction": "गलत या असामयिक शब्द पहचानें:",
       "originalSentence": "Yo man! Can you help me with directions, please?",
       "choices": ["Yo", "man!", "directions", "please"],
       "correctChoiceIndex": 0,
-      "explanation": "‘Yo’ is too informal for speaking to an older or formally dressed person. A polite greeting like 'Excuse me' would be better.",
+      "explanation": "‘Yo’ बहुत informal है, ख़ासकर अगर आप किसी अजनबी या बड़े व्यक्ति से बात कर रहे हों। ‘Excuse me’ या ‘Hello’ कहना बेहतर है।",
       "imagePath": "assets/images/lesson2_spot_error.png"
     },
     {
       "type": "quiz",
-      "question": "Which ‘goodbye’ is gentle & polite, not rude?",
+      "question": "कौन-सा ‘goodbye’ gentle और polite लगेगा?",
       "options": [
         "I’m outta here!",
         "Bye—see you soon!",
@@ -233,28 +231,27 @@
       ],
       "answerIndex": 1,
       "hints": [
-        "Look for positivity & friendly tone."
+        "अच्छा tone और friendship वाली line ढूँढें"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
       "allowRetry": true,
-      "encouragementOnFail": "Re-check which option is polite!"
+      "encouragementOnFail": "ध्यान दें कि कौन-सा option friendly है?"
     },
-
     {
       "type": "scene_image",
-      "caption": "At a friend’s house: Time to leave politely with a smile!",
-      "imagePath": "assets/images/lesson2_farewell_friendhouse.png"
+      "caption": "आप दोस्त के घर पर हैं: शालीन मुस्कान के साथ विदा लें!",
+      "imagePath": "assets/images/lesson2_farewell_friendhouse.png",
+      "audioPath": "assets/audio/lesson2_scene_image_3.mp3"
     },
-
     {
       "type": "fill_in_the_blanks",
       "sentence": "Okay, I should go now. ______ (Goodbye/Hello), take care!",
       "correctWord": "Goodbye",
       "imagePath": "assets/images/lesson2_leaving_home.png",
       "hints": [
-        "Leaving? Say farewell politely!",
-        "Hindi: ‘Chalta hoon!’ but English me polite alternative"
+        "अगर जा रहे हैं तो विदाई का शब्द ज़रूरी!",
+        "हिंदी में: ‘चलिए, अलविदा!’"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
@@ -262,19 +259,35 @@
       "wrongLottie": "assets/animations/activity_wrong.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Yes! ‘Goodbye, take care!’ is perfect to end politely!",
-        "wrongText": "Wrong. ‘Hello’ is for starting, not ending!"
+        "correctText": "हां, ‘Goodbye, take care!’ बेहतरीन तरीका है अलविदा कहने का!",
+        "wrongText": "‘Hello’ तो शुरुआत के लिए है, खत्म करने के लिए नहीं!"
       }
     },
-
+    {
+      "type": "poll",
+      "question": "Goodbye बोलना आपको सबसे ज़्यादा मुश्किल कब लगता है?",
+      "options": [
+        "Office meeting के ख़त्म पर",
+        "क़रीबी दोस्त से मिलकर अलविदा कहना",
+        "Formal event में, पता नहीं क्या बोलूँ",
+        "मुश्किल नहीं लगता मुझे"
+      ],
+      "dynamicFeedback": {
+        "0": "Office में ‘Alright, talk soon!’ काफ़ी होता है!",
+        "1": "दोस्तों को अलविदा कहना थोड़ा भावुक हो सकता है—‘Bye, see you soon!’ बोले!",
+        "2": "Formal event? ‘Thank you for your time, goodbye!’ एक safe विकल्प है.",
+        "3": "अच्छा है—आप naturally ही comfortable हैं!"
+      },
+      "imagePath": "assets/images/lesson2_emotional_goodbye.png"
+    },
     {
       "type": "fill_in_the_blanks",
       "sentence": "It was really ______ (nice/bad) talking with you. Let’s do this again!",
       "correctWord": "nice",
       "imagePath": "assets/images/lesson2_warm_farewell.png",
       "hints": [
-        "You want to compliment the meeting, so ‘nice’ is typical",
-        "Hindi: ‘Bahut achha laga!’"
+        "हमेशा छोटा-सा positive note छोड़ें!",
+        "हिंदी: ‘आपसे मिलकर मज़ा आया!’"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
@@ -282,146 +295,124 @@
       "wrongLottie": "assets/animations/activity_wrong.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Yes! Spreading positivity is key to goodbyes.",
-        "wrongText": "No negativity—avoid harsh or random words!"
+        "correctText": "सही! थोड़ा positivity हमेशा लोगों को अच्छा महसूस कराता है.",
+        "wrongText": "‘Bad’ किसी को पसंद नहीं आएगा—negative ending avoid करें!"
       }
     },
-
     {
-      "type": "poll",
-      "question": "Aapke liye goodbye bolna sabse mushkil kab hota hai?",
-      "options": [
-        "Office meeting end",
-        "Close friend se milkar jab alag hona hota hai",
-        "Formal events, not sure what to say",
-        "Mushkil nahi lagta"
-      ],
-      "dynamicFeedback": {
-        "0": "Office me a short polite line works: ‘Alright, talk soon!’",
-        "1": "Emotional? ‘Bye, see you soon, keep in touch!’ helps",
-        "2": "Formal event? ‘Thank you for your time, goodbye!’ is safe.",
-        "3": "That’s nice—some people are just naturals!"
-      },
-      "imagePath": "assets/images/lesson2_emotional_goodbye.png"
-    },
-
-    {
-      "type": "mini_stories",
+      "type": "short_stories",
+      "audioPath": "assets/audio/en/lesson2_short_stories_1.mp3",
       "scenes": [
         {
           "imagePath": "assets/images/lesson2_mall_meetup.png",
-          "text": "Scenario 1: Bumped into an old friend at a mall—greeting them: “Hey, long time! Nice to see you.”"
+          "text": "Scenario 1: आप मॉल में पुराने दोस्त से टकराते हैं—उसे कहें: “Hey, long time! Nice to see you!”"
         },
         {
           "imagePath": "assets/images/lesson2_small_group.png",
-          "text": "Scenario 2: Meeting a group briefly: “Hello everyone, hope you’re doing good!”"
+          "text": "Scenario 2: किसी ग्रुप से थोड़ी देर के लिए मिलना: “Hello everyone, hope you’re doing good!”"
         }
       ]
     },
-
     {
-      "type": "mini_stories",
+      "type": "short_stories",
+      "audioPath": "assets/audio/en/lesson2_short_stories_2.mp3",
       "scenes": [
         {
           "imagePath": "assets/images/lesson2_mall_leaving.png",
-          "text": "When leaving: 'It was awesome catching up! See you soon!'"
+          "text": "फिर जाने के समय: ‘It was awesome catching up! See you soon!’"
         },
         {
           "imagePath": "assets/images/lesson2_smile_farewell.png",
-          "text": "Lesson moral: Use warm lines, a smile, & genuine tone. Koi fancy grammar zaroori nahi!"
+          "text": "Lesson का सार: गर्मजोशी भरी lines, एक मुस्कान, और genuine tone और बस किसी भारी grammar की ज़रूरत नहीं!"
         }
       ]
     },
-
     {
       "type": "word_builder",
       "letters": ["H", "I"],
       "correctWord": "HI",
       "extraLetters": ["X", "P"],
-      "instruction": "Build a super short greeting. 2 letters only!"
+      "instruction": "केवल 2 अक्षरों में एक छोटा greeting बनाइए!"
     },
-
     {
       "type": "scene_image",
-      "caption": "A short but powerful greeting can open hearts!",
-      "imagePath": "assets/images/lesson2_hi_power.png"
+      "caption": "दो अक्षरों का greeting भी कमाल कर सकता है!",
+      "imagePath": "assets/images/lesson2_hi_power.png",
+      "audioPath": "assets/audio/lesson2_scene_image_4.mp3"
     },
-
     {
       "type": "mentor_explain",
-      "text": "‘Hi’ is casual, but effective. If you want formal, use ‘Hello.’ Dono me smile is must!",
-      "imagePath": "assets/images/lesson2_mentor_speaking.png"
+      "text": "‘Hi’ एक casual लेकिन बहुत प्रभावी शब्द है। अगर कोई औपचारिक माहौल है, तो ‘Hello’ बेहतर है। दोनों ही स्थिति में मुस्कान ज़रूरी है!",
+      "imagePath": "assets/images/lesson2_mentor_speaking.png",
+      "audioPath": "assets/audio/lesson2_mentor_explain_3.mp3"
     },
-
     {
       "type": "fill_in_the_blanks",
       "sentence": "______ (Hi/Bye), how have you been?",
       "correctWord": "Hi",
       "imagePath": "assets/images/lesson2_how_have_you_been.png",
       "hints": [
-        "Asking about well-being? Start with ‘Hi’ or ‘Hello’ not ‘Bye’"
+        "अगर हालचाल पूछना है, तो ‘Hi’ या ‘Hello’ से शुरू करें!",
+        "हिंदी सोचें: ‘नमस्ते, आप कैसे हैं?’"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
-      "correctLottie": "assets/animations/activity_correct.json",
-      "wrongLottie": "assets/animations/activity_wrong.json",
+      "correctLottie": "assets/animations/thumbs_up_vote.json",
+      "wrongLottie": "assets/animations/confused_thinking.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Right! ‘Hi’ is perfect for a friendly check-in.",
-        "wrongText": "Wrong—If you say ‘Bye’, conversation ends immediately!"
+        "correctText": "हां, ‘Hi’ एकदम दोस्ताना शुरुआत है!",
+        "wrongText": "‘Bye’ कहेंगे तो लोग समझेंगे कि आप जा रहे हैं!"
       }
     },
-
     {
       "type": "spot_the_error",
-      "instruction": "Spot the word that feels rude:",
-      "originalSentence": "Hey! Move aside, I want to say hello to my Friend.",
-      "choices": ["Hey!", "Move aside,", "hello", "properly."],
+      "instruction": "कौन-सा शब्द यहां rude लगता है?",
+      "originalSentence": "Hey! Move aside, I want to say hello to my friend.",
+      "choices": ["Hey!", "Move aside,", "hello", "my"],
       "correctChoiceIndex": 1,
-      "explanation": "‘Move aside’ sounds rude. In a friendly greeting, we should not push someone away!",
+      "explanation": "‘Move aside’ में command जैसा लहजा है—हम politely space माँग सकते हैं, पर धक्का नहीं!",
       "imagePath": "assets/images/lesson2_spot_error_friendly.png"
     },
-
     {
       "type": "poll",
-      "question": "When you say ‘Bye’ to family/friends, do you use English words or Hindi?",
+      "question": "जब आप परिवार/दोस्तों को विदा करते हैं, English शब्द इस्तेमाल करते हैं या हिंदी?",
       "options": [
-        "Mostly Hindi phrases like ‘Chalta hoon!’",
-        "Pure English—‘Goodbye, see you!’",
-        "Hinglish mix—‘Bye yaar, milte hain!’",
-        "Never realized, it’s random!"
+        "अक्सर हिंदी जैसे: ‘चलता हूँ!’",
+        "पूरी तरह English—‘Goodbye, see you!’",
+        "Hinglish—‘Bye यार, फिर मिलते हैं!’",
+        "कभी सोचा ही नहीं, random बोलता/बोलती हूँ"
       ],
       "dynamicFeedback": {
-        "0": "Try short English lines to practice daily!",
-        "1": "Wah, keep it up! This lesson will refine your usage.",
-        "2": "Hinglish is great—just keep tone positive!",
-        "3": "Observing your own habit helps improvement!"
+        "0": "छोटे-छोटे English वाक्य आज़माएँ—daily practice होगी!",
+        "1": "बहुत अच्छा—इस lesson से और refine कीजिए!",
+        "2": "Hinglish भी बढ़िया—बस tone respectful रहे!",
+        "3": "ध्यान देंगे तो improvements और तेज होंगी!"
       },
       "imagePath": "assets/images/lesson2_poll_family_farewell.png"
     },
-
     {
       "type": "fill_in_the_blanks",
       "sentence": "It was ______ (fun/sad) meeting you. Let’s catch up soon!",
       "correctWord": "fun",
       "imagePath": "assets/images/lesson2_fun_meet.png",
       "hints": [
-        "Positivity after meeting someone is good courtesy."
+        "Goodbye में भी cheerful note helpful!",
+        "हिंदी: ‘आपसे मिलकर मज़ेदार लगा!’"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
-      "correctLottie": "assets/animations/activity_correct.json",
-      "wrongLottie": "assets/animations/activity_wrong.json",
+      "correctLottie": "assets/animations/thumbs_up_vote.json",
+      "wrongLottie": "assets/animations/confused_thinking.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Yes, ‘fun meeting you’ is a nice vibe.",
-        "wrongText": "‘Sad meeting you’? That’s negative vibe!"
+        "correctText": "बिल्कुल सही—‘fun meeting you’ में ख़ुशनुमा vibes हैं!",
+        "wrongText": "‘Sad’ negative लगता है—avoid कीजिए!"
       }
     },
-
     {
       "type": "quiz",
-      "question": "Which is a polite goodbye to a coworker?",
+      "question": "एक सहकर्मी को अलविदा कहने का सही तरीका क्या होगा?",
       "options": [
         "Ok stop, I must go!",
         "Alright, talk soon—take care!",
@@ -430,254 +421,263 @@
       ],
       "answerIndex": 1,
       "hints": [
-        "Look for friendly parting line!"
+        "दोस्ताना parting line खोजें!"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
       "allowRetry": true,
-      "encouragementOnFail": "Check positivity again!"
+      "encouragementOnFail": "Positivity पर ध्यान दें!"
     },
-
     {
       "type": "sentence_construction",
-      "words": ["Hey,", "see", "to", "great", "you!"],
+      "words": ["Hey,", "you!", "great", "see", "to"],
       "correctOrder": ["Hey,", "great", "to", "see", "you!"],
       "imagePath": "assets/images/lesson2_sentence_construct_great.png"
     },
-
     {
       "type": "speaking_prompt",
-      "prompt": "Verbal practice: ‘Hey, great to see you!’ loudly Bolo with smile",
+      "prompt": "बोलकर प्रैक्टिस करें: ‘Hey, great to see you!’ ज़ोर से, मुस्कान रखते हुए!",
       "audioSupport": false,
-      "imagePath": "assets/images/lesson2_speaking_great2seeu.png"
+      "imagePath": "assets/images/lesson2_speaking_great2seeu.png",
+      "audioPath": "assets/audio/lesson2_speaking_prompt_2.mp3"
     },
-
     {
       "type": "fill_in_the_blanks",
       "sentence": "______ (Hello/Goodbye), let’s keep in touch!",
       "correctWord": "Goodbye",
       "imagePath": "assets/images/lesson2_keep_in_touch.png",
       "hints": [
-        "Ending statement but still positive!"
+        "किसी को अलविदा कहते वक्त भी future meeting का संकेत दें"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
-      "correctLottie": "assets/animations/activity_correct.json",
-      "wrongLottie": "assets/animations/activity_wrong.json",
+      "correctLottie": "assets/animations/thumbs_up_vote.json",
+      "wrongLottie": "assets/animations/confused_thinking.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Yes, ‘Goodbye, let’s keep in touch!’ is perfect parting line.",
-        "wrongText": "‘Hello’ is a greeting, not a goodbye."
+        "correctText": "सही! ‘Goodbye, let’s keep in touch!’ बहुत अच्छा parting line है!",
+        "wrongText": "‘Hello’ तो greeting के लिए होता है, ending के लिए नहीं!"
       }
     },
-
     {
       "type": "scene_image",
-      "caption": "Imagine you’re leaving a friend’s party,use polite farewell lines!",
-      "imagePath": "assets/images/lesson2_friend_party.png"
+      "caption": "मान लीजिए आप दोस्त की पार्टी से जा रहे हैं,शिष्ट तरीके से विदा लें!",
+      "imagePath": "assets/images/lesson2_friend_party.png",
+      "audioPath": "assets/audio/lesson2_scene_image_5.mp3"
     },
-
     {
       "type": "fill_in_the_blanks",
       "sentence": "It was ______ (nice/bad) talking with you. Let’s do this again!",
       "correctWord": "nice",
       "imagePath": "assets/images/lesson2_fun_chat.png",
       "hints": [
-        "Positive, friendly tone is everything!"
+        "हमेशा positive note छोड़ें!",
+        "हिंदी भावना: ‘अगली बार फिर मिलते हैं!’"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
-      "correctLottie": "assets/animations/activity_correct.json",
-      "wrongLottie": "assets/animations/activity_wrong.json",
+      "correctLottie": "assets/animations/thumbs_up_vote.json",
+      "wrongLottie": "assets/animations/confused_thinking.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Yes! Keep it uplifting always.",
-        "wrongText": "Using ‘bad’ is negative—avoid it."
+        "correctText": "सही—‘nice’ किसी भी बातचीत को अच्छा finishing touch देता है!",
+        "wrongText": "‘Bad’ से नकारात्मकता आ जाएगी—avoid!"
       }
     },
-
     {
       "type": "quiz",
-      "question": "Best quick greeting for new buddy?",
+      "question": "नए दोस्त के लिए Best quick greeting क्या है?",
       "options": [
-        "Yo, weird place right?",
+        "Yo, अजीब जगह है न?",
         "Hello, good to see you!",
-        "So... who are you?",
-        "Huh, you again?"
+        "So... तुम कौन हो?",
+        "Huh, फिर तुम?"
       ],
       "answerIndex": 1,
       "hints": [
-        "Look for positivity + politeness."
+        "Friendly + polite combo देखिए"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
       "allowRetry": true,
-      "encouragementOnFail": "Check the friendly factor again!"
+      "encouragementOnFail": "Friendly factor दोबारा जाँचें!"
     },
-
     {
       "type": "speaking_prompt",
-      "prompt": "Say out loud: ‘Hi, good to see you. How’ve you been?’",
+      "prompt": "बोलें: ‘Hi, good to see you. How’ve you been?’ ज़ोर से!",
       "audioSupport": false,
-      "imagePath": "assets/images/lesson2_speaking_goodtosee.png"
+      "imagePath": "assets/images/lesson2_speaking_goodtosee.png",
+      "audioPath": "assets/audio/lesson2_speaking_prompt_3.mp3"
     },
-
     {
       "type": "poll",
-      "question": " What is your biggest challenge in saying goodbyes?",
+      "question": "आपको goodbye बोलने में सबसे बड़ी चुनौती क्या लगती है?",
       "options": [
-        "I forget polite phrases",
-        "I feel weird or emotional",
-        "I’m too abrupt—just say ‘Ok bye’",
-        "None, I’m comfortable"
+        "अच्छे farewell शब्द भूल जाता/जाती हूँ",
+        "थोड़ा भावुक हो जाता/जाती हूँ",
+        "बहुत abrupt हो जाता है—बस कहता हूँ ‘Ok bye’",
+        "मुझे कोई दिक्कत नहीं"
       ],
       "dynamicFeedback": {
-        "0": "Keep a short line ready: ‘Nice meeting you, see you soon!’",
-        "1": "It’s normal! Try gentle lines: ‘Take care!’",
-        "2": "Add a small reason or positive phrase, so not abrupt!",
-        "3": "Awesome, keep it up!"
+        "0": "छोटा line ready रखें: ‘Nice meeting you, see you soon!’",
+        "1": "बहुत normal बात है—‘Take care!’ जैसे gentle शब्द कारगर हैं!",
+        "2": "छोटी positivity जोड़ें, abrupt से बचें!",
+        "3": "कमाल, इसी confidence से आगे बढ़ें!"
       },
       "imagePath": "assets/images/lesson2_farewell_challenge.png"
     },
-
     {
       "type": "fill_in_the_blanks",
       "sentence": "Alright, I gotta go. ______ (Bye/Hello) for now!",
       "correctWord": "Bye",
       "imagePath": "assets/images/lesson2_alright_gotta_go.png",
       "hints": [
-        "Leaving? ‘Bye’ is final word!"
+        "अगर निकल रहे हैं तो ‘Bye for now’ बढ़िया है"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
-      "correctLottie": "assets/animations/activity_correct.json",
-      "wrongLottie": "assets/animations/activity_wrong.json",
+      "correctLottie": "assets/animations/thumbs_up_vote.json",
+      "wrongLottie": "assets/animations/confused_thinking.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Yes! ‘Bye for now’ is a friendly short parting line.",
-        "wrongText": "Wrong—Hello is for starting, not ending!"
+        "correctText": "सही! दोस्ताना अंदाज़ में ‘Bye for now!’ बिल्कुल ठीक!",
+        "wrongText": "‘Hello’ फिर से Greeting होता, अलविदा कहने के लिए नहीं!"
       }
     },
-
     {
       "type": "sentence_construction",
-      "words": ["Bye,", "later!", "talk", "you", "to"],
+      "words": ["Bye,", "later!", "talk", "to", "you"],
       "correctOrder": ["Bye,", "talk", "to", "you", "later!"],
       "imagePath": "assets/images/lesson2_bye_ttyl.png"
     },
-
     {
       "type": "spot_the_error",
-      "instruction": "Identify the rude phrase:",
+      "instruction": "Rude phrase कौन-सा है?",
       "originalSentence": "Hey you, bye never mind, I'm ignoring you.",
       "choices": ["Hey you,", "bye", "never mind,", "ignoring"],
       "correctChoiceIndex": 3,
-      "explanation": "‘Ignoring’ is negative. We want positivity in greetings/goodbyes!",
+      "explanation": "‘ignoring’ बहुत नकारात्मक शब्द है—greetings/goodbyes में ऐसा न कहें!",
       "imagePath": "assets/images/lesson2_spot_error_rude.png"
     },
-
     {
       "type": "mentor_explain",
-      "text": "Hamesha yaad rakho: Last words leave strong impression. ‘Take care, bye!’ is always a safe close.",
-      "imagePath": "assets/images/lesson2_final_impression.png"
+      "text": "याद रहे: आख़िरी शब्द लोगों के दिमाग़ में सबसे ज़्यादा रहते हैं। ‘Take care, bye!’ कहना हमेशा एक अच्छा विकल्प है।",
+      "imagePath": "assets/images/lesson2_final_impression.png",
+      "audioPath": "assets/audio/lesson2_mentor_explain_4.mp3"
     },
-
     {
       "type": "fill_in_the_blanks",
       "sentence": "Good ______ (morning/sadness)! Great to see you bright and early.",
       "correctWord": "morning",
       "imagePath": "assets/images/lesson2_good_morning_scene.png",
       "hints": [
-        "One common greeting used early day",
-        "Hindi: ‘Subah ki namaste’"
+        "सुबह का greetings phrase!",
+        "हिंदी: ‘सुप्रभात!’"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
-      "correctLottie": "assets/animations/activity_correct.json",
-      "wrongLottie": "assets/animations/activity_wrong.json",
+      "correctLottie": "assets/animations/thumbs_up_vote.json",
+      "wrongLottie": "assets/animations/confused_thinking.json",
       "submitLabel": "Check Answer",
       "feedback": {
-        "correctText": "Yes, ‘Good morning’ is a cheerful start!",
-        "wrongText": "‘Good sadness’? That’s not a greeting at all!"
+        "correctText": "सही—‘Good morning’ एक cheerful शुरूआत है!",
+        "wrongText": "‘Good sadness’ तो greeting ही नहीं है!"
       }
     },
-
     {
       "type": "word_builder",
       "letters": ["B", "Y", "E"],
       "correctWord": "BYE",
       "extraLetters": ["Q", "R"],
-      "instruction": "Build a short farewell. 3 letters!"
+      "instruction": "3 अक्षरों में एक छोटा विदाई शब्द बनाएं!"
     },
-
     {
-      "type": "mini_stories",
+      "type": "short_stories",
+      "audioPath": "assets/audio/en/lesson2_short_stories_3.mp3",
       "scenes": [
         {
           "imagePath": "assets/images/lesson2_office_story.png",
-          "text": "Story: You see your boss: ‘Good morning, how are you?’ politely. Boss replies ‘Good morning, I'm fine. Thanks!’"
+          "text": "कहानी: आप अपने बॉस को सुबह मिलते हैं: ‘Good morning, how are you?’ शिष्टता से पूछते हैं। बॉस जवाब देता है: ‘Good morning, I’m fine. Thanks!’"
         },
         {
           "imagePath": "assets/images/lesson2_office_bye.png",
-          "text": "You leave after short chat: ‘It was nice catching up. Goodbye for now!’"
+          "text": "कुछ देर बाद आप निकलते हैं: ‘It was nice talking. Goodbye for now!’"
         }
       ]
     },
-
     {
       "type": "poll",
-      "question": "While greeting boss or seniors, do you get nervous?",
+      "question": "जब आप बॉस या सीनियर्स को greet करते हैं तो क्या नर्वस होते हैं?",
       "options": [
-        "Yes, every time!",
-        "Sometimes, depends on mood",
-        "No, I'm usually confident",
-        "I avoid greeting them"
+        "हाँ, हर बार!",
+        "कभी-कभी, मूड पर निर्भर करता है",
+        "नहीं, मैं आमतौर पर confident हूँ",
+        "greet ही नहीं करता/करती"
       ],
       "dynamicFeedback": {
-        "0": "Try short line + calm voice. Confidence aayegi slow-slow!",
-        "1": "Keep practicing polite lines from this lesson!",
-        "2": "Great, keep sharing your positivity!",
-        "3": "Better to greet them politely than ignore!"
+        "0": "छोटा वाक्य + शांत आवाज़ से शुरू करें, धीरे-धीरे आत्मविश्वास बढ़ेगा!",
+        "1": "इस लेसन में सीखे polite lines को और प्रैक्टिस करें!",
+        "2": "बहुत अच्छा! अपनी positive energy बनाए रखें!",
+        "3": "अच्छा होगा कि politeness दिखाएँ—avoid करने से दूरी बढ़ती है!"
       },
       "imagePath": "assets/images/lesson2_boss_greeting.png"
     },
-
     {
       "type": "quiz",
-      "question": "Best short greeting for your boss?",
+      "question": "अपने बॉस के लिए सबसे अच्छा छोटा greeting?",
       "options": [
         "Hi buddy, how’s it going?",
         "Morning sir, how are you?",
         "Yo boss, sup?",
-        "I guess hi or something"
+        "शायद hi या कुछ कहो"
       ],
       "answerIndex": 1,
       "hints": [
-        "Slight formality helps with seniors."
+        "Seniors या फ़ॉर्मल situation में थोड़ी शिष्ट भाषा"
       ],
       "correctSound": "assets/sounds/correct.mp3",
       "wrongSound": "assets/sounds/incorrect.mp3",
       "allowRetry": true,
-      "encouragementOnFail": "Check the polite factor again!"
+      "encouragementOnFail": "थोड़ी शिष्टता खोजें—polite शब्द!"
     },
-
+    {
+      "type": "flashcards",
+      "title": "Key Greetings & Goodbyes",
+      "cards": [
+        {
+          "term": "Hello",
+          "definition": "सबसे common और universal greeting—नमस्ते का इंग्लिश रूप।"
+        },
+        {
+          "term": "Hi",
+          "definition": "छोटा, दोस्ताना शब्द—कम औपचारिकता में use करें।"
+        },
+        {
+          "term": "Goodbye",
+          "definition": "अलविदा—conversation या meeting को शालीनता से समाप्त करने के लिए।"
+        },
+        {
+          "term": "Nice to meet you",
+          "definition": "नए व्यक्ति से मिलकर ख़ुशी जताने का उत्तम तरीका।"
+        },
+        {
+          "term": "See you soon",
+          "definition": "दोबारा जल्दी मिलने की उम्मीद जताता है—positivity बढ़ाने के लिए perfect!"
+        }
+      ]
+    },
     {
       "type": "text_card",
       "title": "Lesson 2 Recap",
-      "body": "1) Greet with ‘Hello’/‘Hi’ + a warm tone\n2) Use short positive lines to say goodbye\n3) Hindi-English mix is ok—but polite vibe is #1\n4) Smile & eye contact can amplify your greeting!"
+      "body": "1) शुरुआत करें ‘Hello’/‘Hi’ के साथ + गर्मजोशी\n2) Goodbye बोलें तो भी positivity रखें\n3) हिंदी-अंग्रेज़ी mix चलेगा, पर tone respectful होना चाहिए\n4) Eye contact + मुस्कान से greeting और भी शानदार बन जाता है\n5) ‘Surprise Fact’ से याद रखें कि छोटा smile भी आपका success rate बढ़ाता है!",
+      "audioPath": "assets/audio/en/lesson2_text_card_1.mp3"
     },
-
-    {
-      "type": "next_lesson_preview",
-      "title": "Next: Self Introductions!",
-      "description": "How do you describe who you are, your hobbies, and more—without feeling shy? Let's tackle that next!"
-    },
-
     {
       "type": "badge_award",
       "title": "Greetings & Goodbyes Champion!",
-      "description": "Congrats, Lesson 2 complete—ab aap confidently Hello/Bye bol sakte ho. Keep it up!",
-      "animation": "assets/animations/badge_unlocked.json"
+      "description": "बधाई हो, Lesson 2 पूरा हुआ! अब आप ‘Hello/Bye’ बड़े आत्मविश्वास के साथ कह सकते हैं. इसी रफ़्तार से आगे बढ़ें!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/en/lesson2_badge_award_1.mp3"
     }
   ]
 }

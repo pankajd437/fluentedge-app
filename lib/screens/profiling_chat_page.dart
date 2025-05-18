@@ -292,7 +292,7 @@ class _ProfilingChatPageState extends ConsumerState<ProfilingChatPage> {
       final profileBody = {
         'name': userName,
         'email': userEmail,
-        'age': userAge,
+        'age': int.tryParse(userAge.toString()) ?? 0,
         'gender': userGender,
         'comfort_level': comfortLevel,
         'practice_frequency': practiceFreq,
@@ -303,7 +303,7 @@ class _ProfilingChatPageState extends ConsumerState<ProfilingChatPage> {
         'proficiency_score': 70,
       };
 
-      final profileUri = Uri.parse('${ApiConfig.local}/user/profile?user_id=$userId');
+      final profileUri = Uri.parse('${ApiConfig.local}/api/v1/user/profile?user_id=$userId');
       final profileRes = await http.post(
         profileUri,
         headers: {'Content-Type': 'application/json'},
@@ -318,7 +318,7 @@ class _ProfilingChatPageState extends ConsumerState<ProfilingChatPage> {
 
       // 3) GET /user/{id}/recommendations
       final recRes = await http.get(
-        Uri.parse('${ApiConfig.local}/user/$userId/recommendations'),
+        Uri.parse('${ApiConfig.local}/api/v1/user/$userId/recommendations'),
       );
       if (recRes.statusCode != 200) {
         debugPrint('❌ recRes failed: ${recRes.body}');

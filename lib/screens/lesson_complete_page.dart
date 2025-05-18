@@ -1,3 +1,4 @@
+import 'dart:convert'; // for jsonEncode
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:go_router/go_router.dart';
@@ -8,16 +9,20 @@ import 'package:fluentedge_app/constants.dart';
 import 'package:fluentedge_app/data/user_state.dart';
 import 'package:fluentedge_app/services/notification_service.dart';
 
-class LessonCompletePage extends StatefulWidget {
+// NEW import for Riverpod
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fluentedge_app/data/user_state.dart';
+
+class LessonCompletePage extends ConsumerStatefulWidget {
   final String lessonId;
   final String lessonTitle;
   final int earnedXP;
   final String? badgeId;
   final bool isCorrect;
 
-  // 🔹 (New optional fields from updated structure)
-  final String? badgeAnimation;  // e.g., "assets/animations/badge_unlocked.json"
-  final String? badgeTitle;      // e.g., "Intro Master" from "badgeAwarded" in JSON
+  // (Optional new fields from updated structure)
+  final String? badgeAnimation; // e.g. "assets/animations/badge_unlocked.json"
+  final String? badgeTitle;     // e.g. "Intro Master" from "badgeAwarded" in JSON
 
   const LessonCompletePage({
     Key? key,
@@ -27,41 +32,87 @@ class LessonCompletePage extends StatefulWidget {
     this.badgeId,
     required this.isCorrect,
 
-    // 🔹 Optional new parameters with default = null
+    // Optional new parameters with default = null
     this.badgeAnimation,
     this.badgeTitle,
   }) : super(key: key);
 
   @override
-  State<LessonCompletePage> createState() => _LessonCompletePageState();
+  ConsumerState<LessonCompletePage> createState() => _LessonCompletePageState();
 }
 
-class _LessonCompletePageState extends State<LessonCompletePage> {
+class _LessonCompletePageState extends ConsumerState<LessonCompletePage> {
   bool _xpPosted = false;
+  bool _alreadyCompleted = false; // to track if lesson is already done
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    // If user passed the quiz, we post XP/streak only once
+    // If user passed the quiz, we handle awarding XP only once
     if (widget.isCorrect && !_xpPosted) {
       _handleLessonCompletion();
     }
   }
 
+  /// 1) Check if this lesson is already completed in local Hive.
+  /// 2) If new, award XP + optionally POST to backend.
+  /// 3) Mark lesson as completed + schedule daily reminder.
   Future<void> _handleLessonCompletion() async {
-    final name = await UserState.getUserName() ?? "Anonymous";
+    debugPrint("📦 Submitting lessonId: ${widget.lessonId}");
+
+    final box = await Hive.openBox(kHiveBoxCompletedLessons);
+    _alreadyCompleted = box.containsKey(widget.lessonId);
+
+    // If previously completed, we do NOT show XP again
+    if (_alreadyCompleted) {
+      debugPrint("⚠️ Lesson already completed: skipping XP awarding.");
+      // Still schedule daily reminder to keep user engaged
+      await NotificationService.scheduleDailyReminder();
+      setState(() => _xpPosted = true);
+      return;
+    }
+
     final xp = widget.earnedXP;
+    final userName = await UserState.getUserName() ?? "Anonymous";
 
-    // 🔹 Using your "ApiConfig.local" for XP & Streak update
-    final xpUrl = Uri.parse("${ApiConfig.local}/user/xp?name=$name&lesson_id=${widget.lessonId}&xp=$xp");
-    final streakUrl = Uri.parse("${ApiConfig.local}/user/streak?name=$name&xp=$xp");
+    // (A) Increment local Riverpod XP & sync to backend
+    ref.read(xpProvider.notifier).incrementXP(xp);
+    await ref.read(xpProvider.notifier).syncXPWithBackend();
 
-    try {
-      await http.post(xpUrl);
-      await http.post(streakUrl);
+    // (B) Attempt to retrieve user_id if user is actually registered
+    final userId = await UserState.getUserId() ?? '';
+    if (userId.isEmpty) {
+      // If guest => just mark done locally
+      debugPrint("⚠️ Guest user—skipping XP POST to the backend.");
       await _markLessonAsCompleted(widget.lessonId);
       await NotificationService.scheduleDailyReminder();
+      setState(() => _xpPosted = true);
+      return;
+    }
 
+    // (C) Build POST request for /api/v1/user/progress
+    final endpointUrl = Uri.parse("${ApiConfig.local}/api/v1/user/progress");
+    final body = {
+      "user_id": userId,
+      "user_name": userName,
+      "lesson_id": widget.lessonId,
+      "xp_earned": xp,
+    };
+
+    try {
+      final response = await http.post(
+        endpointUrl,
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode(body),
+      );
+      if (response.statusCode == 200) {
+        debugPrint("✅ Lesson XP saved: $xp for $userName, lesson=${widget.lessonId}");
+      } else {
+        debugPrint("❌ XP post failed: ${response.statusCode} => ${response.body}");
+      }
+
+      await _markLessonAsCompleted(widget.lessonId);
+      await NotificationService.scheduleDailyReminder();
       setState(() => _xpPosted = true);
     } catch (e) {
       debugPrint("❌ Failed to update progress: $e");
@@ -74,7 +125,7 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
       await box.put(lessonId, true);
       debugPrint("✅ Lesson marked completed: $lessonId");
     }
-    debugPrint("📘 Completed Lessons: ${box.keys.length} → ${box.keys.toList()}");
+    debugPrint("📘 Completed Lessons: ${box.keys.length} => ${box.keys.toList()}");
   }
 
   @override
@@ -86,34 +137,33 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
         ? "You’ve completed:\n‘${widget.lessonTitle}’"
         : "You attempted:\n‘${widget.lessonTitle}’\nBut don’t worry — let’s try again soon!";
 
-    // 🔹 If the user unlocked a badge, show it — else null.
+    // If user unlocked a badge, show it
     final bool hasBadge = (isPassed && widget.badgeId != null);
 
-    // 🔹 Use either the custom or fallback badge animation
-    final String badgeAnimationPath = widget.badgeAnimation?.trim().isNotEmpty == true
-        ? widget.badgeAnimation!
-        : 'assets/animations/badge_unlocked.json';
+    // Use custom or fallback badge animation
+    final String badgeAnimationPath =
+        (widget.badgeAnimation?.trim().isNotEmpty == true)
+            ? widget.badgeAnimation!
+            : 'assets/animations/badge_unlocked.json';
 
-    // If the JSON had a special badge title, show it, else fallback
-    final String? badgeTitle = widget.badgeTitle?.trim().isNotEmpty == true
-        ? widget.badgeTitle
-        : null;
+    // If JSON had a special badge title, show it
+    final String? badgeTitle =
+        (widget.badgeTitle?.trim().isNotEmpty == true) ? widget.badgeTitle : null;
 
     return Scaffold(
       backgroundColor: kBackgroundSoftBlue,
-      // Removed bottomNavigationBar to meet your request
       appBar: AppBar(
         backgroundColor: kPrimaryBlue,
         foregroundColor: Colors.white,
         title: const Text(
-          "Lesson Complete", // TODO: localize
+          "Lesson Complete",
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
         elevation: 0,
       ),
       body: Stack(
         children: [
-          // Subtle Lottie background for success/fail
+          // Subtle confetti background if success
           Positioned.fill(
             child: Opacity(
               opacity: 0.05,
@@ -130,7 +180,7 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
               padding: const EdgeInsets.all(kPagePadding),
               child: Column(
                 children: [
-                  // Main animation: success or fail
+                  // Big animation
                   Lottie.asset(
                     isPassed
                         ? 'assets/animations/success_checkmark.json'
@@ -140,7 +190,7 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                   ),
                   const SizedBox(height: 14),
 
-                  // 🔹 If we have a badge ID -> Show badge
+                  // Badge if relevant
                   if (hasBadge) ...[
                     Text(
                       badgeTitle != null
@@ -154,7 +204,6 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 10),
-                    // Use custom or fallback badge animation
                     Lottie.asset(
                       badgeAnimationPath,
                       height: 100,
@@ -184,15 +233,20 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                   ),
                   const SizedBox(height: 16),
 
-                  // 🎓 Show XP earned if passed
-                  if (isPassed)
+                  // Only show XP bar if first time awarding XP
+                  if (isPassed && !_alreadyCompleted)
                     AnimatedContainer(
                       duration: kShortAnimationDuration,
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 12,
+                      ),
                       decoration: BoxDecoration(
                         color: kAccentGreen.withOpacity(0.12),
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: kAccentGreen.withOpacity(0.4)),
+                        border: Border.all(
+                          color: kAccentGreen.withOpacity(0.4),
+                        ),
                       ),
                       child: Text(
                         "🎓 +${widget.earnedXP} XP Earned!",
@@ -206,16 +260,16 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
 
                   const Spacer(),
 
-                  // Bottom Buttons
+                  // Footer Buttons
                   Column(
                     children: [
-                      // 🔹 Back to Dashboard
+                      // Dashboard
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton.icon(
                           onPressed: () => context.go(routeCoursesDashboard),
                           icon: const Icon(Icons.dashboard),
-                          label: const Text("Back to Dashboard"), // TODO: localize
+                          label: const Text("Back to Dashboard"),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: kAccentGreen,
                             foregroundColor: Colors.white,
@@ -228,7 +282,7 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                       ),
                       const SizedBox(height: 10),
 
-                      // 🔹 Go to User Dashboard
+                      // User Dashboard
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton.icon(
@@ -247,7 +301,7 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                       ),
                       const SizedBox(height: 10),
 
-                      // 🔹 Next Lesson or Try Another
+                      // Next Lesson or Another
                       if (isPassed)
                         SizedBox(
                           width: double.infinity,
@@ -271,7 +325,10 @@ class _LessonCompletePageState extends State<LessonCompletePage> {
                       if (isPassed)
                         TextButton.icon(
                           onPressed: () => context.push(routeAchievements),
-                          icon: const Icon(Icons.emoji_events_outlined, color: kPrimaryBlue),
+                          icon: const Icon(
+                            Icons.emoji_events_outlined,
+                            color: kPrimaryBlue,
+                          ),
                           label: const Text(
                             "View Achievements",
                             style: TextStyle(

@@ -5,7 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:fluentedge_app/constants.dart'; // Make sure routeRegistration = "/registration"
-import 'package:fluentedge_app/data/user_state.dart';
+import 'package:fluentedge_app/data/user_state.dart'; 
 import 'package:fluentedge_app/services/notification_service.dart';
 import 'package:fluentedge_app/localization/app_localizations.dart';
 
@@ -45,17 +45,35 @@ final userLevelProvider = StateProvider<String>((ref) => 'beginner');
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
+
+  // 1) Initialize local user data (loads XP, userName, isGuest from Hive)
   await UserState.init();
+
+  // 2) If user is not guest, load streak/XP/lessons from backend
+  if (!UserState.instance.isGuest) {
+    await UserState.instance.loadUserProgressFromBackend();
+  }
+
+  // 3) Initialize notifications
   await NotificationService.init();
 
+  // Read stored values for the Riverpod overrides
   final storedLocale = await UserState.getLocale() ?? 'en';
   final storedName = await UserState.getUserName() ?? '';
   final storedLang = await UserState.getLanguagePreference() ?? 'English';
   final storedLevel = await UserState.getUserLevel();
 
+  // ⚡ NEW: Create an instance of XPNotifier, initializing from the current UserState totalXP
+  final xpNotifier = XPNotifier();
+  xpNotifier.setXP(UserState.instance.totalXP);
+
   runApp(
     ProviderScope(
       overrides: [
+        // Provide your xpNotifier to the xpProvider globally
+        xpProvider.overrideWith((ref) => xpNotifier),
+
+        // Existing overrides for locale and user details
         localeProvider.overrideWith((_) => Locale(storedLocale)),
         userNameProvider.overrideWith((_) => storedName),
         languagePrefProvider.overrideWith((_) => storedLang),
@@ -140,9 +158,7 @@ class _FluentEdgeAppState extends ConsumerState<FluentEdgeApp> {
               languagePreference: args['languagePreference'],
               gender: args['gender'],
               age: args['age'],
-              recommendedCourses: List<String>.from(
-                args['recommendedCourses'] ?? [],
-              ),
+              recommendedCourses: List<String>.from(args['recommendedCourses'] ?? []),
               userLevel: args['userLevel'] ?? 'beginner',
             );
           },
@@ -161,9 +177,7 @@ class _FluentEdgeAppState extends ConsumerState<FluentEdgeApp> {
               languagePreference: data['languagePreference'],
               gender: data['gender'],
               age: data['age'],
-              recommendedCourses: List<String>.from(
-                data['recommendedCourses'] ?? [],
-              ),
+              recommendedCourses: List<String>.from(data['recommendedCourses'] ?? []),
               userLevel: data['userLevel'] ?? 'beginner',
             );
           },
@@ -340,9 +354,7 @@ class _FluentEdgeAppState extends ConsumerState<FluentEdgeApp> {
               languagePreference: args['languagePreference'],
               gender: args['gender'],
               age: args['age'],
-              recommendedCourses: List<String>.from(
-                args['recommendedCourses'] ?? [],
-              ),
+              recommendedCourses: List<String>.from(args['recommendedCourses'] ?? []),
               userLevel: args['userLevel'] ?? 'beginner',
             );
           },

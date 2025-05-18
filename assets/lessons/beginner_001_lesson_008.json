@@ -1,0 +1,358 @@
+{
+  "lessonId": "beginner_001_lesson_008",
+  "title": "Asking & Giving Directions Clearly",
+  "level": "beginner",
+  "themeColor": "#4A90E2",
+  "xpTotal": 850,
+  "objectives": [
+    "Learn how to ask for directions politely and clearly",
+    "Use short English phrases like 'Where is…?' or 'How do I get to…?'",
+    "Practice dialogues for real street or travel situations",
+    "Learn how to give directions using simple words"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": ["en","hi"],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "navigation_champion",
+    "title": "Navigation Champion!",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+
+    {
+      "type": "mentor_intro",
+      "text": "नमस्ते! आज हम सीखेंगे कि English में directions कैसे पूछें और बताएँ. आज Pooja एक नई जगह पर है और उसे bookstore ढूँढना है. आइए शुरुआत करते हैं!",
+      "imagePath": "assets/images/lesson8_intro_directions.png",
+      "audioPath": "assets/audio/lesson8_mentor_intro.mp3"
+    },
+
+    {
+      "type": "text_card",
+      "title": "5-Step Directions Toolkit",
+      "body": "1) **Greet**: “Excuse me...”\n2) **Ask**: “Where is...?” / “How do I get to...?”\n3) **Confirm / Clarify**: “Is it near...?”\n4) **Thank**: “Thank you so much!”\n5) **Respond (if needed)**: “You’re welcome. Go straight...”\n\nये पाँच आसान स्टेप्स याद रखें—किसी भी जगह का रास्ता समझने/समझाने में मदद करेंगे!",
+      "imagePath": "assets/images/lesson8_toolkit.png",
+      "audioPath": "assets/audio/lesson8_text_card_toolkit.mp3"
+    },
+
+    {
+      "type": "mentor_explain",
+      "title": "Why Directions Matter",
+      "text": "जब आप नई जगह पर हों, directions पूछना बहुत काम आता है. थोड़ी झिझक normal है, लेकिन short English phrases से बात आसान हो जाती है. हमेशा ‘Excuse me’ से शुरुआत करें—विनम्रता दिखती है!",
+      "imagePath": "assets/images/lesson8_why_directions_matter.png",
+      "audioPath": "assets/audio/lesson8_mentor_explain_why_directions.mp3"
+    },
+
+    {
+      "type": "today_vocabulary",
+      "vocabItems": [
+        {
+          "word": "Straight",
+          "meaning": "सीधे",
+          "phonetic": "Straight",
+          "image": "assets/images/vocab_straight.png"
+        },
+        {
+          "word": "Left",
+          "meaning": "बाएँ",
+          "phonetic": "Left",
+          "image": "assets/images/vocab_left.png"
+        },
+        {
+          "word": "Right",
+          "meaning": "दाएँ",
+          "phonetic": "Right",
+          "image": "assets/images/vocab_right.png"
+        },
+        {
+          "word": "Across",
+          "meaning": "सामने / विपरीत दिशा में",
+          "phonetic": "Across",
+          "image": "assets/images/vocab_across.png"
+        },
+        {
+          "word": "Beside",
+          "meaning": "बगल में",
+          "phonetic": "Beside",
+          "image": "assets/images/vocab_beside.png"
+        }
+      ]
+    },
+
+    {
+      "type": "text_card",
+      "title": "Definition Box: Auxiliary Words",
+      "body": "Auxiliary words (helping verbs) जैसे am, is, are, do, does–English वाक्य बनाने में मदद करते हैं. उदहारण:\n- ‘Do I turn left here?’ (Do – question form)\n- ‘Does this road go straight?’",
+      "imagePath": "assets/images/lesson8_auxiliary_box.png",
+      "audioPath": "assets/audio/lesson8_text_card_auxiliary.mp3"
+    },
+
+    {
+      "type": "mentor_explain",
+      "title": "New Concepts: ‘Across’ & ‘Beside’",
+      "text": "‘Across’ means on the opposite side (दूसरी ओर, सामने). ‘Beside’ means next to (बिल्कुल बगल में). इन words को आप directions में आसानी से use कर सकते हैं:\n- ‘The bank is across the street.’\n- ‘The shop is beside the library.’",
+      "imagePath": "assets/images/lesson8_mentor_explain_across_beside.png",
+      "audioPath": "assets/audio/lesson8_mentor_explain_across_beside.mp3"
+    },
+
+    {
+      "type": "text_card",
+      "title": "Asking for Directions (Step 2)",
+      "body": "1) “Excuse me, where is the (place)?”\n2) “How do I get to (place)?”\n3) “Could you tell me how to reach (place)?”\n\nHint: अगर आप ‘bank’ पूछ रहे हैं, तो बोलें “Excuse me, how do I get to the bank?”",
+      "imagePath": "assets/images/lesson8_common_phrases.png",
+      "audioPath": "assets/audio/lesson8_mentor_explain_asking.mp3"
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Key Phrases for Asking Directions",
+      "audioPath": "assets/audio/lesson8_flashcards_asking.mp3",
+      "cards": [
+        {
+          "term": "Where is the...?",
+          "definition": "EN: Where is the hospital?\nHN: ‘Hospital कहाँ है?’ पूछते समय ‘Excuse me’ ज़रूर जोड़ें!"
+        },
+        {
+          "term": "How do I get to...?",
+          "definition": "EN: How do I get to the library?\nHN: ‘Library तक कैसे पहुँचना है?’ clarity के लिए perfect!"
+        },
+        {
+          "term": "Is there a... near here?",
+          "definition": "EN: Is there a park near here?\nHN: ‘पास में park है?’ पता लगाने के लिए short & simple."
+        },
+        {
+          "term": "Could you tell me the way to...?",
+          "definition": "EN: Could you tell me the way to City Mall?\nHN: ‘City Mall का रास्ता बताएँगे?’ polite form!"
+        }
+      ]
+    },
+
+    {
+      "type": "mentor_explain",
+      "title": "Common Mistakes",
+      "text": "Wrong: “Tell me way bank!”\nRight: “Excuse me, could you tell me how to get to the bank?”\n\nWrong: “Where library?”\nRight: “Where is the library?”\n\nछोटे सुधारों से English ज्यादा polite और understandable बनती है!",
+      "imagePath": "assets/images/lesson8_common_mistakes.png",
+      "audioPath": "assets/audio/lesson8_mentor_explain_common_mistakes.mp3"
+    },
+
+    {
+      "type": "short_stories",
+      "title": "Pooja’s Situation",
+      "audioPath": "assets/audio/lesson8_short_stories_pooja.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson8_pooja_asking.png",
+          "text": "Pooja needs to find a bookstore. She’s shy but tries polite English. Notice how she greets and ends politely.\n\nPooja: “Excuse me, how do I get to the nearest bookstore?”\nResident: “Go straight, then turn left at the café.”\nPooja: “Thank you so much!”\n\nKey Learning: Start with a greeting (“Excuse me”) and use a short question. A small ‘Thank you’ shows gratitude!"
+        }
+      ]
+    },
+
+    {
+      "type": "mentor_explain",
+      "title": "Emotional Note",
+      "text": "अगर आप किसी नए शहर में हैं, directions पूछते हुए झिझक होना सामान्य है. बस दो-तीन English phrases याद रखें, और friendly tone रखें—लोग मदद जरूर करेंगे!",
+      "imagePath": "assets/images/lesson8_emotional_note.png",
+      "audioPath": "assets/audio/lesson8_mentor_explain_emotional_note.mp3"
+    },
+
+    {
+      "type": "poll",
+      "question": "Which is the best way to ask about a bank location?",
+      "options": [
+        "Where's bank?",
+        "Tell me bank now!",
+        "Excuse me, could you tell me where the bank is?",
+        "Bank, hurry please!"
+      ],
+      "dynamicFeedback": {
+        "0": "Missing article + no courtesy.",
+        "1": "Too direct, missing polite words.",
+        "2": "Perfectly polite & complete!",
+        "3": "Sounds rude or impatient."
+      },
+      "imagePath": "assets/images/lesson8_poll_bank.png"
+    },
+
+    {
+      "type": "mentor_explain",
+      "title": "Giving Directions (Step 5 Response)",
+      "text": "जब कोई आपसे रास्ता पूछे, आप ऐसे जवाब दे सकते हैं:\n• “Go straight.”\n• “Turn left/right.”\n• “It’s across from the grocery store.”\n• “It’s beside the bank.”\n\nLandmarks mention करें तो clarity बढ़ेगी.",
+      "imagePath": "assets/images/lesson8_giving_directions.png",
+      "audioPath": "assets/audio/lesson8_mentor_explain_giving_directions.mp3"
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Key Phrases for Giving Directions",
+      "audioPath": "assets/audio/lesson8_flashcards_giving_directions.mp3",
+      "cards": [
+        {
+          "term": "Go straight",
+          "definition": "EN: ‘Go straight.’\nHN: ‘सीधे जाएँ’ – एक ही दिशा में चलते रहें."
+        },
+        {
+          "term": "Turn left / Turn right",
+          "definition": "EN: ‘Turn left at the corner.’\nHN: ‘कोने पर बाएँ मुड़ें.’ या right के लिए ‘दाएँ मुड़ें.’"
+        },
+        {
+          "term": "Across from",
+          "definition": "EN: ‘It’s across from the school.’\nHN: ‘School के सामने / दूसरी ओर.’"
+        },
+        {
+          "term": "Next to / Beside",
+          "definition": "EN: ‘It’s beside the pharmacy.’\nHN: ‘Pharmacy के बगल में.’"
+        }
+      ]
+    },
+
+    {
+      "type": "mentor_explain",
+      "title": "Landmark-Based Tips",
+      "text": "हमारे देश में landmarks use करने से directions देना-लेना आसान होता है:\n• “Go straight until you see the temple, then turn right.”\n• “It’s opposite the big supermarket.”\n\nHindi Hint: ‘Temple दिखे तो दाएँ मुड़ें’—लोगों को तुरंत समझ आता है!",
+      "imagePath": "assets/images/lesson8_landmark_tips.png",
+      "audioPath": "assets/audio/lesson8_mentor_explain_landmarks.mp3"
+    },
+
+    {
+      "type": "scene_image",
+      "caption": "Mini-map for Landmark Demo: Temple on left, supermarket on right, pharmacy across the street.",
+      "imagePath": "assets/images/lesson8_minimap_landmarks.png",
+      "audioPath": "assets/audio/lesson8_scene_image_minimap.mp3"
+    },
+
+    {
+      "type": "flashcards",
+      "title": "Using Landmarks",
+      "audioPath": "assets/audio/lesson8_flashcards_landmarks.mp3",
+      "cards": [
+        {
+          "term": "Until you see the temple",
+          "definition": "EN: ‘Go straight until you see the temple.’\nHN: ‘Temple दिखने तक सीधे जाएँ.’ Landmark gives a clear stop point."
+        },
+        {
+          "term": "Opposite the supermarket",
+          "definition": "EN: ‘It’s opposite the supermarket.’\nHN: ‘Supermarket के ठीक सामने.’ आसान pointer."
+        },
+        {
+          "term": "Near the post office",
+          "definition": "EN: ‘It’s near the post office.’\nHN: ‘Post office के पास.’ Short, direct location."
+        }
+      ]
+    },
+
+    {
+      "type": "sentence_construction",
+      "title": "Reorder: Giving Directions",
+      "words": ["It’s", "from","across", "park.", "the" ],
+      "correctOrder": ["It’s", "across", "from", "the", "park."],
+      "imagePath": "assets/images/lesson8_reorder_park.png",
+      "audioPath": "assets/audio/lesson8_sentence_construction.mp3"
+    },
+
+    {
+      "type": "dialogue_reconstruction",
+      "title": "Pooja Helps a Tourist",
+      "contextTitle": "Giving Directions Scene",
+      "messages": [
+        {
+          "text": "Tourist: Excuse me, is there a restaurant near here?",
+          "isSender": false,
+          "avatar": "assets/images/chat_friend_blue.png"
+        },
+        {
+          "text": "Pooja: Yes, go straight and turn right. It’s beside the bank.",
+          "isSender": true,
+          "avatar": "assets/images/chat_user_pink.png"
+        },
+        {
+          "text": "Tourist: Thank you!",
+          "isSender": false,
+          "avatar": "assets/images/chat_friend_blue.png"
+        },
+        {
+          "text": "Pooja: You’re welcome!",
+          "isSender": true,
+          "avatar": "assets/images/chat_user_pink.png"
+        }
+      ],
+      "learningTakeaway": "Mention a landmark or building and keep directions short. Tone friendly!",
+      "imagePath": "assets/images/lesson8_dialogue_reconstruction.png",
+      "audioPath": "assets/audio/lesson8_dialogue_reconstruction.mp3"
+    },
+
+    {
+      "type": "mentor_surprise_fact",
+      "title": "Surprise Fact",
+      "body": "क्या आप जानते हैं? Directions पूछते समय अगर आप ‘Excuse me’ और ‘please’ कहते हैं, तो लोग आपकी मदद ज़्यादा खुशी से करेंगे! Next time, politely try करना—बहुत आसान लगेगा!",
+      "imagePath": "assets/images/lesson8_surprise_fact.png",
+      "audioPath": "assets/audio/lesson8_surprise_fact.mp3"
+    },
+
+    {
+      "type": "mentor_explain",
+      "title": "Final Roleplay Mission",
+      "text": "कल्पना करें:\n1) आप किसी नए शहर में हैं.\n2) आपको railway station ढूँढना है.\n3) किसी local से पूछें: “Excuse me, how do I get to the railway station?”\n4) उनका जवाब सुनकर confirm करें: “Turn left at the mall? Got it.”\n5) अंत में: “Thank you so much!”\n\nये steps real-life में बहुत मदद करेंगे!",
+      "imagePath": "assets/images/lesson8_final_mission.png",
+      "audioPath": "assets/audio/lesson8_final_mission.mp3"
+    },
+
+    {
+      "type": "speaking_prompt",
+      "prompt": "बोलिए: “Excuse me, where is the nearest bus stop?”\n\nPossible answer: “Go straight, then turn left at the market. It’s across from the bank.”\n\nTry it aloud in English, थोड़ी मुस्कुराहट के साथ!",
+      "audioPath": "assets/audio/lesson8_speaking_prompt.mp3",
+      "imagePath": "assets/images/lesson8_speaking_prompt.png"
+    },
+
+    {
+      "type": "poll",
+      "question": "Which phrase best completes: “How do I get to the ____?”",
+      "options": [
+        "want",
+        "airport",
+        "temple left",
+        "walk side"
+      ],
+      "dynamicFeedback": {
+        "0": "Not a place name, doesn’t fit well.",
+        "1": "Yes, ‘airport’ is correct location. This makes sense!",
+        "2": "Doesn’t form a valid direction request.",
+        "3": "No place name, unclear phrase."
+      },
+      "imagePath": "assets/images/lesson8_poll_complete.png"
+    },
+
+    {
+      "type": "mentor_explain",
+      "title": "Personalized Practice",
+      "text": "जब भी बाहर जाएँ, कम-से-कम एक बार directions पूछने या देने की कोशिश करें—चाहे आपको जगह मालूम हो! Practice से hesitation कम होगी, और आपका confidence automatically बढ़ेगा.",
+      "imagePath": "assets/images/lesson8_personal_practice.png",
+      "audioPath": "assets/audio/lesson8_mentor_explain_personal_practice.mp3"
+    },
+
+    {
+      "type": "mentor_explain",
+      "title": "Encouragement & Empathy",
+      "text": "शुरुआत में awkward लग सकता है, लेकिन हर बार आप directions पूछेंगे या बताएँगे, आपका confidence बढ़ेगा. Short English phrases + smile = success!",
+      "imagePath": "assets/images/lesson8_encouragement.png",
+      "audioPath": "assets/audio/lesson8_encouragement.mp3"
+    },
+
+    {
+      "type": "text_card",
+      "title": "Quick Recap",
+      "body": "• **Ask**: “Where is the…?” / “How do I get to…?”\n\n• **Give**: “Go straight”, “Turn left/right”, “It’s across from…”, “Beside…”\n\n• Use landmarks: “Temple”, “Mall”, “Supermarket” to guide.\n\n• Always greet politely: “Excuse me…” + “please”\n\n• Always thank them: “Thank you so much!”",
+      "imagePath": "assets/images/lesson8_quick_recap.png",
+      "audioPath": "assets/audio/lesson8_quick_recap.mp3"
+    },
+
+    {
+      "type": "badge_award",
+      "title": "Navigation Champion!",
+      "description": "बधाई हो! आपने directions पूछने और देने की सभी ज़रूरी English phrases सीख लीं. अब आप किसी भी नई जगह में Confident रहेंगे—practice and explore freely!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson8_badge_award.mp3"
+    }
+  ]
+}

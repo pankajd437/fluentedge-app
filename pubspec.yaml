@@ -21,6 +21,8 @@ dependencies:
   gap: ^3.0.0
   lottie: ^3.3.1
   shimmer: ^3.0.0
+  swipe_cards: ^2.0.0+1
+  flutter_markdown: ^0.6.14
 
   # === Notifications ===
   flutter_local_notifications:
@@ -90,6 +92,100 @@ flutter:
     - assets/images/family_greetings.png
     - assets/images/goodbye_variations.png
     - assets/images/phone_call_scene.png
+    - assets/images/lesson4_intro_new_hero.png
+    - assets/images/lesson4_riya_new_exploring.png
+    - assets/images/lesson4_new_ice_cream.png
+    - assets/images/lesson4_new_study_question.png
+    - assets/images/lesson4_new_library_riya.png
+    - assets/images/lesson4_tagq_doctor_new.png
+    - assets/images/lesson4_comic_strip_3panels_new.png
+    - assets/images/lesson4_this_or_that_new.png
+    - assets/images/lesson4_drag_drop_screenshot_new.png
+    - assets/images/lesson4_market_scene_new_16x9.png
+    - assets/images/lesson4_sos_help_new.png
+    - assets/images/lesson3_homemaker.png
+    - assets/images/lesson3_senior_citizen.png
+    - assets/images/lesson4_travel_scenario_new_16x9.png
+    - assets/images/lesson4_guide_icon.png
+    - assets/images/lesson4_borrow_icon.png
+    - assets/images/lesson4_pharmacy_icon.png
+    - assets/images/lesson4_manager_icon.png
+    - assets/images/lesson4_discount_icon.png
+    - assets/images/lesson5_intro_hero.png
+    - assets/images/lesson5_word_focus.png
+    - assets/images/lesson5_explain_polite.png
+    - assets/images/lesson5_shaurya_response.png
+    - assets/images/lesson5_compliment.png
+    - assets/images/lesson5_listening.png
+    - assets/images/lesson5_beginners_tip.png
+    - assets/images/lesson5_reference_chart.png
+    - assets/images/lesson5_tea_offer.png
+    - assets/images/lesson5_no_soft.png
+    - assets/images/lesson5_daily_phrases.png
+    - assets/images/lesson5_dialogue_cafe.png
+    - assets/images/lesson5_extra_phrase.png
+    - assets/images/lesson5_dragdrop_responses.png
+    - assets/images/lesson5_shaurya_office.png
+    - assets/images/lesson5_shortstory_store.png
+    - assets/images/lesson5_shortstory_friend.png
+    - assets/images/lesson5_shortstory_variation.png
+    - assets/images/lesson5_mentor_explain.png
+    - assets/images/lesson5_grammar_point.png
+    - assets/images/lesson5_certainly_icon.png
+    - assets/images/lesson5_sorry_icon.png
+    - assets/images/lesson5_thankyou_icon.png
+    - assets/images/lesson5_appreciate_icon.png
+    - assets/images/lesson6_intro.png
+    - assets/images/lesson6_smalltalk_goal.png
+    - assets/images/lesson6_5step_overview.png
+    - assets/images/lesson6_step1_observe.png
+    - assets/images/lesson6_step2_comment.png
+    - assets/images/lesson6_store_sentence.png
+    - assets/images/lesson6_step3_ask.png
+    - assets/images/lesson6_sentence_lab.png
+    - assets/images/lesson6_step4_bounce.png
+    - assets/images/lesson6_fill_steps.png
+    - assets/images/lesson6_step5_end.png
+    - assets/images/lesson6_scenario_park.png
+    - assets/images/lesson6_scenario_store.png
+    - assets/images/lesson6_spot_error_demand.png
+    - assets/images/lesson6_ending_gracefully.png
+    - assets/images/lesson6_gamified_challenge.png
+    - assets/images/lesson6_next_preview.png
+    - assets/images/lesson6_mentor_explain_final.png
+    - assets/images/lesson7_final_motivation.png
+    - assets/images/lesson7_payment_confirm.png
+    - assets/images/lesson7_intro_hero.png
+    - assets/images/lesson7_five_step_toolkit.png
+    - assets/images/lesson7_answers_explained.png
+    - assets/images/lesson7_menu_preview..png
+    - assets/images/lesson7_reorder_cookies.png
+    - assets/images/lesson7_poll_sandwich.png
+    - assets/images/lesson7_neha_cafe_scene.png
+    - assets/images/lesson7_neha_staff.png
+    - assets/images/lesson7_change_order.png
+    - assets/images/lesson7_sorry_change_order.png
+    - assets/images/lesson7_special_recommendation.png
+    - assets/images/lesson8_intro_directions.png
+    - assets/images/vocab_straight.png
+    - assets/images/vocab_left.png
+    - assets/images/vocab_right.png
+    - assets/images/vocab_across.png
+    - assets/images/vocab_beside.png
+    - assets/images/lesson8_common_phrases.png
+    - assets/images/lesson8_common_mistakes.png
+    - assets/images/lesson8_pooja_asking.png
+    - assets/images/lesson8_giving_directions.png
+    - assets/images/lesson8_landmark_tips.png
+    - assets/images/lesson8_reorder_park.png
+    - assets/images/lesson8_final_mission.png
+    - assets/images/lesson8_final_tip.png
+    - assets/images/lesson3_mentor_explain_verb.png
+    - assets/images/lesson3_homemaker_senior_intro.png
+    - assets/images/lesson3_mentor_explain_builder.png
+
+
+
 
     # For Lesson 2 comedic scenario (existing example)
     - assets/images/help_request_comedic_16x9.png
@@ -180,7 +276,6 @@ flutter:
     - assets/images/guide_icon.png
     - assets/images/lesson1_course_intro.png
 
-
     # === Lesson 2 IMAGES (Newly Added)
     - assets/images/lesson2_welcome_intro.png
     - assets/images/lesson2_course_intro.png
@@ -259,6 +354,49 @@ flutter:
     - assets/audio/hi/audio_encourage_hi.mp3
     - assets/audio/en/audio_tip_en.mp3
     - assets/audio/hi/audio_tip_hi.mp3
+    - assets/audio/lesson1_mentor_explain01.mp3
+    - assets/audio/lesson1_mentor_explain02.mp3
+    - assets/audio/lesson1_mentor_explain03.mp3
+    - assets/audio/lesson1_mentor_explain04.mp3
+    - assets/audio/lesson1_mentor_explain05.mp3
+    - assets/audio/lesson1_mentor_explain06.mp3
+    - assets/audio/lesson1_mentor_explain07.mp3
+    - assets/audio/lesson1_mentor_explain08.mp3
+    - assets/audio/lesson1_mentor_explain09.mp3
+    - assets/audio/lesson1_mentor_explain10.mp3
+    - assets/audio/lesson1_mentor_explain11.mp3
+    - assets/audio/lesson1_mentor_explain12.mp3
+    - assets/audio/en/lesson1_mentor_intro01.mp3
+    - assets/audio/en/lesson1_scene_image01.mp3
+    - assets/audio/en/lesson1_surprisefact01.mp3
+    - assets/audio/en/lesson1_speakingprompt01.mp3
+    - assets/audio/lesson2_mentor_intro_1..mp3
+    - assets/audio/lesson2_scene_image_1.mp3
+    - assets/audio/lesson2_mentor_explain_1.mp3
+    - assets/audio/lesson2_mentor_surprise_fact_1.mp3
+    - assets/audio/lesson2_scene_image_2.mp3
+    - assets/audio/lesson2_mentor_explain_2.mp3
+    - assets/audio/lesson2_speaking_prompt_1.mp3
+    - assets/audio/lesson2_scene_image_3.mp3
+    - assets/audio/lesson2_scene_image_4.mp3
+    - assets/audio/lesson2_mentor_explain_3.mp3
+    - assets/audio/lesson2_speaking_prompt_2.mp3
+    - assets/audio/lesson2_scene_image_5.mp3
+    - assets/audio/lesson2_speaking_prompt_3.mp3
+    - assets/audio/lesson2_mentor_explain_4.mp3
+    - assets/audio/en/lesson2_short_stories_1.mp3
+    - assets/audio/en/lesson2_short_stories_2.mp3
+    - assets/audio/en/lesson2_speaking_prompt_1.mp3
+    - assets/audio/en/lesson2_speaking_prompt_2.mp3
+    - assets/audio/en/lesson2_speaking_prompt_3.mp3
+    - assets/audio/en/lesson2_short_stories_3.mp3
+    - assets/audio/en/lesson2_text_card_1.mp3
+    - assets/audio/en/lesson2_badge_award_1.mp3
+    - assets/audio/en/lesson1_short_stories01.mp3
+    - assets/audio/en/lesson1_text_card01.mp3
+    - assets/audio/en/lesson1_badge_award01.mp3
+    - assets/audio/background_loop_gamified.mp3
+
 
     # NEW lesson1 audio
     - assets/sounds/lesson_audio/L1_intro_auto.mp3
@@ -288,8 +426,69 @@ flutter:
     - assets/sounds/lesson_audio/lesson3_comedic_story2.mp3
     - assets/sounds/lesson_audio/lesson3_hobbies_prompt.mp3
     - assets/sounds/lesson_audio/lesson3_stage_performance_example.mp3
+    - assets/audio/lesson3_mentor_intro.mp3
+    - assets/audio/lesson3_mentor_explain_points.mp3
+    - assets/audio/lesson3_mentor_explain_empathy.mp3
+    - assets/audio/lesson3_mentor_explain_quick_intro.mp3
+    - assets/audio/lesson3_mentor_explain_verb_tip.mp3
+    - assets/audio/lesson3_mentor_explain_hobbies.mp3
+    - assets/audio/lesson3_short_stories_1_2.mp3
+    - assets/audio/lesson3_mentor_explain_homemaker_senior.mp3
+    - assets/audio/lesson3_short_stories_3_4.mp3
+    - assets/audio/lesson3_mentor_explain_new_scenarios.mp3
+    - assets/audio/lesson3_scene_new_job.mp3
+    - assets/audio/lesson3_speaking_new_job_prompt.mp3
+    - assets/audio/lesson3_scene_hobby_class.mp3
+    - assets/audio/lesson3_speaking_hobby_class_prompt.mp3
+    - assets/audio/lesson3_scene_zoom_class.mp3
+    - assets/audio/lesson3_speaking_zoom_class_prompt.mp3
+    - assets/audio/lesson3_scene_meeting_neighbors.mp3
+    - assets/audio/lesson3_speaking_meeting_neighbors_prompt.mp3
+    - assets/audio/lesson3_mentor_explain_body_language.mp3
+    - assets/audio/lesson3_short_stories_international_conf.mp3
+    - assets/audio/lesson3_mentor_explain_builder.mp3
+    - assets/audio/lesson3_mentor_surprise_fact.mp3
+    - assets/audio/lesson3_mentor_explain_name.mp3
+    - assets/audio/lesson3_speaking_prompt.mp3
+    - assets/audio/lesson3_text_card_recap.mp3
+    - assets/audio/lesson3_mentor_outro.mp3
+    - assets/audio/lesson3_mentor_explain_key_points.mp3
+    - assets/audio/lesson3_mentor_explain_short_stories.mp3
+
+
+    # === NEW Lesson 3 IMAGES ===
+    - assets/images/lesson3_intro.png
+    - assets/images/lesson3_poll_fear.png
+    - assets/images/lesson3_mentor_explain_points.png
+    - assets/images/lesson3_vocab_mynameis.png
+    - assets/images/lesson3_vocab_imfrom.png
+    - assets/images/lesson3_vocab_iworkas.png
+    - assets/images/lesson3_vocab_ilove.png
+    - assets/images/lesson3_self_intro_blank.png
+    - assets/images/lesson3_spot_error_grammar.png
+    - assets/images/lesson3_jaipur_intro.png
+    - assets/images/lesson3_poll_hobby.png
+    - assets/images/lesson3_small_party.png
+    - assets/images/lesson3_college_classroom.png
+    - assets/images/lesson3_sentence_construct_hobby.png
+    - assets/images/lesson3_student_intro.png
+    - assets/images/lesson3_name_explain.png
+    - assets/images/lesson3_poll_funpart.png
+    - assets/images/lesson3_international_friends.png
+    - assets/images/lesson3_conference.png
+    - assets/images/lesson3_dancing_intro.png
+    - assets/images/lesson3_speaking_prompt.png
+    - assets/images/lesson3_mentor_ready.png
+    - assets/images/lesson3_hobby_class_scenario.png
+    - assets/images/lesson3_new_job_scenario.png
+    - assets/images/lesson3_zoom_class_scenario.png
+    - assets/images/lesson3_meeting_neighbors.png
+    - assets/images/lesson3_mini_success_story.png
+
 
     # NEW Lesson 4 AUDIO
+
+    - assets/audio/lesson3_badge_award.mp3
     - assets/sounds/lesson_audio/lesson4_intro_auto.mp3
     - assets/sounds/lesson_audio/lesson4_basic_wh_prompt.mp3
     - assets/sounds/lesson_audio/lesson4_comedic_story1.mp3
@@ -332,6 +531,16 @@ flutter:
     - assets/animations/tick_animation.json
     - assets/animations/badge_unlocked.json
     - assets/animations/confetti_success.json
+    - assets/animations/xp_appbar_sparkle.json
+
+    # ✅ Newly added / Updated Lotties
+    - assets/animations/confused_thinking.json
+    - assets/animations/alert_attention.json
+    - assets/animations/mic_success.json
+    - assets/animations/thumbs_up_vote.json
+    - assets/animations/correct_check.json
+    - assets/animations/star_pop.json
+    - assets/animations/daily_streak_fire.json
 
     # ✅ Badge Lotties
     - assets/animations/badges/lesson_completion_badge.json

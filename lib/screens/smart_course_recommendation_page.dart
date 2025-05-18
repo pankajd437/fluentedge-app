@@ -308,27 +308,6 @@ class SmartCourseRecommendationPage extends StatelessWidget {
           ),
         ),
       ),
-
-      // Bottom bar with centered Home icon → /coursesDashboard
-      bottomNavigationBar: BottomAppBar(
-        color: const Color(0xFF1565C0),
-        child: SizedBox(
-          height: 50,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                iconSize: 36,
-                icon: const Icon(Icons.home),
-                color: Colors.white,
-                onPressed: () {
-                  context.go(routeCoursesDashboard);
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 

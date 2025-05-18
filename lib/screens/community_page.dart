@@ -74,12 +74,20 @@ class CommunityPage extends StatelessWidget {
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(16),
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
+            // boxShadow added here for a raised (ubhara hua) effect
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
                 colors: [Color(0xFFBBDEFB), Color(0xFFE3F2FD)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.2),
+                  blurRadius: 8,
+                  offset: const Offset(0, 4),
+                ),
+              ],
             ),
             child: Row(
               children: [
@@ -107,7 +115,9 @@ class CommunityPage extends StatelessWidget {
                       const SnackBar(content: Text("📨 Invite sent!")),
                     );
                   },
+                  // ElevatedButton with elevation for a raised effect
                   style: ElevatedButton.styleFrom(
+                    elevation: 4,
                     backgroundColor: kAccentGreen,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -149,14 +159,15 @@ class CommunityPage extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(bottom: 12),
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    // Increased boxShadow for a raised card effect
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.08),
-                          blurRadius: 6,
-                          offset: const Offset(0, 3),
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 8,
+                          offset: const Offset(0, 4),
                         ),
                       ],
                     ),

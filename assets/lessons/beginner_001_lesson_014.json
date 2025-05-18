@@ -1,0 +1,419 @@
+{
+  "lessonId": "beginner_001_lesson_014",
+  "title": "When You Don’t Understand Someone",
+  "level": "beginner",
+  "themeColor": "#4A90E2",
+  "xpTotal": 500,
+  "objectives": [
+    "Recognize situations where you genuinely don't understand",
+    "Use polite clarification phrases immediately",
+    "Clarify meaning confidently without embarrassment",
+    "Confirm you understood correctly with short follow-up questions"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": [
+      "en",
+      "hi"
+    ],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "clarification_champion",
+    "title": "Clarification Champion",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+    {
+      "type": "mentor_intro",
+      "text": "Hello and welcome to Lesson 14: ‘When You Don’t Understand Someone.’ कभी-कभी सामने वाला तेज़ बोलता है, या accent अलग है, या हम कोई word नहीं समझ पाते हैं. No tension—we’ll learn how to say ‘Could you repeat, please?’ and confirm meaning politely!",
+      "imagePath": "assets/images/lesson14_intro.png",
+      "audioPath": "assets/audio/lesson14_intro_mentor.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Typical Scenarios of Confusion",
+      "body": "1) Fast speakers or strong accents\n2) New or complex vocabulary\n3) Noisy environments\n4) Phone calls with poor connection\n\nइन जगहों पर ‘I didn’t understand’ कहना बहुत common है. Let’s see how to handle it!",
+      "audioPath": "assets/audio/lesson14_text_card_scenarios.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Here are some polite clarification phrases. अगर आप बात नहीं समझ पाए: \n• “I’m sorry, I didn’t understand.”\n• “Could you say that again, please?”\n• “Could you speak more slowly?”\n• “What does ____ mean?”\n• “Could you explain that?”\n\nचलिए इन्हें detail में देखते हैं!",
+      "imagePath": "assets/images/lesson14_mentor_explain_phrases.png",
+      "audioPath": "assets/audio/lesson14_explain_phrases.mp3"
+    },
+    {
+      "type": "poll",
+      "question": "Which part of ‘not understanding’ bothers you most?",
+      "options": [
+        "They speak too fast!",
+        "They use words I don’t know",
+        "Accent is confusing",
+        "I’m just shy to ask again"
+      ],
+      "dynamicFeedback": {
+        "0": "Ask: ‘Could you speak more slowly?’",
+        "1": "Ask: ‘What does ___ mean?’",
+        "2": "Politely request them to repeat or clarify.",
+        "3": "Don’t be shy; short phrases help build confidence!"
+      },
+      "imagePath": "assets/images/lesson14_poll_fear.png"
+    },
+    {
+      "type": "today_vocabulary",
+      "vocabItems": [
+        {
+          "word": "Repeat",
+          "meaning": "Say again: “Could you repeat that, please?”",
+          "image": "assets/images/lesson14_vocab_repeat.png"
+        },
+        {
+          "word": "Explain",
+          "meaning": "Give more detail: “Could you explain that, please?”",
+          "image": "assets/images/lesson14_vocab_explain.png"
+        },
+        {
+          "word": "Slowly",
+          "meaning": "Speak at a slower speed: “Could you speak more slowly?”",
+          "image": "assets/images/lesson14_vocab_slowly.png"
+        },
+        {
+          "word": "Meaning",
+          "meaning": "Asking definition: “What’s the meaning of __?”",
+          "image": "assets/images/lesson14_vocab_meaning.png"
+        },
+        {
+          "word": "Understand",
+          "meaning": "Grasp what was said: “I’m sorry, I don’t understand.”",
+          "image": "assets/images/lesson14_vocab_understand.png"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson14_scenario_shop.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson14_shop_confusion.png",
+          "text": "**Scenario 1: Fast Speaker at a Shop**\n\nShopkeeper (speaking quickly): “This item is hundred-fifty if you pay cash, or one-sev-ty if card—plus there's a discount if—”\nYou: “I’m sorry, I didn’t catch that. Could you speak more slowly, please?”\nShopkeeper: “Sure. It’s 150 rupees by cash, or 170 by card.”\nYou: “Oh, thanks. Now I understand!”\n\n**Key Learning**: Use ‘Could you speak more slowly, please?’"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson14_scenario_phone.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson14_phone_confusion.png",
+          "text": "**Scenario 2: Phone Call with Connection Issues**\n\nFriend: “Hey, can you meet tomorrow near the x—bz—station around 4?” (static or unclear)\nYou: “I’m sorry, I can’t hear you well. Could you repeat that, please?”\nFriend: “Sure! Meet me at XYZ station around 4 PM!”\nYou: “Got it, thanks!”\n\n**Key Learning**: On phone calls, clarity is tough—ask them to repeat calmly."
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson14_scenario_cafe.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson14_cafe_confusion.png",
+          "text": "**Scenario 3: Café Menu Vocabulary**\n\nServer: “Our special pastry has hazelnut praline topped with mascarpone.”\nYou: “I’m sorry, what does ‘praline’ mean?”\nServer: “It’s a sweet filling with nuts and sugar.”\nYou: “Oh okay, could you explain the second word? ‘Mascarpone?’”\nServer: “It’s a type of creamy cheese.”\n\n**Key Learning**: Ask ‘What does ___ mean?’ or ‘Could you explain that?’"
+        }
+      ]
+    },
+    {
+      "type": "roleplay",
+      "title": "Polite Clarification Roleplay",
+      "scenes": [
+        {
+          "userLine": "Hello, I didn’t understand that word. Could you explain it, please?",
+          "mentorLine": "Sure, it means ____.",
+          "mentorTip": "Use a calm tone—don’t be shy to ask!"
+        },
+        {
+          "userLine": "Thanks! Also, could you repeat the last sentence slowly?",
+          "mentorLine": "No problem. I said ____.",
+          "mentorTip": "Ending with ‘No problem’ or ‘Thanks’ keeps it friendly."
+        }
+      ],
+      "imagePath": "assets/images/lesson14_roleplay_clarification.png",
+      "audioPath": "assets/audio/lesson14_roleplay_clarification.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Also confirm if you understood: \n• ‘So, you mean…?’\n• ‘Let me check: Did you say ____?’\n\nये phrases help make sure you got it right!",
+      "imagePath": "assets/images/lesson14_mentor_explain_confirm.png",
+      "audioPath": "assets/audio/lesson14_mentor_explain_confirm.mp3"
+    },
+    {
+      "type": "sentence_construction",
+      "words": [
+        "Could",
+        "you",
+        "speak",
+        "more",
+        "slowly,",
+        "please?"
+      ],
+      "correctOrder": [
+        "Could",
+        "you",
+        "speak",
+        "more",
+        "slowly,",
+        "please?"
+      ],
+      "imagePath": "assets/images/lesson14_sentence_construction_slowly.png"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "I’m sorry, I _____ (understand/don’t understand). Could you repeat that?",
+      "correctWord": "don’t understand",
+      "imagePath": "assets/images/lesson14_fill_blanks_confusion.png",
+      "hints": [
+        "You want to say you didn’t get it!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "Yes! That’s the phrase to show confusion politely.",
+        "wrongText": "‘I understand’ is the opposite meaning!"
+      },
+      "submitLabel": "Check Answer"
+    },
+    {
+      "type": "sentence_construction",
+      "words": [
+        "So,",
+        "you",
+        "mean",
+        "we",
+        "meet",
+        "at",
+        "5",
+        "PM?"
+      ],
+      "correctOrder": [
+        "So,",
+        "you",
+        "mean",
+        "we",
+        "meet",
+        "at",
+        "5",
+        "PM?"
+      ],
+      "imagePath": "assets/images/lesson14_sentence_construction_check.png"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "Let me check, ______ you say we need to buy tickets online?",
+      "correctWord": "did",
+      "imagePath": "assets/images/lesson14_fill_blanks_check.png",
+      "hints": [
+        "Short question to confirm: ‘Did you say...?’"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "Yes, ‘Did you say...?’ is a polite confirm phrase.",
+        "wrongText": "Use ‘did’ for past reference of what they said!"
+      },
+      "submitLabel": "Check Answer"
+    },
+    {
+      "type": "poll",
+      "question": "What’s your biggest challenge in clarifying meaning?",
+      "options": [
+        "Embarrassed to ask again",
+        "Don’t know which phrase to use",
+        "They speak too fast even after repeating",
+        "Not sure if they get my confusion"
+      ],
+      "dynamicFeedback": {
+        "0": "Small phrases build confidence—‘Could you explain that?’",
+        "1": "Memorize the set phrases we learned!",
+        "2": "Politely request them to slow down or break it down further!",
+        "3": "Try a confirm question: ‘So, you mean __?’"
+      },
+      "imagePath": "assets/images/lesson14_poll_challenge.png"
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson14_scenario_extra.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson14_office_confusion.png",
+          "text": "**Scenario 4: Office Meeting**\n\nBoss: “We’ll pivot our marketing strategy to B2C synergy, cross-collaboration with brand leads.”\nYou (confused): “I’m sorry, I don’t understand ‘pivot’ or ‘synergy.’ Could you explain that, please?”\nBoss: “Sure, pivot means change direction, synergy is working together effectively.”\nYou: “Got it, thank you!”\n\n**Key Learning**: In formal settings, politely ask for definitions with ‘What does ___ mean?’"
+        }
+      ]
+    },
+    {
+      "type": "audio_clip",
+      "title": "Unclear vs. Clear Clarification Request",
+      "clips": [
+        {
+          "label": "Unclear (mumbled, no direct phrase)",
+          "audio": "assets/audio/lesson14_unclear_clip.mp3",
+          "transcript": "“Uh… sorry… what…? Wait…?”"
+        },
+        {
+          "label": "Clear (polite, direct phrase)",
+          "audio": "assets/audio/lesson14_clear_clip.mp3",
+          "transcript": "“I’m sorry, could you repeat that more slowly, please?”"
+        }
+      ]
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Practice: “What does ___ mean?” (Choose any new English word and ask out loud!)",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson14_speaking_prompt_word.png",
+      "audioPath": "assets/audio/lesson14_speaking_prompt_word.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Say: “Could you speak more slowly, please? I didn’t understand.”",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson14_speaking_prompt_slowly.png",
+      "audioPath": "assets/audio/lesson14_speaking_prompt_slowly.mp3"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "I’m sorry, ______ (did/does) you say we should arrive at 2 PM?",
+      "correctWord": "did",
+      "imagePath": "assets/images/lesson14_fill_blanks_did.png",
+      "hints": [
+        "Confirming what they already said—use ‘did you say?’"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "Perfect! ‘Did you say...?’ is correct for clarifying past speech.",
+        "wrongText": "‘Does you say...?’ is incorrect structure."
+      },
+      "submitLabel": "Check Answer"
+    },
+    {
+      "type": "roleplay",
+      "title": "Second Clarification Roleplay",
+      "scenes": [
+        {
+          "userLine": "You mentioned a 'quirky festival'—I’m sorry, what does 'quirky' mean?",
+          "mentorLine": "‘Quirky’ means unusual or fun in a different way.",
+          "mentorTip": "Short question clarifies new vocabulary easily."
+        },
+        {
+          "userLine": "Got it, thank you! Could you repeat the festival name slowly?",
+          "mentorLine": "Sure, it's the ‘Lantern Glow Festival.’",
+          "mentorTip": "Asking for repetition is absolutely normal!"
+        }
+      ],
+      "imagePath": "assets/images/lesson14_roleplay_second.png",
+      "audioPath": "assets/audio/lesson14_roleplay_second.mp3"
+    },
+    {
+      "type": "poll",
+      "question": "How do you feel now about asking for clarification?",
+      "options": [
+        "Still nervous",
+        "Better with these phrases!",
+        "Need more practice",
+        "I’m confident now"
+      ],
+      "dynamicFeedback": {
+        "0": "Remember, it’s normal to ask ‘Could you repeat?’",
+        "1": "Awesome! Keep using them daily.",
+        "2": "Daily short practice: ‘What does that mean?’",
+        "3": "Great—help others who feel shy!"
+      },
+      "imagePath": "assets/images/lesson14_poll_confident.png"
+    },
+    {
+      "type": "sentence_construction",
+      "words": [
+        "So,",
+        "you",
+        "mean",
+        "we'll",
+        "meet",
+        "tomorrow?",
+        "Right?"
+      ],
+      "correctOrder": [
+        "So,",
+        "you",
+        "mean",
+        "we'll",
+        "meet",
+        "tomorrow?",
+        "Right?"
+      ],
+      "imagePath": "assets/images/lesson14_sentence_construction_meet.png"
+    },
+    {
+      "type": "text_card",
+      "title": "Emotional Encouragement",
+      "body": "चिंता मत करो if you ask 2-3 times for clarity. ये बहुत normal है. People prefer you understand rather than pretend. Keep calm, use short phrases, and see how your communication grows!",
+      "audioPath": "assets/audio/lesson14_emotional_encouragement.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "In summary, whenever you don’t understand:\n• Politely say you didn’t get it\n• Ask them to repeat/slow down\n• Clarify meaning with ‘What does __ mean?’\n• Confirm you understood: ‘So, you mean...?’\n\nIt’s that simple!",
+      "imagePath": "assets/images/lesson14_mentor_explain_summary.png",
+      "audioPath": "assets/audio/lesson14_mentor_explain_summary.mp3"
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson14_scenario_final.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson14_street_confusion.png",
+          "text": "**Scenario 5: Street Directions**\n\nStranger: “Go two blocks, then take a right at the convenience store, then go left after the traffic signal.”\nYou: “I’m sorry, that was too fast. Could you explain the directions more slowly?”\nStranger: “Sure. First, walk two blocks, then right at the store, then left at the signal.”\nYou: “Got it, thank you for helping!”\n\n**Key Learning**: Don’t hesitate to ask them to repeat the steps."
+        }
+      ]
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "So, you ______ (meant/understood) I should turn right at the store? Just confirming!",
+      "correctWord": "meant",
+      "imagePath": "assets/images/lesson14_fill_blanks_meant.png",
+      "hints": [
+        "Asking if the other person's meaning was turn right."
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "Correct—‘you meant I should turn right at the store?’",
+        "wrongText": "‘Understood’ is for your own understanding, not them!"
+      },
+      "submitLabel": "Check Answer"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Say out loud: “I’m sorry, I still don’t understand. Could you explain again?”",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson14_speaking_prompt_street.png",
+      "audioPath": "assets/audio/lesson14_speaking_prompt_street.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Final Recap",
+      "body": "1) Politely admit confusion: ‘I didn’t understand.’\n2) Ask to repeat or slow down.\n3) Ask meaning: ‘What does ___ mean?’\n4) Confirm understanding: ‘So, you mean __?’\n\nआपकी clarity बढ़ेगी—no need to guess!",
+      "audioPath": "assets/audio/lesson14_final_recap.mp3"
+    },
+    {
+      "type": "badge_award",
+      "title": "Clarification Champion",
+      "description": "Congratulations! You can now handle moments of not understanding in English calmly and politely—go forth and clarify!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson14_badge_award.mp3"
+    }
+  ]
+}

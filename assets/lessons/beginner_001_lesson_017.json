@@ -1,0 +1,321 @@
+{
+  "lessonId": "beginner_001_lesson_017",
+  "title": "English for Festive Wishes & Invitations",
+  "level": "beginner",
+  "themeColor": "#4A90E2",
+  "xpTotal": 500,
+  "objectives": [
+    "Use simple phrases to invite friends or colleagues to festival gatherings",
+    "Offer brief English explanations about common festival traditions",
+    "Confidently wish people on festivals in English",
+    "Share short, friendly updates on how you celebrate"
+  ],
+  "mentorDefaults": {
+    "expression": "mentor_tip_upper.png",
+    "voiceLangs": [
+      "en",
+      "hi"
+    ],
+    "typingIndicator": "assets/lottie/typing_indicator_dots.json"
+  },
+  "badgeAwarded": {
+    "id": "festive_communicator",
+    "title": "Festive Communicator",
+    "animation": "assets/animations/badge_unlocked.json"
+  },
+  "activities": [
+    {
+      "type": "mentor_intro",
+      "text": "Welcome to Lesson 17: ‘English for Festive Wishes & Invitations!’ कभी ऐसे मौके आते हैं जब कोई दोस्त या coworker English ही समझता है, और हम Diwali, Holi या Eid के बारे में कुछ कहना चाहते हैं. कोई टेंशन नहीं—we’ll learn how to invite, wish, and explain simple festival details. Remember, you can also show cultural curiosity—ask them ‘How do you celebrate your festival?’ for a two-way friendly conversation!",
+      "imagePath": "assets/images/lesson17_intro.png",
+      "audioPath": "assets/audio/lesson17_mentor_intro.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Festive English Scenarios",
+      "body": "1) Inviting friends/colleagues to your festival party\n2) Wishing people at work (simple greetings)\n3) Explaining your festival traditions briefly\n4) Sharing how you celebrate\n\nइन scenarios में छोटी लेकिन impactful English lines बहुत काम आती हैं!",
+      "audioPath": "assets/audio/lesson17_text_card_scenarios.mp3"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "When inviting, keep it friendly & clear:\n- “We’re celebrating Diwali tomorrow—would you like to join us?”\n- “Please come—it’ll be nice to have you.”\n\nWhen explaining traditions, short lines:\n- “Diwali is a festival of lights. We decorate and exchange gifts.”\n- “Holi is about colors—everyone plays with colors!”\n\nWishing lines:\n- “Happy Diwali! Hope it brings you joy.”\n- “Eid Mubarak! Wishing you peace.”\n\nA genuine smile and tone variations (cheerful, welcoming) will help you sound natural! Don’t worry about long speeches—just basic details are enough.",
+      "imagePath": "assets/images/lesson17_mentor_explain_festivals.png",
+      "audioPath": "assets/audio/lesson17_explain_festivals.mp3"
+    },
+    {
+      "type": "today_vocabulary",
+      "vocabItems": [
+        {
+          "word": "Celebrate",
+          "meaning": "To enjoy or mark a special event: “We celebrate Diwali with lights.”",
+          "image": "assets/images/lesson17_vocab_celebrate.png"
+        },
+        {
+          "word": "Invite",
+          "meaning": "Ask someone to join: “I want to invite you to my festival gathering.”",
+          "image": "assets/images/lesson17_vocab_invite.png"
+        },
+        {
+          "word": "Decorate",
+          "meaning": "Make something look festive: “We decorate our home with lights.”",
+          "image": "assets/images/lesson17_vocab_decorate.png"
+        },
+        {
+          "word": "Tradition",
+          "meaning": "A custom or belief passed down: “It’s our tradition to exchange sweets.”",
+          "image": "assets/images/lesson17_vocab_tradition.png"
+        },
+        {
+          "word": "Exchange gifts",
+          "meaning": "Give gifts to each other: “We exchange gifts with family and friends.”",
+          "image": "assets/images/lesson17_vocab_exchangegifts.png"
+        },
+        {
+          "word": "Wish",
+          "meaning": "To express hope for someone’s happiness: “I wish you a wonderful festival.”",
+          "image": "assets/images/lesson17_vocab_wish.png"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson17_story_invite.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson17_invite_friend.png",
+          "text": "**Scenario 1: Inviting a Friend (Festival Gathering)**\n\nYou: “Hey Alex, we’re celebrating Diwali at my place tomorrow—would you like to join us?”\nAlex: “That sounds great! What time?”\nYou: “Come around 6 PM. We’ll light diyas and share sweets.”\nAlex: “Thanks for inviting me—I’d love to come!”\n\n**Key Learning**: Simple invitation lines + mention a small detail about your celebration."
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson17_story_explain.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson17_explain_tradition.png",
+          "text": "**Scenario 2: Explaining a Festival Tradition**\n\nCoworker: “What’s Diwali about?”\nYou: “Diwali is the festival of lights. We decorate homes and exchange gifts for good luck.”\nCoworker: “Sounds amazing! Do you pray, too?”\nYou: “Yes, we light diyas (lamps) and pray for prosperity.”\n\n**Key Learning**: Brief explanation using simple lines—‘It’s a festival of lights.’"
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson17_story_wishes.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson17_wishes_coworker.png",
+          "text": "**Scenario 3: Wishing Someone at Work**\n\nYou: “Hi Sarah, Happy Holi! May your day be colorful!”\nSarah: “Thank you! I heard Holi is about throwing colors?”\nYou: “Yes, exactly. It’s a fun way to celebrate!”\n\n**Key Learning**: Short, cheerful wishes + a brief explanation if they ask more."
+        }
+      ]
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson17_story_excitement.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson17_sharing_celebration.png",
+          "text": "**Scenario 4: Sharing How You Celebrate**\n\nFriend: “How did you celebrate Eid?”\nYou: “We celebrated with family—had special dishes and exchanged gifts. Eid Mubarak to you, too!”\nFriend: “Thank you! Sounds lovely.”\n\n**Key Learning**: Simple past tense: ‘We celebrated with family—had good food.’ Then a short greeting: ‘Eid Mubarak!’"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Each scenario uses short, friendly phrases. If people ask more—just add 1-2 lines. You can politely ask them about their traditions too: ‘How do you celebrate Christmas?’ दो-तरफ़ा curiosity keeps the conversation interesting!",
+      "imagePath": "assets/images/lesson17_mentor_explain_keepitshort.png",
+      "audioPath": "assets/audio/lesson17_explain_keepitshort.mp3"
+    },
+    {
+      "type": "roleplay",
+      "title": "Festival Roleplay Practice",
+      "scenes": [
+        {
+          "userLine": "Coworker: “Hey, what’s Holi about?”",
+          "mentorLine": "You: “Holi is a festival of colors. We play with colored powder—it’s very fun!”",
+          "mentorTip": "Short, simple—focus on the key tradition."
+        },
+        {
+          "userLine": "Coworker: “Wow, can I join?”",
+          "mentorLine": "You: “Yes, absolutely! Come this weekend—I’ll show you how we celebrate.”",
+          "mentorTip": "Inviting them politely in short English lines."
+        }
+      ],
+      "imagePath": "assets/images/lesson17_roleplay_festival.png",
+      "audioPath": "assets/audio/lesson17_roleplay_festival.mp3"
+    },
+    {
+      "type": "sentence_construction",
+      "words": [
+        "Happy",
+        "Diwali!",
+        "Hope",
+        "it",
+        "brings",
+        "you",
+        "joy."
+      ],
+      "correctOrder": [
+        "Happy",
+        "Diwali!",
+        "Hope",
+        "it",
+        "brings",
+        "you",
+        "joy."
+      ],
+      "imagePath": "assets/images/lesson17_sentence_construct_wishes.png"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "We’re celebrating ______ (Diwali/lunch) tomorrow—would you like to join us?",
+      "correctWord": "Diwali",
+      "imagePath": "assets/images/lesson17_fill_blanks_celebration.png",
+      "hints": [
+        "Focus is on festival name!"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "Exactly! ‘We’re celebrating Diwali tomorrow—join us?’",
+        "wrongText": "Lunch isn’t a festival—use your festival name!"
+      },
+      "submitLabel": "Check Answer"
+    },
+    {
+      "type": "poll",
+      "question": "Which scenario do you find hardest?",
+      "options": [
+        "Inviting someone to my festival",
+        "Wishing people at work",
+        "Explaining traditions briefly",
+        "Just talking about celebrations"
+      ],
+      "dynamicFeedback": {
+        "0": "Try simple lines: ‘We’re celebrating ___. Please come!’",
+        "1": "Start with: ‘Happy ___! Hope you enjoy!’",
+        "2": "Focus on the main event: ‘We decorate or we play with colors.’",
+        "3": "Just mention highlight: ‘We eat sweets, we gather with family.’"
+      },
+      "imagePath": "assets/images/lesson17_poll_difficulty.png"
+    },
+    {
+      "type": "fill_in_the_blanks",
+      "sentence": "_____ (Merry/Hungry) Christmas and a happy new year!",
+      "correctWord": "Merry",
+      "imagePath": "assets/images/lesson17_fill_blanks_christmas.png",
+      "hints": [
+        "Common festive greeting: ‘Merry Christmas!’"
+      ],
+      "correctSound": "assets/sounds/correct.mp3",
+      "wrongSound": "assets/sounds/incorrect.mp3",
+      "correctLottie": "assets/animations/activity_correct.json",
+      "wrongLottie": "assets/animations/activity_wrong.json",
+      "feedback": {
+        "correctText": "Yes, ‘Merry Christmas and a happy new year!’",
+        "wrongText": "‘Hungry Christmas’ makes no sense!"
+      },
+      "submitLabel": "Check Answer"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Practice: ‘We decorate our home and exchange gifts. It’s a nice tradition.’ (talking about your festival)",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson17_speaking_prompt_tradition.png",
+      "audioPath": "assets/audio/lesson17_speaking_prompt_tradition.mp3"
+    },
+    {
+      "type": "speaking_prompt",
+      "prompt": "Say: ‘Happy Holi! May your day be colorful!’ (friendly tone!)",
+      "audioSupport": false,
+      "imagePath": "assets/images/lesson17_speaking_prompt_wish.png",
+      "audioPath": "assets/audio/lesson17_speaking_prompt_wish.mp3"
+    },
+    {
+      "type": "audio_clip",
+      "title": "Inviting vs. Explaining Tone",
+      "clips": [
+        {
+          "label": "Invitation Tone",
+          "audio": "assets/audio/lesson17_invitation_tone.mp3",
+          "transcript": "“Please come—it’ll be lovely to have you!”"
+        },
+        {
+          "label": "Explanatory Tone",
+          "audio": "assets/audio/lesson17_explaining_tone.mp3",
+          "transcript": "“Diwali is a festival of lights. We decorate homes with lamps.”"
+        }
+      ]
+    },
+    {
+      "type": "mentor_explain",
+      "text": "Tone differences matter. Invitation = welcoming voice. Explanation = calm, clear voice. Wishes = cheerful voice! Also, politely ask them about their traditions—two-way interaction shows genuine curiosity. A friendly smile or nod elevates your approach!",
+      "imagePath": "assets/images/lesson17_mentor_explain_tone.png",
+      "audioPath": "assets/audio/lesson17_mentor_explain_tone.mp3"
+    },
+    {
+      "type": "short_stories",
+      "audioPath": "assets/audio/lesson17_scenario_office.mp3",
+      "scenes": [
+        {
+          "imagePath": "assets/images/lesson17_office_sharing.png",
+          "text": "**Scenario 5: Telling Colleagues About Your Festival Plans**\n\nColleague: “You seem excited—any plans?”\nYou: “Yes, it’s Eid next week. We celebrate by wearing new clothes and sharing food.”\nColleague: “That sounds fun!”\nYou: “Eid Mubarak in advance! How do you celebrate Christmas?”\nColleague: “We have a family dinner, go to church, and share gifts. We should learn from each other’s festivals!”\n\n**Key Learning**: Mix excitement + brief explanation + a small question about their festival for cultural curiosity!"
+        }
+      ]
+    },
+    {
+      "type": "text_card",
+      "title": "Emotional Encouragement",
+      "body": "You don’t need complex English to share your festival fun! बस छोटा-सा phrase—‘We celebrate with sweets,’ या ‘Happy Diwali!’—और a genuine smile. If they ask ‘What else do you do?’ give 1-2 short lines: ‘We light lamps, meet family.’ Enough to keep conversation flowing!",
+      "audioPath": "assets/audio/lesson17_emotional_encouragement.mp3"
+    },
+    {
+      "type": "sentence_construction",
+      "words": [
+        "Please",
+        "come,",
+        "it’ll",
+        "be",
+        "nice",
+        "to",
+        "have",
+        "you!"
+      ],
+      "correctOrder": [
+        "Please",
+        "come,",
+        "it’ll",
+        "be",
+        "nice",
+        "to",
+        "have",
+        "you!"
+      ],
+      "imagePath": "assets/images/lesson17_sentence_construct_invite.png"
+    },
+    {
+      "type": "mentor_explain",
+      "text": "If someone asks follow-up questions, a short answer is fine. Focus on the main tradition or highlight, e.g.: ‘We pray and share sweets.’ That’s enough for friendly conversation!",
+      "imagePath": "assets/images/lesson17_mentor_explain_followup.png",
+      "audioPath": "assets/audio/lesson17_explain_followup.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Bonus Activity: Create Your Own Festival Greeting",
+      "body": "Write a short message for a friend or colleague inviting them to your favorite festival, or wishing them. For example: “Hey __, we celebrate __ tomorrow—would you like to join us?” or “Merry __! I hope you have a wonderful celebration!”\n\nNo need for complex grammar—simple, kind words are enough!",
+      "audioPath": "assets/audio/lesson17_bonus_activity.mp3"
+    },
+    {
+      "type": "text_card",
+      "title": "Lesson 17 Recap",
+      "body": "1) Invite: ‘Would you like to join us?’ + small detail\n2) Wish: ‘Happy __! May you have a great day!’\n3) Explain: ‘It’s a festival of __. We do __.’\n4) Ask about their culture: ‘How do you celebrate...?’\n5) Give short extra info if they say, ‘What else do you do?’\n\nEnjoy sharing your festival traditions in simple English!",
+      "audioPath": "assets/audio/lesson17_recap.mp3"
+    },
+    {
+      "type": "badge_award",
+      "title": "Festive Communicator",
+      "description": "Congratulations! You can now invite, wish, explain, and even ask about other people’s festivals in English. Spread festive cheer confidently!",
+      "animation": "assets/animations/badge_unlocked.json",
+      "audioPath": "assets/audio/lesson17_badge_award.mp3"
+    }
+  ]
+}
